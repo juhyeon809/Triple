@@ -210,10 +210,10 @@ main {
     align-items: center;
 }
 main > p {
-   margin-left: 250px;
-   margin-top: 50px;
-   font-size: 24px;
-   font-weight: 700;
+    margin-left: 250px;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 700;
 }
 #overseas_local > div > a > img {
     width: 320px;
