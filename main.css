@@ -1,0 +1,443 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+#logo_area {
+    margin: 0 auto;
+    width: 1400px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body {
+    box-sizing: border-box;
+    font-family: 'notosanskr';
+}
+a {
+    text-decoration-line: none ;
+}
+a:visited {
+    text-decoration: none;
+}
+#search {
+    margin-left: 500px;
+    display: flex;
+    align-items: center;
+}
+#search > button {
+    background-color: #50e3c2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    
+}
+
+#logo_area > #logo > a{
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+}
+#login_join > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#login_join {
+    color: white;
+}
+header {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+#backg_image_area {
+    width: 1600px;
+    height: 750px;
+    background-image: url('./img/img_main_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    margin-top: 0px;
+    box-sizing: border-box;
+}
+.float_clear {
+    clear: both;
+}
+
+#menu_area > #menus {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#menu_area > #menus > li {
+    list-style: none;
+}
+#menu_area > #menus > li > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#logo_area > p { 
+    padding-top: 40px;
+    color: white;   
+}
+#logo_area #search > input {
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    border-width: 0px;
+    padding-left: 20px;
+}
+#logo_area > p > a{ 
+    padding-top: 40px;
+    color: white;
+    font-weight: 700;   
+}
+#head_text_area {
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#head_text {
+    width: 50%;
+    
+}
+#head_text > p {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#head_search_air {
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+#head_search_air p > input{
+    width: 300px;
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+    border-bottom-width: 3px;
+    background-color: transparent;
+    font-size: 20px;
+}
+#head_search_air p > input::placeholder{
+    color: white;
+    font-weight: 700;
+}
+
+#changer {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-image: url(./트리플사진.png);
+    background-size: cover;
+    margin-left: 40px;
+}
+#logo_menus_area {
+    width: 1200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@media screen and(-ms-min-device-pixel-ratio:0){
+    #logo_menus_area {
+        justify-content: space-around;
+    }
+}
+
+#logo_menus_area > div > a > img{
+    width: 100px;
+    height: 100px;
+}
+main {
+    width: 1400px;
+    margin: 0 auto;
+}
+#event_area {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#event_area > div > a > img {
+    width: 230px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+#overseas_local {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main > p {
+   margin-left: 250px;
+   margin-top: 50px;
+   font-size: 24px;
+   font-weight: 700;
+}
+#overseas_local > div > a > img {
+    width: 320px;
+    height: 200px;
+    
+}
+#accommodation_recommend {
+    width: 1000px;
+    margin: 100px auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#accommodation_recommend > div > a > img {
+    width: 320px;
+    height: 600px;
+    border-radius: 20px;
+}
+#tool_box {
+    width: 1000px;
+    margin: 200px auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#tool_box > div {
+    width: 160px;
+    height: 40px;
+    background-color: #50e3c2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tool_box > div > p {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+#Notice {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+#travel_magazine {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#Notice > #Notice_flex_div > div > a > img{
+    width: 550px;
+    height: 200px;
+    border-radius: 20px;
+}
+#Notice > div > a > img {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+footer {
+    width: 100%;
+    background-color: #50e3c2;
+    height: 300px;
+}
+#enterprise_info {
+    margin: 0 auto;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+#enterprise_info > #enterprise_info_text {
+    padding-top: 50px;
+    padding-left: 100px;
+}
+#enterprise_info > #enterprise_info_text > p {
+    color: rgb(77, 76, 76);
+}
+#enterprise_info > #enterprise_info_text > #bold {
+    font-size: 20px;
+    font-weight: 700;
+}
+#enterprise_info > #enterprise_info_text > p > a {
+    color: rgb(77, 76, 76);
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#sns_box {
+    margin-top: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+#sns_box > div > a > img {
+    width: 50px;
+}
+#icon_box > #TRIP {
+    margin-top: 20px;
+    text-align: center;
+}
+#icon_box > #TRIP > a > img {
+    width: 100px;
+}
+#city_bubble {
+    width: 1400px;
+    height: 1000px;
+    margin: 0 auto;
+    
+    
+}
+#city_bubble .bubble {
+    position: absolute;
+    
+}
+#city_bubble .bubble a {
+    color: white;
+    font-weight: bold;
+}
+#city_bubble #LAOS{
+    top: 3600px;
+    left: 530px;
+    letter-spacing: 5px;
+}
+#city_bubble #NEW_YORK{
+    top: 3700px;
+    left: 300px;
+    width: 120px;
+    height: 120px;
+}
+#city_bubble #PARIS{
+    top: 3930px;
+    left: 350px;
+    width: 130px;
+    height: 130px;
+}
+#city_bubble #MELBOURNE {
+    top: 3800px;
+    left: 550px;
+    width: 90px;
+    height: 90px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+#city_bubble #VLADIVOSTOK {
+    top: 3630px;
+    left: 730px;
+    font-size: 12px;
+}
+#city_bubble #BUSAN {
+    top: 3600px;
+    left: 930px;
+    width: 140px;
+    height: 140px;
+    font-size: 20px;
+}
+#city_bubble #kangreung_sokcho {
+    top: 3850px;
+    left: 750px;
+    width: 130px;
+    height: 130px;
+    font-size: 18px;
+}
+#city_bubble #LONDON {
+    top: 4000px;
+    left: 1020px;
+    width: 130px;
+    height: 130px;
+    font-size: 18px;
+}
+#city_bubble #jeju {
+    top: 3770px;
+    left: 1200px;
+    width: 150px;
+    height: 150px;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+#city_bubble #SYDNEY {
+    top: 3550px;
+    left: 1200px;
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+}
+#city_bubble #OSAKA {
+    top: 3600px;
+    left: 1500px;
+    width: 150px;
+    height: 150px;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+#city_bubble #BUDAPEST {
+    top: 3950px;
+    left: 1500px;
+    width: 130px;
+    height: 130px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#city_bubble .deco_bubble {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    background-color: #aeeee0;
+    position: absolute;
+}
+#city_bubble #bubble1 {
+    top: 4450px;
+    left: -100px;
+    z-index: -1;
+}
+#city_bubble #bubble2 {
+    top: 4300px;
+    left: 50px;
+    z-index: -1;
+}
+#city_bubble #bubble3 {
+    top: 4300px;
+    left: 900px;
+    z-index: -1;
+}
