@@ -12,11 +12,9 @@ header { background-image: url('../../../img/header_bg_thin.png'); background-re
 #logo_area > #logo > a > img{ width: 200px; margin-top: 50px; }
 #login_join { color: white; margin-top: 50px; }
 #login_join > a { color: white; font-weight: bold; font-size: 18px; text-decoration: none;}
-section { padding-top: 30px; text-align: center; box-sizing: border-box;}
+section { margin: 0 auto; width:1400px; padding-top: 30px; text-align: center; box-sizing: border-box;}
 #middle_logo, #middle_image { display: inline-block; margin: 0 auto; display: flex; align-items: center; justify-content: space-evenly; }
 
-
-section.sect { display: inline-block; border-radius: 2px; padding: 20px 0 0 0; background-color: plum; width: 650px; }
 section form { background-color: white; padding: 20px; margin: 20px 0 0 0; }
 section form p { display: block; text-align: justify; }
 
