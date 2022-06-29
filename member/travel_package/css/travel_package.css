@@ -30,6 +30,7 @@ a {
 }
 a:visited {
     text-decoration: none;
+    color: black;
 }
 #travel_package_list .packagebox div a:visited{
     text-decoration: none;
