@@ -108,37 +108,22 @@ a:visited {
     height: 400px;
     margin: 0 auto;
     margin-bottom: 30px;
-    background-image: url('../img/travel_package_bg.svg');
+    background-image: url('../img/남태평양사진.png');
     background-size: cover;
     background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-left: 40px;
+    box-sizing: border-box;
 }
+
 main {
     width: 1000px;
     margin: 0 auto;
 }
-#triple_sale {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-#triple_sale div a img {
-    width: 320px;
-    margin-bottom: 80px;
-}
-#travel_package_country {
-    width: 1000px;
-}
-#travel_package_country .country_area {
-    width: 100%;
-    margin-bottom: 10px;
-}
-#travel_package_country div a img {
-    width: 100%;
-    height: 200px;
-}
+
 #travel_package_menus {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: 50px;
@@ -146,6 +131,7 @@ main {
     margin-bottom: 50px;
 }
 #travel_package_menus a {
+    margin-left: 30px;
     font-size: 20px;
     color: black;
     font-weight: 700;
