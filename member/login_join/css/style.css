@@ -2,6 +2,8 @@
 
 .notosanskr * { font-family: 'Noto Sans KR', sans-serif; }
 
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
 body { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR'; }
 
 header { background-image: url('../../../img/header_bg_thin.png'); background-repeat: no-repeat; background-size: cover; margin: 0 auto; padding: 0; padding-bottom: 50px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-evenly; }
@@ -10,11 +12,11 @@ header { background-image: url('../../../img/header_bg_thin.png'); background-re
 #logo_area > #logo > a > img{ width: 200px; margin-top: 50px; }
 #login_join { color: white; margin-top: 50px; }
 #login_join > a { color: white; font-weight: bold; font-size: 18px; text-decoration: none;}
-section { padding-top: 30px; text-align: center; box-sizing: border-box; }
+section { padding-top: 30px; text-align: center; box-sizing: border-box;}
 #middle_logo, #middle_image { display: inline-block; margin: 0 auto; display: flex; align-items: center; justify-content: space-evenly; }
 
 
-section.sect { display: inline-block; border-radius: 2px; padding: 20px 0 0 0; background-color: plum; width: 650px; margin-bottom: 70px;}
+section.sect { display: inline-block; border-radius: 2px; padding: 20px 0 0 0; background-color: plum; width: 650px; }
 section form { background-color: white; padding: 20px; margin: 20px 0 0 0; }
 section form p { display: block; text-align: justify; }
 
@@ -36,3 +38,24 @@ footer { background-image: url(../../../img/footer_bg_thin.png); height: 300px; 
 #enterprise_info > #enterprise_info_text > p > a { color: #4F4F4F; opacity: 0.8; margin-left: 5px; margin-right: 5px; font-size: 18px; font-weight: bold; text-decoration: none; }
 #sns_box { margin-top: 230px; width: 200px; display: flex; justify-content: space-around; margin-right: 30px; }
 #sns_box > div > a > img { width: 50px; box-sizing: border-box; }
+
+/*회원가입*/
+
+.info_form { display: inline-block; width: 400px; line-height: 0.8; font-size: 16px; }
+.country_code_text, .phone_text {font-size: 14px; color: #888; margin-bottom: 7px;}
+.country_code > input[type="text"] { width: 70px; margin-left: 0; margin-right: 10px; background-color: white; border: 3px solid #B2F1DE;}
+.phone > input[type="text"] { width: 232px;}
+.user > #userid {width: 315px;}
+.content_join > input[type="submit"] { background-color: #B2F1DE; width: 400px; height: 50px; border-radius: 100px; text-align: center; margin-bottom: 10px; border: none; padding-left: 20px; font-size: 16px; color: white; font-size: 18px; margin-top: 20px;}
+
+.join_box {background-color:#fff; display:inline-block; }
+.checkBox, .checkBox > ul {position: relative; width: 400px; align-items: flex-end;}
+.checkBox > ul > li {text-align: left; float: left; height: 16px; font-weight: none;}
+.checkBox > ul > li:first-child {width: 85%; padding: 15px; color: #888;}
+.checkBox > ul > li:nth-child(2){position: absolute; top:50%; right:30px; margin-top: 14px; }
+.checkBtn > input[type="checkbox"], .checkAllBtn > input[type="checkbox"] {float: right;}
+.clearfix::after {content: ""; display: block; clear: both;}
+
+.text_box > input[type="text"] {margin-bottom: 20px;}
+
+input[type="button"] {width: 80px; height: 45px; color: #458CD3; background: none; border: none; font-weight: bold;}
