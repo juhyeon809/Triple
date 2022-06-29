@@ -5,8 +5,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>join.html</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <header>
+        <div id="logo_area">
+            <div id="logo"><a href="../../main.html"><img src="../../img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="./login.html">LOGIN</a> | <a href="./join.html">JOIN</a></div>
+        </div>
+    </header>
+    <section id="sect">
+        
+        <form action="#" name="regform" id="regform">
     
+            <ul class="list">
+                <li>
+                    <p class="info_form">이메일</p>
+                    <div class="content user">
+                        <input type="text" name="userid" id="userid" maxlength="20" placeholder="abc@gmail.com">
+                        <input type="button" name="btn" id="email_btn" value="인증하기">
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">비밀번호</p>
+                    <div class="content">
+                        <input type="password" name="userpw" id="userpw" maxlength="20" placeholder="영문, 숫자, 특수문자">
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">비밀번호 확인</p>
+                    <div class="content">
+                        <input type="password" name="userpw_re" id="userpw_re" maxlength="20" placeholder="비밀번호 확인">
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">닉네임</p>
+                    <div class="content">
+                        <input type="text" name="nickname" id="nickname" maxlength="20" placeholder="닉네임을 입력하세요">
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">휴대폰번호 인증</p>
+                    <div class="content">
+                        <table class="info_form">
+                            <tr>
+                                <td><p class="country_code_text">국가코드</p></td>
+                                <td><p class="phone_text">휴대폰번호</p></td>
+                            </tr>
+                            <tr>
+                                <td class="country_code"><input type="text" name="code" id="nickname" maxlength="20" placeholder="+ 82"></td>
+                                <td class="phone">
+                                    <input type="text" name="hp" id="hp" maxlength="20" placeholder="'-' 없이 숫자만 입력">
+                                    <input type="button" name="btn" id="phone_btn" value="인증하기">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">인증번호 입력</p>
+                    <div class="content text_box">
+                        <input type="text" name="Certification" id="Certification" maxlength="20" placeholder="숫자 6자리, 인증번호 입력">
+                    </div>
+                </li>
+                <li>
+                    <p class="info_form">약관 동의</p>
+                    <div>
+                        <ul class="join_box">
+                            <li class="checkBox check01">
+                                <ul class="clearfix">
+                                    <li>전체 동의합니다.</li>
+                                    <li class="checkAllBtn">
+                                        <input type="checkbox" name="chkAll" id="chk" class="chkAll">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="checkBox check02">
+                                <ul class="clearfix">
+                                    <li>만 14세 이상입니다. (필수)</li>
+                                    <li class="checkBtn">
+                                        <input type="checkbox" name="chk">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="checkBox check03">
+                                <ul class="clearfix">
+                                    <li>서비스 이용약관 (필수)</li>
+                                    <li class="checkBtn">
+                                        <input type="checkbox" name="chk">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="checkBox check04">
+                                <ul class="clearfix">
+                                    <li>개인정보 수집 및 이용 동의 (필수)</li>
+                                    <li class="checkBtn">
+                                        <input type="checkbox" name="chk">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="checkBox check05">
+                                <ul class="clearfix">
+                                    <li>위치서비스 이용 동의 (필수)</li>
+                                    <li class="checkBtn">
+                                        <input type="checkbox" name="chk">
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="checkBox check06">
+                                <ul class="clearfix">
+                                    <li>이벤트 및 할인 혜택 안내 동의</li>
+                                    <li class="checkBtn">
+                                        <input type="checkbox" name="chk">
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="content_join">
+                        <input type="submit" value="확인" class="join_btn">
+                    </div>
+                </li>
+
+                <li>
+                    <div class="content">
+                        <p>트리플 회원이신가요? <a href="./login.html">로그인 ></a></p>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </section>
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="../../img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../../img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../../img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
