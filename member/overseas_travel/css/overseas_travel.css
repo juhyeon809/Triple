@@ -1,0 +1,338 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'notosanskr';
+}
+a {text-decoration-line: none ; color: black;}
+a:link {text-decoration:none;} /*링크가 걸려있는 모든 것들의 밑줄을 지워줘*/
+a:visited {text-decoration: none; color: black;}
+a:hover {text-decoration: none;} /*마우스를 갖다대면 밑줄이 생기게 해주고 색상을 변경해줘*/
+a:active {text-decoration: none;}
+
+/*헤더*/
+#logo_area {
+    margin: 0 auto;
+    width: 1300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#search {
+    margin-left: 500px;
+    display: flex;
+    align-items: center;
+}
+#search > button {
+    background-color: #50e3c2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    
+}
+
+#logo_area > #logo > a > img{
+    margin-top: 50px;
+}
+#menu_form{
+    margin-top: 50px;
+}
+#login_join > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#login_join {
+    color: white;
+    margin-top: 50px;
+}
+header {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../../../img/header_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.float_clear {
+    clear: both;
+}
+
+#menu_area {
+    padding-bottom: 30px;
+}
+
+#menu_area > #menus {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#menu_area > #menus > li {
+    list-style: none;
+}
+#menu_area > #menus > li > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#logo_area > p { 
+    padding-top: 40px;
+    color: white;   
+}
+#logo_area #search > input {
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    border-width: 0px;
+    padding-left: 20px;
+}
+#logo_area > p > a{ 
+    padding-top: 40px;
+    color: white;
+    font-weight: 700;   
+}
+
+/*해외여행 메인*/
+
+main {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+#triple_sug {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+#triple_sug > div > a > img {
+    width: 230px;
+    height: 270px;
+    border-radius: 20px;
+}
+
+main > p {
+    margin-left: 250px;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#best_overseas_list {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flexbox;
+    align-items: center;
+}
+
+#best_overseas_list > div > a > img{
+    width: 1000px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+#overseas_notice {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flexbox;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+
+}
+#overseas_notice > div {
+    line-height: 2;
+    padding: 20px 50px 0 50px;
+    margin-top: 30px;
+}
+#overseas_notice > div:first-child {
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+#overseas_notice > div:last-child {
+    padding-bottom: 30px;
+}
+
+#global_go_btn {
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#global_go_btn > input[type="button"] {
+    width: 250px;
+    height: 70px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #50e3c2;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+}
+
+/*푸터*/
+footer {
+    width: 100%;
+    background-color: #50e3c2;
+    opacity: 0.5;
+    height: 300px;
+    margin-top: 50px;
+    
+}
+#enterprise_info {
+    margin: 0 auto;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+#enterprise_info > #enterprise_info_text {
+    padding-top: 50px;
+    padding-left: 100px;
+    font-weight: bold;
+}
+#enterprise_info > #enterprise_info_text > p {
+    color: rgb(77, 76, 76);
+}
+#enterprise_info > #enterprise_info_text > #bold {
+    font-size: 20px;
+    font-weight: 700;
+}
+#enterprise_info > #enterprise_info_text > p > a {
+    color: rgb(77, 76, 76);
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#sns_box {
+    margin-top: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+#sns_box > div > a > img {
+    width: 50px;
+}
+#icon_box > #TRIP {
+    margin-top: 20px;
+    text-align: center;
+}
+#icon_box > #TRIP > a > img {
+    width: 100px;
+}
+
+
+
+
+/*overseas_travel_guam.html*/
+#map {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#map > div > a > img{
+    width: 600px;
+}
+.container {
+    display: flex;
+    align-items: flex-end;
+}
+#like_place {
+    border-radius: 100px;
+    width: 50px;
+    height: 30px;
+    padding: 5px 20px 0 ;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px rgb(176, 176, 176);
+}
+#like_place > a > div {
+    align-items: center;
+}
+#like_place > a > div > img{
+    width: 16px;
+    margin-right: 10px;
+}
+#like_place > a > div > span{
+    font-size: 18px;
+}
+.btn_con {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+#items_list{
+    width: 950px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 20px;
+    background-color: rgb(241, 241, 241);
+    margin-top: 50px;
+    border-radius: 5px;
+    display: flex;
+    box-sizing: inherit;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#items_list > a{
+    display: block;    
+}
+
+div.item {
+    width: 420px;
+    padding: 20px;
+}
+
+div.item > p {
+    width: 420px;
+    word-break: keep-all;
+}
+div.item > p:first-child{
+    display: flex;
+    justify-content: space-between;
+}
+div.item > p:first-child, div.item > .item_price {
+    font-size: 18px;
+    font-weight: bold;
+}
+div.item > p:first-child > span > img {
+    width: 24px;
+}
+
+div.item > p > img {
+    width: 100%;
+}
+
+div.item > p > .review_star {
+    color: rgb(244, 197, 7);
+}
