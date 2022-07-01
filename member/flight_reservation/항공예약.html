@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트리플 | 항공예약</title>
+    <link rel="stylesheet" href="fly.css">
+    <link rel="stylesheet" href="../../main.css">
+</head>
+<body>
+    <header>
+        <div id="logo_area">
+            <div id="logo"><a href="../../main.html"><img src="../../img/logo_triple.svg" alt=""></a></div>
+            <form id="menu_form">
+                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+            </form>
+            <div id="login_join"><a href="#">LOGIN</a> | <a href="#">JOIN</a></div>
+           
+        </div>
+        <div id="menu_area">
+            <ul id="menus">
+                <li><a href="../overseas_travel/overseas_travel.html">해외여행</a></li>
+                <li><a href="./국내여행">국내여행</a></li>
+                <li><a href="../flight_reservation/air.html">항공예약</a></li>
+                <li><a href="./숙소예약">숙소예약</a></li>
+                <li><a href="./투어티켓">투어<span>&#183;</span>티켓</a></li>
+                <li><a href="../travel_package/travel_package.html">패키지여행</a></li>
+                <li><a href="./여행매거진">여행매거진</a></li>
+                <li><a href="./혜택렌터카">혜택/렌터카</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="container">
+        <div class="title">
+            <h2>예약하기</h2>
+        </div>
+        <div class="tbox">
+            <div class="leftbox">
+                <div class="flyinfopay">
+                    <p>서울-괌 항공편</p>
+                    <div>
+                        <p class="pleft">날짜
+                        <span class="pright">2022.7.2.토 - 2022.7.4(일)</span></p>
+                        <p class="pleft">인원 및 등급
+                        <span class="pright">성인1, 일반석</span></p>
+                        <p class="pleft">발권 항공사
+                        <span class="pright" style="margin-bottom: 20px;">제주항공</span></p>
+                    </div>
+                    <p class="pleft">총 결제금액
+                    <span class="pright">542,300원</span></p>
+                </div>
+            </div>
+            <div class="rightbox">
+                <div class="paydtail">
+                    <h3>상세요금 보기</h3>
+                    <p>상기 요금은 유류할증료 및 제세공과금을 포함한 총액요금이며, 유류할증료 및 제세공과금은 유가와 환율에 따라 변동 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mbox">
+            <p class="title">예약자 정보</h3>
+            <p>이름</p>
+            <input type="text" id="name" placeholder="실명, 한글로 입력">
+            <p>휴대전화번호</p>
+            <input type="text" id="ph" placeholder="-빼고 숫자만 입력">
+            <p>이메일</p>
+            <input type="text" id="email" placeholder="ID@triple.com">
+            <p class="pnon">위의 이메일로 예약확정 안내(바우처 등)가 전송됩니다.</p>
+            <p>비상연락처</p>
+            <input type="text" id="ph2" placeholder="-빼고 숫자만 입력">
+            <p class="pnon">비상연락처는 예약자 및 탑승객 휴대전화번호와 다른 번호로 입력해주세요.</p>
+        </div>
+        <div class="bbox">
+            <div class="leftb">
+                <p class="title">탑승객 정보 <span>탑승객1 (성인)</span></p>
+                <div class="inLeft">
+                    <p>영문성</p>
+                    <input type="text" id="" placeholder="HONG">
+                    <p class="btSm">예약 후 변경 불가</p>
+                </div>
+                <div class="inRight">
+                    <p>영문이름</p>
+                    <input type="text" id="" placeholder="GILDONG">
+                    <p class="btSm">예약 후 변경 불가</p>
+                </div>
+                <div class="inLeft inLeft1">
+                    <p>생년월일</p>
+                    <input type="text" id="" placeholder="2000-06-01">
+                    <p class="btSm">예약 후 변경 불가</p>
+                </div>
+                
+                <div class="inRight">
+                    <p>성별</p>
+                        <label for="남자"><input type="checkbox" name="남자" id="남자">남자</label>
+                        <label for="여자"><input type="checkbox" name="여자" id="여자">여자</label>
+                    <p class="btSm">예약 후 변경 불가</p>
+                </div>
+                <div class="inLeft1">
+                    <p>휴대전화번호 (선택)</p>
+                        <input type="text" placeholder="-빼고 숫자만 입력">
+                    
+                </div>
+            </div>
+            <div class="rightb">
+                <p class="title">여권정보</p>
+                <div class="inLeft">
+                    <p>국적</p>
+                    <select name="" id="" aria-placeholder="대한민국">
+                        <option value="">대한민국</option>
+                    </select>
+                </div>
+                <div class="inRight">
+                    <p>여권번호</p>
+                    <input type="text" id="" placeholder="영문/숫자만 입력">
+                    
+                </div>
+                <div class="inLeft inLeft1">
+                    <p>여권 만료일</p>
+                    <input type="text" id="" placeholder="YYYYMMDD">
+                    <p class="btSm">예약 후 변경 불가</p>
+                </div>
+                
+                <div class="inRight inRight1">
+                    <p>여권 발행국</p>
+                        <select name="" id="" aria-placeholder="대한민국">
+                            <option value="">대한민국</option>
+                        </select>
+                </div>
+                <div class="cont">
+                    <p style="color: red;">미국 경유/도착 시 안내 사항</p>
+                    <p>미국을 경유하거나, 미국에 도착하는 승객은 반드시 미국내 체류지 정보, 탑승객별(성인/소아) 전화번호를 출국 72시간 전까지 내 예약 상세페이지에서 입력하셔야 합니다.</p>
+                    <p>예약자 비상연락처에는 예약처/탑승객에 포함되지 않은 제 3자 전화번호로 입력하셔야 합니다.</p>
+                    <p>미입력하거나 잘못 입력시 입국이 거절 되거나 벌금이 부과될 수 있습니다.</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="lastbox lastbox2">
+        <div class="contag">
+            <p><label for="check1"><a href="#">항공사 운임 규정 (변경,환불 및 수하물 정보 등)</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check1" id="check1"></label></p>
+            <p><label for="check2"><a href="#">트리플 예약규정</a>, <a href="#">개인정보 수집 및 이용</a>, <a href="#">개인정보 제 3자 제공</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check2" id="check2"></label></p>
+            
+        </div>
+        <a href="airpay.html"><input type="button" value="예약하기" class="Btn"></a>
+    </div>
+</div>
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p id="bold">트리플 사업자 정보</p>
+                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="../img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+                <div id="TRIP"><a href="#"><img src="../img/footer_TRIP.png" alt="TRIP"></a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

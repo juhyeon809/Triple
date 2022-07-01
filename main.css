@@ -16,7 +16,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
     font-family: 'Noto Sans KR';
+=======
+    font-family: 'notosanskr';
+>>>>>>> e2d4565d04fd8c1f01007b78e93646482c90fe58
 }
 a {
     text-decoration-line: none ;
