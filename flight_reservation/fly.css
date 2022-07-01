@@ -1,0 +1,633 @@
+
+/* 항공권 예약 */
+
+#container {
+    margin: 0 auto; 
+    width: 100%;
+    }
+.title {
+    width: 950px; 
+    margin: 0 auto; 
+    margin-top: 50px;
+}
+.title h2{  
+    font-size: 30px;
+}
+#flybox {
+    background-color:  #eee; 
+    padding: 20px; 
+    width: 900px;
+     margin: 0 auto; 
+}
+.flybox p { 
+    text-align: center; 
+    padding: 0 170px;
+}
+.flybox p:first-child {
+    padding: 0;
+}
+.flybox img { 
+    width: 40px; 
+    margin-top: 10px;
+    padding-right: ;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+input[type="date"]::before{
+    
+        content: attr(data-placeholder);
+        width: calc(100%);
+        color: #757575;
+}
+
+.flylist{ 
+    width: 440px; 
+    height: 60px;
+    border: none; 
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    font-size: 25px;
+    }
+.flybtn {
+    width: 80px; 
+    border: none; 
+    background-color: #deeeff; 
+    color: #468cd3; 
+    padding: 10px;  
+    border-radius: 45px; 
+    font-size: 20px;
+}
+.flybtnlist { 
+    background-color:#deeeff; 
+    border-radius: 45px; 
+    width: 200px;
+    margin-left: 50px;
+}
+.flybtnlist input[type="button"]{ width: 100px;}
+.flybtnlist input[type="button"]:active {background-color: #b2d2f2;  }
+.flybtnlist input[type="button"]:hover{background-color: #b2d2f2;  }
+
+.flyseurch {
+    background-color: #4e91d5; 
+    color: white; 
+    border: none; 
+    width: 400px; height: 50px; 
+    border-radius: 10px; 
+    font-size: 25px;
+}
+
+#cheapbox {
+    margin: 0 auto; 
+    display: flex;
+}
+
+.special .imgbox {
+    width: 150px; height: 150px;
+    border-radius: 10px; 
+    background-image: url(./fly_img/교차\ 98\ 1.png);  
+    margin: 0; padding: 0; 
+}
+.special .imgbox p {
+    margin: 0; 
+    color: white; 
+    width: 150px; 
+    padding-left: 10px;
+}
+.special .imgbox p:first-child {padding-top: 5px; }
+.special .imgbox p:nth-child(2) {margin-top: 70px;}
+
+.cheap{ 
+    clear: both;  
+    margin-top: 50px;
+     margin: 0 auto; 
+     margin-bottom: 300px;
+    }
+.special .imgbox { 
+    box-sizing: border-box; 
+    float: left; 
+    margin-right: 20px;  
+    margin-bottom: 20px; 
+}
+.special .imgbox:nth-child(6) {clear: both;}
+
+h4 {font-size: 30px;}
+
+
+
+/* 항공기 찾기 */
+
+.title {width: 1100px;}
+.title h3 {
+    color: #468cd3; 
+    margin: 0 auto; 
+    font-size: 20px;
+}
+#list {
+    width: 1000px; 
+    margin: 0 auto;
+}
+.serchset ul { 
+    width: 1100px;
+    margin: 0 auto;
+    padding: 0;
+    }
+.serchset li { display: inline-block;}
+select {
+    border: 1px solid #fff; 
+    border-radius: 5px;
+}
+.citysel1{  font-size: 30px;}
+select.sitysel2{ 
+    font-size: 17px; 
+    padding: 3px 15px;
+}
+select:active {border: 1px solid #468cd3;}
+select:hover {border: 1px solid #468cd3;}
+select > option {border: none;}
+
+.serchset button { 
+    border: 1px solid #ccc; 
+    background-color: #fff; 
+    border-radius: 5px; 
+    padding: 3px 15px;
+}
+.serchset button:active { border: 1px solid #468cd3;}
+.serchset .scword {
+     width: 1100px;
+      margin: 10px auto; 
+      font-size: 30px;
+    }
+.serchset .scword span {
+    font-size: 20px; 
+    padding-left: 40px; 
+    color: #969696;
+}
+
+
+#list {margin-bottom: 300px;}
+.ticket {float: left; width: 80%; }
+img {float: left;}
+
+.time { 
+    font-size: 30px; 
+    float: left; 
+    margin-bottom: 0; 
+}
+.ftime { 
+    font-size: 30px; 
+    float: right; 
+    margin-bottom: 0;
+}
+p.sm { 
+    color: #bbb; 
+    font-size: 15px;  
+    clear: both;  
+    margin: 0; 
+    width: 600px; 
+    margin-left: 55px;
+}
+.sm span { 
+    float: right; 
+    padding-right: 20px;
+}
+.won {
+    font-size: 30px; 
+    float: right; 
+    margin-top: 50px; 
+    vertical-align: middle; 
+}
+.section { 
+    float: left;
+     width: 80%; 
+    }
+.body { 
+    height: 250px; 
+    border-bottom:  1px solid #ccc;
+}
+.price {
+    float: right; 
+    margin-top: 50px;
+}
+
+ 
+
+/* 항공편 정보 */
+
+.comtofly {
+    width: 1500px; 
+    height: 300px; 
+    margin: 0 auto;
+}
+.flyinfoBox { 
+    width: 1070px; 
+    height: 180px; 
+    border: 1px solid #eee; 
+    border-radius: 10px;
+    padding: 10px; 
+    margin-left: 15%; 
+    margin-bottom: 20px; 
+    float: left;
+}
+.chinfo {
+    width: 200px; height: 100px; 
+    border: 1px solid #D2D1D1; 
+    border-radius: 10px;
+     padding: 10px 10px 0 10px; 
+     float: right; 
+    }
+.chinfo img {width: 40px;}
+.chinfo p {
+    width: 180px; 
+    margin: 0 0 0 50px; 
+    word-break: keep-all;
+}
+
+.infoMiniTit p {
+    font-weight: bold; 
+    font-size: 18px; 
+    margin-bottom: 0; 
+    margin-top: 0;
+}
+.infoMiniTit span { 
+    color: #a0a0a0;  
+    margin-top: 0; 
+    font-size: 14px; 
+}
+.flytimebox {
+    width: 700px; 
+    padding-top: 20px; 
+    margin: 0 auto;
+}
+.flyinfoTime .infoCent {
+    position: relative; 
+    color: #a0a0a0;  
+    padding-left: 25%;
+}
+.pblue, .pblue2 { 
+    color: #468cd3; 
+    font-weight: bold; 
+    margin: 0 0;
+}
+.pblue { float: left;}
+.pblue2 {float: right;}
+
+.infoImg{ clear: both; }
+.infoImg img {
+    width: 650px; 
+    padding-left: 25px;
+}
+
+.flyinfoPlace div {
+    margin-top: 50px; 
+    width: 800px; 
+    height: 50px;
+}
+.flyinfoPlace p:nth-child(3) {
+    clear: both; 
+    color: #a0a0a0; 
+    font-size: 13px; 
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+.flyinfoPlace span { float: right; }
+.infoCent {margin: 0 auto;}
+
+
+
+.totalPrice {
+    width: 1120px; height: 300px; 
+    background-color: #eee;
+     margin: 0 auto;  
+     clear: both;
+    }
+.totalPrice .inner {
+     width: 900px; height: 300px; 
+      padding-top: 20px; 
+      margin: 0 auto;
+    }
+.totalPrice .inner p:first-child {
+    font-size: 25px; 
+    margin-bottom: 0;
+}
+.totalPrice .inner p:first-child span {
+    float: right; 
+    font-size: 18px; 
+    color: #a0a0a0; 
+    text-decoration: line-through; 
+}
+.totalPrice .inner p:nth-child(2) {
+    clear: both; 
+    font-size: 20px; 
+    color: #757575; 
+    text-decoration: underline; 
+    margin-top: 0; 
+}
+.totalPrice .inner p:nth-child(2) span {
+    float: right; 
+    font-size: 30px; 
+    color: black; 
+    font-weight: bold;
+    vertical-align: middle; 
+}
+.totalPrice .inner p:last-child { 
+    padding-left: 20%; 
+    margin-top: 40px;
+}
+.totalPrice .inner input { 
+    width: 300px; 
+    height: 60px; 
+    border: 1px solid #468cd3;
+    border-radius: 5px; 
+    font-size: 25px;
+}
+.totalPrice .inner input:first-child { 
+    color: #468cd3; 
+    font-weight: bold; 
+    margin-right: 10px;
+}
+.totalPrice .inner input:last-child {
+    color: white; 
+    font-weight: bold; 
+    background-color: #468cd3;
+}
+
+.flyseurchNotice {
+    width: 1000px; 
+    height: 500px; 
+    margin: 0 auto; 
+    margin-top: 40px; 
+    padding-left: 0px;
+}
+.flyseurchNotice p{
+    color: #969696;
+     margin:0; 
+     font-size: 18px;
+    }
+.flyseurchNotice > div {margin-top: 20px;}
+
+/* 항공 예약하기 */
+
+.tbox {
+    width: 1078px; height: 300px; 
+    margin: 0 auto; 
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.leftbox {
+    width: 540px; 
+    float: left;
+}
+
+.flyinfopay p {
+    font-size: 25px; 
+    font-weight: bold; 
+    clear: both;
+}
+.flyinfopay span {float: right;}
+.flyinfopay div p {
+    font-size: 20px; 
+    color: #919191; 
+    width: 100%; 
+    margin: 0;
+}
+.flyinfopay div p.pleft { float: left; }
+.flyinfopay div p span {float: right;}
+.flyinfopay .div {margin-bottom: 20px;}
+
+.rightbox {
+    float: right; 
+    width: 520px; 
+    height: 180px;
+    background-color: #fafafa; 
+    border-radius: 10px;
+} 
+.rightbox .paydtail { 
+    padding: 0 20px;
+     margin-top: 0; 
+     font-size: 20px; 
+     color: #919191
+    }
+.rightbox .paydtail h3 {text-decoration: underline;}
+
+.mbox { 
+    width: 1078px;
+     margin: auto; 
+     margin-bottom: 150px;
+    }
+.mbox .title {
+    font-size: 25px; 
+    font-weight: bold;
+}
+.mbox p {
+    margin: 10px 0 0 0; 
+    font-size: 18px;
+}
+.mbox p.pnon { 
+    font-size: 16px; 
+    margin-top: 0; 
+    color: #858585;
+}
+.mbox input {
+    border-radius: 5px; 
+    width: 260px; height: 40px; 
+    border: 1px solid #707070; 
+    background-color: #f7f7f7;
+}
+
+.bbox{
+    display: flex; 
+     width: 1078px; 
+     margin: 0 auto; 
+     margin-bottom: 200px;
+    }
+.bbox .leftb {width: 547px; }
+.bbox .leftb .title { 
+    font-size: 25px; 
+    font-weight: bold;
+}
+.bbox .leftb .title span {
+    font-size: 18px; 
+    color: #468cd3;
+    font-weight: 300;
+ }
+.bbox .leftb label {width: 300px; }
+.bbox .leftb input[type="checkbox"] {width: 15px;}
+.bbox .inLeft {float: left; width: 280px;}
+.bbox .inLeft1 {clear: both;}
+.bbox .inRight input {width: 240px; }
+.bbox .btSm { 
+    margin-top: 0; 
+    font-size: 16px; 
+    color: #868686;
+}
+
+
+.bbox { 
+    width: 1078px; 
+    margin: auto; 
+}
+.bbox p {margin: 10px 0 0 0;}
+.bbox p.pnon { 
+    font-size: 16px; 
+    margin-top: 0;
+}
+.bbox input {
+    border-radius: 5px; 
+    width: 250px; height: 40px; 
+    border: 1px solid #707070; 
+    background-color: #f7f7f7;
+}
+
+.bbox .rightb {
+    float: right; 
+    width: 530px; 
+    margin-bottom: 50px;
+}
+.bbox .rightb .title { 
+    font-size: 25px; 
+    font-weight: bold;
+}
+.bbox .rightb select {
+    width: 260px; 
+    height: 44px;
+} 
+.bbox .rightb .inLeft1 {margin-top: 20px;}
+.bbox .rightb .inRight1 {margin-top: 30px;}
+.bbox .rightb .inRight1 select {width: 250px;}
+
+
+.cont { 
+    clear: both; 
+    background-color: #fafafa;
+     border-radius: 10px; 
+     padding: 5px 10px 10px; 
+     margin-top: 80px;
+    }
+
+.lastbox {
+    width: 1078px;  
+    margin: 0 auto; 
+    margin-bottom: 400px;
+}
+.contag {
+    margin: 0 auto; 
+    width: 800px; 
+    float: left;
+}
+.lastbox .Btn {
+    float: right; 
+    width: 220px; height: 50px; 
+    border: none; color: #fff; 
+    background-color: #468cd3;
+    border-radius: 10px; 
+    font-size: 25px;
+}
+
+footer {clear: both;}
+
+
+/* 항공 결제하기 */
+
+.payinfo p {
+    font-size: 20px;  
+    clear: both;  
+    color: red; 
+    word-break: keep-all;
+}
+.payinfo span {float: right;}
+.payinfo div p {
+    font-size: 25px; 
+     width: 100%; 
+     color: #000; 
+    }
+.payinfo div .pleft { 
+    float: left; 
+    font-weight: bold;
+}
+.payinfo div p span {float: right;}
+.payinfo .div {margin-bottom: 20px;}
+
+
+
+.red {padding-left: 20px;}
+
+.mbox2{
+    border-bottom: 1px solid #cbcbcb;
+}
+.mbox2 .title { 
+    
+   margin-top: 50px;
+}
+.mbox2 .minit {
+    font-size: 25px; 
+    color: #425052;
+    margin-top: 20px;
+}
+
+.mbox2 .fin {
+    width: 520px;
+    font-size: 20px;
+    color: #919191;
+}
+.mbox2 .fin2 {
+   margin-top: 0;
+}
+.mbox2 .fin3 {
+    margin-bottom: 50px;
+ }
+.mbox2 span{float: right;}
+
+
+.bbox2 { 
+    display: block;
+}
+.bbox2 .paynoti{
+    background-color: #fafafa;
+    border-radius: 10px;
+    height: 105px;
+    padding-top: 20px;
+}
+.bbox2 p.title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.bbox2 .paynoti .bold { font-weight: bold;}
+.bbox2 .paynoti p {
+    font-size: 20px;
+    padding-left: 20px;
+    color: #919191;
+}
+
+.pay {
+    width: 520px; height: 50px; 
+    border: none; color: #fff; 
+    background-color: #468cd3;
+    border-radius: 10px; 
+    font-size: 25px;
+}
+.lastbox2 .title {
+    font-size: 25px;
+    font-weight: bold;
+}
+.lastbox2 .leftb{
+    float: left;
+    width: 520px;
+    font-size: 18px;
+}
+
+.lastbox2 .rightb {
+    width: 508px;
+    height: 135px;
+    float: right;
+    font-size: 18px;
+    color: #919191;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #cbcbcb;
+}
+.lastbox2 .rightb img {
+    padding-left: 10px;
+    margin-right: 20px;
+}
