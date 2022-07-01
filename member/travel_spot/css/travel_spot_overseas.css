@@ -1,0 +1,25 @@
+#main_contents {
+    width: 900px;
+    margin: 0 auto;
+}
+#title_text {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+#sub_text {
+    margin: 0;
+    font-size: 16px;
+    color: rgb(77, 76, 76);
+}
+#onedaytrip_box {
+    width: 100%;
+}
+
+#onedaytrip_box a img { width: 175px; height: 175px;}
+#flight_box {
+    margin: 50px 0;
+}
+#flight_box div img {
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+main {
+    padding-bottom: 20px;
+}
+#guide_menus p a, #guide_menus p {
+    color: rgb(176 , 202 , 233);
+    font-size: 18px;
+    font-weight: 700;
+}
+#guide_content_box .list_title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#content_list {
+    width: 900px;
+    margin: 0 auto;
+}
+#content_flex_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+#content_flex_box div p {
+    font-weight: 700;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#content_flex_box div .title_text {
+    font-size: 24px;
+    padding-top: 20px;
+}
+#content_flex_box div .title_text a{
+    color: black;
+}
+#content_flex_box div img {
+    width: 300px;
+}
