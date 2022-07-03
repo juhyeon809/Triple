@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple RoomReservation_main</title>
+    <link rel="stylesheet" href="../css/lodging_room_main.css">
+    <link rel="stylesheet" href="../lodging_room/css/lodging_room_main.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+    <div id="backg_image_area">
+        <header>
+            <div id="logo_area">
+                <div id="logo"><a href="../../main.html"><img src="../../img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+                <form id="menu_form">
+                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+                </form>
+                <div id="login_join"><a href="../login_join/login.html">LOGIN</a> | <a href="../login_join/join.html">JOIN</a></div>
+    
+            </div>
+            <div id="menu_area">
+                <ul id="menus">
+                    <li><a href="../overseas_travel/overseas_travel.html">해외여행</a></li>
+                    <li><a href="../domestic_travel/domestic_travel.html">국내여행</a></li>
+                    <li><a href="../flight_reservation/">항공예약</a></li>
+                    <li><a href="./lodging_room.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
+                    <li><a href="../tour_ticket/tour_ticket.html">투어<span>&#183;</span>티켓</a></li>
+                    <li><a href="../travel_package/travel_package.html">패키지여행</a></li>
+                    <li><a href="../magazine/magazine.html">여행매거진</a></li>
+                    <li><a href="../event/event.html">혜택/렌터카</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="lodging_img">
+            <img src="./img/숙소예약.png" alt="숙소예약">
+        </div>
+        <div id="main_room_search">
+            <h2>최저가 숙소 비교 예약</h2>
+            <div id="room_search_box">
+                <div id="room_search_location"><img src="./img/검색.png" alt="검색"><input type="text" placeholder="지역" ></div>
+                <div id="room_search_date"><img src="./img/달력.png" alt="날짜"><input type="text" placeholder="날짜"></div>
+                <div id="room_search_persons"><img src="./img/인원.png" alt="인원"><input type="text" placeholder="인원수"></div>
+                <div><button type="submit" value="숙소 검색" id="room_search_button">숙소 검색</button></div>
+            </div>
+        </div>
+        <div id="main_room_travel_recommend">
+            <p><h2>추천 여행지</h2></p>
+                <div id="loas"><a href="./라오스"><img src="img/라오스.jpg" alt="라오스">
+                    <!-- <div id="loas_text">LAOS</div></a> -->
+                </div>
+                <div id="vladivostok"><a href="./블라디보스톡"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="busan"><a href="./부산"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="sydney"><a href="./시드니"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="osaka"><a href="./오사카"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="newyork"><a href="./뉴욕"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="melbourne"><a href="./멜버른"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="ganrueng"><a href="./강릉속초"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="jeju"><a href="./제주"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="london"><a href="./런던"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="paris"><a href="./파리"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="budapest"><a href="./부다페스트"><img src="img/라오스.jpg" alt="라오스"></a></div>
+                <div id="everycity"><a href="./전체도시보기"> 전체 도시 보기</a></div>
+                <div id="clear"><p></p></div>
+            </div>
+        </div>
+        <div id="main_recent_room">
+            <p><h2>최근본 숙소</h2></p>
+            <div id="recent1"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="recent2"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소2"></a></div>
+            <div id="recent3"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소3"></a></div>
+            <div id="recent4"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소4"></a></div>
+            <div id="recent5"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소5"></a></div>
+            <div id="clear"><p></p></div>
+        </div>
+        <div id="main_family_best">
+            <div id="everyfamilybest"><a href="./패밀리숙소BEST">전체보기</a></div>
+            <p><h2>패밀리 숙소 BEST</h2></p>
+            <div id="familybest1"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="familybest2"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="familybest3"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="familybest4"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="familybest5"><a href="#"><img src="./img/lodging.jpg" alt="최근본숙소1"></a></div>
+            <div id="clear"><p></p></div>
+        </div>
+        <div id="main_earlybird">
+            <div id="everyearlybird"><a href="./얼리버드">전체보기</a></div>
+            <p><h2>전세계 인기 호텔 얼리버드 특가 모음</h2></p>
+            <div id="earlybird1"><a href="#"><img src="./img/lodging.jpg" alt="얼리버드1"></a></div>
+            <div id="earlybird2"><a href="#"><img src="./img/lodging.jpg" alt="얼리버드2"></a></div>
+            <div id="earlybird3"><a href="#"><img src="./img/lodging.jpg" alt="얼리버드3"></a></div>
+            <div id="clear"><p></p></div>
+        </div>
+        <div id="main_jeju_best">
+            <div id="everyjejubest"><a href="./제주BEST">전체보기</a></div>
+            <p><h2>제주 BEST 숙소</h2></p>
+            <div id="jejubest1"><a href="#"><img src="./img/lodging.jpg" alt="제주BEST1"></a></div>
+            <div id="jejubest2"><a href="#"><img src="./img/lodging.jpg" alt="제주BEST2"></a></div>
+            <div id="jejubest3"><a href="#"><img src="./img/lodging.jpg" alt="제주BEST3"></a></div>
+            <div id="jejubest4"><a href="#"><img src="./img/lodging.jpg" alt="제주BEST4"></a></div>
+            <div id="jejubest5"><a href="#"><img src="./img/lodging.jpg" alt="제주BEST5"></a></div>
+            <div id="clear"><p></p></div>
+        </div>
+        <div id="main_megazine">
+            <div id="everymegazine"><a href="./잡지">전체보기</a></div>
+            <p><h2>호텔·펜션 매거진</h2></p>
+            <div id="megazine1"><a href="#"><img src="./img/megazine.jpg" alt="호텔·펜션1"></a></div>
+            <div id="megazine2"><a href="#"><img src="./img/megazine.jpg" alt="호텔·펜션2"></a></div>
+            <div id="megazine3"><a href="#"><img src="./img/megazine.jpg" alt="호텔·펜션3"></a></div>
+            <div id="megazine4"><a href="#"><img src="./img/megazine.jpg" alt="호텔·펜션4"></a></div>
+            <div id="clear"><p></p></div>
+        </div>
+        <footer>
+            <div id="enterprise_info">
+                <div id="enterprise_info_text">
+                    <p id="bold">트리플 사업자 정보</p>
+                    <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                    <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+    
+                    <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+                </div>
+                <div id="icon_box">
+                    <div id="sns_box">
+                        <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                    </div>
+                    <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

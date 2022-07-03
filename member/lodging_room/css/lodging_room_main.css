@@ -1,3 +1,182 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+#logo_area {
+    margin: 0 auto;
+    width: 1300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'notosanskr';
+}
+a {
+    text-decoration-line: none ;
+}
+a:visited {
+    text-decoration: none;
+}
+#search {
+    margin-left: 400px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+#search > button {
+    background-color: #50e3c2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    
+}
+
+#logo_area > #logo > a > img{
+    margin-top: 50px;
+}
+#menu_form{
+    margin-top: 50px;
+}
+#login_join > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#login_join {
+    color: white;
+    margin-top: 50px;
+}
+header {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../img/header_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.float_clear {
+    clear: both;
+}
+
+#menu_area {
+    padding-bottom: 30px;
+}
+
+#menu_area > #menus {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 40px;
+    
+}
+#menu_area > #menus > li {
+    list-style: none;
+}
+#menu_area > #menus > li > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#logo_area > p { 
+    padding-top: 40px;
+    color: white;   
+}
+#logo_area #search > input {
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    border-width: 0px;
+    padding-left: 20px;
+}
+#logo_area > p > a{ 
+    padding-top: 40px;
+    color: white;
+    font-weight: 700;   
+}
+#head_text_area {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#head_text {
+    margin-left: 50px;
+    width: 550px;
+    text-shadow: 1px 1px 10px rgb(48, 48, 48);
+}
+#head_text > p {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+#head_search_air {
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+#head_search_air p > input{
+    width: 300px;
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+    border-bottom-width: 3px;
+    background-color: transparent;
+    font-size: 20px;
+}
+#head_search_air p > input::placeholder{
+    color: white;
+    font-weight: 700;
+}
+
+#changer > img {
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+}
+#logo_menus_area {
+    width: 1200px;
+    height: 150px;
+    background-color: white;
+    border-radius: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@media screen and(-ms-min-device-pixel-ratio:0){
+    #logo_menus_area {
+        justify-content: space-around;
+    }
+}
+
+#logo_menus_area > div > a > img{
+    width: 100px;
+    height: 118px;
+}
+
 /* room_list */
 
 #loadging_info{
@@ -2004,16 +2183,372 @@ font-size: 18px;
     cursor: pointer;
 }
 
+/* lodging_main */
+
+/* #lodging_main_main {
+    width: 1050px;
+    margin:0 auto;
+} */
+
+#main_room_search {
+    width: 1050px;
+    margin:0 auto;
+}
+
+#main_room_travel_recommend, #main_recent_room, #main_family_best, #main_earlybird, #main_jeju_best, #main_megazine {
+    width: 1208px;
+    margin:0 auto;
+}
 
 
 
+#room_search_box{
+    width: 450px;
+    height: 250px;
+    margin: 0 auto;
+    background-color:rgb(231, 231, 231);
+    border-radius: 10px;
+    padding-top: 30px;
+}
+
+#room_search_location, #room_search_date, #room_search_persons {
+    text-align: center;
+}
+
+#room_search_location > img, #room_search_date > img, #room_search_persons > img {
+    width: 40px;
+    text-align: center;
+}
+
+#room_search_location > input, #room_search_date > input, #room_search_persons > input{
+    height: 35px;
+    border: 0px solid gray;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    font-weight: bold;
+    /* margin-top: 5px; */
+}
+
+
+#room_search_button{
+    border-radius: 8px;
+    height: 30px;
+    width: 280px;
+    border: 1px solid rgb(87, 205, 245);
+    background-color: rgb(87, 205, 245);
+    color: white;
+    margin: 0 auto;
+    display: block;
+}
+
+
+#main_room_travel_recommend > div > a > img {
+    border-radius : 50%;
+    width: 180px;
+    height: 180px;
+    float: left;
+    margin: 30px;
+    /* position: relative; */
+}
+
+#everycity {
+    float: right;
+    margin-right: 55px;
+    margin-top: 170px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#clear {
+    clear: both;
+}
+
+/* #laos_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+#main_recent_room > div > a > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#main_family_best > div > a > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#main_earlybird > div > a > img {
+    width: 350px;
+    height: 210px;
+    border-radius: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#main_jeju_best > div > a > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#main_megazine > div > a > img {
+    width: 1150px;
+    height: 180px;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    float: left;   
+}
+
+#everyfamilybest, #everyearlybird, #everyjejubest {
+    float: right;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+    margin-right: 65px; 
+}
+
+#everymegazine {
+    float: right;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+    margin-right: 35px; 
+}
+
+/*lodging_lodging_list*/
+
+#lodging_list_main {
+    width: 1208px;
+    margin:0 auto;
+}
+
+#lodging_list_sidemenu {
+    width:458px;
+    float: left;
+}
+
+#lodging_list_lodginglist {
+    width: 750px;
+    float: right;
+}
+
+
+#sidemenu_search_classification, #sidemenu_search_persons, #sidemenu_search_lodgingtype {
+    font-size: 12px;
+    text-align: center;
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-top: 20px;
+    float: left;
+}
+
+#starscore {
+    text-align: center;
+    padding-top: 5px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: rgb(0, 140, 255);
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+}
+
+#reviewscore {
+    text-align: center;
+    padding-top: 5px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: rgb(216, 216, 0);
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+}
+
+#sidemenu_price > div > input {
+    text-align: end;
+    width: 150px;
+    height: 25px;
+    border: 1px solid rgb(0, 60, 255);
+    border-radius: 15px;
+}
+
+#lodginglist_1, #lodginglist_2, #lodginglist_3, #lodginglist_4, #lodginglist_5, #lodginglist_6, #lodginglist_7 {
+    height: 100px;
+}
+
+#lodginglist_1_name, #lodginglist_2_name, #lodginglist_3_name, #lodginglist_4_name, #lodginglist_5_name, #lodginglist_6_name, #lodginglist_7_name {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+} 
+
+#lodginglist_1_describe, #lodginglist_2_describe, #lodginglist_3_describe, #lodginglist_4_describe, #lodginglist_5_describe, #lodginglist_6_describe, #lodginglist_7_describe {
+    font-weight: 550;
+} 
+
+#lodginglist_1_star, #lodginglist_2_star, #lodginglist_3_star, #lodginglist_4_star, #lodginglist_5_star, #lodginglist_6_star, #lodginglist_7_star {
+    color: rgb(150, 150, 150);
+}
+
+#lodinglist_starscore {
+    color: rgb(216, 216, 0);
+}
+
+#lodginglist_1_price, #lodginglist_2_price, #lodginglist_3_price, #lodginglist_4_price, #lodginglist_5_price, #lodginglist_6_price, #lodginglist_7_price {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#lodginglist_1_img > img, #lodginglist_2_img > img, #lodginglist_3_img > img, #lodginglist_4_img > img, #lodginglist_5_img > img, #lodginglist_6_img > img, #lodginglist_7_img > img {
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+
+#lodginglist_more_button {
+    border-radius: 10px;
+    height: 30px;
+    width: 70px;
+    border: 1px solid gray;
+    margin: 0 auto;
+    display: block;
+}
 
 
 
+/* lodging_recommend */
 
+#recommend_setting, #recommend_lodgingrecommend {
+    width: 1208px;
+    margin: 0 auto;
+}
 
+#recommend_setting_date, #recommend_setting_persons {
+    text-align: center;
+    width: 150px;
+    height: 25px;
+    margin: 10px 15px;
+    padding-top: 5px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    float: left;
+}
 
+#recommend_family_best, #recommend_earlybird_best, #recommend_jeju_best {
+    width: 402.6px;
+    text-align: center;
+    height: 50px;
+    font-size: 23px;
+    font-weight: bold;
+    float: left;
+}
 
+#recommend_best_1 > img, #recommend_best_2 > img, #recommend_best_3 > img {
+    width: 1150px;
+    height: 120px;
+    border-radius: 15px;
+}
+
+#local_lodging_local > input {
+    width: 50px;
+    height: 40px;
+    margin: 10px;
+    border: 1px solid white;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#recommend_local_lodging {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#local_lodging_lodging_1, #local_lodging_lodging_2, #local_lodging_lodging_3, #local_lodging_lodging_4, #local_lodging_lodging_5, #local_lodging_lodging_6 {
+    height: 320px;
+    
+} 
+
+#local_lodging_lodging_1 > img, #local_lodging_lodging_2 > img, #local_lodging_lodging_3 > img, #local_lodging_lodging_4 > img, #local_lodging_lodging_5 > img, #local_lodging_lodging_6 > img {
+    width: 450px;
+    height: 300px;
+    float: left;
+} 
+
+#local_lodging_lodging_1_info, #local_lodging_lodging_2_info, #local_lodging_lodging_3_info, #local_lodging_lodging_4_info, #local_lodging_lodging_5_info, #local_lodging_lodging_6_info {
+    width: 500px;
+    float: right;
+}
+
+#local_lodging_lodging_1_event, #local_lodging_lodging_2_event, #local_lodging_lodging_3_event, #local_lodging_lodging_4_event, #local_lodging_lodging_5_event, #local_lodging_lodging_6_event {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding-top: 7px;
+    color: white;
+    background-color: #40d1ba;
+    border-radius: 10px;
+}
+
+#local_lodging_lodging_1_name, #local_lodging_lodging_2_name, #local_lodging_lodging_3_name, #local_lodging_lodging_4_name, #local_lodging_lodging_5_name, #local_lodging_lodging_1_name {
+    margin-top: 5px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#local_lodging_lodging_1_starscore, #local_lodging_lodging_2_starscore, #local_lodging_lodging_3_starscore, #local_lodging_lodging_4_starscore, #local_lodging_lodging_5_starscore, #local_lodging_lodging_6_starscore {
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: bold;
+} 
+
+#lodging_1_starscore, #lodging_2_starscore, #lodging_3_starscore, #lodging_4_starscore, #lodging_5_starscore, #lodging_6_starscore {
+    color: rgb(216, 216, 0);
+}
+
+#local_lodging_lodging_1_price1, #local_lodging_lodging_2_price1, #local_lodging_lodging_3_price1, #local_lodging_lodging_4_price1, #local_lodging_lodging_5_price1, #local_lodging_lodging_6_price1 {
+    text-align: right;
+    margin-top: 135px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#local_lodging_lodging_1_price1_sale, #local_lodging_lodging_2_price1_sale, #local_lodging_lodging_3_price1_sale, #local_lodging_lodging_4_price1_sale, #local_lodging_lodging_5_price1_sale, #local_lodging_lodging_6_price1_sale {
+    color: red;
+} 
+
+#local_lodging_lodging_1_price2, #local_lodging_lodging_2_price2, #local_lodging_lodging_33_price2, #local_lodging_lodging_4_price2, #local_lodging_lodging_5_price2, #local_lodging_lodging_6_price2 {
+    font-size: 17px;
+    font-weight: bold;
+    /* padding-top: 20px; */
+    float: left;
+}
+
+#coupon {
+    font-size: 20px;
+    font-weight: bold;
+    float: right;
+    /* padding-top: 20px; */
+}
 
 /* footer */
 
@@ -2021,7 +2556,7 @@ footer {
 
     width: 100%;
     background-color: #50e3c2;
-    opacity: 0.8;
+    opacity: 0.5;
     height: 300px;
     
 }

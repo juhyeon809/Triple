@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triple RoomReservation_main</title>
+    <link rel="stylesheet" href="../css/lodging_room_main.css">
+    <link rel="stylesheet" href="../lodging_room/css/lodging_room_main.css">
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+    <div id="backg_image_area">
+        <header>
+            <div id="logo_area">
+                <div id="logo"><a href="../../main.html"><img src="../../img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+                <form id="menu_form">
+                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+                </form>
+                <div id="login_join"><a href="../login_join/login.html">LOGIN</a> | <a href="../login_join/join.html">JOIN</a></div>
+    
+            </div>
+            <div id="menu_area">
+                <ul id="menus">
+                    <li><a href="../overseas_travel/overseas_travel.html">해외여행</a></li>
+                    <li><a href="../domestic_travel/domestic_travel.html">국내여행</a></li>
+                    <li><a href="../flight_reservation/">항공예약</a></li>
+                    <li><a href="./lodging_room.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
+                    <li><a href="../tour_ticket/tour_ticket.html">투어<span>&#183;</span>티켓</a></li>
+                    <li><a href="../travel_package/travel_package.html">패키지여행</a></li>
+                    <li><a href="../magazine/magazine.html">여행매거진</a></li>
+                    <li><a href="../event/event.html">혜택/렌터카</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div id="lodging_img">
+            <img src="./img/숙소예약.png" alt="숙소예약">
+            <div id="container_text">
+                <!-- <div>#가족여행 #여름휴가준비</div>
+                <div>가족과 함께 떠나는</div>
+                <div>여름휴가 BEST 숙소</div>
+                <div>#호텔·리조트 #독채펜션 #키즈룸숙소</div>
+            </div>
+        </div>     -->
+    </div>
+    <div id="lodging_list_main">
+        <div id="lodging_list_sidemenu">
+            <div id="sidemenu_search">
+                <div id="sidemenu_search_classification">분류</div>
+                <div id="sidemenu_search_persons">인원수</div>
+                <div id="sidemenu_search_lodgingtype">숙소타입</div>
+                <div id="clear"><p></p></div>
+            </div>
+            <div id="sidemenu_lodingtype">
+                <h2>숙소 유형</h2>
+                <div><input type="checkbox" id="hotel">호텔 <input type="checkbox" id="resort">리조트</div>
+                <div><input type="checkbox" id="pension">펜션 <input type="checkbox" id="motel">카라반</div>
+                <div><input type="checkbox" id="caravan">모텔 <input type="checkbox" id="glamping">글램핑</div>
+                <div id="clear"><p></p></div>
+            </div>
+            <div id="sidemenu_hotellevel">
+                <h2>호텔등급</h2>
+                <div id="starscore">0+</div>
+                <div id="starscore">2</div>
+                <div id="starscore">3</div>
+                <div id="starscore">4</div>
+                <div id="starscore">5</div>
+                <div id="clear"><p></p></div>
+            </div>
+            <div id="sidemenu_reviewscore">
+                <h2>리뷰 평점</h2>
+                <div id="reviewscore">0+</div>
+                <div id="reviewscore">2</div>
+                <div id="reviewscore">3</div>
+                <div id="reviewscore">4</div>
+                <div id="reviewscore">5</div>
+                <div id="clear"><p></p></div>
+            </div>
+            <div id="sidemenu_price">
+                <h2>가격</h2>
+                <div><input type="text" placeholder="원"> ~ <input type="text" placeholder="원"></div>
+            </div>
+            <div id="sidemenu_service">
+                <h2>서비스</h2>
+                <div><input type="checkbox">조식포함 <input type="checkbox">무료인터넷</div>
+                <div><input type="checkbox">무료주차 <input type="checkbox">무료취소</div>
+        
+            </div>
+            <div id="sidemenu_convenience">
+                <h2>편의시설</h2>
+                <div><input type="checkbox">무료취소 <input type="checkbox">무료인터넷</div>
+                <div><input type="checkbox">공항셔틀 <input type="checkbox">골프</div>
+            </div>
+        </div>
+        <div id="lodging_list_lodginglist">
+            <div id="lodginglist_1">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_1_name"><a href="./두짓 타니 괌 리조트">두짓 타니 괌 리조트</a></div>
+                <div id="lodginglist_1_describe">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</div>
+                <div id="lodginglist_1_star" ><span id="lodinglist_starscore">★★★★☆</span>(331) 저장 3,387 5성급·투몬, 타무닝</div>
+                <div id="lodginglist_1_price">462,576원</div>
+            </div>
+            <div id="lodginglist_2">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_2_name"><a href="./두짓 비치 리조트 괌">두짓 비치 리조트 괌</a></div>
+                <div id="lodginglist_2_describe">쇼핑몰, 투몬 비치가 가깝고 최고의 오션뷰를 자랑하는 괌 대표 리조트</div>
+                <div id="lodginglist_2_star"><span id="lodinglist_starscore">★★★★☆</span>(198) 저장 2,640 4성급·투몬, 타무닝</div>
+                <div id="lodginglist_2_price">320,247원</div>
+            </div>
+            <div id="lodginglist_3">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_3_name"><a href="./호텔 닛코 괌">호텔 닛코 괌</a></div>
+                <div id="lodginglist_3_describe">괌에서 가장 긴 72m 워터 슬라이드가 있는 전 객실 오션 뷰 호텔</div>
+                <div id="lodginglist_3_star"><span id="lodinglist_starscore">★★★★☆</span>(241) 저장 2,639 4성급</div>
+                <div id="lodginglist_3_price">240,006원</div>
+            </span>
+            <div id="lodginglist_4">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_4_name"><a href="./하얏트 리젠시 괌">하얏트 리젠시 괌</a></div>
+                <div id="lodginglist_4_describe">열대 정원 속 자연 친화적인 야외 수영장이 돋보이는 전 객실 오션 뷰 리조트</div>
+                <div id="lodginglist_4_star"><span id="lodinglist_starscore">★★★★☆</span>(192) 저장 2,130 4성급</div>
+                <div id="lodginglist_4_price">390,707원</div>
+            </span>
+            <div id="lodginglist_5">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_5_name"><a href="./크라운 플라자 리조트 괌">크라운 플라자 리조트 괌</a></div>
+                <div id="lodginglist_5_describe">수영장과 해변이 연결되어 물놀이 하기 좋은 괌 대표 리조트</div>
+                <div id="lodginglist_5_star"><span id="lodinglist_starscore">★★★★☆</span>(165) 저장 1,958 3성급·투몬, 타무닝</div>
+                <div id="lodginglist_5_price">357,677원</div>
+            </span>
+            <div id="lodginglist_6">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_6_name"><a href="./괌 플라자 리조트 & 스파">괌 플라자 리조트 & 스파</a></div>
+                <div id="lodginglist_6_describe">괌 대표 워터파크 무료 이용 가능! 완벽한 휴가를 책임지는 리조트</div>
+                <div id="lodginglist_6_star"><span id="lodinglist_starscore">★★★☆☆</span>(207) 저장 2,379 3성급·투몬, 타무닝</div>
+                <div id="lodginglist_6_price">357,677원</div>
+            </div>
+            <div id="lodginglist_7">
+                <div id="lodginglist_1_img"><img src="./img/hotel.jpg" alt="호텔"></div>
+                <div id="lodginglist_7_name"><a href="./홋데 호텔 괌">롯데 호텔 괌</a></div>
+                <div id="lodginglist_7_describe">롯데가 운영해 국내 직원이 많고, 해변과 연결된 호텔</div>
+                <div id="lodginglist_7_star"><span id="lodinglist_starscore">★★★★☆</span>(164) 저장 1,687 4성급·투몬, 타무닝</div>
+                <div id="lodginglist_7_price">306,984원</div>
+            </div>
+            <button type="button" id="lodginglist_more_button">더보기</button>
+        </div>
+        <div id="clear"><p></p></div>
+    </div>
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p id="bold">트리플 사업자 정보</p>
+                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+                <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
