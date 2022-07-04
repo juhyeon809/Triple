@@ -202,6 +202,9 @@ p.sm {
     float: left;
      width: 80%; 
     }
+.section a:visited{
+    color: black;
+}
 .body { 
     height: 250px; 
     border-bottom:  1px solid #ccc;
@@ -219,6 +222,8 @@ p.sm {
     width: 1500px; 
     height: 300px; 
     margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
 }
 .flyinfoBox { 
     width: 1070px; 
