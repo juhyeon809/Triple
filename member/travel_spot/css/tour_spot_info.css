@@ -1,5 +1,5 @@
-#restaurant_img {
-    background-image: url(../img/eggandthings.png);
+#tour_spot_img {
+    background-image: url(../img/사랑의\ 절벽.png);
     width: 1000px;
     height: 500px;
     background-size: cover;
@@ -36,9 +36,23 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 #menu_image {
     margin-left: 20px;
+    width: 400px;
+}
+#menu_image img {
+    width: 100%;
+}
+#main_picture {
+    width: 700px;
+    margin: 0 auto;
+}
+#main_picture img {
+    width: 100%;
 }
 #menu_description {
     margin-left: 20px;
@@ -50,13 +64,21 @@
     color: rgb(77, 76, 76);
 }
 #info_box .info_box_title{
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     
 }
 #info_box .info_box_subtitle {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
+}
+#info_box .info_box_context {
+    color: gray;
+    font-weight: 700;
+    width: 900px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 #menu_description .menu_name {
@@ -65,12 +87,16 @@
     margin: 0;
     margin-bottom: 10px;
 }
-#menu_description .menu_price , #menu_description .menu_description_text {
+#menu_description .menu_description_text {
     font-size: 16px;
     font-weight: 700;
     margin: 0;
     margin-bottom: 10px;
 }
+#main_spots {
+    width: 900px;
+}
+
 #basic_info_text {
     font-size: 22px;
     margin-top: 80px;
