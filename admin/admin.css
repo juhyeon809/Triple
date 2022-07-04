@@ -474,7 +474,8 @@ table.colortb th{
     margin: 0 auto;
     display: flex;
     justify-content: flex-around;
-    /* justify-content: flex-between; */
+    margin-top: 50px;
+    margin-left: 400px;
     align-items: center;
 }
 
