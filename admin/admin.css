@@ -514,9 +514,8 @@ table.colortb th{
 #admin_register_btn > input {
     width: 200px;
     height: 30px;
-    position: fixed;
-    right: 650px;
-    bottom: 250px;
+    margin-left: 500px;
+    margin-bottom: 50px;
     font-size: 15px;
     font-weight: 600;
     border-radius: 10px;
