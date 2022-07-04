@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 페이지</title>
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="admin.css">
-    
+    <title>예약조회 | 숙소</title>
+    <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
     <!-- 사이드바-->
     <selction id="sidebar">
-        <a href="#" class="active"><img src="img-main-logo-white@3x.png" alt=""></a>
+        <a href="#" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
         <ul class="side-menu">
             
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -24,10 +22,10 @@
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="예약/all.html">전체</a></li>
-                    <li><a href="예약/fly_reservation.html">항공권</a></li>
-                    <li><a href="예약/room_resevation.html">숙소</a></li>
-                    <li><a href="예약/packge_reservation.html">패키지</a></li>
-                    <li><a href="예약/ticket_reservation.html">티켓</a></li>
+                    <li><a href="fly_reservation.html">항공권</a></li>
+                    <li><a href="room_resevation.html">숙소</a></li>
+                    <li><a href="packge_reservation.html">패키지</a></li>
+                    <li><a href="ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -89,86 +87,68 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <section id="content">
-
+    <section class="content2">
+        <h2>예약조회 - 숙소</h2> 
         <nav>
+            
             <form action="#">
                 <div class="form-group">
-                    <input type="text" placeholder="Search ..">
-                    <i class='bx bx-search icon'></i>
+                    <input type="date" name="" id=""> ~ <input type="date">
+                    <select name="" id="">
+                        <option value="전체">전체</option>
+                        <option value="아이디">아이디</option>
+                        <option value="이름">이름</option>
+                        <option value="예약번호">예약번호</option>
+                        <option value="내용">내용</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="submit">검색</button>
                 </div>
             </form>
-            <a href="#" class="nav-link">
-                <i class='bx bxs-bell icon'></i>
-                <sapn class="badge">1</sapn>
-            </a>
-            
-            <span class="divider"></span>
-            <div class="profile">
-                <p>admin님</p>
-            </div>
         </nav>
-        <!--main-->
-        <main>
-            <h1 class="title">dashboard</h1>
-            <ul class="breadcrumbs">
-                <li><a href="">home</a></li>
-                <li class="divider">/</li>
-                <li><a href="" class="acticve">Dashboard</a></li>
-
-            </ul>
-            <div class="info-data">
-                <div class="card">
-                    <div class="head">
-                        <div>
-                            <h2>1500</h2>
-                            <p>Traffic</p>
-                        </div>
-                        <i class='bx bx-trending-up icon'></i>
-                    </div>
-                    <span class="progress" data-value="40%"></span>
-                    <span class="label">40%</span>
-                </div>
-                <div class="card">
-                    <div class="head">
-                        <div>
-                            <h2>234</h2>
-                            <p>Salse</p>
-                        </div>
-                        <i class='bx bx-trending-down icon down'></i>
-                    </div>
-                    <span class="progress" data-value="60%"></span>
-                    <span class="label">60%</span>
-                </div>
-                <div class="card">
-                    <div class="head">
-                        <div>
-                            <h2>465</h2>
-                            <p>Pageviews</p>
-                        </div>
-                        <i class='bx bx-trending-up icon'></i>
-                    </div>
-                    <span class="progress" data-value="30%"></span>
-                    <span class="label">30%</span>
-                </div>
-                <div class="card">
-                    <div class="head">
-                        <div>
-                            <h2>235</h2>
-                            <p>Visitors</p>
-                        </div>
-                        <i class='bx bx-trending-up icon'></i>
-                    </div>
-                    <span class="progress" data-value="80%"></span>
-                    <span class="label">80%</span>
-                </div>
-            </div>
-        </main>
-
-        <!--main-->
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="script.js"></script>
+    <
+        <table>
+            <tr>
+                <th>
+                    <input type="checkbox" name="" id="">
+                </th>
+                <th>
+                    이름
+                </th>
+                <th>
+                    아이디                
+                </th>
+                <th>
+                    예약번호
+                </th>
+                <th>
+                    지역
+                </th>
+                <th>
+                    내용
+                </th>
+                <th>
+                    결제
+                </th>
+            </tr> 
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>김사과</td>
+                <td>apple</td>
+                <td>H45612</td>
+                <td>다낭</td>
+                <td>다낭 골든 베이</td>
+                <td>결제완료</td>
+                
+            </tr>
+            
+        </table>
+        <section class="btnlist">
+            <button type="submit">변경</button>
+            <button type="submit">선택삭제</button>
+        </section>
+        <span>1 2 3 4 5</span>
+    <script src="../script.js"></script>
 </body>
 </html>

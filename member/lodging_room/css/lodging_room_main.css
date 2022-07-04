@@ -196,6 +196,8 @@ header {
     position: relative;
 }
 
+#lodging_main_img { width: 1000px; height: 300px; margin: 0 auto; margin-bottom: 0; background-image: url('../img/lodging_main.svg'); background-size: cover; background-repeat: no-repeat; }
+
 #lodging_info_main{
     width: 1208px;
     height: 418px;
@@ -231,7 +233,7 @@ header {
 #info_main_1_1{
     width: 100%;
     height: 85px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     color:#425052;
 }
@@ -268,7 +270,7 @@ header {
 }
 
 #info_main_1_2_1{
-    font-size: 30px;
+    font-size: 28px;
     height: 45px;
     color: #425052;
     padding-left: 55px;
@@ -277,7 +279,7 @@ header {
 }
 
 #info_main_1_2_2{
-    font-size: 25px;
+    font-size: 23px;
     height: 45px;
     color: #bebebe;
     padding-left: 55px;
@@ -296,7 +298,7 @@ header {
     height: 40px;
     position: relative;
     left: 55px;
-    font-size: 22px;;
+    font-size: 20px;;
     padding-left: 5px;;
     font-weight: bold;
     color: #bebebe;
@@ -321,7 +323,7 @@ header {
     position: relative;
     left: 55px;
     padding-left: 5px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     line-height: 60px;
     color: #bebebe;
@@ -343,7 +345,7 @@ header {
     border-radius: 10px;
     padding-left: 20px;
     line-height: 40px;
-    font-size: 19px;
+    font-size: 17px;
     color:#959d9e;
 }
 
@@ -356,7 +358,7 @@ header {
     text-decoration: underline;
 }
 
-#aaa{
+#aaa, #bbb{
     box-sizing: border-box;
     position: relative;
     top: -40px;
@@ -372,14 +374,14 @@ header {
     border-radius: 10px;
     padding-left: 20px;
     line-height: 40px;
-    font-size: 19px;
+    font-size: 17px;
     color: #959d9e;
 }
 
 /* 375 - 166 - 109  - 100*/
 #info_main_2_1{
     height: 166px;
-    font-size: 30px;
+    font-size: 28px;
     padding-left: 48px;
     line-height: 220px;
     font-weight: bold;
@@ -390,7 +392,7 @@ header {
     height: 109px;
     text-align: center;
     line-height: 45px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #707070;
 }
@@ -421,7 +423,7 @@ header {
 }
 
 #info_main_2_3_1, #info_main_2_3_3{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #425052;
 }
@@ -431,7 +433,7 @@ header {
 }
 
 #info_main_2_3_2{
-    font-size: 35px;
+    font-size: 33px;
     font-weight: bold;
     color: #425052;
 }
@@ -448,7 +450,7 @@ header {
     border: 0.5px solid #40d1ba;
     border-radius: 30px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     color: #40d1ba;
     font-weight: bold;
     line-height: 45px;
@@ -489,7 +491,7 @@ header {
     height: 88px;
     position: relative;
     margin-left: 65px;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 90px;
     font-weight: bold;
     top: 15px;
@@ -500,7 +502,7 @@ header {
     width: 112px;
     height: 40px;
     position: relative;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #458cd3;
     text-align: center;
@@ -525,13 +527,13 @@ header {
 }
 
 #room_list_2_1_1, #room_list_3_1_1, #room_list_4_1_1, #room_list_5_1_1{
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
     color: #425052;
 }
 
 #room_list_2_1_2, #room_list_3_1_2, #room_list_4_1_2, #room_list_5_1_2{
-    font-size: 25px;
+    font-size: 23px;
     position:relative;
     left: 30px;
     top: 30px;
@@ -563,7 +565,7 @@ header {
 /* 사진 180 140 */
 
 #rl1_1, #rl2_1, #rl3_1, #rl4_1{
-    font-size: 20px;
+    font-size: 18px;
     height: 107px;
     line-height: 130px;
     color: #458cd3;
@@ -585,7 +587,7 @@ header {
     text-align: center;
     line-height: 35px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #rl1_2_2, #rl2_2_2, #rl3_2_2, #rl4_2_2{
@@ -599,13 +601,13 @@ header {
     text-align: center;
     line-height: 35px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #rl1_2_3, #rl2_2_3, #rl3_2_3, #rl4_2_3{
     width: 168px;
     height: 35px;
-    font-size: 25px;
+    font-size: 23px;
     float:left;
     font-weight: bold;
     color: #425052;
@@ -626,7 +628,7 @@ header {
     border-radius: 5px;
     color:white;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     position: relative;
     left: 300px;
@@ -659,7 +661,7 @@ header {
 
 #location_info_1{
     height: 117px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     line-height: 150px;;
     color: #425052;
@@ -706,7 +708,7 @@ header {
 /* 106- 276 = 382 */
 #lo_info_2_1_1_2{
     height: 138px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #lo_info_2_1_1_3{
@@ -725,7 +727,7 @@ header {
 #loc_info_1_1, #loc_info_2_1, #loc_info_3_1{
     width: 106px;
     float:left;
-    font-size: 16px;
+    font-size: 14px;
     color: #858585;
 }
 
@@ -746,7 +748,7 @@ header {
     width: 153px;
     height: 42px;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -773,7 +775,7 @@ header {
 }
 
 #lo_info_2_1_2_1{
-    font-size: 25px;
+    font-size: 23px;
     height: 50px;
     line-height: 70px;
     font-weight: bold;
@@ -781,7 +783,7 @@ header {
 }
 
 #lo_info_2_1_2_2{
-    font-size: 16px;
+    font-size: 14px;
     height: 50px;
     position: relative;
     top: 15px;
@@ -790,7 +792,7 @@ header {
 
 #lo_info_2_1_2_3{
     position: relative;
-    font-size: 14px;
+    font-size: 12px;
     text-align: right;
     top: 10px;
 }
@@ -805,13 +807,13 @@ header {
 }
 
 #lo_info_2_1_3_1, #lo_info_2_1_4_1, #lo_info_2_1_5_1, #lo_info_2_1_6_1, #lo_info_2_1_7_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
 
 #lo_info_2_1_3_2, #lo_info_2_1_4_2, #lo_info_2_1_5_2, #lo_info_2_1_7_2{
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
     top: 10px;
     width: 370px;
@@ -819,14 +821,14 @@ header {
 }
 
 #lo_info_2_1_3_3,#lo_info_2_1_4_3, #lo_info_2_1_5_3, #lo_info_2_1_7_3,#lo_info_2_1_6_3{
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     top: 15px;
     text-align: right;
 }
 
 #lo_info_2_1_3_3 a,#lo_info_2_1_4_3 a, #lo_info_2_1_5_3 a, #lo_info_2_1_7_3 a,#lo_info_2_1_6_3 a{
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     text-align: right;
     color: #458cd3;
@@ -839,6 +841,9 @@ header {
 
 #lo_info_2_1_6_3{
     top: 30px;
+    width: 60px;
+    box-sizing: border-box;
+    left: 322px;
 }
 
 #lo_info_2_1_4{
@@ -856,7 +861,7 @@ header {
 #lo_info_2_1_6_2{
     position: relative;
     top: 15px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #lo_info_2_1_6_2_1,#lo_info_2_1_6_2_2{
@@ -906,13 +911,13 @@ header {
 }
 
 #lo_info_2_2_1 span {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #425052;
 }
 
 #lo_info_2_2_1 li {
-    font-size: 23px;
+    font-size: 21px;
     position: relative;
     left: 30px;
     top: 20px;
@@ -937,7 +942,7 @@ header {
 }
 
 #lo_info_2_2_2_1{
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.5px;
     line-height: 25px;
     color: #425052;
@@ -945,7 +950,7 @@ header {
 
 #lo_info_2_2_2  span, #lo_info_2_2_3  span, 
 #lo_info_2_2_4  span{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     line-height: 40px;
     color: #425052;
@@ -972,7 +977,7 @@ header {
     width: 100px;
     height: 52px;
     float:left;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -985,7 +990,7 @@ header {
     width: 978px;
     height: 52px;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     text-align: right;
     line-height: 50px;
     box-sizing: border-box;
@@ -1082,7 +1087,7 @@ header {
 #lodging_sub_1_1_1{
     width: 420px;
     float:left;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
@@ -1093,7 +1098,7 @@ header {
     text-align: right;
     box-sizing: border-box;
     padding-right: 25px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: underline;
     line-height: 40px;
@@ -1109,7 +1114,7 @@ header {
     float:left;
     box-sizing: border-box;
     padding-left: 25px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
@@ -1120,7 +1125,7 @@ header {
     text-align: right;
     box-sizing: border-box;
     padding-right: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: underline;
     line-height: 40px;
@@ -1160,7 +1165,7 @@ header {
     float: left;
     box-sizing: border-box;
     padding-left: 20px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     color: #425052;
 }
@@ -1219,7 +1224,7 @@ header {
 #lg_rm_if_main_1_1{
     width: 100%;
     height: 85px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     color: #425052;
 }
@@ -1260,7 +1265,7 @@ header {
 }
 
 #lg_rm_if_main_1_2_1_1{
-    font-size: 30px;
+    font-size: 28px;
     height: 45px;
     color: #425052;
     line-height: 50px;
@@ -1268,14 +1273,14 @@ header {
 }
 
 #lg_rm_if_main_1_2_1_2{
-    font-size: 25px;
+    font-size: 23px;
     position: relative;
     top: 5px;
     color: #425052;
 }
 
 #lg_rm_if_main_1_2_1_3{
-    font-size: 19px;
+    font-size: 17px;
     position: relative;
     top: 20px;
 }
@@ -1308,7 +1313,7 @@ header {
     box-sizing: border-box;
     margin-top: 20px;
     margin-right: 30px;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     color: white;
     background-color: #50e3c2;
@@ -1323,13 +1328,13 @@ header {
 }
 
 #lg_rm_if_main_2_2_1{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     color: #425052;
 }
 
 #lg_rm_if_main_2_2_2{
-    font-size: 20px;
+    font-size: 18px;
     box-sizing: border-box;
     margin-top: 10px;
     color: #707070;
@@ -1341,7 +1346,7 @@ header {
 }
 
 #lg_rm_if_main_2_2_3{
-    font-size: 20px;
+    font-size: 18px;
     box-sizing: border-box;
     margin-top: 10px;
     font-weight: bold;
@@ -1363,7 +1368,7 @@ header {
 }
 
 #lg_rm_if_main_2_2_4{
-    font-size: 18px;
+    font-size: 16px;
     box-sizing: border-box;
     margin-top: 50px;
     font-weight: bold;
@@ -1377,12 +1382,12 @@ header {
 }
 
 #lg_rm_if_main_2_3_1{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
 }
 
 #lg_rm_if_main_2_3_2{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     position: relative;
     text-align: right;
@@ -1419,13 +1424,13 @@ header {
 }
 
 #if_sub_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
 
 #if_sub_1_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     height: 40px;
     color: #425052;
@@ -1434,7 +1439,7 @@ header {
 #if_sub_2{
     box-sizing: border-box;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;;
     color: #858585;
 }
@@ -1465,12 +1470,12 @@ header {
 }
 
 #if_sub_3, #if_sub_4, #if_sub_5{
-    font-size: 16px;
+    font-size: 14px;
     color: #858585;
 }
 
 #lg_rm_if_sub_6 span {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #425052;
 }
@@ -1513,7 +1518,7 @@ header {
 #lg_rm_if_sub_7_1_4,#lg_rm_if_sub_7_1_5{
     width: 190px;
     float:left;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
 }
 
@@ -1521,14 +1526,14 @@ header {
     box-sizing: border-box;
     width: 148px;
     float: left;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 25px;
     padding-left: 17px;
 }
 
 #lg_rm_if_sub_7_1_6 span {
     font-weight: bold;
-    font-size: 18px;;
+    font-size: 16px;;
 }
 
 /* room_reserve */
@@ -1583,18 +1588,18 @@ header {
 }
 
 #lg_rm_if_re_1_1{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     color:#425052;
 }
 
 #lg_rm_if_re_1_11 {
-    font-size: 20px;
+    font-size: 18px;
     color:#858585;
 }
 
 #lg_rm_if_re_1_2{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     box-sizing: border-box;
     margin-top: 30px;
@@ -1604,7 +1609,7 @@ header {
 #lg_rm_if_re_1_3{
     box-sizing: border-box;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 55px;
     color: #919191;
 }
@@ -1637,20 +1642,20 @@ header {
     border-radius: 10px;
     vertical-align: middle;
     display: table-cell;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color:#425052;
 }
 
 #lg_rm_if_re_2_1 span,#lg_rm_if_re_2_3 span{
-    font-size: 25px;
+    font-size: 23px;
     color: #1592e6;
 }
 
 #lg_rm_if_re_2_2{
     width: 100px;
     height: 30px;
-    font-size: 20px;
+    font-size: 18px;
     color: #1592e6;
     position: relative;
     top: 20px;
@@ -1700,13 +1705,13 @@ header {
 }
 
 #rm_re_s_1_1_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color:#425052;
 }
 
 #rm_re_s_1_1_2,#rm_re_s_1_1_3,#rm_re_s_1_1_4{
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
     box-sizing: border-box;
     margin-top: 20px;
@@ -1720,7 +1725,7 @@ header {
     border-radius: 10px;
     background-color: #f7f7f7;
     color: #425052;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #rm_re_s_1_1_5{
@@ -1739,13 +1744,13 @@ header {
 }
 
 #rm_re_s_1_2_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
 
 #rm_re_s_1_2_1 span {
-    font-size: 18px;
+    font-size: 16px;
     color: #1592e6;
 }
 
@@ -1754,7 +1759,7 @@ header {
 }
 
 #rm_re_s_1_2_2_1, #rm_re_s_1_2_2_2, #rm_re_s_1_2_3, #rm_re_s_1_2_4{
-    font-size: 18px;
+    font-size: 16px;
     color:#425052;
     box-sizing: border-box;
     margin-top: 20px;
@@ -1783,7 +1788,7 @@ border: 2px solid #b6b6b6;
 border-radius: 10px;
 background-color: #f7f7f7;
 color: #425052;
-font-size: 18px;
+font-size: 16px;
 }
 
 #rm_re_s_1_2_5 input {
@@ -1793,7 +1798,7 @@ font-size: 18px;
     border-radius: 10px;
     background-color: #f7f7f7;
     color: #425052;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -1814,13 +1819,13 @@ font-size: 18px;
 }
 
 #rm_re_s_2_1_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
 
 #rm_re_s_2_1_2{
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
     box-sizing: border-box;
     margin-top: 5px;
@@ -1834,14 +1839,14 @@ font-size: 18px;
     border-radius: 10px;
     background-color: #f7f7f7;
     color: #425052;
-    font-size: 18px;
+    font-size: 16px;
     resize: none;
 }
 
 #rm_re_s_2_1_4{
     box-sizing: border-box;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 16px;
     color: #969696;
 }
 
@@ -1856,7 +1861,7 @@ font-size: 18px;
 }
 
 #rm_re_s_2_2_1_1{
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
     height: 30px;
@@ -1864,7 +1869,7 @@ font-size: 18px;
 
 #rm_re_s_2_2_1_2{
     height: 48px;
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
     box-sizing: border-box;
     padding-top: 15px;
@@ -1885,7 +1890,7 @@ font-size: 18px;
 
 #rm_re_s_2_2_1_3{
     height: 48px;
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
     border-bottom: 1px solid #cbcbcb;
     box-sizing: border-box;
@@ -1905,7 +1910,7 @@ font-size: 18px;
 }
 
 #rm_re_s_2_2_1_3_2 select{
-    font-size: 18px;
+    font-size: 16px;
     border: 2px solid #b6b6b6;
     border-radius: 8px;
     background-color: #f7f7f7;
@@ -1916,7 +1921,7 @@ font-size: 18px;
 
 #rm_re_s_2_2_1_4{
     height: 48px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color:#425052;
     box-sizing: border-box;
@@ -1946,7 +1951,7 @@ font-size: 18px;
     background-color: #ffffff;
     border-radius: 20px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #1592e6;
     margin-top: 17px;
@@ -1958,7 +1963,7 @@ font-size: 18px;
 #rm_re_s_2_2_2_1 span{
     color:#969696;
     font-weight: 100;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 #rm_re_s_2_3{
@@ -1968,7 +1973,7 @@ font-size: 18px;
 
 #rm_re_s_2_3_1{
     height: 106px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     vertical-align: bottom;
     display: table-cell;
@@ -1976,7 +1981,7 @@ font-size: 18px;
 }
 
 #rm_re_s_2_3_2_1{
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
 }
 
@@ -1992,7 +1997,7 @@ font-size: 18px;
     height: 60px;
     color: #ffffff;
     background-color: #50e3c2;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     border-radius: 30px;
     border: 0;
@@ -2040,7 +2045,7 @@ font-size: 18px;
 }
 
 #lg_rm_pay_1_1_1{
-    font-size: 25px;
+    font-size: 23px;
     color: #425052;
     box-sizing: border-box;
     padding-top: 30px;
@@ -2048,14 +2053,14 @@ font-size: 18px;
 }
 
 #lg_rm_pay_1_1_2{
-    font-size: 18px;
+    font-size: 16px;
     color:#425052;
 }
 
 #lg_rm_pay_1_1_3{
     width: 539px;
     height: 20px;
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
 }
 
@@ -2076,7 +2081,7 @@ font-size: 18px;
 }
 
 #lg_rm_pay_1_2_1{
-    font-size: 25px;
+    font-size: 23px;
     color: #425052;
     font-weight: bold;
 }
@@ -2084,7 +2089,7 @@ font-size: 18px;
 #lg_rm_pay_1_2_2, #lg_rm_pay_1_2_3{
     width: 539px;
     height : 20px;
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
     box-sizing: border-box;
     margin-bottom: 5px;
@@ -2105,7 +2110,7 @@ font-size: 18px;
 
 #lg_rm_pay_1_2_4{
     height: 30px;
-    font-size: 25px;
+    font-size: 23px;
     color: #425052;
     font-weight: bold;
     box-sizing: border-box;
@@ -2135,7 +2140,7 @@ font-size: 18px;
 
 #lg_rm_pay_2_1{
     height: 60px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
@@ -2165,7 +2170,7 @@ font-size: 18px;
     background-color: #f7f7f7;
     border-radius: 10px;
     border: 1px solid #969696;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #425052;
     cursor: pointer;
@@ -2177,7 +2182,7 @@ font-size: 18px;
     border-radius: 30px;
     background-color: #50e3c2;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     border: 0;
     cursor: pointer;
@@ -2190,65 +2195,60 @@ font-size: 18px;
     margin:0 auto;
 } */
 
-#main_room_search {
-    width: 1050px;
-    margin:0 auto;
+.lodging_main {
+    width: 1000px; margin: 0 auto; padding: 10px; box-sizing: border-box;
 }
+.lodging_title{ font-size: 18px; font-weight: bold; padding-bottom: 5px; margin-bottom: 0; text-indent: 10px; }
 
-#main_room_travel_recommend, #main_recent_room, #main_family_best, #main_earlybird, #main_jeju_best, #main_megazine {
-    width: 1208px;
-    margin:0 auto;
+.region_list { width: 1000px; margin-top: 20px; margin-bottom: 10px; padding-bottom: 10px; display: flex; justify-content: space-between; box-sizing: border-box; }
+.region_list > a { margin-right: 15px; }
+.region_list > a:first-child { margin-left: 15px; }
+.region_list > a:last-child { margin-right: 15px; }
+.region_list > a > img { width: 170px; }
+#region_list { display: inline-block; }
+
+
+#main_recent_room, #main_family_best, #main_earlybird, #main_jeju_best, #main_megazine {
+    width: 1000px; margin: 0 auto; padding: 10px; box-sizing: border-box;
 }
 
 
 
 #room_search_box{
-    width: 450px;
-    height: 250px;
-    margin: 0 auto;
-    background-color:rgb(231, 231, 231);
-    border-radius: 10px;
-    padding-top: 30px;
+   width: 900px; background-color:#F7F7F7; padding: 40px; padding-top: 24px; text-align: center; margin-bottom: 30px; list-style: none;
 }
 
 #room_search_location, #room_search_date, #room_search_persons {
     text-align: center;
 }
-
-#room_search_location > img, #room_search_date > img, #room_search_persons > img {
-    width: 40px;
-    text-align: center;
+.room_icon {
+    height: 40px;
 }
 
-#room_search_location > input, #room_search_date > input, #room_search_persons > input{
-    height: 35px;
-    border: 0px solid gray;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
+.room_icon > img {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.room_icon > input[type="text"]{
+    width: 250px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px solid rgb(217, 217, 217);
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
     font-weight: bold;
+    text-indent: 5px;
+    color: rgb(217, 217, 217);
     /* margin-top: 5px; */
 }
 
 
 #room_search_button{
-    border-radius: 8px;
-    height: 30px;
-    width: 280px;
-    border: 1px solid rgb(87, 205, 245);
-    background-color: rgb(87, 205, 245);
-    color: white;
-    margin: 0 auto;
-    display: block;
-}
-
-
-#main_room_travel_recommend > div > a > img {
-    border-radius : 50%;
-    width: 180px;
-    height: 180px;
-    float: left;
-    margin: 30px;
-    /* position: relative; */
+    width: 330px; height: 50px; border-radius: 10px; margin-top: 40px; background-color: #4E91D5; border:none; color: white; font-weight: bold; font-size: 18px; text-align: center; 
 }
 
 #everycity {
@@ -2287,46 +2287,23 @@ font-size: 18px;
     float: left;
 }
 
-#main_earlybird > div > a > img {
-    width: 350px;
-    height: 210px;
-    border-radius: 10px;
-    margin-left: 30px;
-    float: left;
-}
-
-#main_jeju_best > div > a > img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin-left: 30px;
-    float: left;
-}
-
-#main_megazine > div > a > img {
-    width: 1150px;
-    height: 180px;
-    border-radius: 10px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-    float: left;   
-}
-
-#everyfamilybest, #everyearlybird, #everyjejubest {
+.plus_info {
     float: right;
     text-decoration: underline;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
     margin-right: 65px; 
 }
+.item_list { display: flex; overflow: auto; padding-bottom: 10px; }
+.item_list::-webkit-scrollbar{ height: 7px; background-color:white; width: 0; }
+.item_list::-webkit-scrollbar-thumb{ height: 7px; background-color:#87D9D2; width: 0; border-radius: 10px; border: 2px solid transparent; }
+.item_list::-webkit-scrollbar-track{ background-color: white; border-radius: 10px; box-shadow: inset 0 0 5px white; }
+.item_list > a > div.lodging_imgbox { width: 170px; height: 170px; border-radius: 12px;  background-image: url('../img/pre_image.jpg'); margin: 0; padding: 0; margin-right: 10px; }
+.item_list > a > div.lodging_imgbox > .black_opacity{ width: 170px; height: 170px; border-radius: 12px; background-color: black; opacity: 0.5; }
+.item_list > a > div.lodging_imgbox > .black_opacity > p.content { padding: 5px; padding-top: 110px; padding-right: 20px; color: white; font-size: 18px; font-weight: bold; word-break: keep-all; position: relative;  left:10px; top: -5px; z-index: 10; opacity: 1 }
+.content_point{ padding: 5px; padding-right: 20px; color: white; font-size: 14px; font-weight: bold; word-break: keep-all; position: relative;  left:10px; top: -30px; z-index: 10; }
+.detail{ position: relative; left: 900px; text-decoration: underline; font-size: 16px; font-weight: bold; color: #72A7DD; }
 
-#everymegazine {
-    float: right;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 17px;
-    margin-right: 35px; 
-}
 
 /*lodging_lodging_list*/
 
@@ -2549,6 +2526,198 @@ font-size: 18px;
     float: right;
     /* padding-top: 20px; */
 }
+
+
+
+/* lodging_regional_korea */
+
+#loadging_regional{
+    width: 1208px;
+    height: 1368px;
+    margin:0 auto;
+    margin-bottom: 57px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#lo_re_main{
+    width: 1208px;
+    height: 1318px;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid #F1F0F0;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 20px 20px;
+    margin-top: 50px;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 70px;
+}
+
+#lo_re_main a {
+    color: #425052;
+}
+
+#lo_re_kr_1{
+    height: 56px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#lo_re_kr_1 a {
+    color: #425052;
+    text-decoration: none;
+}
+
+#lo_re_kr_1 div {
+    width :538px;
+    height: 56px;
+    float:left;
+    text-align: center;
+}
+
+#lo_re_kr_1_1 {
+    border-bottom: 4px solid #2680EB;
+}
+
+#lo_re_kr_1_2 {
+    border-bottom: 4px solid #ffffff;
+}
+
+#lo_re_kr_2{
+    width: 148px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #F1F0F0;
+}
+
+
+#lo_re_kr_2 div{
+    width :148px;
+    height: 96px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#lo_re_kr_2 a {
+    box-sizing: border-box;
+
+}
+
+#lo_re_kr_3{
+    width: 390px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+#lo_re_kr_3 div {
+    width: 390px;
+    height: 96px;
+    vertical-align: middle;
+    display: table-cell;
+    box-sizing: border-box;
+    padding-left: 63px;
+}
+
+
+#lo_re_kr_4{
+    width: 538px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* lodging_regional_global */
+
+#lo_re_gl_1{
+    height: 56px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#lo_re_gl_1 a {
+    color: #425052;
+    text-decoration: none;
+}
+
+#lo_re_gl_1 div {
+    width :538px;
+    height: 56px;
+    float:left;
+    text-align: center;
+}
+
+#lo_re_gl_1_1 {
+    border-bottom: 4px solid #ffffff;
+}
+
+#lo_re_gl_1_2 {
+    border-bottom: 4px solid #2680EB;
+}
+
+#lo_re_gl_2{
+    width: 148px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #F1F0F0;
+}
+
+
+#lo_re_gl_2 div{
+    width :148px;
+    height: 96px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#lo_re_gl_2 a {
+    box-sizing: border-box;
+
+}
+
+#lo_re_gl_3{
+    width: 390px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+#lo_re_gl_3 div {
+    width: 390px;
+    height: 96px;
+    vertical-align: middle;
+    display: table-cell;
+    box-sizing: border-box;
+    padding-left: 63px;
+}
+
+
+#lo_re_gl_4{
+    width: 538px;
+    height: 1146px;
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
 
 /* footer */
 
