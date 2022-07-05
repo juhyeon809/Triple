@@ -1,0 +1,249 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'notosanskr';
+}
+a {
+    text-decoration-line: none ;
+}
+a:visited {
+    text-decoration: none;
+}
+#mag{color: #4e4e4e;}
+#logo_area {
+    margin: 0 auto;
+    width: 1300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#search {
+    margin-left: 500px;
+    display: flex;
+    align-items: center;
+}
+#search > button {
+    background-color: #50e3c2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    height: 30px;
+    width: 50px;
+    
+}
+
+#logo_area > #logo > a > img{
+    margin-top: 50px;
+}
+#menu_form{
+    margin-top: 50px;
+}
+#login_join > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#login_join {
+    color: white;
+    margin-top: 50px;
+}
+header {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('../../../img/header_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.float_clear {
+    clear: both;
+}
+
+#menu_area {
+    padding-bottom: 30px;
+}
+
+#menu_area > #menus {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#menu_area > #menus > li {
+    list-style: none;
+}
+#menu_area > #menus > li > a {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+#logo_area > p { 
+    padding-top: 40px;
+    color: white;   
+}
+#logo_area #search > input {
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    border-width: 0px;
+    padding-left: 20px;
+}
+#logo_area > p > a{ 
+    padding-top: 40px;
+    color: white;
+    font-weight: 700;   
+}
+
+/*헤더 끝*/
+
+/*메인*/
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.mag_area{
+    text-align: center;
+}
+
+.mag_area > #mag_list{
+    display: flex;
+    margin-top: 30px;
+    
+}
+
+.mag_area > #mag_list > li{
+    list-style: none;
+    margin: 7px;
+    border-radius: 8px;
+    border: solid 1px darkgrey;
+    padding: 6px 20px 6px;
+    font-size: 12px;
+    
+}
+
+#mag_list > li >a{
+    font-weight: bold;
+    color: gray;
+}
+#mag_list>li:active{
+    background-color: #458cd3;
+}
+#mag_list>li:active > a{
+    color: white;
+}
+
+
+.mag_content{
+    text-align: center;
+}
+.mag_content > .content_list{
+    list-style: none;
+    padding-top: 20px;
+    
+}
+.mag_content >  .content_list > div{
+    padding: 10px 0;
+    border-bottom: 1px solid #959595;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.list_box>a{
+    float: left;
+    margin-left: 30px;
+    width: 400px;
+    
+}
+/*magazine list title*/
+#li_tit{
+    margin: 3px 0 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #6d6d6d;
+    font-size: 18px;
+}
+/*magazine list content*/
+#li_cont{
+    margin: 3px 0 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #6d6d6d;
+    font-size: 15px;
+}
+
+#cont_img{
+    background-position: center;
+    border: 1px solid white; 
+    border-radius: 10px;
+    padding-left: 130px;
+    height:200px;
+}
+#like_box_list{
+    float: left;
+}
+
+
+/*푸터*/
+footer {
+    width: 100%;
+    background-color: #50e3c2;
+    opacity: 0.5;
+    height: 300px;
+    margin-top: 50px;
+    
+}
+#enterprise_info {
+    margin: 0 auto;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+}
+#enterprise_info > #enterprise_info_text {
+    padding-top: 50px;
+    padding-left: 100px;
+    font-weight: bold;
+}
+#enterprise_info > #enterprise_info_text > p {
+    color: rgb(77, 76, 76);
+}
+#enterprise_info > #enterprise_info_text > #bold {
+    font-size: 20px;
+    font-weight: 700;
+}
+#enterprise_info > #enterprise_info_text > p > a {
+    color: rgb(77, 76, 76);
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#sns_box {
+    margin-top: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+#sns_box > div > a > img {
+    width: 50px;
+}
+#icon_box > #TRIP {
+    margin-top: 20px;
+    text-align: center;
+}
+#icon_box > #TRIP > a > img {
+    width: 100px;
+}
+
+/*푸터 끝*/
