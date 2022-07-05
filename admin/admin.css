@@ -467,15 +467,30 @@ table.colortb th{
     margin-top: 60px;
 }
 .formscroll {
-    max-height: 300px;
-    height: 200px;
+    height: 300px;
+    width: 800px;
     overflow: hidden;
     overflow-y: scroll;
 }
 
-.ad-tb2 {
+table.ad-tb2 {
     margin-top: 0;
     max-height: 300px;
     overflow: hidden;
     overflow-y: scroll;
+    margin-bottom: 50px;
+}
+table a{
+    color: #000;
+}
+table a:visited{
+    color: #000;
+}
+
+
+
+/* 쿠폰 */
+
+.submit {
+    margin: 0 auto;
 }
