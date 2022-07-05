@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'notosanskr';
+    font-family: 'Noto Sans KR';
 }
 header {
     width: 100%;
@@ -33,7 +33,10 @@ main {
     width: 1400px;
     margin: 0 auto;
 }
-
+#main_content_box {
+    width: 1200px;
+    margin: 100px auto;
+}
 
 
 
