@@ -9,17 +9,129 @@
 }
 #sub_text {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(77, 76, 76);
+    margin-bottom: 30px;
 }
 #onedaytrip_box {
     width: 100%;
+    margin-bottom: 30px;
+}
+#title_text2{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
 }
 
 #onedaytrip_box a img { width: 175px; height: 175px;}
 #flight_box {
     margin: 50px 0;
 }
-#flight_box div img {
+#flight_find {
+    margin: 0;
+    color: rgb(96, 146, 219);
+    font-size: 18px;
+    font-weight: 700;
+}
+#flight_show img {
+    width: 30px;
+    height: 30px;
+    margin: 0 20px;
+}
+#flight_show {
+    display: flex;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: 700;
+}
+#flight_show .small {
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 16px;
+    color: rgb(77, 76, 76);
+}
+#flight_show .right{
+    margin-left: 200px;
+}
+#view_flight {
+    text-align: right;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+#view_flight a {
+    color: rgb(96, 146, 219);
+    text-decoration: underline;
+}
+#info_icon {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto 20px;
+}
+#view_info_flex{
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
+}
+#info_box {
+    margin-bottom: 100px;
+}
+#view_info{
+    display: flex;
+    width: 200px;
+    height: 60px;
+    background-color: #50e3c2;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    
+}
+#view_info a {
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+}
+#region_info_boxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 300px;
+}
+#region_info_box {
+    width: 440px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 0.1px solid rgb(240, 240, 240);;
+    box-shadow: 0px 10px 0px -4px rgb(224, 224, 224);
+    margin-top: 50px;
+}
+#region_info_box .title_text {
+    font-size: 24px;
+    font-weight: 700;
+}
+#region_info_box .subtitle_text {
+    font-size: 24px;
+    font-weight: 700;
+    color: gray;
+}
+#view_button_flex {
+    display: flex;
+    justify-content: center;
+}
+#view_button_flex div {
+    width: 160px;
+    height: 50px;
+    background-color: #50e3c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+#view_button_flex div a {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
 }

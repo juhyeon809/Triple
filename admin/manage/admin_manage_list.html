@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자_목록</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="memberlist.html">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    
+    <section class="content2">
+        <h2>관리자 목록</h2>
+        <nav>
+            
+            <form action="#">
+                <div class="form-group">
+                    <select name="" id="">
+                        <option value="전체">전체</option>
+                        <option value="성명">성명</option>
+                        <option value="연락처">연락처</option>
+                        <option value="직함">직함</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="submit">검색</button>
+                </div>
+            </form>
+        </nav>
+    </section>
+    
+        <table class="admin_list_table">
+            <tr>
+                <th>
+                    고유번호
+                </th>
+                <th>
+                    아이디            
+                </th>
+                <th>
+                    성명
+                </th>
+                <th>
+                    연락처
+                </th>
+                <th>
+                    직함
+                </th>
+            </tr> 
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+            <tr>
+                <td><a href="./admin_manage_detail.html">101</a></td>
+                <td><a href="./admin_manage_detail.html">apple</a></td>
+                <td><a href="./admin_manage_detail.html">김사과</a></td>
+                <td><a href="./admin_manage_detail.html">010-1111-1111</a></td>
+                <td><a href="./admin_manage_detail.html">대표</a></td>
+            </tr>
+        </table>
+        <span>1 2 3 4 5</span>
+    <script src="../script.js"></script>
+</body>
+</html>

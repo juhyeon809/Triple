@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품등록 | 항공권</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="#" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="member/memberlist.html">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="예약/all.html">전체</a></li>
+                    <li><a href="fly_reservation.html">항공권</a></li>
+                    <li><a href="room_resevation.html">숙소</a></li>
+                    <li><a href="packge_reservation.html">패키지</a></li>
+                    <li><a href="ticket_reservation.html">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="couponList.html">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    <section class="content2"> 
+        <h2>상품등록 - 항공권</h2>
+    </section>
+        <div class="content2 formbox">
+            <form action="">
+                <div class="box">
+                    <div class="leftbox">
+                        <p>로고 <input type="file"></p>
+                        
+                        <p>국내/국외 <select name="" id="">
+                            <option value="">국내</option>
+                            <option value="">국외</option>
+                        </select></p>
+                        
+                        <p>출발시간 <input type="text"></p>
+                        
+                        <p>비행시간 <input type="text"></p>
+                        
+                    </div>
+                    <div class="rightbox">
+                        <p>항공사명 <input type="text"></p>
+                        
+                        <p>항공기명 <input type="text"></p>
+                        
+                        <p>도착지 <input type="text"></p>
+                        
+                        <p>도착시간 <input type="text"></p>
+                        
+                        <p>수화물 <input type="text"></p>
+                        
+                    </div>
+                <div class="flbox">
+                    <div class="bottombox" id="bottombox">
+                        <p>가격 <select name="" id="">
+                                <option value="이코노미">이코노미</option>
+                                <option value="비즈니스">비즈니스</option>
+                                <option value="퍼스트클래스">퍼스트클래스</option>
+                        </select></p>
+                        <p id="id">성인 <input type="text"> / 소아 <input type="text"></p>
+                    </div>
+                    <button onclick="divplus()" class="plus">추가</button>
+                </div>
+            </div>
+                <p><button type="submit" class="regis">등록</button></p>
+            </form>
+
+        </div> 
+
+    <script src="../script.js"></script>
+</body>
+</html>

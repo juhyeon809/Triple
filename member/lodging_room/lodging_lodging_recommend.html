@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triple RoomReservation_main</title>
+    <title>호텔·펜션 | 추천상품</title>
     <link rel="stylesheet" href="../css/lodging_room_main.css">
     <link rel="stylesheet" href="../lodging_room/css/lodging_room_main.css">
     <link rel="stylesheet" href="../../css/common.css">
@@ -26,135 +26,207 @@
                     <li><a href="../domestic_travel/domestic_travel.html">국내여행</a></li>
                     <li><a href="../flight_reservation/air.html">항공예약</a></li>
                     <li><a href="./lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="../tour_ticket/tour_ticket.html">투어<span>&#183;</span>티켓</a></li>
+                    <li><a href="../tour_ticket/list.html">투어<span>&#183;</span>티켓</a></li>
                     <li><a href="../travel_package/travel_package.html">패키지여행</a></li>
                     <li><a href="../magazine/magazine.html">여행매거진</a></li>
                     <li><a href="../event/event.html">혜택/렌터카</a></li>
                 </ul>
             </div>
         </header>
-        <div id="lodging_img">
-            <img src="./img/숙소예약.png" alt="숙소예약">
+        <div class="lodging_main" id="lodging_main" style="background: url(./img/lodging_list_main.svg); height: 250px;">
+            <p class="content content1">#가족여행 #여름준비</p>
+            <p class="content content2">가족과 함께 떠나는<br>여름휴가 BEST 숙소</p>
+            <p class="content content3">#호텔·리조트 #독채펜션 #키즈룸숙소</p>
         </div>
-        <div id="recommend_setting">
-            <div id="recommend_setting_date">6.30(목) - 7.1(금)</div>
-            <div id="recommend_setting_persons">성인 2</div>
-            <div id="clear"><p></p></div>
-        </div>
-        <div id="recommend_lodgingrecommend">
-            <div id="recommend_family_best">
-                <div>패밀리 숙소 BEST</div>
-            </div>    
-            <div id="recommend_earlybird_best">
-                <div>전세계 인기 호텔 얼리버드 특가 모음</div>
-            </div>    
-            <div id="recommend_jeju_best">
-                <div>제주 BEST 숙소 모음</div>
+        <section>
+            <div class="lodging_main">
+                <input type="date" name="lodging_calendar" value="choice_date" class="summary_reco_btn" >
+                <select name="people_number" class="summary_reco_btn">
+                    <option value="1인">1인</option>
+                    <option value="2인">2인</option>
+                    <option value="3인">3인</option>
+                    <option value="4인">4인</option>
+                    <option value="5명 이상">5명 이상</option>
+                </select>
             </div>
-            <div id="clear"><p></p></div>
-            <div id="recommen_lodgingrecommend_list">    
-                <div id="recommend_best_1">
-                    <div>LAOS</div>
-                    <div>패밀리 호텔·리조트</div>
-                    <div>쾌적하고 넓은 가족 여행 최적화 숙소</div>
-                    <div>패키지 상품 보기</div>
-                    <img src="./img/megazine.jpg" alt="숙소1">
-                </div>
-                <div id="recommend_best_2">
-                    <div>LAOS</div>
-                    <div>키즈 펜션·풀빌라</div>
-                    <div>이번 여행의 주인공은 아이들!</div>
-                    <div>패키지 상품 보기</div>
-                    <img src="./img/megazine.jpg" alt="숙소2">
-                </div>
-                <div id="recommend_best_3">
-                    <div>LAOS</div>
-                    <div>인기 독채 펜션</div>
-                    <div>우리끼리 더 안전한 여행</div>
-                    <div>패키지 상품 보기</div>
-                    <img src="./img/megazine.jpg" alt="숙소3">
-                </div>
-            </div>
-        </div>    
-        <div id="recommend_local_lodging">
-            <div id="local_lodging_local">
-                <input type="button" value="제주">
-                <input type="button" value="서울">
-                <input type="button" value="경기">
-                <input type="button" value="강원">
-                <input type="button" value="경상">
-                <input type="button" value="전라">
-                <input type="button" value="충청">
-            </div>
-            <div id="local_lodging_lodging">
-                <div id="local_lodging_lodging_1">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_1_info">
-                        <div id="local_lodging_lodging_1_event">숙박대전</div>
-                        <div id="local_lodging_lodging_1_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_1_starscore"><span id="lodging_1_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_1_price1"><span id="local_lodging_lodging_1_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_1_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
+            <div class="slidemenu">
+                <ul>
+                    <li><a href="">패밀리 숙소 BEST</a></li>
+                    <li><a href="">전세계 인기 호텔 얼리버드 특가 모음</a></li>
+                    <li><a href="">제주 BEST 숙소 모음</a></li>
+                </ul>
+                <div class="reco_box">
+                    <div class="reco_item_back">
+                        <div class="reco_item1">
+                            <img src="./img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                        </div>
+                        <div class="reco_item2">
+                            <div class="item_box">
+                                <p class="item_box_title">패밀리 호텔·리조트</p>
+                                <p class="item_box_content">쾌적하고 넓은 가족여행 최적화 숙소</p>
+                            </div>
+                            <div class="item_box">
+                                <input type="button" value="패키지 상품 보기">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div id="local_lodging_lodging_2">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_2_info">
-                        <div id="local_lodging_lodging_2_event">숙박대전</div>
-                        <div id="local_lodging_lodging_2_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_2_starscore"><span id="lodging_2_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_2_price1"><span id="local_lodging_lodging_2_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_2_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
+                    <div class="reco_item_back" >
+                        <div class="reco_item1">
+                            <img src="./img/lodging_package_item2.jpg" alt="패밀리 호텔·리조트" >
+                        </div>
+                        <div class="reco_item2">
+                            <div class="item_box">
+                                <p class="item_box_title">키즈 펜션·풀빌라</p>
+                                <p class="item_box_content">이번 여행의 주인공은 아이들!</p>
+                            </div>
+                            <div class="item_box">
+                                <input type="button" value="패키지 상품 보기">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div id="local_lodging_lodging_3">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_3_info">
-                        <div id="local_lodging_lodging_3_event">숙박대전</div>
-                        <div id="local_lodging_lodging_3_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_3_starscore"><span id="lodging_3_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_3_price1"><span id="local_lodging_lodging_3_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_3_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
-                    </div>
-                </div>
-                <div id="local_lodging_lodging_4">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_4_info">
-                        <div id="local_lodging_lodging_4_event">숙박대전</div>
-                        <div id="local_lodging_lodging_4_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_4_starscore"><span id="lodging_4_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_4_price1"><span id="local_lodging_lodging_4_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_4_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
-                    </div>    
-                </div>
-                <div id="local_lodging_lodging_5">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_5_info">
-                        <div id="local_lodging_lodging_5_event">숙박대전</div>
-                        <div id="local_lodging_lodging_5_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_5_starscore"><span id="lodging_5_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_5_price1"><span id="local_lodging_lodging_5_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_5_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
-                    </div>
-                </div>
-                <div id="local_lodging_lodging_6">
-                    <img src="./img/객실1.png" alt="숙소1">
-                    <div id="local_lodging_lodging_6_info">
-                        <div id="local_lodging_lodging_6_event">숙박대전</div>
-                        <div id="local_lodging_lodging_6_name">더 포 그레이스 리조트</div>
-                        <div id="local_lodging_lodging_6_starscore"><span id="lodging_6_starscore">★★★★★</span> (237) · 저장 3273 · 성산·우도</div>
-                        <div id="local_lodging_lodging_6_price1"><span id="local_lodging_lodging_6_price1_sale">7%</span> 59,520원</div>
-                        <div id="local_lodging_lodging_6_price2">1박, 세금포함</div>
-                        <div id="coupon">쿠폰할인가</div>
+                    <div class="reco_item_back">
+                        <div class="reco_item1">
+                            <img src="./img/lodging_package_item3.jpg" alt="패밀리 호텔·리조트" >
+                        </div>
+                        <div class="reco_item2">
+                            <div class="item_box">
+                                <p class="item_box_title">인기 독채 펜션</p>
+                                <p class="item_box_content">우리끼리 더 안전한 여행</p>
+                            </div>
+                            <div class="item_box">
+                                <input type="button" value="패키지 상품 보기">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="region_reco">
+                <div class="submenu">
+                    <a href="./제주">제주</a> | 
+                    <a href="./서울">서울</a> | 
+                    <a href="./경기">경기</a> | 
+                    <a href="./강원">강원</a> | 
+                    <a href="./경상">경상</a> |
+                    <a href="./전라·충청">전라·충청</a>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="./img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="./img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="./img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="./img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="./img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <footer>
             <div id="enterprise_info">
                 <div id="enterprise_info_text">

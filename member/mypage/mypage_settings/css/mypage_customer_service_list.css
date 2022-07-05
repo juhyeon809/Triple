@@ -1,0 +1,32 @@
+
+#main_content_box .content_box{
+    width: 1000px;
+    margin: 0 auto;
+}
+#main_content_box .content_box .title_p,#main_content_box .content_box .index_p {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(124, 124, 124);
+}
+#main_content_box .content_box .title_p {
+    font-size: 30px;
+    margin-bottom: 100px;
+}
+#main_content_box .content_box .index_p a {
+    text-decoration: none;
+    color: rgb(124, 124, 124);
+    
+}
+#main_content_box .content_box .content_p {
+    margin: 5px 0px;
+    margin-left: 50px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    width: 800px;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+#main_content_box .content_box .content_p a {
+    text-decoration: none;
+    color: rgb(124, 124, 124);
+}

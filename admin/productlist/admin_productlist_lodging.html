@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품목록_숙소</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="memberlist.html">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    
+    <section class="content2">
+        <h2>상품목록 숙소</h2>
+        <nav>
+            <form action="#">
+                <div class="form-group">
+                    <div class="admin_productlist_select">
+                        <select name="" class="">
+                            <option value="여행지">여행지</option>
+                            <option value="하와이">하와이</option>
+                            <option value="미국">미국</option>
+                            <option value="일본">일본</option>
+                            <option value="more">.....</option>
+                        </select>
+                        <select name="" class="">
+                            <option value="도시">도시</option>
+                            <option value="도쿄">도쿄</option>
+                            <option value="요코하마">요코하마</option>
+                            <option value="교토">교토</option>
+                            <option value="more">.....</option>
+                        </select>
+                        <select name="" class="">
+                            <option value="숙소유형">숙소유형</option>
+                            <option value=호텔">호텔</option>
+                            <option value="리조트">리조트</option>
+                            <option value="모텔">모텔</option>
+                            <option value="펜션">펜션</option>
+                            <option value="카라반">카라반</option>
+                            <option value="글램핑">글램핑</option>
+                        </select>
+                        <select name="" class="">
+                            <option value="검색분류">검색분류</option>
+                            <option value="상품명">상품명</option>
+                            <option value="상품번호">상품번호</option>
+                        </select>
+                    </div>
+                    <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                    <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                </div>
+            </form>
+        </nav>
+    </section>
+        <table class="admin_list_table">
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>
+                    상품명
+                </th>
+                <th>
+                    숙박일        
+                </th>
+                <th>
+                    가격
+                </th>
+                <th>
+                    숙소명
+                </th>
+                <th>
+                    상품번호
+                </th>
+            </tr> 
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+            <tr>
+                <td><input class="admin_list_table_link" type="checkbox"></td>
+                <td><a class="admin_list_table_link" href="#">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                <td><a class="admin_list_table_link" href="#">1박</a></td>
+                <td><a class="admin_list_table_link" href="#">590,000원</a></td>
+                <td><a class="admin_list_table_link" href="#">시그니엘</a></td>
+                <td><a class="admin_list_table_link" href="#">Room 101</a></td>
+            </tr>
+        </table>
+        <span class="admin_productlist_lowbar">
+            <button class="admin_productlist_lowbar_delete" value="선택삭제">선택삭제</button>
+            <button class="admin_productlist_lowbar_stop" value="판매중지">판매중지</button>
+        </span>
+        <span class="pagenum">1 2 3 4 5</span>
+    <script src="../script.js"></script>
+</body>
+</html>

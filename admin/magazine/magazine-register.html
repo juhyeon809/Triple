@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 | 매거진등록</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+    
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="memberlist.html">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    
+    <section class="content2">
+        <h2>매거진 등록</h2>
+        <div class="magazine_register">
+            <div class="magazine_register_1">
+                <div class="magazine_register_1_1">분류</div>
+                <div class="magazine_register_1_2"><select name="" id="">
+                    <option value="">전체</option>
+                    <option value="">#여행지추천</option>
+                    <option value="">#여행꿀팁</option>
+                    <option value="">#맛집탐방</option>
+                    <option value="">#여행기</option>
+                    <option value="">#항공·공항</option>
+                    <option value="">#숙소추천</option>
+                    <option value="">#투어·티켓</option>
+                    <option value="">#쇼핑</option>
+                </select></div>
+            </div>
+
+            <div class="magazine_register_2">
+                <div class="magazine_register_2_1">제목</div>
+                <div class="magazine_register_2_2"><input type="text"></div>
+            </div>
+
+            <div class="magazine_register_4">
+                <div class="magazine_register_2_1">해시태그</div>
+                <div class="magazine_register_2_2"><input type="text"></div>
+            </div>
+
+            <div class="magazine_register_5">
+                <div class="magazine_register_5_1">썸네일 이미지</div>
+                <div class="magazine_register_5_2"><button>+</button></div>
+                <div class="magazine_register_5_3"><button>추가</button></div>
+            </div>
+
+            <div class="magazine_register_3">
+                <div class="magazine_register_3_1">매거진 내용</div>
+                <div class="magazine_register_3_2"><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 150px;"></textarea></div>
+            </div>
+
+            <div class="magazine_register_6_7">
+                <div class="magazine_register_6">
+                    <div class="magazine_register_6_1"><br>바로가기<br>이미지</div>
+                    <div class="magazine_register_6_2"><button>+</button></div>
+                </div>
+
+                <div class="magazine_register_7">
+                    <div class="magazine_register_7_1"><br>여행지<br>바로가기</div>
+                    <div class="magazine_register_7_2"><input type="text" value=" 괌 바로가기"></div>
+                </div>
+            </div>
+            
+            <div class="magazine_register_8">주요 명소</div>
+
+            <div class="magazine_register_9">
+                <div class="magazine_register_9_1">장소명</div>
+                <div class="magazine_register_9_2"><input type="text" value=""></div>
+            </div>
+
+            <div class="magazine_register_10">
+                <div class="magazine_register_10_1">명소소개</div>
+                <div class="magazine_register_10_2"><textarea class="weditor1" id="weditor1" cols="100" rows="10"></textarea></div>
+            </div>
+            <div class="magazine_register_11">
+                <div class="magazine_register_11_1">명소<br>이미지</div>
+                <div class="magazine_register_11_2"><button>+</button></div>
+            </div>
+            <div class="magazine_register_12"><button>명소 추가</button></div>
+        </div>
+    </section>
+
+    <script>
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+        oAppRef : oEditors,
+        elPlaceHolder : "weditor",//
+        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+        fCreator : "createSEditor2",
+        });
+
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+        oAppRef : oEditors,
+        elPlaceHolder : "weditor1",//
+        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+        fCreator : "createSEditor2",
+        });
+    </script>
+
+<script src="../script.js"></script>
+</body>
+</html>

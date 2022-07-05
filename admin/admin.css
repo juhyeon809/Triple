@@ -413,12 +413,12 @@ main .card .label{
     font-size: 16px;
 }
 .btnlist {
-    width: 900px;
-    max-width: 1000px;
-    position: absolute;
-    width: calc(100%-260px);
-    right: -500px;
-    
+    box-sizing: border-box;
+    width: 150px;
+    position: relative;
+    margin: 0 auto;
+    margin-left: 530px;
+    right: -950px;
 }
 .btnlist button {
     width: 60px;
@@ -458,17 +458,109 @@ span {
 }
 
 /*회원 상세정보*/
+
 table.colortb th{
     border-bottom: 1px solid var(--dark-grey);
     background-color: var(--grey);
+} 
+.infolist {
+    margin-top: 60px;
 }
 .formscroll {
-    
+
+    height: 300px;
+    width: 800px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+table.ad-tb2 {
+    margin-top: 0;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
+table a{
+    color: #000;
+}
+table a:visited{
+    color: #000;
+}
+
+
+
+/* 쿠폰 */
+
+.submit {
+    margin: 0 auto;
+}
+
+.formbox{
+    width: 700px;
+    margin-left: 300px;
+    display: flex;
+}
+.box p{
+    margin-bottom: 20px;
+    font-size: 20px;
+    vertical-align: middle
+    ;
+}
+.box input {
+    width: 200px;
+    height: 25px;
+    margin-left: 20px;
+}
+.box select {
+    width: 100px;
+    height: 25px;
+    margin-left: 20px;
+}
+.leftbox {
+    float: left;
+}
+
+.rightbox {
+    float: right;
+}
+.flbox {
+    display: flex;
+    clear: both;
+    width: 700px;
+}
+.plus{
+    height: 20px;
+}
+.regis {
+    text-align: center;
+    width: 60px;
+    background-color: #ffb800;
+    border: none;
+}
+.bottombox {
+    width: 600px;
+}
+.box button {
+    clear: both;
+    width: 50px;
+    float: right;
+    margin-top: 25px;
+}
+/*쿠폰등록*/
+.coupon input {
+    height: 30px;
+    font-size: 15px;
+}
+.coupon select{
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
 }
 
 
 /* 11.관리자 관리 */
-#admin_manage_form_container {
+#admin_mana0ge_form_container {
     width: 1000px;
     height: 500px;
     margin: 0 auto;
@@ -521,4 +613,752 @@ table.colortb th{
     border-radius: 10px;
     border: 1px solid black;
     background-color: orange;
+
+}
+
+
+/* 공지사항 */
+
+
+.notice {
+    width: 950px;
+    font-size: 22px;
+    position: relative;
+    top: -20px;
+}
+
+.notice div {
+    float:left;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.notice input { 
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.notice select {
+    width :160px;
+    height: 30px;
+    float:left;
+    text-align: center;
+    font-size: 18px;
+}
+
+.notice_b input{
+    width: 230px;
+}
+
+.notice button {
+    width : 50px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.check input {
+    width: 15px;
+    height: 15px;
+    margin-right: 45px;
+}
+
+/* table, tr {
+    border-bottom: solid#f7f7f7 ;
+    background-color: #f7f7f7;
+    font-size: 18px;
+} */
+
+/* .under{
+    border-bottom: 1px solid #000;
+} */
+
+.re_de {
+    box-sizing: border-box;
+    position: relative;
+    left: 1435px;
+    width: 210px;
+    height: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.registration{
+    margin-right: 10px;
+}
+
+.registration div, .delete div {
+    width: 100px;
+    padding-top: 5px;
+}
+
+.delete, .registration{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.sp1{
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+/* 공지사항 끝 */
+
+
+/* 공지사항 - 상세  */
+
+
+.notice_detail{
+    background-color: #f7f7f7;
+    width: 1200px;
+    height: 700px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 26px;
+}
+
+.notice_detail_1{
+    text-align: center;
+    font-size: 36px;
+}
+
+.notice_detail_2{
+    font-size: 20px;
+    position: relative;
+    left: 735px;
+    padding-top: 10px;
+}
+
+.notice_detail_3{
+    position: relative;
+    padding-top: 100px;
+}
+
+.mo_li {
+    box-sizing: border-box;
+    position: relative;
+    left: 1450px;
+    width: 210px;
+    height: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modify{
+    margin-right: 10px;
+}
+
+.modify div, .list div {
+    width: 100px;
+    padding-top: 5px;
+}
+
+.list, .modify{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+
+/* 공지사항 - 상세 끝 */
+
+
+/* 공지사항 - 등록 */
+
+
+.notice_register{
+    width: 1200px;
+    height: 600px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.notice_register_1{
+    height: 100px;
+}
+
+.notice_register_1_1, .notice_register_2_1,  .notice_register_3_1{
+    width :200px;
+    height :100px;
+    float:left;
+}
+
+.notice_register_3_1{
+    height: 380px;
+}
+
+.notice_register_1_2, .notice_register_2_2, .notice_register_3_2{
+    width : 800px;
+    height: 100px;
+    float:left;
+}
+
+.notice_register_1_2 select{
+    width :150px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+}
+
+.notice_register_2_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    background-color: gray;
+    border: 0;
+}
+
+.notice_register_3_2{
+    height: 380px;
+}
+
+.notice_register_2{
+    height: 100px;
+}
+
+.notice_register_3{
+    height: 380px;
+}
+
+.regi {
+    box-sizing: border-box;
+    position: relative;
+    left: 1000px;
+    width: 210px;
+    height: 30px;
+    padding-top: 80px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.regi_1 div{
+    width: 100px;
+    padding-top: 5px;
+}
+
+.regi_1{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+
+/* 공지사항 - 등록 끝 */
+
+
+/* 매거진 - 목록 */
+
+
+.tab a {
+    color: #000;
+}
+
+.tab tr th {
+    font-size: 26px;
+}
+
+.tab tr td {
+    font-size: 20px;
+}
+
+.tab tr {
+    height: 80px;
+}
+
+.sp2{
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+
+/* 매거진 - 목록 끝 */
+
+
+/* 매거진 - 등록 */
+
+/* 100 100 100 150 250 */
+.magazine_register{
+    width: 1200px;
+    height: 1700px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.magazine_register_1{
+    height: 80px;
+}
+
+.magazine_register_1_1, .magazine_register_2_1,  .magazine_register_3_1, .magazine_register_5_1{
+    width :200px;
+    height :80px;
+    float:left;
+}
+
+.magazine_register_3_1{
+    height: 380px;
+}
+
+.magazine_register_1_2, .magazine_register_2_2, .magazine_register_3_2{
+    width : 800px;
+    height: 80px;
+    float:left;
+}
+
+.magazine_register_1_2 select{
+    width :150px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.magazine_register_2_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    border: 1px solid black;
+}
+
+.magazine_register_3_2{
+    height: 380px;
+}
+
+.magazine_register_2{
+    height: 80px;
+}
+
+.magazine_register_3{
+    height: 250px;
+}
+
+.magazine_register_4{
+    height: 80px;
+}
+
+.magazine_register_5{
+    height: 150px;
+    margin-bottom: 35px;
+}
+
+.magazine_register_5_1{
+    height: 150px;
+    box-sizing: border-box;
+    padding-top: 55px;
+}
+
+.magazine_register_5_2{
+    width: 200px;
+    height: 150px;
+    float: left;
+}
+
+.magazine_register_5_2 button{
+    width: 200px;
+    height: 150px;
+    background-color: gray;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+}
+
+.magazine_register_5_3{
+    width: 600px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_5_3 button{
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+    cursor: pointer;
+}
+
+/* 700 */
+
+/* 150 100 300 150  */
+
+.magazine_register_6_7{
+    height: 220px;
+    position: relative;
+    top: -60px;
+
+}
+.magazine_register_6{
+    width: 400px;
+    height: 150px;
+    float:left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.magazine_register_6_1{
+    width: 200px;
+    height: 150px;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 50px;
+}
+
+.magazine_register_6_2{
+    width: 200px;
+    height: 150px;
+    float:left;
+    
+}
+
+.magazine_register_6_2 button {
+    width: 200px;
+    height: 150px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+}
+
+.magazine_register_7{
+    width: 600px;
+    height: 150px;
+    float:left;
+    
+}
+
+.magazine_register_7_1{
+    width: 200px;
+    height: 150px;
+    float:left;
+    text-align: center;
+}
+
+.magazine_register_7_2{
+    width: 400px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_7_2 input{
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    position: relative;
+    top: 45px;
+}
+
+.magazine_register_8{
+    box-sizing: border-box;
+    padding-left: 17px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.magazine_register_9{
+    height: 100px;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.magazine_register_9_1{
+    width :200px;
+    float:left;
+}
+
+.magazine_register_9_2{
+    width: 800px;
+    float: left;
+}
+
+.magazine_register_9_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    border: 1px solid black;
+}
+
+.magazine_register_10{
+    height: 300px;
+}
+
+.magazine_register_10_1{
+    width: 200px;
+    float:left;
+}
+
+.magazine_register_10_2{
+    width: 800px;
+    float:left;
+}
+
+.magazine_register_11{
+    height: 150px;
+}
+
+.magazine_register_11_1{
+    width: 200px;
+    height: 150px;
+    float:left;
+    text-align: center;
+    box-sizing: border-box;
+    padding-right: 50px;
+    padding-top: 40px;
+}
+
+.magazine_register_11_2{
+    width: 800px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_11_2 button{
+    width: 200px;
+    height: 150px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;    
+}
+
+.magazine_register_12{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.magazine_register_12 button{
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: yellow;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+
+/* 매거진 - 등록 끝*/
+
+/* 11.관리자 관리 */
+.admin_manage_form_container {
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-around;
+    margin-top: 50px;
+    margin-left: 400px;
+    align-items: center;
+}
+
+.admin_manage_form_container_ul1,  .admin_manage_form_container_ul3 {
+    width: 150px;
+    height: 300px;
+}
+
+.admin_manage_form_container_ul2, .admin_manage_form_container_ul4 {
+    width: 300px;
+    height: 300px;
+}
+
+.admin_manage_form_container_ul1 > p,  .admin_manage_form_container_ul3 > p {
+    width: 150px;
+    height: 30px;
+    margin-top: 25px;
+    font-size: 18px;
+} 
+
+.admin_register_adminid_content, .admin_register_name_content, .admin_register_hp_content, .admin_register_email_content, .admin_register_adminpw_content, .admin_register_adminpwre_content, .admin_register_department_content, .admin_register_title_content{
+    width: 200px;
+    height: 30px;
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid gray;
+    /* border-radius: 10px; */
+}
+
+.admin_register_btn {
+    text-align: center;
+    margin-left: 200px;
+}
+
+.admin_register_btn > input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    /* border-radius: 10px; */
+    border: none;
+    background-color: orange;
+}
+
+.admin_list_table_link, .admin_inquiry_table_link {
+    color: black;
+}
+
+/* productlist */
+
+.admin_productlist_select {
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-group .admin_productlist_search1 {
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+.form-group > .admin_productlist_search1 > .admin_productlist_search2 {
+    width: 500px;
+}
+
+.admin_productlist_searchbtn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 375px;
+}
+
+.admin_productlist_lowbar, .admin_faq_list_btn {
+    text-align: left;
+    margin-top: 20px; 
+}
+
+.pagenum {
+    margin-top: 60px;
+}
+
+/* inquiry */
+
+.admin_inquiry_q1 {
+    width: 700px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.admin_inquiry_q2 {
+    height: 40px;
+    background-color: rgb(201, 201, 201);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin_inquiry_datail_q3 {
+    height: 110px;
+}
+
+.admin_inquiry_q2 > p {
+    font-size: 18px;
+}
+
+.admin_inquiry_q3 > p, .admin_inquiry_a1 > div > p {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+.admin_inquiry_category1, .admin_inquiry_qtext, .admin_inquiry_atext {
+    font-size: 20px;
+    font-weight: 600;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.admin_inquiry_category2{
+    font-size: 18px;
+    width: 100px;
+    margin-left: 110px;
+}
+
+.admin_inquiry_a1{
+    width: 700px;
+    height: 250px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.admin_inquiry_datail_btn {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 15px;
+    text-align: right;
+}
+
+.admin_inquiry_datail_btn1 {
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    background-color: orange;
+}
+
+.admin_inquiry_datail_btn2 {
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.admin_FAQ_content {
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.admin_FAQ_content_title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin_FAQ_content_text{
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 70px;
+    font-size: 20px;
+}
+
+.admin_faq_detail_btn {
+    width: 700px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.admin_faq_list_btn1, .admin_faq_list_btn2, .admin_faq_list_btn3 {
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
 }
