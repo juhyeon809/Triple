@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원상세정보</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
@@ -87,7 +88,10 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <h2>회원정보</h2>
+    <section class="content2"> 
+        <h2>회원정보</h2>
+    </section>
+    
     <table class="colortb">
         <tr>
             <th>이름</th>
@@ -108,9 +112,9 @@
             <td>1건</td>
         </tr>
     </table>
-    <h2>예약내역</h2>
+    <section class="content2 infolist"><h2 >예약내역</h2></section>
     <div class="formscoll">
-        <table>
+        <table class="ad-tb2">
                 <tr>
                     <th>
                         <input type="checkbox" name="" id="">
@@ -144,8 +148,19 @@
                     <td>결제완료</td>
                     
                 </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>김사과</td>
+                    <td>apple</td>
+                    <td>H45612</td>
+                    <td>다낭</td>
+                    <td>다낭 골든 베이</td>
+                    <td>결제완료</td>
+                </tr>
                 
         </table>
     </div>
+
+    <script src="../script.js"></script>
 </body>
 </html>
