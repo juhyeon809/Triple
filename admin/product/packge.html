@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약조회 | 숙소</title>
+    <title>상품등록 | 패키지</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -50,7 +50,7 @@
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
+                    <li><a href="couponList.html">목록</a></li>
                     <li><a href="#">등록</a></li>
                 </ul>
             </li>
@@ -89,67 +89,44 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2">
-        <h2>예약조회 - 숙소</h2> 
-        <nav>
-            
-            <form action="#">
-                <div class="form-group">
-                    <input type="date" name="" id=""> ~ <input type="date">
-                    <select name="" id="">
-                        <option value="전체">전체</option>
-                        <option value="아이디">아이디</option>
-                        <option value="이름">이름</option>
-                        <option value="예약번호">예약번호</option>
-                        <option value="내용">내용</option>
-                    </select>
-                    <input type="text" placeholder="검색어를 입력하세요">
-                    <button type="submit">검색</button>
-                </div>
-            </form>
-        </nav>
+        <h2>상품등록 - 패키지</h2>
     </section>
-    
-        <table>
-            <tr>
-                <th>
-                    <input type="checkbox" name="" id="">
-                </th>
-                <th>
-                    이름
-                </th>
-                <th>
-                    아이디                
-                </th>
-                <th>
-                    예약번호
-                </th>
-                <th>
-                    지역
-                </th>
-                <th>
-                    내용
-                </th>
-                <th>
-                    결제
-                </th>
-            </tr> 
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>김사과</td>
-                <td>apple</td>
-                <td>H45612</td>
-                <td>다낭</td>
-                <td>다낭 골든 베이</td>
-                <td>결제완료</td>
-                
-            </tr>
+    <div class="content2">
+        <form action="">
             
-        </table>
-        <section class="btnlist">
-            <button type="submit">변경</button>
-            <button type="submit">선택삭제</button>
-        </section>
-        <span>1 2 3 4 5</span>
+                <p>분류</p>
+                <select name="" id="">
+                    <option value="">나라</option>
+                </select>
+                <p>상품명</p>
+                <input type="text">
+                <p>상품이미지</p>
+                <input type="file">
+                <p>키워드</p>
+                <input type="checkbox" name="자유일정" id="">자유일정 <input type="checkbox" name="특가" id="">특가 <input type="checkbox" name="노옵션노쇼핑" id="">노옵션 노쇼핑 <input type="checkbox" name="출발확정" id="">출발확정 <input type="checkbox" name="한정특가" id="">한정특가
+            
+            <div>
+                <p>상품가격</p>
+                <span>가격분류
+                <select name="" id="">
+                    <option value="성인">성인</option>
+                    <option value="소아">소아</option>
+                </select> / <input type="text">원</span>
+
+            </div>
+            <button onclick="divplus">추가</button>
+            <p>상품프로그램</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p>포함사항</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p>불포함사항</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <p>취소 / 환불 규정</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>등록</button>
+        </form>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>

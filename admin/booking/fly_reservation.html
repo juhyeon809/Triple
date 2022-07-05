@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿠폰 등록</title>
+    <title>관리자 | 항공예약조회</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
@@ -30,10 +31,10 @@
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
+                    <li><a href="../product/air.html">항공권</a></li>
+                    <li><a href="../product/room.html">숙소</a></li>
+                    <li><a href="../product/packge.html">패키지</a></li>
+                    <li><a href="../product/ticket.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -49,20 +50,20 @@
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="couponList.html">목록</a></li>
+                    <li><a href="#">목록</a></li>
                     <li><a href="#">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../notice/notice-list.html">목록</a></li>
+                    <li><a href="../notice/notice-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../magazine/magazine-list.html">목록</a></li>
+                    <li><a href="../magazine/magazine-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
@@ -79,8 +80,8 @@
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../manage/">목록</a></li>
+                    <li><a href="../manage/">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -88,28 +89,71 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2">
-        <h2>쿠폰목록</h2> 
-
-        <form action="" class="coupon">
-            <p>쿠폰 이름</p>
-            <input type="text">
-            <p>코드</p>
-            <input type="text">
-            <p>할인내용</p>
-            <select name="" id="">
-                <option value="">2000원 할인</option>
-                <option value="">3000원 할인</option>
-                <option value="">4000원 할인</option>
-                <option value="">5000원 할인</option>
-            </select>
-            <p>유효기간</p>
-                <input type="date" name="" id=""> ~ <input type="date" name="" id="">
-        <button type="submit" class="submit">등록</button>
-    </form>
+        <h2>예약조회 - 항공권</h2> 
+        <nav>
             
-           
-
-
-        <script src="../script.js"></script>
+            <form action="#">
+                <div class="form-group">
+                    <input type="date" name="" id=""> ~ <input type="date">
+                    <select name="" id="">
+                        <option value="전체">전체</option>
+                        <option value="아이디">아이디</option>
+                        <option value="이름">이름</option>
+                        <option value="예약번호">예약번호</option>
+                        <option value="내용">내용</option>
+                    </select>
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="submit">검색</button>
+                </div>
+            </form>
+        </nav>
+    </section>
+    
+        <table>
+            <tr>
+                <th>
+                    <input type="checkbox" name="" id="">
+                </th>
+                <th>
+                    이름
+                </th>
+                <th>
+                    분류                
+                </th>
+                <th>
+                    예약번호
+                </th>
+                <th>
+                    내용
+                </th>
+                <th>
+                    결제
+                </th>
+                <th>
+                    승인
+                </th>
+            </tr> 
+            <tr onClick = "location.href='flyDetail.html'">
+                <td><input type="checkbox" name="" id=""></td>
+                <td>김사과</td>
+                <td>항공권</td>
+                <td>A44168</td>
+                <td>인천 - 다낭</td>
+                <td>결제완료</td>
+                <td>
+                    <select name="" id="">
+                        <option value="승인">승인</option>
+                        <option value="미승인">미승인</option>
+                    </select>
+                </td>
+            </tr>
+        
+        </table>
+        <div class="btnlist">
+            <button type="submit">변경</button>
+            <button type="submit">선택삭제</button>
+        </div>
+        <span>1 2 3 4 5</span>
+    <script src="../script.js"></script>
 </body>
 </html>

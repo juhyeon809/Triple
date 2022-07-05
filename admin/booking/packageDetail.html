@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약조회 | 패키지</title>
+    <title>관리자 | 패키지예약조회</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -22,11 +22,11 @@
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="../booking/all.html">전체</a></li>
-                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
-                    <li><a href="../booking/room_resevation.html">숙소</a></li>
-                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
-                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                    <li><a href="예약/all.html">전체</a></li>
+                    <li><a href="fly_reservation.html">항공권</a></li>
+                    <li><a href="room_resevation.html">숙소</a></li>
+                    <li><a href="packge_reservation.html">패키지</a></li>
+                    <li><a href="ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -50,8 +50,8 @@
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="../coupon/couponList.html">목록</a></li>
-                    <li><a href="../coupon/couponRegistration.html">등록</a></li>
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
@@ -81,48 +81,48 @@
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../manage/">목록</a></li>
-                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    <li><a href="../manage/">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <section class="content2">
-        <h2>회원목록</h2>
-        <h2>예약조회 - 티켓</h2> 
-    
+    <section class="content2"> 
+        <h2>패키지 예약 상세</h2>
     </section>
-    
-        <table>
-            <tr>
-                <th>
-                    <input type="checkbox" name="" id="">
-                </th>
-                <th>
-                    예약번호
-                </th>
-                <th>
-                    내용
-                </th>
-                <th>
-                    결제
-                </th>
-            </tr> 
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>T44168</td>
-                <td>제주 한림 공원 입장권</td>
-                <td>결제완료</td>
-            </tr>
+    <table class="colortb">
+        <tr>
+            <th>이름</th>
+            <td>김사과</td>
+            <th>아이디</th>
+            <td>apple</td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td>apple@apple.com</td>
+            <th>대표번호</th>
+            <td>010-1234-1234</td>
+        </tr>
+        <tr>
+            <th>지역</th>
+            <td>터키</td>
+            <th>예약번호</th>
+            <td>P16879</td>
+        </tr>
+        <tr>
+            <th>패키지 명</th>
+            <td colspan="3">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</td>
+            
+        </tr>
+        <tr>
+            <th>가격</th>
+            <td>459,000원</td>
+            <th>결제상태</th>
+            <td>결제완료</td>
+        </tr>
         
-        </table>
-        <section class="btnlist">
-        <button type="submit">변경</button>
-        <button type="submit">선택삭제</button>
-    </section>
-        <span>1 2 3 4 5</span>
-
+    </table>
 
     <script src="../script.js"></script>
 </body>

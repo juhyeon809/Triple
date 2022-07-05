@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약조회 | 전체</title>
+    <title>관리자 | 패키지예약조회</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
@@ -30,10 +31,10 @@
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
+                    <li><a href="../product/air.html">항공권</a></li>
+                    <li><a href="../product/room.html">숙소</a></li>
+                    <li><a href="../product/packge.html">패키지</a></li>
+                    <li><a href="../product/ticket.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -55,14 +56,14 @@
             </li>
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../notice/notice-list.html">목록</a></li>
+                    <li><a href="../notice/notice-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../magazine/magazine-list.html">목록</a></li>
+                    <li><a href="../magazine/magazine-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
@@ -79,8 +80,8 @@
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../manage/">목록</a></li>
+                    <li><a href="../manage/">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -88,7 +89,7 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2">
-        <h2>예약조회 - 전체</h2> 
+        <h2>예약조회 - 숙소</h2> 
         <nav>
             
             <form action="#">
@@ -110,12 +111,14 @@
     
         <table>
             <tr>
-                
+                <th>
+                    <input type="checkbox" name="" id="">
+                </th>
                 <th>
                     이름
                 </th>
                 <th>
-                    분류                
+                    아이디                
                 </th>
                 <th>
                     예약번호
@@ -124,80 +127,24 @@
                     내용
                 </th>
                 <th>
-                    날짜
+                    결제
                 </th>
             </tr> 
-            <tr>
+            <tr onClick = "location.href='packgeDetail.html'">
+                <td><input type="checkbox" name="" id=""></td>
                 <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
+                <td>apple</td>
+                <td>H45612</td>
+                <td>다낭 호이안 바나힐 패키지 5일(비엣젯항공)</td>
+                <td>결제완료</td>
+                
             </tr>
-            <tr>
-                <td>김사과</td>
-                <td>항공권</td>
-                <td>A44168</td>
-                <td>인천 - 다낭</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>숙소</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>패키지</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
-            <tr>
-                <td>김사과</td>
-                <td>투어/티켓</td>
-                <td>T04168</td>
-                <td>바나힐 입장권</td>
-                <td>2022.04.24</td>
-            </tr>
+            
         </table>
+        <section class="btnlist">
+            <button type="submit">변경</button>
+            <button type="submit">선택삭제</button>
+        </section>
         <span>1 2 3 4 5</span>
     <script src="../script.js"></script>
 </body>

@@ -413,12 +413,12 @@ main .card .label{
     font-size: 16px;
 }
 .btnlist {
-    width: 900px;
-    max-width: 1000px;
-    position: absolute;
-    width: calc(100%-260px);
-    right: -500px;
-    
+    box-sizing: border-box;
+    width: 150px;
+    position: relative;
+    margin: 0 auto;
+    margin-left: 530px;
+    right: -950px;
 }
 .btnlist button {
     width: 60px;
@@ -467,7 +467,7 @@ table.colortb th{
     margin-top: 60px;
 }
 .formscroll {
-<<<<<<< HEAD
+
     height: 300px;
     width: 800px;
     overflow: hidden;
@@ -494,13 +494,73 @@ table a:visited{
 
 .submit {
     margin: 0 auto;
-=======
-    
+}
+
+.formbox{
+    width: 700px;
+    margin-left: 300px;
+    display: flex;
+}
+.box p{
+    margin-bottom: 20px;
+    font-size: 20px;
+    vertical-align: middle
+    ;
+}
+.box input {
+    width: 200px;
+    height: 25px;
+    margin-left: 20px;
+}
+.box select {
+    width: 100px;
+    height: 25px;
+    margin-left: 20px;
+}
+.leftbox {
+    float: left;
+}
+
+.rightbox {
+    float: right;
+}
+.flbox {
+    display: flex;
+    clear: both;
+    width: 700px;
+}
+.plus{
+    height: 20px;
+}
+.regis {
+    text-align: center;
+    width: 60px;
+    background-color: #ffb800;
+    border: none;
+}
+.bottombox {
+    width: 600px;
+}
+.box button {
+    clear: both;
+    width: 50px;
+    float: right;
+    margin-top: 25px;
+}
+/*쿠폰등록*/
+.coupon input {
+    height: 30px;
+    font-size: 15px;
+}
+.coupon select{
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
 }
 
 
 /* 11.관리자 관리 */
-#admin_manage_form_container {
+#admin_mana0ge_form_container {
     width: 1000px;
     height: 500px;
     margin: 0 auto;
@@ -553,7 +613,7 @@ table a:visited{
     border-radius: 10px;
     border: 1px solid black;
     background-color: orange;
->>>>>>> 18a472468e03117a31cb45019fe19893d60c8833
+
 }
 
 
@@ -605,15 +665,15 @@ table a:visited{
     margin-right: 45px;
 }
 
-table, tr {
+/* table, tr {
     border-bottom: solid#f7f7f7 ;
     background-color: #f7f7f7;
     font-size: 18px;
-}
+} */
 
-.under{
+/* .under{
     border-bottom: 1px solid #000;
-}
+} */
 
 .re_de {
     box-sizing: border-box;

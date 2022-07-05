@@ -25,4 +25,13 @@ allProgress.forEach(item=> {
 })
 
 
+/*상품등록*/
+function divplus(){
+	const parent = document.getElementById('bottombox')
+	const originItem = document.getElementById('id')
+	parent.appendChild(originItem.cloneNode(true));
+} 
 
+function showPopup(){
+	window.open("roomPop.html","팝업 테스트","width=400, height=300, top=10, left=10");
+}
