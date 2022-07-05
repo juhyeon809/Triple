@@ -1,0 +1,34 @@
+main {
+    margin-top: 100px;
+    margin-bottom: 500px;
+}
+
+#restaurant_list_box {
+    margin-top: 50px;
+    ;
+}
+#restaurant_list_box p {
+    margin: 7px;
+}
+#image_area img {
+    width: 400px;
+}
+#restaurant_flex_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+#text_area {
+    margin-left: 70px;
+    color: gray;
+    font-weight: 700;
+}
+#title_text {
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+}
+#title_text a {
+    color: black;
+}

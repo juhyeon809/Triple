@@ -1,0 +1,211 @@
+#restaurant_img {
+    background-image: url(../img/eggandthings.png);
+    width: 1000px;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+#utility_flex_box {
+    display: flex;
+    justify-content: space-between;
+}
+#utility_flex_box img {
+    margin-left: 10px;
+}
+#utility_box {
+    width: 1000px;
+    border-radius: 20px;
+    background-color: rgb(250, 249, 249);
+    box-shadow: 5px 5px  rgb(204, 204, 204) ;
+    margin-bottom: 50px;
+
+}
+#text_area {
+    color: gray;
+    font-weight: 700;
+    padding-left: 60px;
+    padding-bottom: 50px;
+}
+#title_text {
+    font-size: 24px;
+    color: black;
+}
+#info_list_flex_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#menu_image {
+    margin-left: 20px;
+}
+#menu_description {
+    margin-left: 20px;
+}
+#info_box {
+    background-color: rgb(250, 249, 249);
+    padding: 50px;
+    margin-bottom: 500px;
+    color: rgb(77, 76, 76);
+}
+#info_box .info_box_title{
+    font-size: 24px;
+    font-weight: 700;
+    
+}
+#info_box .info_box_subtitle {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#menu_description .menu_name {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#menu_description .menu_price , #menu_description .menu_description_text {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+}
+#basic_info_text {
+    font-size: 22px;
+    margin-top: 80px;
+    font-weight: 700;
+}
+#basic_info_flex_box {
+    display: flex;
+    justify-content: space-around;
+}
+#basic_info_text_area {
+    width: 500px;
+    font-weight: 700;
+    
+}
+#basic_info_text_area table {
+    height: 150px;
+}
+#basic_info_text_area table tr td {
+    color: rgb(77, 76, 76);
+}
+#basic_info_text_area .table_index {
+    font-size: 20px;
+    width: 100px;
+    font-weight: 700;
+    color: black;
+}
+#button_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#asking {
+    margin-left: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(214, 213, 213);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#finding {
+    margin-left: 20px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: rgb(96, 146, 219);
+}
+hr {
+    margin-top: 30px;
+    color: rgb(214, 213, 213);;
+}
+#asking p {
+    color: black;
+}
+#finding p {
+    color: white;
+}
+#tips_for_visiting {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+#tips_for_visiting .flex_div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+#no_border_box {
+    border-bottom: 0px;
+}
+#blue_text {
+    color: rgb(96, 146, 219);
+}
+#tips_for_visiting .flex_div .context_p{
+    font-size: 18px;
+    font-weight: 700;
+    color: gray;
+}
+#tips_for_visiting .flex_div .index_p {
+    width: 200px;
+    font-weight: 700;
+    font-size: 20px;
+    color: gray;
+}
+#review_top {
+    display: flex;
+    justify-content: space-between;
+    
+}
+#review_top .index_p {
+    font-size: 20px;
+    font-weight: 700;
+}
+#review_write_see {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#write_review a{
+    color: gray;
+    font-weight: 700;
+}
+#see_review a {
+    color: rgb(96, 146, 219);
+    font-weight: 700;
+    text-decoration: underline;
+}
+#review_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 850px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#review_content div .profile_picture {
+    width: 50px;
+    height: 50px;
+}
+#review_content .user_info_area {
+    width: 200px;
+    margin-left: 20px;
+}
+#review_content .user_info_area p {
+    margin: 0;
+    font-weight: 700;
+}
+#review_content .review_context {
+    width: 700px;
+}
+#review_content .review_context p {
+    margin: 0;
+}

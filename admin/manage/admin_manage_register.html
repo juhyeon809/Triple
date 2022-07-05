@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자관리_목록</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+    
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="#" class="active"><img src="img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    <section id="content">
+
+        <nav>
+            <form action="#">
+                <div class="form-group">
+                    <input type="text" placeholder="Search ..">
+                    <i class='bx bx-search icon'></i>
+                </div>
+            </form>
+            <a href="#" class="nav-link">
+                <i class='bx bxs-bell icon'></i>
+                <sapn class="badge">1</sapn>
+            </a>
+            
+            <span class="divider"></span>
+            <div class="profile">
+                <p>admin님</p>
+            </div>
+        </nav>
+        <!--main-->
+        <main>
+            <form action="#" method="post">
+                <div id="admin_manage_form_container">
+                    <div id="admin_manage_form_container_ul1">
+                        <p id="admin_register_adminid">아이디 : </p>
+                        <p id="admin_register_name">이름 : </p>
+                        <p id="admin_register_hp">연락처 : </p>
+                        <p id="admin_register_email">이메일 : </p>
+                    </div>
+                    <div id="admin_manage_form_container_ul2">
+                        <p><input type="text" id="admin_register_adminid_content" placeholder="아이디를 입력하세요"></p>
+                        <p><input type="name" id="admin_register_name_content" placeholder="이름을 입력하세요"></p>
+                        <p><input type="hp" id="admin_register_hp_content" placeholder="전화번호를 입력하세요"></p>
+                        <p><input type="email" id="admin_register_email_content" placeholder="이메일을 입력하세요"></p>
+                    </div>
+                    <div id="admin_manage_form_container_ul3">
+                        <p id="admin_register_adminpw">비밀번호 : </p>
+                        <p id="admin_register_adminpwre">비밀번호 확인 : </p>
+                        <p id="admin_register_department">부서 : </p>
+                        <p id="admin_register_title">직함 : </p>
+                    </div>
+                    <div id="admin_manage_form_container_ul4">
+                        <p><input type="password" id="admin_register_adminpw_content" placeholder="비밀번호를 입력하세요"></p>
+                        <p><input type="password" id="admin_register_adminpwre_content" placeholder="비밀번호를 확인해주세요"></p>
+                        <p>
+                            <select name="department" id="admin_register_department_content">
+                                <option value="전체">전체</option>
+                                <option value="관리자">관리자</option>
+                                <option value="영업">영업</option>
+                                <option value="마케팅">마케팅</option>
+                            </select>
+                        </p>
+                        <p>
+                            <select name="title" id="admin_register_title_content">
+                                <option value="전체">전체</option>
+                                <option value="대표">대표</option>
+                                <option value="팀장">팀장</option>
+                                <option value="부장">부장</option>
+                                <option value="차장">차장</option>
+                                <option value="대리">대리</option>
+                                <option value="주임">주임</option>
+                                <option value="사원">사원</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <p id="admin_register_btn"><input type="submit" value="관리자 등록"></p>    
+            </form>
+        </main>
+        <!--main-->
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js"></script>
+</body>
+</html>

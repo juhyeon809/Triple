@@ -196,6 +196,8 @@ header {
     position: relative;
 }
 
+#lodging_main_img { width: 1000px; height: 300px; margin: 0 auto; margin-bottom: 0; background-image: url('../img/lodging_main.svg'); background-size: cover; background-repeat: no-repeat; }
+
 #lodging_info_main{
     width: 1208px;
     height: 418px;
@@ -2193,65 +2195,60 @@ font-size: 16px;
     margin:0 auto;
 } */
 
-#main_room_search {
-    width: 1050px;
-    margin:0 auto;
+.lodging_main {
+    width: 1000px; margin: 0 auto; padding: 10px; box-sizing: border-box;
 }
+.lodging_title{ font-size: 18px; font-weight: bold; padding-bottom: 5px; margin-bottom: 0; text-indent: 10px; }
 
-#main_room_travel_recommend, #main_recent_room, #main_family_best, #main_earlybird, #main_jeju_best, #main_megazine {
-    width: 1208px;
-    margin:0 auto;
+.region_list { width: 1000px; margin-top: 20px; margin-bottom: 10px; padding-bottom: 10px; display: flex; justify-content: space-between; box-sizing: border-box; }
+.region_list > a { margin-right: 15px; }
+.region_list > a:first-child { margin-left: 15px; }
+.region_list > a:last-child { margin-right: 15px; }
+.region_list > a > img { width: 170px; }
+#region_list { display: inline-block; }
+
+
+#main_recent_room, #main_family_best, #main_earlybird, #main_jeju_best, #main_megazine {
+    width: 1000px; margin: 0 auto; padding: 10px; box-sizing: border-box;
 }
 
 
 
 #room_search_box{
-    width: 450px;
-    height: 250px;
-    margin: 0 auto;
-    background-color:rgb(231, 231, 231);
-    border-radius: 10px;
-    padding-top: 30px;
+   width: 900px; background-color:#F7F7F7; padding: 40px; padding-top: 24px; text-align: center; margin-bottom: 30px; list-style: none;
 }
 
 #room_search_location, #room_search_date, #room_search_persons {
     text-align: center;
 }
-
-#room_search_location > img, #room_search_date > img, #room_search_persons > img {
-    width: 40px;
-    text-align: center;
+.room_icon {
+    height: 40px;
 }
 
-#room_search_location > input, #room_search_date > input, #room_search_persons > input{
-    height: 35px;
-    border: 0px solid gray;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
+.room_icon > img {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.room_icon > input[type="text"]{
+    width: 250px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px solid rgb(217, 217, 217);
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
     font-weight: bold;
+    text-indent: 5px;
+    color: rgb(217, 217, 217);
     /* margin-top: 5px; */
 }
 
 
 #room_search_button{
-    border-radius: 8px;
-    height: 30px;
-    width: 280px;
-    border: 1px solid rgb(87, 205, 245);
-    background-color: rgb(87, 205, 245);
-    color: white;
-    margin: 0 auto;
-    display: block;
-}
-
-
-#main_room_travel_recommend > div > a > img {
-    border-radius : 50%;
-    width: 180px;
-    height: 180px;
-    float: left;
-    margin: 30px;
-    /* position: relative; */
+    width: 330px; height: 50px; border-radius: 10px; margin-top: 40px; background-color: #4E91D5; border:none; color: white; font-weight: bold; font-size: 18px; text-align: center; 
 }
 
 #everycity {
@@ -2290,46 +2287,23 @@ font-size: 16px;
     float: left;
 }
 
-#main_earlybird > div > a > img {
-    width: 350px;
-    height: 210px;
-    border-radius: 10px;
-    margin-left: 30px;
-    float: left;
-}
-
-#main_jeju_best > div > a > img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin-left: 30px;
-    float: left;
-}
-
-#main_megazine > div > a > img {
-    width: 1150px;
-    height: 180px;
-    border-radius: 10px;
-    margin-left: 30px;
-    margin-bottom: 15px;
-    float: left;   
-}
-
-#everyfamilybest, #everyearlybird, #everyjejubest {
+.plus_info {
     float: right;
     text-decoration: underline;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
     margin-right: 65px; 
 }
+.item_list { display: flex; overflow: auto; padding-bottom: 10px; }
+.item_list::-webkit-scrollbar{ height: 7px; background-color:white; width: 0; }
+.item_list::-webkit-scrollbar-thumb{ height: 7px; background-color:#87D9D2; width: 0; border-radius: 10px; border: 2px solid transparent; }
+.item_list::-webkit-scrollbar-track{ background-color: white; border-radius: 10px; box-shadow: inset 0 0 5px white; }
+.item_list > a > div.lodging_imgbox { width: 170px; height: 170px; border-radius: 12px;  background-image: url('../img/pre_image.jpg'); margin: 0; padding: 0; margin-right: 10px; }
+.item_list > a > div.lodging_imgbox > .black_opacity{ width: 170px; height: 170px; border-radius: 12px; background-color: black; opacity: 0.5; }
+.item_list > a > div.lodging_imgbox > .black_opacity > p.content { padding: 5px; padding-top: 110px; padding-right: 20px; color: white; font-size: 18px; font-weight: bold; word-break: keep-all; position: relative;  left:10px; top: -5px; z-index: 10; opacity: 1 }
+.content_point{ padding: 5px; padding-right: 20px; color: white; font-size: 14px; font-weight: bold; word-break: keep-all; position: relative;  left:10px; top: -30px; z-index: 10; }
+.detail{ position: relative; left: 900px; text-decoration: underline; font-size: 16px; font-weight: bold; color: #72A7DD; }
 
-#everymegazine {
-    float: right;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 17px;
-    margin-right: 35px; 
-}
 
 /*lodging_lodging_list*/
 

@@ -30,7 +30,7 @@ a:visited { text-decoration: none; }
 
 
 /*공통 footer*/
-footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 300px; margin-top: 50px; }
+footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 300px; margin-top: 150px; }
 #enterprise_info { margin: 0 auto; width: 1400px; display: flex; justify-content: space-between; }
 #enterprise_info > #enterprise_info_text { padding-top: 50px; padding-left: 100px; font-weight: bold; }
 #enterprise_info > #enterprise_info_text > p { color: rgb(77, 76, 76); }
