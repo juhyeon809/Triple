@@ -1095,6 +1095,9 @@ table, tr {
     width: 120px;
     height: 40px;
     cursor: pointer;
+    background-color: yellow;
+    border: 1px solid black;
+    font-size: 18px;
 }
 
 
