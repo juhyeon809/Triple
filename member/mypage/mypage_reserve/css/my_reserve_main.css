@@ -49,10 +49,15 @@ body {
     color: #666666;
 }
 
-#mypage_main{
-    width: 1375px;
-    height: 1040px;
+#ma1{
     margin: 0 auto;
+    padding: 0;
+}
+
+/* 375 */
+#mypage_main{
+    width: 1000px;
+    height: 1040px;
     box-sizing: border-box;
     margin-top: 60px;
 }
@@ -148,7 +153,7 @@ body {
 /* 1375 1533 */
 
 #my_air_main{
-    width: 1375px;
+    width: 1000px;
     height: 1533px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -204,9 +209,9 @@ body {
     font-weight: bold;
     line-height: 40px;
 }
-
+/* 375 */
 #air_main_1_3{
-    width: 1119px;
+    width: 744px;
     height: 120px;
     background-color: #ffffff;
     box-sizing: border-box;
@@ -217,7 +222,7 @@ body {
 /* 260  599  260*/
 
 #air_main_1_3_1{
-    width: 260px;
+    width: 145px;
     height: 60px;
     float: left;
     text-align: right;
@@ -229,7 +234,7 @@ body {
 }
 
 #air_main_1_3_2{
-    width: 599px;
+    width: 454px;
     height: 60px;
     float: left;
     text-align: center;
@@ -241,7 +246,7 @@ body {
 }
 
 #air_main_1_3_3{
-    width: 260px;
+    width: 145px;
     height: 60px;
     float: left;
     box-sizing: border-box;
@@ -252,12 +257,12 @@ body {
 }
 
 #air_main_1_3_4{
-    width: 752px;
+    width: 630px;
     height: 10px;
     border-bottom: 1px solid #a7a7a7;
     position:relative;
     top: 70px;
-    left: 176px;
+    left: 50px;
     color: black;
 }
 
@@ -271,7 +276,7 @@ body {
 #air_main_1_4_1{
     font-size: 20px;
     font-weight: bold;
-    width: 519px;
+    width: 372px;
     float: left;
 }
 
@@ -282,20 +287,20 @@ body {
 #air_main_1_4_2{
     color: #425052;
     font-size: 20px;
-    width: 600px;
+    width: 372px;
     float: left;
     text-align: right;
 }
 
 #air_main_2{
-    height: 311px;
+    height: 271px;
     border-bottom: 1px solid #e1e1e1;
 }
 
 /* 560  559 */
 
 #air_main_2_1{
-    width: 560px;
+    width: 372px;
     height: 311px;
     float: left;
     box-sizing: border-box;
@@ -320,7 +325,7 @@ body {
 }
 
 #air_main_2_2{
-    width: 559px;
+    width: 372px;
     height: 311px;
     float: left;
     box-sizing: border-box;
@@ -352,26 +357,26 @@ body {
 }
 
 #air_main_3{
-    height: 298px;
+    height: 218px;
 }
 
 #air_main_3_1{
     height: 84px;
     box-sizing: border-box;
-    padding-top: 50px;
+    padding-top: 30px;
     font-size: 23px;
     font-weight: bold;
     color: #425052;
 }
 
 #air_main_3_1_1{
-    width: 600px;
+    width: 372px;
     height: 34px;
     float: left;
 }
 
 #air_main_3_1_2{
-    width: 519px;
+    width: 372px;
     height: 34px;
     float: left;
     text-align: right;
@@ -379,9 +384,11 @@ body {
 
 #air_main_3_2{
     text-align: right;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
     color: #1592e6;
+    box-sizing: border-box;
+    padding-top: 10px;
 }
 
 #air_main_3_2 a {
@@ -443,8 +450,9 @@ body {
 
 /* my_inquiry_list */
 
+/* 375 */
 #my_inq_main{
-    width: 1375px;
+    width: 1000px;
     height: 700px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -494,11 +502,11 @@ body {
 }
 
 #inq_li_4 textarea{
-    width: 997px;
+    width: 640px;
     height: 128px;
     resize: none;
     border: 1px solid #d8d8d8;
-    font-size: 18px;
+    font-size: 16px;
     color: #425052;
 }
 
@@ -526,9 +534,10 @@ body {
 }
 
 /* my_inquiry_write */
+/* 375 */
 
 #my_inq_wr_main{
-    width: 1375px;
+    width: 1000px;
     height: 1122px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -546,8 +555,8 @@ body {
 #inq_wr_2{
     height: 102px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
 }
 
 /* 959 */
@@ -566,13 +575,13 @@ body {
 }
 
 #inq_wr_2_2, #inq_wr_3_2, #inq_wr_4_2, #inq_wr_5_2, #inq_wr_6_2, #inq_wr_7_2{
-    width: 794px;
+    width: 479px;
     height: 54px;
     float: left;
 }
 
 #inq_wr_2_2 input, #inq_wr_3_2 input, #inq_wr_4_2 input, #inq_wr_5_2 input, #inq_wr_6_2, #inq_wr_7_2{
-    width: 794px;
+    width: 479px;
     height: 54px;
     border-radius: 10px;
     font-size: 23px;
@@ -593,24 +602,24 @@ body {
 #inq_wr_3{
     height: 71px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
     padding-top: 17px;
 }
 
 #inq_wr_4{
     height: 76px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
     padding-top: 22px;
 }
 
 #inq_wr_5{
     height: 76px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
     padding-top: 22px;
 }
 
@@ -627,7 +636,7 @@ body {
 }
 
 #inq_wr_6_2{
-    width: 787px;
+    width: 473px;
     resize: none;
     height: 261px;
 }
@@ -635,21 +644,21 @@ body {
 #inq_wr_6{
     height: 280px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
     padding-top: 22px;
 }
 
 #inq_wr_7{
     height: 103px;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
+    padding-left: 55px;
+    padding-right: 45px;
     padding-top: 53px;
 }
 
 #inq_wr_7_2{
-    width: 791px;
+    width: 479px;
     border: 0;
     box-sizing: border-box;
     padding-top: 6px
@@ -669,11 +678,10 @@ body {
 #inq_wr_8{
     clear: both;
     box-sizing: border-box;
-    padding-left: 75px;
-    padding-right: 85px;
-    text-align: center;
+    padding-left: 55px;
+    padding-right: 45px;
     height: 60px;
-    font-size: 14px;
+    font-size: 13px;
     color: #425052;
     padding-top: 13px;
     border-bottom: 1px solid #e5e5e5;
@@ -681,7 +689,6 @@ body {
 
 #inq_wr_8_1{
     box-sizing: border-box;
-    padding-left: 120px;
 }
 
 #inq_wr_9{
@@ -696,12 +703,17 @@ body {
     height: 25px;
     font-size: 15px;
     color: #425052;
+    box-sizing: border-box;
+    padding-top: 10px;
 }
+
 
 #inq_wr_10 input {
     width: 20px;
     height: 20px;
     color: #7e8889;
+    position: relative;
+    top: 5px;
 }
 
 #inq_wr_11{
@@ -726,9 +738,10 @@ body {
 
 /* my_room_reserve_cancle */
 
+/* 375 */
 #my_rm_c_main{
-    width: 1375px;
-    height: 3088px;
+    width: 1000px;
+    height: 2988px;
     margin: 0 auto;
     box-sizing: border-box;
     margin-top: 60px;
@@ -738,7 +751,7 @@ body {
     box-sizing: border-box;
     margin-left: 128px;
     margin-right: 128px;
-    height: 3041px;
+    height: 2941px;
     padding-top: 52px;
 }
 
@@ -755,15 +768,15 @@ body {
 }
 
 #rm_c_2{
-    height: 452px;
+    height: 350px;
     box-sizing: border-box;
-    padding-left: 209px;
+    padding-left: 130px;
     border-bottom: 1px solid #e2e2e2;
 }
 
 #rm_c_2 img {
-    width: 700px;
-    height: 422px;
+    width: 500px;
+    height: 300px;
     border-radius: 20px;
 }
 
@@ -791,14 +804,14 @@ body {
 }
 
 #rm_c_3_1_2, #rm_c_3_2_2, #rm_c_3_3_2, #rm_c_3_4_2{
-    width: 963px;
+    width: 588px;
     height: 30px;
     float:left;
 }
 
 #rm_c_3_4_3{
     text-align: right;
-    font-size: 23px;
+    font-size: 20px;
     position: relative;
     top: -30px;
 }
@@ -816,6 +829,7 @@ body {
 /* 465 188  466*/
 /* 252 84  */
 
+/* 744 */
 #rm_c_5_1{
     width: 252px;
     height: 84px;
@@ -824,7 +838,7 @@ body {
     vertical-align: middle;
     display: table-cell;
     position: relative;
-    left: 213px;
+    left: 30px;
     font-size: 18px;
     font-weight: bold;
     box-shadow: 0 10px 30px 0 #dddddd;
@@ -840,7 +854,7 @@ body {
     text-align: center;
     position: relative;
     top: -55px;
-    left: 512px;
+    left: 325px;
     font-size: 18px;
     color: #1592e6;
 }
@@ -854,7 +868,7 @@ body {
     display: table-cell;
     position: relative;
     top: -111px;
-    left: 652px;
+    left: 460px;
     font-size: 18px;
     font-weight: bold;
     box-shadow: 0 10px 30px 0 #dddddd;
@@ -895,7 +909,7 @@ body {
 /* 1079 579 500  */
 
 #rm_c_6_3_1, #rm_c_6_4_1, #rm_c_6_5_1, #rm_c_6_6_1{
-    width: 579px;
+    width: 204px;
     height: 30px;
     float: left;
 }
@@ -956,7 +970,7 @@ body {
 
 #rm_c_7_1{
     box-sizing: border-box;
-    padding-top: 26px;
+    padding-top: 50px;
     font-weight: bold;
 }
 
@@ -965,7 +979,7 @@ body {
 }
 
 #rm_c_7_2_1, #rm_c_7_3_1{
-    width: 579px;
+    width: 204px;
     height: 30px;
     float:left;
 }
@@ -994,7 +1008,7 @@ body {
 }
 
 #rm_c_8_2_1, #rm_c_8_3_1, #rm_c_8_4_1, #rm_c_8_5_1{
-    width: 579px;
+    width: 204px;
     height: 30px;
     float:left;
 }
@@ -1032,7 +1046,7 @@ body {
 }
 
 #rm_c_9_1_2_1{
-    width: 579px;
+    width: 204px;
     height: 30px; 
     float:left;
 }
@@ -1068,7 +1082,7 @@ body {
 }
 
 #rm_c_9_2_2_1, #rm_c_9_2_3_1, #rm_c_9_2_4_1 {
-    width: 579px;
+    width: 204px;
     height: 30px;
     float: left;
 }
@@ -1087,7 +1101,7 @@ body {
 }
 
 #rm_c_10_1{
-    height: 206px;
+    height: 166px;
 }
 
 #rm_c_10_1_1{
@@ -1098,7 +1112,7 @@ body {
 }
 
 #rm_c_10_1_1_1{
-    width: 619px;
+    width: 224px;
     float:left;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -1115,11 +1129,14 @@ body {
 #rm_c_10_1_2{
     font-size: 23px;
     position: relative;
+    top: 30px;
 }
 
 
 #rm_c_10_1_3{
-    text-align: right;
+    position: relative;
+    top: 40px;
+    right: 92px;
 }
 
 #rm_c_10_1_3 a{
@@ -1132,6 +1149,7 @@ body {
 #rm_c_10_2_1{
     font-size: 23px;
     font-weight: bold;
+
 }
 
 #rm_c_10_2_2{
@@ -1147,8 +1165,13 @@ body {
     height: 30px;
 }
 
+#rm_c_10_2_2_3{
+    height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
 #rm_c_10_2_2_1_1, #rm_c_10_2_2_2_1, #rm_c_10_2_2_3_1{
-    width: 579px;
+    width: 204px;
     float:left;
 }
 
@@ -1163,7 +1186,6 @@ body {
     box-sizing: border-box;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;
 }
 
 #rm_c_11_1{
@@ -1177,7 +1199,7 @@ body {
 }
 
 #rm_c_11_1_2_1, #rm_c_11_1_1_1{
-    width: 579px;
+    width: 204px;
     height: 30px;
     float:left;
 }
@@ -1205,7 +1227,7 @@ body {
 }
 
 #rm_c_11_1_4_1{
-    width: 579px;
+    width: 204px;
     height: 30px;
     float: left;
 }
@@ -1227,8 +1249,8 @@ body {
 /* my_room_reserve */
 
 #my_rm_main{
-    width: 1375px;
-    height: 2286px;
+    width: 1000px;
+    height: 2186px;
     margin: 0 auto;
     box-sizing: border-box;
     margin-top: 60px;
@@ -1238,7 +1260,7 @@ body {
     box-sizing: border-box;
     margin-left: 128px;
     margin-right: 128px;
-    height: 2239px;
+    height: 2139px;
     padding-top: 52px;
 }
 
