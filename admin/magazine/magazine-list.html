@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매거진 - 목록</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../admin.css">
+
+</head>
+<body>
+    <!-- 사이드바-->
+    <selction id="sidebar">
+        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <ul class="side-menu">
+            
+            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="memberlist.html">회원목록</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">항공권</a></li>
+                    <li><a href="#">숙소</a></li>
+                    <li><a href="#">패키지</a></li>
+                    <li><a href="#">티켓</a></li>
+                    <li><a href="#">다이닝</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            </li>
+            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">완료내역</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">1:1 문의</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">목록</a></li>
+                    <li><a href="#">등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+        </ul>
+    </selction>
+    <!--사이드바 끝-->
+    
+    <section class="content2">
+        <h2>매거진 목록</h2>
+        <nav>
+            
+            <form action="#">
+                <div class="notice">
+                    <div><input type="date"></div>
+                    <div class="notice_a"> ~ </div>
+                    <div><input type="date"></div>
+                    <div><select name="" id="">
+                        <option value="">전체</option>
+                        <option value="">#여행지추천</option>
+                        <option value="">#여행꿀팁</option>
+                        <option value="">#맛집탐방</option>
+                        <option value="">#여행기</option>
+                        <option value="">#항공·공항</option>
+                        <option value="">#숙소추천</option>
+                        <option value="">#투어·티켓</option>
+                        <option value="">#쇼핑</option>
+                    </select></div>
+                    <div class="notice_b"><input type="text"></div>
+                    <div><button type="submit">검색</button></div>
+                </div>
+            </form>
+        </nav>
+    </section>
+    <div>
+        <table class="tab">
+            <tr class="under">
+                <th>
+                    번호
+                </th>
+                <th>
+                    작성자                
+                </th>
+                <th>
+                    제목
+                </th>
+                <th>
+                    분류
+                </th>
+                <th>
+                    작성주차
+                </th>
+            </tr> 
+            <tr>
+                <td>25</td>
+                <td>Triple</td>
+                <td><a href="#">아이와 함께 떠나는 여행, ...</a></td>
+                <td>#여행지추천</td>
+                <td>6월 4주차</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Triple</td>
+                <td><a href="#">'차 없이도 괜찮아요' 초록색 ...</a></td>
+                <td>#여행지추천</td>
+                <td>6월 4주차</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Triple</td>
+                <td><a href="#">올여름 휴가로 딱! 바다가 반기...</a></td>
+                <td>#여행지추천</td>
+                <td>6월 3주차</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Triple</td>
+                <td><a href="#">숙소가 다 거기서 거기? 내게 ...</a></td>
+                <td>#숙소추천</td>
+                <td>6월 3주차</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Triple</td>
+                <td><a href="#">우리들의 블루스 촬영지, 제주...</a></td>
+                <td>#여행지추천</td>
+                <td>6월 2주차</td>
+            </tr>
+            
+        </table>
+    </div>
+        
+        <span class="sp2">1 | 2 | 3 | 4 | 5</span>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -555,3 +555,547 @@ table a:visited{
     background-color: orange;
 >>>>>>> 18a472468e03117a31cb45019fe19893d60c8833
 }
+
+
+/* 공지사항 */
+
+
+.notice {
+    width: 950px;
+    font-size: 22px;
+    position: relative;
+    top: -20px;
+}
+
+.notice div {
+    float:left;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.notice input { 
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.notice select {
+    width :160px;
+    height: 30px;
+    float:left;
+    text-align: center;
+    font-size: 18px;
+}
+
+.notice_b input{
+    width: 230px;
+}
+
+.notice button {
+    width : 50px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.check input {
+    width: 15px;
+    height: 15px;
+    margin-right: 45px;
+}
+
+table, tr {
+    border-bottom: solid#f7f7f7 ;
+    background-color: #f7f7f7;
+    font-size: 18px;
+}
+
+.under{
+    border-bottom: 1px solid #000;
+}
+
+.re_de {
+    box-sizing: border-box;
+    position: relative;
+    left: 1435px;
+    width: 210px;
+    height: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.registration{
+    margin-right: 10px;
+}
+
+.registration div, .delete div {
+    width: 100px;
+    padding-top: 5px;
+}
+
+.delete, .registration{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+.sp1{
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+/* 공지사항 끝 */
+
+
+/* 공지사항 - 상세  */
+
+
+.notice_detail{
+    background-color: #f7f7f7;
+    width: 1200px;
+    height: 700px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 26px;
+}
+
+.notice_detail_1{
+    text-align: center;
+    font-size: 36px;
+}
+
+.notice_detail_2{
+    font-size: 20px;
+    position: relative;
+    left: 735px;
+    padding-top: 10px;
+}
+
+.notice_detail_3{
+    position: relative;
+    padding-top: 100px;
+}
+
+.mo_li {
+    box-sizing: border-box;
+    position: relative;
+    left: 1450px;
+    width: 210px;
+    height: 30px;
+    padding-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modify{
+    margin-right: 10px;
+}
+
+.modify div, .list div {
+    width: 100px;
+    padding-top: 5px;
+}
+
+.list, .modify{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+
+/* 공지사항 - 상세 끝 */
+
+
+/* 공지사항 - 등록 */
+
+
+.notice_register{
+    width: 1200px;
+    height: 600px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.notice_register_1{
+    height: 100px;
+}
+
+.notice_register_1_1, .notice_register_2_1,  .notice_register_3_1{
+    width :200px;
+    height :100px;
+    float:left;
+}
+
+.notice_register_3_1{
+    height: 380px;
+}
+
+.notice_register_1_2, .notice_register_2_2, .notice_register_3_2{
+    width : 800px;
+    height: 100px;
+    float:left;
+}
+
+.notice_register_1_2 select{
+    width :150px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+}
+
+.notice_register_2_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    background-color: gray;
+    border: 0;
+}
+
+.notice_register_3_2{
+    height: 380px;
+}
+
+.notice_register_2{
+    height: 100px;
+}
+
+.notice_register_3{
+    height: 380px;
+}
+
+.regi {
+    box-sizing: border-box;
+    position: relative;
+    left: 1000px;
+    width: 210px;
+    height: 30px;
+    padding-top: 80px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.regi_1 div{
+    width: 100px;
+    padding-top: 5px;
+}
+
+.regi_1{
+    width: 100px;
+    height: 30px;
+    float: left;
+    background-color: #f7f7f7;
+    color: #000;
+}
+
+
+/* 공지사항 - 등록 끝 */
+
+
+/* 매거진 - 목록 */
+
+
+.tab a {
+    color: #000;
+}
+
+.tab tr th {
+    font-size: 26px;
+}
+
+.tab tr td {
+    font-size: 20px;
+}
+
+.tab tr {
+    height: 80px;
+}
+
+.sp2{
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+
+/* 매거진 - 목록 끝 */
+
+
+/* 매거진 - 등록 */
+
+/* 100 100 100 150 250 */
+.magazine_register{
+    width: 1200px;
+    height: 1700px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.magazine_register_1{
+    height: 80px;
+}
+
+.magazine_register_1_1, .magazine_register_2_1,  .magazine_register_3_1, .magazine_register_5_1{
+    width :200px;
+    height :80px;
+    float:left;
+}
+
+.magazine_register_3_1{
+    height: 380px;
+}
+
+.magazine_register_1_2, .magazine_register_2_2, .magazine_register_3_2{
+    width : 800px;
+    height: 80px;
+    float:left;
+}
+
+.magazine_register_1_2 select{
+    width :150px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.magazine_register_2_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    border: 1px solid black;
+}
+
+.magazine_register_3_2{
+    height: 380px;
+}
+
+.magazine_register_2{
+    height: 80px;
+}
+
+.magazine_register_3{
+    height: 250px;
+}
+
+.magazine_register_4{
+    height: 80px;
+}
+
+.magazine_register_5{
+    height: 150px;
+    margin-bottom: 35px;
+}
+
+.magazine_register_5_1{
+    height: 150px;
+    box-sizing: border-box;
+    padding-top: 55px;
+}
+
+.magazine_register_5_2{
+    width: 200px;
+    height: 150px;
+    float: left;
+}
+
+.magazine_register_5_2 button{
+    width: 200px;
+    height: 150px;
+    background-color: gray;
+    cursor: pointer;
+    border: 0;
+    font-size: 20px;
+}
+
+.magazine_register_5_3{
+    width: 600px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_5_3 button{
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+    cursor: pointer;
+}
+
+/* 700 */
+
+/* 150 100 300 150  */
+
+.magazine_register_6_7{
+    height: 220px;
+    position: relative;
+    top: -60px;
+
+}
+.magazine_register_6{
+    width: 400px;
+    height: 150px;
+    float:left;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.magazine_register_6_1{
+    width: 200px;
+    height: 150px;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 50px;
+}
+
+.magazine_register_6_2{
+    width: 200px;
+    height: 150px;
+    float:left;
+    
+}
+
+.magazine_register_6_2 button {
+    width: 200px;
+    height: 150px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+}
+
+.magazine_register_7{
+    width: 600px;
+    height: 150px;
+    float:left;
+    
+}
+
+.magazine_register_7_1{
+    width: 200px;
+    height: 150px;
+    float:left;
+    text-align: center;
+}
+
+.magazine_register_7_2{
+    width: 400px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_7_2 input{
+    width: 300px;
+    height: 50px;
+    font-size: 25px;
+    position: relative;
+    top: 45px;
+}
+
+.magazine_register_8{
+    box-sizing: border-box;
+    padding-left: 17px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.magazine_register_9{
+    height: 100px;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.magazine_register_9_1{
+    width :200px;
+    float:left;
+}
+
+.magazine_register_9_2{
+    width: 800px;
+    float: left;
+}
+
+.magazine_register_9_2 input {
+    width : 720px;
+    height: 35px;
+    position: relative;
+    top: -5px;
+    border: 1px solid black;
+}
+
+.magazine_register_10{
+    height: 300px;
+}
+
+.magazine_register_10_1{
+    width: 200px;
+    float:left;
+}
+
+.magazine_register_10_2{
+    width: 800px;
+    float:left;
+}
+
+.magazine_register_11{
+    height: 150px;
+}
+
+.magazine_register_11_1{
+    width: 200px;
+    height: 150px;
+    float:left;
+    text-align: center;
+    box-sizing: border-box;
+    padding-right: 50px;
+    padding-top: 40px;
+}
+
+.magazine_register_11_2{
+    width: 800px;
+    height: 150px;
+    float:left;
+}
+
+.magazine_register_11_2 button{
+    width: 200px;
+    height: 150px;
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;    
+}
+
+.magazine_register_12{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.magazine_register_12 button{
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+/* 매거진 - 등록 끝*/
