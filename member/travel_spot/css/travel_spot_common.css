@@ -109,7 +109,7 @@ header {
 }
 #travel_spot_img {
     width: 1000px;
-    height: 400px;
+    height: 250px;
     margin: 0 auto;
     background-image: url('../img/overseas2.svg');
     background-size: cover;
