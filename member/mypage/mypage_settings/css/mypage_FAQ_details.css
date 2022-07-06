@@ -1,0 +1,34 @@
+#category_text {
+    font-weight: 700;
+
+}
+#post_title {
+    font-size: 20px;
+}
+#blue_text {
+    color: rgb(17, 125, 187);
+    font-weight: 700;
+}
+#main_content_box .list_box .padding_text {
+    padding-left: 20px;
+}
+#back_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#back_button p {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(40, 160, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#back_button p a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+
+}
