@@ -1161,7 +1161,6 @@ table a:visited{
 }
 
 
-<<<<<<< HEAD
 /* 매거진 - 등록 끝*/
 
 /* 11.관리자 관리 */
@@ -1231,20 +1230,13 @@ table a:visited{
     justify-content: space-around;
 }
 
-.form-group .admin_productlist_search1 {
-    margin-top: 10px;
-    margin-left: 150px;
-}
-
-.form-group > .admin_productlist_search1 > .admin_productlist_search2 {
-    width: 500px;
+.form-group > .admin_productlist_select > .admin_productlist_search1 > input {
+    width: 200px;
 }
 
 .admin_productlist_searchbtn {
     display: block;
     margin: 0 auto;
-    margin-top: 10px;
-    margin-left: 375px;
 }
 
 .admin_productlist_lowbar, .admin_faq_list_btn {
@@ -1371,6 +1363,3 @@ table a:visited{
 .admin_inquiry_a2 {
     font-size: 18px;
 }
-=======
-/* 매거진 - 등록 끝*/
->>>>>>> 69b04fae3e01fb1d98dc6ff95d51542ec80b2447
