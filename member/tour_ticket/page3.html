@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRIPLE</title>
+
+  <link rel="stylesheet" href="css/tour_ticket.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <header>
+    <div id="logo_area">
+      <div id="logo"><a href="./main.html"><img src="./img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a>
+      </div>
+      <form id="menu_form">
+        <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색"
+            style="cursor: pointer;">검색</button></div>
+      </form>
+      <div id="login_join"><a href="./member/login_join/login.html">LOGIN</a> | <a
+          href="./member/login_join/join.html">JOIN</a></div>
+
+    </div>
+    <div id="menu_area">
+      <ul id="menus">
+        <li><a href="./member/overseas_travel/overseas_travel.html">해외여행</a></li>
+        <li><a href="./member/domestic_travel/domestic_travel.html">국내여행</a></li>
+        <li><a href="./member/flight_reservation/air.html">항공예약</a></li>
+        <li><a href="./member/lodging_room/lodging_main.html">숙소예약</a></li>
+        <li><a href="./member/tour_ticket/tour_ticket.html">투어<span>&#183;</span>티켓</a></li>
+        <li><a href="./member/travel_package/travel_package.html">패키지여행</a></li>
+        <li><a href="./member/magazine/magazine.html">여행매거진</a></li>
+        <li><a href="./member/event/event.html">혜택/렌터카</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div id="main" class="container">
+    <section class="main-visual wide-section">
+      <img src="img/view_visual.jpg" alt="">
+    </section>
+
+    <section class="info-card flex flex-between">
+      <div class="info-wrap">
+        <div class="tag-wrap">
+          <button>교통수단</button>
+          <button>편의</button>
+        </div>
+
+        <h1>괌 PCR 검사 예약 대행 서비스</h1>
+        <p>안전한 PCR 검사 예약 대행과 귀국시 편안한 샌딩 서비스까지!</p>
+
+        <div class="flex">
+          <div class="left-wrap">
+            <p>
+              <img src="img/icon_heart_red.svg" alt=""><span class="heart">155</span>
+              <span class="star">★★★★</span>★ (331)
+              <a href="#">리뷰보기 ></a>
+            </p>
+            <p><img src="img/icon_pin_gray.svg" alt=""> 괌</p>
+            <button class="flex flex-between coupon">
+              <p><span>쿠폰할인</span> 최대 할인 쿠폰 적용중</p>
+              <a href="#">쿠폰받기</a>
+            </button>
+            <button class="flex flex-between discount">
+              <p><span>결제혜택</span> 카드 결제 최대 1만원 할인</p>
+              <a href="#">혜택보기</a>
+            </button>
+          </div>
+
+          <div class="right-wrap">
+            <div class="tag-wrap"><button>기간한정 할인</button></div>
+            <p class="price-before">92,100원</p>
+            <h1><span>9%</span>89,000원</h1>
+            <p>쿠폰 할인가 <span>87,000원</span></p>
+            <button class="submit">예약하기</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-wrap flex flex-column">
+        <button><img src="img/icon_heart.svg" alt="">저장하기</button>
+        <button><img src="img/icon_calendar.svg" alt="">일정추가</button>
+        <button><img src="img/icon_star.svg" alt="">리뷰쓰기</button>
+        <button><img src="img/icon_share.svg" alt="">공유하기</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div id="enterprise_info">
+      <div id="enterprise_info_text">
+        <p id="bold">트리플 사업자 정보</p>
+        <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+        <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+        <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+      </div>
+      <div id="icon_box">
+        <div id="sns_box">
+          <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+          <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+          <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+          <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+        </div>
+        <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    $('document').ready(function () {
+      $('.button-wrap button').on('click', function () {
+        $(this).toggleClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
