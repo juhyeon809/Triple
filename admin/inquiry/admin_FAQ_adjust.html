@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ_수정</title>
     <link rel="stylesheet" href="../admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
     <!-- 사이드바-->
@@ -104,22 +105,44 @@
             </p>
         </div>
         <div class="admin_inquiry_qtext">자주하는 질문</div>
-        <div class="admin_inquiry_q1">
+        <div>
             <div>
                 <div class="admin_inquiry_q3">
-                    <p>경로상 추천이 무엇인가요?</p>
+                    <div class="admin_inquiry_a1">
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 720px; height: 200px;">
+                            <p>경로상 추천이 무엇인가요?</p>
+                        </textarea></div>
+                            <script>
+                                var oEditors = [];
+                                nhn.husky.EZCreator.createInIFrame({
+                                oAppRef : oEditors,
+                                elPlaceHolder : "weditor",//
+                                sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                                fCreator : "createSEditor2",
+                                });
+                            </script>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="admin_inquiry_atext">답변</div>
         <div class="admin_inquiry_a1">
-            <div>
+            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 720px; height: 200px;">
                 <p>'경로상 추천'은 여행 출발지와 목적지만 입력하면 가는길에<br>들러볼 만한 장소를 추천해드리는 기능입니다.<br> 국내 홈을 포함한 국내 모든 도시에서 이용할 수 있습니다.
-            </div>
+                </p>
+            </textarea></div>
+            <script>
+                var oEditors = [];
+                nhn.husky.EZCreator.createInIFrame({
+                oAppRef : oEditors,
+                elPlaceHolder : "weditor1",//
+                sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                fCreator : "createSEditor2",
+                });
+            </script>
         </div>
         <div class="admin_inquiry_datail_btn">
-            <button class="admin_inquiry_datail_btn1" value="답변완료">답변완료</button>
-            <button class="admin_inquiry_datail_btn2" value="목록"><a href="./admin_inquiry_list.html">목록</a></button>
+            <button class="admin_inquiry_datail_btn1" value="수정">수정</button>
         </div>
         
     <script src="../script.js"></script>

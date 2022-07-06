@@ -1259,7 +1259,7 @@ table a:visited{
 /* inquiry */
 
 .admin_inquiry_q1 {
-    width: 700px;
+    width: 723px;
     height: 150px;
     border: 1px solid black;
     margin: 0 auto;
@@ -1283,9 +1283,9 @@ table a:visited{
 }
 
 .admin_inquiry_q3 > p, .admin_inquiry_a1 > div > p {
-    margin-left: 20px;
-    margin-top: 10px;
-    font-size: 18px;
+    margin-left: 15px;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 
@@ -1304,18 +1304,16 @@ table a:visited{
 }
 
 .admin_inquiry_a1{
-    width: 700px;
+    width: 730px;
     height: 250px;
-    border: 1px solid black;
     margin: 0 auto;
-    margin-top: 30px;
 }
 
 .admin_inquiry_datail_btn {
     width: 700px;
     margin: 0 auto;
-    margin-top: 15px;
-    text-align: right;
+    margin-top: 40px;
+    text-align: center;
 }
 
 .admin_inquiry_datail_btn1 {
@@ -1330,6 +1328,10 @@ table a:visited{
     width: 100px;
     height: 30px;
     font-size: 18px;
+}
+
+.admin_inquiry_datail_btn2 > a {
+    color: black;
 }
 
 .admin_FAQ_content {
@@ -1361,6 +1363,12 @@ table a:visited{
 .admin_faq_list_btn1, .admin_faq_list_btn2, .admin_faq_list_btn3 {
     width: 70px;
     height: 30px;
+    font-size: 18px;
+}
+
+
+
+.admin_inquiry_a2 {
     font-size: 18px;
 }
 =======

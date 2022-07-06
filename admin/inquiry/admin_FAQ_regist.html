@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ_등록</title>
     <link rel="stylesheet" href="../admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
     <!-- 사이드바-->
@@ -104,16 +105,29 @@
             </p>
         </div>
         <div class="admin_inquiry_qtext">자주하는 질문</div>
-        <div class="admin_inquiry_q1">
+        <div>
             <div>
                 <div class="admin_inquiry_q3">
-                    <p>계정을 잃어버렸어요</p>
+                    <div class="admin_inquiry_a1">
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 720px; height: 200px;">
+                            <p>계정을 잃어버렸어요.</p>
+                        </textarea></div>
+                            <script>
+                                var oEditors = [];
+                                nhn.husky.EZCreator.createInIFrame({
+                                oAppRef : oEditors,
+                                elPlaceHolder : "weditor",//
+                                sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                                fCreator : "createSEditor2",
+                                });
+                            </script>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="admin_inquiry_atext">답변</div>
         <div class="admin_inquiry_a1">
-            <div>
+            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 720px; height: 200px;">
                 <p>[간편로그인 - 계정 연결 서비스 확인 방법]<br>
                     - 카카오톡<br>
                     카카오톡 앱 > 더보기 > 설정 > 개인/보안 > 카카오 계정 > 연결된 서비스 관리<br>
@@ -122,12 +136,21 @@
                     - 페이스북<br>
                     페이스북 앱 우측 상단 또는 하단 [   ] > 설정 및 개인정보 > 설정 > 앱 및 웹사이트<br>
                     - 애플<br>
-                    휴대폰 설정 > 사용자 이름(Apple ID) > 암호 및 보안 > Apple ID를 사용하는 앱</p>
-            </div>
+                    휴대폰 설정 > 사용자 이름(Apple ID) > 암호 및 보안 > Apple ID를 사용하는 앱
+                </p>
+            </textarea></div>
+            <script>
+                var oEditors = [];
+                nhn.husky.EZCreator.createInIFrame({
+                oAppRef : oEditors,
+                elPlaceHolder : "weditor1",//
+                sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                fCreator : "createSEditor2",
+                });
+            </script>
         </div>
         <div class="admin_inquiry_datail_btn">
-            <button class="admin_inquiry_datail_btn1" value="답변완료">답변완료</button>
-            <button class="admin_inquiry_datail_btn2" value="목록"><a href="./admin_inquiry_list.html">목록</a></button>
+            <button class="admin_inquiry_datail_btn1" value="등록">등록</button>
         </div>
         
     <script src="../script.js"></script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문의_상세</title>
     <link rel="stylesheet" href="../admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
     <!-- 사이드바-->
@@ -92,7 +93,7 @@
         <nav>
         <div>
             <p class="admin_inquiry_category1">분류 
-                <select name="" class="admin_inquiry_datail_category2">
+                <select name="" class="admin_inquiry_category2">
                     <option value="전체">전체</option>
                     <option value="항공">항공</option>
                     <option value="숙소">숙소</option>
@@ -117,9 +118,18 @@
         </div>
         <div class="admin_inquiry_atext">답변하기</div>
         <div class="admin_inquiry_a1">
-            <div>
-                <p>안녕하세요 user2님, Triple입니다. <br>예약번호 room_resevation_abcd_1234 취소 도와드리겠습니다. <br> 감사합니다.</p>
-            </div>
+            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 720px; height: 200px;">
+                <p class="admin_inquiry_a2">안녕하세요 user2님, Triple입니다. <br>예약번호 room_resevation_abcd_1234 취소 도와드리겠습니다. <br> 감사합니다.</p>
+            </textarea></div>
+                <script>
+                    var oEditors = [];
+                    nhn.husky.EZCreator.createInIFrame({
+                    oAppRef : oEditors,
+                    elPlaceHolder : "weditor",//
+                    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                    fCreator : "createSEditor2",
+                    });
+                </script>
         </div>
         <div class="admin_inquiry_datail_btn">
             <button class="admin_inquiry_datail_btn1" value="답변완료">답변완료</button>
