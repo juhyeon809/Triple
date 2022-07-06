@@ -1,0 +1,61 @@
+#main_content_box .content_box .title_p{
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(109, 109, 109);
+}
+#coupon_storage_box {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+#coupon_storage_box > p {
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(109, 109, 109);
+}
+#coupon_storage_box > p a {
+    text-decoration: none;
+    color: rgb(109, 109, 109);
+}
+#coupon_storage_flex_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#coupon_storage_flex_box >  div {
+    width: 440px;
+    background-color: rgb(236, 236, 236);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+
+}
+#flex_p {
+    box-sizing: border-box;
+    width: 440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#flex_p p {
+    margin: 0;
+}
+#coupon_storage_flex_box >  div > .coupon_name {
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(87, 87, 87);
+    margin: 0;
+}
+#coupon_storage_flex_box >  div > .coupon_condition, #coupon_storage_flex_box >  div > .coupon_date {
+    margin: 0;
+    color: rgb(87, 87, 87);
+}
+#flex_p .coupon_price {
+    color: rgb(73, 147, 243);
+    font-weight: 700;
+    font-size: 20px;
+}
+#flex_p p a {
+    color: rgb(87, 87, 87);
+}
