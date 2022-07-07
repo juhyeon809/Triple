@@ -391,34 +391,35 @@ main .card .label{
 
 } */
 
-.content2 nav form {
-    position: absolute;
-    right: 0;
-    
-}
 
+.content2 nav form .form-group{
+    
+    position: absolute;
+    right: 100px;
+}
 .content2 nav form .form-group select{
-    width: 100px;
+    width: 120px;
     height: 25px;
-    font-size: 16px;
+    font-size: 18px;
+    text-align: center;
 }
 .content2 nav form .form-group input {
     width: 200px;
     height: 25px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .content2 nav form .form-group button {
-    width: 50px;
+    width: 60px;
     height: 25px;
-    font-size: 16px;
+    font-size: 18px;
+    margin-left: 5px;
 }
 .btnlist {
     box-sizing: border-box;
     width: 150px;
     position: relative;
     margin: 0 auto;
-    margin-left: 530px;
-    right: -950px;
+    left: 475px;
 }
 .btnlist button {
     width: 60px;
@@ -426,15 +427,26 @@ main .card .label{
     font-size: 13px;
     margin-top: 10px;
 }
-table {
-    width: 800px;
+table.tbList {
+    width: 1000px;
     position: relative;
-    width: calc(100%);
-    left: 23%;
-    max-width: 1200px;
-    margin-top: 200px;
+    margin: 150px auto 0;
+    left: 100px;
     text-align: center;
     border-collapse: collapse;
+}
+
+table.tbDetail {
+    width: 950px;
+    position: relative;
+    margin: 200px auto;
+    left: 50px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table tr {
+    height: 60px;
 }
 table select {
     width: 60px;
@@ -449,13 +461,15 @@ td {
     padding: 15px;
     border-bottom: 1px solid #8D8D8D;
 }
-span {
-    margin-top: 30px;
-    width: 800px;
-    position: absolute;
+
+/*리스트 넘버링*/
+.pageNum {
+    position: relative;
+    margin: 30px 50px;
     text-align: center;
-    left: 30%;
+    width: 1200px;
 }
+
 
 /*회원 상세정보*/
 
@@ -463,6 +477,9 @@ table.colortb th{
     border-bottom: 1px solid var(--dark-grey);
     background-color: var(--grey);
 } 
+table.colortb tr{
+    height: 20px;
+}
 .infolist {
     margin-top: 60px;
 }
@@ -490,26 +507,24 @@ table a:visited{
 
 
 
-/* 쿠폰 */
+/* 상품등록 */
 
-.submit {
-    margin: 0 auto;
-}
+
 
 .formbox{
-    width: 700px;
-    margin-left: 300px;
+    width: 1000px;
+    margin: auto;
     display: flex;
 }
 .box p{
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 25px;
     vertical-align: middle
     ;
 }
 .box input {
-    width: 200px;
-    height: 25px;
+    width: 250px;
+    height: 30px;
     margin-left: 20px;
 }
 .box select {
@@ -518,35 +533,99 @@ table a:visited{
     margin-left: 20px;
 }
 .leftbox {
+    width: 500px;
     float: left;
 }
 
 .rightbox {
+    width: 500px;
     float: right;
 }
 .flbox {
-    display: flex;
+    
     clear: both;
-    width: 700px;
+    display: flex;
+    width: 800px;
+    
+}
+.flbox2{
+    flex-direction: column;
+    
 }
 .plus{
-    height: 20px;
+    width: 80px;
+    height: 25px;
 }
-.regis {
-    text-align: center;
-    width: 60px;
-    background-color: #ffb800;
+
+.bottombox{
+    
+    width: 900px;
+    margin-top: 20px;
+}
+.btbox{
+    border-bottom: 1px dotted var(--dark-grey);
+    
+}
+.btbox:last-child {
     border: none;
 }
-.bottombox {
-    width: 600px;
+.btbox .span {
+    font-size: 18px;
+    padding-left: px;
 }
 .box button {
     clear: both;
     width: 50px;
     float: right;
-    margin-top: 25px;
+    margin-top: 30px;
 }
+
+.non {
+    clear: both;
+    margin: 0;
+}
+
+.packge {
+    display: flex;
+    width: 1200px;
+}
+.packge button {
+    width: 50px;
+    margin-left: 20px;
+}
+.packge .mintit {
+    font-weight: bold;
+    font-size: 18px;
+    float: left; 
+}
+
+.packge span {
+    float: right;
+    font-weight: 400;
+    margin: 0 0 10px 30px;
+}
+.packge p:nth-child(odd),
+.packge p:nth-child(even){
+    clear: both;
+}
+/* .packge .mintit:nth-child(odd){
+    
+    clear: both;
+}
+.packge .minrt{
+    clear: both;
+} */
+.packge select {
+    width: 80px;
+    height: 25px;
+    text-align: center;
+}
+.packge input[type="text"] {
+    width: 200px;
+    height: 25px;
+}
+
+
 /*쿠폰등록*/
 .coupon input {
     height: 30px;
@@ -556,6 +635,23 @@ table a:visited{
     width: 150px;
     height: 30px;
     font-size: 15px;
+}
+.submit {
+    margin-left: 100px;
+}
+.hbt {
+    text-align: center;
+    margin-top: 50px;
+}
+.regis {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 80px;
+    height: 30px;
+    background-color: #ffb800;
+    border: none;
+    font-size: 18px;
 }
 
 
@@ -1167,11 +1263,11 @@ table a:visited{
 .admin_manage_form_container {
     width: 1000px;
     height: 500px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-top: 50px;
+    margin-left: 200px;
     display: flex;
     justify-content: flex-around;
-    margin-top: 50px;
-    margin-left: 400px;
     align-items: center;
 }
 
@@ -1240,13 +1336,12 @@ table a:visited{
 }
 
 .admin_productlist_lowbar, .admin_faq_list_btn {
-    text-align: left;
-    margin-top: 20px; 
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 20px;
 }
 
-.pagenum {
-    margin-top: 60px;
-}
+
 
 /* inquiry */
 
@@ -1352,7 +1447,7 @@ table a:visited{
     text-align: right;
 }
 
-.admin_faq_list_btn1, .admin_faq_list_btn2, .admin_faq_list_btn3 {
+.admin_lowbar_btn{
     width: 70px;
     height: 30px;
     font-size: 18px;
@@ -1362,4 +1457,35 @@ table a:visited{
 
 .admin_inquiry_a2 {
     font-size: 18px;
+}
+div.j2 {
+    font-size: 40px;
+    position: relativa;
+    width: 400px;
+    height: 100px;
+    padding-left: 3%;
+    padding-top:2%;
+  } 
+  
+div.j3 {
+    font-size: 30px;
+    position: relative;
+    top: -10px;
+    right: -50px;
+    width: 200px;
+    height: 30px;
+}
+.colortb2{
+    margin-top: 2px;
+}
+.review_text{
+    border: 1px solid black;
+    margin-top: 30px;
+    margin-left: 275px;
+    position: relative;
+    width: 1200px;
+    text-align: left;
+    height: 400px;
+    font-size: large;
+    font-size: 30px;
 }

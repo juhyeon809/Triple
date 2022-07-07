@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자_상세보기</title>
+    <title>관리자 페이지</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="/admin/admin.css">
     
 </head>
 <body>
     <!-- 사이드바-->
     <selction id="sidebar">
-        <a href="#" class="active"><img src="img-main-logo-white@3x.png" alt=""></a>
+        <a href="#" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
         <ul class="side-menu">
             
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">회원목록</a></li>
+                    <li><a href="member/memberlist.html">회원목록</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">전체</a></li>
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
+                    <li><a href="예약/all.html">전체</a></li>
+                    <li><a href="예약/fly_reservation.html">항공권</a></li>
+                    <li><a href="예약/room_resevation.html">숙소</a></li>
+                    <li><a href="예약/packge_reservation.html">패키지</a></li>
+                    <li><a href="예약/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -88,65 +88,33 @@
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </selction>
-    <!--사이드바 끝-->
     <section class="content2">
-        <h2>관리자 상세보기</h2>
-        <nav>
-
-        <!--main-->
-        <main>
-            <form action="#" method="post">
-                <div class="admin_manage_form_container">
-                    <div class="admin_manage_form_container_ul1">
-                        <p class="admin_register_adminid">아이디 : </p>
-                        <p class="admin_register_name">이름 : </p>
-                        <p class="admin_register_hp">연락처 : </p>
-                        <p class="admin_register_email">이메일 : </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul2">
-                        <p><input type="text" class="admin_register_adminid_content" placeholder="apple1"></p>
-                        <p><input type="name" class="admin_register_name_content" placeholder="김사과"></p>
-                        <p><input type="hp" class="admin_register_hp_content" placeholder="010-1111-1111"></p>
-                        <p><input type="email" class="admin_register_email_content" placeholder="apple@triple.com"></p>
-                    </div>
-                    <div class="admin_manage_form_container_ul3">
-                        <p class="admin_register_adminpw">비밀번호 : </p>
-                        <p class="admin_register_adminpwre">비밀번호 확인 : </p>
-                        <p class="admin_register_department">부서 : </p>
-                        <p class="admin_register_title">직함 : </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul4">
-                        <p><input type="password" class="admin_register_adminpw_content" placeholder="******"></p>
-                        <p><input type="password" class="admin_register_adminpwre_content" placeholder="******"></p>
-                        <p>
-                            <select name="department" class="admin_register_department_content">
-                                <option value="전체">전체</option>
-                                <option value="관리자">관리자</option>
-                                <option value="영업">영업</option>
-                                <option value="마케팅">마케팅</option>
-                            </select>
-                        </p>
-                        <p>
-                            <select name="title" class="admin_register_title_content">
-                                <option value="전체">전체</option>
-                                <option value="대표">대표</option>
-                                <option value="팀장">팀장</option>
-                                <option value="부장">부장</option>
-                                <option value="차장">차장</option>
-                                <option value="대리">대리</option>
-                                <option value="주임">주임</option>
-                                <option value="사원">사원</option>
-                            </select>
-                        </p>
-                    </div>
-                </div>
-                <p class="admin_register_btn"><input type="submit" value="관리자 등록"></p>    
-            </form>
-        </main>
-        <!--main-->
+        <div class="j2">상품후기</div>
+        <div class="j3">티켓</div>
+        <table class="colortb2">
+            <tr>
+                <th>사용자</th>
+                <td>유저3</td>
+                <th>날짜</th>
+                <td>2022.06.22</td>
+            </tr>
+            <tr>
+                <th>상품명</th>
+                <td>ticket3</td>
+                <th>분류</th>
+                <td>티켓</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>티켓이 비싸요</td>
+                <th>상품코드</th>
+                <td>t1258</td>
+            </tr>
+        </table>
+        <div class="review_text">
+            <p>후기란</p>
+        </div>    
     </section>
-    
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="script.js"></script>
+    <script src="..script.js"></script>
 </body>
 </html>

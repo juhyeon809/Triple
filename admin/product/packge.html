@@ -7,6 +7,7 @@
     <title>상품등록 | 패키지</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
     <!-- 사이드바-->
@@ -16,54 +17,54 @@
             
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="member/memberlist.html">회원목록</a></li>
+                    <li><a href="../member/memberlist.html">회원목록</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="예약/all.html">전체</a></li>
-                    <li><a href="fly_reservation.html">항공권</a></li>
-                    <li><a href="room_resevation.html">숙소</a></li>
-                    <li><a href="packge_reservation.html">패키지</a></li>
-                    <li><a href="ticket_reservation.html">티켓</a></li>
+                    <li><a href="../booking/all.html">전체</a></li>
+                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                    <li><a href="../booking/room_resevation.html">숙소</a></li>
+                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
+                    <li><a href="air.html">항공권</a></li>
+                    <li><a href="room.html">숙소</a></li>
+                    <li><a href="packge.html">패키지</a></li>
+                    <li><a href="ticket.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
-                    <li><a href="#">다이닝</a></li>
+                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="couponList.html">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../coupon/couponList.html">목록</a></li>
+                    <li><a href="../coupon/couponRegistration.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../notice/notice-list.html">목록</a></li>
+                    <li><a href="../notice/notice-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../magazine/magazine-list.html">목록</a></li>
+                    <li><a href="../magazine/magazine-register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
@@ -74,59 +75,81 @@
             </li>
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">1:1 문의</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                    <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../manage/admin_manage_list.html">목록</a></li>
+                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </selction>
     <!--사이드바 끝-->
+
     <section class="content2">
         <h2>상품등록 - 패키지</h2>
-    </section>
-    <div class="content2">
+    
+    <div class="content2 packge">
+        <div class="formbox">
         <form action="">
             
-                <p>분류</p>
-                <select name="" id="">
+                <p class="mintit">분류
+                <span><select name="" id="">
                     <option value="">나라</option>
-                </select>
-                <p>상품명</p>
-                <input type="text">
-                <p>상품이미지</p>
-                <input type="file">
-                <p>키워드</p>
-                <input type="checkbox" name="자유일정" id="">자유일정 <input type="checkbox" name="특가" id="">특가 <input type="checkbox" name="노옵션노쇼핑" id="">노옵션 노쇼핑 <input type="checkbox" name="출발확정" id="">출발확정 <input type="checkbox" name="한정특가" id="">한정특가
+                </select></span></p>
+                <p class="mintit">상품명
+                <span><input type="text" class="minrt"></span></p>
+                <p class="mintit">상품이미지
+                <span><input type="file" class="minrt"></span></p>
+                <p class="mintit">키워드
+                <span><input type="checkbox" name="자유일정" id="" class="minrt">자유일정 <input type="checkbox" name="특가" id=""class="minrt">특가 <input type="checkbox" name="노옵션노쇼핑" id=""class="minrt">노옵션 노쇼핑 <input type="checkbox" name="출발확정" id=""class="minrt">출발확정 <input type="checkbox" name="한정특가" id=""class="minrt">한정특가</span></p>
             
-            <div>
-                <p>상품가격</p>
+            <div class="flbox" style="height: 50px;">
+                <p class="mintit">상품가격</p>
+                
+                    <div class="bottombox non" id="bottombox" style="width: 450px;">
                 <span>가격분류
-                <select name="" id="">
+                <select name="" id="" class="minrt">
                     <option value="성인">성인</option>
                     <option value="소아">소아</option>
-                </select> / <input type="text">원</span>
-
+                    
+                </select> / <input type="text"> 원</span>
+                </div>
+                <div>
+                    <button onclick="divplus()" class="plus">추가</button>
+                </div>
             </div>
-            <button onclick="divplus">추가</button>
-            <p>상품프로그램</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p>포함사항</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p>불포함사항</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <p>취소 / 환불 규정</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <button>등록</button>
+        <div class="non">
+            <p class="mintit">상품프로그램</p>
+            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            <p class="mintit">포함사항</p>
+            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            <p class="mintit">불포함사항</p>
+            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            <p class="mintit">취소 / 환불 규정</p>
+            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            <div class="hbt" style="margin-right: 300px; margin-bottom: 50px;">
+                <button type="submit" class="regis">등록</button>
+            </div>
+        </div>
         </form>
     </div>
+    </div>
+</section>
 
+<script>
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+</script>
     <script src="../script.js"></script>
 </body>
 </html>
