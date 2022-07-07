@@ -16,8 +16,8 @@
             
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="member/memberlist.html">회원목록</a></li>
-                    <li><a href="#">회원가입</a></li>
+                    <li><a href="../member/memberlist.html">회원목록</a></li>
+                    <li><a href="../member/">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -31,22 +31,22 @@
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
+                    <li><a href="../product/air.html">항공권</a></li>
+                    <li><a href="../product/room.html">숙소</a></li>
+                    <li><a href="../product/packge.html">패키지</a></li>
+                    <li><a href="../product/ticket.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">항공권</a></li>
-                    <li><a href="#">숙소</a></li>
-                    <li><a href="#">패키지</a></li>
-                    <li><a href="#">티켓</a></li>
-                    <li><a href="#">다이닝</a></li>
+                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -74,14 +74,14 @@
             </li>
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">1:1 문의</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                    <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">등록</a></li>
+                    <li><a href="../manage/admin_manage_list.html">목록</a></li>
+                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -89,11 +89,11 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2">
-        <h2>쿠폰목록</h2> 
+        <h2>쿠폰등록</h2> 
 
         <form action="" class="coupon">
 
-            <table class="colortb">
+            <table class="tbDetail colortb" style="width: 800px;">
                 <tr>
                     <th>쿠폰 이름</th>
                     <td><input type="text"></td>
@@ -118,12 +118,12 @@
                 </tr>
 
             </table>
-            
-        <button type="submit" class="regis">등록</button>
+            <div class="hbt submit">
+                <button type="submit" class="regis">등록</button>
+            </div>
     </form>
-            
-           
 
+    </section>
 
         <script src="../script.js"></script>
 </body>
