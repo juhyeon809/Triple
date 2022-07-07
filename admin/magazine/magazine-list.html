@@ -95,11 +95,9 @@
         <nav>
             
             <form action="#">
-                <div class="notice">
-                    <div><input type="date"></div>
-                    <div class="notice_a"> ~ </div>
-                    <div><input type="date"></div>
-                    <div><select name="" id="">
+                <div class="form-group">
+                    <input type="date"> ~ <input type="date">
+                    <select name="" id="">
                         <option value="">전체</option>
                         <option value="">#여행지추천</option>
                         <option value="">#여행꿀팁</option>
@@ -109,14 +107,14 @@
                         <option value="">#숙소추천</option>
                         <option value="">#투어·티켓</option>
                         <option value="">#쇼핑</option>
-                    </select></div>
-                    <div class="notice_b"><input type="text"></div>
-                    <div><button type="submit">검색</button></div>
+                    </select>
+                    <input type="text">
+                    <button type="submit">검색</button>
                 </div>
             </form>
         </nav>
     </section>
-    <div>
+    <div class="content2">
         <table class="tbList">
             <tr>
                 <th>
@@ -172,8 +170,11 @@
             </tr>
             
         </table>
+    
+    <div class="pageNum">
+        <p>1 2 3 4 5</p>
     </div>
-        <span class="sp2">1 | 2 | 3 | 4 | 5</span>
+</div>
     <script src="../script.js"></script>
 </body>
 </html>

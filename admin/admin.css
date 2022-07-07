@@ -391,12 +391,12 @@ main .card .label{
 
 } */
 
-.content2 nav form {
-    position: absolute;
-    right: 0;
-    
-}
 
+.content2 nav form .form-group{
+    
+    position: absolute;
+    right: 100px;
+}
 .content2 nav form .form-group select{
     width: 120px;
     height: 25px;
@@ -412,7 +412,7 @@ main .card .label{
     width: 60px;
     height: 25px;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .btnlist {
     box-sizing: border-box;
@@ -430,7 +430,7 @@ main .card .label{
 table.tbList {
     width: 1000px;
     position: relative;
-    margin: 150px auto 40px;
+    margin: 150px auto 0;
     left: 100px;
     text-align: center;
     border-collapse: collapse;
@@ -439,9 +439,7 @@ table.tbList {
 table.tbDetail {
     width: 950px;
     position: relative;
-    margin-top: 200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 200px auto;
     left: 50px;
     text-align: center;
     border-collapse: collapse;
@@ -465,16 +463,13 @@ td {
 }
 
 /*리스트 넘버링*/
-.page {
+.pageNum {
     position: relative;
     margin: 30px 50px;
     text-align: center;
     width: 1200px;
 }
-/* .pageNum {
-    text-align: center;
 
-} */
 
 /*회원 상세정보*/
 
@@ -551,6 +546,7 @@ table a:visited{
     clear: both;
     display: flex;
     width: 800px;
+    
 }
 .flbox2{
     flex-direction: column;
@@ -586,6 +582,7 @@ table a:visited{
 
 .non {
     clear: both;
+    margin: 0;
 }
 
 .packge {

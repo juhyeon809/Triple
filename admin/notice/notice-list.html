@@ -94,23 +94,21 @@
         <nav>
             
             <form action="#">
-                <div class="notice">
-                    <div><input type="date"></div>
-                    <div class="notice_a"> ~ </div>
-                    <div><input type="date"></div>
-                    <div><select name="" id="">
+                <div class="form-group">
+                    <input type="date" name="" id=""> ~ <input type="date">
+                    <select name="" id="">
                         <option value="전체">전체</option>
                         <option value="아이디">항공</option>
                         <option value="이름">쿠폰</option>
                         <option value="이름">업데이트</option>
-                    </select></div>
-                    <div class="notice_b"><input type="text"></div>
-                    <div><button type="submit">검색</button></div>
+                    </select>
+                    <input type="text">
+                    <button type="submit">검색</button>
                 </div>
             </form>
         </nav>
     </section>
-    <div>
+    <div class="content2">
         <table class="tbList">
             <tr>
                 <th class="check">
@@ -187,14 +185,17 @@
                 <td>2022-06-22</td>
             </tr>
         </table>
-    </div>
+    
         <div class="re_de">
             <a href="#" class="
             registration"><div>등록</div></a> 
             <a href="#" class="
             delete"><div>선택삭제</div></a>
         </div>
-        <span class="sp1">1 | 2 | 3 | 4 | 5</span>
+        <div class="pageNum">
+            <p>1 2 3 4 5</p>
+        </div>
+    </div>
     <script src="../script.js"></script>
 </body>
 </html>
