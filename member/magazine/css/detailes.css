@@ -9,25 +9,25 @@
 }
 /*상세페이지 제목 맨위 폰트 크기 색상*/
 #rec_tit{
-    font-size:18px;
+    font-size:20px;
     color: rgb(51, 51, 51);
     font-weight: bold;
 }
 /*상세페이지 내용 맨위 폰트 크기 색상*/
 #rec_cont{
     color: rgb(0, 0, 0);
-    font-size: 16px;
+    font-size: 18px;
     
 }
 /*글 제목 폰트 크기 색상*/
 #list_tit{
-    font-size: 16px;
+    font-size: 18px;
     color: black;
     font-weight: bold;
 }
 /*글 내용 폰트 크기 색상*/
 #list_cont{
-    font-size: 14px;
+    font-size: 16px;
     color: black;
     text-align: left;
 }
@@ -46,7 +46,7 @@
 }
 
 #guam{
-    font-size: 16px;
+    font-size: 20px;
     color: black;
     font-weight: bold;
 }
@@ -184,7 +184,7 @@ a{
 /*맛집탐방*/
 #ocen{
     color: rgb(78, 120, 199);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -274,7 +274,7 @@ u{
 }
 #sp{
     color: dodgerblue;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 

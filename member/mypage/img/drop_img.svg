@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="120" viewBox="0 0 132 120">
+  <g id="그룹_459" data-name="그룹 459" transform="translate(-753 -691)">
+    <g id="사각형_101" data-name="사각형 101" transform="translate(753 691)" fill="#fff" stroke="#d2d1d1" stroke-width="1">
+      <rect width="132" height="120" rx="16" stroke="none"/>
+      <rect x="0.5" y="0.5" width="131" height="119" rx="15.5" fill="none"/>
+    </g>
+    <text id="공유하기_수정하기_삭제하기" data-name="공유하기수정하기삭제하기" transform="translate(782 730)" fill="#a7a7a7" font-size="20" font-family="MalgunGothic, Malgun Gothic" letter-spacing="0.02em"><tspan x="0" y="0">공유하기</tspan><tspan y="0" font-family="SegoeUI, Segoe UI"></tspan><tspan x="0" y="30">수정하기</tspan><tspan y="30" font-family="SegoeUI, Segoe UI"></tspan><tspan x="0" y="60">삭제하기</tspan></text>
+  </g>
+</svg>

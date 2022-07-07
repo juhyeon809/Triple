@@ -1,0 +1,53 @@
+#main_content_box .list_box .content_index {
+    color: rgb(75, 189, 255);
+    font-size: 20px;
+    font-weight: 700;
+}
+#main_content_box .list_box{
+    padding-bottom: 20px;
+}
+#FAQ_search_box {
+    width: 1000px;
+    margin: 0 auto;
+}
+#FAQ_search_box p {
+    text-align: center;
+}
+#FAQ_search_box .FAQ {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+}
+#FAQ_search_box .search_p {
+    width: 1000px;
+    text-align: center;
+}
+
+#search {
+    width: 600px;
+    height: 50px;
+    background-image: url(../img/돋보기.png);
+    background-position: 10px 9px;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border: 3px solid #50e3c2;
+    border-radius: 30px;
+}
+#FAQ_search_box .category_p {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 500px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+}
+#FAQ_search_box .category_p a {
+    color: rgb(88, 88, 88);
+    text-decoration: none;
+}
