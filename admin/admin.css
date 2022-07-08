@@ -1465,8 +1465,7 @@ div.j2 {
     height: 100px;
     padding-left: 3%;
     padding-top:2%;
-  } 
-  
+} 
 div.j3 {
     font-size: 30px;
     position: relative;
@@ -1475,7 +1474,8 @@ div.j3 {
     width: 200px;
     height: 30px;
 }
-.colortb2{
+.content2.t_menu{
+    padding: auto;
     margin-top: 2px;
 }
 .review_text{
