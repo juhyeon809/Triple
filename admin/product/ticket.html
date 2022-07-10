@@ -88,39 +88,56 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <section class="content2">
-    <form action="">
-        <div>
-            <p>분류</p>
-            <select name="" id="">
-                <option value="">상품분류</option>
-                <option value="">국내</option>
-                <option value="">해외</option>
-            </select>
-            <select name="" id="">
-                <option value="">제주</option>
-            </select>
-            <select name="" id="">
-                <option value="">오사카</option>
-            </select>
-            <select name="" id="">
-                <option value="">투어</option>
-                <option value="">액티비티</option>
-            </select>
-        </div>
-        <p>상품명 <input type="text"></p>
-        <div>
-            <p>상품가격</p>
-            <div class="bottombox">
-            <p>가격분류 </p>
-            <p><select name="" id=""><option value="">성인</option><option value="">소아</option></select> / <input type="text" name="" id="">원</p></div>
-        </div>
-        <button onclick="divplus()" class="plus">추가</button>
-        <p>상품 프로그램</p>
-        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea
-        <button class="">등록</button>
-    </form>
-</section>
+    <div class="content2 ">
+        <h2>상품등록 - 티켓</h2>
+        <div class="register packge">
+            
+            <form action="">
+                <div class=""></div>
+                <div class="re_fl re_fl1">
+                    <p class="mintit">분류</p>
+                    <select name="" id="">
+                        <option value="">상품분류</option>
+                        <option value="">국내</option>
+                        <option value="">해외</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">제주</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">오사카</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">투어</option>
+                        <option value="">액티비티</option>
+                    </select>
+                </div>
+                <div class="re_fl re_fl2">
+                <p class="mintit">상품명</p> <input type="text"></div>
+                <div >
+                    <div class="re_fl re_fl3">
+                    <p class="mintit">상품가격</p>
+                    <div class="">
+                    <p> <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
+<p> <input type="text" placeholder="소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
+<p> <input type="text" placeholder="성인·소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
+
+                
+                    </div>
+                </div>
+                <div class="re_box">
+                <p class="mintit" style="width: 120px;">상품 프로그램</p>
+                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
+            </div>
+                
+                    
+                    <div class="hbt" style="margin-right: 300px; margin-bottom: 50px;">
+                        <button type="submit" class="regis">등록</button>
+                    </div>
+                
+            </form>
+    </div>
+</div>
 
 <script>
     var oEditors = [];

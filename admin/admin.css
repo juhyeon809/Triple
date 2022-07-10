@@ -30,6 +30,8 @@ a {
     text-decoration: none;
 }
 
+a:visited{color: #000;}
+
 li{
     list-style: none;
 }
@@ -137,7 +139,7 @@ li{
 /* navbar*/
 #content nav {
     background: var(--light);
-    width: 87%;
+    width: 85%;
     height: 64px;
     padding: 0 20px;
     display: flex;
@@ -189,7 +191,7 @@ li{
 #content nav .nav-link .badge {
     position: absolute;
     top: -12px;
-    right: -px;
+    right: -15px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -211,12 +213,7 @@ li{
 #content nav .profile {
     position: relative;
 }
-#content nav .profile a {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+
 
 
 /* navbar 끝*/
@@ -229,54 +226,33 @@ main {
     padding: 24px 20px 20px 20px;
 }
 
-main .titile{
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 10px; 
+
+main h3 {
+    color: #999;
+}
+main .content {
+    position: relative;
     
+    min-height: 90vh;
 }
-
-main .breadcrumbs {
+main .content .cards {
+    padding: 20px 15px;
     display: flex;
-    grid-gap: 6px;
-}
-
-main.breadcrumbs li,
-main.breadcrumbs li a {
-    font-size: 14px;
-}
-main.breadcrumbs li a{
-    color: var(--blue);
-}
-main.breadcrumbs li a.active,
-main.breadcrumbs li.divider {
-    color: var(--dark-grey);
-    pointer-events: none;
-}
-main .info-data{
-    margin-top: 36px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 20px;
-}
-main .info-data .card{
-    padding: 20px;
-    border-radius: 10px;
-    background: var(--light);
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
-}
-main .card .head {
-    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
-main .card .head h2{
-    font-size: 24px;
-    font-weight: 600;
+main .content .cards .card {
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-main .card .head p {
-    font-size: 14px;
-}
+
 main .card .head .icon{
     font-size: 20px;
     color: var(--green);
@@ -286,7 +262,7 @@ main .card .head .icon.down{
 }
 main .card .progress {
     display: block;
-    margin-top: 24px;
+    margin-top: 15px;
     height: 10px;
     width: 100%;
     border-radius: 10px;
@@ -307,6 +283,64 @@ main .card .progress::before {
 main .card .label{
     font-size: 14px;
     font-weight: 700;
+}
+
+main .content .cards .card:nth-child(3),
+main .content .cards .card:nth-child(4){
+ display: block;
+ padding: 15px;
+}
+
+main .content .content-2{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+main .content .content-2 .service-center{
+    min-height: 50vh;
+    flex: 5;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+    margin: 0 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+main .content .content-2 .new-post{
+    flex: 2;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .08);
+    min-height: 50vh;
+    margin: 0 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+main .content .content-2 .new-post table {
+    margin: 0 auto;
+}
+.center-tit{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid var(--grey);
+}
+
+main table{
+    padding: 10px;
+}
+
+main table th,
+main table tr {
+    text-align: left;
+    padding: 8px;
+    border-bottom: none;
+}
+
+main td {
+    border-bottom: none;
 }
 
 /*main끝*/
@@ -370,16 +404,10 @@ main .card .label{
 .content2{
     position: relative;
     width: calc(100%);
-    left: 260px;
+    left: 300px;
     max-width: 1200px;
 }
 
-.content2{  /*container로 이름바꾸기*/
-    position: relative;
-    width: calc(100%);
-    left: 260px;
-    max-width: 1200px;
-}
 .content2 h2 {
     margin: 20px 0 0 20px;
     font-size: 30px;
@@ -400,9 +428,8 @@ main .card .label{
 
 
 .content2 nav form .form-group{
-    
     position: absolute;
-    right: 100px;
+    right: 50px;
 }
 .content2 nav form .form-group select{
     width: 120px;
@@ -426,13 +453,14 @@ main .card .label{
     width: 150px;
     position: relative;
     margin: 0 auto;
-    left: 475px;
+    left: 550px;
 }
 .btnlist button {
     width: 60px;
     height: 25px;
     font-size: 13px;
     margin-top: 10px;
+    border: none;
 }
 table.tbList {
     width: 1000px;
@@ -447,7 +475,7 @@ table.tbDetail {
     width: 950px;
     position: relative;
     margin: 200px auto;
-    left: 50px;
+    left: 300px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -469,6 +497,7 @@ td {
     border-bottom: 1px solid #8D8D8D;
 }
 
+
 /*리스트 넘버링*/
 .pageNum {
     position: relative;
@@ -480,10 +509,12 @@ td {
 
 
 /*회원 상세정보*/
-
+table.colortb{
+    border-collapse: collapse;
+}
 table.colortb th{
     border-bottom: 1px solid var(--dark-grey);
-    background-color: var(--grey);
+    background-color: #f7f7f7;
 } 
 table.colortb tr{
     height: 20px;
@@ -526,7 +557,8 @@ table a:visited{
 }
 .box p{
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 18px;
+    font-weight: bold;
     vertical-align: middle
     ;
 }
@@ -561,25 +593,42 @@ table a:visited{
     
 }
 .plus{
-    width: 80px;
+    width: 50px;
     height: 25px;
 }
 
 .bottombox{
     
     width: 900px;
-    margin-top: 20px;
+    margin-top: 10px;
+}
+.bottombox .span{
+    font-size: 15px;
+    font-weight: normal;
 }
 .btbox{
-    border-bottom: 1px dotted var(--dark-grey);
+    display: flex;
+    height: 30px;
     
 }
-.btbox:last-child {
-    border: none;
+.btbox input:first-child{
+    width: 90px;
+    text-align: center;
+    
 }
-.btbox .span {
-    font-size: 18px;
-    padding-left: px;
+.btbox .span input{
+    width: 150px;
+    height: 25px;
+}
+
+.btbox:nth-child(2){
+    padding-left: 35px;
+}
+.btbox:last-child {
+    padding-left: 35px;
+}
+.btbox .span{
+    margin: 5px 0 0 20px;
 }
 .box button {
     clear: both;
@@ -634,6 +683,61 @@ table a:visited{
 }
 
 
+.register{
+    width: 1200px;
+    box-sizing: border-box;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.re_fl{
+    margin-top: 10px;
+    width: 1000px;
+}
+.re_fl p{
+    width: 80px;
+    text-align: center;
+    margin: 0;
+}
+.re_fl select {
+    width: 100px;
+    height: 25px;
+    margin-left: 5px;
+}
+.re_fl.re_fl1 select:first-child{
+    margin-left: 10px;
+}
+.re_fl2 input{
+    width: 550px;
+    margin-left:25px;
+    height: 25px;
+}
+.re_fl3 div{
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.re_fl3 div p {
+    width: 340px;
+    margin-bottom: 5px;
+}
+.re_box{
+    display: flex;
+    height: 400px;
+
+}
+.re_fl3 .re_box p:first-child{
+    width: 100px;
+    font-size: 15px;
+    margin-left: 35px;
+    padding-top: 3px;
+}
+.re_fl3 .re_box p {
+    font-size: 15px;
+
+}
 /*쿠폰등록*/
 .coupon input {
     height: 30px;
@@ -827,12 +931,12 @@ table a:visited{
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 20px;
-    font-size: 26px;
+    font-size: 18px;
 }
 
 .notice_detail_1{
     text-align: center;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 .notice_detail_2{
@@ -890,7 +994,7 @@ table a:visited{
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .notice_register_1{
@@ -926,7 +1030,7 @@ table a:visited{
     height: 35px;
     position: relative;
     top: -5px;
-    background-color: gray;
+    background-color: var(--dark-grey);
     border: 0;
 }
 
@@ -954,8 +1058,9 @@ table a:visited{
 }
 
 .regi_1 div{
-    width: 100px;
+    width: 80px;
     padding-top: 5px;
+    background-color: #ffb800;
 }
 
 .regi_1{
@@ -1347,6 +1452,7 @@ table a:visited{
     text-align: center;
     margin-left: 200px;
     margin-top: 20px;
+    
 }
 
 
@@ -1434,6 +1540,7 @@ table a:visited{
     height: 300px;
     margin: 0 auto;
     margin-top: 100px;
+    background: #f7f7f7;
 }
 
 .admin_FAQ_content_title{
@@ -1450,15 +1557,24 @@ table a:visited{
 }
 
 .admin_faq_detail_btn {
-    width: 700px;
-    margin: 0 auto;
-    text-align: right;
-}
-
-.admin_lowbar_btn{
-    width: 70px;
+    margin: 10px auto;
+    position: relative;
+    left: 1450px;
+    width: 200px;
     height: 30px;
-    font-size: 18px;
+    text-align: center;
+}
+.admin_faq_detail_btn button{
+    width:50px;
+    height: 25px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.admin_lowbar_btn{
+    width: 60px;
+    height: 25px;
+    font-size: 15px;
 }
 
 
@@ -1491,9 +1607,11 @@ div.j3 {
     margin-top: 30px;
     margin-left: 275px;
     position: relative;
-    width: 1200px;
+    width: 1000px;
     text-align: left;
     height: 400px;
-    font-size: large;
     font-size: 30px;
+}
+.colortb.tbDetail.rev_detail{
+    margin: 20px 0;
 }

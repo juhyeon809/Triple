@@ -1,3 +1,4 @@
+
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
 
 allDropdown.forEach(item => {
