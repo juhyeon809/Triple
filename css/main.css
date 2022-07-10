@@ -1,6 +1,6 @@
 #backg_image_area {
     height: 500px;
-    background-image: url('./img/img_main_bg.svg');
+    background-image: url('../img/img_main_bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
