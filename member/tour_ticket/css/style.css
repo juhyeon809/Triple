@@ -21,7 +21,7 @@ a, button, input, select { cursor: pointer; background: none; border: none;}
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1208px;
+  max-width: 1000px;
   height: auto;
 }
 .container section {
@@ -325,7 +325,7 @@ header img, footer img {
 }
 
 .info-card .right-wrap {
-  padding-left: 89px;
+  padding-left: 20px;
   text-align: right;
 }
 .info-card .right-wrap .tag-wrap button {
@@ -335,31 +335,31 @@ header img, footer img {
 .info-card .right-wrap .price-before {
   margin-top: -40px;
   text-decoration: line-through;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 29px;
   color: #BEBEBE;
 }
 .info-card .right-wrap h1 {
   margin: 8px 0;
-  font-size: 35px;
+  font-size: 30px;
 }
 .info-card .right-wrap h1 span {
   color: #FF0101;
 }
 .info-card .right-wrap p {
-  font-size: 20px;
+  font-size: px;
   margin-bottom: 2px;
 }
 .info-card .right-wrap p span {
   color: #FE6C6C;
 }
 .info-card .right-wrap .submit {
-  padding: 5px 135px;
+  padding: 25px 70px;
   background: #4E91D5 0% 0% no-repeat padding-box;
   border-radius: 11px;
   font-weight: bold;
   font-size: 25px;
-  line-height: 36px;
+  line-height: 25px;
   color: #FAFAFA;
 }
 .info-card .action-wrap button {
