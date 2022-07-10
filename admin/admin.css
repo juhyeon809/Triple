@@ -1612,6 +1612,32 @@ div.j3 {
     height: 400px;
     font-size: 30px;
 }
+
 .colortb.tbDetail.rev_detail{
     margin: 20px 0;
 }
+
+.t_menu{
+    text-align: center;
+    padding: auto;
+    width: 1000px;
+    margin-left: 380px;
+}
+.t_menu1{
+    text-align: center;
+    padding-top:80px;
+    width: 1400px;
+    margin-left: 380px;
+    margin-top: 20px;
+}
+.payment{
+    width: auto;
+    height: 350px;
+}
+.btnlist_review{
+    position: absolute;
+    width: 1200px;
+    text-align: right;
+}
+
+
