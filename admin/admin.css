@@ -1489,3 +1489,26 @@ div.j3 {
     font-size: large;
     font-size: 30px;
 }
+.t_menu{
+    text-align: center;
+    padding: auto;
+    width: 1000px;
+    margin-left: 380px;
+}
+.t_menu1{
+    text-align: center;
+    padding-top:80px;
+    width: 1400px;
+    margin-left: 380px;
+    margin-top: 20px;
+}
+.payment{
+    width: auto;
+    height: 350px;
+}
+.btnlist_review{
+    position: absolute;
+    width: 1200px;
+    text-align: right;
+}
+
