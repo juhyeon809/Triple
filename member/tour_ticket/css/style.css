@@ -12,7 +12,7 @@ td, th {padding:0}
 
 /* @@@@ Global Styles @@@@ */
 * { font-family: 'Noto Sans KR', sans-serif; color: #425052; }
-a, button, input, select { cursor: pointer; background: none; border: none;}
+a, button, select { cursor: pointer; background: none; border: none;}
 .hide {
   display: none;
 }
