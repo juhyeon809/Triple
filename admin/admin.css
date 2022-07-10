@@ -373,6 +373,13 @@ main .card .label{
     left: 260px;
     max-width: 1200px;
 }
+
+.content2{  /*container로 이름바꾸기*/
+    position: relative;
+    width: calc(100%);
+    left: 260px;
+    max-width: 1200px;
+}
 .content2 h2 {
     margin: 20px 0 0 20px;
     font-size: 30px;
@@ -465,9 +472,10 @@ td {
 /*리스트 넘버링*/
 .pageNum {
     position: relative;
-    margin: 30px 50px;
+    margin: 30px auto;
     text-align: center;
-    width: 1200px;
+    width: 800px;
+    padding-left: 150px;
 }
 
 
