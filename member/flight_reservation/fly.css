@@ -1,54 +1,77 @@
-
 /* 항공권 예약 */
-
 #container {
     margin: 0 auto; 
     width: 1000px;
-    }
+}
 .title {
     width: 950px; 
     margin: 0 auto; 
     margin-top: 50px;
 }
-.title h2{  
-    font-size: 30px;
+.title > .fly_title {
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.fly_title{  
+    font-size: 18px;
+    font-weight: bold;
 }
 #flybox {
-    background-color:  #eee; 
-    padding: 20px; 
+    background-color:  #F7F7F7; 
+    padding: 10px; 
     width: 900px;
-     margin: 0 auto; 
+    height: 400px;
+    margin: 0 auto; 
 }
-.flybox p { 
-    text-align: center; 
-    padding: 0 170px;
+.flybox > ul {
+    margin: 0 auto;
+
+    list-style: none;
 }
-.flybox p:first-child {
-    padding: 0;
+.flybox > ul > li {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    
 }
-.flybox img { 
-    width: 40px; 
+.flybox > ul > li > img {
+    width: 28px;
+    height: 28px;
     margin-top: 10px;
+    margin-right: 10px;
 }
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
+
+input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
 input[type="date"]::before{
-    
         content: attr(data-placeholder);
         width: calc(100%);
         color: #757575;
 }
-
+input[type="submit"]{
+    width: 400px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
 .flylist{ 
-    width: 440px; 
-    height: 60px;
+    width: 350px; 
+    height: 40px;
     border: none; 
     border-bottom: 1px solid #ccc;
     background-color: #eee;
-    font-size: 25px;
+    font-size: 16px;
+    text-indent: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #CBCBCB;
     }
 .flybtn {
     width: 80px; 
@@ -62,14 +85,14 @@ input[type="date"]::before{
 .flybtnlist { 
     background-color:#deeeff; 
     border-radius: 45px; 
-    width: 200px;
+    width: 210px;
     margin-left: 50px;
 }
-.flybtnlist input[type="button"]{ width: 100px;}
+input[type="button"]{ width: 100px;}
 .flybtnlist input[type="button"]:active {background-color: #b2d2f2;  }
 .flybtnlist input[type="button"]:hover{background-color: #b2d2f2;  }
 
-.flyseurch {
+.flysearch {
     background-color: #4e91d5; 
     color: white; 
     border: none; 
@@ -79,31 +102,44 @@ input[type="date"]::before{
 }
 
 #cheapbox {
-    margin: 0 auto; 
-    display: flex;
+    margin: 0 auto;
+    width: 900px;
+}
+
+.special{
+    width: 900px;
+    margin: 0 auto;
+    display: flexbox;
+    justify-content: space-between;
 }
 
 .special .imgbox {
-    width: 150px; height: 150px;
+    width: 160px; height: 150px;
     border-radius: 10px; 
     background-image: url(./fly_img/교차\ 98\ 1.png);  
     margin: 0; padding: 0; 
+    margin-right: 20px;
+    margin-left: 2px;
+}
+.special .imgbox:last-child, .special .imgbox:nth-child(5){
+    margin-right: 0;
 }
 .special .imgbox p {
     margin: 0; 
     color: white; 
-    width: 150px; 
+    width: 100px; 
     padding-left: 10px;
 }
 .special .imgbox p:first-child {padding-top: 5px; }
 .special .imgbox p:nth-child(2) {margin-top: 70px;}
 
 .cheap{ 
+    width: 900px;
     clear: both;  
     margin-top: 50px;
-     margin: 0 auto; 
-     margin-bottom: 300px;
-    }
+    margin: 0 auto;
+}
+
 .special .imgbox { 
     box-sizing: border-box; 
     float: left; 
@@ -112,7 +148,7 @@ input[type="date"]::before{
 }
 .special .imgbox:nth-child(6) {clear: both;}
 
-h4 {font-size: 30px;}
+h4 {font-size: 18px;}
 
 
 
@@ -122,25 +158,85 @@ h4 {font-size: 30px;}
 .title h3 {
     color: #468cd3; 
     margin: 0 auto; 
-    font-size: 20px;
+    font-size: 18px;
 }
 #list {
     width: 1000px; 
     margin: 0 auto;
 }
+.fly_item {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(234, 234, 234);
+    padding-top: 10px;
+}
+.fly_item_ul {
+    list-style: none;
+    width: 78%;
+}
+.fly_item_ul > li {
+    display: flex;
+    justify-content: space-between;
+}
+.fly_item_ul > li > .fly_item_img {
+    width: 5%;
+    margin-top: 2px;
+    text-align: center;
+}
+.fly_item_ul > li > .fly_item_img > img {
+    width: 30px;
+}
+.fly_item_ul > li > .fly_item_info{
+    width: 94%;
+}
+.fly_item_info_ul {
+    list-style: none;
+    padding-left: 0;
+}
+.fly_item_info_ul > li {
+    display: flex;
+    justify-content: space-between;
+}
+.fly_item_info_ul > li > p {
+    padding: 0;
+    margin: 0;
+}
+.fly_item_info_ul > li:first-child{
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.fly_item_info_ul > li:last-child{
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 20px;
+}
+.fly_item_price {
+    width: 21%;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 45px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.fly_item_price > a{
+    color: black;
+    text-decoration: none;
+}
 .serchset ul { 
-    width: 1100px;
+    width: 1000px;
     margin: 0 auto;
     padding: 0;
-    }
-.serchset li { display: inline-block;}
+}
+.serchset li { display: inline-block; }
 select {
     border: 1px solid #fff; 
     border-radius: 5px;
 }
-.citysel1{  font-size: 30px;}
+.citysel1{  font-size: 18px; padding-top: 5px;}
 select.sitysel2{ 
-    font-size: 17px; 
+    font-size: 14px; 
     padding: 3px 15px;
 }
 select:active {border: 1px solid #468cd3;}
@@ -155,28 +251,41 @@ select > option {border: none;}
 }
 .serchset button:active { border: 1px solid #468cd3;}
 .serchset .scword {
-     width: 1100px;
-      margin: 10px auto; 
-      font-size: 30px;
-    }
+    width: 1000px;
+    margin: 10px auto; 
+    font-size: 20px;
+    font-weight: bold;
+}
 .serchset .scword span {
-    font-size: 20px; 
+    font-size: 14px; 
     padding-left: 40px; 
     color: #969696;
 }
 
+.ticket {
+    width: 1000px;
+    display: flex;
+}
+.ticket > .ticket_info {
+    width: 80%;
+    display: flex;
 
+}
+/* 
 #list {margin-bottom: 300px;}
 .ticket {float: left; width: 80%; }
 img {float: left;}
 
 .time { 
-    font-size: 30px; 
+    font-size: 18px; 
     float: left; 
     margin-bottom: 0; 
 }
+.time > img {
+    margin-right: 10px;
+}
 .ftime { 
-    font-size: 30px; 
+    font-size: 18px; 
     float: right; 
     margin-bottom: 0;
 }
@@ -200,7 +309,7 @@ p.sm {
 }
 .section { 
     float: left;
-     width: 80%; 
+    width: 80%; 
     }
 .section a:visited{
     color: black;
@@ -214,7 +323,7 @@ p.sm {
     margin-top: 50px;
 }
 
- 
+  */
 
 /* 항공편 정보 */
 
@@ -224,6 +333,7 @@ p.sm {
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    padding: 20px;
 }
 .flyinfoBox { 
     width: 900px; 
@@ -236,23 +346,24 @@ p.sm {
     float: left;
 }
 .chinfo {
+    display: flex;
     width: 155px; height: 80px; 
     border: 1px solid #D2D1D1; 
     border-radius: 10px;
-    padding: 10px 10px 0 10px; 
-    float: right; 
+    padding: 10px 10px 0 10px;
+    margin-left: 10px;
     }
 .chinfo img {width: 30px;}
 .chinfo p {
     width: 150px; 
-    margin: 0 0 0 40px; 
+    margin: 0 0 0 5px; 
     word-break: keep-all;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .infoMiniTit p {
     font-weight: bold; 
-    font-size: 18px; 
+    font-size: 16px; 
     margin-bottom: 0; 
     margin-top: 0;
 }
@@ -303,140 +414,168 @@ p.sm {
 
 
 .totalPrice {
-    width: 800px; height: 300px; 
+    width: 800px; 
+    height: 250px;
     background-color: #eee;
-     margin: 0 auto;  
-     clear: both;
+    margin: 0 auto; 
+    margin-top: 10px;
     }
 .totalPrice .inner {
-     width: 750px; height: 300px; 
-      padding-top: 20px; 
-      margin: 0 auto;
+    width: 750px; height: 300px; 
+    padding-top: 20px; 
+    margin: 0 auto;
     }
 .totalPrice .inner p:first-child {
-    font-size: 25px; 
+    font-size: 16px;
+    font-weight: bold; 
     margin-bottom: 0;
 }
 .totalPrice .inner p:first-child span {
     float: right; 
-    font-size: 18px; 
+    font-size: 16px; 
     color: #a0a0a0; 
     text-decoration: line-through; 
 }
 .totalPrice .inner p:nth-child(2) {
-    clear: both; 
-    font-size: 20px; 
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px; 
     color: #757575; 
     text-decoration: underline; 
-    margin-top: 0; 
+    margin-top: 5px; 
 }
 .totalPrice .inner p:nth-child(2) span {
-    float: right; 
-    font-size: 30px; 
+    font-size: 20px; 
     color: black; 
     font-weight: bold;
     vertical-align: middle; 
+    text-decoration: none;
+    margin-bottom: 40px;
 }
 .totalPrice .inner p:last-child { 
-    padding-left: 20%; 
-    margin-top: 40px;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 .totalPrice .inner input { 
     width: 250px; 
-    height: 60px; 
+    height: 50px; 
     border: 1px solid #468cd3;
     border-radius: 5px; 
-    font-size: 25px;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1.2px;
 }
 .totalPrice .inner input:first-child { 
     color: #468cd3; 
     font-weight: bold; 
-    margin-right: 10px;
-    margin-top: 45px;
+    margin-right: 40px;
+    margin-top: 10px;
 }
 .totalPrice .inner input:last-child {
     color: white; 
     font-weight: bold; 
     background-color: #468cd3;
+    margin-right: 0;
 }
 
 .flyseurchNotice {
     width: 800px; 
     height: 500px; 
     margin: 0 auto; 
-    margin-top: 40px; 
-    padding-left: 0px;
+    margin-top: 40px;
+    padding-left: 20px;
 }
 .flyseurchNotice p{
     color: #969696;
-     margin:0; 
-     font-size: 18px;
+    margin:0; 
+    font-size: 14px;
     }
 .flyseurchNotice > div {margin-top: 20px;}
 
 /* 항공 예약하기 */
 
 .tbox {
-    width: 950px; height: 300px; 
+    width: 900px; 
     margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #cbcbcb;
 }
 
 .leftbox {
-    width: 480px; 
-    float: left;
+    width: 47%;
 }
 
 .flyinfopay p {
-    font-size: 25px; 
+    font-size: 18px; 
     font-weight: bold; 
     clear: both;
 }
 .flyinfopay span {float: right;}
 .flyinfopay div p {
-    font-size: 20px; 
+    font-size: 16px; 
     color: #919191; 
     width: 100%; 
     margin: 0;
 }
-.flyinfopay div p.pleft { float: left; }
-.flyinfopay div p span {float: right;}
+.flyinfopay div p.pleft {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
 .flyinfopay .div {margin-bottom: 20px;}
 
 .rightbox {
-    float: right; 
-    width: 460px; 
-    height: 180px;
+    width: 47%;
     background-color: #fafafa; 
     border-radius: 10px;
+    height: 200px;
 } 
 .rightbox .paydtail { 
-    padding: 0 20px;
-     margin-top: 0; 
-     font-size: 20px; 
-     color: #919191
-    }
-.rightbox .paydtail h3 {text-decoration: underline;}
+    padding: 20px;
+    font-size: 16px; 
+    color: #919191;
+}
+.rightbox .paydtail h3 {
+    text-decoration: underline;
+    padding-top: 10px;
+    font-size: 14px;
+}
+.rightbox .paydtail p {
+    font-size: 14px;
+}
 
-.mbox { 
-    width: 1000px;
-     margin: auto; 
-     margin-bottom: 150px;
+.mbox {
+    width: 900px;
+    margin: auto; 
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cbcbcb;
+    margin-bottom: 20px;
     }
 .mbox .title {
-    font-size: 25px; 
+    font-size: 18px; 
     font-weight: bold;
+    margin-bottom: 10px;
 }
-.mbox p {
-    margin: 10px 0 0 0; 
-    font-size: 18px;
+.mbox > ul {
+    list-style: none;
+    padding-left: 10px;
 }
-.mbox p.pnon { 
-    font-size: 16px; 
+.mbox > ul > li > .pnon { 
+    font-size: 12px; 
     margin-top: 0; 
     color: #858585;
+    text-indent: 3px;
+    margin-top: 4px;
 }
-.mbox input {
+.mbox > ul > li > input[type="text"]::placeholder{
+    text-indent: 10px;
+    font-size: 12px;
+}
+.mbox > ul > li > input[type="text"] {
     border-radius: 5px; 
     width: 260px; height: 40px; 
     border: 1px solid #707070; 
@@ -445,145 +584,192 @@ p.sm {
 
 .bbox{
     display: flex; 
-     width: 1000px; 
-     margin: 0 auto; 
-     margin-bottom: 200px;
-    }
-.bbox .leftb {width: 547px; }
+    width: 900px; 
+    margin: 0 auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.bbox .leftb, .bbox .rightb {width: 49%; }
 .bbox .leftb .title { 
-    font-size: 25px; 
+    width: 100%;
+    font-size: 18px; 
     font-weight: bold;
 }
 .bbox .leftb .title span {
-    font-size: 18px; 
+    font-size: 14px; 
     color: #468cd3;
-    font-weight: 300;
- }
-.bbox .leftb label {width: 300px; }
-.bbox .leftb input[type="checkbox"] {width: 15px;}
-.bbox .inLeft {float: left; width: 240px;}
-.bbox .inLeft1 {clear: both; width: 240px;}
-.bbox .inRight input {width: 240px; }
+    font-weight: bold;
+}
+.inLRbox{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.inLeft > input[type="text"] {
+    margin-right: 10px;
+    width: 190px;
+}
+.inRight > input[type="text"] {
+    width: 190px;
+}
+.inLeft > input[type="text"]::placeholder, .inRight > input[type="text"]::placeholder {
+    text-indent: 10px;
+    font-size: 12px;
+}
+.box_title {
+    font-size: 14px;
+    text-indent: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.inRight {
+    width: 100%;
+}
+.inRight > .label_box {
+    width: 190px;
+    display: flex;
+}
+.inRight > p {
+    width: 190px;
+}
+.inRight > .label_box > label {
+    margin-right: 20px;
+}
+.bbox { margin-bottom: 20px;}
+.bbox input[type="checkbox"] {width: 12px; margin-right: 5px; height: 15px;}
 .bbox .btSm { 
-    margin-top: 0; 
-    font-size: 16px; 
+    margin-top: 5px; 
+    font-size: 12px; 
     color: #868686;
+    text-indent: 5px;
 }
 
-
-.bbox { 
-    width: 1000px; 
-    margin: auto; 
-}
 .bbox p {margin: 10px 0 0 0;}
-.bbox p.pnon { 
-    font-size: 16px; 
-    margin-top: 0;
-}
+
 .bbox input {
     border-radius: 5px; 
     width: 220px; height: 40px; 
     border: 1px solid #707070; 
     background-color: #f7f7f7;
 }
-.bbox .leftb {
-    width: 500px;
-}
-.bbox .rightb {
-    float: right; 
-    width: 480px; 
-    margin-bottom: 50px;
-}
 .bbox .rightb input {
-    width: 220px;
+    width: 190px;
 }
 .bbox .rightb .title { 
-    font-size: 25px; 
+    font-size: 18px; 
     font-weight: bold;
 }
 .bbox .rightb select {
-    width: 220px; 
+    width: 195px; 
     height: 44px;
-} 
-.bbox .rightb .inLeft1 {margin-top: 20px;}
-.bbox .rightb .inRight1 {margin-top: 30px;}
-.bbox .rightb .inRight1 select {width: 220px;}
+    border: 1px solid #707070;
+    margin-right: 10px;
+}
 
 
 .cont { 
-    width: 460px;
-    clear: both; 
+    width: 390px;
     background-color: #fafafa;
-    border-radius: 10px; 
-    padding: 5px 10px 10px; 
-    margin-top: 80px;
-    }
-
+    border-radius: 10px;
+    padding: 5px 20px 10px 20px;
+    margin-top: 20px;
+}
+.cont > p:first-child{
+    color: red;
+    font-weight: bold;
+}
+.cont > p {
+    font-size: 13px;
+    color: #425052;
+    word-wrap: break-word;
+}
 .lastbox {
-    width: 1000px;  
-    margin: 0 auto; 
-    margin-bottom: 400px;
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 30px;
 }
 .contag {
-    margin: 0 auto; 
-    width: 800px; 
-    float: left;
+    width: 71%;
+    box-sizing: border-box;
+    margin-right: 20px;
 }
-.lastbox .Btn {
-    float: right; 
-    width: 200px; height: 50px; 
+.contag > p > label {
+    font-size: 14px;
+    word-spacing: 0.2;
+}
+.lastbox > .conbtn {
+    width: 24%;
+}
+.lastbox > .conbtn input[type="button"]{
+    width: 200px;
+    height: 50px; 
     border: none; color: #fff; 
     background-color: #468cd3;
     border-radius: 10px; 
-    font-size: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    text-align: center;
 }
 
 footer {clear: both;}
 
 
 /* 항공 결제하기 */
-
+.payinfo div p.pleft {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.payinfo .red {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
 .payinfo p {
-    font-size: 20px;  
-    clear: both;  
+    font-size: 18px;
     color: red; 
     word-break: keep-all;
 }
 .payinfo span {float: right;}
 .payinfo div p {
-    font-size: 25px; 
-     width: 100%; 
-     color: #000; 
+    font-size: 18px; 
+    width: 100%; 
+    color: #000; 
     }
 .payinfo div .pleft { 
-    float: left; 
-    font-weight: bold;
+    float: left;
 }
 .payinfo div p span {float: right;}
 .payinfo .div {margin-bottom: 20px;}
-
-
-
-.red {padding-left: 20px;}
 
 .mbox2{
     border-bottom: 1px solid #cbcbcb;
     margin-bottom: 0;
 }
 .mbox2 .title { 
-    
    margin-top: 50px;
 }
 .mbox2 .minit {
-    font-size: 25px; 
+    font-size: 16px; 
     color: #425052;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .mbox2 .fin {
-    width: 520px;
-    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
     color: #919191;
+    line-height: 0.7;
 }
 .mbox2 .fin2 {
    margin-top: 0;
@@ -606,12 +792,13 @@ footer {clear: both;}
     margin-bottom: 50px;
 }
 .bbox2 p.title{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 .bbox2 .paynoti .bold { font-weight: bold;}
 .bbox2 .paynoti p {
-    font-size: 20px;
+    font-size: 16px;
     padding-left: 20px;
     color: #919191;
 }
@@ -623,31 +810,44 @@ footer {clear: both;}
     border-radius: 10px; 
     font-size: 25px;
 }
-.lastbox2 .title {
-    font-size: 25px;
-    font-weight: bold;
+.lastbox2 {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    align-items: center;
 }
-.lastbox2 .leftb{
-    float: left;
-    width: 500px;
+.lastbox2 .title {
     font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+.lastbox2 .contag {
+    display: flexbox;
+    width: 47%;
 }
 .lastbox2 input[type="button"]{
-    width: 450px;
+    width: 360px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    font-weight: bold;
 }
 
 .lastbox2 .rightb {
-    width: 500px;
-    height: 120px;
+    width: 50%;
+    height: 100px;
     float: right;
-    font-size: 18px;
+    font-size: 14px;
     color: #919191;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #cbcbcb;
     padding-top: 10px;
+    line-height: 0.8;
+    align-items: flex-end;
 }
 .lastbox2 .rightb img {
-    width: 20px;
+    width: 18px;
     padding-left: 10px;
     margin-right: 10px;
     padding-top: 5px;
