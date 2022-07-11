@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 이벤트 목록</title>
+    <title>관리자 | 이벤트상세</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 
@@ -18,16 +18,16 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
+                    <li><a href="../member/">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="../all.html">전체</a></li>
-                    <li><a href="../fly_reservation.html">항공권</a></li>
-                    <li><a href="../room_resevation.html">숙소</a></li>
-                    <li><a href="../packge_reservation.html">패키지</a></li>
-                    <li><a href="../ticket_reservation.html">티켓</a></li>
+                    <li><a href="../booking/all.html">전체</a></li>
+                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                    <li><a href="../booking/room_resevation.html">숙소</a></li>
+                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -70,10 +70,10 @@
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../magazine/magazine-list.html">목록</a></li>
-                    <li><a href="../magazinemagazine-register.html">등록</a></li>
+                    <li><a href="../magazine/magazine-register.html">등록</a></li>
                 </ul>
             </li>
-            <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a href="../payment/payment.htmls"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
                 
             </li>
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
@@ -94,77 +94,22 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>이벤트 목록</h2>
-        <nav>
-            
-            <form action="#">
-                <div class="form-group">
-                    <input type="date"> ~ <input type="date">
-                    <select name="" id="">
-                        <option value="">전체</option>
-                        <option value="">분류</option>
-                        <option value="">제목</option>
-                        
-                    </select>
-                    <input type="text">
-                    <button type="submit">검색</button>
-                </div>
-            </form>
-        </nav>
+        <h2>이벤트 - 상세</h2>
+        <div class="notice_detail">
+            <div class="notice_detail_1">[7월 이벤트]하노이 여행특가</div>
+            <div class="notice_detail_2">2022.06.28</div>
+            <div class="notice_detail_3">7월을 맞이하여 하노이 여행특가 이벤트를 진행합니다!</div>
+        </div>
     </section>
-    <div class="content2">
-        <table class="tbList">
-            <tr>
-                <th>
-                    번호
-                </th>
-                <th>
-                    분류
-                </th>
-                <th>
-                    제목
-                </th>
-                <th>
-                    작성날짜
-                </th>
-            </tr> 
-            <tr onclick="location.href='eventDetail.html'">
-                <td>25</td>
-                <td>7월 이벤트</td>
-                <td>하노이 여행 특가</td>
-                <td>2022.06.27</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>7월 이벤트</td>
-                <td>하노이 여행 특가</td>
-                <td>2022.06.27</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>7월 이벤트</td>
-                <td>하노이 여행 특가</td>
-                <td>2022.06.27</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>7월 이벤트</td>
-                <td>하노이 여행 특가</td>
-                <td>2022.06.27</td>
-            </tr>
-            <tr>
-                <td>25</td>
-                <td>7월 이벤트</td>
-                <td>하노이 여행 특가</td>
-                <td>2022.06.27</td>
-            </tr>
-            
-        </table>
-    
-    <div class="pageNum">
-        <p>1 2 3 4 5</p>
+    <div>
+
     </div>
-</div>
+        <div class="mo_li">
+            <a href="#" class="
+            modify"><div>수정</div></a> 
+            <a href="#" class="
+            list"><div>목록</div></a>
+        </div>
     <script src="../script.js"></script>
 </body>
 </html>

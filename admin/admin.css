@@ -466,7 +466,7 @@ table.tbList {
     width: 1000px;
     position: relative;
     margin: 150px auto 0;
-    left: 100px;
+    left: 120px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -1002,8 +1002,9 @@ table a:visited{
 }
 
 .notice_register_1_1, .notice_register_2_1,  .notice_register_3_1{
-    width :200px;
-    height :100px;
+    width :120px;
+    text-align: center;
+    font-weight: bold;
     float:left;
 }
 
@@ -1030,8 +1031,6 @@ table a:visited{
     height: 35px;
     position: relative;
     top: -5px;
-    background-color: var(--dark-grey);
-    border: 0;
 }
 
 .notice_register_3_2{
