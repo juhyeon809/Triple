@@ -165,7 +165,7 @@ h4 {font-size: 18px;}
     margin: 0 auto;
 }
 .fly_item {
-    width: 900px;
+    width: 1000px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(234, 234, 234);
@@ -173,7 +173,7 @@ h4 {font-size: 18px;}
 }
 .fly_item_ul {
     list-style: none;
-    width: 78%;
+    width: 83%;
 }
 .fly_item_ul > li {
     display: flex;
@@ -197,6 +197,8 @@ h4 {font-size: 18px;}
 .fly_item_info_ul > li {
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
+    padding-left: 10px;
 }
 .fly_item_info_ul > li > p {
     padding: 0;
@@ -213,12 +215,13 @@ h4 {font-size: 18px;}
     margin-bottom: 20px;
 }
 .fly_item_price {
-    width: 21%;
+    width: 12%;
     text-align: center;
     box-sizing: border-box;
     padding-top: 45px;
     font-weight: bold;
     font-size: 18px;
+    padding-right: 20px;
 }
 .fly_item_price > a{
     color: black;
