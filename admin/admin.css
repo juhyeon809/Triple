@@ -230,6 +230,9 @@ main {
 main h3 {
     color: #999;
 }
+main {
+    overflow: hidden;
+}
 main .content {
     position: relative;
     
@@ -555,12 +558,12 @@ table a:visited{
     margin: auto;
     display: flex;
 }
+.box { margin-top: 50px;}
 .box p{
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
-    vertical-align: middle
-    ;
+    vertical-align: middle;
 }
 .box input {
     width: 250px;
