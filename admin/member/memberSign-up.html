@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원정보 | 쿠폰</title>
+    <title>관리자 | 회원정보-회원가입</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
     <!-- 사이드바-->
     <selction id="sidebar">
-        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+        <a href="../main.html" class="active"><img src="img-main-logo-white@3x.png" alt=""></a>
         <ul class="side-menu">
             
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="memberlist.html">회원목록</a></li>
-                    <li><a href="#">회원가입</a></li>
+                    <li><a href="memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -54,6 +54,12 @@
                     <li><a href="../coupon/couponRegistration.html">등록</a></li>
                 </ul>
             </li>
+            <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../event/eventList.html">목록</a></li>
+                    <li><a href="../event/eventRegister.html">등록</a></li>
+                </ul>
+            </li>
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../notice/notice-list.html">목록</a></li>
@@ -66,11 +72,8 @@
                     <li><a href="../magazine/magazine-register.html">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="#">목록</a></li>
-                    <li><a href="#">완료내역</a></li>
-                </ul>
+            <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제<i class='bx bx-chevron-right icon-right'></i></a>
+                
             </li>
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -88,33 +91,73 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <section class="content2">
-        <h2>회원정보</h2> 
-        <h2>김사과님의 쿠폰</h2>
-        <nav>
+    <div class="content2">
+        <h2>회원가입 폼</h2> 
             <table class="tbList">
                 <tr>
                     
                     <th>
-                        분류
+                        <input type="checkbox" name="" id="">
                     </th>
                     <th>
-                        내용                
+                        메뉴                
                     </th>
                     <th>
-                        상태
+                        사용
                     </th>
                     <th>
-                        발급날짜
+                    필수
                     </th>
                 </tr> 
                 <tr>
-                    <td>투어/티켓</td>
-                    <td>2000원 할인</td>
-                    <td>사용가능</td>
-                    <td>2022.03.27</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>이메일</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>비밀번호</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>비밀번호 확인</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>닉네임</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>휴대폰번호 인증</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>인증번호 입력</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>약관동의</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td><input type="checkbox" checked name="" id=""></td>
                 </tr>
             </table>
+            <div class="btnlist">
+                <button>등록</button>
+                <button>선택삭제</button>
+            </div>
+
+            
         <script src="../script.js"></script>
 </body>
 </html>
