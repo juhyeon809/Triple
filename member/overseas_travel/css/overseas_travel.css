@@ -1,119 +1,93 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-.notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'notosanskr';
-}
-a {text-decoration-line: none ; color: black;}
-a:link {text-decoration:none;} /*링크가 걸려있는 모든 것들의 밑줄을 지워줘*/
-a:visited {text-decoration: none; color: black;}
-a:hover {text-decoration: none;} /*마우스를 갖다대면 밑줄이 생기게 해주고 색상을 변경해줘*/
-a:active {text-decoration: none;}
-
-/*헤더*/
-#logo_area {
-    margin: 0 auto;
-    width: 1300px;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-#search {
-    margin-left: 500px;
-    display: flex;
-    align-items: center;
-}
-#search > button {
-    background-color: #50e3c2;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-left: 10px;
-    height: 30px;
-    width: 50px;
-    
-}
-
-#logo_area > #logo > a > img{
-    margin-top: 50px;
-}
-#menu_form{
-    margin-top: 50px;
-}
-#login_join > a {
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
-}
-#login_join {
-    color: white;
-    margin-top: 50px;
-}
-header {
-    width: 100%;
-    margin: 0 auto;
-    background-image: url('../../../img/header_bg.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.float_clear {
-    clear: both;
-}
-
-#menu_area {
-    padding-bottom: 30px;
-}
-
-#menu_area > #menus {
-    width: 1200px;
-    margin: 0 auto;
-    margin-top: 70px;
-    display: flex;
-    justify-content: space-around;
-    
-}
-#menu_area > #menus > li {
-    list-style: none;
-}
-#menu_area > #menus > li > a {
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
-}
-#logo_area > p { 
-    padding-top: 40px;
-    color: white;   
-}
-#logo_area #search > input {
-    width: 250px;
-    height: 30px;
-    border-radius: 30px;
-    border-width: 0px;
-    padding-left: 20px;
-}
-#logo_area > p > a{ 
-    padding-top: 40px;
-    color: white;
-    font-weight: 700;   
-}
-
 /*해외여행 메인*/
 
 main {
-    width: 1400px;
+    width: 1000px;
     margin: 0 auto;
 }
+.item_div_box {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
 
+.event_item_back {
+    width: 23%;
+    height: 240px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+.event_item_back::before {
+    content: "";
+    border-radius: 10px;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+}
+.event_item_back1::before {
+    background: url(/img/event1.svg);
+    background-size: cover;
+    background-position: center center;
+}
+.event_item_back2::before {
+    background: url(/img/event2.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.event_item_back3::before {
+    background: url(/img/event3.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.event_item_back4::before {
+    background: url(/img/event4.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.event_item {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px 15px;
+    align-items: center;
+}
+.event_item_title{
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.event_item_contant, .magazine_contant{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0;
+    word-break: keep-all;
+}
+
+.title {
+    width: 900px;
+    margin: 0;
+    margin-top: 40px;
+    padding-left: 50px;
+    padding-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
 #triple_sug {
     width: 1000px;
     margin: 0 auto;
@@ -130,15 +104,8 @@ main {
     border-radius: 20px;
 }
 
-main > p {
-    margin-left: 250px;
-    margin-top: 50px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
 #best_overseas_list {
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
     margin-top: 10px;
     display: flexbox;
@@ -146,13 +113,13 @@ main > p {
 }
 
 #best_overseas_list > div > a > img{
-    width: 1000px;
+    width: 900px;
     height: 150px;
     border-radius: 20px;
 }
 
 #overseas_notice {
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 20px;

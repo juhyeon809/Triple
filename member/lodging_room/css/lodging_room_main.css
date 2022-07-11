@@ -19,7 +19,7 @@
     position: relative;
 }
 
-#lodging_main_img { width: 1000px; height: 250px; margin: 0 auto; margin-bottom: 0; background-image: url('../img/lodging_main.svg'); background-size: cover; background-repeat: no-repeat; }
+#lodging_main_img { width: 1000px; height: 250px; margin: 0 auto; margin-bottom: 0; background-image: url('../img/lodging_main.svg'); background-size: cover; background-repeat: no-repeat; background-position: right center }
 
 #lodging_img img {
     width :1000px;
