@@ -272,7 +272,8 @@ footer {
     justify-content: space-between;
 }
 #items_list > a{
-    display: block;    
+    display: block; 
+    color: black;   
 }
 
 div.item {
