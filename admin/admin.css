@@ -30,7 +30,7 @@ a {
     text-decoration: none;
 }
 
-a:visited{color: #000;}
+a:visited{color: #000; }
 
 li{
     list-style: none;
@@ -408,7 +408,7 @@ main td {
     position: relative;
     width: calc(100%);
     left: 300px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
 }
 
 .content2 h2 {
@@ -1653,13 +1653,14 @@ div.j3 {
     justify-content: flex-start;
     align-items: center;
 }
-#add_button {
+.add_button {
     margin: 0;
-    margin-right: 600px;
-    margin-left: 10px;
-    font-size: 21px;
-    font-weight: 700;
+    margin-right: 100px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 400;
 }
+
 #option_p {
     margin-top: 10px;
 }
