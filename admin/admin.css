@@ -1642,5 +1642,46 @@ div.j3 {
     text-align: right;
 }
 
+#select_box {
+   margin: 20px 10px;
+}
 
+#room_name_info {
+    padding: 10px;
+}
 
+#sort_box_flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#add_button {
+    margin: 0;
+    margin-right: 600px;
+    font-size: 21px;
+    font-weight: 700;
+}
+#option_p {
+    margin-top: 10px;
+}
+#text_area_flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+#text_area_flex > p {
+    margin-right: 20px;
+}
+#facility {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+#facility > .index {
+    width: 100px;
+}
+#facility > div > p {
+    margin-bottom: 20px;
+}

@@ -96,7 +96,8 @@
         <div class="formbox">
             <form action="">
                 <div class="box flexbox">
-            <p class="">분류 </p><select name="" id="">
+            <div id="sort_box_flex">
+            <p class="" id="select_box">분류<select name="" id=""></p>
                 <option value="">선택</option>
                 <option value="">호텔</option>
                 <option value="">모텔</option>
@@ -105,34 +106,30 @@
                 <option value="">글램핑</option>
                 <option value="">카라반</option>
             </select>
-            
-            <p>도시 <input onclick="showPopup()"></p>
-            <div style="border: 1px solid #ccc;" class="duplicate">
-                <p>객실명<input type="text"></p>
-                
-                <p>객실정보 <input type="file" name="" id=""></p> <button onclick="">추가</button>
+            <p id="select_box">도시<input onclick="showPopup()"></p>
+            </div>
+            <div style="border: 1px solid #ccc;" class="duplicate" id="room_name_info">
+                <p>객실명<input type="text"><button onclick="" id="add_button">추가</button></p>
+                <p>객실정보 <input type="file" name="" id=""></p> 
                 <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-                <p>객실옵션</p> <select name="" id=""></select> <select name="" id=""></select> <select name="" id=""></select><select name="" id=""></select>
+                <p id="option_p">객실옵션 <select name="" id=""></select> <select name="" id=""></select> <select name="" id=""></select><select name="" id=""></select></p> 
             </div>
-            <button onclick="" class="plus">추가</button>
+            <div id="text_area_flex">
             <p>숙소소개 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-            <p>기본정보 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-            
-            <p>편의시설</p>
-            <div class="nth">
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
-                <select name="" id=""></select>
             </div>
-            <p>숙소정책 </p><span>체크인시간 <select name="" id=""></select></span>
-
+            <div id="text_area_flex">
+            <p>기본정보 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
+            </div>
+            <div id="facility">
+                <p class="index">편의시설</p>
+                <div>
+                <p><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select></p>
+                <p><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select></p>
+                
+                </div>
+            </div>
+            <p>숙소정책</p>
+            <p>체크인 시간 <select name="" id=""></select></p>
         </div>
     </form>
 </section>
