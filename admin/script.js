@@ -36,3 +36,28 @@ function divplus(){
 function showPopup(){
 	window.open("roomPop.html","팝업 테스트","width=400, height=300, top=10, left=10");
 }
+
+let URLSearch = new URLSearchParams(location.search);
+let name = URLSearch.get('name');
+// url 파라미터중에 글씨가 굵어질 a태그의 번호를 detail로 지정
+let detail = URLSearch.get('detail');
+
+// 페이지 진입시 바로 css 적용시켜야 되므로 함수로 만들어주기(매개변수로 show될 ul 태그와 글씨가 굵어질 a태그의 번호 받기)
+function checkPage(name, detail){
+    let box = document.getElementById(name);
+    let page = document.getElementById(name+detail);
+    // 해당 ul 태그 show
+    box.classList.remove('hide');
+    // 해당 a 태그 배경색상 변경
+    page.style.backgroundColor = 'red';
+}
+function showDetail(btn){
+    // span 태그 클릭시 해당 클래스값을 id값으로 가지고 있는 ul태그를 show
+    let index = btn.classList[0];
+    // show될 ul태그가 span 태그 안이 아닌 옆에(형제) 있으므로 nextElementSibling으로 찾아주고
+    let next = btn.nextElementSibling;
+    // show 또는 hide 시켜주기(toggle 사용)
+    next.classList.toggle('hide');
+}
+
+checkPage(name, detail);
