@@ -98,7 +98,6 @@
     <div class="content2 packge">
         <div class="formbox">
         <form action="">
-            
                 <p class="mintit">분류
                 <span><select name="" id="">
                     <option value="">나라</option>
@@ -107,12 +106,11 @@
                 <span><input type="text" class="minrt"></span></p>
                 <p class="mintit">상품이미지
                 <span><input type="file" class="minrt"></span></p>
-                <p class="mintit">키워드
+                <p class="mintit" id="keyword_p">키워드
                 <span><input type="checkbox" name="자유일정" id="" class="minrt">자유일정 <input type="checkbox" name="특가" id=""class="minrt">특가 <input type="checkbox" name="노옵션노쇼핑" id=""class="minrt">노옵션 노쇼핑 <input type="checkbox" name="출발확정" id=""class="minrt">출발확정 <input type="checkbox" name="한정특가" id=""class="minrt">한정특가</span></p>
             
             <div class="flbox" style="height: 50px;">
                 <p class="mintit">상품가격</p>
-                
                     <div class="bottombox non" id="bottombox" style="width: 450px;">
                 <span>가격분류
                 <select name="" id="" class="minrt">
@@ -125,15 +123,23 @@
                     <button onclick="divplus()" class="plus">추가</button>
                 </div>
             </div>
-        <div class="non">
+        <div class="non" >
+            <div id="text_area_flex_box">
             <p class="mintit">상품프로그램</p>
             <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
-            <p class="mintit">포함사항</p>
-            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
-            <p class="mintit">불포함사항</p>
-            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
-            <p class="mintit">취소 / 환불 규정</p>
-            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            </div>
+            <div id="text_area_flex_box">
+                <p class="mintit">포함사항</p>
+                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            </div>
+            <div id="text_area_flex_box">
+                <p class="mintit">불포함사항</p>
+                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            </div>
+            <div id="text_area_flex_box">
+                <p class="mintit">취소/환불 규정</p>
+                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"class="minrt"></textarea>
+            </div>
             <div class="hbt" style="margin-right: 300px; margin-bottom: 50px;">
                 <button type="submit" class="regis">등록</button>
             </div>

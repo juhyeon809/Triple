@@ -1691,3 +1691,15 @@ div.j3 {
 #policy_box > p {
     margin-right: 10px;
 }
+#keyword_p input{
+    margin-left: 20px;
+}
+#text_area_flex_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+#text_area_flex_box p {
+    width: 120px;
+}
