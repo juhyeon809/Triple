@@ -5,25 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <div>
-        <p><a href="#">국내</a></p>
-        <p><a href="#">국외</a></p>
-    </div>
-    <div>
-        <p>서울</p>
-        <p>부산</p>
-        <p>제주</p>
-        <p>강원</p>
-        <p>경기</p>
-        <p>인천</p>
-    </div>
-    <div>
-        <p>서울전체</p>
-        <p>강남·서초</p>
-        <p>송파·강동</p>
-    </div>
+    <style>
+        body{
+            width: 400px;
+            height: 300px;
+        }
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .box1{
+            width: 100px;
+            height: 300px;
+            margin: 0;
+        }
+        .city{
+            width: 100px;
 
+        }
+        .detail {
+            width: 100px;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body style="overflow: hidden;">
+    
+    <div class="box">
+        <form action="">
+            <div class="box1">
+            <div id="korea" onclick="getCity(this)">한국</div>
+            <div id="Overseas" onclick="getCity(this)">해외</div>
+            </div>
+            <div class="city"></div>
+            <div class="detail"></div>
+        </form>
+
+    </div>
+<script>
+    function getCity(country){
+        if(country.id == 'korea'){
+            let city = document.getElementsByClassName('city')[0];
+            console.log(city);
+        city.innerHTML = "<div id='seoul'onclick='getDetail(this)'>서울</div><div id='busan'onclick='getDetail(this)'>부산</div>";
+        }
+        if(country.id == 'Overseas'){
+            let city = document.getElementsByClassName('city')[0];
+            console.log(city);
+        city.innerHTML = "<div id='japan'onclick='getDetail(this)'>일본</div>";
+        }
+    }
+    function getDetail(detail){
+    if(detail.id == 'seoul'){
+        let gu = document.getElementsByClassName('detail')[0];
+        gu.innerHTML = "<div>강남·서초 송파·강동 동대문·성북 용산·종로·중구 마포·서대문 건대·성수·왕십리 김포공항·강서 동작·관악 강북·노원·도봉 구로·금천</div>";
+    }
+    if(detail.id == 'busan'){
+        let gu = document.getElementsByClassName('detail')[0];
+        gu.innerHTML = "<div>서면 광안리 해운대 남포동 기장</div>";
+    }
+    if(detail.id == 'japan'){
+        let gu = document.getElementsByClassName('detail')[0];
+        gu.innerHTML = "<div>도쿄 오사카 교토 후쿠오카 고베</div>";
+    }
+}
+</script>
 </body>
 </html>
