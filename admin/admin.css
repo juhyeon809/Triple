@@ -1643,12 +1643,10 @@ div.j3 {
 }
 
 #select_box {
-   margin: 20px 10px;
+   margin: 20px 0;
+   margin-right: 10px;
 }
 
-#room_name_info {
-    padding: 10px;
-}
 
 #sort_box_flex {
     display: flex;
@@ -1658,6 +1656,7 @@ div.j3 {
 #add_button {
     margin: 0;
     margin-right: 600px;
+    margin-left: 10px;
     font-size: 21px;
     font-weight: 700;
 }
@@ -1684,4 +1683,11 @@ div.j3 {
 }
 #facility > div > p {
     margin-bottom: 20px;
+}
+#policy_box {
+    display: flex;
+    justify-content: flex-start;
+}
+#policy_box > p {
+    margin-right: 10px;
 }
