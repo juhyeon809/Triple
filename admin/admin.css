@@ -708,9 +708,7 @@ table a:visited{
     height: 25px;
     margin-left: 5px;
 }
-.re_fl.re_fl1 select:first-child{
-    margin-left: 10px;
-}
+
 .re_fl2 input{
     width: 550px;
     margin-left:25px;
@@ -1694,6 +1692,7 @@ div.j3 {
 }
 #keyword_p input{
     margin-left: 20px;
+    margin-right: 5px;
 }
 #text_area_flex_box {
     display: flex;
