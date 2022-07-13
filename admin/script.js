@@ -28,8 +28,8 @@ allProgress.forEach(item=> {
 
 /*상품등록*/
 function divplus(){
-	const parent = document.getElementById('bottombox')
-	const originItem = document.getElementById('btn')
+	const parent = document.getElementById('plusbox')
+	const originItem = document.getElementById('plusbox')
 	parent.appendChild(originItem.cloneNode(true));
 } 
 
