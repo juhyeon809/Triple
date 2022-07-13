@@ -48,7 +48,7 @@ li{
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
-    transition: all .3s ease;
+    transition: all .3s ease-in;
     z-index: 200;
     
 }
@@ -87,7 +87,7 @@ li{
     color: var(--light);
     font-size: 15px;
     padding: 10px 16px 12px 0;
-    transition: all .3s ease;
+    transition: all .5s ease;
     border-radius: 10px;
     margin: 4px 0;
 }
@@ -255,6 +255,12 @@ main .content .cards .card {
     align-items: center;
     justify-content: space-around;
 }
+main .content .cards .card .box{
+    margin-top: 0;
+}
+.box.head{
+    margin: 0;
+}
 
 main .card .head .icon{
     font-size: 20px;
@@ -310,6 +316,10 @@ main .content .content-2 .service-center{
     flex-direction: column;
     border-radius: 10px;
 }
+main .content .content-2 .service-center table{
+    padding: 0 20px;
+    text-align: center;
+}
 
 main .content .content-2 .new-post{
     flex: 2;
@@ -329,6 +339,10 @@ main .content .content-2 .new-post table {
     justify-content: space-around;
     padding: 15px 10px;
     border-bottom: 2px solid var(--grey);
+}
+.center-tit a,
+.center-tit a:visited{
+    color: #0098A1;
 }
 
 main table{
@@ -1269,32 +1283,34 @@ table a:visited{
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .magazine_register_1{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_1_1, .magazine_register_2_1,  .magazine_register_3_1, .magazine_register_5_1{
     width :200px;
-    height :80px;
+    height :60px;
+    text-align: center;
     float:left;
 }
 
 .magazine_register_3_1{
-    height: 380px;
+    height: 30px;
 }
 
 .magazine_register_1_2, .magazine_register_2_2, .magazine_register_3_2{
     width : 800px;
-    height: 80px;
+    height: 30px;
     float:left;
 }
 
 .magazine_register_1_2 select{
     width :150px;
-    height: 35px;
+    height: 30px;
     position: relative;
     top: -5px;
     font-size: 20px;
@@ -1303,7 +1319,7 @@ table a:visited{
 
 .magazine_register_2_2 input {
     width : 720px;
-    height: 35px;
+    height: 30px;
     position: relative;
     top: -5px;
     border: 1px solid black;
@@ -1314,7 +1330,7 @@ table a:visited{
 }
 
 .magazine_register_2{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_3{
@@ -1322,40 +1338,32 @@ table a:visited{
 }
 
 .magazine_register_4{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_5{
-    height: 150px;
-    margin-bottom: 35px;
+    height: 70px;
 }
 
 .magazine_register_5_1{
-    height: 150px;
+    height: 50px;
     box-sizing: border-box;
-    padding-top: 55px;
 }
 
 .magazine_register_5_2{
-    width: 200px;
-    height: 150px;
+    width: 800px;
+    height: 50px;
     float: left;
 }
 
-.magazine_register_5_2 button{
-    width: 200px;
-    height: 150px;
-    background-color: gray;
+.magazine_register_5_2 input{
+    width: 800px;
+    height: 50px;
     cursor: pointer;
-    border: 0;
-    font-size: 20px;
+    font-size: 17px;
 }
 
-.magazine_register_5_3{
-    width: 600px;
-    height: 150px;
-    float:left;
-}
+
 
 .magazine_register_5_3 button{
     width: 50px;
@@ -1378,8 +1386,8 @@ table a:visited{
 
 }
 .magazine_register_6{
-    width: 400px;
-    height: 150px;
+    width: 450px;
+    height: 50px;
     float:left;
     text-align: center;
     box-sizing: border-box;
@@ -1387,60 +1395,60 @@ table a:visited{
 
 .magazine_register_6_1{
     width: 200px;
-    height: 150px;
+    height: 50px;
     float: left;
     box-sizing: border-box;
     padding-right: 50px;
 }
 
 .magazine_register_6_2{
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 50px;
     float:left;
-    
+    padding-top: 25px;
 }
 
-.magazine_register_6_2 button {
-    width: 200px;
-    height: 150px;
-    font-size: 20px;
-    border: 0;
+.magazine_register_6_2 input {
+    width: 250px;
+    height: 50px;
+    font-size: 17px;
     cursor: pointer;
 }
 
 .magazine_register_7{
-    width: 600px;
-    height: 150px;
+    width: 540px;
+    height: 50px;
     float:left;
     
 }
 
 .magazine_register_7_1{
     width: 200px;
-    height: 150px;
+    height: 50px;
     float:left;
     text-align: center;
 }
 
 .magazine_register_7_2{
-    width: 400px;
-    height: 150px;
+    width: 300px;
+    height: 50px;
     float:left;
 }
 
 .magazine_register_7_2 input{
     width: 300px;
-    height: 50px;
+    height: 40px;
     font-size: 25px;
     position: relative;
-    top: 45px;
+    top: 25px;
 }
 
 .magazine_register_8{
     box-sizing: border-box;
-    padding-left: 17px;
-    margin-top: 30px;
-    font-weight: bold;
+    margin-bottom: 25px;
+}
+.magazine_register_8 h2{
+    margin: 0;
 }
 
 .magazine_register_9{
@@ -1451,6 +1459,7 @@ table a:visited{
 
 .magazine_register_9_1{
     width :200px;
+    text-align: center;
     float:left;
 }
 
@@ -1472,7 +1481,8 @@ table a:visited{
 }
 
 .magazine_register_10_1{
-    width: 200px;
+    width:200px;
+    text-align: center;
     float:left;
 }
 
@@ -1491,8 +1501,6 @@ table a:visited{
     float:left;
     text-align: center;
     box-sizing: border-box;
-    padding-right: 50px;
-    padding-top: 40px;
 }
 
 .magazine_register_11_2{
@@ -1501,11 +1509,11 @@ table a:visited{
     float:left;
 }
 
-.magazine_register_11_2 button{
-    width: 200px;
-    height: 150px;
-    font-size: 20px;
-    border: 0;
+.magazine_register_11_2 input{
+    width: 250px;
+    height: 50px;
+    font-size: 17px;
+    cursor: pointer;
     cursor: pointer;    
 }
 
@@ -1519,8 +1527,7 @@ table a:visited{
     width: 120px;
     height: 40px;
     cursor: pointer;
-    background-color: yellow;
-    border: 1px solid black;
+    background-color: #ffb800;
     font-size: 18px;
 }
 
@@ -1845,6 +1852,7 @@ div.j3 {
     margin-top: 20px;
 }
 #text_area_flex > p {
+    width: 120px;
     margin-right: 20px;
 }
 #facility {
@@ -1859,6 +1867,10 @@ div.j3 {
 #facility > div > p {
     margin-bottom: 20px;
 }
+#facility input {
+    width: 100px;
+    text-align: center;
+}
 #policy_box {
     display: flex;
     justify-content: flex-start;
@@ -1866,6 +1878,11 @@ div.j3 {
 #policy_box > p {
     margin-right: 10px;
 }
+#policy_box input{
+    width: 120px;
+    margin-right: 30px;
+}
+
 #keyword_p input{
     margin-left: 20px;
     margin-right: 5px;

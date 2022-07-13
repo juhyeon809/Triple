@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자|리뷰</title>
+    <title>관리자 | 리뷰</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     
@@ -30,6 +30,14 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
+            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                </ul>
+            </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../product/air.html">항공권</a></li>
@@ -40,14 +48,14 @@
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="admin_productlist_package.html">패키지</a></li>
-                    <li><a href="admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="admin_productlist_restaurant.html">다이닝</a></li>
+                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="review.html"style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -112,7 +120,7 @@
                     날짜
                 </th>
             </tr> 
-            <tr>
+            <tr onclick="location.href='./review_package.html'">
                 <td><input type="checkbox" name="" id=""></td>
                 <td>패키지</td>
                 <td>만족스러운 패키지</td>
@@ -120,28 +128,28 @@
                 <td>2022-06-22</td>
             </button></a>        
             </tr>
-            <tr>
+            <tr onclick="location.href='./review_sugso.html'">
                 <td><input type="checkbox" name="" id=""></td>
                 <td>숙소</td>
                 <td>깨끗한 숙소</td>
                 <td>hotel123</td>
                 <td>2022-07-02</td>              
             </tr>       
-            <tr>
+            <tr onclick="location.href='./review_restaurant.html'">
                 <td><input type="checkbox" name="" id=""></td>
                 <td>맛집</td>
                 <td>불만족스러운 맛집</td>
                 <td>restaurant127</td>
                 <td>2022-06-22</td>              
             </tr>    
-            <tr>
+            <tr onclick="location.href='./review_ticket.html'">
                 <td><input type="checkbox" name="" id=""></td>
                 <td>티켓</td>
                 <td>티겟값이 비싸요</td>
                 <td>ticket88</td>
                 <td>2022-06-22</td>              
             </tr>    
-            <tr>
+            <tr onclick="location.href='./review_air.html'">
                 <td><input type="checkbox" name="" id=""></td>
                 <td>항공편</td>
                 <td>비행이 편안해요</td>
