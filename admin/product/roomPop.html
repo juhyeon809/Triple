@@ -4,36 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>숙소 | 도시선택</title>
     <style>
         body{
-            width: 400px;
-            height: 300px;
+            overflow: hidden;
+            word-break: break-all;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        form {
             display: flex;
         }
         .box {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
         }
         .box1{
-            width: 100px;
+            display: flex;
+            flex-direction: column;
+            width: 150px;
             height: 300px;
             margin: 0;
+            padding-top: 10px;
+
         }
         .city{
             display: flex;
-            width: 100px;
-            
+            flex-direction: column;
+            width: 155px;
+            padding-top: 10px;
+
+        }
+        .city input[type="radio"] {
+            width: 50px;
         }
         .detail {
-            width: 100px;
+            width: 165px;
             flex-direction: column;
+            word-break: keep-all;
+            text-align: center;
         }
     </style>
 </head>
-<body style="overflow: hidden;">
+<body>
     
     <div class="box">
         <form action="">
@@ -43,15 +59,19 @@
             </div>
             <div class="city"></div>
             <div class="detail"></div>
+        </div>
+            <div>
+            <button type="submit">확인</button>
+            </div>
         </form>
 
-    </div>
+    <label for='busan'><input type='checkbox' name='' id='busan' onclick='getDetail(this)'>부산</label>
 <script>
     function getCity(country){
         if(country.id == 'korea'){
             let city = document.getElementsByClassName('city')[0];
             console.log(city);
-        city.innerHTML = "<div id='seoul'onclick='getDetail(this)'>서울</div><div id='busan'onclick='getDetail(this)'>부산</div>";
+        city.innerHTML = "<label for='seoul'><input type='radio' name='' id='seoul' onclick='getDetail(this)'>서울</label><label for='busan'><label for='incheon'><input type='radio' name='' id='incheon' onclick='getDetail(this)'>인천</label><input type='radio' name='' id='busan' onclick='getDetail(this)'>부산</label><label for='jeju'><input type='radio' name='' id='jeju' onclick='getDetail(this)'>제주</label>";
         }
         if(country.id == 'Overseas'){
             let city = document.getElementsByClassName('city')[0];
@@ -62,7 +82,7 @@
     function getDetail(detail){
     if(detail.id == 'seoul'){
         let gu = document.getElementsByClassName('detail')[0];
-        gu.innerHTML = "<div>강남·서초 송파·강동 동대문·성북 용산·종로·중구 마포·서대문 건대·성수·왕십리 김포공항·강서 동작·관악 강북·노원·도봉 구로·금천</div>";
+        gu.innerHTML = "<div> <label for='gangnam'><input type='radio' name='' id='gangnam' onclick='getDetail(this)'>강남서초</label><a>송파·강동< 동대문·성북 용산·종로·중구 마포·서대문 건대·성수·왕십리 김포공항·강서 동작·관악 강북·노원·도봉 구로·금천</div>";
     }
     if(detail.id == 'busan'){
         let gu = document.getElementsByClassName('detail')[0];

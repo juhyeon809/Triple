@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'notosanskr';
+    font-family: 'Noto Sans KR';
 }
 a {
     text-decoration-line: none ;
@@ -102,7 +102,85 @@ a:visited {
     border-width: 0px;
     padding-left: 20px;
 }
+.reco_box {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 50px;
+}
+.reco_item_back {
+    width: 900px;
+    height: 130px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+.reco_item_back::before {
+    content: "";
+    background: url('../img/lodging_package_item1.jpg');
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+}
 
+.reco_item1 > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 15px 15px;
+    box-shadow: 2px 2px 5px #434343;
+    position: relative;
+}
+.reco_item2 {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item_box > .item_box_title{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.item_box > .item_box_content{
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 0;
+}
+.item_box > .view_more{
+    width: 180px;
+    height: 50px;
+    background-color: #18C9AD;
+    text-align: center;
+    vertical-align: center;
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_box > .view_more > a {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Noto Sans KR';
+}
 #travel_package_img {
     width: 1000px;
     height: 250px;
