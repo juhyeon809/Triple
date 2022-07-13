@@ -25,7 +25,7 @@
         .box1{
             display: flex;
             flex-direction: column;
-            width: 150px;
+            width: 100px;
             height: 300px;
             margin: 0;
             padding-top: 10px;
@@ -34,7 +34,7 @@
         .city{
             display: flex;
             flex-direction: column;
-            width: 155px;
+            width: 135px;
             padding-top: 10px;
 
         }
@@ -76,7 +76,7 @@
         if(country.id == 'Overseas'){
             let city = document.getElementsByClassName('city')[0];
             console.log(city);
-        city.innerHTML = "<label for='japan'><input type='radio' name='city' id='japan' onclick='getDetail(this)'>일본</label>";
+        city.innerHTML = "<label for='japan'><input type='radio' name='city' id='japan' onclick='getDetail(this)'>일본</label><label for='china'><input type='radio' name='city' id='china' onclick='getDetail(this)'>중국</label><label for='vietnam'><input type='radio' name='city' id='vietnam' onclick='getDetail(this)'>베트남</label>";
         }
     }
     function getDetail(detail){
@@ -86,11 +86,11 @@
     }
     if(detail.id == 'busan'){
         let gu = document.getElementsByClassName('detail')[0];
-        gu.innerHTML = "<div>서면 광안리 해운대 남포동 기장</div>";
+        gu.innerHTML = "<div><label for='seomyeon'><input type='radio' name='detail' id='seomyeon' onclick='getDetail(this)'>서면</label><label for='gwangalli'><input type='radio' name='detail' id='gwangalli' onclick='getDetail(this)'>광안리</label> <label for='haeundae'><input type='radio' name='detail' id='haeundae' onclick='getDetail(this)'>해운대</label> 남포동 기장</div>";
     }
     if(detail.id == 'japan'){
         let gu = document.getElementsByClassName('detail')[0];
-        gu.innerHTML = "<div>도쿄 오사카 교토 후쿠오카 고베</div>";
+        gu.innerHTML = "<div><label for='dokyo'><input type='radio' name='detail' id='dokyo' onclick='getDetail(this)'>도쿄</label> 오사카 교토 후쿠오카 고베</div>";
     }
 }
 </script>

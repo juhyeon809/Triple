@@ -1177,32 +1177,34 @@ table a:visited{
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .magazine_register_1{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_1_1, .magazine_register_2_1,  .magazine_register_3_1, .magazine_register_5_1{
     width :200px;
-    height :80px;
+    height :60px;
+    text-align: center;
     float:left;
 }
 
 .magazine_register_3_1{
-    height: 380px;
+    height: 30px;
 }
 
 .magazine_register_1_2, .magazine_register_2_2, .magazine_register_3_2{
     width : 800px;
-    height: 80px;
+    height: 30px;
     float:left;
 }
 
 .magazine_register_1_2 select{
     width :150px;
-    height: 35px;
+    height: 30px;
     position: relative;
     top: -5px;
     font-size: 20px;
@@ -1211,7 +1213,7 @@ table a:visited{
 
 .magazine_register_2_2 input {
     width : 720px;
-    height: 35px;
+    height: 30px;
     position: relative;
     top: -5px;
     border: 1px solid black;
@@ -1222,7 +1224,7 @@ table a:visited{
 }
 
 .magazine_register_2{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_3{
@@ -1230,40 +1232,32 @@ table a:visited{
 }
 
 .magazine_register_4{
-    height: 80px;
+    height: 60px;
 }
 
 .magazine_register_5{
-    height: 150px;
-    margin-bottom: 35px;
+    height: 70px;
 }
 
 .magazine_register_5_1{
-    height: 150px;
+    height: 50px;
     box-sizing: border-box;
-    padding-top: 55px;
 }
 
 .magazine_register_5_2{
-    width: 200px;
-    height: 150px;
+    width: 800px;
+    height: 50px;
     float: left;
 }
 
-.magazine_register_5_2 button{
-    width: 200px;
-    height: 150px;
-    background-color: gray;
+.magazine_register_5_2 input{
+    width: 800px;
+    height: 50px;
     cursor: pointer;
-    border: 0;
-    font-size: 20px;
+    font-size: 17px;
 }
 
-.magazine_register_5_3{
-    width: 600px;
-    height: 150px;
-    float:left;
-}
+
 
 .magazine_register_5_3 button{
     width: 50px;
@@ -1286,8 +1280,8 @@ table a:visited{
 
 }
 .magazine_register_6{
-    width: 400px;
-    height: 150px;
+    width: 450px;
+    height: 50px;
     float:left;
     text-align: center;
     box-sizing: border-box;
@@ -1295,60 +1289,60 @@ table a:visited{
 
 .magazine_register_6_1{
     width: 200px;
-    height: 150px;
+    height: 50px;
     float: left;
     box-sizing: border-box;
     padding-right: 50px;
 }
 
 .magazine_register_6_2{
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 50px;
     float:left;
-    
+    padding-top: 25px;
 }
 
-.magazine_register_6_2 button {
-    width: 200px;
-    height: 150px;
-    font-size: 20px;
-    border: 0;
+.magazine_register_6_2 input {
+    width: 250px;
+    height: 50px;
+    font-size: 17px;
     cursor: pointer;
 }
 
 .magazine_register_7{
-    width: 600px;
-    height: 150px;
+    width: 540px;
+    height: 50px;
     float:left;
     
 }
 
 .magazine_register_7_1{
     width: 200px;
-    height: 150px;
+    height: 50px;
     float:left;
     text-align: center;
 }
 
 .magazine_register_7_2{
-    width: 400px;
-    height: 150px;
+    width: 300px;
+    height: 50px;
     float:left;
 }
 
 .magazine_register_7_2 input{
     width: 300px;
-    height: 50px;
+    height: 40px;
     font-size: 25px;
     position: relative;
-    top: 45px;
+    top: 25px;
 }
 
 .magazine_register_8{
     box-sizing: border-box;
-    padding-left: 17px;
-    margin-top: 30px;
-    font-weight: bold;
+    margin-bottom: 25px;
+}
+.magazine_register_8 h2{
+    margin: 0;
 }
 
 .magazine_register_9{
@@ -1359,6 +1353,7 @@ table a:visited{
 
 .magazine_register_9_1{
     width :200px;
+    text-align: center;
     float:left;
 }
 
@@ -1380,7 +1375,8 @@ table a:visited{
 }
 
 .magazine_register_10_1{
-    width: 200px;
+    width:200px;
+    text-align: center;
     float:left;
 }
 
@@ -1399,8 +1395,6 @@ table a:visited{
     float:left;
     text-align: center;
     box-sizing: border-box;
-    padding-right: 50px;
-    padding-top: 40px;
 }
 
 .magazine_register_11_2{
@@ -1409,11 +1403,11 @@ table a:visited{
     float:left;
 }
 
-.magazine_register_11_2 button{
-    width: 200px;
-    height: 150px;
-    font-size: 20px;
-    border: 0;
+.magazine_register_11_2 input{
+    width: 250px;
+    height: 50px;
+    font-size: 17px;
+    cursor: pointer;
     cursor: pointer;    
 }
 
@@ -1427,8 +1421,7 @@ table a:visited{
     width: 120px;
     height: 40px;
     cursor: pointer;
-    background-color: yellow;
-    border: 1px solid black;
+    background-color: #ffb800;
     font-size: 18px;
 }
 
