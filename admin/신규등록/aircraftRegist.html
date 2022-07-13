@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품등록 | 항공권</title>
+    <title>관리자 | 항공기등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
+    <style>
+        .leftbox div,
+        .rightbox div{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    </style>
 </head>
 <body>
     <!-- 사이드바-->
@@ -28,20 +36,21 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
-                    <li><a href="air.html">항공사 신규 등록</a></li>
-                    <li><a href="room.html">항공기 신규 등록</a></li>
-                    <li><a href="packge.html">취항지 목록</a></li>
-                    <li><a href="ticket.html">취항지 신규 등록</a></li>
+                    <li><a href="airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="aircraftRegist.html" style="color:black; font-weight: 700; text-decoration: underline;">항공기 신규 등록</a></li>
+                    <li><a href="destinationList.html">취항지 리스트</a></li>
+                    <li><a href="destinationRegist.html">취항지 신규 등록</a></li>
+                    
                 </ul>
             </li>
-            <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown show">
-                    <li><a href="air.html" style="color:black; font-weight: 700; text-decoration: underline;">항공권</a></li>
-                    <li><a href="room.html">숙소</a></li>
-                    <li><a href="packge.html">패키지</a></li>
-                    <li><a href="ticket.html">티켓</a></li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../product/air.html">항공권</a></li>
+                    <li><a href="../product/room.html">숙소</a></li>
+                    <li><a href="../product/packge.html">패키지</a></li>
+                    <li><a href="../product/ticket.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -99,75 +108,30 @@
     </selction>
     <!--사이드바 끝-->
 
-    <div class="content2"> 
-        <h2>상품등록 - 항공권</h2>
-    
+    <div class="content2">
+        <h2>항공기 신규 등록</h2>
+
         <div class="formbox register">
             <form action="">
                 <div class="box">
                     <div class="leftbox">
-                        <p class="mintit">로고 <input type="file" style="margin-left: 55px;"></p>
                         
-                        <p class="mintit">국내/국외 <select name="" id="">
-                            <option value="">국내</option>
-                            <option value="">국외</option>
-                        </select></p>
-                        
-                        <p>출발시간 <input type="time" name="" id=""></p>
-                        
-                        <p>비행시간 <input type="text" style="margin-left: 25px;"></p>
-                        
+                        <div><p>항공사 명</p><select name="" id=""></select></div>
+                        <div><p>항공기명 </p><select name="" id=""></select></div>
+                        <div><p>총 수용 좌석</p> <input type="text"></div>
                     </div>
                     <div class="rightbox">
-                        <p>항공사명 
-                            <select name="" id="">
-                                <option value="">대한항공</option>
-                                <option value="">아시아나항공</option>
-                                <option value="">제주항공</option>
-                                <option value="">진에어</option>
-                                <option value="">부산에어</option>
-                            </select>
-                        </p>
-                        
-                        <p>항공기명 <select name="" id="">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                        </select></p>
-                        
-                        <p>도착지 <input type="text" style="margin-left: 35px;"></p>
-                        
-                        <p>도착시간 <input type="time" name="" id=""></p>
-                        
-                        <p>수화물 <input type="text" style="margin-left: 35px;"></p>
-                        
+                        <div><p>항공기 타입 </p><select name="" id=""></select></div>
+                        <div><p>국내/국외 </p><select name="" id=""></select></div>
                     </div>
-                <div class="flbox flbox2">
-                    <div class="bottombox btbox">
-                        <p>가격 <input type="text" placeholder="이코노미 클래스"readonly></p>
-                        <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
-                    </div>
-                    <div class="bottombox btbox">
-                        <p class="fl"><input type="text" placeholder="비즈니스 클래스"readonly></p>
-                        <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
-                    </div>
-                    <div class="bottombox btbox" >
-                        <p><input type="text" placeholder="퍼스트 클래스"readonly></p>
-                        <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
-                    </div>
-                    
-                    
                 </div>
-            </div>
-            <div class="hbt" style="margin-right: 130px;">
-                <button type="submit" class="regis">등록</button>
-            </div>
+                <div class="hbt non" style="margin-right: 150px; padding-top: 50px;">
+                    <button type="submit" class="regis " value="등록">등록</button>
+                </div>
             </form>
-
-        </div> 
+        </div>
     </div>
+    
     <script src="../script.js"></script>
 </body>
 </html>

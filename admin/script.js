@@ -34,7 +34,9 @@ function divplus(){
 } 
 
 function showPopup(){
-	window.open("roomPop.html","팝업 테스트","width=400, height=300, top=10, left=10");
+	let popupX = (window.screen.width/2)-(400/2);
+	let popupY = (window.screen.height/2) - (300/2);
+	window.open("roomPop.html","팝업 테스트","width=400, height=300, top="+popupY+ ", left="+popupX+",screenX="+popupX+",screenY="+popupY);
 }
 
 let URLSearch = new URLSearchParams(location.search);
