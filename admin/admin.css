@@ -239,7 +239,6 @@ main .content {
     min-height: 90vh;
 }
 main .content .cards {
-    width: 1200px;
     padding: 20px 15px;
     display: flex;
     align-items: center;
