@@ -93,46 +93,48 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>상품목록 숙소</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <div class="admin_productlist_select">
-                        <select name="" class="">
-                            <option value="여행지">여행지</option>
-                            <option value="하와이">하와이</option>
-                            <option value="미국">미국</option>
-                            <option value="일본">일본</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="도시">도시</option>
-                            <option value="도쿄">도쿄</option>
-                            <option value="요코하마">요코하마</option>
-                            <option value="교토">교토</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="숙소유형">숙소유형</option>
-                            <option value=호텔">호텔</option>
-                            <option value="리조트">리조트</option>
-                            <option value="모텔">모텔</option>
-                            <option value="펜션">펜션</option>
-                            <option value="카라반">카라반</option>
-                            <option value="글램핑">글램핑</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="검색분류">검색분류</option>
-                            <option value="상품명">상품명</option>
-                            <option value="상품번호">상품번호</option>
-                        </select>
-                        <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
-                        <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+        <div class="header_box">
+            <h2>상품목록 숙소</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <div class="admin_productlist_select">
+                            <select name="" class="">
+                                <option value="여행지">여행지</option>
+                                <option value="하와이">하와이</option>
+                                <option value="미국">미국</option>
+                                <option value="일본">일본</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="도시">도시</option>
+                                <option value="도쿄">도쿄</option>
+                                <option value="요코하마">요코하마</option>
+                                <option value="교토">교토</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="숙소유형">숙소유형</option>
+                                <option value=호텔">호텔</option>
+                                <option value="리조트">리조트</option>
+                                <option value="모텔">모텔</option>
+                                <option value="펜션">펜션</option>
+                                <option value="카라반">카라반</option>
+                                <option value="글램핑">글램핑</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="검색분류">검색분류</option>
+                                <option value="상품명">상품명</option>
+                                <option value="상품번호">상품번호</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
+                        
                     </div>
-                    
-                </div>
-            </form>
-        </nav>
+                </form>
+            </nav>
+        </div>
         <table class="tbList">
             <tr>
                 <th>
@@ -235,10 +237,10 @@
                 <td>Room 101</td>
             </tr>
         </table>
-        <span class="admin_productlist_lowbar">
-            <button class="admin_lowbar_btn" value="선택삭제">선택삭제</button>
-            <button class="admin_lowbar_btn" value="판매중지">판매중지</button>
-        </span>
+        <div class="btnlist">
+            <button value="선택삭제">선택삭제</button>
+            <button value="판매중지">판매중지</button>
+        </div>
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>

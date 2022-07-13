@@ -166,7 +166,7 @@ li{
 #content nav .form-group input {
     width: 100%;
     background: var(--grey);
-    border-radius: 5px;regist
+    border-radius: 5px;
     border: none;
     outline: none;
     padding: 10px 36px 10px 16px;
@@ -604,10 +604,106 @@ table a:visited{
 
 .formbox{
     width: 1000px;
-    margin: auto;
+    margin: 0 auto;
+    margin-left: 60px;
     display: flex;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
 }
-.box { margin-top: 50px;}
+.formbox > .formbox_ul{
+    width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+.formbox > .formbox_ul > li{
+    margin: 0 auto;
+    width: 900px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.formbox_div1{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+.formbox_div2{
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+.formbox_div3{
+    width: 890px;
+    display: flex;
+    justify-content: space-between;
+}
+.formbox_div4{
+    width: 800px;
+}
+.formbox_input_price{
+    display: flexbox;
+    width: 800px;
+    padding-left: 3px;
+}
+.formbox_div5{
+    width: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+.formbox_div6{
+    width: 900px;
+}
+.formbox_div4 > input[type="checkbox"]{
+    margin-left: 10px;
+}
+.formbox_div3_part{
+    width: 43%;
+}
+.formbox_div3_part > .formbox_ul_title{
+    width: 100px;
+}
+.formbox_div3_part > input[type="time"]{
+    width: 170px;
+}
+.formbox_ul_title {
+    width: 20%;
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.formbox_ul_title_op{
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.formbox_ul_select1{
+    width: 83px;
+}
+.formbox_ul_select2{
+    width: 100px;
+}
+.formbox_ul_select3{
+    width: 130px;
+}
+.formbox_ul_text{
+    width: 300px;
+}
+.formbox_ul_title_info{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.box {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 30px;
+    width: 1000px;
+    margin-bottom: 70px;
+}
+
 .box p{
     margin-bottom: 20px;
     font-size: 18px;
@@ -626,19 +722,14 @@ table a:visited{
 }
 .leftbox {
     width: 500px;
-    float: left;
 }
 
 .rightbox {
     width: 500px;
-    float: right;
 }
 .flbox {
-    
-    clear: both;
     display: flex;
-    width: 800px;
-    
+    justify-content: space-between;
 }
 .flbox2{
     flex-direction: column;
@@ -650,8 +741,9 @@ table a:visited{
 }
 
 .bottombox{
-    
-    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
     margin-top: 10px;
 }
 .bottombox .span{
@@ -664,13 +756,24 @@ table a:visited{
     
 }
 .btbox input:first-child{
-    width: 90px;
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color: #36b8be;
+    border-radius: 10px;
     text-align: center;
-    
+}
+.btbox input:first-child::placeholder {
+    font-size: 13px;
+    color: white;
 }
 .btbox .span input{
     width: 150px;
     height: 25px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+    margin-right: 10px;
 }
 
 .btbox:nth-child(2){
@@ -736,10 +839,9 @@ table a:visited{
 
 
 .register{
-    width: 1200px;
+    width: 1000px;
     box-sizing: border-box;
-    margin-left: 200px;
-    padding-left: 100px;
+    margin-left: 150px;
     padding-right: 100px;
 }
 
@@ -811,9 +913,13 @@ table a:visited{
     margin: 0 auto;
     width: 80px;
     height: 30px;
-    background-color: #ffb800;
+    background-color: #0098A1;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1.2px;
     border: none;
-    font-size: 18px;
 }
 
 
@@ -1694,18 +1800,39 @@ div.j3 {
    margin-right: 10px;
 }
 
-
+.formbox_ul_btn{
+    justify-content: right;
+    padding-right: 10px;
+}
 #sort_box_flex {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
+
 .add_button {
-    margin: 0;
-    margin-right: 100px;
+    justify-content: right;
     margin-top: 20px;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #0098A1;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 100px;
+    border: none;
+    width: 80px;
+    height: 35px;
+}
+.service_list{
+    width: 80%;
+}
+.service_list > li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.service_list > li > label {
+    width: 25%;
 }
 
 #option_p {

@@ -93,39 +93,41 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>상품목록_티켓</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <div class="admin_productlist_select">
-                        <select name="" class="">
-                            <option value="도시">도시</option>
-                            <option value="부산">부산</option>
-                            <option value="전주">전주</option>
-                            <option value="여수">여수</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="티켓분류">티켓분류</option>
-                            <option value=투어/관광">투어/관광</option>
-                            <option value="액티비티">액티비티</option>
-                            <option value="어트랙션">어트랙션</option>
-                            <option value="수상/해양레져">수상/해양레져</option>
-                            <option value="클래스/체험">클래스/체험</option>
-                            <option value="스파/온천">스파/온천</option>
-                            <option value="테마파크">테마파크</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="검색분류">검색분류</option>
-                            <option value="상품명">상품명</option>
-                            <option value="상품번호">상품번호</option>
-                        </select>
-                        <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
-                        <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+        <div class="header_box">
+            <h2>상품목록_티켓</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <div class="admin_productlist_select">
+                            <select name="" class="">
+                                <option value="도시">도시</option>
+                                <option value="부산">부산</option>
+                                <option value="전주">전주</option>
+                                <option value="여수">여수</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="티켓분류">티켓분류</option>
+                                <option value=투어/관광">투어/관광</option>
+                                <option value="액티비티">액티비티</option>
+                                <option value="어트랙션">어트랙션</option>
+                                <option value="수상/해양레져">수상/해양레져</option>
+                                <option value="클래스/체험">클래스/체험</option>
+                                <option value="스파/온천">스파/온천</option>
+                                <option value="테마파크">테마파크</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="검색분류">검색분류</option>
+                                <option value="상품명">상품명</option>
+                                <option value="상품번호">상품번호</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </nav>
+                </form>
+            </nav>
+        </div>
         <table class="tbList">
             <tr>
                 <th>
@@ -215,10 +217,10 @@
                 <td>Ticket 101</td>
             </tr>
         </table>
-        <span class="admin_productlist_lowbar">
-            <button class="admin_lowbar_btn" value="선택삭제">선택삭제</button>
-            <button class="admin_lowbar_btn" value="판매중지">판매중지</button>
-        </span>
+        <div class="btnlist">
+            <button value="선택삭제">선택삭제</button>
+            <button value="판매중지">판매중지</button>
+        </div>
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>

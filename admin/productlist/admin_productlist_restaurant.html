@@ -93,37 +93,39 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>상품목록 맛집</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <div class="admin_productlist_select">
-                        <select name="" class="">
-                            <option value="지역">지역</option>
-                            <option value="부산">부산</option>
-                            <option value="전주">전주</option>
-                            <option value="여수">여수</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="식사종류">식사종류</option>
-                            <option value="한식">한식</option>
-                            <option value="중식">중식</option>
-                            <option value="일식">일식</option>
-                            <option value="양식">양식</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="검색분류">검색분류</option>
-                            <option value="상품명">상품명</option>
-                            <option value="상품번호">상품번호</option>
-                        </select>
-                        <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
-                        <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+        <div class="header_box">
+            <h2>상품목록 맛집</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <div class="admin_productlist_select">
+                            <select name="" class="">
+                                <option value="지역">지역</option>
+                                <option value="부산">부산</option>
+                                <option value="전주">전주</option>
+                                <option value="여수">여수</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="식사종류">식사종류</option>
+                                <option value="한식">한식</option>
+                                <option value="중식">중식</option>
+                                <option value="일식">일식</option>
+                                <option value="양식">양식</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="검색분류">검색분류</option>
+                                <option value="상품명">상품명</option>
+                                <option value="상품번호">상품번호</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </nav>
+                </form>
+            </nav>
+        </div>
         <table class="tbList">
             <tr>
                 <th>
@@ -213,10 +215,10 @@
                 <td>restaurant 101</td>
             </tr>
         </table>
-        <span class="admin_productlist_lowbar">
-            <button class="admin_lowbar_btn" value="선택삭제">선택삭제</button>
-            <button class="admin_lowbar_btn" value="판매중지">판매중지</button>
-        </span>
+        <div class="btnlist">
+            <button value="선택삭제">선택삭제</button>
+            <button value="판매중지">판매중지</button>
+        </div>
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>
