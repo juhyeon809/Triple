@@ -48,7 +48,7 @@ li{
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
-    transition: all .3s ease;
+    transition: all .3s ease-in;
     z-index: 200;
     
 }
@@ -87,7 +87,7 @@ li{
     color: var(--light);
     font-size: 15px;
     padding: 10px 16px 12px 0;
-    transition: all .3s ease;
+    transition: all .5s ease;
     border-radius: 10px;
     margin: 4px 0;
 }
@@ -239,6 +239,7 @@ main .content {
     min-height: 90vh;
 }
 main .content .cards {
+    width: 1200px;
     padding: 20px 15px;
     display: flex;
     align-items: center;
@@ -254,6 +255,12 @@ main .content .cards .card {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+main .content .cards .card .box{
+    margin-top: 0;
+}
+.box.head{
+    margin: 0;
 }
 
 main .card .head .icon{
@@ -310,6 +317,10 @@ main .content .content-2 .service-center{
     flex-direction: column;
     border-radius: 10px;
 }
+main .content .content-2 .service-center table{
+    padding: 0 20px;
+    text-align: center;
+}
 
 main .content .content-2 .new-post{
     flex: 2;
@@ -329,6 +340,10 @@ main .content .content-2 .new-post table {
     justify-content: space-around;
     padding: 15px 10px;
     border-bottom: 2px solid var(--grey);
+}
+.center-tit a,
+.center-tit a:visited{
+    color: #0098A1;
 }
 
 main table{
