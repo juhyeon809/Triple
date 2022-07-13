@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>join.html</title>
+    <title>트리플 | 회원가입</title>
     <link rel="stylesheet" href="/member/login_join/css/style.css">
     <style>
         #hp { width: 215px;}
     </style>
+    <script src="/member/login_join/js/join.js"></script>
 </head>
 <body>
     <header>
@@ -17,22 +18,22 @@
             <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
-    <section id="sect">
-        
-        <form action="#" name="regform" id="regform">
+    <p class="title">트리플 | 회원가입</p>
+    <section id="sect_join" class="sect">
+        <form action="/main.html" name="regform" id="regform" onsubmit="return sendit()">
     
             <ul class="list">
                 <li>
                     <p class="info_form">이메일</p>
                     <div class="content user">
-                        <input type="text" name="userid" id="userid" maxlength="20" placeholder="abc@gmail.com">
+                        <input type="text" name="email" id="email" maxlength="25" placeholder="abc@gmail.com">
                         <input type="button" name="btn" id="email_btn" value="인증하기">
                     </div>
                 </li>
                 <li>
                     <p class="info_form">비밀번호</p>
                     <div class="content">
-                        <input type="password" name="userpw" id="userpw" maxlength="20" placeholder="영문, 숫자, 특수문자">
+                        <input type="password" name="userpw" id="userpw" minlength="6" maxlength="16" placeholder="영문, 숫자, 특수문자">
                     </div>
                 </li>
                 <li>
@@ -74,61 +75,37 @@
                 <li>
                     <p class="info_form">약관 동의</p>
                     <div>
-                        <ul class="join_box">
+                        <ul class="join_box checkbox_group">
                             <li class="checkBox check01">
-                                <ul class="clearfix">
-                                    <li>전체 동의합니다.</li>
-                                    <li class="checkAllBtn">
-                                        <input type="checkbox" name="chkAll" id="chk" class="chkAll">
-                                    </li>
-                                </ul>
+                                <label for="check_all">전체 동의합니다.</label>
+                                <input type="checkbox" name="check_all" id="check_all">
                             </li>
                             <li class="checkBox check02">
-                                <ul class="clearfix">
-                                    <li>만 14세 이상입니다. (필수)</li>
-                                    <li class="checkBtn">
-                                        <input type="checkbox" name="chk">
-                                    </li>
-                                </ul>
+                                <label for="check_1"><span class="pilsoo">(필수)</span> 만 14세 이상입니다.</label>
+                                <input type="checkbox" name="check_1" id="check_1" class="normal">
                             </li>
                             <li class="checkBox check03">
-                                <ul class="clearfix">
-                                    <li>서비스 이용약관 (필수)</li>
-                                    <li class="checkBtn">
-                                        <input type="checkbox" name="chk">
-                                    </li>
-                                </ul>
+                                <label for="check_2"><span class="pilsoo">(필수)</span> 서비스 이용약관</label>
+                                <input type="checkbox" name="check_2" id="check_2" class="normal">
                             </li>
                             <li class="checkBox check04">
-                                <ul class="clearfix">
-                                    <li>개인정보 수집 및 이용 동의 (필수)</li>
-                                    <li class="checkBtn">
-                                        <input type="checkbox" name="chk">
-                                    </li>
-                                </ul>
+                                <label for="check_3"><span class="pilsoo">(필수)</span> 개인정보 수집 및 이용 동의</label>
+                                <input type="checkbox" name="check_3" id="check_3" class="normal">
                             </li>
                             <li class="checkBox check05">
-                                <ul class="clearfix">
-                                    <li>위치서비스 이용 동의 (필수)</li>
-                                    <li class="checkBtn">
-                                        <input type="checkbox" name="chk">
-                                    </li>
-                                </ul>
+                                <label for="check_4"><span class="pilsoo">(필수)</span> 위치서비스 이용 동의</label>
+                                <input type="checkbox" name="check_4" id="check_4" class="normal">
                             </li>
                             <li class="checkBox check06">
-                                <ul class="clearfix">
-                                    <li>이벤트 및 할인 혜택 안내 동의</li>
-                                    <li class="checkBtn">
-                                        <input type="checkbox" name="chk">
-                                    </li>
-                                </ul>
+                                <label for="check_5">(선택) 이벤트 및 할인 혜택 안내 동의</label>
+                                <input type="checkbox" name="check_5" id="check_5" class="normal">
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <div class="content_join">
-                        <input type="submit" value="확인" class="join_btn">
+                        <input type="submit" value="확인" class="join_btn" onsubmit="return sendit()">
                     </div>
                 </li>
 

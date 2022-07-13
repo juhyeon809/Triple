@@ -12,12 +12,23 @@ header { background-image: url('/img/header_bg.png'); background-repeat: no-repe
 #logo_area > #logo > a > img{ width: 200px; margin-top: 50px; }
 #login_join { color: white; margin-top: 50px; }
 #login_join > a { color: white; font-weight: bold; font-size: 18px; text-decoration: none;}
-section { margin: 0 auto; width:1400px; padding-top: 30px; text-align: center; box-sizing: border-box; margin-top: 50px; margin-bottom: 90px;}
+.title{
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #50E3C2;
+    text-indent: 10px;
+}
+section { margin: 0 auto; width:1000px; padding-top: 20px; text-align: center; box-sizing: border-box; margin-bottom: 90px;}
 #middle_logo, #middle_image { display: inline-block; margin: 0 auto; display: flex; align-items: center; justify-content: space-evenly; }
 
 section form { background-color: white; padding: 20px; margin: 20px 0 0 0; }
 section form p { display: block; text-align: justify; }
 
+#sect_login {margin-top: 50px;}
 section.sect form { margin: 20px auto; }
 .list { padding: 0 0 20px 0; margin: 0 0 30px 0;}
 .list li { position: relative; float: none; width: 100%; line-height: 45px; list-style: none; }
@@ -26,7 +37,7 @@ section.sect form .list li .content, section.sect form .list li .content_ssn, se
 .content input[type="text"], .content input[type="password"] { background-color: #B2F1DE; width: 400px; height: 50px; border-radius: 100px; text-align: left; margin-bottom: 10px; border: none; padding-left: 20px; font-size: 16px; }
 .content > p { display: inline-block; }
 .content > p > a { text-decoration: none; font-weight: bold; color: #458CD3;}
-input[type="submit"] { border: 3px solid #B2F1DE; width: 410px !important; height: 50px; border-radius: 100px; text-align: center; background-color: white; margin-top: 20px; margin-bottom:0; font-size: 16px; font-weight: bold; color: #50E3C2;}
+input[type="submit"] { border: 3px solid #B2F1DE; width: 400px !important; height: 50px; border-radius: 100px; text-align: center; background-color: white; margin-top: 20px; margin-bottom:0; font-size: 16px; font-weight: bold; color: #50E3C2; padding-right: 10px;}
 
 
 /*공통 footer*/
@@ -47,18 +58,14 @@ footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 150px; ma
 .country_code_text, .phone_text {font-size: 14px; color: #888; margin-bottom: 7px;}
 .country_code > input[type="text"] { width: 70px; margin-left: 0; margin-right: 10px; background-color: white; border: 3px solid #B2F1DE;}
 .phone > input[type="text"] { width: 300px;}
-.user > #userid {width: 315px;}
+.user > #email {width: 315px;}
 .content_join > input[type="submit"] { background-color: #B2F1DE; width: 400px; height: 50px; border-radius: 100px; text-align: center; margin-bottom: 10px; border: none; padding-left: 20px; font-size: 16px; color: white; font-size: 18px; margin-top: 20px;}
 
 .join_box {background-color:#fff; display:inline-block; }
-.checkBox, .checkBox > ul {position: relative; width: 400px; align-items: flex-end;}
-.checkBox > ul > li {text-align: left; float: left; font-weight: none; line-height: 0.8;}
-.checkBox > ul > li:first-child {width: 70%; padding: 15px; color: #888;}
-.checkBox > ul > li:nth-child(2){position: absolute; top:50%; right:30px;  }
-.checkBtn > input[type="checkbox"], .checkAllBtn > input[type="checkbox"] {float: right; margin-top: -10px;}
-.clearfix::after {content: ""; display: block; clear: both;}
+.join_box {width: 390px; align-items: flex-end;}
+.join_box > li {display: flex; justify-content: space-between; text-align: left; font-weight: none;  font-size: 14px; line-height: 2.5;}
 .checkAllBtn, .checkBtn {height: 20px;}
 
 .text_box > input[type="text"] {margin-bottom: 20px;}
-
+.pilsoo { color: #FE6C6C}
 input[type="button"] {width: 80px; height: 45px; color: #458CD3; background: none; border: none; font-weight: bold;}

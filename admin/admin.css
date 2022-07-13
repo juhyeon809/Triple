@@ -409,14 +409,23 @@ main td {
     width: calc(100%);
     left: 300px;
     max-width: 1200px;
+    margin-top: 50px;
 }
-
+.header_box{
+    margin: 0;
+    margin-top: 90px;
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
 .content2 h2 {
-    margin: 20px 0 0 20px;
-    font-size: 30px;
-    margin-bottom: 50px;
+    width: 15%;
+    margin: 0;
+    margin-left: 60px;
+    font-size: 24px;
+    display: inline-block;
 }
-
 /* #conten2t nav {
     background: var(--light);
     width: 80%;
@@ -428,48 +437,87 @@ main td {
     top: 0;
 
 } */
-
-
+.content2 nav {
+    display: inline-block;
+    justify-content: right;
+}
 .content2 nav form .form-group{
-    position: absolute;
-    right: 50px;
+    width: 96%;
+    display: flex;
+    font-size: 16px;
 }
 .content2 nav form .form-group select{
     width: 120px;
-    height: 25px;
+    height: 35px;
     font-size: 18px;
     text-align: center;
+    margin-right: 10px;
+    padding: 0 10px;
+    border-radius: 100px;
+    border: 2px solid #0098A1;
+}
+.content2 nav form .form-group select > option{
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
 }
 .content2 nav form .form-group input {
-    width: 200px;
-    height: 25px;
+    width: 180px;
+    height: 35px;
     font-size: 18px;
+    margin-right: 10px;
+    padding: 0 10px;
+    border: 2px solid #0098A1;
+    border-radius: 100px;
+}
+.content2 nav form .form-group input[type="text"]{
+    width: 200px;
+}
+.content2 nav form .form-group input[type="text"]::placeholder{
+    font-size: 16px;
+}
+.content2 nav form .form-group input:nth-child(2){
+    margin-left: 10px;
 }
 .content2 nav form .form-group button {
-    width: 60px;
-    height: 25px;
+    width: 120px;
+    height: 35px;
     font-size: 18px;
     margin-left: 5px;
+    padding: 0 10px;
+    border-radius: 100px;
+    background-color: #0098A1;
+    color: white;
+    border: none;
+    
 }
 .btnlist {
+    width: 1300px;
     box-sizing: border-box;
-    width: 150px;
-    position: relative;
-    margin: 0 auto;
-    left: 550px;
+    text-align: right;
+    margin-top: 20px;
+    padding-right: 40px;
 }
 .btnlist button {
-    width: 60px;
-    height: 25px;
-    font-size: 13px;
+    width: 90px;
+    height: 35px;
+    font-size: 14px;
     margin-top: 10px;
+    background-color: #0098A1;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1.2px;
     border: none;
 }
+.btnlist button:first-child{
+    margin-right: 10px;
+}
 table.tbList {
-    width: 1000px;
+    width: 1200px;
     position: relative;
-    margin: 150px auto 0;
-    left: 120px;
+    margin: 60px auto 0;
+    left: 70px;
     text-align: center;
     border-collapse: collapse;
 }
@@ -485,6 +533,7 @@ table.tbDetail {
 
 table tr {
     height: 60px;
+    width: 100%;
 }
 table select {
     width: 60px;
