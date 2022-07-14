@@ -7,6 +7,7 @@
     <title>트리플 | 항공조회</title>
     <link rel="stylesheet" href="/member/flight_reservation/fly.css">
     <link rel="stylesheet" href="/css/common.css">
+    
 </head>
 <body>
     <header>
@@ -38,13 +39,12 @@
         <div class="serchset">
             <ul>
                 <li>
-                    <select class="citysel1">
-                        <option value="괌">서울 - 괌</option>
-                        <option value="경찰">서울 - 다낭</option>
-                    </select>
+                    <div class="citysel1">
+                        <p class="boxlink1" onclick="hideshow()">서울 - 괌<img src="fly_img/down_icon.png" alt=""></p>
+                    </div>
                 </li>
                 <li>
-                    <button>7.2(토) - 7.4(월)/ 왕복</button>
+                    <button>7.2(토) - 7.4(월) / 왕복</button>
                 </li>
                 <li>
                     <select class="sitysel2">
@@ -59,6 +59,67 @@
                     <button>수화물 포함</button>
                 </li>
             </ul>
+            <div class="hidebox">
+            <div class="hidebox1-1" hidden>
+                <form action="">
+                <p class="click" onclick="hideshow1()"><img src="fly_img/flying-airplane.png" alt="">김포 GMP</p>
+                <p class="click" onclick="hideshow2()"><img src="fly_img/map-point-pointer.png" alt="">괌 GUM</p>
+                <p class="click"><img src="fly_img/office-monthly-calendar.png" alt="">7.02(토) - 7.04(월)</p>
+                <p class="click" onclick="hideshow4()"><img src="fly_img/messenger-user-avatar.png" alt="">탑승객1명, 일반석 외1</p>
+            
+                <div>
+                    <button class="close" onclick="close()">닫기</button><button type="reset">재검색</button>
+                </div>
+            </form>
+            </div>
+            <div class="hidebox1-2" hidden>
+                
+                <input type="search" name="" id="" placeholder="도시 또는 공항 이름으로 검색">
+                
+                
+                    <p class="boxtit">해외인기도시</p>
+                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
+                    <p class="boxtit">국내인기도시</p>
+                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br> 여수 | 양양 | 포항</span>
+            </div>
+            <div class="hidebox1-3" hidden>
+                <input type="search" name="" id="" placeholder="도시 또는 공항 이름으로 검색">
+                    <p class="boxtit">해외인기도시</p>
+                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
+                    <p class="boxtit">국내인기도시</p>
+                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br> 여수 | 양양 | 포항</span>
+            </div>
+            <div class="hidebox1-4" hidden>
+                <p class="boxtit">인원 및 좌석등급</p>
+                    <div><span>- 총 9명까지만 한번에 검색 및 예약 가능</span></div>
+                    <div><span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span></div>
+                    <div><span>- 만 2세 미만의 유아라도 별도 좌석에 탑승하려면 소아로 선택해주세요.</span></div>
+                    <div class="div">
+                        <p class="boxtit">성인</p><span>만 12세 이상 (국내선 만 13세 이상)</span>
+                        <button onclick='count("minus")'>-</button onclick='count("plus")'><button>+</button>
+                    </div>
+                    <div class="div">
+                        <p class="boxtit">소아</p><span>만 12세 이상 (국내선 만 13세 이상)</span>
+                        <button onclick='count("minus")'>-</button onclick='count("plus")'><button>+</button>
+                    </div>
+                    <div class="div">
+                        <p class="boxtit">유아</p><span>만 12세 이상 (국내선 만 13세 이상)</span>
+                        <button onclick='count("minus")'>-</button onclick='count("plus")'><button>+</button>
+                    </div>
+                    <div class="pbox">
+                    <div class="p">
+                    <p class="boxtit">일반석</p><input type="checkbox" name="seat" id=""></div>
+                    <div class="p"><p class="boxtit">프리미엄 일반석</p><input type="checkbox" name="seat" id=""></div>
+                    <div class="p"><p class="boxtit">비즈니스석</p><input type="checkbox" name="seat" id=""></div>
+                    <div class="p"><p class="boxtit">일등석</p><input type="checkbox" name="seat" id="">
+                    </div>
+                    <div>
+                        <button class="close" onclick="close()">선택완료</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
             <p class="scword">검색결과<span> 20개, 왕복, 1인 평균 기준</span></p>
         </div>
         <div id="list">
@@ -454,5 +515,8 @@
             </div>
         </div>
     </footer>
+
+
+    <script src="fly-script.js"></script>
 </body>
 </html>

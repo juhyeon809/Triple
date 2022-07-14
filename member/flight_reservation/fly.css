@@ -237,7 +237,122 @@ select {
     border: 1px solid #fff; 
     border-radius: 5px;
 }
-.citysel1{  font-size: 18px; padding-top: 5px;}
+.citysel1{ 
+    font-size: 18px;
+    height: 28px;
+    }
+.citysel1 p {
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+.citysel1 img{
+    width: 20px;
+    vertical-align: middle;
+}
+div.hidebox {
+    display: flex;
+    width: 800px;
+    height: 230px;
+    position: absolute;
+}
+.click{
+    cursor: pointer;
+}
+div.hidebox1-1 img{
+    width: 25px;
+    margin-right: 20px;
+    align-items: center;
+    vertical-align: middle;
+}
+div.hidebox1-1 {
+    width: 250px;
+    background-color: #fdfdfd;
+}
+div.hidebox1-1 div{
+    align-items: center;
+    text-align: center;
+    
+}
+
+div.hidebox1-1 div button:first-child{
+    border-radius: 20px;
+    border: 1px solid #468cd3;
+    color: #468cd3;
+    margin-right: 5px;
+}
+div.hidebox1-1 div button:nth-child(2){
+    border-radius: 20px;
+    background: #468cd3;
+    border: none;
+    color: white;
+}
+.hidebox1-2, .hidebox1-3{
+    width: 250px;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+.hidebox1-2 input {
+    width: 245px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #cbcbcb;
+}
+.hidebox1-2 input::placeholder{
+    text-align: center;
+    color: #a0a0a0;
+}
+.hidebox1-4{
+    width: 330px;
+    height: 360px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+}
+.hidebox1-4 div{
+    font-size: 10px;
+    text-align: left;
+    color: #868686;   
+}
+.hidebox1-4 div.div p{
+    margin: 0;
+    color: #000;
+    font-size: 13px;
+}
+.hidebox1-4 .p .boxtit{
+    width: 300px;
+    color: #000;
+    font-size: 13px;
+    float: left;
+    margin: 5px 0;
+}
+.hidebox1-4 .p input{
+    float: right;
+}
+.hidebox1-4 .pbox div:last-child {
+    clear: both;
+    padding-top: 10px;
+    text-align: right;
+}
+button {
+    cursor: pointer;
+}
+p.boxtit {
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+span.boxcity {
+    width: 130px;
+    color: #868686;
+    font-size: 13px;
+    margin: 0 0;
+    text-align: center;
+}
+
 select.sitysel2{ 
     font-size: 14px; 
     padding: 3px 15px;
