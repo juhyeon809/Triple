@@ -102,10 +102,23 @@
         <div class="totalPrice">
             <div class="inner">
                 <p >1인, 할인/세금포함 <span>559,000원</span></p>
-                <p>상세요금 <span> 542,300원</span></p>
-                <p><input type="button" value="성인1"><a href="항공예약.html"><input type="button" value="예약하기"></a></p>
+                <div class="flex"><p onmouseover="paydetail()" onmouseleave="payout()">상세요금</p><p style="margin: 0;"> 542,300원</p></div>
+                <div class="paydetail" hidden>
+                    <h4>요금 상세 정보</h2>
+                        <p style="font-size: 15px; margin-top: 10px; color: #468cd3;">성인 1명</p>
+                        <div>
+                            <div class="flex"><p>항공요금 x 1</p> <p>284,500원</p></div>
+                            <div class="flex"><p>유류할증료 x 1</p> <p>198,600원</p></div>
+                            <div class="flex"><p>제세공과금 x 1</p> <p>58,200원</p></div>
+                            <div class="flex"><p>발권수수료 x 1</p> <p>0원</p></div>
+                            <div class="flex"><p>성인 총 요금</p> <p style="font-weight: 700; color: #000;">542,300원</p></div>
+                     </div>
+                        <div class="tot"><p>최종 결제금액</p> <p>542,300원</p></div>
+                </div>
+                <p style="padding-top: 55px;"><input type="button" value="성인1"><a href="항공예약.html"><input type="button" value="예약하기"></a></p>
             </div>
         </div>
+        
         <div class="flyseurchNotice">
             <p style="font-weight: bold; font-size: 16px; margin-bottom: 0; color: #425052;">운임 및 수하물 규정</p>
             <p>유류할증료와 TAX는 항공사 사정 및 환율 변동에 의해 매일 변경되며, 발권시점의 환율에 따라 적용됩니다</p>
@@ -137,5 +150,19 @@
             </div>
         </div>
     </footer>
+    
+
+    <script>
+        let  boxshow = document.querySelector(".paydetail");
+        let showBox = true;
+        function paydetail(){
+                boxshow.style.display = "block";
+                showBox = true;
+        }
+        function payout(){
+            boxshow.style.display = "none";
+            showBox = false;
+        }
+    </script>
 </body>
 </html>

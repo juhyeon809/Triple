@@ -66,6 +66,14 @@
     height: 20px;
     margin-right: 20px;
 }
+#main_content_box form table tr td input[type=button]{
+    width: 100px;
+    height: 25px;
+}
+
+#main_content_box form table tr #zipcode {
+    width: 200px;
+}
 #main_content_box form table tr #address2 {
     width: 600px;
 }
@@ -81,6 +89,7 @@
 #main_content_box form table tr #email_description {
     font-weight: 400;
 }
+
 #form_flex_box {
     margin-top: 30px;
     display: flex;

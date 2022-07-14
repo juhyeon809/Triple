@@ -100,61 +100,67 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2"> 
-        <h2>회원정보</h2>
+        <div class="header_box">
+            <h2>회원정보</h2>
+        </div>
+        <table class="tbList colortb">
+            <tr>
+                <th>이름</th>
+                <td>김사과</td>
+                <th>아이디</th>
+                <td>apple</td>
+            </tr>
+            <tr>
+                <th onClick = "location.href='mem-Coupon.html'">쿠폰</th>
+                <td onClick = "location.href='mem-Coupon.html'">1개</td>
+                <th onClick = "location.href='mem-Review.html'">리뷰</th>
+                <td onClick = "location.href='mem-Review.html'">5건</td>
+            </tr>
+            <tr>
+                <th onClick = "location.href='mem-pay.html'">결제</th>
+                <td onClick = "location.href='mem-pay.html'">1건</td>
+                <th onClick = "location.href='mem-QnA.html'">문의</th>
+                <td onClick = "location.href='mem-QnA.html'">1건</td>
+            </tr>
+        </table>
     </section>
     
-    <table class="tbList colortb">
-        <tr>
-            <th>이름</th>
-            <td>김사과</td>
-            <th>아이디</th>
-            <td>apple</td>
-        </tr>
-        <tr>
-            <th onClick = "location.href='mem-Coupon.html'">쿠폰</th>
-            <td onClick = "location.href='mem-Coupon.html'">1개</td>
-            <th onClick = "location.href='mem-Review.html'">리뷰</th>
-            <td onClick = "location.href='mem-Review.html'">5건</td>
-        </tr>
-        <tr>
-            <th onClick = "location.href='mem-pay.html'">결제</th>
-            <td onClick = "location.href='mem-pay.html'">1건</td>
-            <th onClick = "location.href='mem-QnA.html'">문의</th>
-            <td onClick = "location.href='mem-QnA.html'">1건</td>
-        </tr>
-    </table>
-    <section class="content2 infolist"><h2 >예약내역</h2></section>
-    <div class="formsc">
-        <table class="tbList ad-tb2">
-                <tr>
-                    <th>
-                        분류
-                    </th>
-                    <th>
-                        예약번호
-                    </th>
-                    <th>
-                        내용
-                    </th>
-                    <th>
-                        결제
-                    </th>
-                </tr> 
-                <tr>
-                    <td onClick = "location.href='mem-ticket.html'">티켓</td>
-                    <td>H45612</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                </tr>
-                <tr>
-                    <td onClick = "location.href='mem-fly.html'">항공권</td>
-               
-                    <td>T45612</td>
-                    <td>인천-다낭</td>
-                    <td>결제완료</td>
-                 </tr>
-        </table>
-    </div>
+    <section class="content2 infolist">
+        <div class="header_box">
+            <h2 >예약내역</h2>
+        </div>
+        <div class="formsc">
+            <table class="tbList ad-tb2">
+                    <tr>
+                        <th>
+                            분류
+                        </th>
+                        <th>
+                            예약번호
+                        </th>
+                        <th>
+                            내용
+                        </th>
+                        <th>
+                            결제
+                        </th>
+                    </tr> 
+                    <tr>
+                        <td onClick = "location.href='mem-ticket.html'">티켓</td>
+                        <td>H45612</td>
+                        <td>다낭 골든 베이</td>
+                        <td>결제완료</td>
+                    </tr>
+                    <tr>
+                        <td onClick = "location.href='mem-fly.html'">항공권</td>
+                   
+                        <td>T45612</td>
+                        <td>인천-다낭</td>
+                        <td>결제완료</td>
+                     </tr>
+            </table>
+        </div>
+    </section>
 
     <script src="../script.js"></script>
 </body>

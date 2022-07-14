@@ -428,15 +428,17 @@ main td {
 .header_box{
     margin: 0;
     margin-top: 90px;
-    width: 1300px;
+    width: 1200px;
+    position: relative;
+    margin: 60px auto 0;
+    left: 70px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
 }
 .content2 h2 {
-    width: 15%;
+    width: 200px;
     margin: 0;
-    margin-left: 60px;
     font-size: 24px;
     display: inline-block;
 }
@@ -456,7 +458,6 @@ main td {
     justify-content: right;
 }
 .content2 nav form .form-group{
-    width: 96%;
     display: flex;
     font-size: 16px;
 }
@@ -524,6 +525,11 @@ main td {
     letter-spacing: 1.2px;
     border: none;
 }
+.btnlist button > a{
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
 .btnlist button:first-child{
     margin-right: 10px;
 }
@@ -537,12 +543,12 @@ table.tbList {
 }
 
 table.tbDetail {
-    width: 950px;
+    width: 1100px;
     position: relative;
-    margin: 200px auto;
-    left: 300px;
+    margin: 30px auto;
     text-align: center;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 table tr {
@@ -555,8 +561,10 @@ table select {
 }
 th {
     border-bottom: 1.5px solid var(--dark);
-    font-size: 20px;
+    font-size: 16x;
     padding-bottom: 10px;
+    padding-top: 8px;
+    text-align: center;
 }
 td {
     padding: 15px;
@@ -682,7 +690,9 @@ font-size: 13px;
     justify-content: space-between;
 }
 .formbox_div5 div input:first-child,
-.formbox_div5 div input:nth-child(4){
+.formbox_div5 div input:nth-child(4),
+.formbox_div5 div input:nth-child(7),
+.formbox_div5 div input:nth-child(10){
     width: 100px;
     height: 25px;
     border: none;
@@ -690,15 +700,19 @@ font-size: 13px;
     border-radius: 10px;
     text-align: center;
     margin-bottom: 10px;
+    
 }
-.formbox_div5 input:first-child::placeholder,
-.formbox_div5 input:nth-child(4)::placeholder{
+.formbox_div5 div input:first-child::placeholder,
+.formbox_div5 div input:nth-child(4)::placeholder,
+.formbox_div5 div input:nth-child(7)::placeholder,
+.formbox_div5 div input:nth-child(10)::placeholder{
     color: white;
 }
 .formbox_div5{
     width: 500px;
 }
 .formbox_div6{
+    margin-top: 50px;
     width: 900px;
 }
 .formbox_div4 > input[type="checkbox"]{
@@ -788,7 +802,7 @@ font-size: 13px;
 .bottombox{
     display: flex;
     justify-content: space-between;
-    width: 700px;
+    width: 870px;
     margin-top: 10px;
 }
 .bottombox .span{
@@ -950,7 +964,6 @@ font-size: 13px;
 }
 .hbt {
     text-align: center;
-    margin-top: 50px;
 }
 .regis {
     position: relative;
@@ -1126,10 +1139,11 @@ font-size: 13px;
 .notice_detail{
     background-color: #f7f7f7;
     width: 1200px;
-    height: 700px;
+    height: 600px;
     box-sizing: border-box;
-    margin-left: 200px;
-    padding-left: 100px;
+    margin-top: 50px;
+    margin-left: 70px;
+    padding-left: 50px;
     padding-right: 100px;
     padding-top: 20px;
     font-size: 18px;
@@ -1137,13 +1151,15 @@ font-size: 13px;
 
 .notice_detail_1{
     text-align: center;
-    font-size: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .notice_detail_2{
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
-    left: 735px;
+    left: 1000px;
     padding-top: 10px;
 }
 
@@ -1191,8 +1207,8 @@ font-size: 13px;
     width: 1200px;
     height: 600px;
     box-sizing: border-box;
-    margin-left: 200px;
-    padding-left: 100px;
+    margin-left: 50px;
+    padding-left: 50px;
     padding-right: 100px;
     padding-top: 20px;
     font-size: 20px;
@@ -1224,7 +1240,7 @@ font-size: 13px;
     height: 35px;
     position: relative;
     top: -5px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .notice_register_2_2 input {
@@ -1249,12 +1265,12 @@ font-size: 13px;
 .regi {
     box-sizing: border-box;
     position: relative;
-    left: 1000px;
+    left: 780px;
     width: 210px;
     height: 30px;
-    padding-top: 80px;
     font-size: 18px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .regi_1 div{
@@ -1308,10 +1324,10 @@ font-size: 13px;
 /* 100 100 100 150 250 */
 .magazine_register{
     width: 1200px;
-    height: 1700px;
+    height: 600px;
     box-sizing: border-box;
-    margin-left: 200px;
-    padding-left: 100px;
+    margin-left: 50px;
+    padding-left: 50px;
     padding-right: 100px;
     padding-top: 20px;
     font-size: 20px;
@@ -1325,7 +1341,7 @@ font-size: 13px;
 .magazine_register_1_1, .magazine_register_2_1,  .magazine_register_3_1, .magazine_register_5_1{
     width :200px;
     height :60px;
-    text-align: center;
+    text-align: left;
     float:left;
 }
 
@@ -1344,7 +1360,7 @@ font-size: 13px;
     height: 30px;
     position: relative;
     top: -5px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -1399,7 +1415,7 @@ font-size: 13px;
 .magazine_register_5_3 button{
     width: 50px;
     height: 30px;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
     top: 50px;
     left: 20px;
@@ -1442,7 +1458,7 @@ font-size: 13px;
 .magazine_register_6_2 input {
     width: 250px;
     height: 50px;
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -1457,19 +1473,18 @@ font-size: 13px;
     width: 200px;
     height: 50px;
     float:left;
-    text-align: center;
 }
 
 .magazine_register_7_2{
-    width: 300px;
+    width: 260px;
     height: 50px;
     float:left;
 }
 
 .magazine_register_7_2 input{
-    width: 300px;
-    height: 40px;
-    font-size: 25px;
+    width: 270px;
+    height: 30px;
+    font-size: 16px;
     position: relative;
     top: 25px;
 }
@@ -1480,6 +1495,7 @@ font-size: 13px;
 }
 .magazine_register_8 h2{
     margin: 0;
+    font-size: 20px;
 }
 
 .magazine_register_9{
@@ -1490,8 +1506,10 @@ font-size: 13px;
 
 .magazine_register_9_1{
     width :200px;
-    text-align: center;
+    height :60px;
+    text-align: left;
     float:left;
+    margin-left: 1px;
 }
 
 .magazine_register_9_2{
@@ -1501,7 +1519,7 @@ font-size: 13px;
 
 .magazine_register_9_2 input {
     width : 720px;
-    height: 35px;
+    height: 30px;
     position: relative;
     top: -5px;
     border: 1px solid black;
@@ -1513,7 +1531,7 @@ font-size: 13px;
 
 .magazine_register_10_1{
     width:200px;
-    text-align: center;
+    text-align: left;
     float:left;
 }
 
@@ -1530,7 +1548,6 @@ font-size: 13px;
     width: 200px;
     height: 150px;
     float:left;
-    text-align: center;
     box-sizing: border-box;
 }
 
@@ -1543,7 +1560,7 @@ font-size: 13px;
 .magazine_register_11_2 input{
     width: 250px;
     height: 50px;
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
     cursor: pointer;    
 }
@@ -1551,15 +1568,16 @@ font-size: 13px;
 .magazine_register_12{
     text-align: center;
     box-sizing: border-box;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .magazine_register_12 button{
     width: 120px;
     height: 40px;
     cursor: pointer;
-    background-color: #ffb800;
-    font-size: 18px;
+    background-color: #0098A1;
+    font-size: 16px;
+    margin-bottom: 40px;
 }
 
 
@@ -1798,12 +1816,14 @@ div.j3 {
 .review_text{
     border: 1px solid black;
     margin-top: 30px;
-    margin-left: 275px;
+    margin-left: 100px;
     position: relative;
-    width: 1000px;
+    width: 1100px;
     text-align: left;
     height: 400px;
-    font-size: 30px;
+    font-size: 16px;
+    padding: 20px;
+    text-indent: 5px;
 }
 
 .colortb.tbDetail.rev_detail{
