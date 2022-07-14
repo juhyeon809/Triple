@@ -29,12 +29,20 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
                     <li><a href="air.html">항공권</a></li>
                     <li><a href="room.html">숙소</a></li>
                     <li><a href="packge.html">패키지</a></li>
-                    <li><a href="ticket.html" style="color:black; font-weight: 700; text-decoration: underline;">티켓</a></li>
+                    <li><a href="ticket.html"style="color:darkslategray; font-weight: bold;">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -92,53 +100,89 @@
     </selction>
     <!--사이드바 끝-->
     <div class="content2 ">
-        <h2>상품등록 - 티켓</h2>
-        <div class="register packge">
-            
-            <form action="">
-                <div class=""></div>
-                <div class="re_fl re_fl1">
-                    <p class="mintit">분류</p>
-                    <select name="" id="">
-                        <option value="">상품분류</option>
-                        <option value="">국내</option>
-                        <option value="">해외</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">제주</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">오사카</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">투어</option>
-                        <option value="">액티비티</option>
-                    </select>
-                </div>
-                <div class="re_fl re_fl2">
-                <p class="mintit">상품명</p> <input type="text"></div>
-                <div >
-                    <div class="re_fl re_fl3">
-                    <p class="mintit">상품가격</p>
-                    <div class="">
-                    <p> <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
-<p> <input type="text" placeholder="소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
-<p> <input type="text" placeholder="성인·소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원</p>
-
-                
+        <div class="header_box">
+            <h2>상품등록 | 티켓</h2>
+        </div>
+        <div class="formbox">
+            <ul class="formbox_ul">
+                <li>
+                    <div class="formbox_div4">
+                        <p class="formbox_ul_title">분류</p>
+                        <select name="" id="" class="formbox_ul_select1">
+                            <option value="">상품분류</option>
+                            <option value="">국내</option>
+                            <option value="">해외</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select1">
+                            <option value="">제주</option>
+                            <option value="">서울</option>
+                            <option value="">인천</option>
+                            <option value="">전라</option>
+                            <option value="">전북</option>
+                            <option value="">강원</option>
+                            <option value="">경상</option>
+                            <option value="">경북</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select1">
+                            <option value="">오사카</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select1">
+                            <option value="">투어</option>
+                            <option value="">액티비티</option>
+                        </select>
                     </div>
-                </div>
-                <div class="re_box">
-                <p class="mintit" style="width: 120px;">상품 프로그램</p>
-                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-            </div>
-                
-                    
-                    <div class="hbt" style="margin-right: 300px; margin-bottom: 50px;">
+                </li>
+                <li>
+                    <div class="formbox_div4">
+                        <p class="formbox_ul_title">상품명</p>
+                        <input type="text" width="200px" height="25px">
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div4">
+                        <p class="formbox_ul_title">상품 이미지</p>
+                        <input type="file" name="" id="">
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div4">
+                        <p class="formbox_ul_title">키워드</p>
+                        <input type="checkbox" style="margin-left: 0;"> 자유일정
+                        <input type="checkbox"> 특가
+                        <input type="checkbox"> 노옵션 노쇼핑
+                        <input type="checkbox"> 출발확정
+                        <input type="checkbox"> 한정특가
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div3">
+                        <p class="formbox_ul_title">상품가격</p>
+                        <div class="formbox_input_price">
+                            <p>
+                                <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                            </p>
+                            <p>
+                                <input type="text" placeholder="소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                            </p>
+                            <p>
+                                <input type="text" placeholder="성인·소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div6">
+                        <p class="formbox_ul_title_info">상품 프로그램</p>
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                    </div>
+                </li>
+                <li class="formbox_ul_btn">
+                    <div>
                         <button type="submit" class="regis">등록</button>
                     </div>
-                
-            </form>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 

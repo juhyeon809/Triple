@@ -28,9 +28,17 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
-                    <li><a href="air.html" style="color:black; font-weight: 700; text-decoration: underline;">항공권</a></li>
+                    <li><a href="air.html">항공사 신규 등록</a></li>
+                    <li><a href="room.html">항공기 신규 등록</a></li>
+                    <li><a href="packge.html">취항지 목록</a></li>
+                    <li><a href="ticket.html">취항지 신규 등록</a></li>
+                </ul>
+            </li>
+            <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown show">
+                    <li><a href="air.html" style="color:darkslategray; font-weight: bold;">항공권</a></li>
                     <li><a href="room.html">숙소</a></li>
                     <li><a href="packge.html">패키지</a></li>
                     <li><a href="ticket.html">티켓</a></li>
@@ -52,7 +60,7 @@
                     <li><a href="../coupon/couponList.html">목록</a></li>
                     <li><a href="../coupon/couponRegistration.html">등록</a></li>
                 </ul>
-            </li>
+            </li>    
             <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../event/eventList.html">목록</a></li>
@@ -92,8 +100,9 @@
     <!--사이드바 끝-->
 
     <div class="content2"> 
-        <h2>상품등록 - 항공권</h2>
-    
+        <div class="header_box">
+            <h2>상품등록 | 항공권</h2>
+        </div>
         <div class="formbox register">
             <form action="">
                 <div class="box">
@@ -105,42 +114,56 @@
                             <option value="">국외</option>
                         </select></p>
                         
-                        <p>출발시간 <input type="text" style="margin-left: 25px;"></p>
+                        <p>출발시간 <input type="time" name="" id="" style="margin-left: 25px;"></p>
                         
                         <p>비행시간 <input type="text" style="margin-left: 25px;"></p>
                         
                     </div>
                     <div class="rightbox">
-                        <p>항공사명 <input type="text"></p>
+                        <p>항공사명 
+                            <select name="" id="">
+                                <option value="">대한항공</option>
+                                <option value="">아시아나항공</option>
+                                <option value="">제주항공</option>
+                                <option value="">진에어</option>
+                                <option value="">부산에어</option>
+                            </select>
+                        </p>
                         
-                        <p>항공기명 <input type="text"></p>
+                        <p>항공기명 <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select></p>
                         
                         <p>도착지 <input type="text" style="margin-left: 35px;"></p>
                         
-                        <p>도착시간 <input type="text"></p>
+                        <p>도착시간 <input type="time" name="" id=""></p>
                         
                         <p>수화물 <input type="text" style="margin-left: 35px;"></p>
-                        
                     </div>
-                <div class="flbox flbox2">
+                </div>
+                <div class="box flbox flbox2">
                     <div class="bottombox btbox">
-                        <p>가격 <input type="text" placeholder="이코노미 클래스"readonly></p>
+                        <p>가격 <input type="text" placeholder="이코노미 클래스" readonly class="readonly"></p>
                         <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
                     </div>
                     <div class="bottombox btbox">
-                        <p class="fl"><input type="text" placeholder="비즈니스 클래스"readonly></p>
+                        <p class="fl"><input type="text" placeholder="비즈니스 클래스" readonly class="readonly"></p>
                         <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
                     </div>
                     <div class="bottombox btbox" >
-                        <p><input type="text" placeholder="퍼스트 클래스"readonly></p>
+                        <p><input type="text" placeholder="퍼스트 클래스" readonly class="readonly"></p>
                         <p class="span">성인<input type="text">원 / 소아 <input type="text">원</p>
                     </div>
                     
                     
                 </div>
             </div>
-            <div class="hbt" style="margin-right: 130px;">
-                <button type="submit" class="regis">등록</button>
+            <div class="hbt">
+                <button type="submit" class="regis" value="등록">등 록</button>
             </div>
             </form>
 

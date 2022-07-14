@@ -14,19 +14,28 @@
     <selction id="sidebar">
         <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
         <ul class="side-menu">
+            
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown show">
+                    <li><a href="all.html">전체</a></li>
+                    <li><a href="fly_reservation.html">항공권</a></li>
+                    <li><a href="room_resevation.html">숙소</a></li>
+                    <li><a href="packge_reservation.html">패키지</a></li>
+                    <li><a href="ticket_reservation.html">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="../booking/all.html">전체</a></li>
-                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
-                    <li><a href="../booking/room_resevation.html">숙소</a></li>
-                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
-                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -37,13 +46,13 @@
                     <li><a href="../product/ticket.html">티켓</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="admin_productlist_package.html">패키지</a></li>
-                    <li><a href="admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="admin_productlist_restaurant.html">다이닝</a></li>
+                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="../productlist/admin_productlist_lodging.html" style="color:darkslategray; font-weight: bold;">숙소</a></li>
+                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
             <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
@@ -84,7 +93,7 @@
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../manage/admin_manage_list.html">목록</a></li>
-                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    <li><a href="..//manage/admin_manage_register.html">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -93,46 +102,48 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>상품목록 숙소</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <div class="admin_productlist_select">
-                        <select name="" class="">
-                            <option value="여행지">여행지</option>
-                            <option value="하와이">하와이</option>
-                            <option value="미국">미국</option>
-                            <option value="일본">일본</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="도시">도시</option>
-                            <option value="도쿄">도쿄</option>
-                            <option value="요코하마">요코하마</option>
-                            <option value="교토">교토</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="숙소유형">숙소유형</option>
-                            <option value=호텔">호텔</option>
-                            <option value="리조트">리조트</option>
-                            <option value="모텔">모텔</option>
-                            <option value="펜션">펜션</option>
-                            <option value="카라반">카라반</option>
-                            <option value="글램핑">글램핑</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="검색분류">검색분류</option>
-                            <option value="상품명">상품명</option>
-                            <option value="상품번호">상품번호</option>
-                        </select>
-                        <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
-                        <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+        <div class="header_box">
+            <h2>상품목록 숙소</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <div class="admin_productlist_select">
+                            <select name="" class="">
+                                <option value="여행지">여행지</option>
+                                <option value="하와이">하와이</option>
+                                <option value="미국">미국</option>
+                                <option value="일본">일본</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="도시">도시</option>
+                                <option value="도쿄">도쿄</option>
+                                <option value="요코하마">요코하마</option>
+                                <option value="교토">교토</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="숙소유형">숙소유형</option>
+                                <option value=호텔">호텔</option>
+                                <option value="리조트">리조트</option>
+                                <option value="모텔">모텔</option>
+                                <option value="펜션">펜션</option>
+                                <option value="카라반">카라반</option>
+                                <option value="글램핑">글램핑</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="검색분류">검색분류</option>
+                                <option value="상품명">상품명</option>
+                                <option value="상품번호">상품번호</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
+                        
                     </div>
-                    
-                </div>
-            </form>
-        </nav>
+                </form>
+            </nav>
+        </div>
         <table class="tbList">
             <tr>
                 <th>
@@ -235,10 +246,10 @@
                 <td>Room 101</td>
             </tr>
         </table>
-        <span class="admin_productlist_lowbar">
-            <button class="admin_lowbar_btn" value="선택삭제">선택삭제</button>
-            <button class="admin_lowbar_btn" value="판매중지">판매중지</button>
-        </span>
+        <div class="btnlist">
+            <button value="선택삭제">선택삭제</button>
+            <button value="판매중지">판매중지</button>
+        </div>
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>

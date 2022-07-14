@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자|리뷰|티켓</title>
+    <title>관리자 | 항공사 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/admin/admin.css">
-    
+    <link rel="stylesheet" href="../admin.css">
+    <style>
+        p {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        input {
+            margin-right: 50px;
+            height: 25px;
+        }
+        select{
+            margin-left: 5px;
+            width: 100px;
+            text-align: center;
+            height: 25px;
+        }
+    </style>
+
 </head>
 <body>
     <!-- 사이드바-->
@@ -29,6 +47,15 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
+            <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown show">
+                    <li><a href="airlineRegist.html" style="color:darkslategray; font-weight: bold;">항공사 신규 등록</a></li>
+                    <li><a href="aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="destinationList.html">취항지 목록</a></li>
+                    <li><a href="destinationRegist.html">취항지 신규 등록</a></li>
+                    
+                </ul>
+            </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../product/air.html">항공권</a></li>
@@ -39,21 +66,21 @@
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="admin_productlist_package.html">패키지</a></li>
-                    <li><a href="admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="admin_productlist_restaurant.html">다이닝</a></li>
+                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../coupon/couponList.html">목록</a></li>
                     <li><a href="../coupon/couponRegistration.html">등록</a></li>
                 </ul>
-            </li>
+            </li>    
             <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../event/eventList.html">목록</a></li>
@@ -91,35 +118,24 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
+
+    
     <div class="content2">
-        <div class="j2">상품후기</div>
-        <div class="j3">티켓</div>
-        <table class="colortb tbDetail rev_detail">
+        <h2>항공사 신규 등록</h2>
 
-
-            <tr>
-                <th>사용자</th>
-                <td>유저3</td>
-                <th>날짜</th>
-                <td>2022.06.22</td>
-            </tr>
-            <tr>
-                <th>상품명</th>
-                <td>ticket3</td>
-                <th>분류</th>
-                <td>티켓</td>
-            </tr>
-            <tr>
-                <th>제목</th>
-                <td>티켓이 비싸요</td>
-                <th>상품코드</th>
-                <td>t1258</td>
-            </tr>
-        </table>
-        <div class="review_text">
-            <p>후기란</p>
-        </div>    
+        <div class="formbox register">
+            <form action="">
+                <div style="display: flex; margin-top: 150px;" >
+                    <p>항공사명 <input type="text"></p>
+                    <p>운항 노선 <select name="" id=""><option value="">국내</option>><option value="">국외</option><option value="">국내·국외</option></select></p>
+                </div>
+                <div class="hbt non">
+                    <button type="submit" class="regis " value="등록">등록</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <script src="..script.js"></script>
+
+    <script src="../script.js"></script>
 </body>
 </html>

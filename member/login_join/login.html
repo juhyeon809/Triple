@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login.html</title>
     <link rel="stylesheet" href="/member/login_join/css/style.css">
+    <script src="/member/login_join/js/login.js"></script>
 </head>
 <body>
     <header>
@@ -15,26 +16,27 @@
         </div>
     </header>
     </header>
-    <section id="sect" style="height:875px;">
+    <p class="title">트리플 | 로그인</p>
+    <section id="sect_login" class="sect">
         <div id="middle_logo"><img src="../../img/TRIPLE.png" alt=""></div>
         <div id="middle_image"><img src="../../img/login_tiple_window.svg" alt=""></div>
         
-        <form action="#" name="regform" id="regform">
+        <form action="/main.html" name="regform" id="regform" onsubmit="return sendit()">
     
             <ul class="list">
                 <li>
                     <div class="content">
-                        <input type="text" name="userid" id="userid" maxlength="20" placeholder="abc@gmail.com">
+                        <input type="text" name="email" id="email" maxlength="20" placeholder="abc@gmail.com">
                     </div>
                 </li>
                 <li>
                     <div class="content">
-                        <input type="password" name="userpw" id="userpw" maxlength="20" placeholder="영문, 숫자, 특수문자">
+                        <input type="password" name="userpw" id="userpw" minlength="6" maxlength="16" placeholder="영문, 숫자, 특수문자">
                     </div>
                 </li>
                 <li>
                     <div class="content">
-                        <input type="submit" value="로그인" class="sign_btn">
+                        <input type="submit" value="로그인" class="sign_btn" onsubmit="return sendit()">
                     </div>
                 </li>
 

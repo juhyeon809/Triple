@@ -32,7 +32,7 @@
             <li><a href="#" class="show" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
                     <li><a href="air.html">항공권</a></li>
-                    <li><a href="room.html" style="color:black; font-weight: 700; text-decoration: underline;">숙소</a></li>
+                    <li><a href="room.html" style="color:darkslategray; font-weight: bold;"">숙소</a></li>
                     <li><a href="packge.html">패키지</a></li>
                     <li><a href="ticket.html">티켓</a></li>
                 </ul>
@@ -93,83 +93,168 @@
     <!--사이드바 끝-->
 
     <div class="content2" >
-        <h2>상품등록 - 숙소</h2>
-        <div style="padding-left: 400px;">
+        <div class="header_box">
+            <h2>상품등록 - 숙소</h2>
+        </div>
         <div class="formbox">
-            <form action="">
-                <div class="box flexbox" >
-            <div id="sort_box_flex">
-            <p class="" id="select_box">분류<select name="" id=""></p>
-                <option value="">선택</option>
-                <option value="">호텔</option>
-                <option value="">모텔</option>
-                <option value="">리조트</option>
-                <option value="">펜션</option>
-                <option value="">글램핑</option>
-                <option value="">카라반</option>
-            </select>
-            <p id="select_box">도시<input onclick="showPopup()"></p>
-            </div>
-            <div style="display: flex; width: 900px;">
-            <div class="duplicate bottombox" id="room_name_info">
-                <p>객실명<input type="text">
-                <p>객실정보 <input type="file" name="" id=""></p> 
-                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-                <p id="option_p">객실옵션 
-                    <select name="" id=""><option value="">인원</option><option value="">최대2명</option><option value="">최대3명</option><option value="">최대4명</option></select>
-                     <select name="" id=""><option value="">흡연가능</option><option value="">인원불가능</option></select> 
-                     <select name="" id=""><option value="">오션뷰</option><option value="">시티뷰</option></select>
-                     <select name="" id=""><option value="">방사이즈</option><option value="">인원</option></select>
-                    <select name="" id=""><option value="">싱글침대</option><option value="">싱글침대2개</option><option value="">더블침대1개</option><option value="">퀸침대1개</option></select></p> 
-            </div>
-            <div>
-            <button onclick="divplus()" class="add_button" id="btn">추가</button></p>
-            </div>
+            <ul class="formbox_ul">
+                <li>
+                    <div class="formbox_div1">
+                        <p class="formbox_ul_title">분류</p>
+                        <select name="" id="" class="formbox_ul_select1">
+                            <option value="">선택</option>
+                            <option value="">호텔</option>
+                            <option value="">모텔</option>
+                            <option value="">리조트</option>
+                            <option value="">펜션</option>
+                            <option value="">글램핑</option>
+                            <option value="">카라반</option>
+                        </select>
+                    </div>
+                    <div class="formbox_div1">
+                        <p class="formbox_ul_title">도시</p>    <!--onclick="showPopup()"-->
+                        <select name="" id="" class="formbox_ul_select2">
+                            <option value="">대한민국</option>
+                            <option value="">미국</option>
+                            <option value="">일본</option>
+                            <option value="">중국</option>
+                            <option value="">러시아</option>
+                            <option value="">인도네시아</option>
+                            <option value="">태국</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div2">
+                        <p class="formbox_ul_title">객실명</p>
+                        <input type="text" width="200px" height="25px" class="formbox_ul_text">
+                    </div>
+                </li>
+                <li class="formbox_ul_btn">
+                    <div>
+                        <button onclick="divplus()" class="add_button" id="btn">추가</button></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div2">
+                        <p class="formbox_ul_title">객실정보</p>
+                        <input type="file" name="" id="" multiple>
+                    </div>
+                </li>
+                <li>
+                    <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                </li>
+                <li>
+                    <div class="formbox_div3">
+                        <p class="formbox_ul_title_op">객실옵션</p>
+                        <select name="" id="" class="formbox_ul_select3">
+                            <option value="">인원</option>
+                            <option value="">최대2명</option>
+                            <option value="">최대3명</option>
+                            <option value="">최대4명</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select3">
+                            <option value="">흡연가능</option>
+                            <option value="">인원불가능</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select3">
+                            <option value="">오션뷰</option>
+                            <option value="">시티뷰</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select3">
+                            <option value="">방사이즈</option>
+                            <option value="">인원</option>
+                        </select>
+                        <select name="" id="" class="formbox_ul_select3">
+                            <option value="">싱글침대</option>
+                            <option value="">싱글침대2개</option>
+                            <option value="">더블침대1개</option>
+                            <option value="">퀸침대1개</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 890px;">
+                        <p class="formbox_ul_title_info">숙소소개</p>
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 890px;">
+                        <p class="formbox_ul_title_info">기본정보</p>
+                        <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div3">
+                        <p class="formbox_ul_title_op">편의시설</p>
+                        <ul class="service_list">
+                            <li>
+                                <label for=""><input type="radio" name="breakfast" value="조식"> 조식</label>
+                                <label for=""><input type="radio" name="parking" value="주차"> 주차</label>
+                                <label for=""><input type="radio" name="wifi" value="인터넷"> 인터넷</label>
+                                <label for=""><input type="radio" name="cancel_free" value="무료취소"> 무료취소</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="radio" name="shuttle" value="셔틀"> 셔틀</label>
+                                <label for=""><input type="radio" name="storage" value="짐보관서비스"> 짐보관서비스</label>
+                                <label for=""><input type="radio" name="sauna" value="사우나"> 사우나</label>
+                                <label for=""><input type="radio" name="spar" value="스파·욕조"> 스파·욕조</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="radio" name="swimming_pool" value="수영장"> 수영장</label>
+                                <label for=""><input type="radio" name="kids" value="키즈클럽"> 키즈클럽</label>
+                                <label for=""><input type="radio" name="meeting_room" value="미팅룸"> 미팅룸</label>
+                                <label for=""><input type="radio" name="cleaning" value="세탁시설"> 세탁시설</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="radio" name="pets" value="반려동물"> 반려동물</label>
+                                <label for=""><input type="radio" name="no_smoking" value="금연객실"> 금연객실</label>
+                                <label for=""><input type="radio" name="support" value="장애인지원"> 장애인지원</label>
+                                <label for=""><input type="radio" name="service_language_kor" value="한국어지원"> 한국어지원</label>
+                            </li>
+                            <li>
+                                <label for=""><input type="radio" name="service_language_japan" value="일본어지원"> 일본어지원</label>
+                                <label for=""><input type="radio" name="service_language_eng" value="영어지원"> 영어지원</label>
+                                <label for=""><input type="radio" name="service_language_china" value="중국어지원"> 중국어지원</label>
+                                <label for=""><input type="radio" name="service_language_tai" value="태국어지원"> 태국어지원</label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div3">
+                        <p class="formbox_ul_title">숙소정책</p>
+                        <div class="formbox_div3_part">
+                            <p class="formbox_ul_title">체크인 시간</p>
+                            <input type="time">
+                        </div>
+                        <div class="formbox_div3_part">
+                            <p class="formbox_ul_title">체크아웃 시간</p>
+                            <input type="time">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="formbox_div3">
+                        <textarea class="weditor3" id="weditor3" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
+                    </div>
+                </li>
+                <li>
+                    <div style="width: 890px;">
+                        <p class="formbox_ul_title_info">숙소 주요정보</p>
+                        <textarea class="weditor4" id="weditor4" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
+                    </div>
+                </li>
+                <li class="formbox_ul_btn">
+                    <div>
+                        <button <button type="submit" class="regis">등록</button>
+                    </div>
+                </li>
+            </ul>
         </div>
-            <div id="text_area_flex">
-            <p>숙소소개 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-            </div>
-            <div id="text_area_flex">
-            <p>기본정보 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-            </div>
-            <div id="facility">
-                <p class="index">편의시설</p>
-                <div>
-                <p><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select></p>
-                <p><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select><select name="" id=""></select></p>
-                
-                </div>
-            </div>
-            <div id="policy_box">
-            <p>숙소정책</p>
-            <p style="font-weight: normal; margin-left: 45px;">체크인 시간
-                <select name="" id=""> 
-                    <option value="">13:00</option>
-                    <option value="">14:00</option>
-                    <option value="">15:00</option>
-                    <option value="">16:00</option>
-                </select></p>
-            <p style="font-weight: normal;">체크아웃 시간
-                <select name="" id="">
-                    <option value="">10:00</option>
-                    <option value="">11:00</option>
-                    <option value="">12:00</option>
-                    <option value="">13:00</option>
-                </select>
-            </p></div>
-            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; margin-left: 120px;" ></textarea>
-            <div id="text_area_flex">
-                <p>숙소 중요정보 </p><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea>
-                </div>
-        </div>
-        <div class="hbt" style="margin-right: 300px; margin-bottom: 50px;">
-            <button type="submit" class="regis">등록</button>
-        </div>
-    </form>
-</div>
     </div>
-</div>
-<script>
+    <script>
     var oEditors = [];
     nhn.husky.EZCreator.createInIFrame({
     oAppRef : oEditors,
@@ -177,7 +262,35 @@
     sSkinURI : "../smarteditor/SmartEditor2Skin.html",
     fCreator : "createSEditor2",
     });
-</script>
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor1",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor2",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor3",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor4",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    </script>
     <script src="../script.js"></script>
 </body>
 </html>

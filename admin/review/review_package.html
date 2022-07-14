@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 리뷰</title>
+    <title>관리자 | 리뷰 | 패키지</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="/admin/admin.css">
     
 </head>
 <body>
@@ -48,14 +47,14 @@
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
-                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    <li><a href="admin_productlist_airline.html">항공권</a></li>
+                    <li><a href="admin_productlist_lodging.html">숙소</a></li>
+                    <li><a href="admin_productlist_package.html">패키지</a></li>
+                    <li><a href="admin_productlist_ticket.html">티켓</a></li>
+                    <li><a href="admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="review.html"style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -101,71 +100,34 @@
     </selction>
     <!--사이드바 끝-->
     <div class="content2">
-        <h2>상품후기</h2>
-        <table class="reivew.table tbList">
-            <tr>
-                <th>
-                    <input type="checkbox" name="" id="">
-                </th>
-                <th>
-                    분류
-                </th>
-                <th>
-                    제목                
-                </th>
-                <th>
-                    코드
-                </th>
-                <th>
-                    날짜
-                </th>
-            </tr> 
-            <tr onclick="location.href='./review_package.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>패키지</td>
-                <td>만족스러운 패키지</td>
-                <td>pakege123</td>
-                <td>2022-06-22</td>
-            </button></a>        
-            </tr>
-            <tr onclick="location.href='./review_sugso.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>숙소</td>
-                <td>깨끗한 숙소</td>
-                <td>hotel123</td>
-                <td>2022-07-02</td>              
-            </tr>       
-            <tr onclick="location.href='./review_restaurant.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>맛집</td>
-                <td>불만족스러운 맛집</td>
-                <td>restaurant127</td>
-                <td>2022-06-22</td>              
-            </tr>    
-            <tr onclick="location.href='./review_ticket.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>티켓</td>
-                <td>티겟값이 비싸요</td>
-                <td>ticket88</td>
-                <td>2022-06-22</td>              
-            </tr>    
-            <tr onclick="location.href='./review_air.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>항공편</td>
-                <td>비행이 편안해요</td>
-                <td>airplane</td>
-                <td>2022-06-27</td>              
-            </tr>    
+        <div class="j2">상품후기</div>
+        <div class="j3">패키지</div>
+        <table class="colortb tbDetail rev_detail">
 
+
+            <tr>
+                <th>사용자</th>
+                <td>유저1</td>
+                <th>날짜</th>
+                <td>2022.06.22</td>
+            </tr>
+            <tr>
+                <th>상품명</th>
+                <td>pakage103</td>
+                <th>분류</th>
+                <td>패키지</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>패키지값이 싸요</td>
+                <th>상품코드</th>
+                <td>p158</td>
+            </tr>
         </table>
-        <section class="btnlist_review">
-            <button type="submit">선택삭제</button>
-        </section>
-        <div class="pageNum">
-            <p>1 2 3 4 5</p>
-        </div>
-    
+        <div class="review_text">
+            <p>후기란</p>
+        </div>    
     </div>
-    <script src="/admin/script.js"></script>
+    <script src="..script.js"></script>
 </body>
 </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 | 취항지 등록</title>
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../admin.css">
+    </head>
+    <body>
+        
+    <style>
+        .tableBorder{
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 30px;
+    width: 1000px;
+}
+form ul {
+            list-style: none;
+            width:980px;
+            padding: 0;
+            margin: 0;
+}
+.regForm ul{
+    background: none;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 20px;
+    align-items: center;
+    
+}
+.tit_lbl {
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+    
+}
+.regForm ul select{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+.regForm ul input{
+    width: 200px;
+    height: 30px;
+}
+.reg_content{
+    float: right;
+}
+.buttonArea{
+    width: 200px;
+}
+.buttonArea button {
+    width: 50px;
+}
+
+    </style>
+        <!-- 사이드바-->
+        <selction id="sidebar">
+            <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+            <ul class="side-menu">
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../member/memberlist.html">회원목록</a></li>
+                        <li><a href="../member/">회원가입</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../booking/all.html">전체</a></li>
+                        <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="../booking/room_resevation.html">숙소</a></li>
+                        <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="destinationList.html">취항지 목록</a></li>
+                        <li><a href="destinationRegist.html"style="color:darkslategray; font-weight: bold;">취항지 신규 등록</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../product/air.html">항공권</a></li>
+                        <li><a href="../product/room.html">숙소</a></li>
+                        <li><a href="../product/packge.html">패키지</a></li>
+                        <li><a href="../product/ticket.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    </ul>
+                </li>
+                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                </li>
+                <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../coupon/couponList.html">목록</a></li>
+                        <li><a href="../coupon/couponRegistration.html">등록</a></li>
+                    </ul>
+                </li>    
+                <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../event/eventList.html">목록</a></li>
+                        <li><a href="../event/eventRegister.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../notice/notice-list.html">목록</a></li>
+                        <li><a href="../notice/notice-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../magazine/magazine-list.html">목록</a></li>
+                        <li><a href="../magazine/magazine-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+                    
+                </li>
+                <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../manage/admin_manage_list.html">목록</a></li>
+                        <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            </ul>
+        </selction>
+        <!--사이드바 끝-->
+        <div class="content2">
+            <h2>취항지 신규 등록</h2>
+<div class="form">
+    <form action="#" class="regForm">
+        <div class="register">
+            
+
+            <div>
+            <ul>
+                <li class="clear">
+                    <span class="tit_lbl">대륙 구분</span>
+                    <div class="reg_content">
+                        <select class="textBox selectBox">
+                            <option value="airplaneType">대한민국</option>
+                            <option value="airplaneName">동남아시아</option>
+                            <option value="seatCount">동북아시아</option>
+                            <option value="seatCount">대양주</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="clear">
+                    <span class="tit_lbl">신규 취항지명</span>
+                    <div class="reg_content"><input type="text" class="textBox"></div>
+                </li>
+
+                <li class="clear">
+                    <span class="tit_lbl">공항코드</span>
+                    <div class="reg_content"><input type="text" class="textBox"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="hbt" style="clear: both;">
+            <button type="submit" class="regis " value="등록">등록</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 회원정보|회원가입</title>
+    <title>관리자 | 회원정보 | 회원가입</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -17,7 +17,7 @@
             <li><a onclick="showDetail(this)" class="0" style="background-color: white; color:#0098A1;"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
                     <li><a href="memberlist.html?name=0&detail=1" id="1">회원목록</a></li>
-                    <li><a href="memberSign-up.html?name=0&detail=2" style="color:black; font-weight: 700; text-decoration: underline;">회원가입</a></li>
+                    <li><a href="memberSign-up.html?name=0&detail=2" style="color:darkslategray; font-weight: bold;">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -27,6 +27,14 @@
                     <li><a href="../booking/room_resevation.html">숙소</a></li>
                     <li><a href="../booking/packge_reservation.html">패키지</a></li>
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -91,7 +99,9 @@
     </selction>
     <!--사이드바 끝-->
     <div class="content2">
-        <h2>회원가입 폼</h2> 
+        <div class="header_box">
+            <h2>회원가입 폼</h2> 
+        </div>
             <table class="tbList">
                 <tr>
                     

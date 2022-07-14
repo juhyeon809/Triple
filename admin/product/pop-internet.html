@@ -5,17 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+            word-break: break-all;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        form {
+            display: flex;
+            height: 200px;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .box1{
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            height: 300px;
+            margin: 0;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .box2{
+            display: flex;
+            flex-direction: column;
+            width: 290px;
+            height: 180px;
+            padding-top: 10px;
+            border: 1px solid black;
+        }
+        .totbox{
+            border: 1px solid black;
+            width: 380px;
+            margin: 0 auto;
+            height: 60px;
+        }
+        .submit {
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+    </style>
 </head>
 <body>
-    <div>
-        <p>인터넷</p>
-        <div>
-            <label for=""><input type="checkbox" name="" id="">WI-Fi(무료, 공공장소)</label>
-            <label for=""><input type="checkbox" name="" id="">WI-Fi 무료</label>
-            <label for=""><input type="checkbox" name="" id="">인터넷</label>
+    <div class="box">
+        <form action="">
+        
+            <div class="box1">
+                <h3>인터넷</h3>
+            </div>
+            <div class="box2">
+                <label for=""><input type="checkbox" name="" id="">WI-FI(무료, 공공장소)</label>
+                <label for=""><input type="checkbox" name="" id="">WI-FI</label>
+                <label for=""><input type="checkbox" name="" id="">인터넷</label>
+            </div>
         </div>
-        <div></div>
-        <button type="submit">등록</button>
-    </div>
+        <div class="totbox">
+
+        </div>
+            <div class="submit">
+            <button type="submit">등록</button>
+            </div>
+        </form>
+        <script>
+            function getpop(internet){
+                if(internet.id == 'korea'){
+                    let city = document.getElementsByClassName('city')[0];
+                    console.log(city);
+                city.innerHTML = "<label for='seoul'><input type='radio' name='city' id='seoul' onclick='getDetail(this)'>서울</label><label for='busan'><label for='incheon'><input type='radio' name='city' id='incheon' onclick='getDetail(this)'>인천</label><input type='radio' name='city' id='busan' onclick='getDetail(this)'>부산</label><label for='jeju'><input type='radio' name='city' id='jeju' onclick='getDetail(this)'>제주</label><label for='gangwon'><input type='radio' name='city' id='gangwon' onclick='getDetail(this)'>강원</label><label for='gyeonggi'><input type='radio' name='city' id='gyeonggi' onclick='getDetail(this)'>경기</label><label for='gyeongsang'><input type='radio' name='city' id='gyeongsang' onclick='getDetail(this)'>경상</label><label for='chungcheong'><input type='radio' name='city' id='chungcheong' onclick='getDetail(this)'>충청</label><label for='jeolla'><input type='radio' name='city' id='jeolla' onclick='getDetail(this)'>전라</label>";
+                }
+                if(internet.id == 'Overseas'){
+                    let city = document.getElementsByClassName('city')[0];
+                    console.log(city);
+                city.innerHTML = "<label for='japan'><input type='radio' name='city' id='japan' onclick='getDetail(this)'>일본</label><label for='china'><input type='radio' name='city' id='china' onclick='getDetail(this)'>중국</label><label for='vietnam'><input type='radio' name='city' id='vietnam' onclick='getDetail(this)'>베트남</label>";
+                }
+            }
+            
+        </script>
 </body>
 </html>

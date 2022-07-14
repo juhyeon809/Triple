@@ -1,14 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 리뷰</title>
+    <title>관리자 | 항공기등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
-    
+    <style>
+        
+        .leftbox div,
+        .rightbox div{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+    </style>
 </head>
 <body>
     <!-- 사이드바-->
@@ -30,12 +37,13 @@
                     <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
-                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
-                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+            <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown show">
+                    <li><a href="airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="aircraftRegist.html" style="color:darkslategray; font-weight: bold;">항공기 신규 등록</a></li>
+                    <li><a href="destinationList.html">취항지 목록</a></li>
+                    <li><a href="destinationRegist.html">취항지 신규 등록</a></li>
+                    
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -55,14 +63,14 @@
                     <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="review.html"style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../coupon/couponList.html">목록</a></li>
                     <li><a href="../coupon/couponRegistration.html">등록</a></li>
                 </ul>
-            </li>
+            </li>    
             <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../event/eventList.html">목록</a></li>
@@ -100,72 +108,31 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <div class="content2">
-        <h2>상품후기</h2>
-        <table class="reivew.table tbList">
-            <tr>
-                <th>
-                    <input type="checkbox" name="" id="">
-                </th>
-                <th>
-                    분류
-                </th>
-                <th>
-                    제목                
-                </th>
-                <th>
-                    코드
-                </th>
-                <th>
-                    날짜
-                </th>
-            </tr> 
-            <tr onclick="location.href='./review_package.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>패키지</td>
-                <td>만족스러운 패키지</td>
-                <td>pakege123</td>
-                <td>2022-06-22</td>
-            </button></a>        
-            </tr>
-            <tr onclick="location.href='./review_sugso.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>숙소</td>
-                <td>깨끗한 숙소</td>
-                <td>hotel123</td>
-                <td>2022-07-02</td>              
-            </tr>       
-            <tr onclick="location.href='./review_restaurant.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>맛집</td>
-                <td>불만족스러운 맛집</td>
-                <td>restaurant127</td>
-                <td>2022-06-22</td>              
-            </tr>    
-            <tr onclick="location.href='./review_ticket.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>티켓</td>
-                <td>티겟값이 비싸요</td>
-                <td>ticket88</td>
-                <td>2022-06-22</td>              
-            </tr>    
-            <tr onclick="location.href='./review_air.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>항공편</td>
-                <td>비행이 편안해요</td>
-                <td>airplane</td>
-                <td>2022-06-27</td>              
-            </tr>    
 
-        </table>
-        <section class="btnlist_review">
-            <button type="submit">선택삭제</button>
-        </section>
-        <div class="pageNum">
-            <p>1 2 3 4 5</p>
+    <div class="content2">
+        <h2>항공기 신규 등록</h2>
+
+        <div class="formbox register">
+            <form action="">
+                <div class="box">
+                    <div class="leftbox">
+                        
+                        <div><p>항공사 명</p><select name="" id=""></select></div>
+                        <div><p>항공기명 </p><select name="" id=""></select></div>
+                        <div><p>총 수용 좌석</p> <input type="text"></div>
+                    </div>
+                    <div class="rightbox">
+                        <div><p>항공기 타입 </p><select name="" id=""></select></div>
+                        <div><p>국내/국외 </p><select name="" id=""></select></div>
+                    </div>
+                </div>
+                <div class="hbt non" style="margin-right: 150px; padding-top: 50px;">
+                    <button type="submit" class="regis " value="등록">등록</button>
+                </div>
+            </form>
         </div>
-    
     </div>
-    <script src="/admin/script.js"></script>
+    
+    <script src="../script.js"></script>
 </body>
 </html>
