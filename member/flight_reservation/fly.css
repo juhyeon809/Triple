@@ -6,7 +6,7 @@
 .title {
     width: 950px; 
     margin: 0 auto; 
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .title > .fly_title {
     width: 900px;
@@ -16,6 +16,7 @@
 .fly_title{  
     font-size: 18px;
     font-weight: bold;
+    color: #425052;
 }
 #flybox {
     background-color:  #F7F7F7; 
@@ -26,7 +27,6 @@
 }
 .flybox > ul {
     margin: 0 auto;
-
     list-style: none;
 }
 .flybox > ul > li {
@@ -149,6 +149,7 @@ input[type="button"]{ width: 100px;}
 .special .imgbox:nth-child(6) {clear: both;}
 
 h4 {font-size: 18px;}
+
 
 
 
@@ -539,8 +540,7 @@ p.sm {
 } 
 .rightbox .paydtail { 
     padding: 20px;
-    font-size: 16px; 
-    color: #919191;
+    font-size: 14px; 
 }
 .rightbox .paydtail h3 {
     text-decoration: underline;
@@ -559,7 +559,7 @@ p.sm {
     margin-bottom: 20px;
     }
 .mbox .title {
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -595,7 +595,7 @@ p.sm {
 .bbox .leftb, .bbox .rightb {width: 49%; }
 .bbox .leftb .title { 
     width: 100%;
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
 }
 .bbox .leftb .title span {
@@ -643,8 +643,7 @@ p.sm {
 .bbox input[type="checkbox"] {width: 12px; margin-right: 5px; height: 15px;}
 .bbox .btSm { 
     margin-top: 5px; 
-    font-size: 12px; 
-    color: #868686;
+    font-size: 14px; 
     text-indent: 5px;
 }
 
@@ -660,7 +659,7 @@ p.sm {
     width: 190px;
 }
 .bbox .rightb .title { 
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
 }
 .bbox .rightb select {
@@ -679,12 +678,13 @@ p.sm {
     margin-top: 20px;
 }
 .cont > p:first-child{
+    font-size: 14px;
     color: red;
-    font-weight: bold;
+    font-weight: normal;
 }
 .cont > p {
-    font-size: 13px;
-    color: #425052;
+    font-size: 14px;
+    font-weight: normal;
     word-wrap: break-word;
 }
 .lastbox {
@@ -703,7 +703,11 @@ p.sm {
 }
 .contag > p > label {
     font-size: 14px;
+    font-weight: normal;
     word-spacing: 0.2;
+}
+.contag > p > label > a {
+    color: #2680EB;
 }
 .lastbox > .conbtn {
     width: 24%;
@@ -711,10 +715,12 @@ p.sm {
 .lastbox > .conbtn input[type="button"]{
     width: 200px;
     height: 50px; 
+    padding: 10px;
+    box-sizing:border-box;
     border: none; color: #fff; 
-    background-color: #468cd3;
+    background-color: #2680EB;
     border-radius: 10px; 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 1.2px;
     text-align: center;
@@ -854,4 +860,29 @@ footer {clear: both;}
     padding-left: 10px;
     margin-right: 10px;
     padding-top: 5px;
+}
+
+.leftbox > .flyinfopay > .fly_subtitle, .leftbox > .flyinfopay > div > .pleft, .leftbox > .flyinfopay > .pleft, .mbox > .title, .leftb > .title, .rightb > .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    /* color: skyblue; */
+}
+
+.paydetail1 {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #2680EB;
+}
+
+.bbox > .leftb > .title > span {
+    font-size: 14px;
+    color: #2680EB;
+}
+
+.paydetail2, .box_title, .mbox > ul > li > .pnon, .bbox .btSm, .mbox > ul > li > input::placeholder, .bbox > .leftb > .inLRbox > .inLeft > input::placeholder,.bbox > .leftb > .inLRbox > .inRight > input::placeholder, .bbox > .rightb > .inLRbox > .inLeft > input::placeholder, .bbox > .rightb > .inLRbox > .inRight > input::placeholder, .cont {
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+    /* color: skyblue; */
 }
