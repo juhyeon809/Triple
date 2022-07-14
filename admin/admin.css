@@ -662,10 +662,41 @@ table a:visited{
     width: 800px;
     padding-left: 3px;
 }
+.formbox_input_price input:first-child {
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color: #36b8be;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.formbox_input_price input:first-child::placeholder{
+font-size: 13px;
+    color: white;
+}
 .formbox_div5{
     width: 620px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
+}
+.formbox_div5 div input:first-child,
+.formbox_div5 div input:nth-child(4){
+    width: 100px;
+    height: 25px;
+    border: none;
+    background-color: #36b8be;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.formbox_div5 input:first-child::placeholder,
+.formbox_div5 input:nth-child(4)::placeholder{
+    color: white;
+}
+.formbox_div5{
+    width: 500px;
 }
 .formbox_div6{
     width: 900px;
@@ -699,9 +730,9 @@ table a:visited{
 .formbox_ul_select2{
     width: 100px;
 }
-.formbox_ul_select3{
+/* .formbox_ul_select3{
     width: 130px;
-}
+} */
 .formbox_ul_text{
     width: 300px;
 }
