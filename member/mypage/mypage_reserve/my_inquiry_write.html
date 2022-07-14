@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1:1 문의쓰기</title>
     <link rel="stylesheet" href="./css/my_reserve_main.css">
+    <script src="./js/reserve.js"></script>
 </head>
 <body>
     <header>
@@ -20,17 +21,19 @@
             <div id="main_title">MY PAGE | 내 예약</div>
             <div id="inq_wr_main">
                 <div id="inq_li_1">1:1 문의</div>
+                <form action="./my_inquiry_list.html" onsubmit="return sendit()">
                 <div id="inq_wr_2">
                     <div id="inq_wr_2_1">유형 <span>*</span></div>
-                    <div id="inq_wr_2_2"><input type="text" value=" 항공" spellcheck="false" data-ms-editor="true"></div>
+                    <div id="inq_wr_2_2"><input type="text" value="" spellcheck="false" data-ms-editor="true" name="
+                        category" id="category" placeholder="항공 or 숙소 or 투어티켓"></div>
                 </div>
                 <div id="inq_wr_3">
                     <div id="inq_wr_3_1">제목 <span>*</span></div>
-                    <div id="inq_wr_3_2"><input type="text" spellcheck="false" data-ms-editor="true"></div>
+                    <div id="inq_wr_3_2"><input type="text" spellcheck="false" data-ms-editor="true" name="title" id="title" placeholder="제목을 입력해주세요"></div>
                 </div>
                 <div id="inq_wr_4">
                     <div id="inq_wr_4_1">이름</div>
-                    <div id="inq_wr_4_2"><input type="text" value=" 김사과" spellcheck="false" data-ms-editor="true"><editor-squiggler><style>
+                    <div id="inq_wr_4_2"><input type="text" value="" spellcheck="false" data-ms-editor="true"><editor-squiggler><style>
   @media print {
     .ms-editor-squiggles-container {
       display:none !important;
@@ -41,16 +44,16 @@
   }</style><div class="ms-editor-squiggles-container"></div></editor-squiggler></div>
                 </div>
                 <div id="inq_wr_5">
-                    <div id="inq_wr_5_1">이메일 <span>*</span></div>
-                    <div id="inq_wr_5_2"><input type="text" value=" apple@apple.com" spellcheck="false" data-ms-editor="true"> <a href="#">수정</a></div>
+                    <div id="inq_wr_5_1">이메일 <!--<span>*</span>--></div>
+                    <div id="inq_wr_5_2"><input type="text" placeholder=" apple@apple.com" spellcheck="false" data-ms-editor="true" readonly name="email" id="email"> <!-- <a href="#">수정</a> --></div>
                 </div>
                 <div id="inq_wr_6">
-                    <div id="inq_wr_6_1">문의내용 <span>*</span></div>
-                    <textarea name="inquiry" id="inq_wr_6_2" spellcheck="false" data-ms-editor="true"></textarea>
+                    <div id="inq_wr_6_1">문의내용 <!--<span>*</span>--></div>
+                    <div><input type="text" id="inq_wr_6_2" cols="40" rows="5"></div></textarea>
                 </div>
                 <div id="inq_wr_7">
                     <div id="inq_wr_7_1">첨부파일</div>
-                    <div id="inq_wr_7_2"><button>첨부파일</button></div>
+                    <div id="inq_wr_7_2"><input type="file" value="첨부파일"></div>
                 </div>
                 <div id="inq_wr_8">
                     <div id="inq_wr_8_1">10MB 이내 모든 이미지 및 허용된 문서 (MS office, hwp, pdf, txt)와 zip 파일을 5개까지 첨부가능합니다. </div>
@@ -58,9 +61,10 @@
                 <div id="inq_wr_9">
                     수집하는 개인 정보 [(필수) 이메일, 휴대폰 번호, 문의내용, (선택) 첨부파일]는 문의 내용 처리 및 고객 불만을 해결하기 위해 사용되며, 관련 법령에 따라 3년간 보관 후 삭제 됩니다. 문의 접수, 처리 및 회신을 위해 꼭 필요한 정보이므로 동의해 주셔야 서비스를 이용하실 수 있습니다. 
                 </div>
-                <div id="inq_wr_10"><input type="checkbox"> 위, 개인정보 수집 및 활용에 동의합니다.</div>
+                <div id="inq_wr_10"><label><input type="checkbox" name="box"> 위, 개인정보 수집 및 활용에 동의합니다.</label></div>
                 <div id="inq_wr_11">
                     <button id="inq_wr_11_1">접수</button>
+                </form>
                 </div>
             </div>
         </div>

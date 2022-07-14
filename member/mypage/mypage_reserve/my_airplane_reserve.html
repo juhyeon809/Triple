@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약한 항공권</title>
     <link rel="stylesheet" href="./css/my_reserve_main.css">
+    <script src="./js/reserve.js"></script>
 </head>
 <body>
     <header>
@@ -57,7 +58,9 @@
                         <div id="air_main_3_1_1">총 결제금액</div>
                         <div id="air_main_3_1_2">57,000원</div>
                     </div>
-                    <div id="air_main_3_2"><a href="#">예약취소</a></div>
+                    <form id="frm" action="./my_airplane_reserve_cancle.html">
+                    <div id="air_main_3_2"><input type="submit" value="예약취소" onclick="cancle1()"></div>
+                    </form>
                 </div>
 
                 <div id="air_main_4">

@@ -464,7 +464,7 @@
     font-size: 16px;
     font-weight: bold;
     position: relative;
-    left: 285px;
+    left: 142px;
     line-height: 30px;
     border: 0;
     cursor: pointer;
@@ -585,19 +585,31 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    float:left;
 }
 
 #loc_info_4{ 
     margin-right: 10px;
     background-color: white;
-    border: 0.5px solid #707070;
     color:#425052;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.loc_info_4_1{
+    border: 0.5px solid #707070;
 }
 
 #loc_info_5{
     background-color: #458cd3;
     border:0;
     color: white;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    width: 147px;
+    line-height: 40px;
 }
 
 #location_info_2 a {
@@ -1148,7 +1160,7 @@
     text-align: right;
 }
 
-#lg_rm_if_main_2_1 > input {
+#lg_rm_if_main_2_1 a{
     width: 130px;
     height: 40px;
     border-radius: 30px;
@@ -1162,6 +1174,23 @@
     background-color: #50e3c2;
     border: 0;
     cursor: pointer;
+    
+}
+
+#lg_rm_if_main_2_1_1{
+    width: 130px;
+    height: 40px;
+    border-radius: 30px;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background-color: #50e3c2;
+    text-align: center;
+    line-height: 40px;
+    top: 25px;
+    left: 340px;
 }
 
 #lg_rm_if_main_2_2{
@@ -1222,6 +1251,7 @@
     box-sizing: border-box;
     margin-left: 50px;
     color: #425052;
+    position: relative;
 }
 
 #lg_rm_if_main_2_3_1{
@@ -1568,7 +1598,7 @@
     border-radius: 10px;
     background-color: #f7f7f7;
     color: #425052;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 #rm_re_s_1_1_5{
@@ -1631,18 +1661,25 @@ border: 2px solid #b6b6b6;
 border-radius: 10px;
 background-color: #f7f7f7;
 color: #425052;
-font-size: 16px;
+font-size: 13px;
 }
 
 #rm_re_s_1_2_5 input {
-    width: 124px;
-    height: 46px;
+    width: 50px;
+    height: 30px;
     border: 2px solid #b6b6b6;
-    border-radius: 10px;
     background-color: #f7f7f7;
     color: #425052;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+
+#rm_re_s_1_2_5{
+    color: #425052;
+    position: relative;
+    top: 10px;
 }
 
 #rm_re_s_2{
@@ -2003,6 +2040,10 @@ font-size: 16px;
     height: 165px;
 }
 
+#lg_rm_pay_2_2 input:focus{
+    border: 3px solid #50e3c2;
+}
+
 #lg_rm_pay_2_2_1{
     width: 210px;
     height: 113px;
@@ -2029,7 +2070,7 @@ font-size: 16px;
     cursor: pointer;
 }
 
-#lg_rm_pay_2_3{
+#check_module{
     width: 440px;
     height: 60px;
     border-radius: 30px;

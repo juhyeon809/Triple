@@ -395,8 +395,14 @@ body {
     padding-top: 10px;
 }
 
-#air_main_3_2 a {
+#air_main_3_2 input {
     color: #1592e6;
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 
@@ -452,7 +458,7 @@ body {
     font-size: 20px;
 }
 
-/* my_inquiry_list */
+/* my_inq_wr_6_2_list */
 
 /* 375 */
 #my_inq_main{
@@ -593,6 +599,11 @@ body {
     border: 1px solid #d0d0d0;
 }
 
+#inq_wr_7_2{
+    position: relative;
+    top: 5px;
+}
+
 #inq_wr_2_1{
     box-sizing: border-box;
     padding-top: 48px;
@@ -643,6 +654,7 @@ body {
     width: 473px;
     resize: none;
     height: 261px;
+    font-size: 16px;
 }
 
 #inq_wr_6{
@@ -1143,11 +1155,16 @@ body {
     right: 92px;
 }
 
-#rm_c_10_1_3 a{
+#rm_c_10_1_3 input{
     font-size: 23px;
     font-weight: bold;
     color: #1592e6;
-
+    background-color: white;
+    border: 0;
+    text-decoration: underline;
+    position: relative;
+    right: 5px;
+    cursor: pointer;
 }
 
 #rm_c_10_2_1{

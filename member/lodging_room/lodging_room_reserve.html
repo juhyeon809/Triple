@@ -7,6 +7,7 @@
     <title>객실예약</title>
     <link rel="stylesheet" href="/member/lodging_room/css/lodging_room_main.css">
     <link rel="stylesheet" href="/css/common.css">
+    <script src="./js/lodging.js"></script>
 </head>
 <body>
     <div id="backg_image_area">
@@ -69,26 +70,27 @@
                 </div>
             </div>
         </div>
-
+        
+        <form action="./lodging_room_payment.html" name="reserve" id="reserve" onsubmit="return sendit()">
         <div id="lg_rm_if_re_s">
             <div id="rm_re_s_1">
                 <div id="rm_re_s_1_1">
                     <div id="rm_re_s_1_1_1">예약자 정보</div>
-                    <div id="rm_re_s_1_1_2">한글명<br><input type="text" value="김사과"></div>
-                    <div id="rm_re_s_1_1_3">휴대전화번호<br><input type="text" value="010-1111-1111"></div>
-                    <div id="rm_re_s_1_1_4">이메일<br><input type="text" value="apple@apple.com"></div>
+                    <div id="rm_re_s_1_1_2">한글명<br><input type="text" value="" name="name" id="name" placeholder="이름을 입력해주세요"></div>
+                    <div id="rm_re_s_1_1_3">휴대전화번호<br><input type="text" value="" name="hp" id="hp" placeholder="휴대전화번호를 입력해주세요" maxlength="13"></div>
+                    <div id="rm_re_s_1_1_4">이메일<br><input type="text" value="" name="email" id="email" placeholder="이메일을 입력해주세요"></div>
                     <div id="rm_re_s_1_1_5">위의 이메일로 예약확정 안내(바우처 등)가 전송됩니다.</div>
                 </div>
 
                 <div id="rm_re_s_1_2">
                     <div id="rm_re_s_1_2_1">투숙자 정보 <span>대표 투숙자</span></div>
                     <div id="rm_re_s_1_2_2">
-                        <div id="rm_re_s_1_2_2_1">성<br><input type="text" value="HONG"></div>
-                        <div id="rm_re_s_1_2_2_2">이름<br><input type="text" value="GILDONG"></div>
+                        <div id="rm_re_s_1_2_2_1">성<br><input type="text" name="lastName" id="lastName" placeholder="LAST NAME"></div>
+                        <div id="rm_re_s_1_2_2_2">이름<br><input type="text" name="firstName" id="firstName" placeholder="FIRST NAME"></div>
                     </div>
-                    <div id="rm_re_s_1_2_3">생년월일<br><input type="text" value="2000-06-01"></div>
+                    <div id="rm_re_s_1_2_3">생년월일<br><input type="text" name="birth" id="birth" maxlength="8" placeholder="생년월일(8자리)을 입력해주세요"></div>
                     <div id="rm_re_s_1_2_4">성별</div>
-                    <div id="rm_re_s_1_2_5"><input type="submit" value="남자"> <input type="submit" value="여자"></div>
+                    <div id="rm_re_s_1_2_5"><label>남자<input type="checkbox" value="남자" name="box" onclick="oneClick(this)"/></label> <label>여자<input type="checkbox" value="여자" name="box" onclick="oneClick(this)"/></label></div>
                 </div>
             </div>
             
@@ -96,12 +98,12 @@
                 <div id="rm_re_s_2_1">
                     <div id="rm_re_s_2_1_1">요청사항</div>
                     <div id="rm_re_s_2_1_2">별도 요청사항</div>
-                    <textarea id="rm_re_s_2_1_3" placeholder="요청사항이 있으면 영어나 현지 언어로 작성 부탁드립니다."></textarea>
+                    <textarea id="rm_re_s_2_1_3" placeholder="요청사항이 있으면 영어나 현지 언어로 작성 부탁드립니다." name="text"></textarea>
                     <div id="rm_re_s_2_1_4">
                         고객님의 요청사항은 해당 숙소에 전달됩니다만, 숙소 사정에 따라 필요하신 내용이 이루어지지 않을 수 있으니 많은 양해 바랍니다.
                     </div>
                 </div>
-
+        
                 <div id="rm_re_s_2_2">
                     <div id="rm_re_s_2_2_1">
                         <div id="rm_re_s_2_2_1_1">결제 및 취소 정책</div>
@@ -131,7 +133,7 @@
 
                     <div id="rm_re_s_2_3_2">
                         <div id="rm_re_s_2_3_2_1"><span>취소 / 이용규정, 개인 정보 수집 / 이용 방침</span> 및 <span>개인정보 제 3자 제공</span>을 모두 읽었으며 이에 동의합니다. </div>
-                        <div id="rm_re_s_2_3_2_2"><input type="submit" value="결제하기"></div>
+                        <div id="rm_re_s_2_3_2_2"><input type="submit" value="결제하기"></div></form>
                     </div>
                 </div>
             </div>

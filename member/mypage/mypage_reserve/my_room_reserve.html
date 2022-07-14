@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약한 숙소</title>
     <link rel="stylesheet" href="./css/my_reserve_main.css">
+    <script src="./js/reserve.js"></script>
 </head>
 <body>
     <header>
@@ -148,13 +149,11 @@
                         <div id="rm_c_10_1_1">
                             <div id="rm_c_10_1_1_1">총 결제금액</div>
                             <div id="rm_c_10_1_1_2">67,500원</div>
-                            <div id="rm_c_10_1_3"><a href="#">예약취소</a></div>
+                            <form id="form" action="./my_room_reserve_cancle.html">
+                                <div id="rm_c_10_1_3"><input type="submit" value="예약취소" onclick="cancle2()"></div>
+                            </form>
                         </div>
                         <div id="rm_c_10_1_2">결제일시 : 2022-01-24 10:57</div>
-                    </div>
-
-                    <div id="rm_c_10_2">
-                        
                     </div>
                 </div>
             </div>
