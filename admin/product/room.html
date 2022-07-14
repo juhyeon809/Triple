@@ -29,6 +29,14 @@
                     <li><a href="/admin/booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
+            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                </ul>
+            </li>
             <li><a href="#" class="show" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
                     <li><a href="air.html">항공권</a></li>
@@ -138,7 +146,7 @@
                 <li>
                     <div class="formbox_div2">
                         <p class="formbox_ul_title">객실정보</p>
-                        <input type="file" name="" id="">
+                        <input type="file" name="" id="" multiple>
                     </div>
                 </li>
                 <li>
@@ -174,15 +182,15 @@
                     </div>
                 </li>
                 <li>
-                    <div>
+                    <div style="width: 890px;">
                         <p class="formbox_ul_title_info">숙소소개</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
                     </div>
                 </li>
                 <li>
-                    <div>
+                    <div style="width: 890px;">
                         <p class="formbox_ul_title_info">기본정보</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
                     </div>
                 </li>
                 <li>
@@ -237,13 +245,13 @@
                 </li>
                 <li>
                     <div class="formbox_div3">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor3" id="weditor3" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
                     </div>
                 </li>
                 <li>
-                    <div>
+                    <div style="width: 890px;">
                         <p class="formbox_ul_title_info">숙소 주요정보</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor4" id="weditor4" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
                     </div>
                 </li>
                 <li class="formbox_ul_btn">
@@ -259,6 +267,34 @@
     nhn.husky.EZCreator.createInIFrame({
     oAppRef : oEditors,
     elPlaceHolder : "weditor",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor1",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor2",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor3",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor4",//
     sSkinURI : "../smarteditor/SmartEditor2Skin.html",
     fCreator : "createSEditor2",
     });

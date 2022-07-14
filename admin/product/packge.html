@@ -129,7 +129,7 @@
                 <li>
                     <div class="formbox_div4">
                         <p class="formbox_ul_title">상품 이미지</p>
-                        <input type="file" name="" id="">
+                        <input type="file" name="" id="" multiple>
                     </div>
                 </li>
                 <li>
@@ -145,44 +145,39 @@
                 <li>
                     <div class="formbox_div5">
                         <p class="formbox_ul_title">상품가격</p>
-                        <p class="formbox_ul_title_op">가격분류</p>
                         <div>
-                            <select name="" id="" class="formbox_ul_select3">
-                                <option value="">성인</option>
-                                <option value="">청소년</option>
-                                <option value="">아동</option>
-                                <option value="">유아</option>
-                            </select> / <input type="text" width="200px">원
+                            <input type="text"placeholder="성인" readonly> / <input type="text" width="200px">원 <br>
+                            <input type="text"placeholder="소아" readonly> / <input type="text" width="200px">원
                         </div>
                     </div>
                 </li>
-                <li class="formbox_ul_btn">
+                <!-- <li class="formbox_ul_btn">
                     <div>
                         <button onclick="divplus()" class="add_button" id="btn">추가</button></p>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <div class="formbox_div6">
                         <p class="formbox_ul_title_info">상품 프로그램</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
                     </div>
                 </li>
                 <li>
                     <div class="formbox_div6">
                         <p class="formbox_ul_title_info">포함사항</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
                     </div>
                 </li>
                 <li>
                     <div class="formbox_div6">
                         <p class="formbox_ul_title_info">불포함사항</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
                     </div>
                 </li>
                 <li>
                     <div class="formbox_div6">
                         <p class="formbox_ul_title_info">취소 및 환불 규정</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        <textarea class="weditor3" id="weditor3" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
                     </div>
                 </li>
                 <li class="formbox_ul_btn">
@@ -202,6 +197,28 @@
     nhn.husky.EZCreator.createInIFrame({
     oAppRef : oEditors,
     elPlaceHolder : "weditor",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor1",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor2",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor3",//
     sSkinURI : "../smarteditor/SmartEditor2Skin.html",
     fCreator : "createSEditor2",
     });
