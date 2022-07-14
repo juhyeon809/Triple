@@ -11,8 +11,50 @@
     display: flex;
     justify-content: space-between;
 }
-#utility_flex_box img {
-    margin-left: 10px;
+#mark {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: rgb(223, 223, 223);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 3px 3px -1px  rgb(204, 204, 204) ;
+}
+#mark p {
+    color: black;
+    font-weight: 700;
+}
+#utility_flex_box2 {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+}
+#utility_flex_box2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border: 2px solid #58d8bc;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+#utility_flex_box2 div img {
+    width: 30px;
+    height: 30px;
+    padding-right: 5px;
+}
+#utility_flex_box2 div a {
+    font-size: 18px;
+    color: #58d8bc;
+    font-weight: 700;
+    
 }
 #utility_box {
     width: 1000px;
