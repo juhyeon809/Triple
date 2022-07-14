@@ -91,6 +91,18 @@ body {
     color: #4e91d5;
 }
 
+#air {
+    background-color: #50e3c2;
+}
+
+#lod {
+    background-color: #50e3c2;
+}
+
+#tour {
+    background-color: #50e3c2;
+}
+
 #re_main_2{
     box-sizing: border-box;
     margin-top: 27px;
