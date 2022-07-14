@@ -690,7 +690,9 @@ font-size: 13px;
     justify-content: space-between;
 }
 .formbox_div5 div input:first-child,
-.formbox_div5 div input:nth-child(4){
+.formbox_div5 div input:nth-child(4),
+.formbox_div5 div input:nth-child(7),
+.formbox_div5 div input:nth-child(10){
     width: 100px;
     height: 25px;
     border: none;
@@ -698,15 +700,19 @@ font-size: 13px;
     border-radius: 10px;
     text-align: center;
     margin-bottom: 10px;
+    
 }
-.formbox_div5 input:first-child::placeholder,
-.formbox_div5 input:nth-child(4)::placeholder{
+.formbox_div5 div input:first-child::placeholder,
+.formbox_div5 div input:nth-child(4)::placeholder,
+.formbox_div5 div input:nth-child(7)::placeholder,
+.formbox_div5 div input:nth-child(10)::placeholder{
     color: white;
 }
 .formbox_div5{
     width: 500px;
 }
 .formbox_div6{
+    margin-top: 50px;
     width: 900px;
 }
 .formbox_div4 > input[type="checkbox"]{
@@ -796,7 +802,7 @@ font-size: 13px;
 .bottombox{
     display: flex;
     justify-content: space-between;
-    width: 700px;
+    width: 870px;
     margin-top: 10px;
 }
 .bottombox .span{

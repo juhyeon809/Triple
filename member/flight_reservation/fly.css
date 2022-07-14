@@ -317,11 +317,37 @@ div.hidebox1-1 div button:nth-child(2){
     text-align: left;
     color: #868686;   
 }
+.hidebox1-4 div.div {
+    clear: both;
+    vertical-align: middle;
+    height: 40px;
+}
 .hidebox1-4 div.div p{
     margin: 0;
     color: #000;
     font-size: 13px;
 }
+.hidebox1-4 span.result{
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.hidebox1-4 .div button{
+    width: 10px;
+    margin: 5px 0;
+    border: none;
+    padding: auto;
+    background-color: #fdfdfd;
+}
+
+/* .hidebox1-4 .div button,
+.hidebox1-4 .div input{
+    vertical-align: middle;
+    width: 20px;
+    height: 15px;
+    border: none;
+    background-color: #fdfdfd; 
+}*/
 .hidebox1-4 .p .boxtit{
     width: 300px;
     color: #000;
@@ -543,9 +569,13 @@ p.sm {
     padding-top: 20px; 
     margin: 0 auto;
     }
-.totalPrice .inner p:first-child {
+/* .totalPrice .inner p:last-child {
     font-size: 16px;
     font-weight: bold; 
+    margin-bottom: 0;
+    margin: 0;
+} */
+.totalPrice .inner p {
     margin-bottom: 0;
 }
 .totalPrice .inner p:first-child span {
@@ -554,15 +584,20 @@ p.sm {
     color: #a0a0a0; 
     text-decoration: line-through; 
 }
-.totalPrice .inner p:nth-child(2) {
-    display: flex;
+.totalPrice .inner .flex{
+    display: flex; 
+    width: 750px;
     justify-content: space-between;
+    vertical-align: middle;
+}
+.totalPrice .inner div p:nth-child(1) {
     font-size: 14px; 
     color: #757575; 
     text-decoration: underline; 
     margin-top: 5px; 
+    cursor: pointer;
 }
-.totalPrice .inner p:nth-child(2) span {
+.totalPrice .inner p:nth-child(2) {
     font-size: 20px; 
     color: black; 
     font-weight: bold;
@@ -595,6 +630,48 @@ p.sm {
     font-weight: bold; 
     background-color: #468cd3;
     margin-right: 0;
+}
+/*요금상세보기*/
+.totalPrice .inner .paydetail{
+    position: absolute;
+    
+    width: 400px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+.totalPrice .inner .paydetail h4,
+.totalPrice .inner .paydetail p{
+    margin: 0;
+}
+
+.totalPrice .inner .paydetail .tot{
+    display: flex;
+    width: 400px;
+    text-decoration: none;
+    justify-content: space-between;
+}
+.totalPrice .inner .paydetail .flex{
+    display: flex;
+    width: 400px;
+    margin-bottom: 0;
+    
+}
+.totalPrice .inner .paydetail div p {
+    text-decoration: none;
+}
+.totalPrice .inner .paydetail .flex p{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.totalPrice .inner .paydetail .flex:last-child{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #969696;
+}
+.totalPrice .inner .paydetail .flex p:last-child{
+    font-weight: normal;
 }
 
 .flyseurchNotice {
