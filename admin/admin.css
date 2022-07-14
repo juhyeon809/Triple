@@ -428,15 +428,17 @@ main td {
 .header_box{
     margin: 0;
     margin-top: 90px;
-    width: 1300px;
+    width: 1200px;
+    position: relative;
+    margin: 60px auto 0;
+    left: 70px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
 }
 .content2 h2 {
-    width: 15%;
+    width: 200px;
     margin: 0;
-    margin-left: 60px;
     font-size: 24px;
     display: inline-block;
 }
@@ -456,7 +458,6 @@ main td {
     justify-content: right;
 }
 .content2 nav form .form-group{
-    width: 96%;
     display: flex;
     font-size: 16px;
 }
@@ -523,6 +524,11 @@ main td {
     font-weight: bold;
     letter-spacing: 1.2px;
     border: none;
+}
+.btnlist button > a{
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
 }
 .btnlist button:first-child{
     margin-right: 10px;

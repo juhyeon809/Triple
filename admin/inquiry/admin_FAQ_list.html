@@ -102,21 +102,22 @@
     <!--사이드바 끝-->
     
     <section class="content2">
-        <h2>FAQ 목록</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <select name="" id="">
-                        <option value="전체">전체</option>
-                        <option value="작성자">작성자</option>
-                        <option value="제목">제목</option>
-                    </select>
-                    <input type="text" placeholder="검색어를 입력하세요">
-                    <button type="submit">검색</button>
-                </div>
-            </form>
-        </nav>
-    
+        <div class="header_box">
+            <h2>FAQ 목록</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <select name="" id="">
+                            <option value="전체">전체</option>
+                            <option value="작성자">작성자</option>
+                            <option value="제목">제목</option>
+                        </select>
+                        <input type="text" placeholder="검색어를 입력하세요">
+                        <button type="submit">검색</button>
+                    </div>
+                </form>
+            </nav>
+        </div>
         <table class="tbList">
             <tr>
                 <th>
@@ -206,10 +207,10 @@
                 <td>서비스 일반</td>
             </tr>
         </table>
-        <span class="admin_productlist_lowbar">
+        <div class="btnlist">
             <button class="admin_lowbar_btn" value="선택삭제">선택삭제</button>
             <button class="admin_lowbar_btn" value="등록"><a href="./admin_FAQ_regist.html">등록</a> </button>
-        </span>
+        </div>
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>
