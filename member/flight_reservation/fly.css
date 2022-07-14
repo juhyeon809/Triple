@@ -473,12 +473,13 @@ p.sm {
 
 .comtofly {
     width: 1000px; 
-    height: 300px; 
+    height: 250px; 
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
+
 .flyinfoBox { 
     width: 900px; 
     height: 180px; 
@@ -565,7 +566,7 @@ p.sm {
     margin-top: 10px;
     }
 .totalPrice .inner {
-    width: 750px; height: 300px; 
+    width: 750px; height: 500px; 
     padding-top: 20px; 
     margin: 0 auto;
     }
@@ -633,9 +634,8 @@ p.sm {
 }
 /*요금상세보기*/
 .totalPrice .inner .paydetail{
-    position: absolute;
-    
-    width: 400px;
+    position: relative;
+    height: 200px;
     background-color: #eee;
     padding: 10px 20px;
 }
@@ -646,13 +646,13 @@ p.sm {
 
 .totalPrice .inner .paydetail .tot{
     display: flex;
-    width: 400px;
+    width: 700px;
     text-decoration: none;
     justify-content: space-between;
 }
 .totalPrice .inner .paydetail .flex{
     display: flex;
-    width: 400px;
+    width: 700px;
     margin-bottom: 0;
     
 }

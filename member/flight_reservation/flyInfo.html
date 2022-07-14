@@ -154,13 +154,16 @@
 
     <script>
         let  boxshow = document.querySelector(".paydetail");
+        let parent = document.querySelector(".totalPrice")
         let showBox = true;
         function paydetail(){
                 boxshow.style.display = "block";
+                parent.style.height= "500px";
                 showBox = true;
         }
         function payout(){
             boxshow.style.display = "none";
+            parent.style.height= "250px";
             showBox = false;
         }
     </script>
