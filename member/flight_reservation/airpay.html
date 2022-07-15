@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트리플 | 항공결제</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/member/flight_reservation/fly.css">
     <link rel="stylesheet" href="/css/common.css">
 </head>
@@ -46,9 +47,22 @@
                 </div>
                 <div class="rightbox">
                     <div class="paydtail">
-                        <h3>상세요금 보기</h3>
+                        <h3  onmouseover="paydetail()" onmouseleave="payout()">상세요금 보기</h3>
+                        <div class="smallpayShow" hidden>
+                            <h4>요금 상세 정보</h2>
+                                <p style="font-size: 13px; margin-top: 10px; color: #468cd3;">성인 1명</p>
+                                <div>
+                                    <div class="flex"><p>항공요금 x 1</p> <p>284,500원</p></div>
+                                    <div class="flex"><p>유류할증료 x 1</p> <p>198,600원</p></div>
+                                    <div class="flex"><p>제세공과금 x 1</p> <p>58,200원</p></div>
+                                    <div class="flex"><p>발권수수료 x 1</p> <p>0원</p></div>
+                                    <div class="flex"><p>성인 총 요금</p> <p style="font-weight: 700; color: #000;">542,300원</p></div>
+                             </div>
+                                <div class="tot"><p>최종 결제금액</p> <p>542,300원</p></div>
+                        </div>
                         <p>상기 요금은 유류할증료 및 제세공과금을 포함한 총액요금이며, 유류할증료 및 제세공과금은 유가와 환율에 따라 변동 가능합니다.</p>
                     </div>
+                    
                 </div>
             </div>
             <div class="mbox mbox2">
@@ -65,12 +79,13 @@
                     
                     <p class="bold">결제불가 카드 안내</p>
                     <p>법인카드, 해외발행카드, 제3자카드, 항공사별 가맹되지 않은 카드</p>
-                </div>
+                </div><form action="post" action="./js/form.js" name="regform" onsubmit="card()">
                 <div class="mbox">
+                    </form>
                     <ul>
                         <li>
                             <p class="box_title">카드번호</p>
-                    <input type="text" placeholder="-빼고 숫자만 입력">
+                    <input type="text" id="cardNum" name="cardNum" placeholder="-빼고 숫자만 입력">
                         </li>
                         <li>
                             <p class="box_title">유효기간</p>
@@ -94,6 +109,7 @@
                 <p><label for="check1">트리플의 <a href="#">결제규정</a>을 모두 읽었으며 이에 동의합니다.<input type="checkbox" name="check1" id="check1"></label></p>
                 <a href="#"><input type="button" value="결제하기" class="pay"></a>
             </div>
+        </form>
             <div class="rightb">
                 <p><img src="./fly_img/checkmark3.png" alt="">발권 당일 오후 11시 50분까지 무료취소</p>
                 <p><img src="./fly_img/checkmark3.png" alt="">이후부터는 <a href="#">변경 및 취소 처리방침</a>에 따라 수수료 부과</p>
@@ -120,5 +136,20 @@
             </div>
         </div>
     </footer>
+
+    
+    <script>
+let  boxshow = document.querySelector(".smallpayShow");
+let showBox = true;
+function paydetail(){
+        boxshow.style.display = "block";
+        showBox = true;
+}
+function payout(){
+    boxshow.style.display = "none";
+    showBox = false;
+}
+    </script>
+    <script src="./js/form.js"></script>
 </body>
 </html>

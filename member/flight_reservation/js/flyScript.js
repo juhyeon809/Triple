@@ -97,7 +97,7 @@ closeBtn.addEventListener('click', ()=>{
 })
 
 // /*상세요금보기 */
-// let  boxshow = document.querySelector(".paydetail");
+// let  boxshow = document.querySelector(".smallpayShow");
 // let showBox = true;
 // function paydetail(){
 //         boxshow.style.display = "block";
@@ -107,3 +107,10 @@ closeBtn.addEventListener('click', ()=>{
 //     boxshow.style.display = "none";
 //     showBox = false;
 // }
+
+
+
+
+
+
+//결제하기

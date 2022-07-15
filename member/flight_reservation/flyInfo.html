@@ -103,7 +103,7 @@
             <div class="inner">
                 <p >1인, 할인/세금포함 <span>559,000원</span></p>
                 <div class="flex"><p onmouseover="paydetail()" onmouseleave="payout()">상세요금</p><p style="margin: 0;"> 542,300원</p></div>
-                <div class="paydetail" hidden>
+                <div class="payShow" hidden>
                     <h4>요금 상세 정보</h2>
                         <p style="font-size: 15px; margin-top: 10px; color: #468cd3;">성인 1명</p>
                         <div>
@@ -153,7 +153,7 @@
     
 
     <script>
-        let  boxshow = document.querySelector(".paydetail");
+        let  boxshow = document.querySelector(".payShow");
         let parent = document.querySelector(".totalPrice")
         let showBox = true;
         function paydetail(){

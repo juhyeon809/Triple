@@ -633,44 +633,44 @@ p.sm {
     margin-right: 0;
 }
 /*요금상세보기*/
-.totalPrice .inner .paydetail{
+.totalPrice .inner .payShow{
     position: relative;
     height: 200px;
     background-color: #eee;
     padding: 10px 20px;
 }
-.totalPrice .inner .paydetail h4,
-.totalPrice .inner .paydetail p{
+.totalPrice .inner .payShow h4,
+.totalPrice .inner .payShow p{
     margin: 0;
 }
 
-.totalPrice .inner .paydetail .tot{
+.totalPrice .inner .payShow .tot{
     display: flex;
     width: 700px;
     text-decoration: none;
     justify-content: space-between;
 }
-.totalPrice .inner .paydetail .flex{
+.totalPrice .inner .payShow .flex{
     display: flex;
     width: 700px;
     margin-bottom: 0;
     
 }
-.totalPrice .inner .paydetail div p {
+.totalPrice .inner .payShow div p {
     text-decoration: none;
 }
-.totalPrice .inner .paydetail .flex p{
+.totalPrice .inner .payShow .flex p{
     font-size: 14px;
     color: #757575;
     margin-top: 5px;
     cursor: pointer;
 }
 
-.totalPrice .inner .paydetail .flex:last-child{
+.totalPrice .inner .payShow .flex:last-child{
     padding-bottom: 5px;
     border-bottom: 1px solid #969696;
 }
-.totalPrice .inner .paydetail .flex p:last-child{
+.totalPrice .inner .payShow .flex p:last-child{
     font-weight: normal;
 }
 
@@ -738,11 +738,20 @@ p.sm {
     text-decoration: underline;
     padding-top: 10px;
     font-size: 14px;
+    cursor: pointer;
 }
 .rightbox .paydtail p {
     font-size: 14px;
 }
-
+.rightbox .paydtail .smallpayShow{
+    position: absolute;
+    margin-left: 100px;
+    top: 280px;
+    border-radius: 10px;
+    background: #fafafa;
+    box-shadow: 10px 10px 20px #bebebe,
+             -5px -5px 10px #ffffff;
+}
 .mbox {
     width: 900px;
     margin: auto; 
@@ -900,7 +909,8 @@ p.sm {
 .lastbox > .conbtn {
     width: 24%;
 }
-.lastbox > .conbtn input[type="button"]{
+.lastbox > .conbtn input[type="button"],
+.lastbox > .conbtn button{
     width: 200px;
     height: 50px; 
     border: none; color: #fff; 
@@ -944,6 +954,48 @@ footer {clear: both;}
 }
 .payinfo div p span {float: right;}
 .payinfo .div {margin-bottom: 20px;}
+
+.rightbox .smallpayShow{
+    position: absolute;
+    height: 200px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+.rightbox .smallpayShow h4,
+.rightbox .smallpayShow p{
+    margin: 0;
+}
+
+.rightbox .smallpayShow .tot{
+    display: flex;
+    width: 300px;
+    text-decoration: none;
+    justify-content: space-between;
+}
+.rightbox .smallpayShow .flex{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 0;
+    
+}
+.rightbox .smallpayShow div p {
+    text-decoration: none;
+}
+.rightbox .smallpayShow .flex p{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.rightbox .smallpayShow .flex:last-child{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #969696;
+}
+.totalPrice .smallpayShow .flex p:last-child{
+    font-weight: normal;
+}
 
 .mbox2{
     border-bottom: 1px solid #cbcbcb;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트리플 | 항공예약</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/member/flight_reservation/fly.css">
     <link rel="stylesheet" href="/css/common.css">
 </head>
@@ -58,12 +59,14 @@
             </div>
         </div>
         </div>
+        <form action="./js/form.js" name="regform" method="get" onsubmit="sendit()" target="iframe">
         <div class="mbox">
+            
             <p class="title">예약자 정보</p>
             <ul>
                 <li>
                     <p class="box_title">이름</p>
-                    <input type="text" id="name" placeholder="실명, 한글로 입력">
+                    <input type="text" id="name" name="name" placeholder="실명, 한글로 입력">
                 </li>
                 <li>
                     <p class="box_title">휴대전화번호</p>
@@ -87,25 +90,25 @@
                 <div class="inLRbox">
                     <div class="inLeft">
                         <p class="box_title">영문성</p>
-                        <input type="text" id="" placeholder="HONG">
+                        <input type="text" id="lastname" placeholder="HONG">
                         <p class="btSm">예약 후 변경 불가</p>
                     </div>
                     <div class="inRight">
                         <p class="box_title">영문이름</p>
-                        <input type="text" id="" placeholder="GILDONG">
+                        <input type="text" id="firstname" placeholder="GILDONG">
                         <p class="btSm">예약 후 변경 불가</p>
                     </div>
                 </div>
                 <div class="inLRbox">
                     <div class="inLeft inLeft1">
                         <p class="box_title">생년월일</p>
-                        <input type="text" id="" placeholder="2000-06-01">
+                        <input type="text" id="birth" placeholder="2000-06-01">
                         <p class="btSm">예약 후 변경 불가</p>
                     </div>
                     <div class="inRight">
                         <p class="box_title">성별</p>
                         <div class="label_box">
-                            <label for="남자"><input type="checkbox" name="남자" id="남자">남자</label>
+                            <label for="gender"><input type="checkbox" name="남자" id="남자">남자</label>
                             <label for="여자"><input type="checkbox" name="여자" id="여자">여자</label>
                         </div>
                         <p class="btSm">예약 후 변경 불가</p>
@@ -114,7 +117,7 @@
                 <div class="inLRbox">
                     <div class="inLeft">
                         <p class="box_title">휴대전화번호 (선택)</p>
-                            <input type="text" placeholder="-빼고 숫자만 입력">
+                            <input type="text" id="ph_choice" placeholder="-빼고 숫자만 입력">
                     </div>
                 </div>
             </div>
@@ -159,17 +162,19 @@
         <div class="lastbox lastbox2">
             <div class="contag">
                 <p>
-                    <label for="check1"><a href="#">항공사 운임 규정 (변경,환불 및 수하물 정보 등)</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check1" id="check1"></label>
+                    <label for="check1"><a href="#">항공사 운임 규정 (변경,환불 및 수하물 정보 등)</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check" id="check1"></label>
                 </p>
                 <p>
-                    <label for="check2"><a href="#">트리플 예약규정</a>, <a href="#">개인정보 수집 및 이용</a>, <a href="#">개인정보 제 3자 제공</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check2" id="check2"></label>
+                    <label for="check2"><a href="#">트리플 예약규정</a>, <a href="#">개인정보 수집 및 이용</a>, <a href="#">개인정보 제 3자 제공</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check" id="check2"></label>
                 </p>
                 
             </div>
             <div class="conbtn">
-                <a href="airpay.html"><input type="button" value="예약하기" class="Btn"></a>
+                <a href="airpay.html"><button type="submit" value="예약하기" class="Btn">예약하기</button></a>
             </div>
+        
     </div>
+</form>
 </div>
     <footer>
         <div id="enterprise_info">
@@ -191,5 +196,7 @@
             </div>
         </div>
     </footer>
+<script src="./js/flyScript.js"></script>
 </body>
+<iframe name="iframe" id="iframe" style="display:none;"></iframe>
 </html>

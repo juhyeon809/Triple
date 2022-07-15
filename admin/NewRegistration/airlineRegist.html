@@ -7,35 +7,6 @@
     <title>관리자 | 항공사 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
-    <style>
-        p {
-            font-weight: bold;
-            font-size: 20px;
-            text-align: center;
-        }
-
-        input {
-            margin-right: 50px;
-        }
-        div select{
-            margin-left: 5px;
-            text-align: center;
-            height: 30px;
-        }
-        .box ul{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        li{
-            width: 400px;
-            clear: both;
-        }
-        ul p {
-            float: left;
-        }
-        
-    </style>
-
 </head>
 <body>
     <!-- 사이드바-->
@@ -135,17 +106,26 @@
 
         <div class="formbox register">
             <form action="">
-                <div class="box">
+                <div class="box new">
                     <ul>
-                         <li><p>항공사명 </p>
+                         <li><p>항공사명 (Kor) </p>
                             <div><input type="text"></div>
                         </li>
-                    <li><p>항공사 ID </p>
+                        <li><p>항공사명 (Eng) </p>
+                            <div><input type="text"></div>
+                        </li>
+                    <li><p>항공사 코드</p>
                         <div><input type="text"></div></li>
                     <li><p>운항 노선 </p>
                         <div><select name="" id=""><option value="">국내</option>><option value="">국외</option><option value="">국내·국외</option></select></div></li>
+                        <!-- <li><p>주소</p>
+                            <div><input type="text"></div>
+                        </li> -->
                         <li>
-                            <p>전화번호</p>
+                            <p>대표번호</p>
+                            <div><input type="text"></div>
+                        </li>
+                        <li><p>고객센터</p>
                             <div><input type="text"></div>
                         </li>
                     </ul>

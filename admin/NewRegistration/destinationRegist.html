@@ -40,14 +40,17 @@ form ul {
     margin-right: 10px;
     
 }
-.regForm ul select{
-    width: 150px;
-    height: 30px;
+.regForm ul{
+    width: 800px;
     text-align: center;
 }
 .regForm ul input{
     width: 200px;
     height: 30px;
+}
+.regForm ul li{
+    width: 300px;
+    margin-bottom: 30px;
 }
 .reg_content{
     float: right;
@@ -160,24 +163,20 @@ form ul {
             <div>
             <ul>
                 <li class="clear">
-                    <span class="tit_lbl">대륙 구분</span>
-                    <div class="reg_content">
-                        <select class="textBox selectBox">
-                            <option value="airplaneType">대한민국</option>
-                            <option value="airplaneName">동남아시아</option>
-                            <option value="seatCount">동북아시아</option>
-                            <option value="seatCount">대양주</option>
-                        </select>
-                    </div>
-                </li>
-
-                <li class="clear">
-                    <span class="tit_lbl">신규 취항지명</span>
+                    <span class="tit_lbl">공항명</span>
                     <div class="reg_content"><input type="text" class="textBox"></div>
                 </li>
 
                 <li class="clear">
                     <span class="tit_lbl">공항코드</span>
+                    <div class="reg_content"><input type="text" class="textBox"></div>
+                </li>
+                <li class="clear">
+                    <span class="tit_lbl">국가</span>
+                    <div class="reg_content"><input type="text" class="textBox"></div>
+                </li>
+                <li class="clear">
+                    <span class="tit_lbl">도시</span>
                     <div class="reg_content"><input type="text" class="textBox"></div>
                 </li>
             </ul>
