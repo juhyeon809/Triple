@@ -596,19 +596,16 @@ table.colortb tr{
 .infolist {
     margin-top: 60px;
 }
-.formscroll {
+/* .formscroll {
 
     height: 300px;
-    width: 800px;
     overflow: hidden;
     overflow-y: scroll;
-}
+} */
 
 table.ad-tb2 {
     margin-top: 0;
     max-height: 300px;
-    overflow: hidden;
-    overflow-y: scroll;
     margin-bottom: 50px;
 }
 table a{
