@@ -144,6 +144,7 @@ main {
     font-size: 30px;
     font-weight: 700;
     margin: 20px 0;
+    margin-left: 10px;
 }
 .packagebox {
     display: flex;
@@ -199,7 +200,23 @@ main {
     color: white;
     font-size: 16px;
     font-weight: 500;
-    
+}
+#merchandise_mark {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#merchandise_mark div p {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0px;
+    color: white;
+}
+#merchandise_mark div {
+    background-color: rgb(58, 135, 223);
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 #special_price_box {
@@ -219,6 +236,14 @@ main {
     color: black;
     font-size: 20px;
 }
+#travel_package_list .product_name {
+    margin-bottom: 0px;
+}
+#travel_package_list .product_air {
+    color: #666666;
+    font-size: 18px;
+    margin-top: 0px;
+}
 #travel_package_list .product_name a{
     color: black;
 }
@@ -227,9 +252,11 @@ main {
 }
 #travel_package_list .product_price, #travel_package_list .product_coupon {
     text-align: right;
+    margin-bottom: 0px;
+    margin-top: 0;
 }
-#travel_package_contents div a img {
-    width: 100%;
+#packagebox_image a img {
+    width: 430px;
     height: 300px;
 }
 footer {
