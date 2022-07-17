@@ -49,11 +49,113 @@
     margin-top: 10px;
     margin-right: 10px;
 }
+<<<<<<< HEAD
 .flybox > ul > li > input::placeholder {
     font-size: 14px;
     color: black;
     font-weight: normal;
 }
+=======
+.flybox > ul > li .icon3{
+    width: 170px;
+}
+
+/*항공예약팝업*/
+.popbox {
+    position: absolute;
+    margin-left: 320px;
+    top: 550px;
+}
+.popbox::before{
+    border-bottom: 11px solid;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    display: block;
+    height: 0;
+    width: 0;
+    color: white;
+}
+.airpop {
+    display: none;
+    position: absolute;
+    width: 400px;
+    margin-right: 500px;
+    margin: 0 auto;
+    word-break: keep-all;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 5px 5px 20px #bebebe;
+    
+}
+.airpop.show{
+    display: block;
+}
+.airpop ul{
+    list-style: none;
+}
+.airpop .div{
+    width: 400px;
+    height: 50px;
+    justify-items: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+.airpop .div button {
+    margin-top: 20px;
+}
+.airpop .div p.boxtit { margin-bottom: 0;}
+.airpop .div span{
+    color: #868686;
+}
+.airpop .pbox div{
+    width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.airpop .pbox div button{
+    width: 150px;
+    height: 35px;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: #468cd3;
+    background-color: white;
+    font-weight: bold;
+}
+.airpop .pbox div button:hover{
+    background-color: #468cd3;
+    color: white;
+}
+
+.scrollLock { overflow: hidden; }
+/* .layer-popup {
+	display: none;
+	position: absolute;
+	/* background-color: rgba(0, 0, 0, 0.5); 
+	z-index: 100;
+}
+
+.layer-popup.show {
+	display: block;
+}
+
+.modal-dialog {
+	width: 300px;
+	margin: 40px auto;
+	background-color: #fff;
+}
+
+.modal-content {
+	padding:10px 15px;
+	text-align: center;
+	line-height: 100px;
+} */
+/**/
+>>>>>>> 70b4c137528271040178c95d5d1b59b9e6b8e147
 input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
@@ -94,7 +196,7 @@ input[type="submit"]{
 .flybtnlist { 
     background-color:#deeeff; 
     border-radius: 45px; 
-    width: 210px;
+    width: 207px;
     margin-left: 50px;
 }
 input[type="button"]{ width: 100px;}
@@ -109,10 +211,15 @@ input[type="button"]{ width: 100px;}
     padding: 10px; 
     border-radius: 10px; 
 }
+<<<<<<< HEAD
 .flybox > ul > li > a > input {
     font-size: 16px;
     font-weight: bold;
 }
+=======
+
+
+>>>>>>> 70b4c137528271040178c95d5d1b59b9e6b8e147
 #cheapbox {
     margin: 0 auto;
     width: 900px;
@@ -261,6 +368,162 @@ select {
     color: #666666;
     padding-top: 5px;
 }
+<<<<<<< HEAD
+=======
+.citysel1 img{
+    width: 20px;
+    vertical-align: middle;
+}
+div.hidebox {
+    display: flex;
+    width: 800px;
+    height: 230px;
+    position: absolute;
+}
+.click{
+    cursor: pointer;
+}
+div.hidebox1-1 img{
+    width: 25px;
+    margin-right: 20px;
+    align-items: center;
+    vertical-align: middle;
+}
+div.hidebox1-1 {
+    width: 250px;
+    background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+div.hidebox1-1 div{
+    align-items: center;
+    text-align: center;
+    
+}
+
+div.hidebox1-1 div button:first-child{
+    border-radius: 20px;
+    border: 1px solid #468cd3;
+    color: #468cd3;
+    margin-right: 5px;
+}
+div.hidebox1-1 div button:nth-child(2){
+    border-radius: 20px;
+    background: #468cd3;
+    border: none;
+    color: white;
+}
+.hidebox1-2, .hidebox1-3{
+    width: 250px;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+
+.hidebox1-2 input,
+.hidebox1-3 input {
+    width: 245px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #cbcbcb;
+}
+.hidebox1-2 input::placeholder{
+    text-align: center;
+    color: #a0a0a0;
+}
+.hidebox1-4 {
+    width: 200px;
+    padding: 20px;
+    align-items: center;
+    align-items: center;
+    background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+.hidebox1-4 input {
+    width: 200px;
+}
+.hidebox1-5{
+    width: 330px;
+    height: 360px;
+    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: #fdfdfd;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+.hidebox1-5 div{
+    font-size: 10px;
+    text-align: left;
+    color: #868686;   
+}
+.hidebox1-5 div.div {
+    clear: both;
+    vertical-align: middle;
+    height: 40px;
+}
+.hidebox1-5 div.div p{
+    margin: 0;
+    color: #000;
+    font-size: 13px;
+}
+.hidebox1-5 span.result{
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.hidebox1-5 .div button{
+    width: 10px;
+    margin: 5px 0;
+    border: none;
+    padding: auto;
+    background-color: #fdfdfd;
+}
+
+/* .hidebox1-4 .div button,
+.hidebox1-4 .div input{
+    vertical-align: middle;
+    width: 20px;
+    height: 15px;
+    border: none;
+    background-color: #fdfdfd; 
+}*/
+.hidebox1-5 .p .boxtit{
+    width: 300px;
+    color: #000;
+    font-size: 13px;
+    float: left;
+    margin: 5px 0;
+}
+.hidebox1-5 .p input{
+    float: right;
+}
+.hidebox1-5 .pbox div:last-child {
+    clear: both;
+    padding-top: 10px;
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+
+button, input[type="button"], input[type="submit"] {
+    cursor: pointer;
+}
+p.boxtit {
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+span.boxcity {
+    width: 130px;
+    color: #868686;
+    font-size: 13px;
+    margin: 0 0;
+    text-align: center;
+}
+
+>>>>>>> 70b4c137528271040178c95d5d1b59b9e6b8e147
 select.sitysel2{ 
     font-size: 16px; 
     font-weight: bold;
@@ -360,12 +623,13 @@ p.sm {
 
 .comtofly {
     width: 1000px; 
-    height: 300px; 
+    height: 250px; 
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
+
 .flyinfoBox { 
     width: 900px; 
     height: 180px; 
@@ -456,7 +720,7 @@ p.sm {
     margin-top: 10px;
     }
 .totalPrice .inner {
-    width: 750px; height: 300px; 
+    width: 750px; height: 500px; 
     padding-top: 20px; 
     margin: 0 auto;
     }
@@ -517,6 +781,50 @@ p.sm {
     background-color: #2680EB;
     margin-right: 0;
 }
+<<<<<<< HEAD
+=======
+/*요금상세보기*/
+.totalPrice .inner .payShow{
+    position: relative;
+    height: 200px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+.totalPrice .inner .payShow h4,
+.totalPrice .inner .payShow p{
+    margin: 0;
+}
+
+.totalPrice .inner .payShow .tot{
+    display: flex;
+    width: 700px;
+    text-decoration: none;
+    justify-content: space-between;
+}
+.totalPrice .inner .payShow .flex{
+    display: flex;
+    width: 700px;
+    margin-bottom: 0;
+    
+}
+.totalPrice .inner .payShow div p {
+    text-decoration: none;
+}
+.totalPrice .inner .payShow .flex p{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.totalPrice .inner .payShow .flex:last-child{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #969696;
+}
+.totalPrice .inner .payShow .flex p:last-child{
+    font-weight: normal;
+}
+>>>>>>> 70b4c137528271040178c95d5d1b59b9e6b8e147
 
 .flyseurchNotice {
     width: 800px; 
@@ -581,11 +889,20 @@ p.sm {
     text-decoration: underline;
     padding-top: 10px;
     font-size: 14px;
+    cursor: pointer;
 }
 .rightbox .paydtail p {
     font-size: 14px;
 }
-
+.rightbox .paydtail .smallpayShow{
+    position: absolute;
+    margin-left: 100px;
+    top: 280px;
+    border-radius: 10px;
+    background: #fafafa;
+    box-shadow: 10px 10px 20px #bebebe,
+             -5px -5px 10px #ffffff;
+}
 .mbox {
     width: 900px;
     margin: auto; 
@@ -748,7 +1065,8 @@ p.sm {
 .lastbox > .conbtn {
     width: 24%;
 }
-.lastbox > .conbtn input[type="button"]{
+.lastbox > .conbtn input[type="button"],
+.lastbox > .conbtn button{
     width: 200px;
     height: 50px; 
     padding: 10px;
@@ -796,6 +1114,48 @@ footer {clear: both;}
 }
 .payinfo div p span {float: right;}
 .payinfo .div {margin-bottom: 20px;}
+
+.rightbox .smallpayShow{
+    position: absolute;
+    height: 200px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+.rightbox .smallpayShow h4,
+.rightbox .smallpayShow p{
+    margin: 0;
+}
+
+.rightbox .smallpayShow .tot{
+    display: flex;
+    width: 300px;
+    text-decoration: none;
+    justify-content: space-between;
+}
+.rightbox .smallpayShow .flex{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 0;
+    
+}
+.rightbox .smallpayShow div p {
+    text-decoration: none;
+}
+.rightbox .smallpayShow .flex p{
+    font-size: 14px;
+    color: #757575;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.rightbox .smallpayShow .flex:last-child{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #969696;
+}
+.totalPrice .smallpayShow .flex p:last-child{
+    font-weight: normal;
+}
 
 .mbox2{
     border-bottom: 1px solid #cbcbcb;

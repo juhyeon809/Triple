@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="./css/review.css">
+    <script src="./js/review_script.js"></script>
     <title>reveiw</title>
 </head>
 <body>
     <header>
         <div id="p_header">
-            <div id="p_logo"><a href="#"><img src="../img/logo_triple.svg" alt="TRIPLE"></a></div>
+            <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
             <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
         </div>
     </header>
@@ -18,7 +19,7 @@
         <div class="travels_box">
             <div>
                 <div>
-                    <u id="re_top"><a href="./review_search.html">관광지·숙소·맛집 검색하러 가기</a></u>
+                    <u id="re_top"><a href="/member/mypage/review/review_search.html">관광지·숙소·맛집 검색하러 가기</a></u>
                 </div>
             </div>
             <div  class="write_box">
@@ -26,7 +27,7 @@
                     <div>
                         <div class="re_star">
                             <p id="re_top">리뷰평점</p><p id="star1">★★★★★</p>
-                            <p id="re_done"> <a href="./review_done.html">완료</a></p>
+                            <input type="submit" value="완료" id="re_done" onclick="redone()">
                         </div>
                         <div class="cont_box">
                             <input type="text" placeholder="다른 여행객을 위해 리뷰를 작성해주세요" id="review_cont"></input>
@@ -34,7 +35,7 @@
                     </div>
                 </div>
                 <div class="choice_file">
-                    <img src="../img/imgfile_choice.svg" >
+                    <img src="./img/imgfile_choice.svg" >
                 </div>
             </div>
         </div>

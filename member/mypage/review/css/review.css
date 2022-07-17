@@ -63,216 +63,8 @@ button{
     border: none;
     background-color: white;
 }
-/*내여행*/
-#rename{
-    margin-top: 30px;
-    width:400px;
-    height: 30px;
-    font-size: 20px;
-    border: none;
-}
-form>p{
-    margin-top: 0px;
-    margin-left: 10px;
-    font-size: 18px;
-    color: #c5c4c4;
-}
-#btn{
-    width: 50px;
-    height: 30px;
-    cursor: pointer;
-}
-#top{
-    font-size: 20px;
-    font-weight: bold;
-    color: #6c6c6c;
-
-}
-
-.profile_area{
-    display: flex;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.profile_area>div>p{
-    font-size: 20px;
-    color: #6c6c6c;
-    font-weight: bold;
-}
-#write{
-    margin-left:720px;
-    text-decoration: underline;
-}
-#done{
-    margin-left: 300px;
-    text-decoration: underline;
-}
-#pro_img{
-    padding-right: 20px;
-    width: 90px;
-}
-.content_list{
-    font-size: 20px;
-    font-weight: bold;
-    float: left;
-    padding-right: 50px;
-    border-right: 1px solid #adadad;
-}
-.list{
-    padding-bottom: 40px;
-}
-
-.list > li{
-    margin-bottom: 30px;
-}
-/*my travel,travels_done(내여행,여행기 작성된 페이지)*/
-.content_list2{
-    padding-left: 300px;
-}
-
-.list_box{
-    padding-bottom: 60px;
-}
 
 
-div>a{
-    text-decoration: none;
-}
-.list2{
-    display: flex;
-    padding-bottom: 20px;
-}
-
-
-#list_tit{
-    font-size: 18px;
-    font-weight: bold;
-}
-#list_cont{
-    font-size: 18px;
-    font-weight: bold;
-}
-/*travels(여행기)*/
-#st>p{
-    padding: 100px;
-    margin-left: 300px;
-    color: #b3b3b3;
-}
-
-#date{
-    padding-left: 450px;
-}
-
-/*travels_write2(여행기 쓰기)*/
-#img_choice{
-    padding-left: 30px;
-}
-#travels_tit{
-    width: 1000px;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    border-bottom: 1px solid #adadad;
-    padding-top: 30px;
-    font-weight: bold;
-}
-#traverls_cont{
-    width: 1000px;
-    height: 150px;
-    font-size: 18px;
-    border: none;
-    text-align: left;
-    font-weight: bold;
-}
-
-#next{
-    margin-left: 800px;
-    text-decoration: underline;
-}
-
-#travels_box{
-    padding-left: 300px;
-}
-
-.img_box>img{
-    width: 1000px;
-    height: 280px;
-}
-
-/*my_save(내저장)*/
-
-.save_list>ul{
-    list-style: none;
-    display: flex;
-}
-.save_list>ul>li>a{
-    margin-left: 5px;
-    font-weight: bold;
-    color: #478dd3;
-}
-.save_box{
-    padding-left: 50px;
-}
-.save_cont{
-    padding-bottom: 30px;
-}
-.cont_text{
-    float: left;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    padding-right: 300px;
-}
-#te1{
-    color: rgb(77, 76, 76);
-    font-size: 16px;
-}
-#ti{
-    font-weight: bold;
-    font-size: 18px;
-}
-.cont_text>a{
-    color: #0c8ee5;
-    font-weight: bold;
-}
-.cont_img>img{
-    height: 150px;
-}
-#memo{
-    float: left;
-    padding-right: 20px;
-}
-/*save_memo(메모)*/
-.memo_box{
-    width: 250px;
-    height: 80px;
-    margin-left: 100px;
-    border-radius: 10px;
-    border: 1px solid gainsboro;
-    
-}
-#me_te{
-    border: 0px solid white;
-    text-align: left;
-    padding-left: 10px;
-    height: 40px;
-    margin-top: 5px;
-}
-.btn_box{
-    color: #0c8ee5;
-    margin-top: 5px;
-    margin-left: 170px;
-    height: 20px;
-}
-.btn_box>#mbtn,#mbtn2{
-    color: #0c8ee5;
-    font-size: 13px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    border: none;
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-}
 /*review_write(리뷰쓰기)*/
 #star1{
     padding-top: 5px;
@@ -377,14 +169,21 @@ div>a{
     margin-left:720px;
     text-decoration: underline;
     float: left;
+    cursor: pointer;
 }
-.more_btn{
-    text-align: center;
-    width: 100px;
+#more_btn{
+    
+    display: none;
+    width: 75px;
     border: 1px solid rgb(201, 201, 201);
     border-radius: 10px;
     margin-left: 800px;
 }
+
+#more_btn>a{
+    color: #a1a1a1;
+}
+
 /*댓글*/
 .comm{
     padding-top: 30px;
@@ -427,6 +226,8 @@ div>a{
     margin-top: 10px;
     margin-left: 620px;
     text-decoration: underline;
+    border: none;
+    background-color: white;
 }
 .re_star{
     display: flex;
@@ -435,8 +236,15 @@ div>a{
     padding-left: 10px;
     color:#ffba00;
 }
-
-
+#pro_img{
+    padding-right: 20px;
+    width: 90px;
+}
+#st>p{
+    padding: 100px;
+    margin-left: 300px;
+    color: #b3b3b3;
+}
 #review_cont{
     width: 800px;
     height: 150px;
@@ -497,6 +305,50 @@ div>a{
     color: #0c8ee5;
 }
 
+#top{
+    font-size: 20px;
+    font-weight: bold;
+    color: #6c6c6c;
+
+}
+
+.profile_area{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.profile_area>div>p{
+    font-size: 20px;
+    color: #6c6c6c;
+    font-weight: bold;
+}
+#write{
+    margin-left:720px;
+    text-decoration: underline;
+}
+.content_list{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    padding-right: 50px;
+    border-right: 1px solid #adadad;
+}
+.list{
+    padding-bottom: 40px;
+}
+
+.list > li{
+    margin-bottom: 30px;
+}
+
+
+.content_list2{
+    padding-left: 300px;
+}
+.list_box{
+    padding-bottom: 60px;
+}
 /*푸터*/
 
 footer {

@@ -596,19 +596,16 @@ table.colortb tr{
 .infolist {
     margin-top: 60px;
 }
-.formscroll {
+/* .formscroll {
 
     height: 300px;
-    width: 800px;
     overflow: hidden;
     overflow-y: scroll;
-}
+} */
 
 table.ad-tb2 {
     margin-top: 0;
     max-height: 300px;
-    overflow: hidden;
-    overflow-y: scroll;
     margin-bottom: 50px;
 }
 table a{
@@ -618,7 +615,43 @@ table a:visited{
     color: #000;
 }
 
+/*신규등록*/
+.box.new p {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+.box.new input{
+    float: right;
+    margin: 0 35px;
+}
+.box.new select{
+    text-align: center;
+    height: 30px;
+    margin-left: 90px;
+}
+.box.new ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+}
+.box.new li{
+    width: 450px;
+    clear: both;
+}
+.box.new ul li p{
+    text-align: center;
+    float: left;
+}
 
+.box.new.new1 ul li p{
+    text-align: center;
+    width: 90px;
+    float: left;
+}
+.box.new.new1 select{
+    margin-left: 75px;
+}
 
 /* 상품등록 */
 

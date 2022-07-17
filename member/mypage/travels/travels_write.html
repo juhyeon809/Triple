@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="./css/travels.css">
+    <script src="./js/travels_script.js"></script>
     <title>travels</title>
 </head>
 <body>
         <header>
             <div id="p_header">
-                <div id="p_logo"><a href="#"><img src="../img/logo_triple.svg" alt="TRIPLE"></a></div>
+                <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
                 <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
             </div>
         </header>
@@ -25,7 +26,7 @@
                     <li><a href="../review/review.html">리뷰</a></li>   <!--review-->
                     <li><a href="#"><sapn id="choice">여행기</sapn></a></li> <!--travels-->
                 </div>
-                <div class="list">
+                <div class="list" onclick="tr_list()">
                     <li><a href="../my_save/my_save.html">내 저장</a></li>    <!--my_save-->
                     <li><a href="#">내 예약</a></li>    <!---->
                     <li><a href="#">쿠폰함</a></li> <!---->
@@ -40,22 +41,18 @@
             <div class="content_list2">
                 <div class="list_box">
                     <p id="list_tit">지난여행</p>
-                    <a href="#">
-                        <div class="list2">
-                            <div><img src="../img/mypage.svg" id="pro_img"></div>
-                            <div>
-                                <p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p>
-                            </div>
+                    <div class="list2">
+                        <div><img src="./img/mypage.svg" id="pro_img"></div>
+                        <div>
+                            <p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p>
                         </div>
-                    </a>
-                    <a href="#">
-                        <div class="list2">
-                            <div><img src="../img/mypage.svg" id="pro_img"></div>
-                            <div>
-                                <p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p>
-                            </div>
+                    </div>
+                    <div class="list2">
+                        <div><img src="./img/mypage.svg" id="pro_img"></div>
+                        <div>
+                            <p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,10 +66,10 @@
             </div>
             <div id="icon_box_p">
                 <div id="sns_box_p">
-                    <div><a href="#"><img src="../img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
             </div>
         </div>
