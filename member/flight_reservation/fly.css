@@ -6,7 +6,7 @@
 .title {
     width: 950px; 
     margin: 0 auto; 
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .title > .fly_title {
     width: 900px;
@@ -16,6 +16,12 @@
 .fly_title{  
     font-size: 18px;
     font-weight: bold;
+    color: #425052;
+}
+.fly_subtitle{
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
 }
 #flybox {
     background-color:  #F7F7F7; 
@@ -26,7 +32,6 @@
 }
 .flybox > ul {
     margin: 0 auto;
-
     list-style: none;
 }
 .flybox > ul > li {
@@ -44,7 +49,11 @@
     margin-top: 10px;
     margin-right: 10px;
 }
-
+.flybox > ul > li > input::placeholder {
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+}
 input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
@@ -80,7 +89,7 @@ input[type="submit"]{
     color: #468cd3; 
     padding: 10px;  
     border-radius: 45px; 
-    font-size: 20px;
+    font-size: 16px;
 }
 .flybtnlist { 
     background-color:#deeeff; 
@@ -93,14 +102,17 @@ input[type="button"]{ width: 100px;}
 .flybtnlist input[type="button"]:hover{background-color: #b2d2f2;  }
 
 .flysearch {
-    background-color: #4e91d5; 
+    background-color:  #2680EB; 
     color: white; 
     border: none; 
-    width: 400px; height: 50px; 
+    width: 400px; height: 50px;
+    padding: 10px; 
     border-radius: 10px; 
-    font-size: 25px;
 }
-
+.flybox > ul > li > a > input {
+    font-size: 16px;
+    font-weight: bold;
+}
 #cheapbox {
     margin: 0 auto;
     width: 900px;
@@ -126,12 +138,13 @@ input[type="button"]{ width: 100px;}
 }
 .special .imgbox p {
     margin: 0; 
-    color: white; 
+    color: white;
+    font-size: 14px;
     width: 100px; 
     padding-left: 10px;
 }
 .special .imgbox p:first-child {padding-top: 5px; }
-.special .imgbox p:nth-child(2) {margin-top: 70px;}
+.special .imgbox p:nth-child(2) {margin-top: 80px;}
 
 .cheap{ 
     width: 900px;
@@ -150,13 +163,16 @@ input[type="button"]{ width: 100px;}
 
 h4 {font-size: 18px;}
 
+/* .special .imgbox > p {
+
+} */
 
 
 /* 항공기 찾기 */
 
 .title {width: 1000px;}
 .title h3 {
-    color: #468cd3; 
+    font-weight: bold;
     margin: 0 auto; 
     font-size: 18px;
 }
@@ -205,13 +221,14 @@ h4 {font-size: 18px;}
     margin: 0;
 }
 .fly_item_info_ul > li:first-child{
-    font-size: 16px;
+    font-size: px;
     font-weight: bold;
+    color: #666666;
     vertical-align: middle;
 }
 .fly_item_info_ul > li:last-child{
     font-size: 14px;
-    color: #757575;
+    font-weight: normal;
     margin-bottom: 20px;
 }
 .fly_item_price {
@@ -220,7 +237,8 @@ h4 {font-size: 18px;}
     box-sizing: border-box;
     padding-top: 45px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    color: #666666;
     padding-right: 20px;
 }
 .fly_item_price > a{
@@ -237,150 +255,16 @@ select {
     border: 1px solid #fff; 
     border-radius: 5px;
 }
-.citysel1{ 
-    font-size: 18px;
-    height: 28px;
-    }
-.citysel1 p {
-    margin: 0;
+.citysel1{  
+    font-size: 16px; 
     font-weight: bold;
-    cursor: pointer;
+    color: #666666;
+    padding-top: 5px;
 }
-.citysel1 img{
-    width: 20px;
-    vertical-align: middle;
-}
-div.hidebox {
-    display: flex;
-    width: 800px;
-    height: 230px;
-    position: absolute;
-}
-.click{
-    cursor: pointer;
-}
-div.hidebox1-1 img{
-    width: 25px;
-    margin-right: 20px;
-    align-items: center;
-    vertical-align: middle;
-}
-div.hidebox1-1 {
-    width: 250px;
-    background-color: #fdfdfd;
-}
-div.hidebox1-1 div{
-    align-items: center;
-    text-align: center;
-    
-}
-
-div.hidebox1-1 div button:first-child{
-    border-radius: 20px;
-    border: 1px solid #468cd3;
-    color: #468cd3;
-    margin-right: 5px;
-}
-div.hidebox1-1 div button:nth-child(2){
-    border-radius: 20px;
-    background: #468cd3;
-    border: none;
-    color: white;
-}
-.hidebox1-2, .hidebox1-3{
-    width: 250px;
-    align-items: center;
-    text-align: center;
-    background-color: #fdfdfd;
-}
-
-.hidebox1-2 input {
-    width: 245px;
-    height: 30px;
-    border: none;
-    border-bottom: 1px solid #cbcbcb;
-}
-.hidebox1-2 input::placeholder{
-    text-align: center;
-    color: #a0a0a0;
-}
-.hidebox1-4{
-    width: 330px;
-    height: 360px;
-    padding-right: 10px;
-    align-items: center;
-    text-align: center;
-    background-color: #fdfdfd;
-}
-.hidebox1-4 div{
-    font-size: 10px;
-    text-align: left;
-    color: #868686;   
-}
-.hidebox1-4 div.div {
-    clear: both;
-    vertical-align: middle;
-    height: 40px;
-}
-.hidebox1-4 div.div p{
-    margin: 0;
-    color: #000;
-    font-size: 13px;
-}
-.hidebox1-4 span.result{
-    vertical-align: middle;
-    margin: 5px;
-}
-
-.hidebox1-4 .div button{
-    width: 10px;
-    margin: 5px 0;
-    border: none;
-    padding: auto;
-    background-color: #fdfdfd;
-}
-
-/* .hidebox1-4 .div button,
-.hidebox1-4 .div input{
-    vertical-align: middle;
-    width: 20px;
-    height: 15px;
-    border: none;
-    background-color: #fdfdfd; 
-}*/
-.hidebox1-4 .p .boxtit{
-    width: 300px;
-    color: #000;
-    font-size: 13px;
-    float: left;
-    margin: 5px 0;
-}
-.hidebox1-4 .p input{
-    float: right;
-}
-.hidebox1-4 .pbox div:last-child {
-    clear: both;
-    padding-top: 10px;
-    text-align: right;
-}
-button {
-    cursor: pointer;
-}
-p.boxtit {
-    font-weight: bold;
-    text-align: left;
-    margin-top: 10px;
-}
-span.boxcity {
-    width: 130px;
-    color: #868686;
-    font-size: 13px;
-    margin: 0 0;
-    text-align: center;
-}
-
 select.sitysel2{ 
-    font-size: 14px; 
+    font-size: 16px; 
+    font-weight: bold;
+    color: #666666;
     padding: 3px 15px;
 }
 select:active {border: 1px solid #468cd3;}
@@ -391,19 +275,22 @@ select > option {border: none;}
     border: 1px solid #ccc; 
     background-color: #fff; 
     border-radius: 5px; 
+    font-size: 14px;
+    font-weight: normal;
     padding: 3px 15px;
 }
 .serchset button:active { border: 1px solid #468cd3;}
 .serchset .scword {
     width: 1000px;
     margin: 10px auto; 
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
+    color: #666666;
 }
 .serchset .scword span {
     font-size: 14px; 
     padding-left: 40px; 
-    color: #969696;
+    font-weight: normal;
 }
 
 .ticket {
@@ -508,11 +395,12 @@ p.sm {
 .infoMiniTit p {
     font-weight: bold; 
     font-size: 16px; 
+    color: #666666;
     margin-bottom: 0; 
     margin-top: 0;
 }
 .infoMiniTit span { 
-    color: #a0a0a0;  
+    font-weight: normal;
     margin-top: 0; 
     font-size: 14px; 
 }
@@ -523,11 +411,13 @@ p.sm {
 }
 .flyinfoTime .infoCent {
     position: relative; 
-    color: #a0a0a0;  
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666; 
     padding-left: 25%;
 }
 .pblue, .pblue2 { 
-    color: #468cd3; 
+    color: #2680EB; 
     font-weight: bold; 
     margin: 0 0;
 }
@@ -547,8 +437,9 @@ p.sm {
 }
 .flyinfoPlace p:nth-child(3) {
     clear: both; 
-    color: #a0a0a0; 
-    font-size: 13px; 
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
     margin-top: 0; 
     margin-bottom: 0;
 }
@@ -569,35 +460,30 @@ p.sm {
     padding-top: 20px; 
     margin: 0 auto;
     }
-/* .totalPrice .inner p:last-child {
+.totalPrice .inner p:first-child {
     font-size: 16px;
-    font-weight: bold; 
-    margin-bottom: 0;
-    margin: 0;
-} */
-.totalPrice .inner p {
+    font-weight: bold;
+    color: #666666; 
     margin-bottom: 0;
 }
 .totalPrice .inner p:first-child span {
     float: right; 
     font-size: 16px; 
-    color: #a0a0a0; 
+    color: #666666;
+    font-weight: bold;
     text-decoration: line-through; 
 }
-.totalPrice .inner .flex{
-    display: flex; 
-    width: 750px;
+.totalPrice .inner p:nth-child(2) {
+    display: flex;
     justify-content: space-between;
-    vertical-align: middle;
-}
-.totalPrice .inner div p:nth-child(1) {
     font-size: 14px; 
-    color: #757575; 
+    color: black;
+    font-weight: normal;
+
     text-decoration: underline; 
     margin-top: 5px; 
-    cursor: pointer;
 }
-.totalPrice .inner p:nth-child(2) {
+.totalPrice .inner p:nth-child(2) span {
     font-size: 20px; 
     color: black; 
     font-weight: bold;
@@ -613,14 +499,14 @@ p.sm {
 .totalPrice .inner input { 
     width: 250px; 
     height: 50px; 
-    border: 1px solid #468cd3;
+    border: 1px solid #2680EB;
     border-radius: 5px; 
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     letter-spacing: 1.2px;
 }
 .totalPrice .inner input:first-child { 
-    color: #468cd3; 
+    color: #2680EB;
     font-weight: bold; 
     margin-right: 40px;
     margin-top: 10px;
@@ -628,50 +514,8 @@ p.sm {
 .totalPrice .inner input:last-child {
     color: white; 
     font-weight: bold; 
-    background-color: #468cd3;
+    background-color: #2680EB;
     margin-right: 0;
-}
-/*요금상세보기*/
-.totalPrice .inner .paydetail{
-    position: absolute;
-    
-    width: 400px;
-    background-color: #eee;
-    padding: 10px 20px;
-}
-.totalPrice .inner .paydetail h4,
-.totalPrice .inner .paydetail p{
-    margin: 0;
-}
-
-.totalPrice .inner .paydetail .tot{
-    display: flex;
-    width: 400px;
-    text-decoration: none;
-    justify-content: space-between;
-}
-.totalPrice .inner .paydetail .flex{
-    display: flex;
-    width: 400px;
-    margin-bottom: 0;
-    
-}
-.totalPrice .inner .paydetail div p {
-    text-decoration: none;
-}
-.totalPrice .inner .paydetail .flex p{
-    font-size: 14px;
-    color: #757575;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-.totalPrice .inner .paydetail .flex:last-child{
-    padding-bottom: 5px;
-    border-bottom: 1px solid #969696;
-}
-.totalPrice .inner .paydetail .flex p:last-child{
-    font-weight: normal;
 }
 
 .flyseurchNotice {
@@ -682,7 +526,7 @@ p.sm {
     padding-left: 20px;
 }
 .flyseurchNotice p{
-    color: #969696;
+    font-weight: normal;
     margin:0; 
     font-size: 14px;
     }
@@ -731,8 +575,7 @@ p.sm {
 } 
 .rightbox .paydtail { 
     padding: 20px;
-    font-size: 16px; 
-    color: #919191;
+    font-size: 14px; 
 }
 .rightbox .paydtail h3 {
     text-decoration: underline;
@@ -751,7 +594,7 @@ p.sm {
     margin-bottom: 20px;
     }
 .mbox .title {
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -787,7 +630,7 @@ p.sm {
 .bbox .leftb, .bbox .rightb {width: 49%; }
 .bbox .leftb .title { 
     width: 100%;
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
 }
 .bbox .leftb .title span {
@@ -817,6 +660,7 @@ p.sm {
     text-indent: 5px;
     margin-bottom: 5px;
     padding-bottom: 5px;
+    
 }
 .inRight {
     width: 100%;
@@ -835,8 +679,7 @@ p.sm {
 .bbox input[type="checkbox"] {width: 12px; margin-right: 5px; height: 15px;}
 .bbox .btSm { 
     margin-top: 5px; 
-    font-size: 12px; 
-    color: #868686;
+    font-size: 14px; 
     text-indent: 5px;
 }
 
@@ -852,7 +695,7 @@ p.sm {
     width: 190px;
 }
 .bbox .rightb .title { 
-    font-size: 18px; 
+    font-size: 16px; 
     font-weight: bold;
 }
 .bbox .rightb select {
@@ -871,12 +714,13 @@ p.sm {
     margin-top: 20px;
 }
 .cont > p:first-child{
+    font-size: 14px;
     color: red;
-    font-weight: bold;
+    font-weight: normal;
 }
 .cont > p {
-    font-size: 13px;
-    color: #425052;
+    font-size: 14px;
+    font-weight: normal;
     word-wrap: break-word;
 }
 .lastbox {
@@ -895,7 +739,11 @@ p.sm {
 }
 .contag > p > label {
     font-size: 14px;
+    font-weight: normal;
     word-spacing: 0.2;
+}
+.contag > p > label > a {
+    color: #2680EB;
 }
 .lastbox > .conbtn {
     width: 24%;
@@ -903,10 +751,12 @@ p.sm {
 .lastbox > .conbtn input[type="button"]{
     width: 200px;
     height: 50px; 
+    padding: 10px;
+    box-sizing:border-box;
     border: none; color: #fff; 
-    background-color: #468cd3;
+    background-color: #2680EB;
     border-radius: 10px; 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 1.2px;
     text-align: center;
@@ -920,13 +770,15 @@ footer {clear: both;}
     display: flex;
     justify-content: space-between;
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 16px;
+    color: #666666;
     font-weight: bold;
 }
 .payinfo .red {
     padding: 10px;
     margin-top: 10px;
     font-size: 14px;
+    font-weight: normal;
 }
 .payinfo p {
     font-size: 18px;
@@ -950,11 +802,12 @@ footer {clear: both;}
     margin-bottom: 0;
 }
 .mbox2 .title { 
-   margin-top: 50px;
+    margin-top: 50px;
 }
+
 .mbox2 .minit {
     font-size: 16px; 
-    color: #425052;
+    color: #666666;
     margin-top: 20px;
     font-weight: bold;
 }
@@ -962,8 +815,8 @@ footer {clear: both;}
 .mbox2 .fin {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
-    color: #919191;
+    font-size: 14px;
+    font-weight: normal;
     line-height: 0.7;
 }
 .mbox2 .fin2 {
@@ -987,21 +840,22 @@ footer {clear: both;}
     margin-bottom: 50px;
 }
 .bbox2 p.title{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    color: #666666;
     margin-bottom: 10px;
 }
 .bbox2 .paynoti .bold { font-weight: bold;}
 .bbox2 .paynoti p {
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 20px;
-    color: #919191;
+    font-weight: normal;
 }
 
 .pay {
     width: 520px; height: 50px; 
     border: none; color: #fff; 
-    background-color: #468cd3;
+    background-color: #2680EB;
     border-radius: 10px; 
     font-size: 25px;
 }
@@ -1034,7 +888,7 @@ footer {clear: both;}
     height: 100px;
     float: right;
     font-size: 14px;
-    color: #919191;
+    font-weight: normal;
     border-radius: 10px;
     box-shadow: 5px 5px 10px #cbcbcb;
     padding-top: 10px;
@@ -1046,4 +900,31 @@ footer {clear: both;}
     padding-left: 10px;
     margin-right: 10px;
     padding-top: 5px;
+}
+
+
+
+.leftbox > .flyinfopay > .fly_subtitle, .leftbox > .flyinfopay > div > .pleft, .leftbox > .flyinfopay > .pleft, .mbox > .title, .leftb > .title, .rightb > .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    /* color: skyblue; */
+}
+
+.paydetail1 {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #2680EB;
+}
+
+.bbox > .leftb > .title > span {
+    font-size: 14px;
+    color: #2680EB;
+}
+
+.paydetail2, .box_title, .mbox > ul > li > .pnon, .bbox .btSm, .mbox > ul > li > input::placeholder, .bbox > .leftb > .inLRbox > .inLeft > input::placeholder,.bbox > .leftb > .inLRbox > .inRight > input::placeholder, .bbox > .rightb > .inLRbox > .inLeft > input::placeholder, .bbox > .rightb > .inLRbox > .inRight > input::placeholder, .cont {
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+    /* color: skyblue; */
 }

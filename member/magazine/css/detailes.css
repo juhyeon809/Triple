@@ -9,27 +9,28 @@
 }
 /*상세페이지 제목 맨위 폰트 크기 색상*/
 #rec_tit{
-    font-size:20px;
-    color: rgb(51, 51, 51);
+    margin-top: 30px;
+    font-size:16px;
+    color: #666666;
     font-weight: bold;
 }
 /*상세페이지 내용 맨위 폰트 크기 색상*/
 #rec_cont{
     color: rgb(0, 0, 0);
-    font-size: 18px;
+    font-size: 16px;
     
 }
 /*글 제목 폰트 크기 색상*/
 #list_tit{
-    font-size: 18px;
-    color: black;
+    font-size: 16px;
+    color: #666666;
     font-weight: bold;
 }
 /*글 내용 폰트 크기 색상*/
 #list_cont{
-    font-size: 16px;
+    font-size: 14px;
     color: black;
-    text-align: left;
+    font-weight: normal;
 }
 
 #rec_img{
@@ -219,7 +220,8 @@ a{
     margin-right: 15px;
     border: 1px solid gray;
     padding: 5px 40px 5px;
-    font-size: 14px;
+    font-size: 16px;
+    color: #666666;
     width: 220px;
     height: 20px;
     border-radius: 10px;
@@ -267,15 +269,17 @@ a{
 
 
 /*항공 공항*/
-u{
+a > #sp {
     text-decoration: underline;
-    color: dodgerblue;
-    padding-left: 700px;
+    padding-left: 780px;
+    font-size: 14px;
+    color: #2680EB;
 }
+
 #sp{
-    color: dodgerblue;
-    font-size: 20px;
-    font-weight: bold;
+    color: #2680EB;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 #ap_cont{
@@ -299,6 +303,13 @@ u{
     padding-right: 20px;
     text-align: right;
     padding-bottom: 50px;
+    color: #2680EB;
+}
+
+#guest_go > a > span > u, #shop_go > p > a > span > u, #go_link > a > u {
+    color: #2680EB;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 /*투어티켓*/
