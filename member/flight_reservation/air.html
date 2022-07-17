@@ -43,8 +43,8 @@
         <p class="fly_title">쉽고 빠르게, 트리플 항공권 예약</p></div>
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
-                <a><input type="button" value="왕복" class="flybtn" onclick="change()"></a>
-                <a><input type="button" value="편도" class="flybtn" onclick="change2()"></a>
+                <a><input type="button" value="왕복" class="flybtn flybtn1" onclick="change()"></a>
+                <a><input type="button" value="편도" class="flybtn flybtn2" onclick="change2()"></a>
             </p>
             <ul>
                 <li>
@@ -69,7 +69,7 @@
                 </li>
                 <li>
                     <img src="./fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
-                    <div class="flylist icon4" onclick=""><a href="#airpop" class="popUp">탑승객 1명, 일반석 외 1</a></div>
+                    <div class="flylist icon4" onclick="">탑승객 1명, 일반석 외 1</a></div>
                     
                 </li>
                 <li>
@@ -79,7 +79,7 @@
                 </li>
             </ul>
             <div class="popbox">
-                <div class="airpop " id="airpop">
+                <div class="airpop" id="airpop">
                     <p class="boxtit">인원 및 좌석등급</p>
                     <div><span>- 총 9명까지만 한번에 검색 및 예약 가능</span></div>
                     <div><span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span></div>
@@ -97,9 +97,16 @@
                         <div style="float: right;"><button onclick='count("minus")'>-</button><span class="result">0</span><button onclick='count("plus")'>+</button></div>
                     </div>
                     <div class="pbox">
-                    <div><button type="submit">일반석</button><button type="submit">프리미엄 일반석</button><button type="submit">비즈니스석</button><button type="submit">일등석</button>
-                    </div>
+                        <div class="p">
+                        <p class="boxtit">일반석</p><input type="checkbox" name="seat" id=""></div>
+                        <div class="p"><p class="boxtit">프리미엄 일반석</p><input type="checkbox" name="seat" id=""></div>
+                        <div class="p"><p class="boxtit">비즈니스석</p><input type="checkbox" name="seat" id=""></div>
+                        <div class="p"><p class="boxtit">일등석</p><input type="checkbox" name="seat" id="">
                         </div>
+                        <div>
+                            <button class="close" onclick="close()">선택완료</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- <div class="airpop">

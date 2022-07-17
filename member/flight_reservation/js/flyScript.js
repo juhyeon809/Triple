@@ -1,36 +1,48 @@
-// /* 항공예약검색 팝업 */
+/* 항공예약검색 팝업 */
 // // 팝업 열기
 // $(document).on("click", ".popUp", function (e){
-// 	var target = $(this).attr("id");
+// 	var target = $(this).attr("href");
 // 	$(target).addClass("show");
 //     // // $("html, body").css({"overflow" : "hidden", "height":"100%"})
 //     // document.getElementsByTagName("body").style.overflow = "hidden";
 // });
+$(document).ready(function(){
+    $(".icon4").click(function(){
+        $("#airpop").addClass("show");
+    })
+})
 
 
-// // 외부영역 클릭 시 팝업 닫기
-// $(document).mouseup(function (e){
-// 	var LayerPopup = $(".airpop");
-//     // $("html, body").css({"overflow" : "auto", "height":"auto"})
-// 	if(LayerPopup.has(e.target).length === 0){
-// 		LayerPopup.removeClass("show");
-// 	}
-// });
+
+// 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+	var LayerPopup = $(".airpop");
+    // $("html, body").css({"overflow" : "auto", "height":"auto"})
+	if(LayerPopup.has(e.target).length === 0){
+		LayerPopup.removeClass("show");
+	}
+});
 
 /* */
 let round1 = document.querySelector(".round1");
 let round2 = document.querySelector(".round2");
 let changebox = document.querySelector(".oneway");
+let roundbtn = document.querySelector(".flybtn1");
+let onewaybtn = document.querySelector(".flybtn2");
 let hide = true;
 function change(){
     if(hide){
         round1.style.display = "block";
         round2.style.display = "block";
+        roundbtn.style.backgroundColor = "#b2d2f2";
+        onewaybtn.style.backgroundColor = "#deeeff";
         changebox.style.display = "none";
     }
 }
 function change2(){
     if(hide){
+        roundbtn.style.backgroundColor = "#deeeff";
+        onewaybtn.style.backgroundColor = "#b2d2f2";
         changebox.style.display = "block"
         round1.style.display = "none";
         round2.style.display = "none";

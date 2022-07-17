@@ -183,7 +183,7 @@ input[type="submit"]{
 .flybtnlist { 
     background-color:#deeeff; 
     border-radius: 45px; 
-    width: 210px;
+    width: 207px;
     margin-left: 50px;
 }
 input[type="button"]{ width: 100px;}
@@ -477,6 +477,11 @@ div.hidebox1-1 div button:nth-child(2){
     padding-top: 10px;
     text-align: right;
 }
+
+.hide {
+    display: none;
+}
+
 button, input[type="button"], input[type="submit"] {
     cursor: pointer;
 }
