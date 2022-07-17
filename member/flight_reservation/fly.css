@@ -44,7 +44,105 @@
     margin-top: 10px;
     margin-right: 10px;
 }
+.flybox > ul > li .icon3{
+    width: 170px;
+}
 
+/*항공예약팝업*/
+.popbox {
+    position: absolute;
+    margin-left: 320px;
+    top: 550px;
+}
+.popbox::before{
+    border-bottom: 11px solid;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    display: block;
+    height: 0;
+    width: 0;
+    color: white;
+}
+.airpop {
+    display: none;
+    position: absolute;
+    width: 400px;
+    margin-right: 500px;
+    margin: 0 auto;
+    word-break: keep-all;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 5px 5px 20px #bebebe;
+    
+}
+.airpop.show{
+    display: block;
+}
+.airpop ul{
+    list-style: none;
+}
+.airpop .div{
+    width: 400px;
+    height: 50px;
+    justify-items: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+.airpop .div button {
+    margin-top: 20px;
+}
+.airpop .div p.boxtit { margin-bottom: 0;}
+.airpop .div span{
+    color: #868686;
+}
+.airpop .pbox div{
+    width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.airpop .pbox div button{
+    width: 150px;
+    height: 35px;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: #468cd3;
+    background-color: white;
+    font-weight: bold;
+}
+.airpop .pbox div button:hover{
+    background-color: #468cd3;
+    color: white;
+}
+
+.scrollLock { overflow: hidden; }
+/* .layer-popup {
+	display: none;
+	position: absolute;
+	/* background-color: rgba(0, 0, 0, 0.5); 
+	z-index: 100;
+}
+
+.layer-popup.show {
+	display: block;
+}
+
+.modal-dialog {
+	width: 300px;
+	margin: 40px auto;
+	background-color: #fff;
+}
+
+.modal-content {
+	padding:10px 15px;
+	text-align: center;
+	line-height: 100px;
+} */
+/**/
 input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
@@ -100,6 +198,7 @@ input[type="button"]{ width: 100px;}
     border-radius: 10px; 
     font-size: 25px;
 }
+
 
 #cheapbox {
     margin: 0 auto;
@@ -268,6 +367,7 @@ div.hidebox1-1 img{
 div.hidebox1-1 {
     width: 250px;
     background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
 }
 div.hidebox1-1 div{
     align-items: center;
@@ -292,9 +392,11 @@ div.hidebox1-1 div button:nth-child(2){
     align-items: center;
     text-align: center;
     background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
 }
 
-.hidebox1-2 input {
+.hidebox1-2 input,
+.hidebox1-3 input {
     width: 245px;
     height: 30px;
     border: none;
@@ -304,35 +406,47 @@ div.hidebox1-1 div button:nth-child(2){
     text-align: center;
     color: #a0a0a0;
 }
-.hidebox1-4{
+.hidebox1-4 {
+    width: 200px;
+    padding: 20px;
+    align-items: center;
+    align-items: center;
+    background-color: #fdfdfd;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+.hidebox1-4 input {
+    width: 200px;
+}
+.hidebox1-5{
     width: 330px;
     height: 360px;
     padding-right: 10px;
     align-items: center;
     text-align: center;
     background-color: #fdfdfd;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
 }
-.hidebox1-4 div{
+.hidebox1-5 div{
     font-size: 10px;
     text-align: left;
     color: #868686;   
 }
-.hidebox1-4 div.div {
+.hidebox1-5 div.div {
     clear: both;
     vertical-align: middle;
     height: 40px;
 }
-.hidebox1-4 div.div p{
+.hidebox1-5 div.div p{
     margin: 0;
     color: #000;
     font-size: 13px;
 }
-.hidebox1-4 span.result{
+.hidebox1-5 span.result{
     vertical-align: middle;
     margin: 5px;
 }
 
-.hidebox1-4 .div button{
+.hidebox1-5 .div button{
     width: 10px;
     margin: 5px 0;
     border: none;
@@ -348,22 +462,22 @@ div.hidebox1-1 div button:nth-child(2){
     border: none;
     background-color: #fdfdfd; 
 }*/
-.hidebox1-4 .p .boxtit{
+.hidebox1-5 .p .boxtit{
     width: 300px;
     color: #000;
     font-size: 13px;
     float: left;
     margin: 5px 0;
 }
-.hidebox1-4 .p input{
+.hidebox1-5 .p input{
     float: right;
 }
-.hidebox1-4 .pbox div:last-child {
+.hidebox1-5 .pbox div:last-child {
     clear: both;
     padding-top: 10px;
     text-align: right;
 }
-button, input[type="button"] {
+button, input[type="button"], input[type="submit"] {
     cursor: pointer;
 }
 p.boxtit {

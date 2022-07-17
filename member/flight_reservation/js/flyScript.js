@@ -1,3 +1,47 @@
+// /* 항공예약검색 팝업 */
+// // 팝업 열기
+// $(document).on("click", ".popUp", function (e){
+// 	var target = $(this).attr("id");
+// 	$(target).addClass("show");
+//     // // $("html, body").css({"overflow" : "hidden", "height":"100%"})
+//     // document.getElementsByTagName("body").style.overflow = "hidden";
+// });
+
+
+// // 외부영역 클릭 시 팝업 닫기
+// $(document).mouseup(function (e){
+// 	var LayerPopup = $(".airpop");
+//     // $("html, body").css({"overflow" : "auto", "height":"auto"})
+// 	if(LayerPopup.has(e.target).length === 0){
+// 		LayerPopup.removeClass("show");
+// 	}
+// });
+
+/* */
+let round1 = document.querySelector(".round1");
+let round2 = document.querySelector(".round2");
+let changebox = document.querySelector(".oneway");
+let hide = true;
+function change(){
+    if(hide){
+        round1.style.display = "block";
+        round2.style.display = "block";
+        changebox.style.display = "none";
+    }
+}
+function change2(){
+    if(hide){
+        changebox.style.display = "block"
+        round1.style.display = "none";
+        round2.style.display = "none";
+        changebox.style.width = "350px";
+        hide = true;
+    }
+}
+
+
+
+
 
 let section = document.querySelector(".hidebox1-1");
 let isshow = true;
@@ -21,6 +65,7 @@ function hideshow1(){
     }else{
         section1.style.display = "block";
         section2.style.display = "none";
+        section3.style.display = "none";
         section4.style.display = "none";
         isshow1 = true;
     } 
@@ -34,27 +79,30 @@ function hideshow2(){
     }else{
         section1.style.display = "none";
         section4.style.display = "none";
+        section3.style.display = "none";
         section2.style.display = "block";
         isshow2 = true;
     } 
 }
 //날짜설정박스 수정하기
 
-// let section2 = document.querySelector(".hidebox1-3")
-// let isshow2 = true;
-// function hideshow2(){
-//     if(isshow2){
-//     section2.style.display = "none";
-//         isshow2 = false;
-//     }else{
-//         section1.style.display = "none";
-//         section2.style.display = "block";
-//         isshow2 = true;
-//     } 
-// }
+let section3 = document.querySelector(".hidebox1-4")
+let isshow3 = true;
+function hideshow3(){
+    if(isshow3){
+    section3.style.display = "none";
+        isshow3 = false;
+    }else{
+        section1.style.display = "none";
+        section2.style.display = "none";
+        section4.style.display = "none";
+        section3.style.display = "block";
+        isshow2 = true;
+    } 
+}
 
 //인원및 좌석등급
-let section4 = document.querySelector(".hidebox1-4")
+let section4 = document.querySelector(".hidebox1-5")
 let isshow4 = true;
 function hideshow4(){
     if(isshow4){
@@ -63,7 +111,7 @@ function hideshow4(){
     }else{
         section1.style.display = "none";
         section2.style.display = "none";
-        // section3.style.display = "none";
+        section3.style.display = "none";
         section4.style.display = "block";
         isshow4 = true;
     } 
@@ -72,21 +120,20 @@ function hideshow4(){
 function count(type)  {
     // 결과를 표시할 element
     const resultElement = document.querySelector(".result");
-   
+    
     // 현재 화면에 표시된 값
     let number = resultElement.innerText;
-   
+    
     // 더하기/빼기
     if(type === 'plus') {
-      number = parseInt(number) + 1;
+        number = parseInt(number) + 1;
     }else if(type === 'minus')  {
-      number = parseInt(number) - 1;
+        number = parseInt(number) - 1;
     }
-   
     // 결과 출력
     resultElement.innerText = number;
-  }
- 
+    }
+
 //닫기버튼
 let closeBtn = document.querySelector(".close");
 closeBtn.addEventListener('click', ()=>{

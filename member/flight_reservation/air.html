@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트리플 | 항공권 예약</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/member/flight_reservation/fly.css">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <header>
@@ -36,25 +43,34 @@
         <p class="fly_title">쉽고 빠르게, 트리플 항공권 예약</p></div>
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
-                <a><input type="button" value="왕복" class="flybtn"></a>
-                <a><input type="button" value="편도" class="flybtn"></a>
+                <a><input type="button" value="왕복" class="flybtn" onclick="change()"></a>
+                <a><input type="button" value="편도" class="flybtn" onclick="change2()"></a>
             </p>
             <ul>
                 <li>
                     <img src="./fly_img/flying-airplane.png" alt="">
                     <input type="text" class="flylist icon1" placeholder="서울">
+                    
                 </li>
+                <div>
+                    <div class="airpop">
+                        <input type="search" placeholder="출발할 도시를 선택해주세요">
+                    </div>
+                </div>
                 <li>
-                    <img src="./fly_img/map-point-pointer.png" alt="">
+                    <img src="./fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
                     <input type="text" class="flylist icon2" placeholder="도착도시">
                 </li>
                 <li>
                     <img src="./fly_img/office-monthly-calendar.png" alt="">
-                    <input type="date" class="flylist icon3" data-placeholder="날짜">
+                    <input type="text" class="flylist icon3 round1" placeholder="가는날" id="datepicker1">
+                    <input type="text" class="flylist icon3 round2" placeholder="오는날" id="datepicker2">
+                    <input type="text" id="datepicker" class="flylist icon3 oneway" hidden placeholder="가는날">
                 </li>
                 <li>
-                    <img src="./fly_img/messenger-user-avatar.png" alt="">
-                    <input type="text" class="flylist icon4" placeholder="탑승객 1명, 일반석 외 1">
+                    <img src="./fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
+                    <div class="flylist icon4" onclick=""><a href="#airpop" class="popUp">탑승객 1명, 일반석 외 1</a></div>
+                    
                 </li>
                 <li>
                     <a href="flylist.html">
@@ -62,7 +78,61 @@
                     </a>
                 </li>
             </ul>
+            <div class="popbox">
+                <div class="airpop " id="airpop">
+                    <p class="boxtit">인원 및 좌석등급</p>
+                    <div><span>- 총 9명까지만 한번에 검색 및 예약 가능</span></div>
+                    <div><span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span></div>
+                    <div><span>- 만 2세 미만의 유아라도 별도 좌석에 탑승하려면 소아로 선택해주세요.</span></div>
+                    <div class="div">
+                        <div style="float: left;"><p class="boxtit">성인</p><span>만 12세 이상 (국내선 만 13세 이상)</span></div>
+                        <div style="float: right;"><button onclick='count("minus")'>-</button><span class="result">0</span><button onclick='count("plus")'>+</button></div>
+                    </div>
+                    <div class="div" style="clear: both;">
+                        <div style="float: left;"><p class="boxtit">소아</p><span>만 2세~만 12세 미만(국내선 만 13세 미만)</span></div>
+                        <div style="float: right;"><button onclick='count("minus")'>-</button><span class="result">0</span><button onclick='count("plus")'>+</button></div>
+                    </div>
+                    <div class="div">
+                        <div style="float: left;"><p class="boxtit">유아</p><span>만 2세 미만, 보호자와 동반착석</span></div>
+                        <div style="float: right;"><button onclick='count("minus")'>-</button><span class="result">0</span><button onclick='count("plus")'>+</button></div>
+                    </div>
+                    <div class="pbox">
+                    <div><button type="submit">일반석</button><button type="submit">프리미엄 일반석</button><button type="submit">비즈니스석</button><button type="submit">일등석</button>
+                    </div>
+                        </div>
+                </div>
+            </div>
+            <!-- <div class="airpop">
+
+            <ul>
+                <li>
+                    <input type="text" class="flylist icon1" placeholder="서울">
+                </li>
+                <li>
+                    <input type="text" class="flylist icon2" placeholder="도착도시">
+                </li>
+                <li>
+                    <input type="date" class="flylist icon3" data-placeholder="날짜">
+                    <input type="date" class="flylist icon3" data-placeholder="날짜">
+                </li>
+                <li>
+                    <div class="flylist icon4"><a href="#layer-popup" class="popUp">탑승객 1명, 일반석 외 1</a></div>
+                    
+                </li>
+                
+            </ul>
+        </div> -->
+            <!-- <div>
+                <div class="layer-popup show" id="layer-popup">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            팝업 내용입니다.
+                        </div>
+                    </div>
+                </div>
+                </div> -->
         </div>
+        
         <div id="cheapbox">
             <div class="cheap">
                 <p class="fly_title">해외 특가 항공권</p>
@@ -105,6 +175,7 @@
                 
                     <div class="imgbox">
                         <p>220,100원</p>
+                        
                         <p>오사카(직항)</p>
                         <p>7.8(금)-7.11(월)</p>
                     </div>
@@ -213,5 +284,28 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/flyScript.js"></script>
+    <script>
+        // 팝업 열기
+$(document).on("click", ".popUp", function (e){
+	var target = $(this).attr("id");
+	$(target).addClass("show");
+});
+
+
+// // 외부영역 클릭 시 팝업 닫기
+$(document).mouseup(function (e){
+	var LayerPopup = $(".airpop");
+   
+	if(LayerPopup.has(e.target).length === 0){
+		LayerPopup.removeClass("show");
+	}
+});
+
+        $(function(){
+           $('#datepicker').datepicker();
+        })
+  </script>
 </body>
 </html>
