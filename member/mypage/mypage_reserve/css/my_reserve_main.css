@@ -525,15 +525,22 @@ body {
     line-height: 70px;
 }
 
-.accordion .title i {
-    float: right;
-    margin-top: 25px;
-    margin-right: 25px;
+.accordion .title:after {
+    content: '\e941';
+    font-family: xeicon;
+    float:right;
+    margin-right: 10px;
+    transition: 0.35s;
+}
+
+.accordion .title.active:after{
+    transform: rotate(180deg);
 }
 
 .accordion .title.active{
     background-color: gray
 }
+
 
 .accordion .content{
     height: 110px;
@@ -542,6 +549,7 @@ body {
     font-size: 20px;
     display: none;
 }
+
 
 
 
