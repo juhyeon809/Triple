@@ -8,4 +8,5 @@ function sendit(){
         }
         document.location.href="my_travel.html";
         alert('수정되었습니다');
+        return true;
 }

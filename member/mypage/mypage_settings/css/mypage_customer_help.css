@@ -41,13 +41,37 @@ hr {
     color: rgb(105, 105, 105);
     font-weight: 700;
 }
-#FAQ_box .head_area p a {
-    color: rgb(105, 105, 105);
+.head_area p a {
+    color: #1592e6;
+    text-decoration: underline;
+    font-weight: bold;
 }
-#FAQ_box .head_area {
+.head_area {
+    width: 960px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #6c6c6c;
+}
+.list_area{
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #6c6c6c;
+}
+.list_title {
+    margin: 0 auto;
+    color: #6c6c6c;
+    font-weight: bold;
+    padding: 15px;
+    padding-left: 0;
+    border-bottom: 1px solid #6c6c6c;
+    width: 960px;
 }
 #img_menu_box {
     display: flex;
@@ -56,6 +80,7 @@ hr {
     flex-wrap: wrap;
 }
 #img_menu_box div {
+    text-align: center;
     width: 300px;
     height: 100px;
     border-radius: 10px;
@@ -65,10 +90,19 @@ hr {
     align-items: center;
     margin-bottom: 30px;
 }
-#img_menu_box div img{
-    width: 80px;
-    height: 80px;
+#img_menu_box div > a{
+    display: flexbox;
 }
+#img_menu_box div > a:focus, #img_menu_box div > a:hover{
+    color: #1592e6;
+}
+#img_menu_box div img{
+    width: 40px;
+    height: 40px;
+}
+/* #img_menu_box div img:focus, #img_menu_box div img:hover{
+    display: none;
+} */
 #FAQ_list .list_title {
     border-bottom: 1px solid rgb(182, 182, 182);
     padding: 20px;
@@ -84,11 +118,13 @@ hr {
     border: 0px;
     padding: 0;
     text-align: right;
+    margin-top: 10px;
 }
 #view_more a{
-    font-size: 18px;
-    font-weight: 700;
-    color: rgb(105, 105, 105);
+    font-size: 16px;
+    font-weight: bold;
+    color: #1592e6;
+    text-decoration: underline;
 }
 #button_box {
     width: 1000px;
@@ -106,11 +142,13 @@ hr {
     justify-content: center;
     align-items: center;
     background-color: #50e3c2;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 #flex_button div p a {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
     text-decoration: none;
 }
@@ -122,12 +160,39 @@ hr {
 }
 #long_button button{
     width: 970px;
-    height: 50px;
     background-color: rgb(73, 147, 243);
     border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border: none;
     color: white;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+
+.mypage_notice{
+    padding-left: 20px;
+    font-size: 14px;
+    color: #6c6c6c;
+    margin-bottom: 2px;
+}
+.mypage_notice:first-child{
+    margin-top: 20px;
+}
+.mypage_notice_type{
+    color: rgb(75, 189, 255);
+    font-weight: bold;
+}
+.area_title{
+    font-weight: bold;
+    color: #6c6c6c;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.menu_btn{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 4px;
 }

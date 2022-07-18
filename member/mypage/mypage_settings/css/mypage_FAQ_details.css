@@ -3,19 +3,23 @@
 
 }
 #post_title {
-    font-size: 20px;
+    font-size: 16px;
 }
-#blue_text {
+#blue_text{
     color: rgb(17, 125, 187);
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 16px;
 }
-#main_content_box .list_box .padding_text {
-    padding-left: 20px;
+.padding_text {
+    padding-left: 10px;
 }
 #back_button {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #back_button p {
     width: 100px;
@@ -27,6 +31,7 @@
     border-radius: 20px;
 }
 #back_button p a {
+    font-size: 16px;
     color: white;
     font-weight: 700;
     text-decoration: none;

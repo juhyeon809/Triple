@@ -17,14 +17,13 @@
     color: rgb(124, 124, 124);
     
 }
-#main_content_box .content_box .content_p {
-    margin: 5px 0px;
-    margin-left: 50px;
+.content_p {
+    margin: 5px auto;
     border-bottom: 1px solid rgb(190, 190, 190);
-    width: 800px;
+    width: 960px;
     padding: 10px 0;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: bold;
 }
 #main_content_box .content_box .content_p a {
     text-decoration: none;

@@ -7,18 +7,18 @@
     <title>예약한 항공권</title>
     <link rel="stylesheet" href="./css/my_reserve_main.css">
     <script src="./js/reserve.js"></script>
+    <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
     <header>
-        <div id="p_header">
-            <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
-            <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
 
-    <main>
-        <div id="my_air_main">
-            <div id="air_title">MY PAGE | 내 예약</div>
+    <main class="container_all">
+        <div class="mypage_title">MY PAGE | 내 예약</div>
             <div id="air_main">
                 <div id="air_main_1">
                     <div id="air_main_1_1">
@@ -28,10 +28,14 @@
                         에어서울 RS922 | 무료수하물 15kg 특가석 
                     </div>
                     <div id="air_main_1_3">
-                        <div id="air_main_1_3_1">09:00 | 7.2(토)</div>
-                        <div id="air_main_1_3_2">직항 4시간 30분</div>
-                        <div id="air_main_1_3_3">14:30 | 7.2(토)</div>
-                        <div id="air_main_1_3_4"></div>
+                        <div class="air_main_1_3_box">
+                            <div id="air_main_1_3_1">09:00 | 7.2(토)</div>
+                            <div id="air_main_1_3_2">직항 4시간 30분</div>
+                            <div id="air_main_1_3_3">14:30 | 7.2(토)</div>
+                        </div>
+                        <div class="air_main_1_3_box">
+                            <p id="air_main_1_3_4"></p>
+                        </div>
                     </div>
                     <div id="air_main_1_4">
                         <div id="air_main_1_4_1"><a href="#">운임 및 취소 규정</a></div>
@@ -73,21 +77,19 @@
                     - 사전좌석배정, 수하물, 기내식, 베시넷 관련 사항은 항공사 고객센터로 문의하세요.<br> 
                 </div>
             </div>
-        </div>
     </main>
-</body>
-
-    <footer id="footer_p">
-        <div id="enterprise_info_p">
-            <div id="enterprise_info_text_p">
+    <!--푸터-->
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
                 <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
             </div>
-            <div id="icon_box_p">
-                <div id="sns_box_p">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
             </div>
         </div>

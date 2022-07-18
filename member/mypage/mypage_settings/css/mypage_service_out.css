@@ -4,7 +4,7 @@
 }
 
 #main_content_box > p {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     color: rgb(94, 94, 94);
     margin-bottom: 30px;
@@ -14,24 +14,35 @@ hr {
 }
 #warning_text {
     font-weight: 700;
+    font-size: 16px;
+    color: rgb(17, 125, 187);
 }
 #service_out_box {
-    width: 900px;
+    width: 1000px;
     margin: 0 auto;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.content_title{
+    font-weight: bold;
 }
 #service_out_box p {
     margin: 5px 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 #service_out_box form p input {
     width: 900px;
     box-sizing: border-box;
     height: 60px;
     border-radius: 20px;
-    border: 3px solid #50e3c2;
+    border: 2px solid #50e3c2;
     font-size: 20px;
     font-weight: 700;
     padding-left: 20px;
+}
+#service_out_box form p input::placeholder{
+    font-size: 16px;
+    font-weight: normal;
 }
 #service_out_box form p button {
     margin-top: 10px;
@@ -41,7 +52,10 @@ hr {
     border: none;
     background-color: rgb(187, 187, 187);
     color: white;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+}
+.content_con{
+    padding-left: 10px;
 }

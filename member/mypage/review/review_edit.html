@@ -7,58 +7,50 @@
     <link rel="stylesheet" href="./css/review.css">
     <script src="./js/review_script.js"></script>
     <title>reveiw</title>
+    <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
     <header>
-        <div id="p_header">
-            <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
-            <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
-    <div class="container_tr2">
-        <div class="travels_box">
-            <div>
-                <div>
-                    <p id="re_top">신화관 제주 신화월드 호텔앤리조트</p>
-                    <p id="re_bo">5성급|제주(중문)</p>
-                </div>
+    
+    <main class="container_all">
+        <p class="mypage_title">리뷰 수정</p>
+        <div class="review_box">
+            <p class="review_title">신화관 제주 신화월드 호텔앤리조트</p>
+            <p class="review_subtitle">5성급|제주(중문) </p>
+            <div class="review_subbox">
+                <p class="review_subtitle">리뷰평점<span id="star2">★★★★★</span></p>
+                <p class="review_subtitle"><a href="#">완료</a></p>
             </div>
-            <div  class="write_box">
-                <div>
-                    <div>
-                        <div class="re_star">
-                            <p>리뷰평점</p><p id="star2">★★★★★</p>
-                            <p id="re_done"> <a href="/member/mypage/review/review_view.html">완료</a></p>
-                        </div>
-                        <div>
-                            <input type="text" placeholder="너무 좋았어요! 편안하게 쉬다 갑니다 ^^" id="review_cont"></input>
-                        </div>
-                    </div>
-                </div>
-                <div class="re_img">
-                    <img src="./img/review_img2.png">
-                </div>
-                <div class="choice_file">
-                    <img src="./img/imgfile_choice.svg" >
-                </div>
+            <textarea name="" id="review_cont" cols="30" rows="10">너무 좋았어요! 편안하게 쉬다 갑니다 ^^</textarea>
+        </div>
+        <div class="review_box">
+            <div class="re_img">
+                <img src="./img/review_img2.png">
+            </div>
+            <div class="choice_file">
+                <img src="./img/imgfile_choice.svg" >
             </div>
         </div>
-    </div>
-
+    </main>
 
 
     <!--푸터-->
     <footer>
-        <div id="enterprise_info_p">
-            <div id="enterprise_info_text_p">
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
                 <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
             </div>
-            <div id="icon_box_p">
-                <div id="sns_box_p">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
             </div>
         </div>

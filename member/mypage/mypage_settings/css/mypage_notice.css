@@ -1,20 +1,21 @@
-#main_content_box .content_box .list_box {
+.list_box {
     width: 900px;
     margin: 0 auto;
     border-bottom: 1px solid rgb(197, 197, 197);
     margin-bottom: 20px;
 }
-#main_content_box .content_box .list_box .list_title {
-    font-size: 20px;
+.list_title {
+    font-size: 18px;
     font-weight: 700;
     margin: 0;
     
 }
-#main_content_box .content_box .list_box .list_title a{
-    color: rgb(121, 121, 121);
+.list_title a{
+    color: rgb(69, 69, 69);
     text-decoration: none;
 }
-#main_content_box .content_box .list_box .list_date {
-    margin: 10px 0;
+.list_date {
+    margin: 5px 0;
     color: rgb(121, 121, 121);
+    font-size: 14px;
 }

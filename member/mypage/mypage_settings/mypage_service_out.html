@@ -7,49 +7,53 @@
     <title>MY PAGE 서비스 탈퇴</title>
     <link rel="stylesheet" href="./css/mypage_settings_common.css">
     <link rel="stylesheet" href="./css/mypage_service_out.css">
+    <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
     <header>
-        <div id="p_header">
-            <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
-            <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
-    <main>
+    <main class="container_all">
+        <p class="mypage_title">MY PAGE | 설정</p>
         <div id="main_content_box">
-            <p>MY PAGE | 설정</p>
-            <p id="subtitle_text" style="font-size: 20px;">고객지원 | 탈퇴</p>
+            <div class="list_box_main">
+                <p class="mypage_subtitle">고객지원 | 탈퇴</a></p>
+            </div>
+            
             <div id="service_out_box">
-                <p id="warning_text">주의하세요</p>
-                <p>탈퇴시 삭제/유지되는 정보를 확인하세요. 한번 삭제된 정보는 복구가 불가능합니다.</p>
+                <p id="warning_text">✔ 주의하세요 <span style="color: #FF0101; font-size: 14px; font-weight: normal;"> (탈퇴시 삭제/유지되는 정보를 확인하세요. 한번 삭제된 정보는 복구가 불가능합니다.)</span></p>
                 <br>
-                <p>계정 및 프로필 정보 삭제</p>
-                <p>여행 포인트 및 레벨 삭제(혜택 포함)</p>
-                <p>내 예약 정보 삭제</p>
-                <p>쿠폰 삭제</p>
-                <p>캐시 삭제</p>
-                <p>내 여행 장소 저장 정보 삭제</p>
-                <p>공유 일정 및 리뷰, 사진 유지</p>
+                <p class="content_title">[ 삭제 데이터 항목 안내 ]</p>
+                <p class="content_con">1. 계정 및 프로필 정보 삭제</p>
+                <p class="content_con">2. 여행 포인트 및 레벨 삭제(혜택 포함)</p>
+                <p class="content_con">3. 내 예약 정보 삭제</p>
+                <p class="content_con">4. 쿠폰 삭제</p>
+                <p class="content_con">5. 캐시 삭제</p>
+                <p class="content_con">6. 내 여행 장소 저장 정보 삭제</p>
+                <p class="content_con">7. 공유 일정 및 리뷰, 사진 유지</p>
                 <hr>
                 <form action="">
-                    <p><input type="password" placeholder="비밀번호를 입력하세요"></p>
+                    <p><input type="password" placeholder="탈퇴를 원하시면 비밀번호를 입력해주세요"></p>
                     <p><button type="submit">탈퇴합니다</button></p>
                 </form>
             </div>
         </div>
     </main>
+    <!--푸터-->
     <footer>
-
-        <div id="enterprise_info_p">
-            <div id="enterprise_info_text_p">
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
                 <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
             </div>
-            <div id="icon_box_p">
-                <div id="sns_box_p">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
             </div>
         </div>

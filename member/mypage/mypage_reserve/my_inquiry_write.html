@@ -7,80 +7,90 @@
     <title>1:1 문의쓰기</title>
     <link rel="stylesheet" href="./css/my_reserve_main.css">
     <script src="./js/reserve.js"></script>
+    <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
     <header>
-        <div id="p_header">
-            <div id="p_logo"><a href="#"><img src="./img/logo_triple.svg" alt="TRIPLE"></a></div>
-            <div id="p_login_join"><a href="#">LOGOUT</a> · <a href="#">MYPAGE</a></div>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
 
-    <main>
-        <div id="my_inq_wr_main">
-            <div id="main_title">MY PAGE | 내 예약</div>
-            <div id="inq_wr_main">
-                <div id="inq_li_1">1:1 문의</div>
-                <form action="./my_inquiry_list.html" onsubmit="return sendit()">
-                <div id="inq_wr_2">
-                    <div id="inq_wr_2_1">유형 <span>*</span></div>
-                    <div id="inq_wr_2_2"><input type="text" value="" spellcheck="false" data-ms-editor="true" name="
-                        category" id="category" placeholder="항공 or 숙소 or 투어티켓"></div>
+    <main class="container_all">
+        <div class="mypage_title">MY PAGE | 내 예약</div>
+        <div id="inq_wr_main">
+            <div id="inq_li_1">1:1 문의</div>
+            <form action="./my_inquiry_list.html" onsubmit="return sendit()">
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">유형 <span>*</span></div>
+                <div class="inq_wr_box_input">
+                    <input type="text" value="" spellcheck="false" data-ms-editor="true" name="category" id="category" placeholder="항공 or 숙소 or 투어티켓">
                 </div>
-                <div id="inq_wr_3">
-                    <div id="inq_wr_3_1">제목 <span>*</span></div>
-                    <div id="inq_wr_3_2"><input type="text" spellcheck="false" data-ms-editor="true" name="title" id="title" placeholder="제목을 입력해주세요"></div>
+            </div>
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">제목 <span>*</span></div>
+                <div class="inq_wr_box_input">
+                    <input type="text" spellcheck="false" data-ms-editor="true" name="title" id="title" placeholder="제목을 입력해주세요">
                 </div>
-                <div id="inq_wr_4">
-                    <div id="inq_wr_4_1">이름</div>
-                    <div id="inq_wr_4_2"><input type="text" value="" spellcheck="false" data-ms-editor="true"><editor-squiggler><style>
-  @media print {
-    .ms-editor-squiggles-container {
-      display:none !important;
-    }
-  }
-  .ms-editor-squiggles-container {
-    all: initial;
-  }</style><div class="ms-editor-squiggles-container"></div></editor-squiggler></div>
+            </div>
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">이름</div>
+                <div class="inq_wr_box_input">
+                    <input type="text" value="" spellcheck="false" data-ms-editor="true">
+                    <editor-squiggler>
+                        <style>
+                            @media print {
+                                .ms-editor-squiggles-container {
+                                display:none !important;
+                                }
+                            }
+                            .ms-editor-squiggles-container {
+                                all: initial;
+                            }
+                        </style>
+                        <div class="ms-editor-squiggles-container"></div>
+                    </editor-squiggler>
                 </div>
-                <div id="inq_wr_5">
-                    <div id="inq_wr_5_1">이메일 <!--<span>*</span>--></div>
-                    <div id="inq_wr_5_2"><input type="text" placeholder=" apple@apple.com" spellcheck="false" data-ms-editor="true" readonly name="email" id="email"> <!-- <a href="#">수정</a> --></div>
+            </div>
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">이메일 <!--<span>*</span>--></div>
+                <div class="inq_wr_box_input"><input type="text" placeholder=" apple@apple.com" spellcheck="false" data-ms-editor="true" readonly name="email" id="email"> <!-- <a href="#">수정</a> --></div>
+            </div>
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">문의내용 <!--<span>*</span>--></div>
+                <div><textarea class="inq_wr_box_input" cols="40" rows="5" style="height: 150px;"></textarea></div>
+            </div>
+            <div class="inq_wr_box">
+                <div class="inq_wr_box_title">첨부파일</div>
+                <div class="inq_wr_box_input">
+                    <input type="file" value="첨부파일">
+                    <div class="inq_wr_box_detail">10MB 이내 모든 이미지 및 허용된 문서 (MS office, hwp, pdf, txt)와 zip 파일을 5개까지 첨부가능합니다. </div>
                 </div>
-                <div id="inq_wr_6">
-                    <div id="inq_wr_6_1">문의내용 <!--<span>*</span>--></div>
-                    <div><input type="text" id="inq_wr_6_2" cols="40" rows="5"></div></textarea>
-                </div>
-                <div id="inq_wr_7">
-                    <div id="inq_wr_7_1">첨부파일</div>
-                    <div id="inq_wr_7_2"><input type="file" value="첨부파일"></div>
-                </div>
-                <div id="inq_wr_8">
-                    <div id="inq_wr_8_1">10MB 이내 모든 이미지 및 허용된 문서 (MS office, hwp, pdf, txt)와 zip 파일을 5개까지 첨부가능합니다. </div>
-                </div>
-                <div id="inq_wr_9">
-                    수집하는 개인 정보 [(필수) 이메일, 휴대폰 번호, 문의내용, (선택) 첨부파일]는 문의 내용 처리 및 고객 불만을 해결하기 위해 사용되며, 관련 법령에 따라 3년간 보관 후 삭제 됩니다. 문의 접수, 처리 및 회신을 위해 꼭 필요한 정보이므로 동의해 주셔야 서비스를 이용하실 수 있습니다. 
-                </div>
-                <div id="inq_wr_10"><label><input type="checkbox" name="box"> 위, 개인정보 수집 및 활용에 동의합니다.</label></div>
-                <div id="inq_wr_11">
-                    <button id="inq_wr_11_1">접수</button>
-                </form>
-                </div>
+            </div>
+            <div class="inq_wr_box inq_wr_box_info">
+                수집하는 개인 정보 [(필수) 이메일, 휴대폰 번호, 문의내용, (선택) 첨부파일]는 문의 내용 처리 및 고객 불만을 해결하기 위해 사용되며, 관련 법령에 따라 3년간 보관 후 삭제 됩니다. 문의 접수, 처리 및 회신을 위해 꼭 필요한 정보이므로 동의해 주셔야 서비스를 이용하실 수 있습니다. 
+            </div>
+            <div id="inq_wr_10"><label><input type="checkbox" name="box"> 위, 개인정보 수집 및 활용에 동의합니다.</label></div>
+            <div id="inq_wr_11">
+                <button id="inq_wr_11_1">접수</button>
+            </form>
             </div>
         </div>
     </main>
 
-    <footer id="footer_p">
-        <div id="enterprise_info_p">
-            <div id="enterprise_info_text_p">
+    <!--푸터-->
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
                 <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
             </div>
-            <div id="icon_box_p">
-                <div id="sns_box_p">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
             </div>
         </div>

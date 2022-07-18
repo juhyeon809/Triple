@@ -1,37 +1,4 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-.notosanskr * { 
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans KR';
-    margin: auto;
-    
-}
-
-header {
-    width: 100%;
-    height: 150px;
-    background-color: #50e3c2;
-}
-#p_header {
-    width: 1400px;
-    height: 150px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-#p_login_join a{
-    color: rgb(94, 94, 94);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-}
 /*메인*/
 a{
     color: #6c6c6c;
@@ -65,12 +32,14 @@ button{
 
 /*내여행*/
 #rename{
-    margin-top: 30px;
     width:400px;
     height: 30px;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     border-bottom: 1px solid gray;
+}
+#rename::placeholder{
+    font-size: 18px;
 }
 form>p{
     margin-top: 0px;
@@ -84,18 +53,52 @@ form>p{
     cursor: pointer;
 }
 #top{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #6c6c6c;
+    padding-left: 20px;
+    margin-top: 15px;
 
 }
 #choice{
     color: #0c8ee5;
 }
+.profile {
+    padding:  0 20px 10px 20px;
+}
 .profile_area{
     display: flex;
+    justify-content: space-between;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+.regform {
+    display: flex;
+    justify-content: space-between;
+}
+.pro_box1{
+    width: 76%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.form_box {
+    align-items: center;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.pro_box1_left > p{
+    font-size: 14px;
+    color: #777777;
+
+}
+.pro_box1_right{
+    padding-top: 15px;
+}
+.pro_box1_right img{
+    width: 16px;
 }
 
 .profile_area>div>p{
@@ -108,12 +111,12 @@ form>p{
     text-decoration: underline;
 }
 #done{
-    margin-left: 200px;
+    text-align: left;
     text-decoration: underline;
     border: none;
     background-color: white;
     color: #6c6c6c;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -122,11 +125,12 @@ form>p{
     width: 90px;
 }
 .content_list{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    float: left;
     padding-right: 50px;
     border-right: 1px solid #adadad;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 .list{
     padding-bottom: 40px;
@@ -136,10 +140,21 @@ form>p{
     margin-bottom: 30px;
 }
 
-
+.content_box {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding:  0 20px 10px 20px;
+    
+}
+.content_list{
+    width: 20%;
+}
 /*my travel,travels_done(내여행,여행기 작성된 페이지)*/
 .content_list2{
-    padding-left: 300px;
+    width: 75%;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
 .list_box{
@@ -155,66 +170,21 @@ div>a{
     padding-bottom: 20px;
     color: #777777;
 }
+.list2 > div {
+    margin-right: 30px;
+}
+.list2 > div > img {
+    width: 25px;
+}
 
 
 #list_tit{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 #list_cont{
-    font-size: 18px;
+    padding-top: 7px;
+    font-size: 16px;
     font-weight: bold;
-}
-
-
-/*푸터*/
-
-footer {
-    font-family: 'notosanskr';
-    background-color: #50e3c2;
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
-}
-
-#enterprise_info_p {
-    margin: 0 auto;
-    width: 1800px;
-    display: flex;
-    justify-content: space-between;
-}
-#enterprise_info_p > #enterprise_info_text_p {
-    padding-top: 50px;
-    padding-left: 100px;
-    font-weight: 700;
-}
-#enterprise_info_text_p {
-    font-size: 24px;
-    color: rgb(77, 76, 76);
-}
-#enterprise_info_p > #enterprise_info_text_p > p a {
-    text-decoration: none;
-    color: rgb(77, 76, 76);
-}
-#enterprise_info_p > #enterprise_info_text_p > #bold {
-    font-size: 20px;
-    font-weight: 700;
-}
-#enterprise_info_p > #enterprise_info_text_p > p > a {
-    color: rgb(77, 76, 76);
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-#sns_box_p {
-    margin-top: 55px;
-    margin-right: 100px;
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
-}
-#sns_box_p > div > a > img {
-    width: 50px;
 }

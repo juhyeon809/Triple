@@ -28,18 +28,20 @@
     font-weight: 700;
 }
 #account_name {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
     margin-top: 50px;
+    padding-left: 20px;
 }
 #main_content_box form {
-    width: 800px;
+    width: 900px;
     margin: 30px auto;
+    padding-left: 20px;
 }
 #account_name .title_p {
     margin-bottom: 0;
     color: rgb(94, 94, 94);
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
 }
 #account_name .subtitle_p {
@@ -49,42 +51,50 @@
 }
 #main_content_box form p {
     color: rgb(94, 94, 94);
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
 }
 #main_content_box form table tr {
     height: 60px;
 }
 #main_content_box form table tr td {
-    width: 180px;
+    width: 250px;
     color: rgb(94, 94, 94);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
 }
+#main_content_box form table tr td:first-child{
+    padding-right: 30px;
+}
 #main_content_box form table tr td input {
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 30px;
     margin-right: 20px;
 }
 #main_content_box form table tr td input[type=button]{
     width: 100px;
-    height: 25px;
+    height: 30px;
+    background-color: #50e3c2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
 }
 
 #main_content_box form table tr #zipcode {
-    width: 200px;
+    width: 300px;
 }
 #main_content_box form table tr #address2 {
-    width: 600px;
+    width: 650px;
 }
 #main_content_box form table tr #address3 {
     width: 500px;
 }
 #main_content_box form table tr #address2 input {
-    width: 230px;
+    width: 300px;
 }
 #main_content_box form table tr #address3 input {
-    width: 500px;
+    width: 620px;
 }
 #main_content_box form table tr #email_description {
     font-weight: 400;
@@ -98,13 +108,15 @@
 #back_box {
     width: 150px;
     height: 40px;
-    border: 3px solid #50e3c2;
-    font-size: 20px;
-    font-weight: 700;
+    border: 2px solid #50e3c2;
+    font-size: 16px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    border-radius: 5px;
+    
 }
 #back_box a {
     text-decoration: none;
@@ -114,10 +126,12 @@
     margin-left: 20px;
     width: 150px;
     height: 40px;
-    border: 3px solid #50e3c2;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     background-color: #50e3c2;
     color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }

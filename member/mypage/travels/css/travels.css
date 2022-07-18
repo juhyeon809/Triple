@@ -1,37 +1,3 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-.notosanskr * { 
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans KR';
-    margin: auto;
-    
-}
-
-header {
-    width: 100%;
-    height: 150px;
-    background-color: #50e3c2;
-}
-#p_header {
-    width: 1400px;
-    height: 150px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-#p_login_join a{
-    color: rgb(94, 94, 94);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-}
 /*메인*/
 a{
     color: #6c6c6c;
@@ -160,7 +126,8 @@ div>a{
 }
 
 #date{
-    padding-left: 450px;
+    padding-left: 500px;
+    padding-top: 5px;
 }
 
 /*travels_write2(여행기 쓰기)*/
@@ -169,26 +136,34 @@ div>a{
 }
 #travels_tit{
     width: 1000px;
-    height: 50px;
-    font-size: 20px;
+    height: 30px;
+    font-size: 14px;
     border: none;
     border-bottom: 1px solid #adadad;
-    padding-top: 30px;
     font-weight: bold;
+    margin-bottom: 20px;
+    text-indent: 5px;
+    margin-top: 10px;
 }
 #traverls_cont{
+    padding: 10px;
     width: 1000px;
-    height: 150px;
-    font-size: 18px;
+    height: 300px;
+    font-size: 14px;
     border: none;
     text-align: left;
-    font-weight: bold;
+    font-weight: normal;
+    border: 1px solid #adadad;
 }
 
 #next{
-    margin-left: 800px;
+    width: 1000px;
+    text-align: right;
     text-decoration: underline;
     cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+
 }
 
 #travels_box{
@@ -201,54 +176,166 @@ div>a{
 }
 
 
-/*푸터*/
+/*css 추가*/
 
-footer {
-    font-family: 'notosanskr';
-    background-color: #50e3c2;
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
+.profile {
+    padding:  0 20px 10px 20px;
 }
-
-#enterprise_info_p {
-    margin: 0 auto;
-    width: 1800px;
+.profile_area{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.regform {
     display: flex;
     justify-content: space-between;
 }
-#enterprise_info_p > #enterprise_info_text_p {
-    padding-top: 50px;
-    padding-left: 100px;
-    font-weight: 700;
+.pro_box1{
+    width: 76%;
+    display: flex;
+    justify-content: space-between;
+    
 }
-#enterprise_info_text_p {
-    font-size: 24px;
-    color: rgb(77, 76, 76);
+.form_box {
+    align-items: center;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
 }
-#enterprise_info_p > #enterprise_info_text_p > p a {
-    text-decoration: none;
-    color: rgb(77, 76, 76);
+.pro_box1_left > p{
+    font-size: 14px;
+    color: #777777;
+
 }
-#enterprise_info_p > #enterprise_info_text_p > #bold {
-    font-size: 20px;
-    font-weight: 700;
+.pro_box1_right{
+    padding-top: 15px;
 }
-#enterprise_info_p > #enterprise_info_text_p > p > a {
-    color: rgb(77, 76, 76);
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 20px;
-    font-weight: 700;
+.pro_box1_right img{
+    width: 16px;
 }
 
-#sns_box_p {
-    margin-top: 55px;
-    margin-right: 100px;
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
+.profile_area>div>p{
+    font-size: 20px;
+    color: #6c6c6c;
+    font-weight: bold;
 }
-#sns_box_p > div > a > img {
+#write{
+    margin-left:720px;
+    text-decoration: underline;
+}
+#done{
+    text-align: left;
+    text-decoration: underline;
+    border: none;
+    background-color: white;
+    color: #6c6c6c;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#pro_img{
+    padding-right: 20px;
+    width: 90px;
+}
+
+.content_list{
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 50px;
+    border-right: 1px solid #adadad;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.list{
+    padding-bottom: 40px;
+}
+
+.list > li{
+    margin-bottom: 30px;
+}
+
+.content_box {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    padding:  0 20px 10px 20px;
+    
+}
+.content_list{
+    width: 20%;
+}
+
+.content_none{
+    text-align: center;
+    color: #777777;
+    padding-top: 45%;
+}
+.content_list2{
+    width: 800px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.content_list_title{
+    font-weight: bold;
+    padding-top: 0;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+.content_list_box{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.content_list_box_right{
+    width: 600px;
+}
+.like_reply{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: normal;
+}
+#rename{
+    width:400px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+#rename::placeholder{
+    font-size: 18px;
+}
+.content_list2_box{
+    display: flex;
+    justify-content: space-between;
+}
+.content_list2_top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.content_list2_top > a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.travels_box{
+    width: 935px;
+    padding:  0 20px 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.choice_file>img{
+    margin-top: 20px;
     width: 50px;
+    height: 50px;
+}
+#travels_cont{
+
 }
