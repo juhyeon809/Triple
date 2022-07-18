@@ -15,13 +15,13 @@ $(document).ready(function(){
 
 
 // 외부영역 클릭 시 팝업 닫기
-$(document).mouseup(function (e){
-	var LayerPopup = $(".airpop");
-    // $("html, body").css({"overflow" : "auto", "height":"auto"})
-	if(LayerPopup.has(e.target).length === 0){
-		LayerPopup.removeClass("show");
-	}
-});
+// $(document).mouseup(function (e){
+// 	var LayerPopup = $(".airpop");
+//     // $("html, body").css({"overflow" : "auto", "height":"auto"})
+// 	if(LayerPopup.has(e.target).length === 0){
+// 		LayerPopup.removeClass("show");
+// 	}
+// });
 
 /* */
 let round1 = document.querySelector(".round1");
@@ -128,10 +128,13 @@ function hideshow4(){
         isshow4 = true;
     } 
 }
+
+
+
 //인원추가버튼
-function count(type)  {
+function count1(type)  {
     // 결과를 표시할 element
-    const resultElement = document.querySelector(".result");
+    const resultElement = document.querySelector(".result1");
     
     // 현재 화면에 표시된 값
     let number = resultElement.innerText;
@@ -141,10 +144,73 @@ function count(type)  {
         number = parseInt(number) + 1;
     }else if(type === 'minus')  {
         number = parseInt(number) - 1;
+        if(number => 0){
+            number =0;
+        }
     }
     // 결과 출력
     resultElement.innerText = number;
     }
+
+
+
+
+    //인원추가버튼
+function count2(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.querySelector(".result2");
+    
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+    
+    // 더하기/빼기
+    if(type === 'plus') {
+        number = parseInt(number) + 1;
+    }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        if(number => 0){
+            number =0;
+        }
+    }
+    // 결과 출력
+    resultElement.innerText = number;
+    }
+
+
+
+
+
+    //인원추가버튼
+function count3(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.querySelector(".result3");
+    
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+    
+    // 더하기/빼기
+    if(type === 'plus') {
+        number = parseInt(number) + 1;
+    }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        if(number => 0){
+            number =0;
+        }
+    }
+    // 결과 출력
+    resultElement.innerText = number;
+    }
+
+
+    let direct = document.querySelector(".direct");
+    direct.addEventListener('click',function(){
+        direct.classList.toggle("color");
+});
+    let luggage = document.querySelector(".luggage");
+    luggage.addEventListener('click', function(){
+        luggage.classList.toggle("color");
+    })
+    
 
 //닫기버튼
 let closeBtn = document.querySelector(".close");
