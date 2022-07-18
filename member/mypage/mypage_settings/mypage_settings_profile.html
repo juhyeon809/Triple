@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/mypage_settings_profile.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="./js/settings.js"></script>
     <script>
         function sample6_execDaumPostcode() {
             new daum.Postcode({
@@ -76,32 +77,32 @@
                 <p class="title_p">연결된 계정</p>
                 <p class="subtitle_p">apple@apple.com</p>
             </div>
-            <form action="">
+            <form action="" name="edit_profile" id="edit_profile" onsubmit="return sendit()">
                 <p>회원 정보</p>
                 <table>
                     <tr>
                         <td>이름</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="name" id="name"></td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password"></td>
+                        <td><input type="password" name="userpw" id="userpw"></td>
                     </tr>
                     <tr>
                         <td>비밀번호 확인</td>
-                        <td><input type="password"></td>
+                        <td><input type="password" name="userpw_re" id="userpw_re"></td>
                     </tr>
                     <tr>
                         <td>연락처</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="hp" id="hp"></td>
                     </tr>
                     <tr>
                         <td>이메일</td>
-                        <td id="email_description">apple@apple.com</td>
+                        <td id="email_description" name="email" >apple@apple.com</td>
                     </tr>
                     <tr>
                         <td>닉네임</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="userid" id="userid"></td>
                     </tr>
                     <tr>
                         <td>우편번호</td>
@@ -117,7 +118,7 @@
                     </tr>
                 </table>
                 <div id="form_flex_box">
-                    <div id="back_box"><a href="">돌아가기</a></div>
+                    <div id="back_box"><a href="/member/mypage/mypage_settings/mypage_settings.html">돌아가기</a></div>
                     <button type="submit">수정하기</button>
                 </div>
             </form>
