@@ -42,7 +42,7 @@ section p {
   line-height: 32px;
 }
 .highlight {
-  color: #1592E6 !important;
+  color: #2680EB !important;
 }
 
 .flex {
@@ -63,8 +63,18 @@ section p {
 }
 .section-title {
   padding: 0 21px;
-  color: #4F4F4F;
+  font-size: 18px;
+  margin-top: 30px;
+  color: #425052;
+  font-weight: bold;
 }
+
+.tour-search > form > input::placeholder {
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666;
+}
+
 header img, footer img {
   display: block;
   width: 100%;
@@ -79,16 +89,16 @@ header img, footer img {
   border-radius: 5px;
   box-shadow: 0px 3px 6px #00000029;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 27px;
-  color: #458CD3;
+  color: #2680EB;
   background-color: #ffffff;
   transition: all 0.25s ease;
 }
 .tag-wrap button:hover,
 .tag-wrap button.active {
   color: #ffffff;
-  background-color: #458CD3;
+  background-color: #2680EB;
 }
 
 
@@ -142,16 +152,17 @@ header img, footer img {
   margin-top: 54px;
 }
 .tour-list h1 {
-  font-size: 25px;
+  font-size: 16px;
 }
 .tour-list h1 img {
   margin-right: 10px;
+  height: 20px;
 }
 .tour-list h1 img:last-child {
   margin-bottom: 10px;
 }
 .tour-list h1 span {
-  color: #458CD3;
+  color: #2680EB;
 }
 .tour-list .tag-wrap {
   margin-top: 30px;
@@ -206,9 +217,9 @@ header img, footer img {
   border: none;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 32px;
-  color: #797A7A;
+  color: #666666;
   transition: all 0.25s ease;
 }
 .load-more:hover {
@@ -271,7 +282,7 @@ header img, footer img {
   margin-bottom: 10px;
   padding: 7px 20px;
   background: #ECECEC;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 25px;
 }
 .info-card h1 {
@@ -573,8 +584,9 @@ font-size: 22px;
 /* @@@@ Tour Form Styles @@@@ */
 .form .section-title {
   margin-left: -21px;
-  margin-bottom: 30px;
+  margin-top: 30px;
   padding: 0;
+  font-size: 18px;
 }
 .form section {
   padding-left: 65px;
@@ -582,17 +594,21 @@ font-size: 22px;
 }
 .form h1 {
   margin-bottom: 6px;
-  font-size: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666;
   line-height: 36px;
 }
 .form p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 29px;
-  color: #919191;
+  font-weight: bold;
+  font-weight: normal;
+  color: #666666;
 }
 .form label {
   margin-bottom: 2px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
 }
 .form input {
@@ -604,9 +620,9 @@ font-size: 22px;
   background: #F7F7F7;
   border: 1px solid #707070;
   border-radius: 7px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
-  color: #858585;
+  font-weight: normal;
 }
 .input-group {
   margin-bottom: 50px;
@@ -646,7 +662,8 @@ font-size: 22px;
 .pay-price p {
   margin-top: 2px;
   margin-bottom: 13px;
-  color: #425052;
+  font-size: 16px;
+  color: #666666;
 }
 .pay-discount p {
   margin-top: -6px;
@@ -659,7 +676,7 @@ font-size: 22px;
   background: #F7F7F7;
   border: 1px solid #707070;
   border-radius: 7px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
 }
 .pay-price .pay-total {
@@ -677,25 +694,27 @@ font-size: 22px;
 }
 .pay-notice p {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
-  color: #969696;
+  color: #666666;
 }
 .pay-notice li {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
-  color: #969696;
+  font-weight: normal;
 }
 
 .agree-checkbox {
   width: 800px;
 }
 .agree-checkbox p {
-  font-weight: bold;
-  color: #425052;
+  font-size: 14px;
+  font-weight: normal;
 }
+
 .agree-checkbox .highlight {
   text-decoration: underline;
+
 }
 .agree-checkbox input {
   display: none;
@@ -712,10 +731,11 @@ font-size: 22px;
   background-image: url('../img/icon_check.svg');
 }
 .form .submit {
-  padding: 9px 66px;
-  background: #4E91D5 0% 0% no-repeat padding-box;
-  border-radius: 11px;
-  font-size: 25px;
+  height: 50px;
+  width: 200px;
+  background-color: #2680EB;
+  border-radius: 15px;
+  font-size: 16px;
   line-height: 36px;
   letter-spacing: 0px;
   color: #FAFAFA;
@@ -726,15 +746,18 @@ font-size: 22px;
 
 /* Form Calaendar Styles */
 .calendar h1 {
-  margin-top: 12px;
+  font-size: 18px;
+  margin-top: 30px;
   padding-left: 44px;
+  color: #425052;
+  font-weight: bold;
 }
 .calendar p {
   font-weight: bold;
   padding-left: 44px;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 29px;
-  color: #7E7E7E;
+  color: #666666;
 }
 
 .container section.calendar-wrap,
@@ -747,7 +770,9 @@ font-size: 22px;
   padding-left: 96px;
   margin-top: 20px;
   margin-bottom: 12px;
-  font-size: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666;
   line-height: 32px;
 }
 
@@ -755,7 +780,8 @@ font-size: 22px;
   width: 234px;
 }
 .option-form h2 {
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: bold;
   line-height: 32px;
   color: #425052;
 }
@@ -776,7 +802,8 @@ font-size: 22px;
 }
 .option-form label {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
+  color: #425052;
   line-height: 32px;
 }
 .option-form label span {

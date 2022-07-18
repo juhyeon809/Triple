@@ -19,8 +19,8 @@
     margin: 7px;
     border-radius: 8px;
     border: solid 1px darkgrey;
-    padding: 6px 20px 6px;
-    font-size: 12px;
+    padding: 6px 10px;
+    font-size: 14px;
     
 }
 
@@ -62,16 +62,17 @@
     margin: 3px 0 10px;
     text-align: left;
     font-weight: bold;
-    color: #6d6d6d;
-    font-size: 18px;
+    color: #666666;
+    font-size: 16px;
 }
 /*magazine list content*/
 #li_cont{
     margin: 3px 0 10px;
     text-align: left;
-    font-weight: bold;
-    color: #6d6d6d;
-    font-size: 15px;
+    font-weight: normal;
+    color: black;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 #cont_img{

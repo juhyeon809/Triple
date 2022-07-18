@@ -476,7 +476,6 @@
     font-weight: bold;
     color: #1592e6;
 }
-
 #inq_li_3{
     box-sizing: border-box;
     padding-top: 20px;
@@ -498,15 +497,14 @@
     color: #425052;
     padding: 10px;
 }
-
 #inq_li_5{
-    height: 68px;
+    height: 70px;
     box-sizing: border-box;
     padding-top: 40px;
 }
 
 #inq_li_6{
-    height: 84px;
+    height: 70px;
     box-sizing: border-box;
     padding-top: 40px;
 }
