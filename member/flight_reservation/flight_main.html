@@ -17,6 +17,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+    <!--header 시작-->
     <header>
         <div id="logo_area">
             <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -39,9 +40,11 @@
             </ul>
         </div>
     </header>
+    <!--header 끝-->
     <div id="container">
         <div class="title">
         <p class="fly_title">쉽고 빠르게, 트리플 항공권 예약</p></div>
+        <!--항공권 검색 박스-->
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
                 <a><input type="button" value="왕복" class="flybtn flybtn1" onclick="change()"></a>
@@ -75,6 +78,7 @@
                     </a>
                 </li>
             </ul>
+            <!--항공권 검색 박스 인원조회 팝업-->
             <div class="popbox">
                 <div class="airpop" id="airpop">
                     <p class="boxtit">인원 및 좌석등급</p>
@@ -123,10 +127,12 @@
                     </div>
                 </div>
             </div>
-
+            <!--항공권 검색 박스 인원조회 팝업 끝-->
         </div>
-        
+        <!--항공권 검색 박스 끝-->
+        <!--특가 항공권 전체-->
         <div id="cheapbox">
+            <!--해외 특가 항공권-->
             <div class="cheap">
                 <p class="fly_subtitle">해외 특가 항공권</p>
                 <div class="special">
@@ -191,6 +197,8 @@
                     </div>
                 </div>
             </div>
+            <!--해외 특가 항공권 끝-->
+            <!--국내 특가 항공권-->
             <div class="cheap" >
                 <p class="fly_subtitle">국내 특가 항공권</p>
                 <div class="special">
@@ -254,8 +262,12 @@
                     </div>
                 </div>
             </div>
+            <!--국내 특가 항공권 끝-->
         </div>
+        <!--전체 특가 항공권 끝-->
     </div>
+
+    <!--footer 시작-->
     <footer>
         <div id="enterprise_info">
             <div id="enterprise_info_text">
@@ -296,7 +308,7 @@
             </div>
         </div>
     </footer>
-
+<!--footer 끝-->
     <script src="js/flyScript.js"></script>
     <script>
         // 팝업 열기

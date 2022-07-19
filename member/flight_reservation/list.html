@@ -37,11 +37,12 @@
         </div>
     </header>
     <!--header 끝-->
-    <!--main 시작-->
+    
     <div id="container">
         <div class="title">
             <h3>항공권 찾기</h3>
         </div>
+        <!--검색 조회바-->
         <div class="serchset">
             <ul>
                 <li>
@@ -69,6 +70,7 @@
                 </li>
             </ul>
             <div class="hidebox">
+            <!--상세 조회 팝업-->
             <div class="hidebox1-1" hidden>
                 <form action="">
                 <p class="click" onclick="hideshow1()">
@@ -86,6 +88,8 @@
                 </div>
             </form>
             </div>
+            <!--상세 조회 팝업 끝-->
+            <!--상세 조회 팝업 설정1-->
             <div class="hidebox1-2" hidden>
                 
                 <input type="search" name="" id="" placeholder="도시 또는 공항 이름으로 검색">
@@ -98,6 +102,8 @@
                     <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br>
                         여수 | 양양 | 포항</span>
             </div>
+            <!--상세 조회 팝업 설정1 끝-->
+            <!--상세 조회 팝업 설정2-->
             <div class="hidebox1-3" hidden>
                 <input type="search" name="" id="" placeholder="도시 또는 공항 이름으로 검색">
                     <p class="boxtit">해외인기도시</p>
@@ -107,12 +113,16 @@
                     <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br>
                         여수 | 양양 | 포항</span>
             </div>
+            <!--상세 조회 팝업 설정2 끝-->
+            <!--상세 조회 팝업 설정3-->
             <div class="hidebox1-4" hidden>
                 <p>가는날</p>
                 <input type="text" id="datepicker1" placeholder="가는날을 선택해주세요">
                 <p>오는날</p>
                 <input type="text" id="datepicker2" placeholder="오는날을 선택해주세요">
             </div>
+            <!--상세 조회 팝업 설정3 끝-->
+            <!--상세 조회 팝업 설정4-->
             <div class="hidebox1-5" hidden>
                 <p class="boxtit">인원 및 좌석등급</p>
                 <div>
@@ -186,10 +196,14 @@
                     </div>
                 </div>
             </div>
-
+            <!--상세 조회 팝업 설정4 끝-->
         </div>
+            <!--상세 조회 팝업 끝-->
             <p class="scword">검색결과<span> 20개, 왕복, 1인 평균 기준</span></p>
         </div>
+        <!--검색 조회바 끝-->
+
+        <!--조회된 항공권 리스트-->
         <div id="list">
             <div class="fly_item">
                 <ul class="fly_item_ul">
@@ -561,8 +575,9 @@
                 </div>
             </div>
         </div>
+        <!--조회된 항공권 리스트-->
     </div>
-    <!--main 끝-->
+    
     <!--footer 시작-->
     <footer>
         <div id="enterprise_info">

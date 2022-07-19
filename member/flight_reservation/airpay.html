@@ -8,7 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/member/flight_reservation/css/fly.css">
     <link rel="stylesheet" href="/css/common.css">
-</head>
 <body>
     <!--header 시작-->
     <header>
@@ -122,29 +121,27 @@
                     <p class="bold">결제불가 카드 안내</p>
                     <p>법인카드, 해외발행카드, 제3자카드, 항공사별 가맹되지 않은 카드</p>
                 </div>
-                <form action="post" action="./js/form.js" name="regform" onsubmit="card()">
+                <form action="js/form.js" name="regform" method="post" onsubmit="return credit()" target="iframe">
                     <div class="mbox">
-                        
                         <ul>
                             <li>
                                 <p class="box_title">카드번호</p>
-                        <input type="text" class="cardNum" name="cardNum" placeholder="-빼고 숫자만 입력">
+                                <input type="text" id="cardNum" name="cardNum" placeholder="-빼고 숫자만 입력">
                             </li>
                             <li>
                                 <p class="box_title">유효기간</p>
-                        <input type="text" placeholder="MM/YY" class="cardDate">
+                                <input type="text" placeholder="MM/YY" id="cardDate">
                             </li>
                             <li>
                                 <p class="box_title">비밀번호 앞 두자리</p>
-                        <input type="text" placeholder="숫자만 입력" class="cardPw">
+                                <input type="text" placeholder="숫자만 입력" id="cardPw">
                             </li>
                             <li>
                                 <p class="box_title">카드 소유주 생년월일</p>
-                        <input type="text" placeholder="YYYYMMDD" class="cardBirth">
+                                <input type="text" placeholder="YYYYMMDD" id="cardBirth">
                             </li>
                         </ul>
                     </div>
-                </form>
             </div>
         </div>
         <div class="lastbox2">
@@ -154,9 +151,9 @@
                     <label for="check1">트리플의 <a href="#">결제규정</a>을 모두 읽었으며 이에 동의합니다.<input type="checkbox" name="check1" id="check1">
                     </label>
                 </p>
-                <a href="#">
-                    <input type="button" value="결제하기" class="pay">
-                </a>
+                <div>
+                    <input type="submit" class="pay" value="결제하기">
+                </div>
             </div>
         </form>
             <div class="rightb">
@@ -188,19 +185,20 @@
         </div>
     </footer>
     <!--footer 끝-->
-    
-    <script>
-let  boxshow = document.querySelector(".smallpayShow");
-let showBox = true;
-function paydetail(){
-        boxshow.style.display = "block";
-        showBox = true;
-}
-function payout(){
-    boxshow.style.display = "none";
-    showBox = false;
-}
-    </script>
     <script src="./js/form.js"></script>
+    <script>
+        let  boxshow = document.querySelector(".smallpayShow");
+        let showBox = true;
+        function paydetail(){
+                boxshow.style.display = "block";
+                showBox = true;
+        }
+        function payout(){
+            boxshow.style.display = "none";
+            showBox = false;
+        }
+    </script>
+    
 </body>
+<iframe name="iframe" id="iframe" style="display:none;"></iframe>
 </html>

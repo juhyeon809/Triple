@@ -7,9 +7,9 @@ function sendit(){
     const lastname = RegExp(/[A-Za-z]/);
     const firstname = RegExp(/[A-Za-z]/);
     const birth = RegExp(/\d{4}\d{2}\d{2}/);
-    // const gender = document.getElementById('gender');
     const ph_choice = RegExp(/^\d{2,3}\d{3,4}\d{4}$/);
-    const passportNum = RegExp(/[a-zA-Z]{1}[0-9a-zA-Z]{1}[0-9]{7}/);
+    const passportNum = RegExp(/[a-zA-Z]{1}[0-9a-zA-Z]{2}[0-9]{7}/);
+    const passportNum1 = RegExp(/[a-zA-Z]{1}|[a-zA-Z]{2}\d{8}/);
     const passportDate =  RegExp(/\d{4}\d{2}\d{2}/);
 
 
@@ -63,8 +63,51 @@ function sendit(){
         $('#birth').focus();
         return false
     }
-
+    let gender = false
+    for(let i=0; i<$("input:checkbox[name='gender']").length; i++){
+        if($("input:checkbox[name='gender']").eq(1).is(":checked")==true){
+            gender = true
+            break
+        }
+        if(!gender){
+            alert('성별을 체크해주세요')
+            return false
+        }
+    }
+    //국적
     
+    if(!$('#nationality option:selected').val()) {
+        alert("국적을 선택해주세요");
+    }
+
+    //여권번호
+    // if(!passportNum.test($('#passportNum').val())){
+    //     alert('여권번호를 다시 확인해주세요');
+    //     $('#passportNum').val('');
+    //     $('#passportNum').focus();
+    //     return false
+    // }
+    if(!passportNum1.test($('#passportNum').val())){
+        alert('여권번호를 다시 확인해주세요');
+        $('#passportNum').val('');
+        $('#passportNum').focus();
+        return false
+    }
+
+    //여권만료일
+    if(!passportDate.test($('#passportDate').val())){
+        alert('여권 만료일을 다시 확인해주세요');
+        $('#passportDate').val('');
+        $('#passportDate').focus();
+        return false
+    }
+    
+
+    //여권 발행국
+    if(!$('#passportCountry > option:selected').val()) {
+        alert("여권 발행국을 선택해주세요");
+    }
+
     let notice = false
     for(let i=0; i<$("input:checkbox[name='check']").length; i++){
         if($("input:checkbox[name='check']").eq(i).is(":checked")==true){
@@ -80,7 +123,7 @@ function sendit(){
     return true;
 }
 
-function card(){
+function credit(){
     //https://www.habonyphp.com/2021/02/credit-card.html
     //BC, Visa, MasterCard, Discover, Amex, Diners Club, JCB 에 해당하는 카드
     // ^(?:(94[0-9]{14})|(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$
@@ -90,31 +133,50 @@ function card(){
     const master = RegExp(/^([51|52|53|54|55]{2})([0-9]{14})$/);
     const cardDate = RegExp(/^((0[1-9])|(1[0-2]))\/(\d{2})$/);
     const cardPw = RegExp(/[d{2}]/);
-    const cardBirth = RegExp(/^([0-9]{0,4})([0-9]{0,2})([0-9]{0,2})$/);
+    const Birth = RegExp(/^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
 
-    if(!master.test($('.cardNum').val())){
-        alert('카드 유효기간을 확인해주세요');
-        $('.cardNum').val('');
-        $('.cardNum').focus();
+    if(!master.test($('#cardNum').val())){
+        alert('카드 번호를 확인해주세요');
+        $('cardNum').val('');
+        $('#cardNum').focus();
         return false
     }
-    if(!cardDate.test($('.cardDate').val())){
+    if(!cardDate.test($('#cardDate').val())){
         alert('카드 유효기간을 확인해주세요');
-        $('.cardDate').val('');
-        $('.cardDate').focus();
+        $('#cardDate').val('');
+        $('#cardDate').focus();
         return false
     }
-    if(!cardPw.test($('.cardPw').val())){
+    if(!cardPw.test($('#cardPw').val())){
         alert('카드 비밀번호 앞자리를 확인해주세요');
-        $('.cardPw').val('');
-        $('.cardPw').focus();
+        $('#cardPw').val('');
+        $('#cardPw').focus();
         return false
     }
-    if(!cardBirth.test($('.cardBirth').val())){
+    if(!Birth.test($('#cardBirth').val())){
         alert('카드 소유주의 생년월일을 확인해주세요');
-        $('.cardBirth').val('');
-        $('.cardBirth').focus();
+        $('#cardBirth').val('');
+        $('#cardBirth').focus();
         return false
+    }
+    // let pay = false
+    // for(let i=0; i<$("input:checkbox[name='check1']").length; i++){
+    //     if($("input:checkbox[name='check1']").eq(i).is(":checked")==true){
+    //         pay = true
+    //         break
+    //     }
+    //     if(!pay){
+    //         alert('결제규정을 읽고 체크해주세요')
+    //         return false
+    //     }
+    // }
+
+    // if(!$('check1').is(':checked')){
+    //     alert('결제규정을 읽고 체크해주세요')
+    //     return false
+    // }
+    if($('#check1').is(":checked") == false){
+        alert('결제규정을 읽고 체크해주세요');
     }
     return true;
 }

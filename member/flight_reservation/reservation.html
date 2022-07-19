@@ -37,7 +37,9 @@
     <div id="container">
         <div class="title">
             <p class="fly_title">예약하기</p>
+            <!--상단 박스-->
             <div class="tbox">
+                <!--선택한 항공편 확인-->
                 <div class="leftbox">
                     <div class="flyinfopay">
                         <p class="fly_subtitle">서울-괌 항공편</p>
@@ -49,9 +51,12 @@
                         <p class="pleft">총 결제금액<span class="pright">542,300원</span></p>
                     </div>
                 </div>
+                <!--선택한 항공편 확인 끝-->
+                <!--상세요금 보기-->
                 <div class="rightbox">
                     <div class="paydetail">
                         <h3  onmouseover="paydetail()" onmouseleave="payout()">상세요금 보기</h3>
+                            <!--상세요금 팝업-->
                             <div class="smallpayShow" hidden>
                                 <h4>요금 상세 정보</h2>
                                     <p style="font-size: 13px; margin-top: 10px; color: #468cd3;">성인 1명</p>
@@ -67,12 +72,17 @@
                                         <p>542,300원</p>
                                     </div>
                             </div>
+                            <!--상세요금 팝업 끝-->
                         <p class="paydetail2">상기 요금은 유류할증료 및 제세공과금을 포함한 총액요금이며, 유류할증료 및 제세공과금은 유가와 환율에 따라 변동 가능합니다.</p>
                     </div>
                 </div>
+                <!--상세요금 보기 끝-->
             </div>
+            <!--상단 박스 끝-->
         </div>
-        <form action="./js/form.js" name="regform" method="get" onsubmit="sendit()" target="iframe">
+        
+        <form action="js/form.js" name="regform" method="post" onsubmit="return sendit()" target="iframe">
+            <!--예약자 정보 입력-->
             <div class="mbox">
                 <p class="title">예약자 정보</p>
                 <ul>
@@ -96,7 +106,11 @@
                     </li>
                 </ul>
             </div>
+            <!--예약자 정보 입력 끝-->
+
+            <!--하단 예약정보 입력-->
             <div class="bbox">
+                <!--탑승객 정보 입력-->
                 <div class="leftb">
                     <p class="title">탑승객 정보 <span>탑승객1 (성인)</span></p>
                     <div class="inLRbox">
@@ -120,8 +134,8 @@
                         <div class="inRight">
                             <p class="box_title">성별</p>
                             <div class="label_box gender">
-                                <label for="gender"><input type="checkbox" name="남자" id="남자">남자</label>
-                                <label for="여자"><input type="checkbox" name="여자" id="여자">여자</label>
+                                <label for="man"><input type="checkbox" name="gender" id="man">남자</label>
+                                <label for="female"><input type="checkbox" name="gender" id="female">여자</label>
                             </div>
                             <p class="btSm gender">예약 후 변경 불가</p>
                         </div>
@@ -133,31 +147,37 @@
                         </div>
                     </div>
                 </div>
+                <!--탑승객 정보 입력 끝-->
+                <!--여권정보 입력-->
                 <div class="rightb">
                     <p class="title">여권정보</p>
                     <div class="inLRbox">
                         <div class="inLeft">
                             <p class="box_title">국적</p>
-                            <select name="" id="" aria-placeholder="대한민국">
+                            <select name="" id="nationality" aria-placeholder="대한민국">
+                                <option value="">대한민국</option>
+                                <option value="korea">대한민국</option>
                                 <option value="">대한민국</option>
                             </select>
                         </div>
                         <div class="inRight">
                             <p class="box_title">여권번호</p>
-                            <input type="text" id="" placeholder="영문/숫자만 입력">
+                            <input type="text" id="passportNum" placeholder="영문/숫자만 입력">
                             
                         </div>
                     </div>
                     <div class="inLRbox">
                         <div class="inLeft inLeft1">
                             <p class="box_title">여권 만료일</p>
-                            <input type="text" id="" placeholder="YYYYMMDD">
+                            <input type="text" id="passportDate" placeholder="YYYYMMDD">
                             <p class="btSm">예약 후 변경 불가</p>
                         </div>
                         
                         <div class="inRight inRight1">
                             <p class="box_title">여권 발행국</p>
-                                <select name="" id="" aria-placeholder="대한민국">
+                                <select name="" id="passportCountry">
+                                    <option value="">대한민국</option>
+                                    <option value="korea">대한민국</option>
                                     <option value="">대한민국</option>
                                 </select>
                         </div>
@@ -169,8 +189,12 @@
                         <p>미입력하거나 잘못 입력시 입국이 거절 되거나 벌금이 부과될 수 있습니다.</p>
                     </div>
                 </div>
+                <!--여권정보 입력 끝-->
             </div>
+            <!--하단 예약정보 입력 끝-->
+
             <div class="lastbox lastbox2">
+                <!--항공사 규정안내 체크-->
                 <div class="contag">
                     <p>
                         <label for="check1"><a href="#">항공사 운임 규정 (변경,환불 및 수하물 정보 등)</a>을 모두 읽었으며 이에 동의합니다<input type="checkbox" name="check" id="check1"></label>
@@ -180,8 +204,9 @@
                     </p>
                     
                 </div>
+                <!--항공사 규정안내 체크 끝-->
                 <div class="conbtn">
-                    <button type="submit" value="예약하기" class="Btn" onclick="location.href='airpay.html'">예약하기</button>
+                    <button type="" value="예약하기" class="Btn">예약하기</button>
                 </div>
             
         </div>
@@ -209,7 +234,7 @@
         </div>
     </footer>
     <!--footer 끝-->
-<script src="./js/flyScript.js"></script>
+<script src="./js/form.js"></script>
 <script>
         let  boxshow = document.querySelector(".smallpayShow");
 let showBox = true;

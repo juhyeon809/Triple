@@ -691,8 +691,8 @@ p.sm {
 }
 .flyinfoTime .infoCent {
     position: relative; 
-    font-size: 16px;
-    font-weight: bold;
+    vertical-align: middle;
+    font-size: 14px;
     color: #666666; 
     padding-left: 25%;
 }
@@ -770,7 +770,6 @@ p.sm {
     font-size: 18px; 
     color: black;
     font-weight: bold;
-
     text-decoration: underline; 
     margin-top: 5px; 
 }
@@ -820,12 +819,19 @@ p.sm {
 .totalPrice .inner .payShow p{
     margin: 0;
 }
-
+.totalPrice .inner .payShow:first-child{
+    font-size: 15px; margin-top: 10px; color: #468cd3;
+}
 .totalPrice .inner .payShow .tot{
     display: flex;
+    color: #666666;
     width: 700px;
     text-decoration: none;
     justify-content: space-between;
+}
+.totalPrice .inner .payShow .tot p:first-child{
+    color: #666666;
+    font-weight: 600;
 }
 .totalPrice .inner .payShow .flex{
     display: flex;
@@ -1271,7 +1277,7 @@ footer {clear: both;}
     display: flexbox;
     width: 47%;
 }
-.lastbox2 input[type="button"]{
+.lastbox2 button[type="submit"]{
     width: 360px;
     font-size: 16px;
     letter-spacing: 1.2px;
