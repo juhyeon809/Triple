@@ -57,7 +57,7 @@ main {
 .event_item {
     padding: 0;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     border-radius: 10px;
     padding: 5px 15px;
@@ -173,58 +173,6 @@ main {
     border: none;
 }
 
-/*푸터*/
-footer {
-    width: 100%;
-    background-color: #50e3c2;
-    opacity: 0.5;
-    height: 300px;
-    margin-top: 50px;
-    
-}
-#enterprise_info {
-    margin: 0 auto;
-    width: 1400px;
-    display: flex;
-    justify-content: space-between;
-}
-#enterprise_info > #enterprise_info_text {
-    padding-top: 50px;
-    padding-left: 100px;
-    font-weight: bold;
-}
-#enterprise_info > #enterprise_info_text > p {
-    color: rgb(77, 76, 76);
-}
-#enterprise_info > #enterprise_info_text > #bold {
-    font-size: 20px;
-    font-weight: 700;
-}
-#enterprise_info > #enterprise_info_text > p > a {
-    color: rgb(77, 76, 76);
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 18px;
-    font-weight: bold;
-}
-#sns_box {
-    margin-top: 30px;
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
-}
-#sns_box > div > a > img {
-    width: 50px;
-}
-#icon_box > #TRIP {
-    margin-top: 20px;
-    text-align: center;
-}
-#icon_box > #TRIP > a > img {
-    width: 100px;
-}
-
-
 
 
 /*overseas_travel_guam.html*/
@@ -315,4 +263,144 @@ div.item > p > img {
 
 div.item > p > .review_star {
     color: #E8C904;
+}
+
+
+
+.overseas_box {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+.overseas_item_back {
+    width: 900px;
+    height: 130px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+}
+.overseas_item_bg1{
+    background: url('/member/overseas_travel/img/overseas_guam.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg2{
+    background: url('/member/overseas_travel/img/overseas_bangkok.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg3{
+    background: url('/member/overseas_travel/img/overseas_paris.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg4{
+    background: url('/member/overseas_travel/img/overseas_danang.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg5{
+    background: url('/member/overseas_travel/img/overseas_singapore.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg6{
+    background: url('/member/overseas_travel/img/overseas_london.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg7{
+    background: url('/member/overseas_travel/img/overseas_hawaii.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg8{
+    background: url('/member/overseas_travel/img/overseas_bali.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg9{
+    background: url('/member/overseas_travel/img/overseas_newyork.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_bg10{
+    background: url('/member/overseas_travel/img/overseas_barcelona.jpg');
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+}
+.overseas_item_back::before {
+    content: "";
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    border-radius: 10px;
+}
+.overseas_idx{
+    width: 100px;
+    height: 100px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 33px;
+    left: 20px;
+    z-index: 11;
+}
+.overseas_triple{
+    width: 550px;
+    text-align: left;
+    height: 100px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 33px;
+    left: 120px;
+    z-index: 11;
+}
+.overseas_btn{
+    width: 250px;
+    padding: 15px;
+    align-items: center;
+    
+}
+.overseas_btn > input[type="button"]{
+    width: 170px;
+    height: 50px;
+    border: none;
+    background-color: #50e3c2;
+    opacity: 0.87;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    margin-right: 20px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    z-index: 11;
 }
