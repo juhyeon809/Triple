@@ -15,3 +15,9 @@ function next_btn(){
     document.location.href="travels_done.html";
     return true;
 }
+
+
+function filechoice(){
+    oncilk=document.all.file.click();
+}
+

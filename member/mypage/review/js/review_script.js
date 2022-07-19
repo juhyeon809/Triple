@@ -12,6 +12,9 @@ function redone(){
     document.location.href="review_done.html";
     return true;
 }
+function filechoice(){
+    oncilk=document.all.file.click();
+}
 
 
 /* 리뷰 글 보기*/

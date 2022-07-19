@@ -88,16 +88,6 @@ button{
 }
 
 
-/*my travel,travels_done(내여행,여행기 작성된 페이지)*/
-.content_list2{
-    padding-left: 300px;
-}
-
-.list_box{
-    padding-bottom: 60px;
-}
-
-
 div>a{
     text-decoration: none;
 }
@@ -131,9 +121,10 @@ div>a{
 }
 
 /*travels_write2(여행기 쓰기)*/
-#img_choice{
-    padding-left: 30px;
+#file{
+    display: none;
 }
+
 #travels_tit{
     width: 1000px;
     height: 30px;

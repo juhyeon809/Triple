@@ -30,7 +30,6 @@ button{
 }
 
 
-/*내여행*/
 #rename{
     width:400px;
     height: 30px;
@@ -150,7 +149,7 @@ form>p{
 .content_list{
     width: 20%;
 }
-/*my travel,travels_done(내여행,여행기 작성된 페이지)*/
+
 .content_list2{
     width: 75%;
     padding-left: 20px;
@@ -201,13 +200,51 @@ div>a{
 }
 
 /*review_write(리뷰쓰기)*/
-#star1{
-    padding-top: 5px;
-    padding-left: 10px;
-    color:#d3d3d3;
-}
+
 .travels_box > u > a {
     font-size: 16px;
+}
+
+#file{
+    display: none;
+}
+
+/*별점*/
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+    margin-top: 10px;
+    padding-right: 700px;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size:16px;
+    color: transparent;
+    text-shadow: 0 0 0 #e2e2e2;
+}
+#myform label:checked{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#reviewContents {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border: solid 1.5px #D3D3D3;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
 }
 /*review_search(장소 검색)*/
 
@@ -378,7 +415,6 @@ div>a{
     color: #6c6c6c;
     font-weight: bold;
     margin-top: 10px;
-    margin-left: 620px;
     text-decoration: underline;
     border: none;
     background-color: white;

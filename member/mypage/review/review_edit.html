@@ -23,8 +23,22 @@
             <p class="review_title">신화관 제주 신화월드 호텔앤리조트</p>
             <p class="review_subtitle">5성급|제주(중문) </p>
             <div class="review_subbox">
-                <p class="review_subtitle">리뷰평점<span id="star2">★★★★★</span></p>
-                <p class="review_subtitle"><a href="#">완료</a></p>
+                <p class="review_subtitle">리뷰평점</p>
+                <form class="mb-3" name="myform" id="myform" method="post">
+                    <fieldset>
+                        <input type="radio" name="reviewStar" value="5" id="rate1"><label
+                            for="rate1">★</label>
+                        <input type="radio" name="reviewStar" value="4" id="rate2"><label
+                            for="rate2">★</label>
+                        <input type="radio" name="reviewStar" value="3" id="rate3"><label
+                            for="rate3">★</label>
+                        <input type="radio" name="reviewStar" value="2" id="rate4"><label
+                            for="rate4">★</label>
+                        <input type="radio" name="reviewStar" value="1" id="rate5"><label
+                            for="rate5">★</label>
+                    </fieldset>
+                </form> 
+                <p class="review_subtitle"><a href="/member/mypage/review/review_done.html">완료</a></p>
             </div>
             <textarea name="" id="review_cont" cols="30" rows="10">너무 좋았어요! 편안하게 쉬다 갑니다 ^^</textarea>
         </div>
@@ -32,8 +46,10 @@
             <div class="re_img">
                 <img src="./img/review_img2.png">
             </div>
-            <div class="choice_file">
-                <img src="./img/imgfile_choice.svg" >
+            <div class="choice_file" onclick="filechoice()">
+                <input type="file" name="file" id="file">
+                <img src="./img/imgfile_choice.svg" id="file_img">
+                
             </div>
         </div>
     </main>
