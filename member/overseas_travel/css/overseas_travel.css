@@ -229,7 +229,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#items_list > a{
+.item_list_item_title > a{
     display: block; 
     color: black;   
 }
@@ -403,4 +403,18 @@ div.item > p > .review_star {
     top: 40px;
     right: 20px;
     z-index: 11;
+}
+
+/*하트*/
+
+.bi-heart{
+    font-size: 30px;
+    line-height: 30px;
+    color:rgb(155, 155, 155);
+}
+
+.bi-heart-fill{
+    font-size: 30px;
+    line-height: 30px;
+    color:crimson;
 }

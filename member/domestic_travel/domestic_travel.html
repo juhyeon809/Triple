@@ -7,6 +7,7 @@
     <title>국내 여행</title>
     <link rel="stylesheet" href="/member/domestic_travel/css/domestic_travel.css">
     <link rel="stylesheet" href="/css/common.css">
+    <script src="/member/domestic_travel/js/domestic_travel.js"></script>
 </head>
 <body>
     <header>
@@ -47,53 +48,61 @@
         <div class="domestic_main">
             <p class="domestic_title">부담없이 떠나는 당일치기 여행지 7</p>
             <p class="domestic_subtitle">요즘 뜨는 도시부터 추천 코스까지 한눈에!</p>
-            <div class="item_list">
-                <a href="/member/magazine/magazine.html">
+            <div id="slide" class="item_list" val="1" max="8">
+                <a href="/member/magazine/magazine.html" id="slide_div1" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img1">
                             <p class="content">가까워서 좋은 힐링 여행지 5</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                
+                <a href="/member/magazine/magazine.html" id="slide_div2" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img2">
+                            <p class="content">해외 느낌 물씬 여행지 5</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                <a href="/member/magazine/magazine.html" id="slide_div3" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img3">
+                            <p class="content">바다로 둘러쌓인 여행지 5</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                <a href="/member/magazine/magazine.html" id="slide_div4" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img4">
+                            <p class="content">아이와 함께 떠나는 나들이</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                <a href="/member/magazine/magazine.html" id="slide_div5" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img5">
+                            <p class="content"> 편하게 휴식만끽!</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                <a href="/member/magazine/magazine.html" id="slide_div6" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img6">
+                            <p class="content">또 가고 싶은 여행지 7</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html">
+                <a href="/member/magazine/magazine.html" id="slide_div7" class="slide_div">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">가까워서 좋은 힐링 여행지 5</p>
+                        <div class="black_opacity item_back_img7">
+                            <p class="content">혼자라도 좋아, 배낭여행</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/member/magazine/magazine.html" id="slide_div1" class="slide_div">
+                    <div class="domestic_imgbox">
+                        <div class="black_opacity item_back_img1">
+                            <p class="content">혼자라도 좋아, 배낭여행</p>
                         </div>
                     </div>
                 </a>
@@ -162,7 +171,7 @@
                             <img src="./img/logo_jinair.svg" alt="logo_jinair">
                             8월 30일(화) 출발<span class="detail_info">가는편 기준</span><a href="./항공권예매"><span class="air_price">34,300원</span><span class="detail_info">직항</span>&nbsp&nbsp&nbsp&nbsp > </a>
                         </p>
-                        <a href="./항공">항공권 더보기</a>
+                        <a href="/member/flight_reservation/flylist.html">항공권 더보기</a>
                     </li>
                 </ul>
             </div>
@@ -180,7 +189,7 @@
             <div class="item_list item_list_pick">
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img7">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -188,7 +197,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img6">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -196,7 +205,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img5">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -204,7 +213,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img4">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -212,7 +221,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -220,7 +229,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -228,7 +237,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img1">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -236,7 +245,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img7">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -244,7 +253,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img6">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -252,7 +261,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img5">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -260,7 +269,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img4">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -268,13 +277,12 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
                     </div>
                 </a>
-            </div>
         </div>
         <div class="domestic_main">
             <p class="domestic_title">트리플 실시간 인기 장소 TOP 12</p>
@@ -295,7 +303,7 @@
             <div class="item_list item_list_pick">
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -303,7 +311,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -311,7 +319,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img6">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -319,7 +327,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img7">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -327,7 +335,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img4">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -335,7 +343,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img5">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -343,7 +351,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img6">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -351,7 +359,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -359,7 +367,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img1">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -367,7 +375,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img7">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -375,7 +383,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -383,7 +391,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -410,7 +418,15 @@
             <div class="item_list item_list_pick">
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img1">
+                            <p class="content">호텔이름</p>
+                            <p class="content_point">속초 · 경주</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="./숙소">
+                    <div class="domestic_imgbox">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -418,7 +434,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -426,7 +442,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img4">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -434,7 +450,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img5">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -442,7 +458,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img6">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -450,7 +466,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img7">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -458,7 +474,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img1">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -466,7 +482,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img2">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -474,7 +490,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img3">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -482,7 +498,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img4">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
@@ -490,15 +506,7 @@
                 </a>
                 <a href="./숙소">
                     <div class="domestic_imgbox">
-                        <div class="black_opacity">
-                            <p class="content">소노벨 경주</p>
-                            <p class="content_point">속초 · 경주</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="./숙소">
-                    <div class="domestic_imgbox">
-                        <div class="black_opacity">
+                        <div class="black_opacity item_back_img5">
                             <p class="content">소노벨 경주</p>
                             <p class="content_point">속초 · 경주</p>
                         </div>
