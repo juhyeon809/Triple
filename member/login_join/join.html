@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트리플 | 회원가입</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/member/login_join/js/join.js"></script>
     <link rel="stylesheet" href="/member/login_join/css/style.css">
     <style>
         #hp { width: 215px;}
     </style>
-    <script src="/member/login_join/js/join.js"></script>
+
 </head>
 <body>
     <header>
@@ -75,30 +77,30 @@
                 <li>
                     <p class="info_form">약관 동의</p>
                     <div>
-                        <ul class="join_box checkbox_group">
-                            <li class="checkBox check01">
+                        <ul class="join_box">
+                            <li class="checkbox_group">
                                 <label for="check_all">전체 동의합니다.</label>
-                                <input type="checkbox" name="check_all" id="check_all">
+                                <input type="checkbox" id="check_all">
                             </li>
-                            <li class="checkBox check02">
+                            <li class="checkbox_group">
                                 <label for="check_1"><span class="pilsoo">(필수)</span> 만 14세 이상입니다.</label>
-                                <input type="checkbox" name="check_1" id="check_1" class="normal">
+                                <input type="checkbox" id="check_1" class="normal">
                             </li>
-                            <li class="checkBox check03">
+                            <li class="checkbox_group">
                                 <label for="check_2"><span class="pilsoo">(필수)</span> 서비스 이용약관</label>
-                                <input type="checkbox" name="check_2" id="check_2" class="normal">
+                                <input type="checkbox" id="check_2" class="normal">
                             </li>
-                            <li class="checkBox check04">
+                            <li class="checkbox_group">
                                 <label for="check_3"><span class="pilsoo">(필수)</span> 개인정보 수집 및 이용 동의</label>
-                                <input type="checkbox" name="check_3" id="check_3" class="normal">
+                                <input type="checkbox" id="check_3" class="normal">
                             </li>
-                            <li class="checkBox check05">
+                            <li class="checkbox_group">
                                 <label for="check_4"><span class="pilsoo">(필수)</span> 위치서비스 이용 동의</label>
-                                <input type="checkbox" name="check_4" id="check_4" class="normal">
+                                <input type="checkbox" id="check_4" class="normal">
                             </li>
-                            <li class="checkBox check06">
+                            <li class="checkbox_group">
                                 <label for="check_5">(선택) 이벤트 및 할인 혜택 안내 동의</label>
-                                <input type="checkbox" name="check_5" id="check_5" class="normal">
+                                <input type="checkbox" id="check_5" class="normal">
                             </li>
                         </ul>
                     </div>

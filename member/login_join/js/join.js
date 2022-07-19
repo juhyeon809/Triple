@@ -1,10 +1,25 @@
+//약관동의 체크박스 전체 선택
+$(".checkbox_group").on("click", "#check_all", function(){
+    $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
+});
+
+//약관동의 체크박스 개별 선택
+$(".checkbox_group").on("click", ".normal", function(){
+    var is_checked = true;
+
+        $(".checkbox_group .normal").each(function(){
+            is_checked = is_checked && $(this).is(":checked");
+        });
+
+        $("#check_all").prop("checked", is_checked);
+});
+
 function sendit(){
     const email = document.getElementById('email');
     const userpw = document.getElementById('userpw');
     const userpw_re = document.getElementById('userpw_re');
     const nickname = document.getElementById('nickname');
     const hp = document.getElementById('hp');
-    const name = document.getElementById('name');
 
 
     //정규식 표현
@@ -80,18 +95,3 @@ function sendit(){
     return true;
 }
 
-//약관동의 체크박스 전체 선택
-$(".checkbox_group").on("click", "#check_all", function(){
-    $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
-});
-
-//약관동의 체크박스 개별 선택
-$(".checkbox_group").on("click", "normal", function(){
-    var is_checked = true;
-
-    $(".checkbox_group .normal").each(function(){
-        is_checked = is_checked && $(this).is(":checked");
-    });
-
-    $("#check_all").prop("checked", is_checked);
-});
