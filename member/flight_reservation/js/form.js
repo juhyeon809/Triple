@@ -13,10 +13,6 @@ function sendit(){
     const passportDate =  RegExp(/\d{4}\d{2}\d{2}/);
 
 
-    // const expEmailText = /^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/;
-    // const expFirstName = /[A-Za-z]/;
-    // const expLastName = /[A-Za-z]/;
-
     if(!nameCheck.test($('#name').val())){ 
         alert('이름 형식을 확인하세요!\n한글만 입력가능합니다');
         $('#name').focus();
@@ -92,11 +88,32 @@ function card(){
     //Visa, MasterCard, Discover, Amex, Diners Club/Carte Blanche 에 해당하는 카드
     //    ^(?:(?<Visa>4\d{3})|(?<Mastercard>5[1-5]\d{2})|(?<Discover>6011)|(?<DinersClub>(?:3[68]\d{2})|(?:30[0-5]\d))|(?<AmericanExpress>3[47]\d{2}))([ -]?)(?(DinersClub)(?:\d{6}\1\d{4})|(?(AmericanExpress)(?:\d{6}\1\d{5})|(?:\d{4}\1\d{4}\1\d{4})))$
     const master = RegExp(/^([51|52|53|54|55]{2})([0-9]{14})$/);
+    const cardDate = RegExp(/^((0[1-9])|(1[0-2]))\/(\d{2})$/);
+    const cardPw = RegExp(/[d{2}]/);
+    const cardBirth = RegExp(/^([0-9]{0,4})([0-9]{0,2})([0-9]{0,2})$/);
 
-    if(!master.test($('#cardNum').val())){
-        alert('영문 성을 입력해주세요');
-        $('#cardnum').val('');
-        $('#cardnum').focus();
+    if(!master.test($('.cardNum').val())){
+        alert('카드 유효기간을 확인해주세요');
+        $('.cardNum').val('');
+        $('.cardNum').focus();
+        return false
+    }
+    if(!cardDate.test($('.cardDate').val())){
+        alert('카드 유효기간을 확인해주세요');
+        $('.cardDate').val('');
+        $('.cardDate').focus();
+        return false
+    }
+    if(!cardPw.test($('.cardPw').val())){
+        alert('카드 비밀번호 앞자리를 확인해주세요');
+        $('.cardPw').val('');
+        $('.cardPw').focus();
+        return false
+    }
+    if(!cardBirth.test($('.cardBirth').val())){
+        alert('카드 소유주의 생년월일을 확인해주세요');
+        $('.cardBirth').val('');
+        $('.cardBirth').focus();
         return false
     }
     return true;

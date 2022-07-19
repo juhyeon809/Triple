@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트리플 | 항공조회</title>
-    <link rel="stylesheet" href="/member/flight_reservation/fly.css">
+    <link rel="stylesheet" href="/member/flight_reservation/css/fly.css">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  <link rel="stylesheet" href="/resources/demos/style.css">
@@ -13,6 +13,7 @@
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <body>
+    <!--header 시작-->
     <header>
         <div id="logo_area">
             <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -26,7 +27,7 @@
             <ul id="menus">
                 <li><a href="/member/overseas_travel/overseas_travel.html">해외여행</a></li>
                 <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
-                <li><a href="/member/flight_reservation/air.html" style="color:rgb(63, 63, 63)">항공예약</a></li>
+                <li><a href="/member/flight_reservation/flight_main.html" style="color:rgb(63, 63, 63)">항공예약</a></li>
                 <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
                 <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
                 <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
@@ -35,6 +36,8 @@
             </ul>
         </div>
     </header>
+    <!--header 끝-->
+    <!--main 시작-->
     <div id="container">
         <div class="title">
             <h3>항공권 찾기</h3>
@@ -68,13 +71,18 @@
             <div class="hidebox">
             <div class="hidebox1-1" hidden>
                 <form action="">
-                <p class="click" onclick="hideshow1()"><img src="fly_img/flying-airplane.png" alt="">김포 GMP</p>
-                <p class="click" onclick="hideshow2()"><img src="fly_img/map-point-pointer.png" alt="">괌 GUM</p>
-                <p class="click" onclick="hideshow3()"><img src="fly_img/office-monthly-calendar.png" alt="">7.02(토) - 7.04(월)</p>
-                <p class="click" onclick="hideshow4()"><img src="fly_img/messenger-user-avatar.png" alt="">탑승객1명, 일반석 외1</p>
+                <p class="click" onclick="hideshow1()">
+                    <img src="fly_img/flying-airplane.png" alt="">김포 GMP</p>
+                <p class="click" onclick="hideshow2()">
+                    <img src="fly_img/map-point-pointer.png" alt="">괌 GUM</p>
+                <p class="click" onclick="hideshow3()">
+                    <img src="fly_img/office-monthly-calendar.png" alt="">7.02(토) - 7.04(월)</p>
+                <p class="click" onclick="hideshow4()">
+                    <img src="fly_img/messenger-user-avatar.png" alt="">탑승객1명, 일반석 외1</p>
             
                 <div>
-                    <button class="close" onclick="close()">닫기</button><button type="reset">재검색</button>
+                    <button class="close" onclick="close()">닫기</button>
+                    <button type="reset">재검색</button>
                 </div>
             </form>
             </div>
@@ -84,45 +92,95 @@
                 
                 
                     <p class="boxtit">해외인기도시</p>
-                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
+                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>
+                        뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
                     <p class="boxtit">국내인기도시</p>
-                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br> 여수 | 양양 | 포항</span>
+                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br>
+                        여수 | 양양 | 포항</span>
             </div>
             <div class="hidebox1-3" hidden>
                 <input type="search" name="" id="" placeholder="도시 또는 공항 이름으로 검색">
                     <p class="boxtit">해외인기도시</p>
-                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
+                    <span class="boxcity">괌 | 방콕 | 사이판 | 파리 | 호놀룰루 <br>
+                        뉴욕 | 싱가포르 | 발리 | 로스앤젤리스</span>
                     <p class="boxtit">국내인기도시</p>
-                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br> 여수 | 양양 | 포항</span>
+                    <span class="boxcity">서울 | 제주 | 부산 | 경주 | 청주 | 대구<br>
+                        여수 | 양양 | 포항</span>
             </div>
             <div class="hidebox1-4" hidden>
-                <p>가는날</p><input type="text" id="datepicker1" placeholder="가는날을 선택해주세요">
-                <p>오는날</p><input type="text" id="datepicker2" placeholder="오는날을 선택해주세요">
+                <p>가는날</p>
+                <input type="text" id="datepicker1" placeholder="가는날을 선택해주세요">
+                <p>오는날</p>
+                <input type="text" id="datepicker2" placeholder="오는날을 선택해주세요">
             </div>
             <div class="hidebox1-5" hidden>
                 <p class="boxtit">인원 및 좌석등급</p>
-                    <div><span>- 총 9명까지만 한번에 검색 및 예약 가능</span></div>
-                    <div><span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span></div>
-                    <div><span>- 만 2세 미만의 유아라도 별도 좌석에 탑승하려면 소아로 선택해주세요.</span></div>
-                    <div class="div">
-                        <div style="float: left;"><p class="boxtit">성인</p><span>만 12세 이상 (국내선 만 13세 이상)</span></div>
-                        <div style="float: right;"><button onclick='count1("minus")'>-</button><span class="result1">0</span><button onclick='count1("plus")'>+</button></div>
+                <div>
+                    <span>- 총 9명까지만 한번에 검색 및 예약 가능</span>
+                </div>
+                <div>
+                    <span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span>
+                </div>
+                <div>
+                    <span>- 만 2세 미만의 유아라도 별도 좌석에 탑승하려면 소아로 선택해주세요.</span>
+                </div>
+                <div class="div">
+                    <div style="float: left;">
+                        <p class="boxtit">성인</p>
+                        <span>만 12세 이상 (국내선 만 13세 이상)</span>
                     </div>
-                    <div class="div" style="clear: both;">
-                        <div style="float: left;"><p class="boxtit">소아</p><span>만 12세 이상 (국내선 만 13세 이상)</span></div>
-                        <div style="float: right;"><button onclick='count2("minus")'>-</button><span class="result2">0</span><button onclick='count2("plus")'>+</button></div>
+                    <div style="float: right;">
+                        <button onclick='count1("minus")'>-</button>
+                        <span class="result1">0</span>
+                        <button onclick='count1("plus")'>+</button>
                     </div>
-                    <div class="div">
-                        <div style="float: left;"><p class="boxtit">유아</p><span>만 12세 이상 (국내선 만 13세 이상)</span></div>
-                        <div style="float: right;"><button onclick='count3("minus")'>-</button><span class="result3">0</span><button onclick='count3("plus")'>+</button></div>
+                </div>
+                <div class="div" style="clear: both;">
+                    <div style="float: left;">
+                        <p class="boxtit">소아</p>
+                        <span>만 12세 이상 (국내선 만 13세 이상)</span>
                     </div>
-                    <div class="pbox">
+                    <div style="float: right;">
+                        <button onclick='count2("minus")'>-</button>
+                        <span class="result2">0</span>
+                        <button onclick='count2("plus")'>+</button>
+                    </div>
+                </div>
+                <div class="div">
+                    <div style="float: left;">
+                        <p class="boxtit">유아</p>
+                        <span>만 12세 이상 (국내선 만 13세 이상)</span>
+                    </div>
+                    <div style="float: right;">
+                        <button onclick='count3("minus")'>-</button>
+                        <span class="result3">0</span>
+                        <button onclick='count3("plus")'>+</button>
+                    </div>
+                </div>
+                <div class="pbox">
                     <div class="p">
-                    <p class="boxtit">일반석</p><input type="checkbox" name="seat" id=""></div>
-                    <div class="p"><p class="boxtit">프리미엄 일반석</p><input type="checkbox" name="seat" id=""></div>
-                    <div class="p"><p class="boxtit">비즈니스석</p><input type="checkbox" name="seat" id=""></div>
-                    <div class="p"><p class="boxtit">일등석</p><input type="checkbox" name="seat" id="">
+                        <label for="economy">
+                            <p class="boxtit">일반석</p>
+                            <input type="checkbox" name="seat" id="economy">
+                        </label>
                     </div>
+                    <div class="p">
+                        <label for="pr_conomy"><p class="boxtit">프리미엄 일반석</p>
+                            <input type="checkbox" name="seat" id="pr_conomy">
+                        </label>
+                    </div>
+                    <div class="p">
+                        <label for="business">
+                            <p class="boxtit">비즈니스석</p>
+                            <input type="checkbox" name="seat" id="business">
+                        </label>
+                    </div>
+                        <div class="p">
+                            <label for="first">
+                                <p class="boxtit">일등석</p>
+                                <input type="checkbox" name="seat" id="first">
+                            </label>
+                        </div>
                     <div>
                         <button class="close" onclick="close()">선택완료</button>
                     </div>
@@ -171,7 +229,7 @@
                     </li>
                 </ul>
                 <div class="fly_item_price">
-                    <a href="#">538,700원</a>
+                    <a href="Info.html">538,700원</a>
                 </div>
             </div>
             <div class="fly_item">
@@ -504,7 +562,8 @@
             </div>
         </div>
     </div>
-
+    <!--main 끝-->
+    <!--footer 시작-->
     <footer>
         <div id="enterprise_info">
             <div id="enterprise_info_text">
@@ -516,16 +575,36 @@
             </div>
             <div id="icon_box">
                 <div id="sns_box">
-                    <div><a href="#"><img src="../../img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                    <div>
+                        <a href="#">
+                            <img src="../../img/btn-social-blog@3x.png" alt="SNS">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="../../img/btn-social-insta@3x.png" alt="SNS">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="../../img/btn-social-fb@3x.png" alt="SNS">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="../../img/btn-social-brunch@3x.png" alt="SNS">
+                        </a>
+                    </div>
                 </div>
-                <div id="TRIP"><a href="#"><img src="../../img/footer_TRIP.png" alt="TRIP"></a></div>
+                <div id="TRIP">
+                    <a href="#">
+                        <img src="../../img/footer_TRIP.png" alt="TRIP">
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
-
+    <!--footer 끝-->
 
     <script src="js/flyScript.js"></script>
     

@@ -59,6 +59,9 @@
 .flybox > ul > li .icon3{
     width: 170px;
 }
+.flybox > ul > li .icon4{
+    width: 354px;
+}
 
 
 /*항공예약팝업*/
@@ -76,7 +79,7 @@
     margin: 0 auto;
     word-break: keep-all;
     background-color: white;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 10px 20px;
     box-shadow: 5px 5px 20px #bebebe;
     border-radius: 5px;
     
@@ -102,6 +105,7 @@
     margin: 0 auto;
     padding-top: 5px;
 }
+
 .airpop .div button {
     border: none;
     background-color: white;
@@ -110,23 +114,39 @@
 }
 
 .airpop .div p.boxtit { margin-bottom: 0; font-size: 15px;}
+.airpop .p .boxtit{
+    width: 330px;
+    color: #000;
+    font-size: 14px;
+    float: left;
+    margin: 5px auto;
+}
+.airpop .p input{
+    clear: both;
+}
 .airpop .div span{
     color: #868686;
     vertical-align: middle;
-    font-size: 15px;
+    font-size: 12px;
 }
+
+
 .airpop .pbox div{
-    width: 320px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    clear: both;
+    width: 350px;
+    font-size: 14px;
     justify-content: space-between;
 }
+.airpop .pbox div:last-child{
+    display: block;
+    text-align: center;
+}
 .airpop .pbox div button{
-    width: 150px;
+    width: 100px;
     height: 35px;
-    border: none;
+    border: 1px solid #468cd3;
     padding: 0;
+    
     border-radius: 10px;
     color: #468cd3;
     background-color: white;
@@ -138,29 +158,7 @@
 }
 
 .scrollLock { overflow: hidden; }
-/* .layer-popup {
-	display: none;
-	position: absolute;
-	/* background-color: rgba(0, 0, 0, 0.5); 
-	z-index: 100;
-}
 
-.layer-popup.show {
-	display: block;
-}
-
-.modal-dialog {
-	width: 300px;
-	margin: 40px auto;
-	background-color: #fff;
-}
-
-.modal-content {
-	padding:10px 15px;
-	text-align: center;
-	line-height: 100px;
-} */
-/**/
 
 input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
@@ -241,7 +239,7 @@ input[type="button"]{ width: 100px;}
 .special .imgbox {
     width: 160px; height: 150px;
     border-radius: 10px; 
-    background-image: url(./fly_img/교차\ 98\ 1.png);  
+    background-image: url("/member/flight_reservation/fly_img/box.png");  
     margin: 0; padding: 0; 
     margin-right: 20px;
     margin-left: 2px;
@@ -456,16 +454,18 @@ div.hidebox1-1 div button:nth-child(2){
     border-bottom: 1px solid #666666;
 }
 .hidebox1-5{
-
     width: 330px;
-    height: 360px;
-    padding: 0 10px 0 10px;
+    height: 340px;
+    padding: 0 10px 5px 10px;
     align-items: center;
     text-align: center;
     background-color: #fdfdfd;
       box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
     border-radius: 10px;
     }
+.hidebox1-5 p.boxtit:first-child{
+    margin-bottom: 5px;
+}
 .hidebox1-5 div{
     font-size: 10px;
     text-align: left;
@@ -481,6 +481,9 @@ div.hidebox1-1 div button:nth-child(2){
     color: #000;
     font-size: 13px;
 }
+.hidebox1-5 div.div p:first-child{
+    margin-top: 5px;
+}
 .hidebox1-5 span.result{
     vertical-align: middle;
     margin: 5px;
@@ -488,20 +491,12 @@ div.hidebox1-1 div button:nth-child(2){
 
 .hidebox1-5 .div button{
     width: 10px;
-    margin: 5px 0;
     border: none;
     padding: auto;
     background-color: #fdfdfd;
 }
 
-/* .hidebox1-4 .div button,
-.hidebox1-4 .div input{
-    vertical-align: middle;
-    width: 20px;
-    height: 15px;
-    border: none;
-    background-color: #fdfdfd; 
-}*/
+
 .hidebox1-5 .p .boxtit{
     width: 300px;
     color: #000;
@@ -514,7 +509,6 @@ div.hidebox1-1 div button:nth-child(2){
 }
 .hidebox1-5 .pbox div:last-child {
     clear: both;
-    padding-top: 10px;
     text-align: right;
 }
 
@@ -1326,7 +1320,7 @@ footer {clear: both;}
 }
 
 .paydetail2, .box_title, .mbox > ul > li > .pnon,
-     .cont {
+.cont {
     font-size: 14px;
     color: black;
     font-weight: normal;
