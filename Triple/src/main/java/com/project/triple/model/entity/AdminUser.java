@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
         name="seq_adminuser",
         sequenceName = "seq_adminuser",
         initialValue = 1,
+
         allocationSize = 1
 )
 @Builder
