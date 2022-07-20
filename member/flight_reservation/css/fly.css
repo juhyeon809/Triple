@@ -105,7 +105,6 @@
     margin: 0 auto;
     padding-top: 5px;
 }
-
 .airpop .div img {
     width: 10px;
     padding: 0 3px;
@@ -222,15 +221,12 @@ input[type="button"]{ width: 100px;}
     padding: 10px; 
     border-radius: 10px; 
 }
-<<<<<<< HEAD
+
 .flybox > ul > li > a > input {
     font-size: 16px;
     font-weight: bold;
 }
-=======
 
-
->>>>>>> 70b4c137528271040178c95d5d1b59b9e6b8e147
 #cheapbox {
     margin: 0 auto;
     width: 900px;
@@ -826,9 +822,7 @@ p.sm {
 .totalPrice .inner .payShow p{
     margin: 0;
 }
-.totalPrice .inner .payShow:first-child{
-    font-size: 15px; margin-top: 10px; color: #468cd3;
-}
+
 .totalPrice .inner .payShow .tot{
     display: flex;
     color: #666666;
@@ -1035,15 +1029,24 @@ p.sm {
 .inRight > .label_box > label {
     margin-right: 20px;
 }
-.bbox { margin-bottom: 20px;}
-.bbox input[type="checkbox"] {width: 12px; margin-right: 5px; height: 15px;}
+.bbox { 
+    margin-bottom: 20px;
+}
+.bbox input[type="checkbox"] {
+    width: 12px; 
+    margin-right: 5px; 
+    height: 15px;
+    }
 .bbox .btSm { 
     margin-top: 5px; 
     font-size: 14px; 
     text-indent: 5px;
+    color: #858585;
 }
 
-.bbox p {margin: 10px 0 0 0;}
+.bbox p {
+    margin: 10px 0 0 0;
+}
 
 .bbox input {
     border-radius: 5px; 

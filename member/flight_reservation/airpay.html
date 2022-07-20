@@ -8,6 +8,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/member/flight_reservation/css/fly.css">
     <link rel="stylesheet" href="/css/common.css">
+    <script>
+        let time = 1799;
+        let min = ""; //분
+        let sec = ""; //초
+
+        let x = setInterval(function(){
+            min = parseInt(time/60);
+            sec = time % 60;
+            
+            document.querySelector('#time').innerText = min + "분 "+ sec+"초";
+            time--;
+
+            if(time < 0){
+                clearInterval(x);
+                document.querySelector('#time').innerText = "시간초과";
+            }
+        }, 1000);
+    </script>
 <body>
     <!--header 시작-->
     <header>
@@ -65,7 +83,7 @@
                             <p class="pleft">총 결제금액
                             <span class="pright">542,300원</span></p>
                         </div>
-                        <p class="red"><b>29분 59초 이내 결제시 예약이 완료됩니다.</b><br>시간 초과 및 페이지 이탈 시 <b>현재 예약은 취소</b>되며, 다시 예약을 진행할 경우 <b>좌석이 매진</b>될 수 있습니다.</p>
+                        <p class="red"><b><label id="time">30분 00초</label> 이내 결제시 예약이 완료됩니다.</b><br>시간 초과 및 페이지 이탈 시 <b>현재 예약은 취소</b>되며, 다시 예약을 진행할 경우 <b>좌석이 매진</b>될 수 있습니다.</p>
                     </div>
                 </div>
                 <div class="rightbox">

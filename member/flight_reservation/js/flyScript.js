@@ -267,14 +267,3 @@ closeBtn.addEventListener('click', ()=>{
     section4.style.display = "none";
 })
 
-// /*상세요금보기 */
-// let  boxshow = document.querySelector(".smallpayShow");
-// let showBox = true;
-// function paydetail(){
-//         boxshow.style.display = "block";
-//         showBox = true;
-// }
-// function payout(){
-//     boxshow.style.display = "none";
-//     showBox = false;
-// }
