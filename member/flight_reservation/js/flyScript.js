@@ -122,7 +122,7 @@ function count3(type)  {
 
 
 
-    
+
 
 let section = document.querySelector(".hidebox1-1");
 let isshow = true;
@@ -136,6 +136,9 @@ function hideshow(){
         isshow = true;
     }
 }
+
+
+
 let section1 = document.querySelector(".hidebox1-2");
 let isshow1 = true;
 function hideshow1(){
@@ -151,6 +154,16 @@ function hideshow1(){
         isshow1 = true;
     } 
 }
+
+let input = document.querySelector('#city1');
+let inInput = document.querySelector('.click1');
+input.addEventListener('keypress', function(key){
+    if(key.keyCode == 13){
+        inInput.innerText = input.value;
+        section1.style.display = "none";
+    }
+})
+
 let section2 = document.querySelector(".hidebox1-3")
 let isshow2 = true;
 function hideshow2(){
@@ -165,6 +178,16 @@ function hideshow2(){
         isshow2 = true;
     } 
 }
+
+let input2 = document.querySelector('#city2');
+let inInput2 = document.querySelector('.click2');
+input2.addEventListener('keypress', function(key){
+    if(key.keyCode == 13){
+        inInput2.innerText = input2.value;
+        section2.style.display = "none";
+    }
+})
+
 //날짜설정박스 수정하기
 
 let section3 = document.querySelector(".hidebox1-4")
@@ -176,11 +199,33 @@ function hideshow3(){
     }else{
         section1.style.display = "none";
         section2.style.display = "none";
-        section4.style.display = "none";
         section3.style.display = "block";
+        section4.style.display = "none";
         isshow2 = true;
     } 
 }
+
+let closebox = document.querySelector('.hidebox1-4');
+let datepicker1 = document.querySelector('#datepicker1');
+let datepicker2 = document.querySelector('#datepicker2');
+let inInput3 = document.querySelector('.click3');
+let inInput4 = document.querySelector('.click4');
+
+closebox.addEventListener('dblclick', (event) => {
+    inInput3.innerText = datepicker1.value;
+    inInput4.innerText = datepicker2.value;
+    section3.style.display = "none";
+});
+
+// let datepicker1 = document.querySelector('#datepicker1');
+// let datepicker2 = document.querySelector('#datepicker2');
+// let inInput3 = document.querySelector('.click3');
+// put3.addEventListener('keypress', function(key){
+//     if(key.keyCode == 13){
+//         inInput3.innerHTML = datepicker1.value;
+//         inInput4.innerHTML = datepicker2.value;
+//     }
+// })
 
 //인원및 좌석등급
 let section4 = document.querySelector(".hidebox1-5")
@@ -197,6 +242,7 @@ function hideshow4(){
         isshow4 = true;
     } 
 }
+
 
 
 
