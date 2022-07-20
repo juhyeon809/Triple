@@ -13,7 +13,6 @@ $(document).ready(function(){
 })
 
 
-
 // 외부영역 클릭 시 팝업 닫기
 // $(document).mouseup(function (e){
 // 	var LayerPopup = $(".airpop");
@@ -51,9 +50,79 @@ function change2(){
     }
 }
 
+//인원추가버튼
+function count1(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.querySelector(".result1");
+    
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+    
+    // 더하기/빼기
+    if(type === 'plus') {
+        number = parseInt(number) + 1;
+    }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        if(number <= 0){
+            number =0;
+        }
+    }
+    // 결과 출력
+    resultElement.innerText = number;
+    }
 
 
 
+
+    //인원추가버튼
+function count2(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.querySelector(".result2");
+    
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+    
+    // 더하기/빼기
+    if(type === 'plus') {
+        number = parseInt(number) + 1;
+    }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        if(number <= 0){
+            number = 0;
+        }
+    }
+    // 결과 출력
+    resultElement.innerText = number;
+    }
+
+
+
+
+
+    //인원추가버튼
+function count3(type)  {
+    // 결과를 표시할 element
+    const resultElement = document.querySelector(".result3");
+    
+    // 현재 화면에 표시된 값
+    let number = resultElement.innerText;
+    
+    // 더하기/빼기
+    if(type === 'plus') {
+        number = parseInt(number) + 1;
+    }else if(type === 'minus')  {
+        number = parseInt(number) - 1;
+        if(number <= 0){
+            number =0;
+        }
+    }
+    // 결과 출력
+    resultElement.innerText = number;
+    }
+
+
+
+    
 
 let section = document.querySelector(".hidebox1-1");
 let isshow = true;
@@ -131,75 +200,6 @@ function hideshow4(){
 
 
 
-//인원추가버튼
-function count1(type)  {
-    // 결과를 표시할 element
-    const resultElement = document.querySelector(".result1");
-    
-    // 현재 화면에 표시된 값
-    let number = resultElement.innerText;
-    
-    // 더하기/빼기
-    if(type === 'plus') {
-        number = parseInt(number) + 1;
-    }else if(type === 'minus')  {
-        number = parseInt(number) - 1;
-        if(number => 0){
-            number =0;
-        }
-    }
-    // 결과 출력
-    resultElement.innerText = number;
-    }
-
-
-
-
-    //인원추가버튼
-function count2(type)  {
-    // 결과를 표시할 element
-    const resultElement = document.querySelector(".result2");
-    
-    // 현재 화면에 표시된 값
-    let number = resultElement.innerText;
-    
-    // 더하기/빼기
-    if(type === 'plus') {
-        number = parseInt(number) + 1;
-    }else if(type === 'minus')  {
-        number = parseInt(number) - 1;
-        if(number => 0){
-            number =0;
-        }
-    }
-    // 결과 출력
-    resultElement.innerText = number;
-    }
-
-
-
-
-
-    //인원추가버튼
-function count3(type)  {
-    // 결과를 표시할 element
-    const resultElement = document.querySelector(".result3");
-    
-    // 현재 화면에 표시된 값
-    let number = resultElement.innerText;
-    
-    // 더하기/빼기
-    if(type === 'plus') {
-        number = parseInt(number) + 1;
-    }else if(type === 'minus')  {
-        number = parseInt(number) - 1;
-        if(number => 0){
-            number =0;
-        }
-    }
-    // 결과 출력
-    resultElement.innerText = number;
-    }
 
 
     let direct = document.querySelector(".direct");
@@ -232,10 +232,3 @@ closeBtn.addEventListener('click', ()=>{
 //     boxshow.style.display = "none";
 //     showBox = false;
 // }
-
-
-
-
-
-
-//결제하기

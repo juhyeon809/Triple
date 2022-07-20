@@ -45,6 +45,7 @@
         <div class="title">
         <p class="fly_title">쉽고 빠르게, 트리플 항공권 예약</p></div>
         <!--항공권 검색 박스-->
+        <form action="">
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
                 <a><input type="button" value="왕복" class="flybtn flybtn1" onclick="change()"></a>
@@ -86,16 +87,36 @@
                     <div><span>- 성인 1인당 유아 1인까지 동반 탑승 가능</span></div>
                     <div><span>- 만 2세 미만의 유아라도 별도 좌석에 탑승하려면 소아로 선택해주세요.</span></div>
                     <div class="div">
-                        <div style="float: left;"><p class="boxtit">성인</p><span>만 12세 이상 (국내선 만 13세 이상)</span></div>
-                        <div style="float: right;"><button onclick='count1("minus")'>-</button><span class="result1">0</span><button onclick='count1("plus")'>+</button></div>
+                        <div style="float: left;"><p class="boxtit">성인</p>
+                            <span>만 12세 이상 (국내선 만 13세 이상)</span>
+                        </div>
+                        <div style="float: right;">
+                            <img src="fly_img/minus.png" alt="" onclick='count1("minus")'>
+                            <span class="result1">0</span>
+                        <img src="fly_img/plus.png" alt="" onclick='count1("plus")'>
+                    </div>
                     </div>
                     <div class="div" style="clear: both;">
-                        <div style="float: left;"><p class="boxtit">소아</p><span>만 2세~만 12세 미만(국내선 만 13세 미만)</span></div>
-                        <div style="float: right;"><button onclick='count2("minus")'>-</button><span class="result2">0</span><button onclick='count2("plus")'>+</button></div>
+                        <div style="float: left;">
+                            <p class="boxtit">소아</p>
+                            <span>만 2세~만 12세 미만(국내선 만 13세 미만)</span>
+                        </div>
+                        <div style="float: right;">
+                            <img src="fly_img/minus.png" alt="" onclick='count2("minus")'>
+                            <span class="result2">0</span>
+                            <img src="fly_img/plus.png" alt="" onclick='count2("plus")'>
+                        </div>
                     </div>
                     <div class="div">
-                        <div style="float: left;"><p class="boxtit">유아</p><span>만 2세 미만, 보호자와 동반착석</span></div>
-                        <div style="float: right;"><button onclick='count3("minus")'>-</button><span class="result3">0</span><button onclick='count3("plus")'>+</button></div>
+                        <div style="float: left;">
+                            <p class="boxtit">유아</p>
+                            <span>만 2세 미만, 보호자와 동반착석</span>
+                        </div>
+                        <div style="float: right;">
+                            <img src="fly_img/minus.png" alt="" onclick='count3("minus")'>
+                            <span class="result3">0</span>
+                            <img src="fly_img/plus.png" alt="" onclick='count3("plus")'>
+                        </div>
                     </div>
                     <div class="pbox">
                         <div class="p">
@@ -122,13 +143,14 @@
                             </label>
                         </div>
                         <div>
-                            <button class="close" onclick="close()">선택완료</button>
+                            <button class="" onclick="close()">선택완료</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--항공권 검색 박스 인원조회 팝업 끝-->
         </div>
+        </form>
         <!--항공권 검색 박스 끝-->
         <!--특가 항공권 전체-->
         <div id="cheapbox">
@@ -312,20 +334,20 @@
     <script src="js/flyScript.js"></script>
     <script>
         // 팝업 열기
-$(document).on("click", ".popUp", function (e){
-	var target = $(this).attr("id");
-	$(target).addClass("show");
-});
+// $(document).on("click", ".airpop", function (e){
+// 	var target = $(this).attr("id");
+// 	$(target).addClass("show");
+// });
 
 
 // // 외부영역 클릭 시 팝업 닫기
-$(document).mouseup(function (e){
-	var LayerPopup = $(".airpop");
+// $(document).mouseup(function (e){
+// 	var LayerPopup = $(".airpop");
    
-	if(LayerPopup.has(e.target).length === 0){
-		LayerPopup.removeClass("show");
-	}
-});
+// 	if(LayerPopup.has(e.target).length === 0){
+// 		LayerPopup.removeClass("show");
+// 	}
+// });
 
         $(function(){
            $('#datepicker').datepicker();

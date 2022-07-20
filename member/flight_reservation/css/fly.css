@@ -106,10 +106,17 @@
     padding-top: 5px;
 }
 
-.airpop .div button {
-    border: none;
-    background-color: white;
-    font-size: 25px;
+.airpop .div img {
+    width: 10px;
+    padding: 0 3px;
+    color: #000;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.airpop .div .result1,.airpop .div .result2,.airpop .div .result3{
+    /* margin-top: 5px; */
+    font-size:16px;
     vertical-align: middle;
 }
 
