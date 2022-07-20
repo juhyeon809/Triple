@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호텔·펜션</title>
+    <link rel="stylesheet" href="/member/lodging_room/css/lodging_room_test.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="backg_image_area">
+        <header>
+            <div id="logo_area">
+                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+                <form id="menu_form">
+                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+                </form>
+                <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
+    
+            </div>
+            <div id="menu_area">
+                <ul id="menus">
+                    <li><a href="/member/overseas_travel/overseas_travel.html">해외여행</a></li>
+                    <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
+                    <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
+                    <li><a href="/member/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
+                    <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                    <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
+                    <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
+                    <li><a href="/member/event/event.html">혜택/렌터카</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="lodging_main_img"></div>
+        <section>
+            <div class="lodging_main">
+                <p class="lodging_title">최저가 숙소 비교 예약</p>
+                <ul id="room_search_box">
+                    <li class="room_icon">
+                        <img src="./img/icon_main_search.svg" alt="search"><input type="text" placeholder="지역">
+                    </li>
+                    <li class="room_icon">
+                        <img src="./img/icon_main_calendar.svg" alt="date"><input type="text" placeholder="체크인" id="datepicker1"><input type="text" placeholder="체크아웃" id="datepicker2">
+                    </li>
+                    <li class="room_icon">
+                        <img src="./img/icon_main_person.svg" alt="people"><input type="text" placeholder="인원수">
+                    </li>
+
+                    <div><button type="submit" value="숙소 검색" id="room_search_button">숙소 검색</button></div>
+                </ul>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">여행, 어디로 가시나요?</p>
+                <div class="region_list">
+                    <a href="./여행페이지"><img src="./img/domestic_gangwon.png" alt="gangwon"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_seoul.png" alt="seoul"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_gyeongbuk.png" alt="gyeonbuk"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_gyeonggi.png" alt="gyeonggi"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_busan.png" alt="busan"></a>
+                </div>
+                <div class="region_list">
+                    <a href="./여행페이지"><img src="./img/domestic_jeonnam.png" alt="jeonnam"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_jeju.png" alt="jeju"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_chungnam.png" alt="chungnam"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_gangnam.png" alt="gangnam"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_chungbuk.png" alt="chungbuk"></a>
+                </div>
+                <div class="region_list" id="region_list">
+                    <a href="./여행페이지"><img src="./img/domestic_jeonbuk.png" alt="jeonbuk"></a>
+                    <a href="./여행페이지"><img src="./img/domestic_incheon.png" alt="incheon"></a>
+                </div>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">최근본 숙소</p>
+                
+                <div class="item_list item_list_pick">
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">패밀리 숙소 BEST</p>
+                <a href="./패밀리숙소" class="detail">전체보기</a>
+                <div class="item_list item_list_pick">
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">전세계 인기 호텔 얼리버드 특가 모음</p>
+                <a href="./얼리버드" class="detail">전체보기</a>
+                <div class="item_list item_list_pick">
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">제주 BEST 숙소</p>
+                <a href="./제주best숙소" class="detail">전체보기</a>
+                <div class="item_list item_list_pick">
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="lodging_main">
+                <p class="lodging_title">호텔·펜션 매거진</p>
+                <a href="./호텔펜션매거진" class="detail">전체보기</a>
+                <div class="item_list item_list_pick">
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./숙소">
+                        <div class="lodging_imgbox">
+                            <div class="black_opacity">
+                                <p class="content">두짓 리조트</p>
+                                <p class="content_point">6.18(토)-6.19(일)</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div id="enterprise_info">
+                <div id="enterprise_info_text">
+                    <p id="bold">트리플 사업자 정보</p>
+                    <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                    <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+    
+                    <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+                </div>
+                <div id="icon_box">
+                    <div id="sns_box">
+                        <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                    </div>
+                    <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            $(function(){
+                $('#datepicker').datepicker();
+            })
+        
+        
+            $(function() {
+                $("#datepicker1, #datepicker2").datepicker({
+                    dateFormat: 'yy.mm.dd'
+                });
+            });
+        
+        </script>
+</body>
+</html>
