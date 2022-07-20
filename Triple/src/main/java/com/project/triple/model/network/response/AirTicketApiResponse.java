@@ -1,32 +1,18 @@
-package com.project.triple.model.entity;
-
+package com.project.triple.model.network.response;
 
 import com.project.triple.model.enumclass.TicketStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@SequenceGenerator(
-        name="seq_air_ticket",
-        sequenceName = "seq_air_ticket",
-        initialValue = 1,
-        allocationSize = 1
-)
+@AllArgsConstructor
 @Builder
-@EntityListeners(AuditingEntityListener.class)
-public class AirTicket {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_air_ticket")
+public class AirTicketApiResponse {
     private Long id;
     private String ticketType;
     private String ticketNum;
@@ -39,9 +25,6 @@ public class AirTicket {
     private Integer price;
     private String seatNum;
     private String baggage;
-    @CreatedDate
     private String revDate;
-    @Enumerated(EnumType.STRING)
     private TicketStatus status;
-
 }

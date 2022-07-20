@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,7 +33,7 @@ public class AdminUser {
     private String userid;
     private String userpw;
     private String name;
-    private String status;
+    private UserStatus status;
     @LastModifiedDate
     private LocalDateTime lastLoginAt;
     @CreatedBy
