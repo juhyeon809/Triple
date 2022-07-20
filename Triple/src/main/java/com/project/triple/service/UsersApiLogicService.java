@@ -5,7 +5,9 @@ import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UsersApiRequest;
 import com.project.triple.model.network.response.UsersApiResponse;
+import com.project.triple.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,6 +16,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiResponse, Users> {
 
+    @Autowired
+    private UsersRepository usersRepository;
 
     private UsersApiResponse response(Users users){
         UsersApiResponse usersApiResponse = UsersApiResponse.builder()
@@ -62,12 +66,31 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
         UsersApiRequest usersApiRequest = request.getData();
         Optional<Users> users = baseRepository.findById(usersApiRequest.getId());
 
-
-        return null;
+        return users.map(
+                        user -> {
+                            user.setEmail(usersApiRequest.getEmail());
+                            user.setUserpw(usersApiRequest.getUserpw());
+                            user.setNickname(usersApiRequest.getNickname());
+                            user.setCountryCode(usersApiRequest.getCountryCode());
+                            user.setZipcode(usersApiRequest.getZipcode());
+                            user.setAddress1(usersApiRequest.getAddress1());
+                            user.setAddress2(usersApiRequest.getAddress2());
+                            user.setAddress3(usersApiRequest.getAddress3());
+                            user.setRegDate(usersApiRequest.getRegDate());
+                            user.setStatus(usersApiRequest.getStatus());
+                            user.setTosAgree(usersApiRequest.getTosAgree());
+                            return user;
+                        }).map(user -> baseRepository.save(user)).map(user -> response(user)).map(Header::OK)
+                .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
+
     @Override
-    public Header<UsersApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long id) {
+        Optional<Users> users = baseRepository.findById(id);
+        return users.map(user->{
+            baseRepository.delete(user);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 }
