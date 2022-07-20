@@ -255,10 +255,10 @@ main .content .cards .card {
     align-items: center;
     justify-content: space-around;
 }
-main .content .cards .card .box{
+main .content .cards .card .incard{
     margin-top: 0;
 }
-.box.head{
+.incard.head{
     margin: 0;
 }
 

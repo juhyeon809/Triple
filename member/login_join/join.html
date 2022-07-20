@@ -9,7 +9,7 @@
     <script src="/member/login_join/js/join.js"></script>
     <link rel="stylesheet" href="/member/login_join/css/style.css">
     <style>
-        #hp { width: 215px;}
+        #hp { width: 180px; margin-top: 10px;}
     </style>
 
 </head>
@@ -59,7 +59,19 @@
                                 <td><p class="phone_text">휴대폰번호</p></td>
                             </tr>
                             <tr>
-                                <td class="country_code"><input type="text" name="code" id="nickname" maxlength="20" placeholder="+ 82"></td>
+                                <td class="country_code">
+                                    <select name="code" id="nickname" placeholder="+ 82">
+                                        <option value="+233">가나 (+233) </option>
+                                        <option value="+1671">괌 (+1671) </option>
+                                        <option value="+30">그리스 (+30) </option>
+                                        <option value="+82">대한민국 (+82) </option>
+                                        <option value="+49">독일 (+49) </option>
+                                        <option value="+1">미국 (+1) </option>
+                                        <option value="+44">영국 (+44) </option>
+                                        <option value="+81">일본 (+81) </option>
+                                        <option value="+86">중국 (+86) </option>
+                                    </select>
+                                </td>
                                 <td class="phone">
                                     <input type="text" name="hp" id="hp" maxlength="20" placeholder="'-' 없이 숫자만 입력">
                                     <input type="button" name="btn" id="phone_btn" value="인증하기">
