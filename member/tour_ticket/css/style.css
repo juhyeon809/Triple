@@ -998,7 +998,7 @@ section#tabs p {
 /* @@@@ Calendar Styles @@@@ */
 /* section calendar */
 .sec_cal {
-  width: 930px;
+  width: 800px;
   margin: 0 auto 45px;
 }
 .sec_cal .cal_nav {
@@ -1074,7 +1074,7 @@ section#tabs p {
   justify-content: center;
   width: calc(100% / 7);
   font-weight: bold;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 32px;
   color: #000000;
   cursor: pointer;
@@ -1095,7 +1095,6 @@ section#tabs p {
   content: '';
   position: absolute;
   top: 5px;
-  left: 42px;
   width: 50px;
   height: 50px;
   background: #4E91D5;
