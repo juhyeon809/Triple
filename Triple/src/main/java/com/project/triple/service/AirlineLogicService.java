@@ -58,9 +58,7 @@ public class AirlineLogicService extends BaseService<AirlineApiRequest, AirlineA
         AirlineApiRequest airlineApiRequest = request.getData();
         Optional<Airline> airline = baseRepository.findById(airlineApiRequest.getId());
 
-        return airline.map(
-
-                )
+        return null;
     }
 
     @Override

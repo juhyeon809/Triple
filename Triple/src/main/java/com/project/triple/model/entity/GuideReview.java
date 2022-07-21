@@ -1,38 +1,41 @@
 package com.project.triple.model.entity;
 
-import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_adminuser",
-        sequenceName = "seq_adminuser",
+        name="seq_guide_review",
+        sequenceName = "seq_guide_review",
         initialValue = 1,
-
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class AdminUser {
+public class GuideReview {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminuser")
+    @GeneratedValue
     private Long id;
-    private String userid;
-    private String userpw;
-    private String name;
+    private Integer reviewNum;
+    private String title;
+    private String content;
+    private String nickname;
+    private String userId;
+    private String uploadPath;
+    private String fileName;
+    private String fileType;
     @CreatedDate
     private LocalDateTime regDate;
+    private Integer likeCount;
+    private Integer replyCount;
 }

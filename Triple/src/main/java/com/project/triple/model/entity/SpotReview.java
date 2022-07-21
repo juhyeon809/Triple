@@ -1,38 +1,44 @@
 package com.project.triple.model.entity;
 
-import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_adminuser",
-        sequenceName = "seq_adminuser",
+        name="seq_spot_review",
+        sequenceName = "seq_spot_review",
         initialValue = 1,
-
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class AdminUser {
+public class SpotReview {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminuser")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot_review")
     private Long id;
-    private String userid;
-    private String userpw;
-    private String name;
+    private String reviewNum;
+    private String title;
+    private String content;
+    private String nickname;
+    private String userId;
+    private String uploadPath;
+    private String fileName;
+    private String fileType;
+    private Integer likeCount;
+    private Integer replyCount;
     @CreatedDate
     private LocalDateTime regDate;
+    private String starCount;
+
+
 }
