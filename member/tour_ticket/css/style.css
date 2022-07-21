@@ -43,6 +43,7 @@ section p {
 }
 .highlight {
   color: #2680EB !important;
+  font-size: 14px;
 }
 
 .flex {
@@ -94,6 +95,7 @@ header img, footer img {
   color: #2680EB;
   background-color: #ffffff;
   transition: all 0.25s ease;
+  font-size: 16px;
 }
 .tag-wrap button:hover,
 .tag-wrap button.active {
@@ -101,6 +103,15 @@ header img, footer img {
   background-color: #2680EB;
 }
 
+.tag-wrap2{
+  width: 1000px;
+  margin: 0 auto;
+  
+}
+.tag-wrap2 button{
+  width: 120px;
+  font-size: 14px;
+}
 
 
 /* @@@@ Tour List Styles @@@@ */
@@ -117,7 +128,7 @@ header img, footer img {
   box-shadow: 0px 3px 6px #9b9b9b73;
   border: 2px solid #77EED2;
   border-radius: 51px;
-  font-size: 16px;
+  font-size: 14px;
   color: #525273;
 }
 .tour-search input:focus-visible {
@@ -136,16 +147,18 @@ header img, footer img {
   margin-top: 25px;
 }
 .tour-category li {
-  width: 140px;
-  height: 180px;
+  width: 120px;
+  height: 160px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 32px;
   cursor: pointer;
 }
+
 .tour-category li img {
-  width: 117px;
-  height: 117px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
 }
 
 .tour-list {
@@ -153,13 +166,17 @@ header img, footer img {
 }
 .tour-list h1 {
   font-size: 16px;
+  vertical-align: middle;
 }
 .tour-list h1 img {
-  margin-right: 10px;
+  margin-right: 8px;
   height: 20px;
+  vertical-align: middle;
 }
 .tour-list h1 img:last-child {
-  margin-bottom: 10px;
+  width: 15px;
+  margin-left: 3px;
+  margin-bottom: 3px;
 }
 .tour-list h1 span {
   color: #2680EB;
@@ -201,6 +218,7 @@ header img, footer img {
 .tour-list .info-wrap p {
   font-weight: bold;
   color: #ffffff;
+  font-size: 18px;
 }
 .tour-list .info-wrap p.price-before {
   text-decoration: line-through;
@@ -259,6 +277,7 @@ header img, footer img {
 .tour-recent .info-wrap p {
   font-weight: bold;
   color: #ffffff;
+  font-size: 16px;
 }
 
 
@@ -287,11 +306,12 @@ header img, footer img {
 }
 .info-card h1 {
   line-height: 29px;
+  font-size: 20px;
 }
 .info-card p {
   margin-bottom: 12px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 29px;
   color: #7E7E7E;
 }
@@ -303,6 +323,11 @@ header img, footer img {
 .info-card .left-wrap .heart {
   font-weight: bold;
   color: #FF0000;
+}
+.info-card .left-wrap img:first-child {
+  width: 20px;
+  margin-right: 3px;
+  vertical-align: middle;
 }
 .info-card .left-wrap .star {
   color: #FFDC00;
@@ -325,7 +350,7 @@ header img, footer img {
 .info-card .left-wrap button a {
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 14px;
   color: #959D9E;
 }
 .info-card .left-wrap button a {
@@ -342,6 +367,7 @@ header img, footer img {
 .info-card .right-wrap .tag-wrap button {
   background: #FE7E7E;
   color: #ffffff;
+  font-size: 12px;
 }
 .info-card .right-wrap .price-before {
   margin-top: -40px;
@@ -353,9 +379,12 @@ header img, footer img {
 .info-card .right-wrap h1 {
   margin: 8px 0;
   font-size: 30px;
+  font-size: 20px;
 }
 .info-card .right-wrap h1 span {
   color: #FF0101;
+  font-size: 14px;
+  padding-right: 10px;
 }
 .info-card .right-wrap p {
   font-size: px;
@@ -365,7 +394,7 @@ header img, footer img {
   color: #FE6C6C;
 }
 .info-card .right-wrap .submit {
-  padding: 25px 70px;
+  padding: 15px 60px;
   background: #4E91D5 0% 0% no-repeat padding-box;
   border-radius: 11px;
   font-weight: bold;
@@ -379,17 +408,19 @@ header img, footer img {
   align-items: flex-end;
   margin-top: 26px;
   padding: 9px 21px 7px;
-  width: 160px;
+  width: 150px;
   height: 47px;
   border: 1.5px solid #41D2BB;
   border-radius: 45px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 29px;
   color: #40D1BA;
   text-shadow: 0px 1px 6px #40D1BA36;
 }
-
+.info-card .action-wrap button img {
+  width: 25px;
+}
 .tour-desc {
   background: #F7F7F7;
 }
@@ -397,13 +428,16 @@ header img, footer img {
   padding: 46px 44px 32px;
   border-bottom: 1px solid #C1C1C1;
 }
+.tour-desc article h1{
+  font-size: 20px;
+}
 .tour-desc article .info-desc {
   padding: 0 21px;
   align-items: flex-start;
 }
 .tour-desc article li {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 40px;
   color: #808080;
 }
@@ -413,21 +447,23 @@ header img, footer img {
 }
 .tour-desc article h1 {
   margin-bottom: 32px;
+  font-size: 20px;
 }
 .tour-desc article p {
   padding: 0 21px;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 16px;
   line-height: 36px;
   color: #808080;
 }
 .tour-desc .point-wrap h2 {
   margin-bottom: 26px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 36px;
 }
 .tour-desc .point-wrap li img {
+  width: 20px;
   margin-right: 10px;
   margin-bottom: -4px;
 }
@@ -441,7 +477,7 @@ header img, footer img {
   padding: 28px 28px 25px;
   background: #FFFFFF;
   box-shadow: 0px 3px 6px #00000029;
-  border-radius: 17px;
+  border-radius: 10px;
 }
 .tour-desc .img-wrap {
   margin: 44px auto 44px;
@@ -452,7 +488,7 @@ header img, footer img {
   width: 565px;
 }
 .tour-desc .img-wrap p {
-font-size: 22px;
+font-size: 16px;
 }
 .tour-desc .last .flex {
   align-items: flex-start;
@@ -462,10 +498,14 @@ font-size: 22px;
   font-weight: 600;
   margin-right: 8px;
   margin-bottom: 13px;
-  font-size: 25px;
+  font-size: 18px;
 }
-.tour-desc .last .flex p {
-  margin-right: 28px;
+
+.tour-desc .last .flex.Included{
+  justify-content: space-around;
+}
+.tour-desc article .refundPolicy li{
+  font-size: 14px;
 }
 
 
@@ -476,27 +516,34 @@ font-size: 22px;
 }
 .review-wrap h1 {
   margin-bottom: 13px;
+  font-size: 20px;
 }
 .review-wrap p {
   font-weight: 500;
   color: #808080;
+  font-size: 16px;
 }
 .review-wrap p.highlight {
   color: #4E91D5;
 }
 .review-wrap p.star {
-  font-size: 35px;
+  font-size: 25px;
   line-height: 51px;
 }
 .review-wrap button {
   display: block;
   margin: 25px auto 0;
   padding: 20px;
-  width: 548px;
+  width: 400px;
   background: #50E3C2;
   border-radius: 65px;
-  font-size: 30px;
+  font-size: 18px;
   color: #FFFFFF;
+}
+.review-wrap button img {
+  width: 20px;
+  margin-left: 5px;
+  vertical-align: middle;
 }
 .review-wrap .review-card {
   align-items: flex-start;
@@ -515,16 +562,20 @@ font-size: 22px;
   display: block;
   margin: 0 auto 32px;
   padding: 24px;
-  width: 548px;
+  width: 300px;
   background: #50E3C2;
   border-radius: 65px;
-  font-size: 30px;
+  font-size: 18px;
   color: #FFFFFF;
   text-decoration: none;
+}
+section#tabs p {
+  font-size: 16px;
 }
 .ui-widget.ui-widget-content {
   border: none;
   transition: all 0.5s ease;
+  
 }
 .ui-tabs .ui-tabs-nav,
 .ui-tabs .ui-tabs-nav li  {
@@ -532,6 +583,7 @@ font-size: 22px;
   padding: 0;
   border: 0;
   background: none;
+  
 }
 .ui-tabs .ui-tabs-panel {
   position: relative;
@@ -541,10 +593,12 @@ font-size: 22px;
   width: 731px;
   height: 456px;
   background: #F7F7F7;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 34px;
   color: #808080;
   text-align: left;
+  border-radius: 5px;
+  
 }
 .ui-tabs .ui-tabs-panel::before {
   content: "";
@@ -655,6 +709,7 @@ font-size: 22px;
 
 .pay-info {
   margin-bottom: 78px;
+  justify-content: flex-start;
 }
 .pay-price {
   width: 540px;
@@ -802,7 +857,7 @@ font-size: 22px;
 }
 .option-form label {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   color: #425052;
   line-height: 32px;
 }
@@ -810,7 +865,7 @@ font-size: 22px;
   font-weight: 400;
 }
 .option-form p {
-  font-size: 19px;
+  font-size: 14px;
   line-height: 29px;
   color: #B2B2B2;
 }
@@ -821,7 +876,7 @@ font-size: 22px;
   background: #4E91D5;
   border-radius: 11px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 32px;
   color: #FAFAFA;
 }
@@ -848,9 +903,9 @@ font-size: 22px;
 }
 .option-form input[type="number"] {
   margin: -5px 10px 0;
-  width: 41px;
+  width: 40px;
   font-weight: bold;
-  font-size: 27px;
+  font-size: 18px;
   line-height: 39px;
   color: #6C6C6C;
   text-align: center;
@@ -876,38 +931,49 @@ font-size: 22px;
 }
 
 
-
 /* @@@@ Tour Payment Styles @@@@ */
 .payment {
   margin-bottom: 400px;
   padding-bottom: 65px;
   border-bottom: 1px solid #CBCBCB;
+  display: flex;
+  
+
+}
+.payment-info{
 }
 .payment h2 {
   margin-top: 28px;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 36px;
 }
 .payment p {
-  font-size: 18px;
+  font-size: 16px;
+  word-break: keep-all;
   line-height: 26px;
 }
+
 .payment p.price {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
 }
 .payment-method {
   width: 500px;
+  padding-left: 30px;
+}
+.paycard{
+  margin-left: 30px;
 }
 .payment-method button {
-  margin-right: 20px;
+  margin-right: 5px;
   margin-bottom: 50px;
-  padding: 45px 60px;
-  width: 230px;
-  height: 115px;
+  width: 200px;
+  height: 80px;
   background: #F7F7F7;
   border: 1px solid #969696;
   border-radius: 7px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
 }
 .payment-method h2 {
@@ -915,14 +981,15 @@ font-size: 22px;
 }
 .payment-method .submit {
   padding: 0;
-  width: 477px;
+  width: 200px;
   height: 60px;
+  border: none;
   background: #4E91D5;
   border-radius: 65px;
   font-weight: bold;
-  font-size: 30px;
-  line-height: 44px;
+  font-size: 20px;
   color: #FFFFFF;
+  margin-left: 150px;
 }
 
 
