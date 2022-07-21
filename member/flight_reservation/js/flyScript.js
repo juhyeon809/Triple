@@ -22,7 +22,7 @@ $(document).ready(function(){
 // 	}
 // });
 
-/* */
+/* 왕복,편도버튼*/
 let round1 = document.querySelector(".round1");
 let round2 = document.querySelector(".round2");
 let changebox = document.querySelector(".oneway");
@@ -155,6 +155,7 @@ function hideshow1(){
     } 
 }
 
+//도시선택1 입력시 값 변경
 let input = document.querySelector('#city1');
 let inInput = document.querySelector('.click1');
 input.addEventListener('keypress', function(key){
@@ -179,6 +180,7 @@ function hideshow2(){
     } 
 }
 
+//도시선택2 입력시 값 변경
 let input2 = document.querySelector('#city2');
 let inInput2 = document.querySelector('.click2');
 input2.addEventListener('keypress', function(key){
@@ -205,6 +207,7 @@ function hideshow3(){
     } 
 }
 
+//날짜입력시 값 변경, 더블클릭시 창닫힘
 let closebox = document.querySelector('.hidebox1-4');
 let datepicker1 = document.querySelector('#datepicker1');
 let datepicker2 = document.querySelector('#datepicker2');
@@ -217,15 +220,6 @@ closebox.addEventListener('dblclick', (event) => {
     section3.style.display = "none";
 });
 
-// let datepicker1 = document.querySelector('#datepicker1');
-// let datepicker2 = document.querySelector('#datepicker2');
-// let inInput3 = document.querySelector('.click3');
-// put3.addEventListener('keypress', function(key){
-//     if(key.keyCode == 13){
-//         inInput3.innerHTML = datepicker1.value;
-//         inInput4.innerHTML = datepicker2.value;
-//     }
-// })
 
 //인원및 좌석등급
 let section4 = document.querySelector(".hidebox1-5")
@@ -243,11 +237,23 @@ function hideshow4(){
     } 
 }
 
+// function getCheckboxValue(event)  {
+//     let result = '';
+//     if(event.target.checked)  {
+//       result = event.target.value;
+//     }else {
+//       result = '';
+//     }
+    
+//     document.getElementsByClassName('seatSr').innerText
+//       = result;
+//   }
+
+$('input:checkbox[name="seat').event()
 
 
 
-
-
+//직항 수화물버튼클릭시 색상변경
     let direct = document.querySelector(".direct");
     direct.addEventListener('click',function(){
         direct.classList.toggle("color");

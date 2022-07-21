@@ -33,10 +33,10 @@
                 <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
                 <li><a href="/member/flight_reservation/flight_main.html" style="color:rgb(63, 63, 63)">항공예약</a></li>
                 <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                 <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                 <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
-                <li><a href="/member/event/event.html">혜택/렌터카</a></li>
+                <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
             </ul>
         </div>
     </header>
@@ -70,7 +70,7 @@
                 </li>
                 <li>
                     <img src="./fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
-                    <div class="flylist icon4" onclick=""><p>탑승객 1명, 일반석 외 1</p></div>
+                    <div class="flylist icon4" onclick=""><p>탑승객 1명, <span class="seatSr">일반석</span> 외 1</p></div>
                     
                 </li>
                 <li>
@@ -333,21 +333,7 @@
 <!--footer 끝-->
     <script src="js/flyScript.js"></script>
     <script>
-        // 팝업 열기
-// $(document).on("click", ".airpop", function (e){
-// 	var target = $(this).attr("id");
-// 	$(target).addClass("show");
-// });
 
-
-// // 외부영역 클릭 시 팝업 닫기
-// $(document).mouseup(function (e){
-// 	var LayerPopup = $(".airpop");
-   
-// 	if(LayerPopup.has(e.target).length === 0){
-// 		LayerPopup.removeClass("show");
-// 	}
-// });
 
         $(function(){
            $('#datepicker').datepicker();
