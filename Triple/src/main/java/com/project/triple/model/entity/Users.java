@@ -27,6 +27,7 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_users")
     private Long id;
+    private String userid;
     private String email;
     private String userpw;
     private String nickname;

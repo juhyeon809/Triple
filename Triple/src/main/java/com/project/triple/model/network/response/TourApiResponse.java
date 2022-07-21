@@ -27,6 +27,6 @@ public class TourApiResponse {
     private String timeTaken;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Integer likeNum;
+    private Integer likeCount;
     private Integer remaining;
 }

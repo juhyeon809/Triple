@@ -32,8 +32,8 @@ public class Lodging {
     private String country;
     private String city;
     private String address;
-    private String contactNUm;
+    private String contactHp;
     private String representative;
     private String email;
-    private Integer likeNum;
+    private Integer likeCount;
 }

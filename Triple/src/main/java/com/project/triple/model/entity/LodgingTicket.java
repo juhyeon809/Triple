@@ -1,9 +1,11 @@
 package com.project.triple.model.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -14,27 +16,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_review",
-        sequenceName = "seq_review",
+        name="seq_lodging_ticket",
+        sequenceName = "seq_lodging_ticket",
         initialValue = 1,
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class Review {
+public class LodgingTicket {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_review")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_lodging_ticket")
     private Long id;
-    private String reviewNum;
-    private String title;
-    private String content;
-    private String nickname;
-    private String email;
-    private String uploadPath;
-    private String fileName;
-    private String fileType;
-    private Integer likeCount;
-    private LocalDateTime regDate;
+    private String ticketType;
     private String ticketNum;
-
+    private String roomNum;
+    @CreatedDate
+    private LocalDateTime regDate;
 }

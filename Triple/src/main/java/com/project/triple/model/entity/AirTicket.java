@@ -6,10 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.asm.Advice;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -38,9 +40,10 @@ public class AirTicket {
     private LocalDateTime landingDate;
     private Integer price;
     private String seatNum;
+    private String seatGrade;
     private String baggage;
     @CreatedDate
-    private String revDate;
+    private LocalDateTime revDate;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
 

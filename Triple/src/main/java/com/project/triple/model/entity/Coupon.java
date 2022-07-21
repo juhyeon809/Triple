@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.enumclass.CouponStatus;
 import com.project.triple.model.enumclass.CouponUse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,7 +33,7 @@ public class Coupon {
     private String type;
     private BigDecimal price;
     private String useCondition;
-    private String useStatus;
+    private CouponStatus useStatus;
     private String code;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

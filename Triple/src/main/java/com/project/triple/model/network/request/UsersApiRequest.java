@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class UsersApiRequest {
     private Long id;
+    private String userid;
     private String email;
     private String userpw;
     private String nickname;

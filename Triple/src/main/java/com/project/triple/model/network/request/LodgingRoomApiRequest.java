@@ -16,7 +16,7 @@ public class LodgingRoomApiRequest {
     private Long id;
     private String roomNum;
     private String roomType;
-    private LodgingRoomStatus status;
+    private LodgingRoomStatus revStatus;
     private LocalDateTime checkIn;
     private LocalDateTime checkOut;
     private String width;

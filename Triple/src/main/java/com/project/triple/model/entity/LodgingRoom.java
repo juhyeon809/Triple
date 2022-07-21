@@ -28,7 +28,7 @@ public class LodgingRoom {
     private String roomNum;
     private String roomType;
     @Enumerated(EnumType.STRING)
-    private LodgingRoomStatus status;
+    private LodgingRoomStatus revStatus;
     private LocalDateTime checkIn;
     private LocalDateTime checkOut;
     private String width;

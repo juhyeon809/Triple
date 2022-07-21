@@ -15,13 +15,13 @@ public class ReviewApiRequest {
     private Long id;
     private String reviewNum;
     private String title;
-    private String reviewContent;
+    private String content;
     private String nickname;
     private String email;
     private String uploadPath;
     private String fileName;
     private String fileType;
-    private Integer likeNum;
+    private Integer likeCount;
     private LocalDateTime regDate;
     private String ticketNum;
 }

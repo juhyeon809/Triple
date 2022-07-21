@@ -22,6 +22,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     private UsersApiResponse response(Users users){
         UsersApiResponse usersApiResponse = UsersApiResponse.builder()
                 .id(users.getId())
+                .userid(users.getUserid())
                 .email(users.getEmail())
                 .userpw(users.getUserpw())
                 .nickname(users.getNickname())
@@ -41,6 +42,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     public Header<UsersApiResponse> create(Header<UsersApiRequest> request) {
         UsersApiRequest usersApiRequest = request.getData();
         Users users = Users.builder().email(usersApiRequest.getEmail())
+                .userid(usersApiRequest.getUserid())
                 .userpw(usersApiRequest.getUserpw())
                 .nickname(usersApiRequest.getNickname())
                 .countryCode(usersApiRequest.getCountryCode())
@@ -69,6 +71,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
         return users.map(
                         user -> {
                             user.setEmail(usersApiRequest.getEmail());
+                            user.setUserid(usersApiRequest.getUserid());
                             user.setUserpw(usersApiRequest.getUserpw());
                             user.setNickname(usersApiRequest.getNickname());
                             user.setCountryCode(usersApiRequest.getCountryCode());

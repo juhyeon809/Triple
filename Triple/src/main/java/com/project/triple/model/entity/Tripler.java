@@ -1,10 +1,10 @@
 package com.project.triple.model.entity;
 
-import com.project.triple.model.enumclass.TourStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -15,30 +15,30 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_tour",
-        sequenceName = "seq_tour",
+        name="seq_tripler",
+        sequenceName = "seq_tripler",
         initialValue = 1,
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class Tour {
+public class Tripler {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_tour")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tripler")
     private Long id;
-    private String tourNum;
+    private Integer triplerNum;
+    private String userId;
     private String country;
-    private String address;
-    private String managerName;
-    private String contactNum;
+    private String city;
+    private String nickname;
     private String title;
-    private String info;
-    @Enumerated(EnumType.STRING)
-    private TourStatus status;
-    private Integer price;
-    private String timeTaken;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private String content;
+    private String uploadPath;
+    private String fileName;
+    private String fileType;
+    @CreatedDate
+    private LocalDateTime regDate;
     private Integer likeCount;
-    private Integer remaining;
+    private Integer replyCount;
+
 }

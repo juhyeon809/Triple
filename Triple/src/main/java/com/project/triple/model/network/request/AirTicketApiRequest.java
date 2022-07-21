@@ -23,6 +23,7 @@ public class AirTicketApiRequest {
     private LocalDateTime landingDate;
     private Integer price;
     private String seatNum;
+    private String seatGrade;
     private String baggage;
     private String revDate;
     private TicketStatus status;
