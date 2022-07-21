@@ -1,6 +1,6 @@
 package com.project.triple.service;
 
-import com.project.triple.model.entity.Aircraft;
+import com.project.triple.model.entity.Air.Aircraft;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AircraftApiRequest;
 import com.project.triple.model.network.response.AircraftApiResponse;

@@ -28,6 +28,17 @@ public class TourTicket {
     private Long id;
     private String ticketType;
     private String ticketNum;
+    private String revName;
+    private String revHp;
+    private String revEmail;
+    private String repreHp;
+    private String repreLastname;
+    private String repreFirstname;
+    private String repreBirth;
+    private String kakaoid;
+    private String lodgingName;
+    private String useLastname;
+    private String useFirstname;
     @CreatedDate
     private LocalDateTime regDate;
 

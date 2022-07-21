@@ -1,2 +1,9 @@
-package com.project.triple.repository;public interface UserCouponRepository {
+package com.project.triple.repository;
+
+import com.project.triple.model.entity.Coupon.UserCoupon;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserCouponRepository extends JpaRepository<UserCoupon, Long> {
 }

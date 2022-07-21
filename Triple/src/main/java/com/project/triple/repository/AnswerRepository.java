@@ -1,2 +1,9 @@
-package com.project.triple.repository;public interface AnswerRepository {
+package com.project.triple.repository;
+
+import com.project.triple.model.entity.QnA.Answer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
 }

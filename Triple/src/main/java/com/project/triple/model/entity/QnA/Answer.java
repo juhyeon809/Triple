@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.QnA;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

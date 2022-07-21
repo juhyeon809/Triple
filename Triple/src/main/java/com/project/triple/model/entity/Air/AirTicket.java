@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Air;
 
 
 import com.project.triple.model.enumclass.TicketStatus;

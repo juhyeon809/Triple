@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Guide;
 
 
 import lombok.AllArgsConstructor;

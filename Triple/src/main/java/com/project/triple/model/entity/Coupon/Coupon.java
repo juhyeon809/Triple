@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Coupon;
 
 import com.project.triple.model.enumclass.CouponStatus;
 import com.project.triple.model.enumclass.CouponUse;

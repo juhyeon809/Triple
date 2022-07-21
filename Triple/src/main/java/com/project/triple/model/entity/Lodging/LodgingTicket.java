@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Lodging;
 
 
 import lombok.AllArgsConstructor;
@@ -30,6 +30,14 @@ public class LodgingTicket {
     private String ticketType;
     private String ticketNum;
     private String roomNum;
+    private String revName;
+    private String revHp;
+    private String revEmail;
+    private String useEngLastname;
+    private String useEngFirstname;
+    private String useBirth;
+    private String useRequests;
+    private String infoAgree;
     @CreatedDate
     private LocalDateTime regDate;
 }

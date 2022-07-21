@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Restaurant;
 
 import com.project.triple.model.enumclass.OperationStatus;
 import lombok.AllArgsConstructor;
