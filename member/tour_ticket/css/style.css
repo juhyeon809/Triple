@@ -41,9 +41,9 @@ section p {
   font-size: 22px;
   line-height: 32px;
 }
-.highlight {
+.form-title .highlight {
   color: #2680EB !important;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .flex {
@@ -329,7 +329,14 @@ header img, footer img {
   margin-right: 3px;
   vertical-align: middle;
 }
+.info-card .left-wrap img:last-child{
+  width: 15px;
+  margin-left: 2px;
+}
 .info-card .left-wrap .star {
+  margin-left: -127.5px;
+  width: 50%;
+  position: absolute;
   color: #FFDC00;
 }
 .info-card .left-wrap a {
@@ -376,6 +383,9 @@ header img, footer img {
   line-height: 29px;
   color: #BEBEBE;
 }
+.info-card .right-wrap {
+  width: 260px;
+}
 .info-card .right-wrap h1 {
   margin: 8px 0;
   font-size: 30px;
@@ -394,13 +404,14 @@ header img, footer img {
   color: #FE6C6C;
 }
 .info-card .right-wrap .submit {
-  padding: 15px 60px;
+  padding: 10px 60px;
+  width: 250px;
   background: #4E91D5 0% 0% no-repeat padding-box;
   border-radius: 11px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   line-height: 25px;
-  color: #FAFAFA;
+  color: #fff;
 }
 .info-card .action-wrap button {
   display: flex;
@@ -437,7 +448,7 @@ header img, footer img {
 }
 .tour-desc article li {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 40px;
   color: #808080;
 }
@@ -452,7 +463,7 @@ header img, footer img {
 .tour-desc article p {
   padding: 0 21px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 36px;
   color: #808080;
 }
@@ -503,6 +514,9 @@ font-size: 16px;
 
 .tour-desc .last .flex.Included{
   justify-content: space-around;
+}
+.tour-desc .last .flex.Included p{
+  margin-top: -5px;
 }
 .tour-desc article .refundPolicy li{
   font-size: 14px;
@@ -562,10 +576,9 @@ font-size: 16px;
   display: block;
   margin: 0 auto 32px;
   padding: 24px;
-  width: 300px;
+  width: 250px;
   background: #50E3C2;
   border-radius: 65px;
-  font-size: 18px;
   color: #FFFFFF;
   text-decoration: none;
 }
@@ -589,7 +602,7 @@ section#tabs p {
   position: relative;
   top: -15px;
   margin-left: 38px;
-  padding: 32px 0 0 34px;
+  padding: 32px 5px 0 34px;
   width: 731px;
   height: 456px;
   background: #F7F7F7;
@@ -598,7 +611,7 @@ section#tabs p {
   color: #808080;
   text-align: left;
   border-radius: 5px;
-  
+  word-break: keep-all;
 }
 .ui-tabs .ui-tabs-panel::before {
   content: "";
@@ -615,7 +628,7 @@ section#tabs p {
   content: "";
   display: block;
   position: absolute;
-  top: 30px;
+  top: 55px;
   left: -15px;
   width: 30px;
   height: 30px;
@@ -623,13 +636,13 @@ section#tabs p {
   background: #F7F7F7;
 }
 .ui-tabs .ui-tabs-panel:nth-child(3)::before {
-  top: 150px;
+  top: 160px;
 }
 .ui-tabs .ui-tabs-panel:nth-child(4)::before {
-  top: 270px;
+  top: 265px;
 }
 .ui-tabs .ui-tabs-panel:nth-child(5)::before {
-  top: 400px;
+  top: 370px;
 }
 
 
@@ -681,8 +694,12 @@ section#tabs p {
 .input-group {
   margin-bottom: 50px;
 }
+.input-group.traveler-input input{
+  width: 230px;
+}
 
 .form .form-title {
+  width: 1000px;
   margin: 82px 65px 44px;
   padding-left: 0;
   padding-right: 0;
@@ -690,29 +707,36 @@ section#tabs p {
 }
 .form-title .card {
   align-items: flex-end;
-  margin: 17px 0 42px;
+  margin: 17px auto 42px;
   padding: 15px 30px 20px;
-  width: 1000px;
+  width: 950px;
   background: #FAFAFA 0% 0% no-repeat padding-box;
   border-radius: 17px;
+}
+.form-title .card p:first-child {
+  font-weight: bold;
+  width:500px;
+}
+.form-title .card p:last-child{
+  text-align: right;
 }
 .form-title p span {
   margin-left: 285px;
   color: #919191;
 }
-.form-title .card p {
-  max-width: 366px;
-}
+
 .form-title .card p:last-child {
   margin-bottom: 3px;
 }
 
 .pay-info {
   margin-bottom: 78px;
-  justify-content: flex-start;
+  width: 950px;
+  display: flex;
+  justify-content: space-between;
 }
 .pay-price {
-  width: 540px;
+  width: 400px;
 }
 .pay-price p {
   margin-top: 2px;
@@ -742,7 +766,7 @@ section#tabs p {
 .pay-notice {
   margin-left: 31px;
   padding: 26px 14px 24px 21px;
-  width: 508px;
+  width: 400px;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 12px;
@@ -758,18 +782,20 @@ section#tabs p {
   line-height: 26px;
   font-weight: normal;
 }
-
+.form-submit{
+  width: 900px;
+  margin: 0 auto;
+}
 .agree-checkbox {
-  width: 800px;
+  width: 600px;
 }
 .agree-checkbox p {
   font-size: 14px;
   font-weight: normal;
 }
 
-.agree-checkbox .highlight {
-  text-decoration: underline;
-
+.agree-checkbox a {
+  color: #458CD3;
 }
 .agree-checkbox input {
   display: none;
@@ -878,7 +904,9 @@ section#tabs p {
   font-weight: bold;
   font-size: 16px;
   line-height: 32px;
-  color: #FAFAFA;
+}
+.option-form button a{
+  color: white;
 }
 .option-form input[type="checkbox"] {
   position: relative;
@@ -902,13 +930,14 @@ section#tabs p {
   background-image: url('../img/radio-checked.svg');
 }
 .option-form input[type="number"] {
-  margin: -5px 10px 0;
-  width: 40px;
+  margin: -20px 10px 0;
+  width: 30px;
   font-weight: bold;
   font-size: 18px;
   line-height: 39px;
   color: #6C6C6C;
   text-align: center;
+  border: none;
 }
 .option-form input[type="number"] {
   -webkit-appearance: textfield;
@@ -981,7 +1010,7 @@ section#tabs p {
 }
 .payment-method .submit {
   padding: 0;
-  width: 200px;
+  width: 420px;
   height: 60px;
   border: none;
   background: #4E91D5;
@@ -989,10 +1018,9 @@ section#tabs p {
   font-weight: bold;
   font-size: 20px;
   color: #FFFFFF;
-  margin-left: 150px;
+  margin-left: 35px;
+
 }
-
-
 
 
 /* @@@@ Calendar Styles @@@@ */

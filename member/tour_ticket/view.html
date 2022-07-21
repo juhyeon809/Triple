@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRIPLE | 해외</title>
+  <title>TRIPLE | 상세보기</title>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="/css/common.css">
@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <!--header-->
   <header>
     <div id="logo_area">
         <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -37,12 +38,12 @@
       </ul>
     </div>
 </header>
-
+<!--header 끝-->
   <div id="main" class="container">
     <section class="main-visual wide-section">
       <img src="img/view_visual.jpg" alt="">
     </section>
-
+    <!--상품타이틀-->
     <section class="info-card flex flex-between">
       <div class="info-wrap">
         <div class="tag-wrap">
@@ -57,8 +58,10 @@
           <div class="left-wrap">
             <p>
               <img src="img/icon_heart_red.svg" alt=""><span class="heart">155</span>
-              <span class="star">★★★★</span>★ (331)
+              <span>★★★★★</span> (331)
+              <span class="star">★★★★★</span>
               <a href="#">리뷰보기 ></a>
+              
             </p>
             <p><img src="img/icon_pin_gray.svg" alt=""> 괌</p>
             <button class="flex flex-between coupon">
@@ -76,7 +79,7 @@
             <p class="price-before">92,100원</p>
             <h1><span>9%</span>89,000원</h1>
             <p>쿠폰 할인가 <span>87,000원</span></p>
-            <button class="submit">예약하기</button>
+            <a href="calendar.html"><button class="submit">예약하기</button></a>
           </div>
         </div>
       </div>
@@ -88,11 +91,11 @@
         <button><img src="img/icon_share.svg" alt="">공유하기</button>
       </div>
     </section>
-
+    <!--상품타이틀 끝-->
     <section class="tour-desc wide-section">
+      <!--상품정보-->
       <article>
         <h1>상품정보</h1>
-
         <div class="info-desc flex flex-between">
           <ul>
             <li><span>바우처 제공</span>최대 2일 소요</li>
@@ -116,7 +119,8 @@
           </div>
         </div>
       </article>
-
+      <!--상품정보 끝-->
+      <!--프로그램 안내-->
       <article>
         <h1>프로그램</h1>
         <p>괌에서 반드시 해야만 하는 PCR 검사의 부담감을 줄일 수 있는 상품입니다. 괌 현지 한국인 가이드가 동행 하는 괌 켈리네 PCR 검사 대행 상품을 이용해 편하고 빠르게 해결해보세요! 해당 상품은
@@ -124,7 +128,8 @@
           한인 가이드가 동반해 에스코트 및 통 역을 해드립니다. 결과지는 보통 다음날 오후 중 발급이 되며 괌 켈리네에서 대리 수령 해드려요. 호텔 프론 트에 전달 or 공항 샌딩 시 전달 중 택1 가능
         </p>
       </article>
-
+      <!--프로그램 안내 끝-->
+      <!--상품 사전 안내-->
       <article class="last">
         <ul class="checklist">
           <li>- 08:30 호텔 픽업 (정확한 픽업 시간은 전날 카카오톡으로 안내드립니다.) </li>
@@ -154,8 +159,9 @@
           <li>- 17:00 이후 요청된 건은 다음날 접수로 간주되며 주말 및 공휴일에 접수된 건은 다음 영업일에 접수 처리됩니다.</li>
         </ul>
       </article>
+      <!--상품 사전 안내 끝-->
     </section>
-
+    <!--상품 안내 팝업-->
     <section id="tabs" class="action-wrap">
       <ul class="flex flex-column">
         <li><a href="#tabs-1">투어 일정</a></li>
@@ -163,7 +169,6 @@
         <li><a href="#tabs-3">꼭 알아두세요</a></li>
         <li><a href="#tabs-4">자주 묻는 질문</a></li>
       </ul>
-
       <div id="tabs-1">
         <ul>
           <li>- 08:30 호텔 픽업 (정확한 픽업시간은 전날 카카오톡으로 안내드립니다.) </li>
@@ -182,7 +187,8 @@
         <p>자주 묻는 질문 설명</p>
       </div>
     </section>
-
+    <!--상품 안내 팝업 끝-->
+    <!--리뷰쓰기-->
     <section class="review-wrap">
       <div class="review-card flex flex-between">
         <div class="review-info">
@@ -199,8 +205,9 @@
         </div>
       </div>
     </section>
+    <!--리뷰쓰기 끝-->
   </div>
-
+<!--footer-->
   <footer>
     <div id="enterprise_info">
       <div id="enterprise_info_text">
@@ -221,7 +228,7 @@
       </div>
     </div>
   </footer>
-
+<!--footer 끝-->
   <script>
     $('document').ready(function () {
       $('.button-wrap button').on('click', function () {

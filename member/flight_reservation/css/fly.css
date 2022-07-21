@@ -1,3 +1,4 @@
+
 /* 항공권 예약 */
 #container {
     margin: 0 auto; 
@@ -70,7 +71,17 @@
     margin-left: 320px;
     top: 515px;
 }
-
+.airpop::before{
+    content: "";
+  display: block;
+  position: absolute;
+  width: 35px;
+  left: 5px;
+  top: 0;
+  height: 20px;
+  transform: rotate(135deg);
+  background:white;
+}
 .airpop {
     display: none;
     position: absolute;
@@ -85,8 +96,8 @@
     
 }
 .airpop .boxtit{
-    margin-top: 0;
     margin-bottom: 3px;
+    z-index: 10;
 }
 .airpop.show{
     display: block;
@@ -386,7 +397,9 @@ div.hidebox {
     width: 800px;
     height: 230px;
     position: absolute;
+    top: 240px;
 }
+
 .click{
     cursor: pointer;
 }
@@ -396,11 +409,15 @@ div.hidebox1-1 img{
     align-items: center;
     vertical-align: middle;
 }
+
 div.hidebox1-1 {
     width: 230px;
+    height: 215px;
     background-color: #fdfdfd;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
     border-radius: 10px;
+    vertical-align: middle;
+    font-size: 14px;
 }
 div.hidebox1-1 div{
     align-items: center;
@@ -444,6 +461,7 @@ div.hidebox1-1 div button:nth-child(2){
 }
 .hidebox1-4 {
     width: 200px;
+    height: 150px;
     padding: 20px;
     align-items: center;
     align-items: center;
@@ -451,10 +469,15 @@ div.hidebox1-1 div button:nth-child(2){
     box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
     border-radius: 10px;
 }
+.hidebox1-4 p {
+    font-size: 14px;
+}
 .hidebox1-4 input {
-    width: 200px;
+    width: 150px;
+    text-align: center;
+    margin-left: 30px;
     border: none;
-    border-bottom: 1px solid #666666;
+    border-bottom: 1px solid #a0a0a0;
 }
 .hidebox1-5{
     width: 330px;

@@ -1,11 +1,5 @@
 /* 항공예약검색 팝업 */
-// // 팝업 열기
-// $(document).on("click", ".popUp", function (e){
-// 	var target = $(this).attr("href");
-// 	$(target).addClass("show");
-//     // // $("html, body").css({"overflow" : "hidden", "height":"100%"})
-//     // document.getElementsByTagName("body").style.overflow = "hidden";
-// });
+
 $(document).ready(function(){
     $(".icon4").click(function(){
         $("#airpop").addClass("show");
@@ -13,14 +7,6 @@ $(document).ready(function(){
 })
 
 
-// 외부영역 클릭 시 팝업 닫기
-// $(document).mouseup(function (e){
-// 	var LayerPopup = $(".airpop");
-//     // $("html, body").css({"overflow" : "auto", "height":"auto"})
-// 	if(LayerPopup.has(e.target).length === 0){
-// 		LayerPopup.removeClass("show");
-// 	}
-// });
 
 /* 왕복,편도버튼*/
 let round1 = document.querySelector(".round1");
@@ -122,7 +108,32 @@ function count3(type)  {
 
 
 
+    // $('.close').on('click', function(){
+    //     let result = '';
+    //     if($('input:checkbox[name="seat]checked').length  == 1){
+    //         $('.seatSr').innerText = $('input:checkbox[name="seat]checked').value;
+    //     }else{
+    //         let seatNum = $('input:checkbox[name="seat]checked').length-1;
+    //         $('.seatCnt').innerHTML ="외 "+ seatNum; 
+    //     } 
+        
+    // })
+    let personNum = document.querySelector('.personNum');
+    let seatSr = document.querySelector('.seatSr');
+    let seatCnt = document.querySelector('.seatCnt');
+    function value(){
+        let query = 'input[name="seat"]:checked';
+        let values = document.querySelectorAll(query);
 
+        if(query.value == 1){
+            seatSr.innerHTML = query.value; 
+        }else{
+            seatSr.innerHTML = query.value;
+            seatCnt.innerHTML = values.length-1;
+        }
+
+
+}
 
 let section = document.querySelector(".hidebox1-1");
 let isshow = true;
@@ -237,6 +248,12 @@ function hideshow4(){
     } 
 }
 
+
+// close.addEventListener('click', function(key){
+//     if(seatValue.checked){
+//         se
+//     }
+// })
 // function getCheckboxValue(event)  {
 //     let result = '';
 //     if(event.target.checked)  {
@@ -249,7 +266,7 @@ function hideshow4(){
 //       = result;
 //   }
 
-$('input:checkbox[name="seat').event()
+
 
 
 

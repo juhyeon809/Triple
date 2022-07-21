@@ -70,7 +70,7 @@
                 </li>
                 <li>
                     <img src="./fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
-                    <div class="flylist icon4" onclick=""><p>탑승객 1명, <span class="seatSr">일반석</span> 외 1</p></div>
+                    <div class="flylist icon4" onclick=""><p>탑승객 <span class="personNum">1</span>명, <span class="seatSr">일반석</span><span class="seatCnt"> 외 1</span></p></div>
                     
                 </li>
                 <li>
@@ -143,7 +143,7 @@
                             </label>
                         </div>
                         <div>
-                            <button class="" onclick="close()">선택완료</button>
+                            <button class="close" onclick="close()">선택완료</button>
                         </div>
                     </div>
                 </div>
@@ -345,6 +345,8 @@
             dateFormat: 'yy.mm.dd'
         });
     });
+
+    
 
   </script>
 </body>
