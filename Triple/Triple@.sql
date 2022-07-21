@@ -79,6 +79,24 @@ create table tb_air_ticket(
     stauts varchar2(10) not null
 );
 
+create table tb_reservation_airuse(
+    idx number(7) primary key,
+    userid number(7) not null,
+    ticket_type varchar2(10) not null,
+    ticket_num number(7) not null,
+    eng_lastname number(7) not null,
+    eng_firstname varchar2(20) not null,
+    birth varchar2(20) not null,
+    gender varchar2(20) not null,
+    use_hp varchar2(20) not null,
+    nationality varchar2(20) not null,
+    passport_num varchar2(20) not null,
+    passport_exp varchar2(10) not null,
+    passport_country varchar2(20) not null,
+    info_agree varchar2(10) not null,
+    reg_date date default sysdate
+);
+
 create table tb_lodging(
     idx number(7) primary key,
     company_num varchar2(10) not null,
@@ -115,7 +133,15 @@ create table tb_lodging_ticket(
     ticket_type varchar2(10) not null,
     ticket_num varchar2(10) not null,
     room_num varchar2(10) not null,
-    reg_date date default sysdate
+    rev_name varchar2(10) not null,
+    rev_hp varchar2(10) not null,
+    rev_email varchar2(10) not null,
+    use_eng_lastname varchar2(20) not null,
+    use_eng_firstname varchar2(20) not null,
+    use_birth varchar2(20) not null,
+    use_requests varchar2(100),
+    info_agree varchar2(10) not null,
+    reg_date date default sysdate	
 );
 
 create table tb_tour( 
@@ -138,8 +164,19 @@ create table tb_tour(
 
 create table tb_tour_ticket(
     idx number(7) primary key,
-    ticket_type varchar2(10)  not null,
+    ticket_type varchar2(10) not null,
     ticket_num varchar2(10) not null,
+    rev_name varchar2(10) not null,
+    rev_hp varchar2(10) not null,
+    rev_email varchar2(20) not null,
+    repre_hp varchar2(20) not null,
+    repre_lastname varchar2(20) not null,
+    repre_firstname varchar2(20) not null,
+    repre_birth varchar2(100) not null,
+    kakaoid varchar2(20) not null,
+    lodging_name varchar2(30),
+    use_lastname varchar2(20) not null,
+    use_firstname varchar2(20) not null,
     reg_date date default sysdate
 );
 
