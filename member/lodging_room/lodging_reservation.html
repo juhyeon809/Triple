@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="backg_image_area">
+        <!--header -->
         <header>
             <div id="logo_area">
                 <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -33,13 +34,16 @@
                 </ul>
             </div>
         </header>
+        <!--header 끝-->
     </div>
     <main>
+        <!--상단 예약 객실 정보-->
         <div id="loadging_info">
             <div id="lodging_img">
-                <img src="./img/객실정보.png" alt="객실정보">
+                <img src="./img/info.png" alt="roominfo">
             </div>
             <div class="main">
+                <!--왼쪽 객실 정보 박스 -->
                 <div class="mainLeft">
                     <div>
                         <h2 class="main_tit">두짓 타니 괌 리조트</h2>
@@ -62,48 +66,64 @@
                         </div>
                     </div>
                 </div>
-
+                <!--왼쪽 객실 정보 박스 끝-->
+                <!--오른쪽 체크인 체크아웃 안내 박스 -->
                 <div class="mainRight">
                     <div class="shadowBox"><span>체크인</span><p>6.25(토) 15:00 - 언제든지</p></div>
                     <p class="showday"><span class="color">•</span> •  <span>1박</span>  • <span class="color">•</span></p>
                     <div class="shadowBox"><span>체크아웃</span><p>6.26(일) 정오</p></div>
                 </div>
+                <!--오른쪽 체크인 체크아웃 안내 박스 -->
             </div>
         </div>
+        <!--상단 예약 객실 정보 끝-->
         
         <form action="./lodging_room_payment.html" name="reserve" id="reserve" onsubmit="return sendit()">
         <div>
             <div class="box">
+                <!--예약자정보 입력-->
                 <div class="booker">
                     <h2>예약자 정보</h2>
-                    <p class="boxtit">한글명</p><input type="text" value="" name="name" id="name" placeholder="실명, 한글로 입력">
-                    <p class="boxtit">휴대전화번호</p><input type="text" value="" name="hp" id="hp" placeholder="-빼고 숫자만 입력" maxlength="13">
-                    <p class="boxtit">이메일</p><input type="text" value="" name="email" id="email" placeholder="ID@triple.com">
+                    <p class="boxtit">한글명</p>
+                    <input type="text" value="" name="name" id="name" placeholder="홍길동">
+                    <p class="boxtit">휴대전화번호</p>
+                    <input type="text" value="" name="hp" id="hp" placeholder="010-1111-1111" maxlength="13">
+                    <p class="boxtit">이메일</p>
+                    <input type="text" value="" name="email" id="email" placeholder="ID@triple.com">
                     <p class="span">위의 이메일로 예약확정 안내(바우처 등)가 전송됩니다.</p>
                 </div>
-
+                <!--예약자정보 입력 끝-->
+                <!--대표 투숙자 정보 입력-->
                 <div class="booker2">
                     <h2>투숙자 정보 <span>대표 투숙자</span></h2>
                     <div>
                         <div class="leftb"><p class="box_title">성</p>
-                        <input type="text" name="lastName" id="lastName" placeholder="LAST NAME"></div>
+                        <input type="text" name="lastName" id="lastName" placeholder="HONG"></div>
                         <div class="rightb"><p class="box_title">이름</p>
-                        <input type="text" name="firstName" id="firstName" placeholder="FIRST NAME"></div>
+                        <input type="text" name="firstName" id="firstName" placeholder="GILDONG"></div>
                     </div>
-                    <div class="leftb"><p class="box_title">생년월일</p><input type="text" name="birth" id="birth" maxlength="8" placeholder="YYYYMMDD"></div>
+                    <div class="leftb">
+                        <p class="box_title">생년월일</p>
+                        <input type="text" name="birth" id="birth" maxlength="8" placeholder="2000-06-01">
+                    </div>
                     
                     <div class="rightb">
                         <p class="box_title">성별</p>
                         <div class="label_box">
-                            <label for="man"><input type="checkbox" name="gender" id="man">남자</label>
-                            <label for="female"><input type="checkbox" name="gender" id="female">여자</label>
+                            <label for="man">
+                                <input type="checkbox" name="gender" id="man">남자
+                            </label>
+                            <label for="female">
+                                <input type="checkbox" name="gender" id="female">여자
+                            </label>
                         </div>
                     </div>
-                    
                 </div>
+                <!--대표 투숙자 정보 입력-->
             </div>
             
             <div class="bbox">
+                <!--요청사항 입력-->
                 <div class="requests">
                     <p>요청사항</p>
                     <p>별도 요청사항</p>
@@ -112,8 +132,9 @@
                         고객님의 요청사항은 해당 숙소에 전달됩니다만, 숙소 사정에 따라 필요하신 내용이 이루어지지 않을 수 있으니 많은 양해 바랍니다.
                     </p>
                 </div>
-        
+                <!--요청사항 입력-->
                 <div class="paynotice">
+                    <!--결제 취소 정책 안내-->
                     <div class="left">
                         <h2>결제 및 취소 정책</h2>
                         <div class="bottom">
@@ -128,14 +149,16 @@
                             <p class="pright">402,552원</p>
                         </div>
                     </div>
-
+                    <!--결제 취소 정책 안내 끝-->
+                    <!--무료취소 안내-->
                     <div class="right">
                         <h2><img src="./img/checkmark3.png" alt=""> 무료 취소 가능</h2>
                         <p>2022년 06월 18일 23시 59분(서울시간)까지 무료 취소 가능.</p>
                         <p>이후 예약을 취소할 경우 전액 취소 수수료가 부과될 수 있습니다.</p>
                     </div>
+                    <!--무료취소 안내-->
                 </div>
-
+                <!--이용동의 및 결제 버튼-->
                 <div class="lastbox">
                     <h2>이용 동의</h2>
 
@@ -145,12 +168,10 @@
                         <input type="submit" value="결제하기"> 
                     </div>
                 </div>
+                <!--이용동의 및 결제 버튼 끝-->
                     </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
+
 <!--footer-->
     <footer>
         <div id="enterprise_info">
