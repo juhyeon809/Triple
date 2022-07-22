@@ -19,7 +19,7 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
 
     private AirTicketApiResponse response(AirTicket airticket){
         AirTicketApiResponse airTicketApiResponse = AirTicketApiResponse.builder()
-                .id(airticket.getId())
+                .idx(airticket.getIdx())
                 .ticketType(airticket.getTicketType())
                 .ticketNum(airticket.getTicketNum())
                 .airlineId(airticket.getAirlineId())

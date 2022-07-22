@@ -15,7 +15,7 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
 
     private GuideReviewApiResponse response(GuideReview guideReview){
         GuideReviewApiResponse guideReviewApiResponse = GuideReviewApiResponse.builder()
-                .id(guideReview.getId())
+                .idx(guideReview.getIdx())
                 .reviewNum(guideReview.getReviewNum())
                 .title(guideReview.getTitle())
                 .content(guideReview.getContent())

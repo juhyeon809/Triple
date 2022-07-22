@@ -22,7 +22,7 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
 
     private AirlineApiResponse response(Airline airline){
         AirlineApiResponse airlineApiResponse = AirlineApiResponse.builder()
-                .id(airline.getId())
+                .idx(airline.getIdx())
                 .airlineNum(airline.getAirlineNum())
                 .krName(airline.getKrName())
                 .enName(airline.getEnName())
@@ -57,7 +57,7 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
     @Override
     public Header<AirlineApiResponse> update(Header<AirlineApiRequest> request) {
         AirlineApiRequest airlineApiRequest = request.getData();
-        Optional<Airline> airline = baseRepository.findById(airlineApiRequest.getId());
+        Optional<Airline> airline = baseRepository.findById(airlineApiRequest.getIdx());
 
         return null;
     }

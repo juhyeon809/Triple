@@ -16,7 +16,7 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
 
     private QuestionApiResponse response(Question question){
         QuestionApiResponse questionApiResponse = QuestionApiResponse.builder()
-                .id(question.getId())
+                .idx(question.getIdx())
                 .inquaryId(question.getInquaryId())
                 .ticketNum(question.getTicketNum())
                 .userId(question.getUserId())

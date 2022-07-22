@@ -61,7 +61,8 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
     @Override
     public Header<UsersApiResponse> read(Long id) {
-        return baseRepository.findById(id).map(users -> response(users)).map(Header::OK).orElseGet(()->Header.ERROR("데이터 없음"));
+        return baseRepository.findById(id).map(users -> response(users)).map(Header::OK)
+                .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
     @Override

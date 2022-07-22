@@ -15,7 +15,7 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
 
     private LodgingRoomApiResponse response(LodgingRoom lodgingRoom){
         LodgingRoomApiResponse lodgingRoomApiResponse = LodgingRoomApiResponse.builder()
-                .id(lodgingRoom.getId())
+                .idx(lodgingRoom.getIdx())
                 .roomNum(lodgingRoom.getRoomNum())
                 .roomType(lodgingRoom.getRoomType())
                 .revStatus(lodgingRoom.getRevStatus())

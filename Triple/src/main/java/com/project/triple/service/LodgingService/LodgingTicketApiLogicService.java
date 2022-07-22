@@ -15,7 +15,7 @@ public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRe
 
     private LodgingTicketApiResponse response(LodgingTicket lodgingTicket){
         LodgingTicketApiResponse lodgingTicketApiResponse = LodgingTicketApiResponse.builder()
-                .id(lodgingTicket.getId())
+                .idx(lodgingTicket.getIdx())
                 .ticketType(lodgingTicket.getTicketType())
                 .ticketNum(lodgingTicket.getTicketNum())
                 .roomNum(lodgingTicket.getRoomNum())

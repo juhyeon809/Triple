@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class RestaurantApiRequest {
-    private Long id;
+    private Long idx;
     private Integer restNum;
     private String restName;
     private String country;

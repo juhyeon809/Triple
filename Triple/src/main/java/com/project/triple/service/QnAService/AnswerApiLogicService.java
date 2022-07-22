@@ -15,7 +15,7 @@ public class AnswerApiLogicService extends BaseService<AnswerApiRequest, AnswerA
 
     private AnswerApiResponse response(Answer answer){
         AnswerApiResponse answerApiResponse = AnswerApiResponse.builder()
-                .id(answer.getId())
+                .idx(answer.getIdx())
                 .answerNum(answer.getAnswerNum())
                 .inquaryId(answer.getInquaryId())
                 .adminuserId(answer.getAdminuserId())
