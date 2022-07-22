@@ -1,10 +1,11 @@
-package com.project.triple.service;
+package com.project.triple.service.AirService;
 
 import com.project.triple.model.entity.Air.Aircraft;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.request.AircraftApiRequest;
-import com.project.triple.model.network.response.AircraftApiResponse;
+import com.project.triple.model.network.request.AirRequest.AircraftApiRequest;
+import com.project.triple.model.network.response.AirResponse.AircraftApiResponse;
 import com.project.triple.repository.AircraftRepository;
+import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

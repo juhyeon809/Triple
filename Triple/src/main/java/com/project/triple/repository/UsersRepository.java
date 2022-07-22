@@ -1,6 +1,6 @@
 package com.project.triple.repository;
 
-import com.project.triple.model.entity.Users;
+import com.project.triple.model.entity.User.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

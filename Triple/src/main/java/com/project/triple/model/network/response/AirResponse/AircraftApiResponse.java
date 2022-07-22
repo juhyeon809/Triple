@@ -1,4 +1,4 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.response.AirResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

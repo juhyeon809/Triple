@@ -1,4 +1,4 @@
-package com.project.triple.model.network.request;
+package com.project.triple.model.network.request.LodgingRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

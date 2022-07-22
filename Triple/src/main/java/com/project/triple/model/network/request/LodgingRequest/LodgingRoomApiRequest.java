@@ -1,18 +1,18 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.request.LodgingRequest;
 
 import com.project.triple.model.enumclass.LodgingRoomStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
+
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LodgingRoomApiResponse {
+public class LodgingRoomApiRequest {
     private Long id;
     private String roomNum;
     private String roomType;

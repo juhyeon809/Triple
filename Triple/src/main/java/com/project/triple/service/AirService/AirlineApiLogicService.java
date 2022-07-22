@@ -1,10 +1,11 @@
-package com.project.triple.service;
+package com.project.triple.service.AirService;
 
 import com.project.triple.model.entity.Air.Airline;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.request.AirlineApiRequest;
-import com.project.triple.model.network.response.AirlineApiResponse;
+import com.project.triple.model.network.request.AirRequest.AirlineApiRequest;
+import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
 import com.project.triple.repository.AirlineRepository;
+import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AirlineLogicService extends BaseService<AirlineApiRequest, AirlineApiResponse, Airline>{
+public class AirlineApiLogicService extends BaseService<AirlineApiRequest, AirlineApiResponse, Airline> {
 
     @Autowired
     private AirlineRepository airlineRepository;

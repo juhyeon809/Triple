@@ -1,44 +1,38 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.User;
 
 import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_users",
-        sequenceName = "seq_users",
+        name="seq_adminuser",
+        sequenceName = "seq_adminuser",
         initialValue = 1,
+
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class Users {
+public class AdminUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_users")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminuser")
     private Long id;
     private String userid;
-    private String email;
     private String userpw;
-    private String nickname;
-    private String countryCode;
-    private Integer zipcode;
-    private String address1;
-    private String address2;
-    private String address3;
+    private String name;
     @CreatedDate
     private LocalDateTime regDate;
-    @Enumerated(EnumType.STRING)
-    private UserStatus status;
-    private String tosAgree;
 }

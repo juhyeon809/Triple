@@ -1,4 +1,4 @@
-package com.project.triple.service;
+package com.project.triple.service.BaseService;
 
 
 import com.project.triple.controller.ifs.CrudInterface;

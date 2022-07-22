@@ -1,4 +1,4 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.request.AirRequest;
 
 import com.project.triple.model.enumclass.TicketStatus;
 import lombok.AllArgsConstructor;
@@ -6,13 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AirTicketApiResponse {
+public class AirTicketApiRequest {
     private Long id;
     private String ticketType;
     private String ticketNum;
@@ -22,7 +23,7 @@ public class AirTicketApiResponse {
     private String landingAirport;
     private LocalDateTime departureDate;
     private LocalDateTime landingDate;
-    private Integer price;
+    private BigDecimal price;
     private String seatNum;
     private String seatGrade;
     private String baggage;

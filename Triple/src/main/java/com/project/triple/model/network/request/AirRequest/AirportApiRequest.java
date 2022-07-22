@@ -1,4 +1,4 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.request.AirRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AirportApiResponse {
+public class AirportApiRequest {
     private Long id;
     private String airportNum;
     private String airportName;

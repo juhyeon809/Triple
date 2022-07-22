@@ -6,12 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.asm.Advice;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -38,13 +37,12 @@ public class AirTicket {
     private String landingAirport;
     private LocalDateTime departureDate;
     private LocalDateTime landingDate;
-    private Integer price;
+    private BigDecimal price;
     private String seatNum;
     private String seatGrade;
     private String baggage;
     @CreatedDate
-    private LocalDateTime revDate;
+    private String revDate;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
-
 }

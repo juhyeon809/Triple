@@ -1,11 +1,12 @@
 package com.project.triple.service;
 
-import com.project.triple.model.entity.Users;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UsersApiRequest;
 import com.project.triple.model.network.response.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
+import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
