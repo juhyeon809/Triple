@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class AirTicketApiRequest {
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private Integer airlineId;

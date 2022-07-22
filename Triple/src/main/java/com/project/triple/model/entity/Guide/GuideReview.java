@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class GuideReview {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idx;
     private Integer reviewNum;
     private String title;
     private String content;

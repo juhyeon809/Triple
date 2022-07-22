@@ -23,7 +23,7 @@ import javax.persistence.*;
 public class Aircraft {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "se1_aircraft")
-    private Long id;
+    private Long idx;
     private Integer aircraftNum;
     private String aircraftName;
     private String madeBy;

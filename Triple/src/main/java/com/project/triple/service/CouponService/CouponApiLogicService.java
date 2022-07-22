@@ -15,7 +15,7 @@ public class CouponApiLogicService extends BaseService<CouponApiRequest, CouponA
 
     private CouponApiResponse response(Coupon coupon){
         CouponApiResponse couponApiResponse = CouponApiResponse.builder()
-                .id(coupon.getId())
+                .idx(coupon.getIdx())
                 .couponId(coupon.getCouponId())
                 .name(coupon.getName())
                 .type(coupon.getType())

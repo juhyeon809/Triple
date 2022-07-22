@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class AdminUserApiRequest {
-    private Long id;
+    private Long idx;
     private String userid;
     private String userpw;
     private String name;

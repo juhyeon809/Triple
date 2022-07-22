@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
 public class AdminUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminuser")
-    private Long id;
+    private Long idx;
     private String userid;
     private String userpw;
     private String name;

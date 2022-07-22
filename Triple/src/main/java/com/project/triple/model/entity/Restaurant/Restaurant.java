@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_restaurant")
-    private Long id;
+    private Long idx;
     private Integer restNum;
     private String restName;
     private String country;

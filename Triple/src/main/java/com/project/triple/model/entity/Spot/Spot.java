@@ -27,7 +27,7 @@ import java.time.LocalDateTime;
 public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot")
-    private Long id;
+    private Long idx;
     private Integer spotNum;
     private String spotName;
     private String country;

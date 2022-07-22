@@ -2,7 +2,7 @@ create sequence auto_increment
     increment by 1
     start with 1;
 
-create table tb_users(
+create table users(
     idx number(7) primary key,
     userid varchar2(30) not null,
     email varchar2(30) not null,
@@ -18,7 +18,7 @@ create table tb_users(
     TOS_agree not null
 );
 
-create table tb_terms(
+create table terms(
     idx number(7) primary key,
     terms_name varchar2(30) not null,
     reg_date date default sysdate,
@@ -27,7 +27,7 @@ create table tb_terms(
     if_use varchar2(2) not null
 );
 
-create table tb_airport(
+create table airport(
     idx number(7)  primary key,
     airport_num varchar2(10) not null,
     airport_name varchar2(20) not null,
@@ -36,7 +36,7 @@ create table tb_airport(
     city varchar2(20) not null  
 );
 
-create table tb_airline(
+create table airline(
     idx number(7) primary key,
     airline_num number(7) not null,
     kr_name varchar2(20) not null,
@@ -47,7 +47,7 @@ create table tb_airline(
     contact_num2 varchar2(20)
 );
 
-create table tb_aircraft(
+create table aircraft(
     idx number(7) primary key,
     aircraft_num number(7) not null,
     aircraft_name varchar2(20) not null,
@@ -61,7 +61,7 @@ create table tb_aircraft(
     airline_id number(7) not null
 );
 
-create table tb_air_ticket(
+create table air_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10),
     ticket_num varchar2(10),
@@ -79,7 +79,7 @@ create table tb_air_ticket(
     stauts varchar2(10) not null
 );
 
-create table tb_reservation_airuse(
+create table reservation_airuse(
     idx number(7) primary key,
     userid number(7) not null,
     ticket_type varchar2(10) not null,
@@ -97,7 +97,7 @@ create table tb_reservation_airuse(
     reg_date date default sysdate
 );
 
-create table tb_lodging(
+create table lodging(
     idx number(7) primary key,
     company_num varchar2(10) not null,
     lodging_type varchar2(10) not null,
@@ -112,7 +112,7 @@ create table tb_lodging(
     like_num number(5) default 0
 );
 
-create table tb_lodging_room(
+create table lodging_room(
     idx number(7) primary key,
     room_num varchar2(10) not null,
     room_type varchar2(20) not null,
@@ -128,7 +128,7 @@ create table tb_lodging_room(
     status varchar2(10)
 );
 
-create table tb_lodging_ticket(
+create table lodging_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10) not null,
     ticket_num varchar2(10) not null,
@@ -144,7 +144,7 @@ create table tb_lodging_ticket(
     reg_date date default sysdate	
 );
 
-create table tb_tour( 
+create table tour( 
     idx number(7) primary key,
     tour_num varchar2(10) not null,
     country varchar2(10) not null,
@@ -162,7 +162,7 @@ create table tb_tour(
     remaining number(5) not null
 );
 
-create table tb_tour_ticket(
+create table tour_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10) not null,
     ticket_num varchar2(10) not null,
@@ -180,7 +180,7 @@ create table tb_tour_ticket(
     reg_date date default sysdate
 );
 
-create table tb_reservation(
+create table reservation(
     idx number(10) primary key,
     ticket_type varchar2(10) not null,
     ticket_num varchar2(10) not null,
@@ -190,7 +190,7 @@ create table tb_reservation(
     emergency_hp varchar2(20) not null
 );
 
-create table tb_review(
+create table review(
     idx number(7) primary key,
     review_num varchar2(10) not null,
     title varchar2(50) not null,
@@ -206,7 +206,7 @@ create table tb_review(
     ticket_num varchar2(10) not null
 );
 
-create table tb_magazine(
+create table magazine(
     idx number(7) primary key,
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
@@ -220,7 +220,7 @@ create table tb_magazine(
     reg_date date default sysdate
 );
 
-create table tb_adminuser(
+create table adminuser(
     idx number(7) primary key,
     admin_id varchar2(20) unique not null,
     admin_pw varchar2(20) not null,
@@ -228,7 +228,7 @@ create table tb_adminuser(
     reg_date date default sysdate
 );
 
-create table tb_spot(
+create table spot(
     idx number(7) primary key,
     spot_num number(7) unique not null,
     spot_name varchar2(20) not null,
@@ -246,7 +246,7 @@ create table tb_spot(
     review_count number(7) default 0
 );
 
-create table tb_spot_review(
+create table spot_review(
     idx number(7) primary key,
     review_num varchar2(10) not null,
     title varchar2(50) not null,
@@ -262,7 +262,7 @@ create table tb_spot_review(
     star_count varchar2(20) not null
 );
 
-create table tb_tourspot_review_reply(
+create table tourspot_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
     review_num number(7) not null,
@@ -274,7 +274,7 @@ create table tb_tourspot_review_reply(
     reg_date date default sysdate
 );
 
-create table tb_restaurant(
+create table restaurant(
     idx number(7) primary key,
     rest_num number(7) unique not null,
     rest_name varchar2(20) not null,
@@ -293,7 +293,7 @@ create table tb_restaurant(
     review_count number(7) default 0
 );
 
-create table tb_restaurant_review(
+create table restaurant_review(
     idx number(7) primary key,
     review_num varchar2(10) not null,
     title varchar2(50) not null,
@@ -309,7 +309,7 @@ create table tb_restaurant_review(
     star_count varchar2(20) not null
 );
 
-create table tb_restaurant_review_reply(
+create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
     review_num number(7) not null,
@@ -321,7 +321,7 @@ create table tb_restaurant_review_reply(
     reg_date date default sysdate
 );
 
-create table tb_coupon(
+create table coupon(
     idx number(7) primary key,
     coupon_id number(7) not null,
     name varchar2(20) not null,
@@ -335,14 +335,14 @@ create table tb_coupon(
     coupon_use varchar2(30)
 );
 
-create table tb_user_coupon(
+create table user_coupon(
     idx number(7) primary key,
     userid varchar(10),
     coupon_id number(7),
     reg_date date default sysdate
 );
 
-create table tb_guide(
+create table guide(
     idx number(7) primary key,
     guide_num number(7) not null,
     adminuser_id varchar2(10) not null,
@@ -358,7 +358,7 @@ create table tb_guide(
     review_count number(7) default 0
 );
 
-create table tb_guide_review(
+create table guide_review(
     idx number(7) primary key,
     review_num number(7) not null,
     title varchar2(50) not null,
@@ -373,7 +373,7 @@ create table tb_guide_review(
     reply_count number(5)
 );
 
-create table tb_guide_review_reply(
+create table guide_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
     review_num number(7) not null,
@@ -385,7 +385,7 @@ create table tb_guide_review_reply(
     reg_date date default sysdate
 );
 
-create table tb_question(
+create table question(
     idx number(7) primary key,
     inquary_id number(7) not null,
     ticket_num number(7) not null,
@@ -401,7 +401,7 @@ create table tb_question(
     reg_date date default sysdate
 );
 
-create table tb_answer(
+create table answer(
     idx number(7) primary key,
     answer_num number(7) not null,
     inquary_id number(7) not null,
@@ -412,7 +412,7 @@ create table tb_answer(
     reg_date date default sysdate
 );
 
-create table tb_tripler(
+create table tripler(
     idx number(7) primary key,
     tripler_num number(7) not null,
     userid varchar2(10) not null,
@@ -429,7 +429,7 @@ create table tb_tripler(
     reply_count number(5)
 );
 
-create table tb_tripler_reply(
+create table tripler_reply(
     idx number(7) primary key,
     reply_num number(7)	not null,
     tripler_num number(7) not null,

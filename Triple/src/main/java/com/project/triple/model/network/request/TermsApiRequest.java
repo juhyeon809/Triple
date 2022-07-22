@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TermsApiRequest {
-    private Long id;
+    private Long idx;
     private String termsName;
     private LocalDateTime regDate;
     private String content;

@@ -22,7 +22,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
     private UsersApiResponse response(Users users){
         UsersApiResponse usersApiResponse = UsersApiResponse.builder()
-                .id(users.getId())
+                .idx(users.getIdx())
                 .userid(users.getUserid())
                 .email(users.getEmail())
                 .userpw(users.getUserpw())
@@ -61,13 +61,14 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
     @Override
     public Header<UsersApiResponse> read(Long id) {
-        return baseRepository.findById(id).map(users -> response(users)).map(Header::OK).orElseGet(()->Header.ERROR("데이터 없음"));
+        return baseRepository.findById(id).map(users -> response(users)).map(Header::OK)
+                .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
     @Override
     public Header<UsersApiResponse> update(Header<UsersApiRequest> request) {
         UsersApiRequest usersApiRequest = request.getData();
-        Optional<Users> users = baseRepository.findById(usersApiRequest.getId());
+        Optional<Users> users = baseRepository.findById(usersApiRequest.getIdx());
 
         return users.map(
                         user -> {

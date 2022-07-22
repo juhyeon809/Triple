@@ -20,7 +20,7 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
 
     private AircraftApiResponse response(Aircraft aircraft){
         AircraftApiResponse aircraftApiResponse = AircraftApiResponse.builder()
-                .id(aircraft.getId())
+                .idx(aircraft.getIdx())
                 .aircraftNum(aircraft.getAircraftNum())
                 .aircraftName(aircraft.getAircraftName())
                 .madeBy(aircraft.getMadeBy())
@@ -63,7 +63,7 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
     @Override
     public Header<AircraftApiResponse> update(Header<AircraftApiRequest> request) {
         AircraftApiRequest aircraftApiRequest = request.getData();
-        Optional<Aircraft> aircraft = baseRepository.findById(aircraftApiRequest.getId());
+        Optional<Aircraft> aircraft = baseRepository.findById(aircraftApiRequest.getIdx());
 
         return aircraft.map(
                 aircraft1 -> {

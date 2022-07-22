@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class AirlineApiResponse {
-    private Long id;
+    private Long idx;
     private Integer airlineNum;
     private String krName;
     private String enName;

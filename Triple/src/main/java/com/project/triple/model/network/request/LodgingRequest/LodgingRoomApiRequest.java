@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class LodgingRoomApiRequest {
-    private Long id;
+    private Long idx;
     private String roomNum;
     private String roomType;
     private LodgingRoomStatus revStatus;

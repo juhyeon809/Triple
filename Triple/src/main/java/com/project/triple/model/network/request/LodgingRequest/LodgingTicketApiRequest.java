@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class LodgingTicketApiRequest {
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private String roomNum;

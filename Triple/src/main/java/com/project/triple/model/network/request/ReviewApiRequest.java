@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class ReviewApiRequest {
-    private Long id;
+    private Long idx;
     private String reviewNum;
     private String title;
     private String content;

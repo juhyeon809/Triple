@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ReservationApiRequest {
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private String revName;

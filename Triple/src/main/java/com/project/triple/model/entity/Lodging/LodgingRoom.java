@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 public class LodgingRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_lodging_room")
-    private Long id;
+    private Long idx;
     private String roomNum;
     private String roomType;
     @Enumerated(EnumType.STRING)

@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class Tripler {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tripler")
-    private Long id;
+    private Long idx;
     private Integer triplerNum;
     private String userId;
     private String country;

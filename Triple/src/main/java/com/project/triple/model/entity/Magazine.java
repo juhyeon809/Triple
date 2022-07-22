@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class Magazine {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_magazine")
-    private Long id;
+    private Long idx;
     private Integer adminuserId;
     private String adminuserName;
     private Integer magazineNum;

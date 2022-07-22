@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class CouponApiResponse {
-    private Long id;
+    private Long idx;
     private Integer couponId;
     private String name;
     private String type;

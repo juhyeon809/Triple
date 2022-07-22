@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class AnswerApiResponse {
-    private Long id;
+    private Long idx;
     private Integer answerNum;
     private Integer inquaryId;
     private Integer adminuserId;

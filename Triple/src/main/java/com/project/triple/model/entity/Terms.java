@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 public class Terms {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_terms")
-    private Long id;
+    private Long idx;
     private String termsName;
     @CreatedDate
     private LocalDateTime regDate;

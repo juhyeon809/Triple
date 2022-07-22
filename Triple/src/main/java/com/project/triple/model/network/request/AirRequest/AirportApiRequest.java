@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class AirportApiRequest {
-    private Long id;
+    private Long idx;
     private String airportNum;
     private String airportName;
     private String airportCode;

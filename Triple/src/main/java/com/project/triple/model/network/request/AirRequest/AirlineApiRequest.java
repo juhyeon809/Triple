@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class AirlineApiRequest {
-    private Long id;
+    private Long idx;
     private Integer airlineNum;
     private String krName;
     private String enName;

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class UsersApiRequest {
-    private Long id;
+    private Long idx;
     private String userid;
     private String email;
     private String userpw;

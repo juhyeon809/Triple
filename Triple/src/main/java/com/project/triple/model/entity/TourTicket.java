@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class TourTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tour_ticket")
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private String revName;

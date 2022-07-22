@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class GuideApiRequest {
-    private Long id;
+    private Long idx;
     private Integer guideNum;
     private String adminuserId;
     private String country;

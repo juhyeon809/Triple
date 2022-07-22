@@ -27,7 +27,7 @@ import java.time.LocalDateTime;
 public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_coupon")
-    private Long id;
+    private Long idx;
     private Integer couponId;
     private String name;
     private String type;

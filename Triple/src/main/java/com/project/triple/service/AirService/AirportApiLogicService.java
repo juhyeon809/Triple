@@ -20,7 +20,7 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
 
     private AirportApiResponse response(Airport airport){
         AirportApiResponse airportApiResponse = AirportApiResponse.builder()
-                .id(airport.getId())
+                .idx(airport.getIdx())
                 .airportNum(airport.getAirportNum())
                 .airportName(airport.getAirportName())
                 .airportCode(airport.getAirportCode())
