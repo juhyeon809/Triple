@@ -9,7 +9,7 @@ import com.project.triple.service.UsersApiLogicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@RestController         // 메소드호출하게 되면 응답이 json으로 자동으로 만들어짐
+@RestController
 @RequestMapping("/api/user")    // http://localhost:8080/api/user  url 주소
 @RequiredArgsConstructor
 public class UsersApiController extends CrudController<UsersApiRequest, UsersApiResponse, Users> {
