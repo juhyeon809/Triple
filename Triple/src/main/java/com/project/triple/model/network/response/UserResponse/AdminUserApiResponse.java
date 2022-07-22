@@ -1,5 +1,4 @@
-package com.project.triple.model.network.request;
-
+package com.project.triple.model.network.response.UserResponse;
 
 import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
@@ -13,11 +12,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AdminUserApiRequest {
+public class AdminUserApiResponse {
     private Long id;
     private String userid;
     private String userpw;
     private String name;
     private LocalDateTime regDate;
-
 }

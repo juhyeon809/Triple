@@ -1,5 +1,7 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Spot;
 
+
+import com.project.triple.model.enumclass.OperationStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,24 +17,31 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_tourspot_review_reply",
-        sequenceName = "seq_tourspot_review_reply",
+        name="seq_spot",
+        sequenceName = "seq_spot",
         initialValue = 1,
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class TourSpotReviewReply {
+public class Spot {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tourspot_review_reply")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot")
     private Long id;
-    private Integer replyNum;
-    private Integer reviewNum;
+    private Integer spotNum;
+    private String spotName;
+    private String country;
+    private String city;
+    private String hp;
     private String title;
     private String content;
-    private String nickname;
-    private String userId;
-    private Integer likeCount;
+    private String uploadPath;
+    private String fileName;
+    private String fileType;
+    @Enumerated(EnumType.STRING)
+    private OperationStatus status;
     @CreatedDate
     private LocalDateTime regDate;
+    private Integer likeCount;
+    private Integer reviewCount;
 }

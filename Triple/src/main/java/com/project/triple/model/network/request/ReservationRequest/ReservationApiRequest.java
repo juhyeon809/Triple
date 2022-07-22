@@ -1,4 +1,4 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.request.ReservationRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReservationApiResponse {
+public class ReservationApiRequest {
     private Long id;
     private String ticketType;
     private String ticketNum;

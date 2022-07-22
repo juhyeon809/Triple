@@ -1,10 +1,10 @@
-package com.project.triple.service;
+package com.project.triple.service.UserService;
 
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.request.UsersApiRequest;
-import com.project.triple.model.network.response.UsersApiResponse;
+import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
+import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;

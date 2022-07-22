@@ -1,4 +1,4 @@
-package com.project.triple.model.entity;
+package com.project.triple.model.entity.Reservation;
 
 import com.project.triple.model.enumclass.Gender;
 import lombok.AllArgsConstructor;

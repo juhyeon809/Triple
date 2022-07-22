@@ -1,4 +1,5 @@
-package com.project.triple.model.network.response;
+package com.project.triple.model.network.request.UserRequest;
+
 
 import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
@@ -12,18 +13,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UsersApiResponse {
+public class AdminUserApiRequest {
     private Long id;
     private String userid;
-    private String email;
     private String userpw;
-    private String nickname;
-    private String countryCode;
-    private Integer zipcode;
-    private String address1;
-    private String address2;
-    private String address3;
+    private String name;
     private LocalDateTime regDate;
-    private UserStatus status;
-    private String tosAgree;
+
 }
