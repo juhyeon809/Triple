@@ -1,6 +1,6 @@
 package com.project.triple.triple.repository;
 
-import com.project.triple.model.entity.Users;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.triple.TripleApplicationTests;
