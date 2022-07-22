@@ -108,16 +108,6 @@ function count3(type)  {
 
 
 
-    // $('.close').on('click', function(){
-    //     let result = '';
-    //     if($('input:checkbox[name="seat]checked').length  == 1){
-    //         $('.seatSr').innerText = $('input:checkbox[name="seat]checked').value;
-    //     }else{
-    //         let seatNum = $('input:checkbox[name="seat]checked').length-1;
-    //         $('.seatCnt').innerHTML ="외 "+ seatNum; 
-    //     } 
-        
-    // })
     let personNum = document.querySelector('.personNum');
     let seatSr = document.querySelector('.seatSr');
     let seatCnt = document.querySelector('.seatCnt');
@@ -249,23 +239,6 @@ function hideshow4(){
 }
 
 
-// close.addEventListener('click', function(key){
-//     if(seatValue.checked){
-//         se
-//     }
-// })
-// function getCheckboxValue(event)  {
-//     let result = '';
-//     if(event.target.checked)  {
-//       result = event.target.value;
-//     }else {
-//       result = '';
-//     }
-    
-//     document.getElementsByClassName('seatSr').innerText
-//       = result;
-//   }
-
 
 
 
@@ -282,11 +255,10 @@ function hideshow4(){
     
 
 //닫기버튼
-let closeBtn = document.querySelector(".close");
-closeBtn.addEventListener('click', ()=>{
-    section.style.display = "none";
-    section1.style.display = "none"
-    section2.style.display = "none";
-    section4.style.display = "none";
+
+$(document).ready(function(){
+    $(".close").click(function(){
+        $(".hidebox1-5").css({"display":"none"})
+    })
 })
 
