@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide")
-    private Long id;
+    private Long idx;
     private Integer guideNum;
     private String adminuserId;
     private String country;

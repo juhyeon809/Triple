@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class RestaurantReview {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_restaurant_review")
-    private Long id;
+    private Long idx;
     private String reviewNum;
     private String title;
     private String content;

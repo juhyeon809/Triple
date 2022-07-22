@@ -22,7 +22,7 @@ import javax.persistence.*;
 public class Airline {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_airline")
-    private Long id;
+    private Long idx;
     private Integer airlineNum;
     private String krName;
     private String enName;

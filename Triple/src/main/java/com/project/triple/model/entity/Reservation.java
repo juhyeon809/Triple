@@ -24,7 +24,7 @@ import javax.persistence.*;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_reservation")
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private String revName;

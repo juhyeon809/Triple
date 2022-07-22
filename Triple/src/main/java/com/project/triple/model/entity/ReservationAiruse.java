@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class ReservationAiruse {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_reservation_airuse")
-    private Long id;
+    private Long idx;
     private Integer userid;
     private String ticketType;
     private Integer ticketNum;

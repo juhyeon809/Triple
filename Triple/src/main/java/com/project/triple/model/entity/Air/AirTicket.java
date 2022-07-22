@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
 public class AirTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_air_ticket")
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private Integer airlineId;

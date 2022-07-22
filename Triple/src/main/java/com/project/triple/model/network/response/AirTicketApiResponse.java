@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class AirTicketApiResponse {
-    private Long id;
+    private Long x;
     private String ticketType;
     private String ticketNum;
     private Integer airlineId;

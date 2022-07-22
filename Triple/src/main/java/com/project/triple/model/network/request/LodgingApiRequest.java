@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class LodgingApiRequest {
-    private Long id;
+    private Long idx;
     private String companyNum;
     private String lodgingType;
     private String companyName;

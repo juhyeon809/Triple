@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_question")
-    private Long id;
+    private Long idx;
     private Integer inquaryId;
     private Integer ticketNum;
     private Integer userId;

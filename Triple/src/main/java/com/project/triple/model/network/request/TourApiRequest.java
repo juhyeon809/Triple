@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TourApiRequest {
-    private Long id;
+    private Long idx;
     private String tourNum;
     private String country;
     private String address;

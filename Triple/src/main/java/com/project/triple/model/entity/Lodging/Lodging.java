@@ -24,7 +24,7 @@ import javax.persistence.*;
 public class Lodging {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_lodging")
-    private Long id;
+    private Long idx;
     private String companyNum;
     private String lodgingType;
     private String companyName;

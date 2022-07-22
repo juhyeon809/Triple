@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TourTicketApiRequest {
-    private Long id;
+    private Long idx;
     private String ticketType;
     private String ticketNum;
     private String revName;

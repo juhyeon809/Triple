@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_users")
-    private Long id;
+    private Long idx;
     private String userid;
     private String email;
     private String userpw;

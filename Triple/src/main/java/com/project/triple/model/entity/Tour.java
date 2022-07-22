@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_tour")
-    private Long id;
+    private Long idx;
     private String tourNum;
     private String country;
     private String address;

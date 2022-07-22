@@ -21,7 +21,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
     private UsersApiResponse response(Users users){
         UsersApiResponse usersApiResponse = UsersApiResponse.builder()
-                .id(users.getId())
+                .idx(users.getIdx())
                 .userid(users.getUserid())
                 .email(users.getEmail())
                 .userpw(users.getUserpw())
@@ -66,7 +66,7 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     @Override
     public Header<UsersApiResponse> update(Header<UsersApiRequest> request) {
         UsersApiRequest usersApiRequest = request.getData();
-        Optional<Users> users = baseRepository.findById(usersApiRequest.getId());
+        Optional<Users> users = baseRepository.findById(usersApiRequest.getIdx());
 
         return users.map(
                         user -> {
