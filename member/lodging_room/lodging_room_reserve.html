@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>객실예약</title>
+    <title>TRIPLE | 객실예약</title>
     <link rel="stylesheet" href="/member/lodging_room/css/lodging_room_main.css">
     <link rel="stylesheet" href="/css/common.css">
     <script src="./js/lodging.js"></script>
@@ -26,10 +26,10 @@
                     <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
                     <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
                     <li><a href="/member/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                    <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                     <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                     <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
-                    <li><a href="/member/event/event.html">혜택/렌터카</a></li>
+                    <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
                 </ul>
             </div>
         </header>
@@ -39,107 +39,119 @@
             <div id="lodging_img">
                 <img src="./img/객실정보.png" alt="객실정보">
             </div>
-            <div id="lg_rm_if_main">
-                <div id="lg_rm_if_re_1">
-                    <div id="lg_rm_if_re_11">
-                        <div id="lg_rm_if_re_1_1">두짓 타니 괌 리조트</div>
-                        <div id="lg_rm_if_re_1_11">괌</div>
-                        <div id="lg_rm_if_re_1_2">프리미어 트윈룸, 오션프론트 ></div>
-                        <div id="lg_rm_if_re_1_3">
-                            <div id="lg_rm_if_re_1_3_1">
-                                <div id="lg_rm_if_re_1_3_1_1">침대정보</div>
-                                <div id="lg_rm_if_re_1_3_1_2">싱글침대 2개</div>
+            <div class="main">
+                <div class="mainLeft">
+                    <div>
+                        <h2 class="main_tit">두짓 타니 괌 리조트</h2>
+                        <p>괌</p>
+                        <h2 class="main_tit">프리미어 트윈룸, 오션프론트 ></h2>
+                        <div class="main_info">
+                            <div>
+                                <p class="leftb">침대정보</p>
+                                <p class="rightb">싱글침대 2개</p>
                             </div>
 
-                            <div id="lg_rm_if_re_1_3_2">
-                                <div id="lg_rm_if_re_1_3_2_1">투숙인원</div>
-                                <div id="lg_rm_if_re_1_3_2_2">성인 2인</div>
+                            <div>
+                                <p class="leftb">투숙인원</p>
+                                <p class="rightb">성인 2인</p>
                             </div>
-                            <div id="lg_rm_if_re_1_3_3">
-                                <div id="lg_rm_if_re_1_3_3_1">조식여부</div>
-                                <div id="lg_rm_if_re_1_3_3_2">조식 불포함</div>
+                            <div>
+                                <p class="leftb">조식여부</p>
+                                <p class="rightb">조식 불포함</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="lg_rm_if_re_2">
-                    <div id="lg_rm_if_re_2_1"><span>체크인</span><br>6.25(토) 15:00 - 언제든지</div>
-                    <div id="lg_rm_if_re_2_2">• •  1박  • •</div>
-                    <div id="lg_rm_if_re_2_3"><span>체크아웃</span><br>6.26(일) 정오</div>
+                <div class="mainRight">
+                    <div class="shadowBox"><span>체크인</span><p>6.25(토) 15:00 - 언제든지</p></div>
+                    <p class="showday"><span class="color">•</span> •  <span>1박</span>  • <span class="color">•</span></p>
+                    <div class="shadowBox"><span>체크아웃</span><p>6.26(일) 정오</p></div>
                 </div>
             </div>
         </div>
         
         <form action="./lodging_room_payment.html" name="reserve" id="reserve" onsubmit="return sendit()">
-        <div id="lg_rm_if_re_s">
-            <div id="rm_re_s_1">
-                <div id="rm_re_s_1_1">
-                    <div id="rm_re_s_1_1_1">예약자 정보</div>
-                    <div id="rm_re_s_1_1_2">한글명<br><input type="text" value="" name="name" id="name" placeholder="이름을 입력해주세요"></div>
-                    <div id="rm_re_s_1_1_3">휴대전화번호<br><input type="text" value="" name="hp" id="hp" placeholder="휴대전화번호를 입력해주세요" maxlength="13"></div>
-                    <div id="rm_re_s_1_1_4">이메일<br><input type="text" value="" name="email" id="email" placeholder="이메일을 입력해주세요"></div>
-                    <div id="rm_re_s_1_1_5">위의 이메일로 예약확정 안내(바우처 등)가 전송됩니다.</div>
+        <div>
+            <div class="box">
+                <div class="booker">
+                    <h2>예약자 정보</h2>
+                    <p class="boxtit">한글명</p><input type="text" value="" name="name" id="name" placeholder="실명, 한글로 입력">
+                    <p class="boxtit">휴대전화번호</p><input type="text" value="" name="hp" id="hp" placeholder="-빼고 숫자만 입력" maxlength="13">
+                    <p class="boxtit">이메일</p><input type="text" value="" name="email" id="email" placeholder="ID@triple.com">
+                    <p class="span">위의 이메일로 예약확정 안내(바우처 등)가 전송됩니다.</p>
                 </div>
 
-                <div id="rm_re_s_1_2">
-                    <div id="rm_re_s_1_2_1">투숙자 정보 <span>대표 투숙자</span></div>
-                    <div id="rm_re_s_1_2_2">
-                        <div id="rm_re_s_1_2_2_1">성<br><input type="text" name="lastName" id="lastName" placeholder="LAST NAME"></div>
-                        <div id="rm_re_s_1_2_2_2">이름<br><input type="text" name="firstName" id="firstName" placeholder="FIRST NAME"></div>
+                <div class="booker2">
+                    <h2>투숙자 정보 <span>대표 투숙자</span></h2>
+                    <div>
+                        <div class="leftb"><p class="box_title">성</p>
+                        <input type="text" name="lastName" id="lastName" placeholder="LAST NAME"></div>
+                        <div class="rightb"><p class="box_title">이름</p>
+                        <input type="text" name="firstName" id="firstName" placeholder="FIRST NAME"></div>
                     </div>
-                    <div id="rm_re_s_1_2_3">생년월일<br><input type="text" name="birth" id="birth" maxlength="8" placeholder="생년월일(8자리)을 입력해주세요"></div>
-                    <div id="rm_re_s_1_2_4">성별</div>
-                    <div id="rm_re_s_1_2_5"><label>남자<input type="checkbox" value="남자" name="box" onclick="oneClick(this)"/></label> <label>여자<input type="checkbox" value="여자" name="box" onclick="oneClick(this)"/></label></div>
+                    <div class="leftb"><p class="box_title">생년월일</p><input type="text" name="birth" id="birth" maxlength="8" placeholder="YYYYMMDD"></div>
+                    
+                    <div class="rightb">
+                        <p class="box_title">성별</p>
+                        <div class="label_box">
+                            <label for="man"><input type="checkbox" name="gender" id="man">남자</label>
+                            <label for="female"><input type="checkbox" name="gender" id="female">여자</label>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             
-            <div id="rm_re_s_2">
-                <div id="rm_re_s_2_1">
-                    <div id="rm_re_s_2_1_1">요청사항</div>
-                    <div id="rm_re_s_2_1_2">별도 요청사항</div>
-                    <textarea id="rm_re_s_2_1_3" placeholder="요청사항이 있으면 영어나 현지 언어로 작성 부탁드립니다." name="text"></textarea>
-                    <div id="rm_re_s_2_1_4">
+            <div class="bbox">
+                <div class="requests">
+                    <p>요청사항</p>
+                    <p>별도 요청사항</p>
+                    <textarea class="textarea" placeholder="요청사항이 있으면 영어나 현지 언어로 작성 부탁드립니다." name="text"></textarea>
+                    <p class="textareaP">
                         고객님의 요청사항은 해당 숙소에 전달됩니다만, 숙소 사정에 따라 필요하신 내용이 이루어지지 않을 수 있으니 많은 양해 바랍니다.
-                    </div>
+                    </p>
                 </div>
         
-                <div id="rm_re_s_2_2">
-                    <div id="rm_re_s_2_2_1">
-                        <div id="rm_re_s_2_2_1_1">결제 및 취소 정책</div>
-                        <div id="rm_re_s_2_2_1_2">
-                            <div id="rm_re_s_2_2_1_2_1">예약 금액 (세금 포함)</div>
-                            <div id="rm_re_s_2_2_1_2_2">428,247원</div>
+                <div class="paynotice">
+                    <div class="left">
+                        <h2>결제 및 취소 정책</h2>
+                        <div class="bottom">
+                            <p class="pleft">예약 금액 (세금 포함)</p>
+                            <p class="pright">428,247원</p>
+                            <p class="pleft">쿠폰할인</p>
+                            <p class="pright"><img src="img/minus_icon.png" alt="minus"> <select name="price"><option value="쿠폰가격"> &nbsp;&nbsp;&nbsp;25,695원</option></select></p>
                         </div>
 
-                        <div id="rm_re_s_2_2_1_3">
-                            <div id="rm_re_s_2_2_1_3_1">쿠폰할인</div>
-                            <div id="rm_re_s_2_2_1_3_2">- <select name="price"><option value="쿠폰가격"> &nbsp;&nbsp;&nbsp;25,695원</option></select></div>
-                        </div>
-
-                        <div id="rm_re_s_2_2_1_4">
-                            <div id="rm_re_s_2_2_1_4_1">총 결제 금액</div>
-                            <div id="rm_re_s_2_2_1_4_2">402,552원</div>
+                        <div class="totpay">
+                            <p class="pleft">총 결제 금액</p>
+                            <p class="pright">402,552원</p>
                         </div>
                     </div>
 
-                    <div id="rm_re_s_2_2_2">
-                        <div id="rm_re_s_2_2_2_1">✔ 무료 취소 가능<br>2022년 06월 18일 23시 59분(서울시간)까지 무료 취소 가능<br><span>이후 예약을 취소할 경우 전액 취소 수수료가 부과될 수 있습니다.</span></div>
+                    <div class="right">
+                        <h2><img src="./img/checkmark3.png" alt=""> 무료 취소 가능</h2>
+                        <p>2022년 06월 18일 23시 59분(서울시간)까지 무료 취소 가능.</p>
+                        <p>이후 예약을 취소할 경우 전액 취소 수수료가 부과될 수 있습니다.</p>
                     </div>
                 </div>
 
-                <div id="rm_re_s_2_3">
-                    <div id="rm_re_s_2_3_1">이용 동의</div>
+                <div class="lastbox">
+                    <h2>이용 동의</h2>
 
-                    <div id="rm_re_s_2_3_2">
-                        <div id="rm_re_s_2_3_2_1"><span>취소 / 이용규정, 개인 정보 수집 / 이용 방침</span> 및 <span>개인정보 제 3자 제공</span>을 모두 읽었으며 이에 동의합니다. </div>
-                        <div id="rm_re_s_2_3_2_2"><input type="submit" value="결제하기"></div></form>
+                    <div class="agree">
+                        <label for="agreeCheck"><p><a href="#">취소·이용규정</a>, <a href="#">개인 정보 수집·이용 방침</a> 및 <a href="#">개인정보 제 3자 제공</a>을 모두 읽었으며 이에 동의합니다. <input type="checkbox" name="agree" id="agreeCheck"></p></label>
+                        
+                        <input type="submit" value="결제하기"> 
+                    </div>
+                </div>
+                    </form>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
+<!--footer-->
     <footer>
         <div id="enterprise_info">
             <div id="enterprise_info_text">
@@ -160,5 +172,6 @@
             </div>
         </div>
     </footer>
+    <!--footer 끝-->
 </body>
 </html>
