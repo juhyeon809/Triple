@@ -1,0 +1,51 @@
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+font-family: 'Noto Sans KR', sans-serif;
+}
+.boxList {
+    width: 850px;
+    margin: 0 auto;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+    vertical-align: middle;
+    width: 400px;
+    margin: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
+}
+.flex .img{
+    height: 150px;
+    vertical-align: middle;
+}
+.flex .img img{
+    width: 120px;
+}
+
+.purpleTit{
+    color: #8700ff;
+    font-weight: bold;
+    margin: 0;
+}
+.blueTit{
+    color: #1190e6;
+    font-weight: bold;
+    margin: 0;
+}
+
+.boldTxT{
+    font-weight: bold;
+    margin: 0;
+    color: #39484a;
+}
+.flex div p:last-child{
+    color: #666;
+    margin: 5px;
+}

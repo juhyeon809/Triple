@@ -191,8 +191,7 @@ input2.addEventListener('keypress', function(key){
     }
 })
 
-//날짜설정박스 수정하기
-
+//날짜설정박스 
 let section3 = document.querySelector(".hidebox1-4")
 let isshow3 = true;
 function hideshow3(){
@@ -208,20 +207,20 @@ function hideshow3(){
     } 
 }
 
-//날짜입력시 값 변경, 더블클릭시 창닫힘
-let closebox = document.querySelector('.hidebox1-4');
+//날짜입력시 값 변경, 버튼클릭시 창닫힘
 let datepicker1 = document.querySelector('#datepicker1');
 let datepicker2 = document.querySelector('#datepicker2');
 let inInput3 = document.querySelector('.click3');
 let inInput4 = document.querySelector('.click4');
 
-closebox.addEventListener('dblclick', (event) => {
-    inInput3.innerText = datepicker1.value;
-    inInput4.innerText = datepicker2.value;
-    section3.style.display = "none";
-});
 
-
+$(document).ready(function(){
+    $(".dateclose").click(function(){
+        inInput3.innerText = datepicker1.value;
+        inInput4.innerText = datepicker2.value;
+        $(".hidebox1-4").css({"display":"none"})
+    })
+})
 //인원및 좌석등급
 let section4 = document.querySelector(".hidebox1-5")
 let isshow4 = true;
@@ -255,6 +254,12 @@ function hideshow4(){
     
 
 //닫기버튼
+// $(document).ready(function(){
+//     $(".dateclose").click(function(){
+//         $(".hidebox1-4").css({"display":"none"})
+//     })
+// })
+
 
 $(document).ready(function(){
     $(".close").click(function(){
