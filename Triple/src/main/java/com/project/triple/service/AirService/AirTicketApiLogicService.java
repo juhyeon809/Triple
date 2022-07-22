@@ -32,6 +32,8 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .seatNum(airticket.getSeatNum())
                 .seatGrade(airticket.getSeatGrade())
                 .baggage(airticket.getBaggage())
+                .revDate(airticket.getRevDate())
+                .status(airticket.getStatus())
                 .build();
 
 
