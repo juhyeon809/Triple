@@ -1,0 +1,28 @@
+package com.project.triple.model.network.request.LodgingRequest;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class LodgingTicketApiRequest {
+    private Long id;
+    private String ticketType;
+    private String ticketNum;
+    private String roomNum;
+    private String revName;
+    private String revHp;
+    private String revEmail;
+    private String useEngLastname;
+    private String useEngFirstname;
+    private String useBirth;
+    private String useRequests;
+    private String infoAgree;
+    private LocalDateTime regDate;
+}

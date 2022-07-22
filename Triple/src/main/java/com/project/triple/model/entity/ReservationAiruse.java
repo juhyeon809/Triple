@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.enumclass.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,7 +33,8 @@ public class ReservationAiruse {
     private String engLastname;
     private String engFirstname;
     private String birth;
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
     private String useHp;
     private String nationality;
     private String passportNum;
