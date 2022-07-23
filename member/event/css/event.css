@@ -62,6 +62,7 @@ main h2{
     padding: auto;
     background-color: white;
     border-radius: 10px;
+    cursor: pointer;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
 }
 .flex div:first-child{

@@ -421,7 +421,7 @@ main td {
 .content2{
     position: relative;
     width: calc(100%);
-    left: 300px;
+    left: 400px;
     max-width: 1200px;
     margin-top: 50px;
 }
@@ -1355,6 +1355,7 @@ font-size: 13px;
     padding-top: 20px;
     font-size: 20px;
     font-weight: bold;
+    left: -260px;
 }
 
 .magazine_register_1{
@@ -1611,7 +1612,6 @@ font-size: 13px;
     width: 1000px;
     height: 500px;
     /* margin: 0 auto; */
-    margin-top: 50px;
     margin-left: 200px;
     display: flex;
     justify-content: flex-around;
@@ -1647,7 +1647,6 @@ font-size: 13px;
 
 .admin_register_btn {
     text-align: center;
-    margin-left: 200px;
 }
 
 .admin_register_btn > input {
