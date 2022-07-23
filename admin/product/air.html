@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품등록 | 항공권</title>
+    <title>관리자 | 항공권 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -16,7 +16,7 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -30,10 +30,10 @@
             </li>
             <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="air.html">항공사 신규 등록</a></li>
-                    <li><a href="room.html">항공기 신규 등록</a></li>
-                    <li><a href="packge.html">취항지 목록</a></li>
-                    <li><a href="ticket.html">취항지 신규 등록</a></li>
+                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -100,10 +100,13 @@
     <!--사이드바 끝-->
 
     <section class="content2"> 
+        <!--타이틀-->
         <div class="header_box">
             <h2>상품등록 | 항공권</h2>
         </div>
+        <!--타이틀 끝-->
         <div class="formbox register">
+            <!--항공권 정보 등록-->
             <form action="">
                 <div class="box">
                     <div class="leftbox">
@@ -129,7 +132,6 @@
                                 <option value="">부산에어</option>
                             </select>
                         </p>
-                        
                         <p>항공기명 <select name="" id="">
                             <option value=""></option>
                             <option value=""></option>
@@ -145,6 +147,7 @@
                         <p>수화물 <input type="text" style="margin-left: 35px;"></p>
                     </div>
                 </div>
+                <!--좌석별 가격-->
                 <div class="box flbox flbox2">
                     <div class="bottombox btbox">
                         <p>가격 <input type="text" placeholder="일반석" readonly class="readonly"></p>
@@ -162,18 +165,15 @@
                         <p><input type="text" placeholder="일등석" readonly class="readonly"></p>
                         <p class="span">성인<input type="text">원 / 소아 <input type="text">원 / 유아 <input type="text">원</p>
                     </div>
-                    
-                    
-                    
                 </div>
-            </div>
-            <div class="hbt">
-                <button type="submit" class="regis" value="등록">등 록</button>
-            </div>
+                <!--좌석별 가격 끝-->
+                <div class="hbt">
+                    <button type="submit" class="regis" value="등록">등 록</button>
+                </div>
             </form>
-
+            <!--항공권 정보 등록 끝-->
         </div> 
-    </div>
+    </section>
     <script src="../script.js"></script>
 </body>
 </html>

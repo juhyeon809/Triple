@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 리뷰</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     
@@ -55,7 +56,7 @@
                     <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="review.html"style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품후기</a>
+            <li><a href="review.html" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품후기</a>
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -101,13 +102,39 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2">
+        <!--타이틀 및 검색조회바-->
         <div class="header_box">
             <h2>상품후기</h2>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                            <input type="date" name="" id=""> ~ <input type="date">
+                            <select name="" class="">
+                                <option value="전체">전체</option>
+                                <option value="패키지">패키지</option>
+                                <option value="항공">항공</option>
+                                <option value="숙소">숙소</option>
+                                <option value="맛집">맛집</option>
+                                <option value="티켓/투어">티켓/투어</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="전체">전체</option>
+                                <option value="제목">제목</option>
+                                <option value="코드">코드</option>
+                                <option value="작성자">작성자</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
+                </form>
+            </nav>
         </div>
+        <!--타이틀 및 검색조회바 끝-->
+        <!--전체 리뷰 테이블-->
         <table class="reivew.table tbList">
             <tr>
                 <th>
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="CheckAll">
                 </th>
                 <th>
                     분류
@@ -122,52 +149,72 @@
                     날짜
                 </th>
             </tr> 
-            <tr onclick="location.href='./review_package.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>패키지</td>
-                <td>만족스러운 패키지</td>
-                <td>pakege123</td>
-                <td>2022-06-22</td>
+            <tr>
+                <td><input type="checkbox" name="review" id=""></td>
+                <td onclick="location.href='./review_package.html'">패키지</td>
+                <td onclick="location.href='./review_package.html'">만족스러운 패키지</td>
+                <td onclick="location.href='./review_package.html'">pakege123</td>
+                <td onclick="location.href='./review_package.html'">2022-06-22</td>
             </button></a>        
             </tr>
-            <tr onclick="location.href='./review_sugso.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>숙소</td>
-                <td>깨끗한 숙소</td>
-                <td>hotel123</td>
-                <td>2022-07-02</td>              
+            <tr>
+                <td><input type="checkbox" name="review" id=""></td>
+                <td onclick="location.href='./review_sugso.html'">숙소</td>
+                <td onclick="location.href='./review_sugso.html'">깨끗한 숙소</td>
+                <td onclick="location.href='./review_sugso.html'">hotel123</td>
+                <td onclick="location.href='./review_sugso.html'">2022-07-02</td>              
             </tr>       
-            <tr onclick="location.href='./review_restaurant.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>맛집</td>
-                <td>불만족스러운 맛집</td>
-                <td>restaurant127</td>
-                <td>2022-06-22</td>              
+            <tr>
+                <td><input type="checkbox" name="review" id=""></td>
+                <td onclick="location.href='./review_restaurant.html'">맛집</td>
+                <td onclick="location.href='./review_restaurant.html'">불만족스러운 맛집</td>
+                <td onclick="location.href='./review_restaurant.html'">restaurant127</td>
+                <td onclick="location.href='./review_restaurant.html'">2022-06-22</td>              
             </tr>    
-            <tr onclick="location.href='./review_ticket.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>티켓</td>
-                <td>티겟값이 비싸요</td>
-                <td>ticket88</td>
-                <td>2022-06-22</td>              
+            <tr>
+                <td><input type="checkbox" name="review" id=""></td>
+                <td onclick="location.href='./review_ticket.html'">티켓</td>
+                <td onclick="location.href='./review_ticket.html'">티겟값이 비싸요</td>
+                <td onclick="location.href='./review_ticket.html'">ticket88</td>
+                <td onclick="location.href='./review_ticket.html'">2022-06-22</td>              
             </tr>    
-            <tr onclick="location.href='./review_air.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>항공편</td>
-                <td>비행이 편안해요</td>
-                <td>airplane</td>
-                <td>2022-06-27</td>              
+            <tr>
+                <td><input type="checkbox" name="review" id=""></td>
+                <td onclick="location.href='./review_air.html'">항공편</td>
+                <td onclick="location.href='./review_air.html'">비행이 편안해요</td>
+                <td onclick="location.href='./review_air.html'">airplane</td>
+                <td onclick="location.href='./review_air.html'">2022-06-27</td>              
             </tr>    
-
         </table>
+        <!--전체 리뷰 테이블 끝-->
+        <!--전체 삭제-->
         <div class="btnlist">
             <button value="선택삭제">선택삭제</button>
         </div>
+        <!--전체삭제 끝-->
+        <!--넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>
-    
+        <!--넘버링 끝-->
     </div>
     <script src="/admin/script.js"></script>
+    <script>
+        $(document).ready(function(){
+        //약관동의 체크박스 전체 선택
+            $("#CheckAll").click(function() {
+                if($("#CheckAll").is(":checked")) $("input[name='review']").prop("checked", true);
+                else $("input[name='review']").prop("checked", false);
+            });
+            $("input[name='review']").click(function() {
+                var total = $("input[name='review']").length;
+                var checked = $("input[name='review']:checked").length;
+        
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#CheckAll").prop("checked", false);
+                else $("#CheckAll").prop("checked", true); 
+            });
+    });
+    </script>
 </body>
 </html>
