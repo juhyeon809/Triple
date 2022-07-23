@@ -1,7 +1,7 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 .notosanskr * { 
- font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
 }
 header {
     width: 100%;
@@ -16,9 +16,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-   
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -224,15 +223,15 @@ main {
     margin-bottom: 50px;
 }
 #travel_package_menus a {
-    font-size: 18px;
-    color: black;
-    font-weight: 700;
-    
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
 }
 
 #travel_package_contents p{
     font-size: 16px;
-    font-weight: 700;
+    font-weight: bold;
+    color: #666666;
     margin: 20px 0;
     margin-left: 20px;
 }
@@ -242,7 +241,7 @@ main {
     align-items: center;
 }
 #red_text{
-    color: red;
+    color: #FF0101;
 }
 #merchandise_mark {
     display: flex;
@@ -251,26 +250,27 @@ main {
 }
 #merchandise_mark div p {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: normal;
     margin: 0px;
     color: white;
 }
 #merchandise_mark div {
-    background-color: rgb(58, 135, 223);
+    background-color: #2680EB;
     padding: 5px;
     margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 #travel_package_list .product_name ,#travel_package_list .product_air, #travel_package_list .product_star,#travel_package_list .product_coupon {
-    color: black;
     font-size: 16px;
+    font-weight: bold;
+    color: #666666;
 }
 #travel_package_list .product_name {
     margin-bottom: 0px;
 }
 #travel_package_list .product_air {
     color: #666666;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 0px;
 }
 #travel_package_list .product_name a{
@@ -288,6 +288,280 @@ main {
         width: 430px;
         height: 300px;
 }
+
+/*package_country*/
+
+#travel_package_img {
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-image: url('../img/southpacific.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#travel_package_menus {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 3px #50e3c2 ;
+    margin-bottom: 50px;
+}
+#travel_package_menus a {
+    margin-left: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    
+}
+#merchandise_mark {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#merchandise_mark div p {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0px;
+    color: white;
+}
+#merchandise_mark div {
+    background-color: #2680EB;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#travel_package_contents p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    margin: 20px 0;
+    margin-left: 20px;
+}
+.packagebox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#red_text{
+    color: #FF0101;
+}
+#travel_package_list .product_name ,#travel_package_list .product_air, #travel_package_list .product_star,#travel_package_list .product_coupon {
+    font-weight: bold;
+    color: #666666;
+    font-size: 16px;
+}
+#travel_package_list .product_name {
+    margin-bottom: 0px;
+}
+#travel_package_list .product_air {
+    color: #666666;
+    font-size: 16px;
+    margin-top: 0px;
+}
+#travel_package_list .product_name a{
+    color: black;
+}
+#travel_package_list .product_name a:visited{
+    color: black;
+}
+#travel_package_list .product_price, #travel_package_list .product_coupon {
+    text-align: right;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+#packagebox_image a img {
+    width: 430px;
+    height: 300px;
+}
+
+
+/*package_speactialprice*/
+
+#travel_package_img {
+    width: 1000px;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-image: url('../img/southpacific.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+#travel_package_main {
+    margin-top: 50px;
+}
+#travel_package_menus {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 3px #50e3c2 ;
+    margin-bottom: 50px;
+}
+#travel_package_menus a {
+    margin-left: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    
+}
+
+#travel_package_contents p{
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    margin: 20px 0;
+    margin-left: 10px;
+}
+.packagebox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#red_text{
+    color: #FF0101;
+}
+
+
+#special_price_flex_box {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+#special_price_content {
+    width: 40%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+}
+#special_price_content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#content_representation{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#content_representation p{
+    margin: 1px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #666666;
+}
+#content_representation > #price_text{
+    font-size: 16px;
+    color: #666666;
+}
+
+#content_representation > #red_text {
+    color: #FF0101;
+}
+
+#reservation {
+    background-color: #FE6C6C;
+    border-radius: 15px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#reservation > p {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+#merchandise_mark {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#merchandise_mark div p {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0px;
+    color: white;
+}
+#merchandise_mark div {
+    background-color: #2680EB;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#special_price_box {
+    width: 1000px;
+    margin: 50px auto;
+    background-color: rgb(252, 242, 233);
+    padding: 50px 0;
+}
+#special_price_box > p {
+    padding-left: 40px;
+    font-weight: bold;
+}
+main > p {
+    font-weight: bold;
+}
+#content_title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+}
+#travel_package_list .product_name ,#travel_package_list .product_air, #travel_package_list .product_star,#travel_package_list .product_coupon {
+    font-size: 16px;
+    color: #666666;
+}
+#travel_package_list .product_name {
+    margin-bottom: 0px;
+}
+#travel_package_list .product_air {
+    color: #666666;
+    font-size: 16px;
+    margin-top: 0px;
+}
+#travel_package_list .product_name a{
+    color: black;
+}
+#travel_package_list .product_name a:visited{
+    color: black;
+}
+#travel_package_list .product_price, #travel_package_list .product_coupon {
+    text-align: right;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+#packagebox_image a img {
+    width: 430px;
+    height: 300px;
+}
+
 
 footer {
 
@@ -339,3 +613,4 @@ footer {
 #icon_box > #TRIP > a > img {
     width: 100px;
 }
+

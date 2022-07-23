@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>맛집 정보</title>
-    <link rel="stylesheet" href="/member/travel_spot/css/travel_spot_common.css">
-    <link rel="stylesheet" href="/member/travel_spot/css/restaurant_info.css">
+    <link rel="stylesheet" href="/member/travel_spot/css/travel_spot.css">
     <link rel="stylesheet" href="/css/common.css">
 </head>
 <body>
@@ -25,7 +24,7 @@
                 <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
                 <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
                 <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                 <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                 <li><a href="/member/magazine/magazine.html" >여행매거진</a></li>
                 <li><a href="/member/event/event.html">혜택/렌터카</a></li>
@@ -47,7 +46,7 @@
             <div id="text_area"> 
                 <p id="title_text">비치 인 쉬림프 1호점</p>
                 <p>신선한 재료를 사용하는 새우 요리 전문점</p>
-                <p><img src="./img/starpoint.png" alt=""> (590) <span>&#183;</span> 저장10,981</p>
+                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장10,981</p>
                 <p>음식점 <span>&#183;</span> 투몬, 타무닝</p>
             </div>
         </div>
@@ -56,7 +55,7 @@
             <p class="info_box_subtitle">대표 메뉴</p>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/breadandshrimp.png" alt="">
+                    <img src="/member/travel_spot/img/frenchbreadwithshrimp.webp" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">프렌지 빵과 비친 쉬림프</p>
@@ -66,7 +65,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/gambas.png" alt="">
+                    <img src="/member/travel_spot/img/gambas.webp" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">감바스 알 아질로</p>
@@ -76,7 +75,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/califoniashrimproll.png" alt="">
+                    <img src="/member/travel_spot/img/californiaroll.webp" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">캘리포니아 새우 롤</p>
@@ -86,7 +85,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/coconutshrimp.png" alt="">
+                    <img src="/member/travel_spot/img/coconutshrimp.webp" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">코코넛 새우와 고구마 튀김</p>
@@ -97,56 +96,55 @@
             <p id="basic_info_text">기본 정보</p>
             <div id="basic_info">
                 <div id="basic_info_flex_box">
-                <div id="map_area">
-                    <img src="./img/map.png" alt="">
-                </div>
-                <div id="basic_info_text_area">
-                    <table>
-                        <tr>
-                            <td class="table_index">주소</td>
-                            <td>Tumon, Guam, Mariana Islands</td>
-                        </tr>
-                        <tr>
-                            <td class="table_index">전화</td>
-                            <td>+16716474107</td>
-                        </tr>
-                        <tr>
-                            <td class="table_index">홈페이지</td>
-                            <td><a href="http://www.puntandosamantes.com">http://www.puntandosamantes.com</a></td>
-                        </tr>
-                    </table>
-                    <div id="button_box">
-                        <a href=""><div id="asking"><p>현지에서 길묻기</p></div></a>
-                        <a href=""><div id="finding"><p>길찾기</p></div></a>
+                    <div id="map_area">
+                        <img src="./img/map.png" alt="">
                     </div>
-                </div>
+                    <div id="basic_info_text_area">
+                        <table>
+                            <tr>
+                                <td class="table_index">주소</td>
+                                <td>Tumon, Guam, Mariana Islands</td>
+                            </tr>
+                            <tr>
+                                <td class="table_index">전화</td>
+                                <td>+16716474107</td>
+                            </tr>
+                            <tr>
+                                <td class="table_index">홈페이지</td>
+                                <td><a href="http://www.puntandosamantes.com">http://www.puntandosamantes.com</a></td>
+                            </tr>
+                        </table>
+                        <div id="button_box">
+                            <a href=""><div id="asking"><p>현지에서 길묻기</p></div></a>
+                            <a href=""><div id="finding"><p>길찾기</p></div></a>
+                        </div>
+                    </div>
                 </div>
                 <hr>
                 <div id="tips_for_visiting">
-                <div class="flex_div">
-                    <p class="index_p">가는방법</p>
-                    <p class="context_p">마이크로네시아 몰에서 차로 4분</p>
+                    <div class="flex_div">
+                        <p class="index_p">가는방법</p>
+                        <p class="context_p">마이크로네시아 몰에서 차로 4분</p>
+                    </div>
+                    <div class="flex_div">
+                        <p class="index_p">이용가능시간, 휴무일</p>
+                        <p class="context_p"><span id="blue_text">오늘 07:00 - 19:00</span></p>
+                    </div>
+                    <div class="flex_div">
+                        <p class="index_p">이곳의 이용팁</p>
+                        <p class="context_p">유료 셔틀 버스 운행</p>
+                    </div>
+                    <div id="no_border_box" class="flex_div">
+                        <p class="index_p"></p>
+                    <div>
+                        <p class="context_p">- T 갤러리아 DFS <-> 사랑의 절벽</p>
+                        <p class="context_p">- 왕복 10달러(전망대 입장료 포함)</p>
+                        <p class="context_p">- 마이크로네시아 몰 경유</p>
+                        <p class="context_p">전망대 입장권 뒷면에 레스토랑 제휴 할인 쿠폰 있음</p>
+                        <p class="context_p">배틀트립 촬영 장소</p>
+                    </div>
                 </div>
-                <div class="flex_div">
-                    <p class="index_p">이용가능시간, 휴무일</p>
-                    <p class="context_p"><span id="blue_text">오늘 07:00 - 19:00</span></p>
                 </div>
-                <div class="flex_div">
-                    <p class="index_p">이곳의 이용팁</p>
-                    <p class="context_p">유료 셔틀 버스 운행</p>
-                </div>
-                <div id="no_border_box" class="flex_div">
-                    <p class="index_p"></p>
-                <div>
-                    <p class="context_p">- T 갤러리아 DFS <-> 사랑의 절벽</p>
-                    <p class="context_p">- 왕복 10달러(전망대 입장료 포함)</p>
-                    <p class="context_p">- 마이크로네시아 몰 경유</p>
-                    <p class="context_p">전망대 입장권 뒷면에 레스토랑 제휴 할인 쿠폰 있음</p>
-                    <p class="context_p">배틀트립 촬영 장소</p>
-                </div>
-                </div>
-                </div>
-            </div>
             <div id="review_box">
                 <div id="review_top">
                     <p class="index_p">리뷰 <span id="blue_text">332</span></p>
@@ -158,9 +156,9 @@
                 <div id="review_content">
                     <div><img src="./img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
                     <div class="user_info_area">
-                    <p class="userid_area">Apple123</p>
-                    <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><img src="./img/starpoint.png" alt=""></p>
+                        <p class="userid_area">Apple123</p>
+                        <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
+                        <p class="star_area"><span class="star_point">★★★★☆</span></p>
                     </div>
                     <div class="review_context">
                         <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>
@@ -171,7 +169,7 @@
                     <div class="user_info_area">
                     <p class="userid_area">Apple123</p>
                     <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><img src="./img/starpoint.png" alt=""></p>
+                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
                     </div>
                     <div class="review_context">
                         <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>
@@ -182,7 +180,7 @@
                     <div class="user_info_area">
                     <p class="userid_area">Apple123</p>
                     <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><img src="./img/starpoint.png" alt=""></p>
+                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
                     </div>
                     <div class="review_context">
                         <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>

@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="backg_image_area">
+        <!--header 시작-->
         <header>
             <div id="logo_area">
                 <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -19,7 +20,6 @@
                     <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
                 </form>
                 <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-    
             </div>
             <div id="menu_area">
                 <ul id="menus">
@@ -27,59 +27,60 @@
                     <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
                     <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
                     <li><a href="/member/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                    <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                     <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                     <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
                     <li><a href="/member/event/event.html">혜택/렌터카</a></li>
                 </ul>
             </div>
         </header>
+        <!--header 끝-->
     </div>
+    <!--main 시작-->
     <main>
         <div id="loadging_pay">
             <div id="lodging_pay_img">
-                <img src="./img/객실결제.png" alt="객실결제">
+                <img src="./img/roompayment.png" alt="객실결제">
             </div>
             <div id="lg_rm_pay_main">
                 <div id="lg_rm_pay_1">
-                    <div id="lg_rm_pay_1_1">
-                        <div id="lg_rm_pay_1_1_1">결제내용 확인</div>
-                        <div id="lg_rm_pay_1_1_2">두짓 타니 괌 리조트<br>2022-06-25 ~ 2022-06-26</div>
-                        <div id="lg_rm_pay_1_1_3">
-                            <div id="lg_rm_pay_1_1_3_1">객실 | 프리미어 트윈룸, 오션프론트 x 1</div>
-                            <div id="lg_rm_pay_1_1_3_2">428,247원</div>
+                    <div id="roompayment_checkbox">
+                        <div id="roompayment_checkbox_title">결제내용 확인</div>
+                        <div id="roompayment_checkbox_name">두짓 타니 괌 리조트<br>2022-06-25 ~ 2022-06-26</div>
+                        <div id="roompayment_checkbox_what">
+                            <div id="roompayment_checkbox_what_object">객실 | 프리미어 트윈룸, 오션프론트 x 1</div>
+                            <div id="roompayment_checkbox_what_price">428,247원</div>
                         </div>
                     </div>
-
-                    <div id="lg_rm_pay_1_2">
-                        <div id="lg_rm_pay_1_2_1">결제정보</div>
-                        <div id="lg_rm_pay_1_2_2">
-                            <div id="lg_rm_pay_1_2_2_1">예약 금액(세금 포함)</div>
-                            <div id="lg_rm_pay_1_2_2_2">428,247원</div>
+                    <div id="roompayment_paymentbox">
+                        <div id="roompayment_paymentbox_payinfo">결제정보</div>
+                        <div id="roompayment_paymentbox_reserveprice">
+                            <div id="roompayment_paymentbox_reserveprice_title">예약 금액(세금 포함)</div>
+                            <div id="roompayment_paymentbox_reserveprice_price">428,247원</div>
                         </div>
-                        <div id="lg_rm_pay_1_2_3">
-                            <div id="lg_rm_pay_1_2_3_1">쿠폰 할인</div>
-                            <div id="lg_rm_pay_1_2_3_2">- 25,695원</div>
+                        <div id="roompayment_paymentbox_coupon">
+                            <div id="roompayment_paymentbox_coupon_title">쿠폰 할인</div>
+                            <div id="roompayment_paymentbox_coupon_price">- 25,695원</div>
                         </div>
-                        <div id="lg_rm_pay_1_2_4">
-                            <div id="lg_rm_pay_1_2_4_1">총 결제금액</div>
-                            <div id="lg_rm_pay_1_2_4_2">402,552원</div>
+                        <div id="roompayment_paymentbox_final">
+                            <div id="roompayment_paymentbox_final_title">총 결제금액</div>
+                            <div id="roompayment_paymentbox_final_price">402,552원</div>
                         </div>
                     </div>
                 </div>
-
                 <div id="lg_rm_pay_2">
-                    <div id="lg_rm_pay_2_1">결제수단</div>
-                    <div id="lg_rm_pay_2_2">
-                        <div id="lg_rm_pay_2_2_1"><input type="submit" value="신용/체크카드"></div>
-                        <div id="lg_rm_pay_2_2_2"><input type="submit" value="네이버페이"></div>
+                    <div id="roompayment_paymentway">결제수단</div>
+                    <div id="roompayment_paymentway_how">
+                        <div id="roompayment_paymentway_how_card"><input type="submit" value="신용/체크카드"></div>
+                        <div id="roompayment_paymentway_how_naver"><input type="submit" value="네이버페이"></div>
                     </div>
                     <button id="check_module">결제하기</button>
                     <script src="./js/payment.js"></script>
                 </div>
             </div>
         </div>
-
+    <!--main 끝-->
+    <!--footer 시작-->
     <footer id="footer_p">
         <div id="enterprise_info_p">
             <div id="enterprise_info_text_p">
@@ -95,5 +96,6 @@
             </div>
         </div>
     </footer>
+    <!--footer 끝-->
 </body>
 </html>

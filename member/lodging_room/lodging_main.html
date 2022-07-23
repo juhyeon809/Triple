@@ -7,9 +7,16 @@
     <title>호텔·펜션</title>
     <link rel="stylesheet" href="/member/lodging_room/css/lodging_room_main.css">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <div id="backg_image_area">
+        <!--header 시작-->
         <header>
             <div id="logo_area">
                 <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -25,14 +32,17 @@
                     <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
                     <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
                     <li><a href="/member/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                    <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                     <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                     <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
                     <li><a href="/member/event/event.html">혜택/렌터카</a></li>
                 </ul>
             </div>
         </header>
+        <!--header 끝-->
+        <!--main 시작-->
         <div id="lodging_main_img"></div>
+        <!--section 시작-->
         <section>
             <div class="lodging_main">
                 <p class="lodging_title">최저가 숙소 비교 예약</p>
@@ -41,7 +51,7 @@
                         <img src="./img/icon_main_search.svg" alt="search"><input type="text" placeholder="지역">
                     </li>
                     <li class="room_icon">
-                        <img src="./img/icon_main_calendar.svg" alt="date"><input type="text" placeholder="날짜">
+                        <img src="./img/icon_main_calendar.svg" alt="date"><input type="text" placeholder="체크인" id="datepicker1"><input type="text" placeholder="체크아웃" id="datepicker2">
                     </li>
                     <li class="room_icon">
                         <img src="./img/icon_main_person.svg" alt="people"><input type="text" placeholder="인원수">
@@ -297,6 +307,9 @@
                 </div>
             </div>
         </section>
+        <!--secion 끝-->
+        <!--main 끝-->
+        <!--footer 시작-->
         <footer>
             <div id="enterprise_info">
                 <div id="enterprise_info_text">
@@ -317,5 +330,19 @@
                 </div>
             </div>
         </footer>
+        <!--footer 끝-->
+        <script>
+            $(function(){
+                $('#datepicker').datepicker();
+            })
+        
+        
+            $(function() {
+                $("#datepicker1, #datepicker2").datepicker({
+                    dateFormat: 'yy.mm.dd'
+                });
+            });
+        
+        </script>
 </body>
 </html>
