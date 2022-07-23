@@ -254,11 +254,6 @@ function hideshow4(){
     
 
 //닫기버튼
-// $(document).ready(function(){
-//     $(".dateclose").click(function(){
-//         $(".hidebox1-4").css({"display":"none"})
-//     })
-// })
 
 
 $(document).ready(function(){

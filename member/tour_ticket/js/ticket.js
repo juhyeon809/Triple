@@ -57,7 +57,7 @@ function sendit(){
         return false
     }
     if(!lastname.test($('#traveler-eng-lastname').val())){
-        alert('영문이름을 입력해주세요');
+        alert('영문성을 입력해주세요');
         $('#traveler-eng-lastname').val('');
         $('#traveler-eng-lastname').focus();
         return false
@@ -71,15 +71,5 @@ function sendit(){
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
+
