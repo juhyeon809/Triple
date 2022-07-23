@@ -7,6 +7,14 @@
     <title>관리자 | 항공사 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
+    <style>
+        .formbox{
+            margin-top: 150px;
+        }
+        .hbt{
+            margin-right: 100px;
+        }
+    </style>
 </head>
 <body>
     <!-- 사이드바-->
@@ -16,7 +24,7 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -99,16 +107,14 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-
-    
     <div class="content2">
         <h2>항공사 신규 등록</h2>
-
         <div class="formbox register">
+            <!--항공사 정보 등록-->
             <form action="">
                 <div class="box new">
                     <ul>
-                         <li><p>항공사명 (Kor) </p>
+                        <li><p>항공사명 (Kor) </p>
                             <div><input type="text"></div>
                         </li>
                         <li><p>항공사명 (Eng) </p>
@@ -129,12 +135,12 @@
                             <div><input type="text"></div>
                         </li>
                     </ul>
-                   
                 </div>
                 <div class="hbt non">
                     <button type="submit" class="regis " value="등록">등록</button>
                 </div>
             </form>
+            <!--항공사 정보등록 끝-->
         </div>
     </div>
 

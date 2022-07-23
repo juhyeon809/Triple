@@ -100,20 +100,21 @@
         </ul>
     </selction>
 <!--사이드바 끝-->
-    
+<!--타이틀-->
+    <div class="header_box">
+        <h2>관리자 등록</h2>
+    </div>
+    <!--타이틀 끝-->
     <section class="content2">
-        <div class="header_box">
-            <h2>관리자 등록</h2>
-        </div>
         <!--main-->
-        <main>
+        <!--관리자 정보 등록-->
             <form action="#" method="post">
                 <div class="admin_manage_form_container">
                     <div class="admin_manage_form_container_ul1">
-                        <p class="admin_register_adminid">아이디 : </p>
-                        <p class="admin_register_name">이름 : </p>
-                        <p class="admin_register_hp">연락처 : </p>
-                        <p class="admin_register_email">이메일 : </p>
+                        <p class="admin_register_adminid">아이디 </p>
+                        <p class="admin_register_name">이름 </p>
+                        <p class="admin_register_hp">연락처 </p>
+                        <p class="admin_register_email">이메일 </p>
                     </div>
                     <div class="admin_manage_form_container_ul2">
                         <p><input type="text" class="admin_register_adminid_content" placeholder="아이디를 입력하세요"></p>
@@ -122,10 +123,10 @@
                         <p><input type="email" class="admin_register_email_content" placeholder="이메일을 입력하세요"></p>
                     </div>
                     <div class="admin_manage_form_container_ul3">
-                        <p class="admin_register_adminpw">비밀번호 : </p>
-                        <p class="admin_register_adminpwre">비밀번호 확인 : </p>
-                        <p class="admin_register_department">부서 : </p>
-                        <p class="admin_register_title">직함 : </p>
+                        <p class="admin_register_adminpw">비밀번호 </p>
+                        <p class="admin_register_adminpwre">비밀번호 확인 </p>
+                        <p class="admin_register_department">부서 </p>
+                        <p class="admin_register_title">직함 </p>
                     </div>
                     <div class="admin_manage_form_container_ul4">
                         <p><input type="password" class="admin_register_adminpw_content" placeholder="비밀번호를 입력하세요"></p>
@@ -152,9 +153,13 @@
                         </p>
                     </div>
                 </div>
-                <p class="admin_register_btn"><input type="submit" value="관리자 등록"></p>    
+                <!--등록버튼-->
+                <div class="hbt non">
+                    <button type="submit" class="regis" value="등록">등록</button>
+                </div>
+                <!--등록버튼 끝-->
             </form>
-        </main>
+            <!--관리자 정보 등록 끝-->
         <!--main-->
     </section>
     

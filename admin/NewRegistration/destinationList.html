@@ -17,7 +17,7 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -103,23 +103,26 @@
 
     
     <section class="content2">
-        <h2>취항지 목록</h2>
-        <nav>
-            
-            <form action="#">
-                <div class="form-group">
-                    <select name="" id="">
-                        <option value="전체">전체</option>
-                        <option value="아이디">대한민국</option>
-                        <option value="이름">아시아</option>
-                    </select>
-                    <input type="text" placeholder="검색어를 입력하세요">
-                    <button type="submit">검색</button>
-                </div>
-            </form>
-        </nav>
-    </section>
-    
+        <!--타이틀 및 검색조회바-->
+        <div class="header_box">
+            <h2>취항지 목록</h2>
+            <nav>
+                
+                <form action="#">
+                    <div class="form-group">
+                        <select name="" id="">
+                            <option value="전체">전체</option>
+                            <option value="아이디">대한민국</option>
+                            <option value="이름">아시아</option>
+                        </select>
+                        <input type="text" placeholder="검색어를 입력하세요">
+                        <button type="submit">검색</button>
+                    </div>
+                </form>
+            </nav>
+        </div>
+        <!--타이틀 및 검색조회바 끝-->
+        <!--취항지 리스트 테이블-->
         <table class="tbList">
             <tr>
                 
@@ -154,8 +157,14 @@
                 <td>나트랑</td>
                 <td>2022.03.06</td>
             </tr>
-            
         </table>
+        <!--취항지 리스트 테이블 끝-->
+        <!--넘버링-->
+        <div class="pageNum">
+            <p>1 2 3 4 5</p>
+        </div>
+    </section>
+        <!--넘버링 끝-->
         <script src="../script.js"></script>
 </body>
 </html>

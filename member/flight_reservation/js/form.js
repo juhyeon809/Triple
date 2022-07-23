@@ -80,13 +80,7 @@ function sendit(){
         alert("국적을 선택해주세요");
     }
 
-    //여권번호
-    // if(!passportNum.test($('#passportNum').val())){
-    //     alert('여권번호를 다시 확인해주세요');
-    //     $('#passportNum').val('');
-    //     $('#passportNum').focus();
-    //     return false
-    // }
+    
     if(!passportNum1.test($('#passportNum').val())){
         alert('여권번호를 다시 확인해주세요');
         $('#passportNum').val('');
@@ -124,12 +118,7 @@ function sendit(){
 }
 
 function credit(){
-    //https://www.habonyphp.com/2021/02/credit-card.html
-    //BC, Visa, MasterCard, Discover, Amex, Diners Club, JCB 에 해당하는 카드
-    // ^(?:(94[0-9]{14})|(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$
 
-    //Visa, MasterCard, Discover, Amex, Diners Club/Carte Blanche 에 해당하는 카드
-    //    ^(?:(?<Visa>4\d{3})|(?<Mastercard>5[1-5]\d{2})|(?<Discover>6011)|(?<DinersClub>(?:3[68]\d{2})|(?:30[0-5]\d))|(?<AmericanExpress>3[47]\d{2}))([ -]?)(?(DinersClub)(?:\d{6}\1\d{4})|(?(AmericanExpress)(?:\d{6}\1\d{5})|(?:\d{4}\1\d{4}\1\d{4})))$
     const master = RegExp(/^([51|52|53|54|55]{2})([0-9]{14})$/);
     const cardDate = RegExp(/^((0[1-9])|(1[0-2]))\/(\d{2})$/);
     const cardPw = RegExp(/[d{2}]/);
@@ -159,22 +148,7 @@ function credit(){
         $('#cardBirth').focus();
         return false
     }
-    // let pay = false
-    // for(let i=0; i<$("input:checkbox[name='check1']").length; i++){
-    //     if($("input:checkbox[name='check1']").eq(i).is(":checked")==true){
-    //         pay = true
-    //         break
-    //     }
-    //     if(!pay){
-    //         alert('결제규정을 읽고 체크해주세요')
-    //         return false
-    //     }
-    // }
-
-    // if(!$('check1').is(':checked')){
-    //     alert('결제규정을 읽고 체크해주세요')
-    //     return false
-    // }
+    
     if($('#check1').is(":checked") == false){
         alert('결제규정을 읽고 체크해주세요');
     }

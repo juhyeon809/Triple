@@ -1,9 +1,10 @@
 function sendit(){
     const nameCheck = RegExp(/[가-힣]+$/);
     const emailCheck = RegExp(/^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/);
-    const phCheck = RegExp(/^\d{3}\d{3,4}\d{4}$/);
+    const phCheck = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
     const lastname = RegExp(/[A-Za-z]/);
     const firstname = RegExp(/[A-Za-z]/);
+    const birth = RegExp(/\d{4}\d{2}\d{2}/);
     const kakao = RegExp(/[a-zA-z0-9]/);
     const hotel = RegExp(/[a-zA-Z가-힣]/);
 
@@ -43,6 +44,12 @@ function sendit(){
         $('#engFirstname').focus();
         return false
     }
+    if(!birth.test($('#rBirth').val())){
+        alert('생년월일을 형식에 맞게 입력하세요');
+        $('#rBirth').val('');
+        $('#rBirth').focus();
+        return false
+    }
     if(!kakao.test($('#kakao').val())){
         alert('카카오톡 아이디를 입력해주세요');
         $('#kakao').val('');
@@ -57,7 +64,7 @@ function sendit(){
         return false
     }
     if(!lastname.test($('#traveler-eng-lastname').val())){
-        alert('영문이름을 입력해주세요');
+        alert('영문성을 입력해주세요');
         $('#traveler-eng-lastname').val('');
         $('#traveler-eng-lastname').focus();
         return false
@@ -69,17 +76,17 @@ function sendit(){
         $('#traveler-eng-firstname').focus();
         return false
     }
-
-
-
-
-
-
-
-
-
-
-
-
+    let notice = false
+    for(let i=0; i<$("input:checkbox[name='agree']").length; i++){
+        if($("input:checkbox[name='agree']").eq(i).is(":checked")==true){
+            notice = true
+            break
+        }
+        if(!notice){
+            alert('이용규정 및 개인정보 동의서를 모두 읽고 체크해주세요')
+            return false
+        }
+    }
 
 }
+

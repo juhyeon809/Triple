@@ -544,6 +544,29 @@ font-size: 16px;
   font-size: 25px;
   line-height: 51px;
 }
+.review-wrap .star {
+  position: relative;
+  font-size: 2rem;
+  color: #ddd;
+}
+
+.review-wrap .star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.review-wrap .star span {
+  width: 0;
+  position: absolute; 
+  left: 0;
+  color: #FFDC00;
+  overflow: hidden;
+  pointer-events: none;
+}
 .review-wrap button {
   display: block;
   margin: 25px auto 0;

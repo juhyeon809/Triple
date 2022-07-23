@@ -11,57 +11,49 @@
     <body>
         
     <style>
-        .tableBorder{
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 30px;
-    width: 1000px;
-}
 
-form ul {
-            list-style: none;
-            width:980px;
-            padding: 0;
-            margin: 0;
-}
-.regForm ul{
-    background: none;
-    padding: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-size: 20px;
-    align-items: center;
-    
-}
-.tit_lbl {
-    text-align: center;
-    font-weight: bold;
-    margin-right: 10px;
-    
-}
-.regForm ul{
-    width: 800px;
-    text-align: center;
-}
-.regForm ul input{
-    width: 200px;
-    height: 30px;
-}
-.regForm ul li{
-    width: 300px;
-    margin-bottom: 30px;
-}
-.reg_content{
-    float: right;
-}
-.buttonArea{
-    width: 200px;
-}
-.buttonArea button {
-    width: 50px;
-}
+    form{
+        margin-top: 100px;
+    }
+
+    form ul {
+                list-style: none;
+                width:980px;
+                padding: 0;
+                margin: 0 0 0 20px;
+    }
+    .regForm ul{
+        background: none;
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 20px;
+        align-items: center;
+        
+    }
+    .tit_lbl {
+        text-align: center;
+        font-weight: bold;
+        margin-right: 10px;
+        
+    }
+    .regForm ul{
+        width: 800px;
+        text-align: center;
+    }
+    .regForm ul input{
+        width: 200px;
+        height: 30px;
+    }
+    .regForm ul li{
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    .reg_content{
+        float: right;
+    }
+
 
     </style>
         <!-- 사이드바-->
@@ -71,7 +63,7 @@ form ul {
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="../member/memberlist.html">회원목록</a></li>
-                        <li><a href="../member/">회원가입</a></li>
+                        <li><a href="../member/memberSign-up.html">회원가입</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -156,38 +148,40 @@ form ul {
         <!--사이드바 끝-->
         <section class="content2">
             <h2>취항지 신규 등록</h2>
-        <div class="form">
-            <form action="#" class="regForm">
-                <div class="register">
-            
+            <!--취항지 정보 등록-->
+            <div class="form">
+                <form action="#" class="regForm">
+                    <div class="register">
+                        <div>
+                            <ul>
+                                <li class="clear">
+                                    <span class="tit_lbl">공항명</span>
+                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                </li>
 
-            <div>
-            <ul>
-                <li class="clear">
-                    <span class="tit_lbl">공항명</span>
-                    <div class="reg_content"><input type="text" class="textBox"></div>
-                </li>
-
-                <li class="clear">
-                    <span class="tit_lbl">공항코드</span>
-                    <div class="reg_content"><input type="text" class="textBox"></div>
-                </li>
-                <li class="clear">
-                    <span class="tit_lbl">국가</span>
-                    <div class="reg_content"><input type="text" class="textBox"></div>
-                </li>
-                <li class="clear">
-                    <span class="tit_lbl">도시</span>
-                    <div class="reg_content"><input type="text" class="textBox"></div>
-                </li>
-            </ul>
-        </div>
-        <div class="hbt" style="clear: both;">
-            <button type="submit" class="regis " value="등록">등록</button>
-        </div>
-    </div>
-    </form>
-</div>
+                                <li class="clear">
+                                    <span class="tit_lbl">공항코드</span>
+                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                </li>
+                                <li class="clear">
+                                    <span class="tit_lbl">국가</span>
+                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                </li>
+                                <li class="clear">
+                                    <span class="tit_lbl">도시</span>
+                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--등록-->
+                        <div class="hbt" style="clear: both;">
+                            <button type="submit" class="regis " value="등록">등록</button>
+                        </div>
+                        <!--등록 끝-->
+                    </div>
+                </form>
+            </div>
+            <!--취항지 정보 등록 끝-->
 </section>
 <script src="../script.js"></script>
 </body>
