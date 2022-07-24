@@ -6,7 +6,7 @@ function sendit(){
                 rename.focus();
                 return false;
         }
-        document.location.href="my_travel.html";
+        document.location.href="my_travel_main.html";
         alert('수정되었습니다');
         return true;
 }

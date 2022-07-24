@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/review.css">
+    <link rel="stylesheet" href="/member/mypage/review/css/review.css">
     <script src="./js/review_script.js"></script>
-    <title>review</title>
+    <title>TRIPLE | 마이페이지 리뷰작성</title>
     <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
+    <!--헤더-->
     <header>
         <div id="logo_area">
             <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
             <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
         </div>
     </header>
+    <!--헤더끝-->
+    <!--메인-->
     <main class="container_all">
         <div class="ser_box">
             <!--검색-->
@@ -25,6 +28,13 @@
         <div class="ser_list">
             <!--리스트-->
             <p id="se_top">이 장소에 다녀오셨나요?</p>
+            <select class="select_box">
+                <option value="place">관광지</option>
+                <option value="room">숙소</option>
+                <option value="tour">투어</option>
+                <option value="eat_place">맛집</option>
+            </select>
+            
             <div class="list_te">
                 <img src="./img/review_place.svg" id="ser_img">
                 <div class="list_pl">
@@ -149,6 +159,7 @@
             
         </div>
     </main>
+    <!--메인 끝-->
     <!--푸터-->
     <footer>
         <div id="enterprise_info">
