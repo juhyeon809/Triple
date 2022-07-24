@@ -407,10 +407,11 @@ main td {
 
 /*회원목록*/
 
+
 .content2{
     position: relative;
     width: calc(100%);
-    left: 20%;
+    left: 300px;
     max-width: 1200px;
     margin-top: 50px;
 }
