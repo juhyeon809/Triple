@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 항공예약조회</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -126,7 +127,7 @@
         <table class="tbList">
             <tr>
                 <th>
-                    <input type="checkbox" name="checkAll" id="">
+                    <input type="checkbox" name="" id="checkAll">
                 </th>
                 <th>
                     이름
@@ -147,13 +148,13 @@
                     승인
                 </th>
             </tr> 
-            <tr onClick = "location.href='flyDetail.html'">
-                <td><input type="checkbox" name="" id=""></td>
-                <td>김사과</td>
-                <td>항공권</td>
-                <td>A44168</td>
-                <td>인천 - 다낭</td>
-                <td>결제완료</td>
+            <tr>
+                <td><input type="checkbox" name="b_fly" id=""></td>
+                <td onClick = "location.href='flyDetail.html'">김사과</td>
+                <td onClick = "location.href='flyDetail.html'">항공권</td>
+                <td onClick = "location.href='flyDetail.html'">A44168</td>
+                <td onClick = "location.href='flyDetail.html'">인천 - 다낭</td>
+                <td onClick = "location.href='flyDetail.html'">결제완료</td>
                 <td>
                     <select name="" id="">
                         <option value="승인">승인</option>
@@ -177,5 +178,22 @@
         <!--넘버링 끝-->
     </section>
     <script src="../script.js"></script>
+    <script>
+        $(document).ready(function(){
+        //약관동의 체크박스 전체 선택
+            $("#checkAll").click(function() {
+                if($("#checkAll").is(":checked")) $("input[name='b_fly']").prop("checked", true);
+                else $("input[name='b_fly']").prop("checked", false);
+            });
+            $("input[name='b_fly']").click(function() {
+                var total = $("input[name='b_fly']").length;
+                var checked = $("input[name='b_fly']:checked").length;
+        
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#checkAll").prop("checked", false);
+                else $("#checkAll").prop("checked", true); 
+            });
+    });
+    </script>
 </body>
 </html>

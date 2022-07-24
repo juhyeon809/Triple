@@ -1694,7 +1694,10 @@ font-size: 13px;
     height: 30px;
     font-size: 18px;
     border: none;
-    background-color: orange;
+    background-color: #0098A1;;
+    cursor: pointer;
+    color: white;
+
 }
 
 .admin_inquiry_datail_btn2 {
