@@ -772,7 +772,7 @@ color: #666666;
 /*tour_spot_info*/
 
 #tour_spot_img {
-    background-image: url(../img/사랑의\ 절벽.png);
+    background-image: url(../img/topImg.png);
     width: 1000px;
     height: 400px;
     background-size: cover;
@@ -830,9 +830,9 @@ color: #666666;
 }
 #utility_box {
     width: 1000px;
-    border-radius: 15px;
-    background-color: rgb(250, 249, 249);
-    box-shadow: 5px 5px  rgb(204, 204, 204) ;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 5px 5px 20px #dddddd;
     margin-bottom: 50px;
 
 }
