@@ -464,7 +464,19 @@ div>a{
 }
 
 /*review_done(리뷰 리스트)*/
-
+.select_box{
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.select_box > option{
+    background-color: #e7e7e7;
+    font-weight: bold;
+}
 #relist_img{
     width: 80px;
 }
@@ -554,7 +566,7 @@ div>a{
 
 .review_box{
     width: 935px;
-    padding:  0 20px 10px 20px;
+    padding:  0 20px 50px 20px;
     margin-top: 20px;
     font-size: 16px;
 }

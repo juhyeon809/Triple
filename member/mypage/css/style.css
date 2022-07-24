@@ -15,7 +15,7 @@ header { width: 100%; background-image: url('/img/header_bg.png'); background-re
 
 
 /*공통 footer*/
-footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 150px; margin-top: 50px; }
+footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 150px; margin-top: 150px; position: relative; transform: translateY(100%);}
 #enterprise_info { margin: 0 auto; width: 1400px; display: flex; justify-content: space-between; }
 #enterprise_info > #enterprise_info_text { padding-top: 50px; padding-left: 100px; font-weight: bold; }
 #enterprise_info > #enterprise_info_text > p { color: rgb(77, 76, 76); }
@@ -50,7 +50,9 @@ footer { width: 100%; background-color: #50e3c2; opacity: 0.7; height: 150px; ma
 .container_all{
     width: 1000px;
     margin: 0 auto;
-    padding-bottom: 30px;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 150px;
 }
 
 /*공통*/
