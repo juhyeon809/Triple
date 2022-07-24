@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 취항지 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="../admin.css">
     </head>
@@ -150,13 +151,15 @@
             <h2>취항지 신규 등록</h2>
             <!--취항지 정보 등록-->
             <div class="form">
-                <form action="#" class="regForm">
+                <form action="#" class="regForm" onsubmit="return destination()">
                     <div class="register">
                         <div>
                             <ul>
                                 <li class="clear">
                                     <span class="tit_lbl">공항명</span>
-                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                    <div class="reg_content">
+                                        <input type="text" class="name">
+                                    </div>
                                 </li>
 
                                 <li class="clear">
@@ -184,5 +187,18 @@
             <!--취항지 정보 등록 끝-->
 </section>
 <script src="../script.js"></script>
+<script>
+    function destination(){
+        const airport = RegExp(/[a-zA-Z가-힣]/);
+
+            if(!airport.test($('.name').val())){
+                alert('항공명을 입력해주세요')
+            $('.name').focus();
+            return false;
+            }
+        return true;
+    }
+
+</script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 항공사 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <style>
@@ -111,28 +112,48 @@
         <h2>항공사 신규 등록</h2>
         <div class="formbox register">
             <!--항공사 정보 등록-->
-            <form action="">
+            <form action="" onsubmit="return sendit()">
                 <div class="box new">
                     <ul>
-                        <li><p>항공사명 (Kor) </p>
-                            <div><input type="text"></div>
+                        <li>
+                            <p>항공사명 (Kor) </p>
+                            <div>
+                                <input type="text" class="kor">
+                            </div>
                         </li>
-                        <li><p>항공사명 (Eng) </p>
-                            <div><input type="text"></div>
+                        <li>
+                            <p>항공사명 (Eng) </p>
+                            <div>
+                                <input type="text" class="eng">
+                            </div>
                         </li>
-                    <li><p>항공사 코드</p>
-                        <div><input type="text"></div></li>
-                    <li><p>운항 노선 </p>
-                        <div><select name="" id=""><option value="">국내</option>><option value="">국외</option><option value="">국내·국외</option></select></div></li>
-                        <!-- <li><p>주소</p>
-                            <div><input type="text"></div>
-                        </li> -->
+                        <li>
+                            <p>항공사 코드</p>
+                            <div>
+                                <input type="text" >
+                            </div>
+                        </li>
+                        <li>
+                            <p>운항 노선 </p>
+                            <div>
+                                <select name="" id="">
+                                    <option value="">국내</option>
+                                    <option value="">국외</option>
+                                    <option value="">국내·국외</option>
+                                </select>
+                            </div>
+                        </li>
                         <li>
                             <p>대표번호</p>
-                            <div><input type="text"></div>
+                            <div>
+                                <input type="text">
+                            </div>
                         </li>
-                        <li><p>고객센터</p>
-                            <div><input type="text"></div>
+                        <li>
+                            <p>고객센터</p>
+                            <div>
+                                <input type="text">
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -145,5 +166,23 @@
     </div>
 
     <script src="../script.js"></script>
+    <script>
+        function sendit(){
+            const kor = RegExp(/[가-힣]+$/);
+            const eng = RegExp(/[a-zA-Z]/);
+
+            if(!kor.test($('.kor').val())){
+                alert('한글만 입력해주세요');
+                $('.kor').focus();
+                return false
+            }
+            if(!eng.test($('.eng').val())){
+                alert('영어만 입력해주세요');
+                $('.eng').focus();
+                return false
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
