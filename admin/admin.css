@@ -410,7 +410,7 @@ main td {
 .content2{
     position: relative;
     width: calc(100%);
-    left: 400px;
+    left: 20%;
     max-width: 1200px;
     margin-top: 50px;
 }
