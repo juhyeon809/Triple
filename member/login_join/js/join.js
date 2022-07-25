@@ -77,16 +77,10 @@ function sendit(){
             return false;
         }
         
-         //약관동의 체크박스 전체 선택
-         $("#check_all").click(function() {
-            if($("#check_all").is(":checked")) $("input[class='normal']").prop("checked", true);
-            else $("input[class='normal']").prop("checked", false);
-        });
-    
-
-    //약관동의 필수선택 확인
-    let notice = false
-    for(let i=0; i<$("input:checkbox[name='pilsoo']").length; i++){
+        
+        //약관동의 필수선택 확인
+        let notice = false
+        for(let i=0; i<$("input:checkbox[name='pilsoo']").length; i++){
         if($("input:checkbox[name='pilsoo']").eq(3).is(":checked")==true){
             notice = true
             break
@@ -94,19 +88,27 @@ function sendit(){
         if(!notice){
             alert('필수 약관을 읽고 모두 동의해주세요')
             return false
+            }
         }
-    }
-
-       
-        $("input[class='normal']").click(function() {
-            var total = $("input[class='normal']").length;
-            var checked = $("input[class='normal']:checked").length;
-    
-            //개별선택 해제시 전체체크박스 해제
-            if(total != checked) $("#check_all").prop("checked", false);
-            else $("#check_all").prop("checked", true); 
-        });
 
     return true;
 }
 
+$(document).ready(function(){
+//약관동의 체크박스 전체 선택
+    $("#check_all").click(function() {
+        if($("#check_all").is(":checked")) $("input[class='normal']").prop("checked", true);
+        else $("input[class='normal']").prop("checked", false);
+    });
+
+
+
+    $("input[class='normal']").click(function() {
+        var total = $("input[class='normal']").length;
+        var checked = $("input[class='normal']:checked").length;
+
+        //개별선택 해제시 전체체크박스 해제
+        if(total != checked) $("#check_all").prop("checked", false);
+        else $("#check_all").prop("checked", true); 
+    });
+})

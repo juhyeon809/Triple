@@ -29,12 +29,6 @@
     font-weight: bold;
     color: gray;
 }
-#mag_list>li:active{
-    background-color: #458cd3;
-}
-#mag_list>li:active > a{
-    color: white;
-}
 
 
 .mag_content{
