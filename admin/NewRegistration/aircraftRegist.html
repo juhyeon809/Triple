@@ -8,13 +8,15 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <style>
-        
+        .formbox{
+            margin-top: 100px;
+        }
         .leftbox div,
         .rightbox div{
             display: flex;
             flex-wrap: wrap;
-            
         }
+        
     </style>
 </head>
 <body>
@@ -25,7 +27,7 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -111,72 +113,81 @@
 
     <div class="content2">
         <h2>항공기 신규 등록</h2>
-
-        <!-- <div class="formbox register">
-            <form action="">
-                <div class="box">
-                    <div class="leftbox">
-                        
-                        <div><p>항공사 명</p><select name="" id=""></select></div>
-                        <div><p>항공기 명 </p><select name="" id=""></select></div>
-                        <div>
-                            <p>일등석 좌석</p> <input type="text">
-                        </div>
-                    </div>
-                    <div class="rightbox">
-                        <div><p>항공기 타입 </p><select name="" id=""></select></div>
-                        <div><p>국내/국외 </p><select name="" id=""></select></div><div>
-                            <p>비즈니스석 좌석</p> <input type="text">
-                        </div>
-                    </div>
-                </div> -->
                 <div class="formbox register">
+                    <!--항공기 정보 등록-->
                     <form action="">
                         <div class="box new new1">
                             <ul>
-                                <li><p>항공사명</p>
-                                    <div><select name="" id=""></select></div>
+                                <li>
+                                    <p>항공사명</p>
+                                    <div>
+                                        <select name="" id=""></select>
+                                    </div>
                                 </li>
                                 <li><p>항공기명</p>
                                     <div><input type="text"></div>
                                 </li>
-                            <li><p>제조회사</p>
-                                <div>
-                                    <select name="" id="">
-                                        <option value="">보잉</option>
-                                        <option value="">에어버스</option>
-                                    </select>
-                                </div></li>
-                            <li><p>VIP석</p>
-                                <div><select name="" id=""><option value="">국내</option>><option value="">국외</option><option value="">국내·국외</option></select></div></li>
-                                <!-- <li><p>주소</p>
-                                    <div><input type="text"></div>
-                                </li> -->
+                                <li>
+                                    <p>제조회사</p>
+                                    <div>
+                                        <select name="" id="">
+                                            <option value="">보잉</option>
+                                            <option value="">에어버스</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>VIP석</p>
+                                    <div>
+                                        <select name="" id="">
+                                            <option value="">국내</option>
+                                            <option value="">국외</option>
+                                            <option value="">국내·국외</option>
+                                        </select>
+                                    </div>
+                                </li>
                                 <li>
                                     <p>패밀리석</p>
-                                    <div><input type="text"></div>
+                                    <div>
+                                        <input type="text">
+                                    </div>
                                 </li>
-                                <li><p>특가석</p>
-                                    <div><input type="text"></div>
+                                <li>
+                                    <p>특가석</p>
+                                    <div>
+                                        <input type="text">
+                                    </div>
                                 </li>
-                                <li><p>이코노미석</p>
-                                    <div><input type="text"></div>
+                                <li>
+                                    <p>이코노미석</p>
+                                    <div
+                                    ><input type="text">
+                                    </div>
                                 </li>
-                                <li><p>일반석</p>
-                                    <div><input type="text"></div>
+                                <li>
+                                    <p>일반석</p>
+                                    <div>
+                                        <input type="text">
+                                    </div>
                                 </li>
-                                <li><p>총 좌석 수</p>
-                                    <div><input type="text"></div>
+                                <li>
+                                    <p>총 좌석 수</p>
+                                    <div>
+                                        <input type="text">
+                                    </div>
                                 </li>
                             </ul>
                         </div>
-                <div class="hbt non" style="margin-right: 150px; padding-top: 50px;">
-                    <button type="submit" class="regis " value="등록">등록</button>
+                        <div class="hbt non">
+                            <button type="submit" class="regis" value="등록">등록</button>
+                        </div>
+                    </form>
+            <!--항공기 정보등록 끝-->
                 </div>
-            </form>
-        </div>
     </div>
     
     <script src="../script.js"></script>
+
+  
 </body>
 </html>

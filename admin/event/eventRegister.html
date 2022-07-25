@@ -101,57 +101,63 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    
     <section class="content2">
+        <!--타이틀-->
         <div class="header_box">
             <h2>이벤트 | 등록</h2>
         </div>
-        <div class="notice_register">
-            <div class="notice_register_1">
-                <div class="notice_register_1_1">이벤트 분류</div>
-                <div class="notice_register_1_2"><select name="" id="">
-                    <option value="">전체</option>
-                    <option value="">1월 이벤트</option>
-                    <option value="">2월 이벤트</option>
-                    <option value="">3월 이벤트</option>
-                    <option value="">4월 이벤트</option>
-                    <option value="">5월 이벤트</option>
-                    <option value="">6월 이벤트</option>
-                    <option value="">7월 이벤트</option>
-                    <option value="">8월 이벤트</option>
-                    <option value="">9월 이벤트</option>
-                    <option value="">10월 이벤트</option>
-                    <option value="">11월 이벤트</option>
-                    <option value="">12월 이벤트</option>
-                </select></div>
-            </div>
+        <!--타이틀 끝-->
+        <!--이벤트등록-->
+        <form action="">
+            <div class="notice_register">
+                <!--카테고리 분류-->
+                <div class="notice_register_1">
+                    <div class="notice_register_1_1">이벤트 분류</div>
+                    <div class="notice_register_1_2"><select name="" id="">
+                        <option value="">전체</option>
+                        <option value="">1월 이벤트</option>
+                        <option value="">2월 이벤트</option>
+                        <option value="">3월 이벤트</option>
+                        <option value="">4월 이벤트</option>
+                        <option value="">5월 이벤트</option>
+                        <option value="">6월 이벤트</option>
+                        <option value="">7월 이벤트</option>
+                        <option value="">8월 이벤트</option>
+                        <option value="">9월 이벤트</option>
+                        <option value="">10월 이벤트</option>
+                        <option value="">11월 이벤트</option>
+                        <option value="">12월 이벤트</option>
+                    </select></div>
+                </div>
+                <!--카테고리 분류 끝-->
+                <div class="notice_register_2">
+                    <div class="notice_register_2_1">타이틀명</div>
+                    <div class="notice_register_2_2"><input type="text"></div>
+                </div>
 
-            <div class="notice_register_2">
-                <div class="notice_register_2_1">타이틀명</div>
-                <div class="notice_register_2_2"><input type="text"></div>
-            </div>
+                <div class="notice_register_3">
+                    <div class="notice_register_3_1">내용</div>
+                    <div class="notice_register_3_2"><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea></div>
 
-            <div class="notice_register_3">
-                <div class="notice_register_3_1">내용</div>
-                <div class="notice_register_3_2"><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea></div>
-
-                <script>
-                    var oEditors = [];
-                    nhn.husky.EZCreator.createInIFrame({
-                    oAppRef : oEditors,
-                    elPlaceHolder : "weditor",//
-                    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                    fCreator : "createSEditor2",
-                    });
-                </script>
+                </div>
             </div>
-        </div>
-        <div class="regi">
-            <div class="hbt">
-                <button type="submit" class="regis">등록</button>
+            <div class="regi">
+                <div class="hbt">
+                    <button type="submit" class="regis">등록</button>
+                </div>
             </div>
-        </div>
+        </form>
+        <!--이벤트 등록 끝-->
     </section>
     <script src="../script.js"></script>
+    <script>
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+        oAppRef : oEditors,
+        elPlaceHolder : "weditor",//
+        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+        fCreator : "createSEditor2",
+        });
+    </script>
 </body>
 </html>

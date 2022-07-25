@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 항공상품목록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 
@@ -23,11 +24,11 @@
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="all.html">전체</a></li>
-                    <li><a href="fly_reservation.html">항공권</a></li>
-                    <li><a href="room_resevation.html">숙소</a></li>
-                    <li><a href="packge_reservation.html">패키지</a></li>
-                    <li><a href="ticket_reservation.html">티켓</a></li>
+                    <li><a href="../booking/all.html">전체</a></li>
+                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                    <li><a href="../booking/room_resevation.html">숙소</a></li>
+                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -102,50 +103,52 @@
     <!--사이드바 끝-->
     
     <div class="content2">
+        <!--타이틀 및 검색조회바-->
         <div class="header_box">
             <h2>상품목록 | 항공</h2>
-        <nav>
-            <form action="#">
-                <div class="form-group">
-                    <div class="admin_productlist_select">
-                        <select name="" class="">
-                            <option value="출발지">출발지</option>
-                            <option value="인천공항">인천공항</option>
-                            <option value="김포공항">김포공항</option>
-                            <option value="제주공항">제주공항</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="도착지">도착지</option>
-                            <option value="제주도">제주도</option>
-                            <option value="하와이">하와이</option>
-                            <option value="일본">일본</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="항공사">항공사</option>
-                            <option value=대한항공">대한항공</option>
-                            <option value="제주항공">제주항공</option>
-                            <option value="진에어">진에어</option>
-                            <option value="more">.....</option>
-                        </select>
-                        <select name="" class="">
-                            <option value="검색분류">검색분류</option>
-                            <option value="상품명">상품명</option>
-                            <option value="상품번호">상품번호</option>
-                        </select>
-                        <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
-                        <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+            <nav>
+                <form action="#">
+                    <div class="form-group">
+                        <div class="admin_productlist_select">
+                            <select name="" class="">
+                                <option value="출발지">출발지</option>
+                                <option value="인천공항">인천공항</option>
+                                <option value="김포공항">김포공항</option>
+                                <option value="제주공항">제주공항</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="도착지">도착지</option>
+                                <option value="제주도">제주도</option>
+                                <option value="하와이">하와이</option>
+                                <option value="일본">일본</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="항공사">항공사</option>
+                                <option value=대한항공">대한항공</option>
+                                <option value="제주항공">제주항공</option>
+                                <option value="진에어">진에어</option>
+                                <option value="more">.....</option>
+                            </select>
+                            <select name="" class="">
+                                <option value="검색분류">검색분류</option>
+                                <option value="상품명">상품명</option>
+                                <option value="상품번호">상품번호</option>
+                            </select>
+                            <div class="admin_productlist_search1"><input class="admin_productlist_search2" type="text" placeholder="검색어를 입력하세요"></div>
+                            <div><button class="admin_productlist_searchbtn"type="submit">검색</button></div>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </nav>
+                </form>
+            </nav>
         </div>
-    
+        <!--타이틀 및 검색 조회바 끝-->
+        <!--항공 리스트 테이블-->
         <table class="tbList">
             <tr>
                 <th>
-                    <input type="checkbox">
+                    <input type="checkbox" id="checkAll">
                 </th>
                 <th>
                     상품명
@@ -163,7 +166,7 @@
                     상품번호
                 </th>
             </tr> 
-            <tr onclick="location.href=''">
+            <tr>
                 <td><input class="admin_list_table_link" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
@@ -171,7 +174,7 @@
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
+            <tr>
                 <td><input class="admin_list_table_link" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
@@ -179,64 +182,64 @@
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
                 <td>제주항공</td>
                 <td>Flight 101</td>
             </tr>
-            <tr onclick="location.href=''">
-                <td><input class="admin_list_table_link" type="checkbox"></td>
+            <tr>
+                <td><input class="air" type="checkbox"></td>
                 <td>제주항공 김포공항 출발 제주국제공항 도착</td>
                 <td>편도</td>
                 <td>100,000원</td>
@@ -244,14 +247,36 @@
                 <td>Flight 101</td>
             </tr>
         </table>
+        <!--항공 리스트 테이블 끝-->
+        <!--버튼리스트-->
         <div class="btnlist">
             <button value="선택삭제">선택삭제</button>
             <button value="판매중지">판매중지</button>
         </div>
+        <!--버튼 리스트 끝-->
+        <!--테이블 넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>
         </div>
+        <!--테이블 넘버링-->
     </div>
     <script src="../script.js"></script>
+    <script>
+        $(document).ready(function(){
+        //약관동의 체크박스 전체 선택
+            $("#checkAll").click(function() {
+                if($("#checkAll").is(":checked")) $("input[class='air']").prop("checked", true);
+                else $("input[class='air']").prop("checked", false);
+            });
+            $("input[class='air']").click(function() {
+                var total = $("input[class='air']").length;
+                var checked = $("input[class='air']:checked").length;
+        
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#checkAll").prop("checked", false);
+                else $("#checkAll").prop("checked", true); 
+            });
+    });
+    </script>
 </body>
 </html>

@@ -171,6 +171,7 @@ main {
     font-weight: bold;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -199,6 +200,9 @@ main {
     flex-wrap: wrap;
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px rgb(176, 176, 176);
+}
+#like_place > a{
+    color: #666666;
 }
 #like_place > a > div {
     align-items: center;
@@ -403,7 +407,31 @@ div.item > p > .review_star {
     top: 40px;
     right: 20px;
     z-index: 11;
+    cursor: pointer;
 }
+/*hotel.html*/
+/* select, input[type="button"]{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgb(176, 176, 176);
+}
+select {
+    width: 95px;
+    margin-right: 10px;
+}
+select, input[type="button"]{
+    background-color: white;
+}
+#hotel_btn{
+    background-color: #2680EB;
+    color: white;
+    box-shadow: 2px 2px 5px rgb(176, 176, 176);
+} */
 
 /*하트*/
 
@@ -418,3 +446,4 @@ div.item > p > .review_star {
     line-height: 30px;
     color:crimson;
 }
+

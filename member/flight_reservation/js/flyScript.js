@@ -108,16 +108,6 @@ function count3(type)  {
 
 
 
-    // $('.close').on('click', function(){
-    //     let result = '';
-    //     if($('input:checkbox[name="seat]checked').length  == 1){
-    //         $('.seatSr').innerText = $('input:checkbox[name="seat]checked').value;
-    //     }else{
-    //         let seatNum = $('input:checkbox[name="seat]checked').length-1;
-    //         $('.seatCnt').innerHTML ="외 "+ seatNum; 
-    //     } 
-        
-    // })
     let personNum = document.querySelector('.personNum');
     let seatSr = document.querySelector('.seatSr');
     let seatCnt = document.querySelector('.seatCnt');
@@ -201,8 +191,7 @@ input2.addEventListener('keypress', function(key){
     }
 })
 
-//날짜설정박스 수정하기
-
+//날짜설정박스 
 let section3 = document.querySelector(".hidebox1-4")
 let isshow3 = true;
 function hideshow3(){
@@ -218,20 +207,20 @@ function hideshow3(){
     } 
 }
 
-//날짜입력시 값 변경, 더블클릭시 창닫힘
-let closebox = document.querySelector('.hidebox1-4');
+//날짜입력시 값 변경, 버튼클릭시 창닫힘
 let datepicker1 = document.querySelector('#datepicker1');
 let datepicker2 = document.querySelector('#datepicker2');
 let inInput3 = document.querySelector('.click3');
 let inInput4 = document.querySelector('.click4');
 
-closebox.addEventListener('dblclick', (event) => {
-    inInput3.innerText = datepicker1.value;
-    inInput4.innerText = datepicker2.value;
-    section3.style.display = "none";
-});
 
-
+$(document).ready(function(){
+    $(".dateclose").click(function(){
+        inInput3.innerText = datepicker1.value;
+        inInput4.innerText = datepicker2.value;
+        $(".hidebox1-4").css({"display":"none"})
+    })
+})
 //인원및 좌석등급
 let section4 = document.querySelector(".hidebox1-5")
 let isshow4 = true;
@@ -249,23 +238,6 @@ function hideshow4(){
 }
 
 
-// close.addEventListener('click', function(key){
-//     if(seatValue.checked){
-//         se
-//     }
-// })
-// function getCheckboxValue(event)  {
-//     let result = '';
-//     if(event.target.checked)  {
-//       result = event.target.value;
-//     }else {
-//       result = '';
-//     }
-    
-//     document.getElementsByClassName('seatSr').innerText
-//       = result;
-//   }
-
 
 
 
@@ -282,11 +254,11 @@ function hideshow4(){
     
 
 //닫기버튼
-let closeBtn = document.querySelector(".close");
-closeBtn.addEventListener('click', ()=>{
-    section.style.display = "none";
-    section1.style.display = "none"
-    section2.style.display = "none";
-    section4.style.display = "none";
+
+
+$(document).ready(function(){
+    $(".close").click(function(){
+        $(".hidebox1-5").css({"display":"none"})
+    })
 })
 

@@ -107,8 +107,6 @@ div>a{
     font-weight: bold;
 }
 
-
-/*travels(여행기)*/
 #st>p{
     padding: 100px;
     margin-left: 300px;
@@ -121,6 +119,7 @@ div>a{
 }
 
 /*travels_write2(여행기 쓰기)*/
+
 #file{
     display: none;
 }
@@ -166,7 +165,178 @@ div>a{
     height: 280px;
 }
 
+/*여행기 글보기*/
 
+.travels_box{
+    width: 935px;
+    padding:  0 20px 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.travels_title{
+    font-weight: bold;
+    color: #525252;
+}
+.travels_subtitle{
+    font-size: 14px;
+    padding-top: 10px;
+}
+.travels_box > textarea{
+    margin-top: 20px;
+    padding: 10px;
+    color: #525252;
+    width: 900px;
+    height: 200px;
+    font-size: 14px;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 5px;
+    font-weight: normal;
+    padding-left: 10px;
+    vertical-align: top;
+}
+.travels_top{
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.travels_top>div>p{
+    font-size: 18px;
+    color: #6c6c6c;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.travels_top1{
+    padding-left: 10px;
+    padding-top: 0;
+}
+
+#star3{
+    
+    color:#ffba00;
+}
+.review_img{
+    padding-left: 100px;
+    padding-top: 10px;
+}
+.review_img>img{
+    
+    width: 800px;
+    height: 250px;
+}
+.travels_like{
+    display: flex;
+    justify-content: space-between;
+    color: #525252;
+    padding-left: 10px;
+}
+#more{
+    margin-left:600px;
+    text-decoration: underline;
+    
+    cursor: pointer;
+}
+#more_btn{
+    
+    display: none;
+    width: 75px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 10px;
+    margin-left: 800px;
+}
+
+#more_btn>a{
+    color: #a1a1a1;
+}
+
+/*댓글*/
+
+.travels_tra{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 30px;
+    width: 980px;
+}
+#commend{
+    width: 820px;
+    margin: 0 auto;
+    border: none;
+    font-size: 16px;
+    color: #9b9b9b;
+    
+}
+#re_comm{
+    border: none;
+    background-color: white;
+    color: #0c8ee5;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+/*travles_edit(여행기수정)*/
+
+
+#star2{
+    padding-left: 10px;
+    color:#ffba00;
+}
+
+.re_img > img{
+    padding-top: 10px;
+    width: 900px;
+    height: 200px;
+}
+
+.choice_file>img{
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.write_box{
+    padding-left: 60px;
+}
+.travels_subbox{
+    display: flex;
+    justify-content: space-between;
+}
+.travels_subtitle > a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #525252;
+}
+
+/*별점*/
+#myform fieldset{
+    display: inline-block;
+    direction: rtl;
+    border:0;
+    margin-top: 10px;
+    padding-right: 700px;
+}
+#myform fieldset legend{
+    text-align: right;
+}
+#myform input[type=radio]{
+    display: none;
+}
+#myform label{
+    font-size:16px;
+    color: transparent;
+    text-shadow: 0 0 0 #e2e2e2;
+}
+#myform label:checked{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform label:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
 /*css 추가*/
 
 .profile {
@@ -225,10 +395,6 @@ div>a{
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-}
-#pro_img{
-    padding-right: 20px;
-    width: 90px;
 }
 
 .content_list{
@@ -311,10 +477,13 @@ div>a{
     font-weight: bold;
     font-size: 16px;
 }
-.content_list2_top > a {
-    text-decoration: underline;
+.content_list2_next{
+
     font-weight: bold;
+    text-align: right;
+    cursor: pointer;
 }
+
 .travels_box{
     width: 935px;
     padding:  0 20px 10px 20px;

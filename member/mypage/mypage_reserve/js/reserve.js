@@ -1,4 +1,4 @@
-function cancle1(){
+function cancel1(){
     let rtn;
 
     rtn = confirm("예약을 취소하시겠습니까?");
@@ -10,7 +10,7 @@ function cancle1(){
     }
 }
 
-function cancle2(){
+function cancel2(){
     let rtn;
 
     rtn = confirm("예약을 취소하시겠습니까?");
@@ -63,7 +63,7 @@ function sendit(){
         alert('개인정보 수집 및 활용에 동의해주세요');
         return false;
     }
-
+    alert('접수되었습니다');
     return true;
 }
 

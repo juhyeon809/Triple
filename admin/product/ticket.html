@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품등록 | 티켓</title>
+    <title>관리자 | 티켓 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -17,7 +17,7 @@
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
+                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
@@ -100,95 +100,105 @@
     </selction>
     <!--사이드바 끝-->
     <section class="content2 ">
+        <!--타이틀-->
         <div class="header_box">
             <h2>상품등록 | 티켓</h2>
         </div>
-        <div class="formbox">
-            <ul class="formbox_ul">
-                <li>
-                    <div class="formbox_div4">
-                        <p class="formbox_ul_title">분류</p>
-                        <select name="" id="" class="formbox_ul_select1">
-                            <option value="">상품분류</option>
-                            <option value="">국내</option>
-                            <option value="">해외</option>
-                        </select>
-                        <select name="" id="" class="formbox_ul_select1">
-                            <option value="">제주</option>
-                            <option value="">서울</option>
-                            <option value="">인천</option>
-                            <option value="">전라</option>
-                            <option value="">전북</option>
-                            <option value="">강원</option>
-                            <option value="">경상</option>
-                            <option value="">경북</option>
-                        </select>
-                        <select name="" id="" class="formbox_ul_select1">
-                            <option value="">오사카</option>
-                        </select>
-                        <select name="" id="" class="formbox_ul_select1">
-                            <option value="">투어</option>
-                            <option value="">액티비티</option>
-                        </select>
-                    </div>
-                </li>
-                <li>
-                    <div class="formbox_div4">
-                        <p class="formbox_ul_title">상품명</p>
-                        <input type="text" width="200px" height="25px">
-                    </div>
-                </li>
-                <li>
-                    <div class="formbox_div4">
-                        <p class="formbox_ul_title">상품 이미지</p>
-                        <input type="file" name="" id="">
-                    </div>
-                </li>
-                <li>
-                    <div class="formbox_div4">
-                        <p class="formbox_ul_title">키워드</p>
-                        <input type="checkbox" style="margin-left: 0;"> 자유일정
-                        <input type="checkbox"> 특가
-                        <input type="checkbox"> 노옵션 노쇼핑
-                        <input type="checkbox"> 출발확정
-                        <input type="checkbox"> 한정특가
-                    </div>
-                </li>
-                <li>
-                    <div class="formbox_div3">
-                        <p class="formbox_ul_title">상품가격</p>
-                        <div class="formbox_input_price">
-                            <p>
-                                <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
-                            </p>
-                            <p>
-                                <input type="text" placeholder="청소년" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
-                            </p>
-                            <p>
-                                <input type="text" placeholder="소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
-                            </p>
-                            <p>
-                                <input type="text" placeholder="동일" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
-                            </p>
+        <!--타이틀 끝-->
+        <!--티켓 정보 입력 폼-->
+        <form action="">
+            <div class="formbox">
+                <ul class="formbox_ul">
+                    <li>
+                        <!--상품 분류 선택-->
+                        <div class="formbox_div4">
+                            <p class="formbox_ul_title">분류</p>
+                            <select name="" id="" class="formbox_ul_select1">
+                                <option value="">상품분류</option>
+                                <option value="">국내</option>
+                                <option value="">해외</option>
+                            </select>
+                            <select name="" id="" class="formbox_ul_select1">
+                                <option value="">제주</option>
+                                <option value="">서울</option>
+                                <option value="">인천</option>
+                                <option value="">전라</option>
+                                <option value="">전북</option>
+                                <option value="">강원</option>
+                                <option value="">경상</option>
+                                <option value="">경북</option>
+                            </select>
+                            <select name="" id="" class="formbox_ul_select1">
+                                <option value="">오사카</option>
+                            </select>
+                            <select name="" id="" class="formbox_ul_select1">
+                                <option value="">투어</option>
+                                <option value="">액티비티</option>
+                            </select>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="formbox_div6">
-                        <p class="formbox_ul_title_info">상품 프로그램</p>
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
-                    </div>
-                </li>
-                <li class="formbox_ul_btn">
-                    <div>
-                        <button type="submit" class="regis">등록</button>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                        <!--상품 분류 선택 끝-->
+                    </li>
+                    <li>
+                        <div class="formbox_div4">
+                            <p class="formbox_ul_title">상품명</p>
+                            <input type="text" width="200px" height="25px">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formbox_div4">
+                            <p class="formbox_ul_title">상품 이미지</p>
+                            <input type="file" name="" id="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formbox_div4">
+                            <p class="formbox_ul_title">키워드</p>
+                            <input type="checkbox" style="margin-left: 0;"> 자유일정
+                            <input type="checkbox"> 특가
+                            <input type="checkbox"> 노옵션 노쇼핑
+                            <input type="checkbox"> 출발확정
+                            <input type="checkbox"> 한정특가
+                        </div>
+                    </li>
+                    <li>
+                        <!--연령대별 가격-->
+                        <div class="formbox_div3">
+                            <p class="formbox_ul_title">상품가격</p>
+                            <div class="formbox_input_price">
+                                <p>
+                                    <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                                </p>
+                                <p>
+                                    <input type="text" placeholder="청소년" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                                </p>
+                                <p>
+                                    <input type="text" placeholder="소아" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                                </p>
+                                <p>
+                                    <input type="text" placeholder="동일" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
+                                </p>
+                            </div>
+                        </div>
+                        <!--연령대별 가격 끝-->
+                    </li>
+                    <li>
+                        <div class="formbox_div6">
+                            <p class="formbox_ul_title_info">상품 프로그램</p>
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                        </div>
+                    </li>
+                    <!--등록버튼-->
+                    <li class="formbox_ul_btn">
+                        <div>
+                            <button type="submit" class="regis">등록</button>
+                        </div>
+                    </li>
+                    <!--등록버튼 끝-->
+                </ul>
+            </div>
+        </form>
+        <!--티켓 정보 입력 폼 끝-->
     </section>
-</div>
-
 <script>
     var oEditors = [];
     nhn.husky.EZCreator.createInIFrame({

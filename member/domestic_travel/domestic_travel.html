@@ -10,6 +10,7 @@
     <script src="/member/domestic_travel/js/domestic_travel.js"></script>
 </head>
 <body>
+    <!--header 시작-->
     <header>
         <div id="logo_area">
             <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -17,22 +18,23 @@
                 <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
             </form>
             <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-
         </div>
         <div id="menu_area">
             <ul id="menus">
-                <li><a href="/member/overseas_travel/overseas_travel.html">해외여행</a></li>
+                <li><a href="/member/overseas_travel/overseas_travel_main.html">해외여행</a></li>
                 <li><a href="/member/domestic_travel/domestic_travel.html" style="color:rgb(63, 63, 63)">국내여행</a></li>
                 <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
                 <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
+                <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                 <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
                 <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
                 <li><a href="/member/event/event.html">혜택/렌터카</a></li>
             </ul>
         </div>
     </header>
+    <!--header 끝-->
     <div id="domestic_main_img"></div>
+    <!--section 시작-->
     <section>
         <div id="menu_area_domestic">
             <ul id="domestic_menus">
@@ -49,7 +51,7 @@
             <p class="domestic_title">부담없이 떠나는 당일치기 여행지 7</p>
             <p class="domestic_subtitle">요즘 뜨는 도시부터 추천 코스까지 한눈에!</p>
             <div id="slide" class="item_list" val="1" max="8">
-                <a href="/member/magazine/magazine.html" id="slide_div1" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img1">
                             <p class="content">가까워서 좋은 힐링 여행지 5</p>
@@ -57,49 +59,49 @@
                     </div>
                 </a>
                 
-                <a href="/member/magazine/magazine.html" id="slide_div2" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img2">
                             <p class="content">해외 느낌 물씬 여행지 5</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div3" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img3">
                             <p class="content">바다로 둘러쌓인 여행지 5</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div4" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img4">
                             <p class="content">아이와 함께 떠나는 나들이</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div5" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img5">
                             <p class="content"> 편하게 휴식만끽!</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div6" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img6">
                             <p class="content">또 가고 싶은 여행지 7</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div7" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img7">
                             <p class="content">혼자라도 좋아, 배낭여행</p>
                         </div>
                     </div>
                 </a>
-                <a href="/member/magazine/magazine.html" id="slide_div1" class="slide_div">
+                <a href="/member/magazine/magazine.html">
                     <div class="domestic_imgbox">
                         <div class="black_opacity item_back_img1">
                             <p class="content">혼자라도 좋아, 배낭여행</p>
@@ -518,7 +520,7 @@
             <p class="domestic_title">국내 여행자들의 생생한 여행기</p>
             <p class="domestic_subtitle">직접 다녀온 추천 일정과 여행 꿀팁 확인하기</p>
             <a href="./자세히" id="detail">자세히</a>
-            <div class="travels_spot">
+            <div>
                 <table class="travels_table">
                     <tr>
                         <td>
@@ -581,13 +583,14 @@
             </div>
         </div>
     </section>
+    <!--secion 끝-->
+    <!--footer 시작-->
     <footer>
         <div id="enterprise_info">
             <div id="enterprise_info_text">
                 <p id="bold">트리플 사업자 정보</p>
                 <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
                 <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
                 <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
             </div>
             <div id="icon_box">
@@ -601,5 +604,6 @@
             </div>
         </div>
     </footer>
+    <!--footer 끝-->
 </body>
 </html>

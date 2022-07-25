@@ -25,9 +25,10 @@
     <p class="title">TRIPLE | 회원가입</p>
     <section id="sect_join" class="sect">
         <!--회원가입 폼-->
-        <form action="/main.html" name="regform" id="regform" onsubmit="return sendit()">
+        <form action="./login.html" name="regform" id="regform" onsubmit="return sendit()">
             
             <ul class="list">
+                <!--이메일-->
                 <li>
                     <p class="info_form">이메일</p>
                     <div class="content user">
@@ -35,24 +36,32 @@
                         <input type="button" name="btn" id="email_btn" value="인증하기">
                     </div>
                 </li>
+                <!--이메일 끝-->
+                <!--비밀번호-->
                 <li>
                     <p class="info_form">비밀번호</p>
                     <div class="content">
                         <input type="password" name="userpw" id="userpw" minlength="6" maxlength="16" placeholder="영문, 숫자, 특수문자">
                     </div>
                 </li>
+                <!--비밀번호 끝-->
+                <!--비밀번호 확인-->
                 <li>
                     <p class="info_form">비밀번호 확인</p>
                     <div class="content">
                         <input type="password" name="userpw_re" id="userpw_re" maxlength="20" placeholder="비밀번호 확인">
                     </div>
                 </li>
+                <!--비밀번호 확인 끝-->
+                <!--닉네임-->
                 <li>
                     <p class="info_form">닉네임</p>
                     <div class="content">
                         <input type="text" name="nickname" id="nickname" maxlength="20" placeholder="닉네임을 입력하세요">
                     </div>
                 </li>
+                <!--닉네임 끝-->
+                <!--번호 인증-->
                 <li>
                     <p class="info_form">휴대폰번호 인증</p>
                     <div class="content">
@@ -62,6 +71,7 @@
                                 <td><p class="phone_text">휴대폰번호</p></td>
                             </tr>
                             <tr>
+                                <!--국가코드 선택-->
                                 <td class="country_code">
                                     <select name="code" id="nickname" placeholder="+ 82">
                                         <option value="+233">가나 (+233) </option>
@@ -75,6 +85,7 @@
                                         <option value="+86">중국 (+86) </option>
                                     </select>
                                 </td>
+                                <!--국가코드 선택 끝-->
                                 <td class="phone">
                                     <input type="text" name="hp" id="hp" maxlength="20" placeholder="'-' 없이 숫자만 입력">
                                     <input type="button" name="btn" id="phone_btn" value="인증하기">
@@ -83,12 +94,16 @@
                         </table>
                     </div>
                 </li>
+                <!--번호인증 끝-->
+                <!--인증번호-->
                 <li>
                     <p class="info_form">인증번호 입력</p>
                     <div class="content text_box">
                         <input type="text" name="Certification" id="Certification" maxlength="20" placeholder="숫자 6자리, 인증번호 입력">
                     </div>
                 </li>
+                <!--인증번호 끝-->
+                <!--약관동의서-->
                 <li>
                     <p class="info_form">약관 동의</p>
                     <div>
@@ -99,19 +114,19 @@
                             </li>
                             <li>
                                 <label for="check_1"><span class="pilsoo">(필수)</span> 만 14세 이상입니다.</label>
-                                <input type="checkbox" id="check_1" class="normal">
+                                <input type="checkbox" id="check_1" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_2"><span class="pilsoo">(필수)</span> 서비스 이용약관</label>
-                                <input type="checkbox" id="check_2" class="normal">
+                                <input type="checkbox" id="check_2" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_3"><span class="pilsoo">(필수)</span> 개인정보 수집 및 이용 동의</label>
-                                <input type="checkbox" id="check_3" class="normal">
+                                <input type="checkbox" id="check_3" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_4"><span class="pilsoo">(필수)</span> 위치서비스 이용 동의</label>
-                                <input type="checkbox" id="check_4" class="normal">
+                                <input type="checkbox" id="check_4" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_5">(선택) 이벤트 및 할인 혜택 안내 동의</label>
@@ -120,12 +135,12 @@
                         </ul>
                     </div>
                 </li>
+                <!--약관동의서 끝-->
                 <li>
                     <div class="content_join">
-                        <input type="submit" value="확인" class="join_btn" onsubmit="return sendit()">
+                        <input type="submit" value="확인" class="join_btn">
                     </div>
                 </li>
-
                 <li>
                     <div class="content">
                         <p>트리플 회원이신가요? <a href="./login.html">로그인 ></a></p>
