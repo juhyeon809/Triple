@@ -276,53 +276,20 @@ div>a{
     font-weight: bold;
     padding-left: 20px;
 }
-/*review_edit(리뷰수정)*/
-#re_top{
-    font-size: 18px;
-    font-weight: bold;
-    color: #525252;
-    margin-bottom: 0px;
-}
-#re_bo{
-    margin-top: 0px;
-    font-size: 16px;
-    color: #8d8d8d;
-    font-weight: inherit;
-}
-#re_done{
-    font-size: 20px;
-    color: #6c6c6c;
-    font-weight: bold;
-    margin-top: 10px;
-    text-decoration: underline;
-    border: none;
-    background-color: white;
-}
-.re_star{
-    display: flex;
-}
+/*travles_edit(여행기수정)*/
+
+
 #star2{
     padding-left: 10px;
     color:#ffba00;
 }
-#pro_img{
-    padding-right: 20px;
-    width: 90px;
-}
-#st>p{
-    padding: 100px;
-    margin-left: 300px;
-    color: #b3b3b3;
-}
+
 .re_img > img{
     padding-top: 10px;
     width: 900px;
     height: 200px;
 }
-.rev_box{
-    display: flex;
-    justify-content: space-between;
-}
+
 .choice_file>img{
     margin-top: 20px;
     width: 50px;
@@ -341,7 +308,6 @@ div>a{
     text-decoration: underline;
     color: #525252;
 }
-/*여행기수정*/
 
 /*별점*/
 #myform fieldset{
@@ -429,10 +395,6 @@ div>a{
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-}
-#pro_img{
-    padding-right: 20px;
-    width: 90px;
 }
 
 .content_list{
