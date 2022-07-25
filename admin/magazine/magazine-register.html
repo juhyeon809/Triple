@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 매거진등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -108,53 +109,65 @@
     <!--타이틀 끝-->
     <section class="content2">
         <!--매거진 정보 입력-->
-        <form action="">
+        <form action="" onsubmit="return magazineRegister()">
             <div class="magazine_register">
                 <div class="magazine_register_1">
                         <div class="magazine_register_1_1">분류</div>
                         <div class="magazine_register_1_2">
-                            <select name="" id="">
+                            <select name="" id="Mcategory">
                                 <option value="">전체</option>
-                                <option value="">#여행지추천</option>
-                                <option value="">#여행꿀팁</option>
-                                <option value="">#맛집탐방</option>
-                                <option value="">#여행기</option>
-                                <option value="">#항공·공항</option>
-                                <option value="">#숙소추천</option>
-                                <option value="">#투어·티켓</option>
-                                <option value="">#쇼핑</option>
+                                <option value="여행지추천">#여행지추천</option>
+                                <option value="여행꿀팁">#여행꿀팁</option>
+                                <option value="맛집탐방">#맛집탐방</option>
+                                <option value="여행기">#여행기</option>
+                                <option value="항공·공항">#항공·공항</option>
+                                <option value="숙소추천">#숙소추천</option>
+                                <option value="투어·티켓">#투어·티켓</option>
+                                <option value="쇼핑">#쇼핑</option>
                             </select>
                         </div>
                 </div>
                 <div class="magazine_register_2">
                     <div class="magazine_register_2_1">제목</div>
-                    <div class="magazine_register_2_2"><input type="text"></div>
+                    <div class="magazine_register_2_2">
+                        <input type="text" class="title">
+                    </div>
                 </div>
 
                 <div class="magazine_register_4">
                     <div class="magazine_register_2_1">해시태그</div>
-                    <div class="magazine_register_2_2"><input type="text"></div>
+                    <div class="magazine_register_2_2">
+                        <input type="text">
+                    </div>
                 </div>
 
                 <div class="magazine_register_5">
                     <div class="magazine_register_5_1">썸네일 이미지</div>
-                    <div class="magazine_register_5_2"><input type="file" name="" id="" multiple></div>
+                    <div class="magazine_register_5_2">
+                        <input type="file" name="" id="" multiple>
+                    </div>
                 </div>
 
                 <div class="magazine_register_3">
                     <div class="magazine_register_3_1">매거진 내용</div>
-                    <div class="magazine_register_3_2"><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 150px;"></textarea></div>
+                    <div class="magazine_register_3_2">
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 150px;"></textarea>
+                    </div>
                 </div>
 
                 <div class="magazine_register_6_7">
                     <div class="magazine_register_6">
                         <div class="magazine_register_6_1"><br>바로가기 이미지</div>
-                        <div class="magazine_register_6_2"><input type="file"></div>
+                        <div class="magazine_register_6_2">
+                            <input type="file">
+                        </div>
                     </div>
 
                     <div class="magazine_register_7">
                         <div class="magazine_register_7_1"><br>여행지 바로가기</div>
-                        <div class="magazine_register_7_2"><input type="text" value=" 괌 바로가기"></div>
+                        <div class="magazine_register_7_2">
+                            <input type="text" value=" 괌 바로가기">
+                        </div>
                     </div>
                 </div>
                 
@@ -162,18 +175,26 @@
 
                 <div class="magazine_register_9">
                     <div class="magazine_register_9_1">장소명</div>
-                    <div class="magazine_register_9_2"><input type="text"></div>
+                    <div class="magazine_register_9_2">
+                        <input type="text" class="place">
+                    </div>
                 </div>
 
                 <div class="magazine_register_10">
                     <div class="magazine_register_10_1">명소소개</div>
-                    <div class="magazine_register_10_2"><textarea class="weditor1" id="weditor1" cols="100" rows="10"></textarea></div>
+                    <div class="magazine_register_10_2">
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10"></textarea>
+                    </div>
                 </div>
                 <div class="magazine_register_11">
                     <div class="magazine_register_11_1">명소 이미지</div>
-                    <div class="magazine_register_11_2"><input type="file" multiple></div>
+                    <div class="magazine_register_11_2">
+                        <input type="file" multiple>
+                    </div>
                 </div>
-                <div class="magazine_register_12"><button type="submit" class="regis">등록</button></div>
+                <div class="magazine_register_12">
+                    <button type="submit" class="regis">등록</button>
+                </div>
             </div>
         </form>
         <!--매거진 정보입력 끝-->
@@ -195,6 +216,32 @@
         sSkinURI : "../smarteditor/SmartEditor2Skin.html",
         fCreator : "createSEditor2",
         });
+    </script>
+    <script>
+        function magazineRegister(frm){
+            const title = RegExp(/[가-힣a-zA-Z\!\.\?\*\+\-]/);
+            const place = RegExp(/[가-힣a-zA-Z\!\.\?\*\+\-]/);
+            const file = frm.upfile.value;
+            
+            if(!$('#Mcategory > option:selected').val()) {
+                alert("분류를 선택해주세요");
+            }
+            if(!title.test($('.title').val())){
+                alert('제목을 입력해주세요');
+                $('.title').focus();
+                return false
+            }
+            if(!place.test($('.place').val())){
+                alert('장소명을 입력해주세요');
+                $('.place').focus();
+                return false
+            }
+            if( !file ){ 
+                alert( "파일을 선택하여 주세요");
+                return false;
+            }
+            return true
+        }
     </script>
 
 <script src="../script.js"></script>

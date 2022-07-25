@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 관리자등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     
@@ -108,7 +109,7 @@
     <section class="content2">
         <!--main-->
         <!--관리자 정보 등록-->
-            <form action="#" method="post">
+            <form action=""  onsubmit="return adminRegister()">
                 <div class="admin_manage_form_container">
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_adminid">아이디 </p>
@@ -118,9 +119,9 @@
                     </div>
                     <div class="admin_manage_form_container_ul2">
                         <p><input type="text" class="admin_register_adminid_content" placeholder="아이디를 입력하세요"></p>
-                        <p><input type="name" class="admin_register_name_content" placeholder="이름을 입력하세요"></p>
-                        <p><input type="hp" class="admin_register_hp_content" placeholder="전화번호를 입력하세요"></p>
-                        <p><input type="email" class="admin_register_email_content" placeholder="이메일을 입력하세요"></p>
+                        <p><input type="text" class="admin_register_name_content" placeholder="이름을 입력하세요"></p>
+                        <p><input type="text" class="admin_register_hp_content" placeholder="전화번호를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_email_content" placeholder="이메일을 입력하세요"></p>
                     </div>
                     <div class="admin_manage_form_container_ul3">
                         <p class="admin_register_adminpw">비밀번호 </p>
@@ -165,5 +166,90 @@
     
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../script.js"></script>
+    <script>
+        function adminRegister(){
+            const id = document.querySelector('.admin_register_adminid_content');
+            const pw = document.querySelector('.dmin_register_adminpw');
+            const pwCheck = document.querySelector('.admin_register_adminpwre');
+            const ph = document.querySelector('.admin_register_hp_content');
+            const email = document.querySelector('.admin_register_email_content');
+            const name = document.querySelector('.admin_register_name_content');
+
+
+            const expid = RegExp(/[a-zA-Z0-9]/);
+            const exppw = RegExp(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/);
+            const expname = RegExp(/[가-힣]/);
+            const expph = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
+            const expemail = RegExp(/^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/);
+
+            if(id.value == ''){
+                alert('아이디를 입력하세요')
+                id.focus();
+                return false;
+            }
+            if(!expid.test(id.value)){
+                alert('아이디를 다시 확인해주세요');
+                $('.admin_register_adminid_content').val('');
+                $('.admin_register_adminid_content').focus();
+                return false
+            }
+            if(pw.value == ''){
+                alert('비밀번호를 입력하세요')
+                id.focus();
+                return false;
+            }
+            if(!exppw.test(pw.value)){
+                alert('비밀번호를 확인해주세요');
+                pw.focus();
+                return false
+            }
+            f(name.value == ''){
+                alert('이름을 입력하세요')
+                name.focus();
+                return false;
+            }
+            if(!expname.test(name.value)){
+                alert('이름을 다시 확인해주세요');
+                name.focus();
+                return false
+            }
+            if(pw.value != pwCheck.value){
+                alert('비밀번호가 맞지 않습니다. 다시 확인해주세요');
+                pwCheck.focus();
+                return false
+            }
+            if(ph.value == ''){
+                alert('연락처를 입력하세요')
+                ph.focus();
+                return false;
+            }
+            if(!expph.test(ph.value)){
+                alert('연락처를 다시 확인해주세요');
+                ph.focus();
+                return false
+            }
+
+            if(!$('#admin_register_department_content option:selected').val()) {
+                alert("부서를 선택해주세요");
+            }
+
+            f(email.value == ''){
+                alert('이메일을 입력하세요')
+                email.focus();
+                return false;
+            }
+
+            if(!expemail.test(email.value)){
+                alert('이메일을 다시 확인해주세요');
+                email.focus();
+                return false
+            }
+            
+            if(!$('#admin_register_title_content option:selected').val()) {
+                alert("직함을 선택해주세요");
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>

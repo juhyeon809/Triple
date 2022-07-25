@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 이벤트등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -108,31 +109,35 @@
         </div>
         <!--타이틀 끝-->
         <!--이벤트등록-->
-        <form action="">
+        <form action="" onsubmit="return eventRegister()">
             <div class="notice_register">
                 <!--카테고리 분류-->
                 <div class="notice_register_1">
                     <div class="notice_register_1_1">이벤트 분류</div>
-                    <div class="notice_register_1_2"><select name="" id="">
-                        <option value="">전체</option>
-                        <option value="">1월 이벤트</option>
-                        <option value="">2월 이벤트</option>
-                        <option value="">3월 이벤트</option>
-                        <option value="">4월 이벤트</option>
-                        <option value="">5월 이벤트</option>
-                        <option value="">6월 이벤트</option>
-                        <option value="">7월 이벤트</option>
-                        <option value="">8월 이벤트</option>
-                        <option value="">9월 이벤트</option>
-                        <option value="">10월 이벤트</option>
-                        <option value="">11월 이벤트</option>
-                        <option value="">12월 이벤트</option>
-                    </select></div>
+                    <div class="notice_register_1_2">
+                        <select name="" id="eventCategory">
+                            <option value="">선택</option>
+                            <option value="1월">1월 이벤트</option>
+                            <option value="2월">2월 이벤트</option>
+                            <option value="3월">3월 이벤트</option>
+                            <option value="4월">4월 이벤트</option>
+                            <option value="5월">5월 이벤트</option>
+                            <option value="6월">6월 이벤트</option>
+                            <option value="7월">7월 이벤트</option>
+                            <option value="8월">8월 이벤트</option>
+                            <option value="9월">9월 이벤트</option>
+                            <option value="10월">10월 이벤트</option>
+                            <option value="11월">11월 이벤트</option>
+                            <option value="12월">12월 이벤트</option>
+                        </select>
+                    </div>
                 </div>
                 <!--카테고리 분류 끝-->
                 <div class="notice_register_2">
                     <div class="notice_register_2_1">타이틀명</div>
-                    <div class="notice_register_2_2"><input type="text"></div>
+                    <div class="notice_register_2_2">
+                        <input type="text" class="tit">
+                    </div>
                 </div>
 
                 <div class="notice_register_3">
@@ -158,6 +163,21 @@
         sSkinURI : "../smarteditor/SmartEditor2Skin.html",
         fCreator : "createSEditor2",
         });
+    </script>
+    <script>
+        function eventRegister(){
+            const title = RegExp(/[가-힣a-zA-Z\!\.\?\*\+\-]/);
+
+            if(!$('#eventCategory > option:selected').val()) {
+                alert("이벤트 분류를 선택해주세요");
+            }
+            if(!title.test($('.tit').val())){
+                alert('타이틀명을 입력해주세요');
+                $('.tit').focus();
+                return false
+            }
+            return true;
+        }
     </script>
 </body>
 </html>
