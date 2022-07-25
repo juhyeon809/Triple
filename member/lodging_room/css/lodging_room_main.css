@@ -2499,14 +2499,14 @@
 
 /* lodging_recommend */
 
-.summary_reco_btn{
+.summary_reco_btn, .datepciker1 {
     width: 120px; height: 32px;
     border: none;
     border-radius: 100px;
     -webkit-appearance: none;
     text-align: center;
     color: #425052;
-    font-size: 13px;
+    font-size: 14px;
     box-shadow: 1px 1px rgb(216, 216, 216);
     margin-right: 2px;
     margin-top: 20px;

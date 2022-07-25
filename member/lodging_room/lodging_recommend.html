@@ -7,6 +7,9 @@
     <title>TRIPLE | 숙소추천</title>
     <link rel="stylesheet" href="/member/lodging_room/css/lodging_room_main.css">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="     crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <div id="backg_image_area">
@@ -43,7 +46,7 @@
         <!--section 시작-->
         <section>
             <div class="lodging_main">
-                <input type="date" name="lodging_calendar" value="choice_date" class="summary_reco_btn" >
+                <input type="text" placeholder="연도-월-일" id="datepicker1" class="datepciker1">
                 <select name="people_number" class="summary_reco_btn">
                     <option value="1인">1인</option>
                     <option value="2인">2인</option>
@@ -202,12 +205,12 @@
                 </section>
             <div class="region_reco">
                 <div class="submenu">
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_jeju.html">제주</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_seoul.html">서울</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gyeongi.html">경기</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gangwon.html">강원</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gyeongsang.html">경상</a> |
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_jeolla.html">전라·충청</a>
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_jeju.html">제주</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html">서울</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongi.html">경기</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gangwon.html">강원</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html">경상</a> |
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html">전라·충청</a>
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
@@ -350,5 +353,17 @@
             </div>
         </footer>
         <!--footer 끝-->
+        <script>
+            $(function(){
+                $('#datepicker').datepicker();
+            })
+        
+        
+            $(function() {
+                $("#datepicker1, #datepicker2").datepicker({
+                    dateFormat: 'yy.mm.dd'
+                });
+            });
+        </script>
 </body>
 </html>
