@@ -811,6 +811,19 @@ color: #666666;
     color: #50e3c2;
     font-weight: 700;
 }
+
+#tour_info_btn_like, #tour_info_btn_schedule, #tour_info_btn_writereview, #tour_info_btn_share{
+    width: 145px;
+    height: 50px;
+    border: 0.5px solid #50E3C2;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: #50E3C2;
+    font-weight: bold;
+    line-height: 45px;
+}
+
 #mark {
     width: 100px;
     height: 40px;
@@ -1228,4 +1241,18 @@ hr {
     font-size: 16px;
     font-weight: bold;
     color: white;
+}
+
+/*하트*/
+
+.bi-heart{
+    font-size: 20px;
+    line-height: 30px;
+    color:rgb(155, 155, 155);
+}
+
+.bi-heart-fill{
+    font-size: 20px;
+    line-height: 30px;
+    color:crimson;
 }
