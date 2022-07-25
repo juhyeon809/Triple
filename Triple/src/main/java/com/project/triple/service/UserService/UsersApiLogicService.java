@@ -106,15 +106,10 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     }
 
     public int EmailCheck(String email){
-        int result = 0;
-        AtomicReference<String> newEmail = null;
-        Optional<Users> users = usersRepository.findByEmail(email);
-        users.map(user -> {
-            newEmail.set(user.getEmail());
-            return newEmail;
-        });
-        if(newEmail != null){
-            result = 1;
+        int result = 1;
+
+        if( usersRepository.findByEmail(email).isEmpty()){
+            result = 0;
         }
         return result;
     }
