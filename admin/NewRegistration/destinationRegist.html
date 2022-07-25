@@ -164,7 +164,7 @@
 
                                 <li class="clear">
                                     <span class="tit_lbl">공항코드</span>
-                                    <div class="reg_content"><input type="text" class="textBox"></div>
+                                    <div class="reg_content"><input type="text" class="code"></div>
                                 </li>
                                 <li class="clear">
                                     <span class="tit_lbl">국가</span>
@@ -190,10 +190,16 @@
 <script>
     function destination(){
         const airport = RegExp(/[a-zA-Z가-힣]/);
+        const code = RegExp(/[a-zA-Z]/);
 
             if(!airport.test($('.name').val())){
-                alert('항공명을 입력해주세요')
+                alert('공항명을 입력해주세요')
             $('.name').focus();
+            return false;
+            }
+            if(!code.test($('.code').val())){
+                alert('공항코드을 입력해주세요')
+            $('.code  ').focus();
             return false;
             }
         return true;
