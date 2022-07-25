@@ -17,7 +17,7 @@ public class SpotReviewApiLogicService extends BaseService<SpotReviewApiRequest,
 
     private SpotReviewApiResponse response(SpotReview spotReview){
         SpotReviewApiResponse spotReviewApiResponse = SpotReviewApiResponse.builder()
-                .id(spotReview.getId())
+                .idx(spotReview.getIdx())
                 .reviewNum(spotReview.getReviewNum())
                 .title(spotReview.getTitle())
                 .content(spotReview.getContent())

@@ -9,13 +9,14 @@ create table users(
     userpw varchar2(20) not null,
     nickname varchar2(20) not null,
     country_code varchar2(4) not null,
+    hp varchar2(20) not null,
     zipcode number(6),
     address1 varchar2(30),
     address2 varchar2(20),
     address3 varchar2(20),
     reg_date date default sysdate,
     status varchar2(10) not null,
-    TOS_agree not null
+    TOS_agree varchar2(10) not null
 );
 
 create table terms(

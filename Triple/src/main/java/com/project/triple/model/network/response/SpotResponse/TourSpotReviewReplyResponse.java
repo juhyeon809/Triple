@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class TourSpotReviewReplyResponse {
 
-    private Long id;
+    private Long idx;
     private Integer replyNum;
     private Integer reviewNum;
     private String title;

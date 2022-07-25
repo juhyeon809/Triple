@@ -3,12 +3,14 @@ package com.project.triple.controller.api;
 import com.project.triple.controller.CrudController;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.request.UsersApiRequest;
-import com.project.triple.model.network.response.UsersApiResponse;
-import com.project.triple.service.UsersApiLogicService;
+import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
+import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
+import com.project.triple.service.UserService.UsersApiLogicService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@Controller
 @RestController
 @RequestMapping("/api/user")    // http://localhost:8080/api/user  url 주소
 @RequiredArgsConstructor
@@ -57,5 +59,13 @@ public class UsersApiController extends CrudController<UsersApiRequest, UsersApi
         return usersApiLogicService.delete(id);
     }
 
+
+    @PostMapping("/emailCheck")
+    @ResponseBody
+    public int emailCheck(@RequestParam("email") String email){
+        int cnt = usersApiLogicService.EmailCheck(email);
+        return cnt;
+
+    }
 
 }

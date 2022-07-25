@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class MagazineApiRequest {
 
-    private Long id;
+    private Long idx;
     private Integer adminuserId;
     private String adminuserName;
     private Integer magazineNum;

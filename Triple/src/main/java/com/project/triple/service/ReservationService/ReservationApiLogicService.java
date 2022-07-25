@@ -15,7 +15,7 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
 
     private ReservationApiResponse response(Reservation reservation){
         ReservationApiResponse reservationApiResponse = ReservationApiResponse.builder()
-                .id(reservation.getId())
+                .idx(reservation.getIdx())
                 .ticketType(reservation.getTicketType())
                 .ticketNum(reservation.getTicketNum())
                 .revName(reservation.getRevName())

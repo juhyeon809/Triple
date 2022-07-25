@@ -15,7 +15,7 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
 
     private AdminUserApiResponse response(AdminUser adminUser){
         AdminUserApiResponse adminUsersApiResponse = AdminUserApiResponse.builder()
-                .id(adminUser.getId())
+                .idx(adminUser.getIdx())
                 .userid(adminUser.getUserid())
                 .userpw(adminUser.getUserpw())
                 .name(adminUser.getName())

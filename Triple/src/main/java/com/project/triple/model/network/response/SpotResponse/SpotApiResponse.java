@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class SpotApiResponse {
-    private Long id;
+    private Long idx;
     private Integer spotNum;
     private String spotName;
     private String country;

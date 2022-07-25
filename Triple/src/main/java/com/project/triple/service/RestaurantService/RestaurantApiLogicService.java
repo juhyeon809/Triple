@@ -15,8 +15,8 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
     private RestaurantApiResponse response(Restaurant restaurant){
         RestaurantApiResponse restaurantApiResponse = RestaurantApiResponse.builder()
-<<<<<<< HEAD
-                .id(restaurant.getId())
+
+                .idx(restaurant.getIdx())
                 .restNum(restaurant.getRestNum())
                 .restName(restaurant.getRestName())
                 .country(restaurant.getCountry())
@@ -32,9 +32,6 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
                 .regDate(restaurant.getRegDate())
                 .likeCount(restaurant.getLikeCount())
                 .reviewCount(restaurant.getReviewCount())
-=======
-                .idx(restaurant.getIdx())
->>>>>>> 6733d25cc22b4aae3bbfef66cbb1be8496d3466d
                 .build();
         return restaurantApiResponse;
     }

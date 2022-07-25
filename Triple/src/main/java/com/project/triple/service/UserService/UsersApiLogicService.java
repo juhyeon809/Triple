@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @RequiredArgsConstructor
@@ -23,11 +24,11 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     private UsersApiResponse response(Users users){
         UsersApiResponse usersApiResponse = UsersApiResponse.builder()
                 .idx(users.getIdx())
-                .userid(users.getUserid())
                 .email(users.getEmail())
                 .userpw(users.getUserpw())
                 .nickname(users.getNickname())
                 .countryCode(users.getCountryCode())
+                .hp(users.getHp())
                 .zipcode(users.getZipcode())
                 .address1(users.getAddress1())
                 .address2(users.getAddress2())
@@ -43,11 +44,11 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     public Header<UsersApiResponse> create(Header<UsersApiRequest> request) {
         UsersApiRequest usersApiRequest = request.getData();
         Users users = Users.builder().email(usersApiRequest.getEmail())
-                .userid(usersApiRequest.getUserid())
                 .userpw(usersApiRequest.getUserpw())
                 .nickname(usersApiRequest.getNickname())
                 .countryCode(usersApiRequest.getCountryCode())
                 .zipcode(usersApiRequest.getZipcode())
+                .hp(usersApiRequest.getHp())
                 .address1(usersApiRequest.getAddress1())
                 .address2(usersApiRequest.getAddress2())
                 .address3(usersApiRequest.getAddress3())
@@ -73,7 +74,6 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
         return users.map(
                         user -> {
                             user.setEmail(usersApiRequest.getEmail());
-                            user.setUserid(usersApiRequest.getUserid());
                             user.setUserpw(usersApiRequest.getUserpw());
                             user.setNickname(usersApiRequest.getNickname());
                             user.setCountryCode(usersApiRequest.getCountryCode());
@@ -97,5 +97,25 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
             baseRepository.delete(user);
             return Header.OK();
         }).orElseGet(() -> Header.ERROR("데이터 없음"));
+    }
+
+    public Header<UsersApiResponse> login(String email, String userpw){
+        Optional<Users> users = usersRepository.findByEmailAndUserpw(email, userpw);
+
+        return users.map(users1 -> response(users1)).map(Header::OK).orElseGet(() -> Header.ERROR("데이터 없음"));
+    }
+
+    public int EmailCheck(String email){
+        int result = 0;
+        AtomicReference<String> newEmail = null;
+        Optional<Users> users = usersRepository.findByEmail(email);
+        users.map(user -> {
+            newEmail.set(user.getEmail());
+            return newEmail;
+        });
+        if(newEmail != null){
+            result = 1;
+        }
+        return result;
     }
 }

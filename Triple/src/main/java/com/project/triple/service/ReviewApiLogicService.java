@@ -15,7 +15,7 @@ public class ReviewApiLogicService extends BaseService<ReviewApiRequest, ReviewA
 
     private ReviewApiResponse response(Review review){
         ReviewApiResponse reviewApiResponse = ReviewApiResponse.builder()
-                .id(review.getId())
+                .idx(review.getIdx())
                 .reviewNum(review.getReviewNum())
                 .title(review.getTitle())
                 .content(review.getContent())

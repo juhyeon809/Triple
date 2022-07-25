@@ -15,7 +15,7 @@ public class TermsApiLogicService extends BaseService<TermsApiRequest, TermsApiR
 
     private TermsApiResponse response(Terms terms){
         TermsApiResponse termsApiResponses = TermsApiResponse.builder()
-                .id(terms.getId())
+                .idx(terms.getIdx())
                 .termsName(terms.getTermsName())
                 .regDate(terms.getRegDate())
                 .content(terms.getContent())

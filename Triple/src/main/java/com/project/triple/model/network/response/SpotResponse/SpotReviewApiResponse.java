@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class SpotReviewApiResponse {
-    private Long id;
+    private Long idx;
     private String reviewNum;
     private String title;
     private String content;

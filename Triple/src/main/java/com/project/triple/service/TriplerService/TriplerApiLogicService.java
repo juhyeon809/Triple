@@ -15,7 +15,7 @@ public class TriplerApiLogicService extends BaseService<TriplerApiRequest, Tripl
 
     private TriplerApiResponse response(Tripler tripler){
         TriplerApiResponse triplerApiResponse = TriplerApiResponse.builder()
-                .id(tripler.getId())
+                .idx(tripler.getIdx())
                 .triplerNum(tripler.getTriplerNum())
                 .userId(tripler.getUserId())
                 .country(tripler.getCountry())

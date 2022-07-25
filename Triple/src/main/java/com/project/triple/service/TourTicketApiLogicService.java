@@ -17,7 +17,7 @@ public class TourTicketApiLogicService extends BaseService<TourTicketApiRequest,
 
     private TourTicketApiResponse response(TourTicket tourTicket){
         TourTicketApiResponse tourTicketApiResponse = TourTicketApiResponse.builder()
-                .id(tourTicket.getId())
+                .idx(tourTicket.getIdx())
                 .ticketType(tourTicket.getTicketType())
                 .ticketNum(tourTicket.getTicketNum())
                 .revName(tourTicket.getRevName())

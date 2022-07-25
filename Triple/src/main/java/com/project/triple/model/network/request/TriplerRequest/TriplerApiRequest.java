@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TriplerApiRequest {
-    private Long id;
+    private Long idx;
     private Integer triplerNum;
     private String userId;
     private String country;

@@ -18,7 +18,7 @@ public class TourApiLogicService extends BaseService<TourApiRequest, TourApiResp
 
     private TourApiResponse response(Tour tour){
         TourApiResponse tourApiResponse = TourApiResponse.builder()
-                .id(tour.getId())
+                .idx(tour.getIdx())
                 .tourNum(tour.getTourNum())
                 .country(tour.getCountry())
                 .address(tour.getAddress())

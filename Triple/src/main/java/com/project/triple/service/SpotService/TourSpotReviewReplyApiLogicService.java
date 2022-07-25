@@ -15,7 +15,7 @@ public class TourSpotReviewReplyApiLogicService extends BaseService<TourSpotRevi
 
     private TourSpotReviewReplyResponse response(TourSpotReviewReply tourSpotReviewReply){
         TourSpotReviewReplyResponse tourSpotReviewReplyResponse = TourSpotReviewReplyResponse.builder()
-                .id(tourSpotReviewReply.getId())
+                .idx(tourSpotReviewReply.getIdx())
                 .replyNum(tourSpotReviewReply.getReplyNum())
                 .reviewNum(tourSpotReviewReply.getReviewNum())
                 .title(tourSpotReviewReply.getTitle())

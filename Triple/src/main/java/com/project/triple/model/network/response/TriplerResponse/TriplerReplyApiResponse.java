@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TriplerReplyApiResponse {
-    private Long id;
+    private Long idx;
     private Integer replyNum;
     private Integer triplerNum;
     private String title;

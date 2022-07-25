@@ -15,7 +15,7 @@ public class RestaurantReviewReplyApiLogicService extends BaseService<Restaurant
 
     private RestaurantReviewReplyApiResponse response(RestaurantReviewReply restaurantReviewReply){
         RestaurantReviewReplyApiResponse restaurantReviewReplyApiResponse = RestaurantReviewReplyApiResponse.builder()
-                .id(restaurantReviewReply.getId())
+                .idx(restaurantReviewReply.getIdx())
                 .replyNum(restaurantReviewReply.getReplyNum())
                 .reviewNum(restaurantReviewReply.getReviewNum())
                 .title(restaurantReviewReply.getTitle())
