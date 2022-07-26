@@ -12,158 +12,173 @@
 
 </head>
 <body>
-    <!-- 사이드바-->
-    <selction id="sidebar">
-        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
-        <ul class="side-menu">
-            
-            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/">회원가입</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../booking/all.html">전체</a></li>
-                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
-                    <li><a href="../booking/room_resevation.html">숙소</a></li>
-                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
-                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
-                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
-                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../product/air.html">항공권</a></li>
-                    <li><a href="../product/room.html">숙소</a></li>
-                    <li><a href="../product/packge.html">패키지</a></li>
-                    <li><a href="../product/ticket.html">티켓</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
-                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
-                </ul>
-            </li>
-            <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
-            </li>
-            <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../coupon/couponList.html">목록</a></li>
-                    <li><a href="../coupon/couponRegistration.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown show">
-                    <li><a href="eventList.html">목록</a></li>
-                    <li><a href="eventRegister.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../notice/notice-list.html">목록</a></li>
-                    <li><a href="../notice/notice-register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../magazine/magazine-list.html">목록</a></li>
-                    <li><a href="../magazine/magazine-register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
-                
-            </li>
-            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../manage/admin_manage_list.html">목록</a></li>
-                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
-        </ul>
-    </selction>
-    <!--사이드바 끝-->
-    <section class="content2">
-        <!--타이틀-->
-        <div class="header_box">
-            <h2>이벤트 | 등록</h2>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a> -->
+                <a class="navbar-brand" href="index.html">TRIPLE</a>
+            </div>
         </div>
-        <!--타이틀 끝-->
-        <!--이벤트등록-->
-        <form action="" onsubmit="return eventRegister()">
-            <div class="notice_register">
-                <!--카테고리 분류-->
-                <div class="notice_register_1">
-                    <div class="notice_register_1_1">이벤트 분류</div>
-                    <div class="notice_register_1_2">
-                        <select name="" id="eventCategory">
-                            <option value="">선택</option>
-                            <option value="1월">1월 이벤트</option>
-                            <option value="2월">2월 이벤트</option>
-                            <option value="3월">3월 이벤트</option>
-                            <option value="4월">4월 이벤트</option>
-                            <option value="5월">5월 이벤트</option>
-                            <option value="6월">6월 이벤트</option>
-                            <option value="7월">7월 이벤트</option>
-                            <option value="8월">8월 이벤트</option>
-                            <option value="9월">9월 이벤트</option>
-                            <option value="10월">10월 이벤트</option>
-                            <option value="11월">11월 이벤트</option>
-                            <option value="12월">12월 이벤트</option>
-                        </select>
-                    </div>
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
+            <div class="user-info">
+                <div class="image">
+                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
                 </div>
-                <!--카테고리 분류 끝-->
-                <div class="notice_register_2">
-                    <div class="notice_register_2_1">타이틀명</div>
-                    <div class="notice_register_2_2">
-                        <input type="text" class="tit">
-                    </div>
-                </div>
-
-                <div class="notice_register_3">
-                    <div class="notice_register_3_1">내용</div>
-                    <div class="notice_register_3_2"><textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px;"></textarea></div>
-
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
                 </div>
             </div>
-            <div class="regi">
-                <div class="hbt">
-                    <button type="submit" class="regis">등록</button>
+            <ul class="side-menu">
+            
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../member/memberlist.html">회원목록</a></li>
+                        <li><a href="../member/">회원가입</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../booking/all.html">전체</a></li>
+                        <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="../booking/room_resevation.html">숙소</a></li>
+                        <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../product/air.html">항공권</a></li>
+                        <li><a href="../product/room.html">숙소</a></li>
+                        <li><a href="../product/packge.html">패키지</a></li>
+                        <li><a href="../product/ticket.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    </ul>
+                </li>
+                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                </li>
+                <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../coupon/couponList.html">목록</a></li>
+                        <li><a href="../coupon/couponRegistration.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="eventList.html">목록</a></li>
+                        <li><a href="eventRegister.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../notice/notice-list.html">목록</a></li>
+                        <li><a href="../notice/notice-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../magazine/magazine-list.html">목록</a></li>
+                        <li><a href="../magazine/magazine-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+                    
+                </li>
+                <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../manage/admin_manage_list.html">목록</a></li>
+                        <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            </ul>
+        </aside>
+    </section>
+    <!--사이드바 끝-->
+    <section class="content2">
+        <div class="content2-fluid">
+            <div class="header_box">
+                <h2>이벤트 | 등록</h2>
+            </div>
+            <form action="" onsubmit="return eventRegister()">
+            <div class="admin_inquiry_qtext">
+                <div class="admin_inquiry_title">이벤트 분류</div>
+                <div class="admin_inquiry_q3">
+                    <select name="" class="admin_inquiry_category2">
+                        <option value="">전체</option>
+                        <option value="">1월 이벤트</option>
+                        <option value="">2월 이벤트</option>
+                        <option value="">3월 이벤트</option>
+                        <option value="">4월 이벤트</option>
+                        <option value="">5월 이벤트</option>
+                        <option value="">6월 이벤트</option>
+                        <option value="">7월 이벤트</option>
+                        <option value="">8월 이벤트</option>
+                        <option value="">9월 이벤트</option>
+                        <option value="">10월 이벤트</option>
+                        <option value="">11월 이벤트</option>
+                        <option value="">12월 이벤트</option>
+                    </select>
                 </div>
+            </div>
+            <div class="admin_inquiry_qtext">
+                <div class="admin_inquiry_title">이벤트 제목</div>
+                <div class="admin_inquiry_q3">
+                    <input type="text" class="admin_inquiry_category2">
+                </div>
+            </div>
+            <div class="admin_inquiry_qtext">
+                <div class="admin_inquiry_title">이벤트 내용</div> 
+                <div class="admin_inquiry_q3">
+                    <div class="admin_inquiry_a1">
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                            <p>이벤트 내용을 입력하세요</p>
+                        </textarea>
+                    </div>
+                    <script>
+                        var oEditors = [];
+                        nhn.husky.EZCreator.createInIFrame({
+                        oAppRef : oEditors,
+                        elPlaceHolder : "weditor",//
+                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+                        fCreator : "createSEditor2",
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="btnlist">
+                <button type="submit" class="regis">등록</button>
             </div>
         </form>
         <!--이벤트 등록 끝-->
     </section>
     <script src="../script.js"></script>
-    <script>
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-    </script>
     <script>
         function eventRegister(){
             
