@@ -19,7 +19,7 @@ public class TriplerReplyApiResponse {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private Integer likeCount;
     private LocalDateTime regDate;
 }

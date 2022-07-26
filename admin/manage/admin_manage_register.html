@@ -16,22 +16,20 @@
             <div class="navbar-header">
                 <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a> -->
-                <a class="navbar-brand" href="index.html">TRIPLE</a>
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
-        </div>
-    </nav>
-    <!-- 사이드바-->
-    <section id="sidebar">
-        <aside id="leftsidebar" class="sidebar">
             <div class="user-info">
-                <div class="image">
-                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
-                </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                     <div class="email">john.doe@example.com</div>
                 </div>
             </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
             
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -183,89 +181,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../script.js"></script>
-    <script>
-        function adminRegister(){
-            const id = document.querySelector('.admin_register_adminid_content');
-            const pw = document.querySelector('.admin_register_adminpw_content');
-            const pwCheck = document.querySelector('.admin_register_adminpwre_content');
-            const ph = document.querySelector('.admin_register_hp_content');
-            const email = document.querySelector('.admin_register_email_content');
-            const name = document.querySelector('.admin_register_name_content');
-
-
-            const expid = RegExp(/[a-zA-Z0-9]/);
-            const exppw = RegExp(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/);
-            const expname = RegExp(/[가-힣]/);
-            const expph = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
-            const expemail = RegExp(/^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/);
-
-            if(id.value == ''){
-                alert('아이디를 입력하세요')
-                id.focus();
-                return false;
-            }
-            if(!expid.test(id.value)){
-                alert('아이디를 다시 확인해주세요');
-                id.focus();
-                return false
-            }
-            if(pw.value == ''){
-                alert('비밀번호를 입력하세요')
-                pw.focus();
-                return false;
-            }
-            if(!exppw.test(pw.value)){
-                alert('비밀번호를 확인해주세요');
-                pw.focus();
-                return false
-            }
-            if(name.value == ''){
-                alert('이름을 입력하세요')
-                name.focus();
-                return false;
-            }
-            if(!expname.test(name.value)){
-                alert('이름을 다시 확인해주세요');
-                name.focus();
-                return false
-            }
-            if(pw.value != pwCheck.value){
-                alert('비밀번호가 맞지 않습니다. 다시 확인해주세요');
-                pwCheck.focus();
-                return false
-            }
-            if(ph.value == ''){
-                alert('연락처를 입력하세요')
-                ph.focus();
-                return false;
-            }
-            if(!expph.test(ph.value)){
-                alert('연락처를 다시 확인해주세요');
-                ph.focus();
-                return false
-            }
-
-            if(!$('#admin_register_department_content option:selected').val()){
-                alert("부서를 선택해주세요");
-            }
-
-            if(email.value == ''){
-                alert('이메일을 입력하세요')
-                email.focus();
-                return false;
-            }
-
-            if(!expemail.test(email.value)){
-                alert('이메일을 다시 확인해주세요');
-                email.focus();
-                return false
-            }
-            
-            if(!$('#admin_register_title_content option:selected').val()) {
-                alert("직함을 선택해주세요");
-            }
-            return true;
-        }
-    </script>
+    <script src="/admin/js/register.js"></script>
 </body>
 </html>

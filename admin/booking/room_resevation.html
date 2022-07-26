@@ -15,24 +15,21 @@
             <div class="navbar-header">
                 <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a> -->
-                <a class="navbar-brand" href="index.html">TRIPLE</a>
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
-        </div>
-    </nav>
-    <!-- 사이드바-->
-    <section id="sidebar">
-        <aside id="leftsidebar" class="sidebar">
             <div class="user-info">
-                <div class="image">
-                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
-                </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                     <div class="email">john.doe@example.com</div>
                 </div>
             </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
-            
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="../member/memberlist.html">회원목록</a></li>
@@ -141,10 +138,11 @@
                     </form>
                 </nav>
             </div>
+            <!--숙소 예약 리스트 테이블-->
             <table class="tbList">
                 <tr>
                     <th>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="checkAll">
                     </th>
                     <th>
                         이름
@@ -165,99 +163,27 @@
                         결제
                     </th>
                 </tr> 
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
+                <tr>
+                    <td><input type="checkbox" name="b_room" id=""></td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">김사과</td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">apple</td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">H45612</td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">다낭</td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">다낭 골든 베이</td>
+                    <td onClick = "location.href='/admin/booking/roomDetail.html'">결제완료</td>
                 </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                <tr onClick = "location.href='/admin/booking/roomDetail.html'">
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>김사과</td>
-                    <td>apple</td>
-                    <td>H45612</td>
-                    <td>다낭</td>
-                    <td>다낭 골든 베이</td>
-                    <td>결제완료</td>
-                    
-                </tr>
-                
-                
             </table>
-            <div class="btnlist">
-                <button type="submit">변경</button>
-                <button type="submit">선택삭제</button>
-            </div>
-            <div class="pageNum">
-                <p>1 2 3 4 5</p>
-            </div>
+            <!--숙소 예약 리스트 테이블 끝-->
+                <div class="btnlist">
+                    <button type="submit">변경</button>
+                    <button type="submit">선택삭제</button>
+                </div>
+                <div class="pageNum">
+                    <p>1 2 3 4 5</p>
+                </div>
 
-        </div>
-        <!--넘버링 끝-->
+            </div>
+            <!--넘버링 끝-->
     </section>
     <script src="../script.js"></script>
     <script>

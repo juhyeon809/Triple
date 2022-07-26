@@ -15,24 +15,21 @@
             <div class="navbar-header">
                 <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a> -->
-                <a class="navbar-brand" href="index.html">TRIPLE</a>
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
-        </div>
-    </nav>
-    <!-- 사이드바-->
-    <section id="sidebar">
-        <aside id="leftsidebar" class="sidebar">
             <div class="user-info">
-                <div class="image">
-                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
-                </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                     <div class="email">john.doe@example.com</div>
                 </div>
             </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
-            
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="../member/memberlist.html">회원목록</a></li>
@@ -278,5 +275,22 @@
         </div>
     </section>
     <script src="../script.js"></script>
+    <script>
+        $(document).ready(function(){
+        //약관동의 체크박스 전체 선택
+            $("#checkAll").click(function() {
+                if($("#checkAll").is(":checked")) $("input[name='faq']").prop("checked", true);
+                else $("input[name='faq']").prop("checked", false);
+            });
+            $("input[name='faq']").click(function() {
+                var total = $("input[name='faq']").length;
+                var checked = $("input[name='faq']:checked").length;
+        
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#checkAll").prop("checked", false);
+                else $("#checkAll").prop("checked", true); 
+            });
+    });
+    </script>
 </body>
 </html>

@@ -125,6 +125,7 @@ section.sect form .list li .content_zipcode {
     margin-bottom: 10px; 
     padding-left: 10px; 
     font-size: 16px; 
+    text-indent: 5px;
 }
 input[type="text"]:focus, input[type="password"]:focus {
     outline: 3px solid #50E3C2; 
@@ -142,17 +143,17 @@ input::placeholder{
     color: #458CD3;
 }
 input[type="submit"] { 
-    border: 3px solid #B2F1DE; 
+    border: none;
     width: 400px !important; 
     height: 50px; 
     border-radius: 100px; 
     text-align: center; 
-    background-color: white; 
-    margin-top: 20px; 
+    background-color: #50E3C2; 
+    margin-top: 5px; 
     margin-bottom:0; 
     font-size: 16px; 
     font-weight: bold; 
-    color: #50E3C2; 
+    color: white; 
     padding-right: 10px;
     cursor: pointer;
 }
@@ -252,7 +253,7 @@ input[type="password"]::placeholder{
     cursor: pointer;
 } 
 .content_join > input[type="submit"] { 
-    background-color: #B2F1DE; 
+    background-color: #50E3C2; 
     width: 200px; 
     height: 50px; 
     border-radius: 100px; 
@@ -265,6 +266,10 @@ input[type="password"]::placeholder{
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+    outline: none;
+}
+input[type="checkbox"]{
+    outline: none;
 }
 
 .join_box {

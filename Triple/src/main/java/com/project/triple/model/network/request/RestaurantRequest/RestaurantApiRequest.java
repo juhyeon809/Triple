@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class RestaurantApiRequest {
     private Long idx;
+    private String type;
     private Integer restNum;
     private String restName;
     private String country;

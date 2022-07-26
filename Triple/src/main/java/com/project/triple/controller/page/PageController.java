@@ -61,8 +61,12 @@ public class PageController {
             ScriptUtils.alertAndMovePage(response, "로그인 성공", "/Triple" );
             return null;
         }else{
+<<<<<<< HEAD
+            return "redirect:/Triple/login";
+=======
             ScriptUtils.alertAndMovePage(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요", "/Triple/login" );
             return null;
+>>>>>>> 6781e29cb3b098a1842c8eb1e17a9ba254ebb0e6
         }
     }
 

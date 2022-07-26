@@ -13,8 +13,9 @@ import java.time.LocalDateTime;
 @Builder
 public class GuideApiRequest {
     private Long idx;
+    private String type;
     private Integer guideNum;
-    private String adminuserId;
+//    private String adminuserId;
     private String country;
     private String adminuserName;
     private String title;

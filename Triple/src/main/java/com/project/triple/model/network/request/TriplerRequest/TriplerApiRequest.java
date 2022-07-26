@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class TriplerApiRequest {
     private Long idx;
     private Integer triplerNum;
-    private String userId;
+//    private String userId;
     private String country;
     private String city;
     private String nickname;

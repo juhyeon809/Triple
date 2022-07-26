@@ -28,6 +28,7 @@ public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot")
     private Long idx;
+    private String type;
     private Integer spotNum;
     private String spotName;
     private String country;

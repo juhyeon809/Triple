@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,16 @@
     <script src="/app/js/common.js"></script>
 
 </head>
+=======
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<!-- head 시작 -->
+<head th:replace="fragement/head :: head"></head>
+<!-- head 끝 -->
+
+>>>>>>> d96a6e4d0aced16547cd7d3837f5f83ea489c6f9
 <body>
     <div id="backg_image_area">
         <header>
@@ -20,7 +31,10 @@
                     <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
                 </form>
                 <div id="login_join"><a href="/Triple/login">LOGIN</a> | <a href="/Triple/join">JOIN</a></div>
+<<<<<<< HEAD
                 <div id="logout_mypage" style="display: none"><a href="/member/login_join/login.html">MYPAGE</a> | <a href="/member/login_join/login.html">LOGOUT</a></div>
+=======
+>>>>>>> d96a6e4d0aced16547cd7d3837f5f83ea489c6f9
 
             </div>
             <div id="menu_area">
@@ -38,7 +52,7 @@
         </header>
     <div id="head_text_area">
         <div id="head_text">
-        <p>떠나요 여행! <br> 트리플에서 최저가로 검색하고 <br> 여행 떠나자!</p> 
+        <p>떠나요 여행! <br> 트리플에서 최저가로 검색하고 <br> 여행 떠나자!</p>
         </div>
         <div id="head_search_air">
             <div id="form_area">
@@ -140,7 +154,7 @@
                 </div>
             </a>
         </div>
-        
+
         <p class="title">여행 매거진</p>
         <div class="item_div_box">
             <a href="#" class="magazine_back magazine_back1">
@@ -172,7 +186,7 @@
                 </div>
             </a>
         </div>
-        
+
         <div id="tool_box">
             <div><p>날씨</p></div>
             <div><p>환율</p></div>
@@ -197,25 +211,10 @@
             <div class="bubble" id="BUSAN"><a href="#"><img src="/lib/img/triple_busan.svg" alt=""></a></div>
         </div>
     </main>
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
 
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+<!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+<!-- footer 끝 -->
+
 </body>
 </html>

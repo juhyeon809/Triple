@@ -23,22 +23,20 @@
             <div class="navbar-header">
                 <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a> -->
-                <a class="navbar-brand" href="index.html">TRIPLE</a>
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
-        </div>
-    </nav>
-    <!-- 사이드바-->
-    <section id="sidebar">
-        <aside id="leftsidebar" class="sidebar">
             <div class="user-info">
-                <div class="image">
-                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
-                </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                     <div class="email">john.doe@example.com</div>
                 </div>
             </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -135,7 +133,7 @@
             </div>
             <div class="formbox register">
                 <!--항공사 정보 등록-->
-                <form action="" onsubmit="return sendit()">
+                <form action="" onsubmit="return airline()">
                     <div class="box new">
                         <ul>
                             <li>
@@ -190,23 +188,6 @@
     </div>
 
     <script src="../script.js"></script>
-    <script>
-        function sendit(){
-            const kor = RegExp(/[가-힣]+$/);
-            const eng = RegExp(/[a-zA-Z]/);
-
-            if(!kor.test($('.kor').val())){
-                alert('한글만 입력해주세요');
-                $('.kor').focus();
-                return false
-            }
-            if(!eng.test($('.eng').val())){
-                alert('영어만 입력해주세요');
-                $('.eng').focus();
-                return false
-            }
-            return true;
-        }
-    </script>
+    <script src="/admin/js/register.js"></script>
 </body>
 </html>
