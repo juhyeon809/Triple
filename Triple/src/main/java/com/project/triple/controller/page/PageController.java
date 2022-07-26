@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/Triple")   // http://localhost:9090/Triple
@@ -46,15 +48,17 @@ public class PageController {
     }
 
     @PostMapping("/loginok")
-    public String loginOk(HttpServletRequest request, String email, String userpw){
+    public String loginOk(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
         if(usersApiLogicService.login(email, userpw).getData() != null){
             HttpSession session = request.getSession();
             String nickname = usersApiLogicService.login(email, userpw).getData().getNickname();
             session.setAttribute("email", email);
             session.setAttribute("nickname", nickname);
-            return "redirect:/Triple";
+            ScriptUtils.alertAndMovePage(response, "로그인 성공", "/Triple" );
+            return null;
         }else{
-            return "redirect:/Triple/login";
+            ScriptUtils.alertAndMovePage(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요", "/Triple/login" );
+            return null;
         }
     }
 
