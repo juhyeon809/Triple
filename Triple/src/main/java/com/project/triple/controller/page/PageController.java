@@ -22,16 +22,16 @@ public class PageController {
     public ModelAndView index(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
-        String name = null;
+        String nickname = null;
         if(session == null) {
 
         }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("name");
         }
 
         return new ModelAndView("/pages/main").addObject("email", email)
-                .addObject("name", name);
+                .addObject("nickname", nickname);
 
     }
 
@@ -49,12 +49,12 @@ public class PageController {
     public String loginOk(HttpServletRequest request, String email, String userpw){
         if(usersApiLogicService.login(email, userpw).getData() != null){
             HttpSession session = request.getSession();
-            String name = usersApiLogicService.login(email, userpw).getData().getNickname();
+            String nickname = usersApiLogicService.login(email, userpw).getData().getNickname();
             session.setAttribute("email", email);
-            session.setAttribute("name", name);
+            session.setAttribute("nickname", nickname);
             return "redirect:/Triple";
         }else{
-            return "redirect:/pages/login";
+            return "redirect:/Triple/login";
         }
     }
 
