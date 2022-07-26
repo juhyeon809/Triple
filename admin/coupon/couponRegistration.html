@@ -10,155 +10,170 @@
     <link rel="stylesheet" href="../admin.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a> -->
+                <a class="navbar-brand" href="index.html">TRIPLE</a>
+            </div>
+        </div>
+    </nav>
     <!-- 사이드바-->
-    <selction id="sidebar">
-        <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
-        <ul class="side-menu">
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
+            <div class="user-info">
+                <div class="image">
+                    <img src="/admin/img/user.png" alt="User" width="54" height="54">
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
+                </div>
+            </div>
+            <ul class="side-menu">
             
-            <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../member/memberlist.html">회원목록</a></li>
-                    <li><a href="../member/memberSign-up.html">회원가입</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../booking/all.html">전체</a></li>
-                    <li><a href="../booking/fly_reservation.html">항공권</a></li>
-                    <li><a href="../booking/room_resevation.html">숙소</a></li>
-                    <li><a href="../booking/packge_reservation.html">패키지</a></li>
-                    <li><a href="../booking/ticket_reservation.html">티켓</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                    <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
-                    <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
-                    <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../product/air.html">항공권</a></li>
-                    <li><a href="../product/room.html">숙소</a></li>
-                    <li><a href="../product/packge.html">패키지</a></li>
-                    <li><a href="../product/ticket.html">티켓</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
-                    <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
-                    <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
-                    <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
-                    <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
-                </ul>
-            </li>
-            <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
-            </li>
-            <li><a href="#" style="background-color:white; color: #0098A1;"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown show">
-                    <li><a href="couponList.html">목록</a></li>
-                    <li><a href="couponRegistration.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../event/eventList.html">목록</a></li>
-                    <li><a href="../event/eventRegister.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../notice/notice-list.html">목록</a></li>
-                    <li><a href="../notice/notice-register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../magazine/magazine-list.html">목록</a></li>
-                    <li><a href="../magazine/magazine-register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
-                
-            </li>
-            <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
-                    <li><a href="../manage/admin_manage_list.html">목록</a></li>
-                    <li><a href="../manage/admin_manage_register.html">등록</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
-        </ul>
-    </selction>
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../member/memberlist.html">회원목록</a></li>
+                        <li><a href="../member/memberSign-up.html">회원가입</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../booking/all.html">전체</a></li>
+                        <li><a href="../booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="../booking/room_resevation.html">숙소</a></li>
+                        <li><a href="../booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../product/air.html">항공권</a></li>
+                        <li><a href="../product/room.html">숙소</a></li>
+                        <li><a href="../product/packge.html">패키지</a></li>
+                        <li><a href="../product/ticket.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    </ul>
+                </li>
+                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                </li>
+                <li><a href="#" style="background-color:white; color: #0098A1;"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="couponList.html">목록</a></li>
+                        <li><a href="couponRegistration.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../event/eventList.html">목록</a></li>
+                        <li><a href="../event/eventRegister.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../notice/notice-list.html">목록</a></li>
+                        <li><a href="../notice/notice-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../magazine/magazine-list.html">목록</a></li>
+                        <li><a href="../magazine/magazine-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+                    
+                </li>
+                <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="../inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../manage/admin_manage_list.html">목록</a></li>
+                        <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            </ul>
+        </aside>
+    </section>
     <!--사이드바 끝-->
 
     <section class="content2">
-        <!--타이틀-->
-        <div class="header_box">
-            <h2>쿠폰등록</h2> 
-        </div>
-        <!--타이틀 끝-->
-        <!--쿠폰 등록 폼-->
-        <form action="" class="coupon" onsubmit="return coupon()">
-            <table class="colortb" style="width: 1100px; margin: 100px 0 40px 100px;">
-                <tr>
-                    <th>쿠폰 이름</th>
-                    <td><input type="text" class="name"></td>
-                </tr>
-                <tr>
-                    <th>코드</th>
-                    <td><input type="text" class="code"></td>
-                </tr>
-                <tr>
-                    <th>할인내용</th>
-                    <td><select name="" id="couponDis">
-                            <option value="">할인 선택</option>
-                            <option value="2000원">2000원 할인</option>
-                            <option value="3000원">3000원 할인</option>
-                            <option value="4000원">4000원 할인</option>
-                            <option value="5000원">5000원 할인</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>유효기간</th>
-                    <td><input type="date" name="" id=""> ~ <input type="date" name="" id=""></td>
-                </tr>
-
-            </table>
-            <div class="hbt submit">
-                <button type="submit" class="regis">등록</button>
+        <div class="content2-fluid">
+            <div class="header_box">
+                <h2>쿠폰 | 등록</h2>
             </div>
-        </form>
-        <!--쿠폰 등록 폼 끝-->
+            <form action="" class="coupon" onsubmit="return coupon()">
+    
+                <table class="tbList colortb">
+                    <tr>
+                        <th>쿠폰 이름</th>
+                        <td><input type="text" placeholder="쿠폰 이름을 입력하세요."></td>
+                    </tr>
+                    <tr>
+                        <th>코드</th>
+                        <td><input type="text" placeholder="쿠폰 코드를 입력하세요."></td>
+                    </tr>
+                    <tr>
+                        <th>할인내용</th>
+                        <td><select name="" id="" s>
+                                <option value="">2000원 할인</option>
+                                <option value="">3000원 할인</option>
+                                <option value="">4000원 할인</option>
+                                <option value="">5000원 할인</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>유효기간</th>
+                        <td><input type="date" name="" id=""> ~ <input type="date" name="" id=""></td>
+                    </tr>
+    
+                </table>
+                <div class="btnlist">
+                    <button type="submit" class="regis">등록</button>
+                </div>
+            </form>
+        </div>
+
     </section>
 
         <script src="../script.js"></script>
         <script>
             function coupon(){
-                const coupon = RegExp(/[a-zA-Z가-힣0-9]/);
-                const code = RegExp(/[a-zA-Z가-힣0-9]/);
-
-                if(!coupon.test($('.name').val())){ 
-                    alert('쿠폰 이름을 입력해주세요');
+                
+                if($('.name').val() == ''){
+                    alert('쿠폰 이름을 입력해주세요')
                     $('.name').focus();
                     return false 
                 }
-                if(!coupon.test($('.code').val())){ 
-                    alert('쿠폰코드를 입력해주세요');
+                if($('.code').val() == ''){
+                    alert('쿠폰 이름을 입력해주세요')
                     $('.code').focus();
                     return false 
                 }
-
                 if(!$('#couponDis > option:selected').val()) {
                     alert("할인내용을 선택해주세요");
                     return false 
