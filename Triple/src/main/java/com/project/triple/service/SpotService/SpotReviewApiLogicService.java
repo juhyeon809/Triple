@@ -22,7 +22,6 @@ public class SpotReviewApiLogicService extends BaseService<SpotReviewApiRequest,
                 .title(spotReview.getTitle())
                 .content(spotReview.getContent())
                 .nickname(spotReview.getNickname())
-                .userId(spotReview.getUserId())
                 .uploadPath(spotReview.getUploadPath())
                 .fileName(spotReview.getFileName())
                 .fileType(spotReview.getFileType())

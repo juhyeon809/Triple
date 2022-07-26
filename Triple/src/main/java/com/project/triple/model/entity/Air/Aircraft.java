@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,7 +23,7 @@ import javax.persistence.*;
 @EntityListeners(AuditingEntityListener.class)
 public class Aircraft {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "se1_aircraft")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_aircraft")
     private Long idx;
     private Integer aircraftNum;
     private String aircraftName;
@@ -33,5 +34,11 @@ public class Aircraft {
     private Integer specialSeat;
     private Integer familySeat;
     private Integer vipSeat;
-    private Integer airlineId;
+//    private Integer airlineId;
+
+//    @ManyToOne
+//    private Airline airline;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aircraft")
+//    private List<AirTicket> airTicketList;
 }

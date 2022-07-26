@@ -1,5 +1,10 @@
 package com.project.triple.model.entity.User;
 
+import com.project.triple.model.entity.Faq;
+import com.project.triple.model.entity.Guide.Guide;
+import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Notice;
+import com.project.triple.model.entity.QnA.Answer;
 import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @Data
@@ -35,4 +41,19 @@ public class AdminUser {
     private String name;
     @CreatedDate
     private LocalDateTime regDate;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
+//    private List<Magazine> magazineList;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
+//    private List<Guide> guideList;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
+//    private List<Answer> answerList;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
+//    private List<Notice> noticeList;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
+//    private List<Faq> faqList;
 }

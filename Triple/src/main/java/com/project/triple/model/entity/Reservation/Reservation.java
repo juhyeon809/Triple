@@ -1,6 +1,7 @@
 package com.project.triple.model.entity.Reservation;
 
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,5 +32,8 @@ public class Reservation {
     private String email;
     private String hp;
     private String emergencyHp;
-
+//    private Integer userid;
+//
+//    @ManyToOne
+//    private Users users;
 }

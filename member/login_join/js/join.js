@@ -71,24 +71,24 @@ function sendit(){
         1. 000-0000-0000 하이픈을 3자리 3~4자리 4자리 형식으로 넣어져야 함
         2. 하이픈을 제외한 모든 글자는 숫자여야 함
     */
-        if(!expHpText.test(hp.value)){
-            alert('휴대폰번호 형식을 확인하세요\n하이픈(-)을 포함해야 합니다');
-            hp.focus();
-            return false;
-        }
+    if(!expHpText.test(hp.value)){
+        alert('휴대폰번호 형식을 확인하세요\n하이픈(-)을 포함해야 합니다');
+        hp.focus();
+        return false;
+    }
         
         
         //약관동의 필수선택 확인
         let notice = false
         for(let i=0; i<$("input:checkbox[name='pilsoo']").length; i++){
-        if($("input:checkbox[name='pilsoo']").eq(3).is(":checked")==true){
-            notice = true
-            break
+            if($("input:checkbox[name='pilsoo']").eq(3).is(":checked")==true){
+                notice = true;
+                break;
+            }
         }
         if(!notice){
             alert('필수 약관을 읽고 모두 동의해주세요')
-            return false
-            }
+            return false;
         }
 
     return true;

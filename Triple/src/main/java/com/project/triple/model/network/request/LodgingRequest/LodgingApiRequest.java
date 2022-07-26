@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class LodgingApiRequest {
     private Long idx;
+    private String type;
     private String companyNum;
     private String lodgingType;
     private String companyName;

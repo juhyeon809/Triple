@@ -18,7 +18,7 @@ public class RestaurantReviewReplyApiRequest {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private String likeCount;
     private LocalDateTime regDate;
 }

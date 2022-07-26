@@ -21,7 +21,6 @@ public class RestaurantReviewReplyApiLogicService extends BaseService<Restaurant
                 .title(restaurantReviewReply.getTitle())
                 .content(restaurantReviewReply.getContent())
                 .nickname(restaurantReviewReply.getNickname())
-                .userId(restaurantReviewReply.getUserId())
                 .likeCount(restaurantReviewReply.getLikeCount())
                 .regDate(restaurantReviewReply.getRegDate())
                 .build();

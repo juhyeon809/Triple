@@ -9,6 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -31,6 +32,7 @@ public class Question {
     private Integer userId;
     private String typeCategory;
     private String typeDetail;
+    private String title;
     private String content;
     private String uploadPath;
     private String fileName;
@@ -38,6 +40,10 @@ public class Question {
     private String infoAgree;
     @CreatedDate
     private LocalDateTime regDate;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
+//    private List<Answer> answerList;
+
 
 
 }

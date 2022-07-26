@@ -16,6 +16,9 @@ a:visited { text-decoration: none; }
 #login_join > a { color: white; font-weight: bold; font-size: 18px; }
 #login_join { color: white; margin-top: 20px;}
 
+#logout_mypage > a { color: white; font-weight: bold; font-size: 18px; }
+#logout_mypage { color: white; margin-top: 20px;}
+
 .float_clear { clear: both;}
 
 #menu_area { padding-bottom: 0;}

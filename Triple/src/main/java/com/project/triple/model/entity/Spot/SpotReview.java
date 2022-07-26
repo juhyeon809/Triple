@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Spot;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +31,7 @@ public class SpotReview {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private String uploadPath;
     private String fileName;
     private String fileType;
@@ -39,6 +40,9 @@ public class SpotReview {
     @CreatedDate
     private LocalDateTime regDate;
     private String starCount;
+
+//    @ManyToOne
+//    private Users users;
 
 
 }

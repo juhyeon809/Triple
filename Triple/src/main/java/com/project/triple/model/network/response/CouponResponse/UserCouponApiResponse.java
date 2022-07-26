@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 public class UserCouponApiResponse {
     private Long idx;
-    private String userId;
-    private Integer couponId;
+//    private String userId;
+//    private Integer couponId;
     private LocalDateTime regDate;
 }

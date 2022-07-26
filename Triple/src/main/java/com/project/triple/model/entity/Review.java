@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,12 +30,15 @@ public class Review {
     private String title;
     private String content;
     private String nickname;
-    private String email;
+    private String starCount;
     private String uploadPath;
     private String fileName;
     private String fileType;
     private Integer likeCount;
     private LocalDateTime regDate;
     private String ticketNum;
+//    private Integer userid;
 
+//    @ManyToOne
+//    private Users users;
 }

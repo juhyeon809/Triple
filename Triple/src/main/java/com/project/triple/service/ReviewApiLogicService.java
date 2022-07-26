@@ -20,7 +20,6 @@ public class ReviewApiLogicService extends BaseService<ReviewApiRequest, ReviewA
                 .title(review.getTitle())
                 .content(review.getContent())
                 .nickname(review.getNickname())
-                .email(review.getEmail())
                 .uploadPath(review.getUploadPath())
                 .fileName(review.getFileName())
                 .fileType(review.getFileType())

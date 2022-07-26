@@ -20,5 +20,5 @@ public class AircraftApiRequest {
     private Integer specialSeat;
     private Integer familySeat;
     private Integer vipSeat;
-    private Integer airlineId;
+//    private Integer airlineId;
 }

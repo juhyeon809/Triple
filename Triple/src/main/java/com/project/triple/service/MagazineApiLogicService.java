@@ -16,7 +16,6 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
     private MagazineApiResponse response(Magazine magazine){
         MagazineApiResponse magazineApiResponse = MagazineApiResponse.builder()
                 .idx(magazine.getIdx())
-                .adminuserId(magazine.getAdminuserId())
                 .adminuserName(magazine.getAdminuserName())
                 .magazineNum(magazine.getMagazineNum())
                 .magazineType(magazine.getMagazineType())

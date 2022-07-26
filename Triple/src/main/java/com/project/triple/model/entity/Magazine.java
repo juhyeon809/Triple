@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.entity.User.AdminUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +27,7 @@ public class Magazine {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_magazine")
     private Long idx;
-    private Integer adminuserId;
+//    private Integer adminuserId;
     private String adminuserName;
     private Integer magazineNum;
     private String magazineType;
@@ -37,5 +38,8 @@ public class Magazine {
     private String fileType;
     @CreatedDate
     private LocalDateTime regDate;
+
+//    @ManyToOne
+//    private AdminUser adminUser;
 
 }

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class MagazineApiRequest {
 
     private Long idx;
-    private Integer adminuserId;
+//    private Integer adminuserId;
     private String adminuserName;
     private Integer magazineNum;
     private String magazineType;

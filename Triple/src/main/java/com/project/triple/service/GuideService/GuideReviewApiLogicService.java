@@ -20,7 +20,6 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
                 .title(guideReview.getTitle())
                 .content(guideReview.getContent())
                 .nickname(guideReview.getNickname())
-                .userId(guideReview.getUserId())
                 .uploadPath(guideReview.getUploadPath())
                 .fileName(guideReview.getFileName())
                 .fileType(guideReview.getFileType())

@@ -23,5 +23,7 @@ public class LodgingRoomApiRequest {
     private Integer roomCapacity;
     private String roomPolicy;
     private Integer price;
-    private Integer lodgingId;
+//    private Integer lodgingId;
+    private LocalDateTime useDate;
+    private LodgingRoomStatus status;
 }

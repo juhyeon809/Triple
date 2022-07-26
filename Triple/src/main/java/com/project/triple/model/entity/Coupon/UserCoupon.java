@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Coupon;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,8 +27,14 @@ public class UserCoupon {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_user_coupon")
     private Long idx;
-    private String userId;
-    private Integer couponId;
+//    private String userId;
+//    private Integer couponId;
     @CreatedDate
     private LocalDateTime regDate;
+
+//    @ManyToOne
+//    private Users users;
+//
+//    @ManyToOne
+//    private Coupon coupon;
 }

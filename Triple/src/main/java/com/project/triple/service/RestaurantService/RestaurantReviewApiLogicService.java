@@ -20,7 +20,6 @@ public class RestaurantReviewApiLogicService extends BaseService<RestaurantRevie
                 .title(restaurantReview.getTitle())
                 .content(restaurantReview.getContent())
                 .nickname(restaurantReview.getNickname())
-                .userId(restaurantReview.getUserId())
                 .uploadPath(restaurantReview.getUploadPath())
                 .fileName(restaurantReview.getFileName())
                 .fileType(restaurantReview.getFileType())

@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Reservation;
 
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +28,7 @@ public class ReservationAiruse {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_reservation_airuse")
     private Long idx;
-    private Integer userid;
+//    private Integer userid;
     private String ticketType;
     private Integer ticketNum;
     private String engLastname;
@@ -43,4 +44,7 @@ public class ReservationAiruse {
     private String infoAgree;
     @CreatedDate
     private LocalDateTime regDate;
+
+//    @ManyToOne
+//    private Users users;
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -25,6 +26,7 @@ public class Lodging {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_lodging")
     private Long idx;
+    private String type;
     private String companyNum;
     private String lodgingType;
     private String companyName;
@@ -36,4 +38,7 @@ public class Lodging {
     private String representative;
     private String email;
     private Integer likeCount;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
+//    private List<LodgingRoom> lodgingRoomList;
 }

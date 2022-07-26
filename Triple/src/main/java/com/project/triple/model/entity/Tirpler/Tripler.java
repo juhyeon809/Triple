@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Tirpler;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,7 +28,7 @@ public class Tripler {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_tripler")
     private Long idx;
     private Integer triplerNum;
-    private String userId;
+//    private String userId;
     private String country;
     private String city;
     private String nickname;
@@ -41,4 +42,6 @@ public class Tripler {
     private Integer likeCount;
     private Integer replyCount;
 
+//    @ManyToOne
+//    private Users users;
 }

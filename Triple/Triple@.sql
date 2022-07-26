@@ -1,6 +1,10 @@
 create sequence auto_increment
     increment by 1
     start with 1;
+    
+create sequence seq_air_ticket
+    increment by 1
+    start with 1;
 
 create table users(
     idx number(7) primary key,
@@ -70,15 +74,17 @@ create table air_ticket(
     aircraft_id number(7) not null,
     departure_airport varchar2(20) not null,
     landing_airport varchar2(20) not null,
-    departure_date date not null,
-    landing_date date not null,
+    departure_date varchar2(20) not null,
+    landing_date varchar2(20) not null,
     price number(8) not null,
     seat_num varchar2(10) not null,
     seat_grade varchar2(10) not null,
     baggage varchar2(10) not null,
-    rev_date date,
-    stauts varchar2(10) not null
+    rev_date date default sysdate,
+    status varchar2(10) not null
 );
+
+drop table air_ticket;
 
 create table reservation_airuse(
     idx number(7) primary key,

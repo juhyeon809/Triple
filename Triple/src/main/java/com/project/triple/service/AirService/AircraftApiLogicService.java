@@ -30,7 +30,6 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
                 .specialSeat(aircraft.getSpecialSeat())
                 .familySeat(aircraft.getFamilySeat())
                 .vipSeat(aircraft.getVipSeat())
-                .airlineId(aircraft.getAirlineId())
                 .build();
         return aircraftApiResponse;
     }
@@ -47,7 +46,6 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
                 .specialSeat(aircraftApiRequest.getSpecialSeat())
                 .familySeat(aircraftApiRequest.getFamilySeat())
                 .vipSeat(aircraftApiRequest.getVipSeat())
-                .airlineId(aircraftApiRequest.getAirlineId())
                 .build();
         Aircraft newAircraft = baseRepository.save(aircraft);
 
@@ -77,7 +75,6 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
                     aircraft1.setFamilySeat(aircraftApiRequest.getFamilySeat());
                     aircraft1.setFamilySeat(aircraftApiRequest.getFamilySeat());
                     aircraft1.setVipSeat(aircraftApiRequest.getVipSeat());
-                    aircraft1.setAirlineId(aircraftApiRequest.getAirlineId());
                     return aircraft1;
                 }).map(aircraft1 -> baseRepository.save(aircraft1)).map(aircraft1 -> response(aircraft1)).map(Header::OK)
                 .orElseGet(() -> Header.ERROR("데이터 없음"));

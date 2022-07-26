@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Guide;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +31,7 @@ public class GuideReview {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private String uploadPath;
     private String fileName;
     private String fileType;
@@ -38,4 +39,7 @@ public class GuideReview {
     private LocalDateTime regDate;
     private Integer likeCount;
     private Integer replyCount;
+
+//    @ManyToOne
+//    private Users users;
 }
