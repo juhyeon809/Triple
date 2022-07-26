@@ -126,12 +126,12 @@
                 <!--타이틀 끝-->
             </div>
             <!--매거진 정보 입력-->
-            <form action="" onsubmit="return magazineRegister()" name="form1">
+            <form action="" onsubmit="return magazineRegister()" name="form">
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">분류</div>
                 <div class="admin_inquiry_q3">
-                    <select name="" class="admin_inquiry_category2">
-                        <option value="전체">전체</option>
+                    <select name="" id="Mcategory" class="admin_inquiry_category2">
+                        <option value="">선택</option>
                         <option value="#여행지추천">#여행지추천</option>
                         <option value="#여행꿀팁">#여행꿀팁</option>
                         <option value="#맛집탐방">#맛집탐방</option>
@@ -146,27 +146,27 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">제목</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" class="admin_inquiry_category2">
+                    <input type="text" id="title" class="admin_inquiry_category2">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">해시태그</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" class="admin_inquiry_category2">
+                    <input type="text" id="tag" class="admin_inquiry_category2">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">썸네일 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
+                    <input type="file" name="img" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">매거진 내용</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            <p>매거진 내용을 입력하세요</p>
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                            매거진 내용을 입력하세요
                         </textarea>
                     </div>
                     
@@ -175,7 +175,7 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">바로가기 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
+                    <input type="file" name="shortcuts" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
@@ -190,14 +190,14 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">장소명</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" class="admin_inquiry_category2">
+                    <input type="text" id="place" class="admin_inquiry_category2">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">명소 소개</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor2" cols="100" rows="10" style="width: 100%; height: 200px;">
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
                             <p>명소 소개 내용을 입력하세요</p>
                         </textarea>
                     </div>
@@ -207,7 +207,7 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">명소 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
+                    <input type="file" name="sights" class="admin_inquiry_category2" multiple style="font-size: 16px; padding-top: 5px;" >
                 </div>
             </div>
             <!--매거진 정보입력 끝-->
@@ -223,67 +223,22 @@
 <script src="../script.js"></script>
 <script>
     var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor1",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor2",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
+        nhn.husky.EZCreator.createInIFrame({
+        oAppRef : oEditors,
+        elPlaceHolder : "weditor",//
+        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+        fCreator : "createSEditor2",
+        });
+
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+        oAppRef : oEditors,
+        elPlaceHolder : "weditor1",//
+        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+        fCreator : "createSEditor2",
+        });
 </script>
-<script>
-    function magazineRegister(){
-        const title = document.querySelector('.title');
-        const place = document.querySelector('.place');
-        const tag = document.querySelector('.tag');
+<script src="/admin/js/register.js"></script>
 
-        const file =  "\\.(bmp|gif|jpg|jpeg|png)$";
-        const fileImg = document.form1.img.value;
-        const shortcuts = document.form1.shortcuts.value;
-        const sights = document.form1.sights.value;
-
-
-        if(!$('#Mcategory > option:selected').val()) {
-            alert("분류를 선택해주세요");
-            $('#Mcategory').focus();
-            return false
-        }
-        if(title.value == ''){
-            alert('제목을 입력해주세요');
-            title.focus();
-            return false
-        }
-        if(tag.value == ''){
-            alert('해시태그를 입력해주세요');
-            tag.focus();
-            return false
-        }
-        if(!(new RegExp(file,"i")).test(fileImg)){
-            alert("썸네일 파일을 선택하여 주세요");
-            return false;
-        }
-        if(!(new RegExp(file,"i")).test(shortcuts)){
-            alert("바로가기 이미지 파일을 선택하여 주세요");
-            return false;
-        }
-        if(place.value == ''){
-            alert('장소명을 입력해주세요');
-            place.focus();
-            return false
-        }
-        
-        if(!(new RegExp(file,"i")).test(sights)){
-            alert("명소 파일을 선택하여 주세요");
-            return false;
-        }
-        return true
-    }
-</script>
 </body>
 </html>

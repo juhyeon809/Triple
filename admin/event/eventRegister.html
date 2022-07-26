@@ -176,21 +176,6 @@
         <!--이벤트 등록 끝-->
     </section>
     <script src="../script.js"></script>
-    <script>
-        function eventRegister(){
-            
-            if(!$('#eventCategory > option:selected').val()) {
-                alert("이벤트 분류를 선택해주세요");
-                $('#eventCategory').focus();
-                return false;
-            }
-            if($('.tit').val() == ''){
-                alert('타이틀명을 입력해주세요');
-                $('.tit').focus();
-                return false
-            }
-            return true;
-        }
-    </script>
+    <script src="/admin/js/register.js"></script>
 </body>
 </html>

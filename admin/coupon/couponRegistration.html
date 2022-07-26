@@ -158,26 +158,6 @@
     </section>
 
         <script src="../script.js"></script>
-        <script>
-            function coupon(){
-                
-                if($('.name').val() == ''){
-                    alert('쿠폰 이름을 입력해주세요')
-                    $('.name').focus();
-                    return false 
-                }
-                if($('.code').val() == ''){
-                    alert('쿠폰 이름을 입력해주세요')
-                    $('.code').focus();
-                    return false 
-                }
-                if(!$('#couponDis > option:selected').val()) {
-                    alert("할인내용을 선택해주세요");
-                    return false 
-                }
-                return true;
-
-            }
-        </script>
+        <script src="/admin/js/register.js"></script>
 </body>
 </html>

@@ -133,7 +133,7 @@
             </div>
             <div class="formbox register">
                 <!--항공사 정보 등록-->
-                <form action="" onsubmit="return sendit()">
+                <form action="" onsubmit="return airline()">
                     <div class="box new">
                         <ul>
                             <li>
@@ -188,23 +188,6 @@
     </div>
 
     <script src="../script.js"></script>
-    <script>
-        function sendit(){
-            const kor = RegExp(/[가-힣]+$/);
-            const eng = RegExp(/[a-zA-Z]/);
-
-            if(!kor.test($('.kor').val())){
-                alert('한글만 입력해주세요');
-                $('.kor').focus();
-                return false
-            }
-            if(!eng.test($('.eng').val())){
-                alert('영어만 입력해주세요');
-                $('.eng').focus();
-                return false
-            }
-            return true;
-        }
-    </script>
+    <script src="/admin/js/register.js"></script>
 </body>
 </html>
