@@ -169,15 +169,7 @@
                             <p>매거진 내용을 입력하세요</p>
                         </textarea>
                     </div>
-                    <script>
-                        var oEditors = [];
-                        nhn.husky.EZCreator.createInIFrame({
-                        oAppRef : oEditors,
-                        elPlaceHolder : "weditor",//
-                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                        fCreator : "createSEditor2",
-                        });
-                    </script>
+                    
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
@@ -233,7 +225,14 @@
     var oEditors = [];
     nhn.husky.EZCreator.createInIFrame({
     oAppRef : oEditors,
-    elPlaceHolder : "weditor",//
+    elPlaceHolder : "weditor1",//
+    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+    fCreator : "createSEditor2",
+    });
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+    oAppRef : oEditors,
+    elPlaceHolder : "weditor2",//
     sSkinURI : "../smarteditor/SmartEditor2Skin.html",
     fCreator : "createSEditor2",
     });
