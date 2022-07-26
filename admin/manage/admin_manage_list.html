@@ -278,5 +278,22 @@
         </div>
     </section>
     <script src="../script.js"></script>
+    <script>
+        $(document).ready(function(){
+        //약관동의 체크박스 전체 선택
+            $("#checkAll").click(function() {
+                if($("#checkAll").is(":checked")) $("input[name='faq']").prop("checked", true);
+                else $("input[name='faq']").prop("checked", false);
+            });
+            $("input[name='faq']").click(function() {
+                var total = $("input[name='faq']").length;
+                var checked = $("input[name='faq']:checked").length;
+        
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#checkAll").prop("checked", false);
+                else $("#checkAll").prop("checked", true); 
+            });
+    });
+    </script>
 </body>
 </html>
