@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,46 +10,15 @@
     <link rel="stylesheet" href="/app/css/common.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/app/js/common.js"></script>
-
 </head>
-=======
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
 
-<!-- head 시작 -->
-<head th:replace="fragement/head :: head"></head>
-<!-- head 끝 -->
-
->>>>>>> d96a6e4d0aced16547cd7d3837f5f83ea489c6f9
 <body>
     <div id="backg_image_area">
-        <header>
-            <div id="logo_area">
-                <div id="logo"><a href="/Triple"><img src="/lib/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-                <form id="menu_form">
-                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-                </form>
-                <div id="login_join"><a href="/Triple/login">LOGIN</a> | <a href="/Triple/join">JOIN</a></div>
-<<<<<<< HEAD
-                <div id="logout_mypage" style="display: none"><a href="/member/login_join/login.html">MYPAGE</a> | <a href="/member/login_join/login.html">LOGOUT</a></div>
-=======
->>>>>>> d96a6e4d0aced16547cd7d3837f5f83ea489c6f9
 
-            </div>
-            <div id="menu_area">
-                <ul id="menus">
-                    <li><a href="/member/overseas_travel/overseas_travel.html">해외여행</a></li>
-                    <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
-                    <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
-                    <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                    <li><a href="/member/tour_ticket/list.html">투어·티켓</a></li>
-                    <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
-                    <li><a href="/member/magazine/magazine.html" >여행매거진</a></li>
-                    <li><a href="/member/event/event.html">혜택/렌터카</a></li>
-                </ul>
-            </div>
-        </header>
+        <!-- header 시작 -->
+        <div th:replace="fragement/header :: header"></div>
+        <!-- header 끝 -->
+
     <div id="head_text_area">
         <div id="head_text">
         <p>떠나요 여행! <br> 트리플에서 최저가로 검색하고 <br> 여행 떠나자!</p>
