@@ -31,8 +31,8 @@ public class AirTicket {
     private Long idx;
     private String ticketType;
     private String ticketNum;
-    private Integer airlineId;
-    private Integer aircraftId;
+//    private Integer airlineId;
+//    private Integer aircraftId;
     private String departureAirport;
     private String landingAirport;
     private LocalDateTime departureDate;
@@ -45,4 +45,11 @@ public class AirTicket {
     private String revDate;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
+
+    @ManyToOne
+    private Airline airline;
+
+    @ManyToOne
+    private Aircraft aircraft;
+
 }

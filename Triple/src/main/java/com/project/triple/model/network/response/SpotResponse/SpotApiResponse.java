@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class SpotApiResponse {
     private Long idx;
+    private String type;
     private Integer spotNum;
     private String spotName;
     private String country;

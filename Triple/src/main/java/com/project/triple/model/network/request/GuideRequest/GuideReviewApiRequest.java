@@ -17,7 +17,7 @@ public class GuideReviewApiRequest {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private String uploadPath;
     private String fileName;
     private String fileType;

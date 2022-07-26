@@ -26,6 +26,7 @@ public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_tour")
     private Long idx;
+    private String type;
     private String tourNum;
     private String country;
     private String address;

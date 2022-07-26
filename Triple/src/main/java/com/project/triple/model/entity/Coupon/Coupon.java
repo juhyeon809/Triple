@@ -11,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -28,7 +29,7 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_coupon")
     private Long idx;
-    private Integer couponId;
+//    private Integer couponId;
     private String name;
     private String type;
     private BigDecimal price;
@@ -40,5 +41,8 @@ public class Coupon {
     private LocalDateTime endDate;
     @Enumerated(EnumType.STRING)
     private CouponUse couponUse;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
+    private List<UserCoupon> userCouponList;
 
 }

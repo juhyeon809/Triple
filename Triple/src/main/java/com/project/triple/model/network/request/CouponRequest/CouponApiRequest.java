@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Builder
 public class CouponApiRequest {
     private Long idx;
-    private Integer couponId;
+//    private Integer couponId;
     private String name;
     private String type;
     private BigDecimal price;

@@ -1,6 +1,7 @@
 package com.project.triple.model.entity.Guide;
 
 
+import com.project.triple.model.entity.User.AdminUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,8 +28,9 @@ public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide")
     private Long idx;
+    private String type;
     private Integer guideNum;
-    private String adminuserId;
+//    private String adminuserId;
     private String country;
     private String adminuserName;
     private String title;
@@ -39,5 +41,8 @@ public class Guide {
     @CreatedDate
     private LocalDateTime regDate;
     private Integer reviewCount;
+
+    @ManyToOne
+    private AdminUser adminUser;
 
 }

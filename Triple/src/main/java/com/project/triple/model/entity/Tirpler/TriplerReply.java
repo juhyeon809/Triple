@@ -1,5 +1,6 @@
 package com.project.triple.model.entity.Tirpler;
 
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,9 +32,11 @@ public class TriplerReply {
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+//    private String userId;
     private Integer likeCount;
     @CreatedDate
     private LocalDateTime regDate;
 
+    @ManyToOne
+    private Users users;
 }

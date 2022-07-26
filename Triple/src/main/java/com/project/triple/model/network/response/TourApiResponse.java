@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 public class TourApiResponse {
     private Long idx;
+    private String type;
     private String tourNum;
     private String country;
     private String address;

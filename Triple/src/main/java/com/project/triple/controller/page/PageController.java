@@ -54,7 +54,7 @@ public class PageController {
             session.setAttribute("name", name);
             return "redirect:/Triple";
         }else{
-            return "redirect:/pages/login";
+            return "redirect:/Triple/login";
         }
     }
 

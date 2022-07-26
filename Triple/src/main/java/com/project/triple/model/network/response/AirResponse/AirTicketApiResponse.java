@@ -17,8 +17,8 @@ public class AirTicketApiResponse {
     private Long idx;
     private String ticketType;
     private String ticketNum;
-    private Integer airlineId;
-    private Integer aircraftId;
+//    private Integer airlineId;
+//    private Integer aircraftId;
     private String departureAirport;
     private String landingAirport;
     private LocalDateTime departureDate;

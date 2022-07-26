@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -33,5 +34,11 @@ public class Aircraft {
     private Integer specialSeat;
     private Integer familySeat;
     private Integer vipSeat;
-    private Integer airlineId;
+//    private Integer airlineId;
+
+    @ManyToOne
+    private Airline airline;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aircraft")
+    private List<AirTicket> airTicketList;
 }
