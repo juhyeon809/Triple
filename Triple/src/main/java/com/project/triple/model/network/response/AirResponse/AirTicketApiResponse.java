@@ -21,12 +21,12 @@ public class AirTicketApiResponse {
     private Integer aircraftId;
     private String departureAirport;
     private String landingAirport;
-    private LocalDateTime departureDate;
-    private LocalDateTime landingDate;
+    private String departureDate;
+    private String landingDate;
     private BigDecimal price;
     private String seatNum;
     private String seatGrade;
     private String baggage;
-    private String revDate;
+    private LocalDateTime revDate;
     private TicketStatus status;
 }

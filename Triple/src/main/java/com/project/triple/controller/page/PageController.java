@@ -20,6 +20,8 @@ public class PageController {
 
     @Autowired
     private UsersApiLogicService usersApiLogicService;
+
+    // 메인페이지
     @RequestMapping(path={""})
     public ModelAndView index(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -36,17 +38,19 @@ public class PageController {
                 .addObject("name", name);
 
     }
-
+    //회원가입 페이지
     @RequestMapping(path="/join")
     public ModelAndView user_regist() {
         return new ModelAndView("/pages/join");
     }
 
+    //로그인페이지
     @RequestMapping(path="/login")
     public ModelAndView login() {
         return new ModelAndView("/pages/login");
     }
 
+    //로그인검증
     @PostMapping("/loginok")
     public String loginOk(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
         if(usersApiLogicService.login(email, userpw).getData() != null){
@@ -60,6 +64,22 @@ public class PageController {
             ScriptUtils.alertAndMovePage(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요", "/Triple/login" );
             return null;
         }
+    }
+
+    @RequestMapping(path = "/flightList")
+    public ModelAndView flightList(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/flight_reservation/flight_list").addObject("email", email)
+                .addObject("name", name);
     }
 
 }

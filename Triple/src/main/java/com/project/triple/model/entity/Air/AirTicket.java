@@ -35,14 +35,14 @@ public class AirTicket {
     private Integer aircraftId;
     private String departureAirport;
     private String landingAirport;
-    private LocalDateTime departureDate;
-    private LocalDateTime landingDate;
+    private String departureDate;
+    private String landingDate;
     private BigDecimal price;
     private String seatNum;
     private String seatGrade;
     private String baggage;
     @CreatedDate
-    private String revDate;
+    private LocalDateTime revDate;
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
 }

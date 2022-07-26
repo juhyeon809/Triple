@@ -23,4 +23,5 @@ public class ScriptUtils {
         PrintWriter out = response.getWriter();
         out.println("<script>alert('"+ alertText + "'); location.href='" +  nextPage + "';</script>");
     }
+
 }

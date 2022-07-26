@@ -18,6 +18,12 @@ $(".checkbox_group").on("click", ".normal", function(){
 
 
 $(function() {
+    //정규식 표현
+    const expEmailText = /^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/;
+    const expPwText = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/;
+    const expNicknameText = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,10}$/;
+    const expNameText = /[가-힣]+$/;
+    const expHpText = /^\d{3}-\d{3,4}-\d{4}$/;
 
     $(document).on('keydown', '#email', function (){
         $('#email').attr("check_result","fail");
@@ -29,6 +35,17 @@ $(function() {
     $(document).on('click', '#emailCheck', function () {
 
         let email = $('#email').val();
+
+        if(!email){
+            alert("이메일을 입력해주세요")
+            return false;
+        }
+
+        if (!expEmailText.test(email)) {
+            alert('이메일 형식을 확인하세요');
+            email.focus();
+            return false;
+        }
 
         $.ajax({
 
@@ -67,12 +84,7 @@ $(function() {
         const hp = document.getElementById('hp');
 
 
-        //정규식 표현
-        const expEmailText = /^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/;
-        const expPwText = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/;
-        const expNicknameText = /^([a-zA-Z0-9ㄱ-ㅎ|ㅏ-ㅣ|가-힣]).{2,10}$/;
-        const expNameText = /[가-힣]+$/;
-        const expHpText = /^\d{3}-\d{3,4}-\d{4}$/;
+
 
         //아무것도 입력하지 않았을 때 입력 안내 문자 출력하는 함수
         if (!$('#email').val()) {
@@ -88,11 +100,7 @@ $(function() {
             3. 형식은 문자@문자.문자 이어야 함
         */
 
-        if (!expEmailText.test(email.value)) {
-            alert('이메일 형식을 확인하세요');
-            email.focus();
-            return false;
-        }
+
 
 
         /*
