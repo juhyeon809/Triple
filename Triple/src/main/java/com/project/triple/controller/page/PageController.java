@@ -49,12 +49,12 @@ public class PageController {
     public String loginOk(HttpServletRequest request, String email, String userpw){
         if(usersApiLogicService.login(email, userpw).getData() != null){
             HttpSession session = request.getSession();
-            String name = usersApiLogicService.login(email, userpw).getData().getNickname();
+            String nickname = usersApiLogicService.login(email, userpw).getData().getNickname();
             session.setAttribute("email", email);
-            session.setAttribute("name", name);
+            session.setAttribute("nickname", nickname);
             return "redirect:/Triple";
         }else{
-            return "redirect:/pages/login";
+            return "redirect:/Triple/login";
         }
     }
 

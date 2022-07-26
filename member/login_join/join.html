@@ -7,7 +7,7 @@
     <title>TRIPLE | 회원가입</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/member/login_join/js/join.js"></script>
-    <link rel="stylesheet" href="/member/login_join/css/style.css">
+    <link rel="stylesheet" href="/member/login_join/css/login_join.css">
     <style>
         #hp { width: 180px; margin-top: 10px;}
     </style>
@@ -136,6 +136,23 @@
                     </div>
                 </li>
                 <!--약관동의서 끝-->
+                <script>
+                    $(document).ready(function(){
+                    //약관동의 체크박스 전체 선택
+                        $("#check_all").click(function() {
+                            if($("#check_all").is(":checked")) $("input[class='normal']").prop("checked", true);
+                            else $("input[lass='normal']").prop("checked", false);
+                        });
+                        $("input[lass='normal']").click(function() {
+                            var total = $("input[lass='normal']").length;
+                            var checked = $("input[lass='normal']:checked").length;
+                    
+                            //개별선택 해제시 전체체크박스 해제
+                            if(total != checked) $("#check_all").prop("checked", false);
+                            else $("#check_all").prop("checked", true); 
+                        });
+                });
+                </script>
                 <li>
                     <div class="content_join">
                         <input type="submit" value="확인" class="join_btn">
