@@ -40,6 +40,6 @@ public class LodgingRoom {
     @Enumerated(EnumType.STRING)
     private LodgingRoomStatus status;
 
-//    @ManyToOne
-//    private Lodging lodging;
+    @ManyToOne
+    private Lodging lodging;
 }

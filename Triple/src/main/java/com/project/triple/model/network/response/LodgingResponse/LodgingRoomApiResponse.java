@@ -23,7 +23,7 @@ public class LodgingRoomApiResponse {
     private Integer roomCapacity;
     private String roomPolicy;
     private Integer price;
-//    private Integer lodgingId;
+    private Long lodgingId;
     private LocalDateTime useDate;
     private LodgingRoomStatus status;
 }

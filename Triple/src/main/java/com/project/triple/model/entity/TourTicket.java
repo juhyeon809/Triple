@@ -1,5 +1,6 @@
 package com.project.triple.model.entity;
 
+import com.project.triple.model.entity.QnA.Question;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -42,4 +44,6 @@ public class TourTicket {
     @CreatedDate
     private LocalDateTime regDate;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tourTicket")
+    private List<Question> questionList;
 }

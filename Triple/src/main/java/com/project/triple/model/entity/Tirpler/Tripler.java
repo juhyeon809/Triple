@@ -42,6 +42,6 @@ public class Tripler {
     private Integer likeCount;
     private Integer replyCount;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 }

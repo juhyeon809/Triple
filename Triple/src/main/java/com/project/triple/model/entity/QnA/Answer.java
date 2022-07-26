@@ -36,9 +36,9 @@ public class Answer {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private Question question;
+    @ManyToOne
+    private Question question;
 
-//    @ManyToOne
-//    private AdminUser adminUser;
+    @ManyToOne
+    private AdminUser adminUser;
 }

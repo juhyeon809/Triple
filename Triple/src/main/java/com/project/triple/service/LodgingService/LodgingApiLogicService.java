@@ -15,6 +15,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
     private LodgingApiResponse response(Lodging lodging){
         LodgingApiResponse lodgingApiResponse = LodgingApiResponse.builder()
                 .idx(lodging.getIdx())
+                .type(lodging.getType())
                 .companyNum(lodging.getCompanyNum())
                 .lodgingType(lodging.getLodgingType())
                 .companyName(lodging.getCompanyName())

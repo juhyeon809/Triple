@@ -1,5 +1,9 @@
 package com.project.triple.model.entity.QnA;
 
+import com.project.triple.model.entity.Air.AirTicket;
+import com.project.triple.model.entity.Lodging.LodgingTicket;
+import com.project.triple.model.entity.TourTicket;
+import com.project.triple.model.entity.User.Users;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,9 +31,9 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_question")
     private Long idx;
-    private Integer inquaryId;
-    private Integer ticketNum;
-    private Integer userId;
+    private Long inquaryId;
+//    private Integer ticketNum;
+//    private Integer userId;
     private String typeCategory;
     private String typeDetail;
     private String title;
@@ -41,9 +45,19 @@ public class Question {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
-//    private List<Answer> answerList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
+    private List<Answer> answerList;
 
+    @ManyToOne
+    private Users users;
 
+    @ManyToOne
+    private AirTicket airTicket;
+
+    @ManyToOne
+    private LodgingTicket lodgingTicket;
+
+    @ManyToOne
+    private TourTicket tourTicket;
 
 }

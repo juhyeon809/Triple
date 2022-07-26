@@ -15,7 +15,7 @@ public class FaqApiResponse {
     private Long idx;
     private Integer faqNum;
     private String faqCategory;
-    //    private Integer adminuserID;
+    private Long adminuserID;
     private String adminuserName;
     private String title;
     private String content;

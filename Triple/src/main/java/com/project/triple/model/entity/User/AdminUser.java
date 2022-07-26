@@ -42,18 +42,18 @@ public class AdminUser {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
-//    private List<Magazine> magazineList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+    private List<Magazine> magazineList;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
-//    private List<Guide> guideList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+    private List<Guide> guideList;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
-//    private List<Answer> answerList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+    private List<Answer> answerList;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
-//    private List<Notice> noticeList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+    private List<Notice> noticeList;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminuser")
-//    private List<Faq> faqList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+    private List<Faq> faqList;
 }

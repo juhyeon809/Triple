@@ -20,4 +20,5 @@ public class ReviewReplyApiResponse {
     private String nickname;
     private Integer likeCount;
     private LocalDateTime regDate;
+    private Long userId;
 }

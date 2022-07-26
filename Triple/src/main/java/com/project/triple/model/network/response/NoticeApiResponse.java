@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class NoticeApiResponse {
     private Long idx;
     private Integer noticeNum;
-    //    private Integer adminuserId;
+    private Long adminuserId;
     private String adminuserName;
     private String title;
     private String content;

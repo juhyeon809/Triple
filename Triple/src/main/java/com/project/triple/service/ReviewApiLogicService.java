@@ -26,6 +26,7 @@ public class ReviewApiLogicService extends BaseService<ReviewApiRequest, ReviewA
                 .likeCount(review.getLikeCount())
                 .regDate(review.getRegDate())
                 .ticketNum(review.getTicketNum())
+                .userId(review.getUsers().getIdx())
                 .build();
         return reviewApiResponse;
     }

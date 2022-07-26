@@ -23,6 +23,7 @@ public class TourSpotReviewReplyApiLogicService extends BaseService<TourSpotRevi
                 .nickname(tourSpotReviewReply.getNickname())
                 .likeCount(tourSpotReviewReply.getLikeCount())
                 .regDate(tourSpotReviewReply.getRegDate())
+                .userId(tourSpotReviewReply.getUsers().getIdx())
                 .build();
         return tourSpotReviewReplyResponse;
     }

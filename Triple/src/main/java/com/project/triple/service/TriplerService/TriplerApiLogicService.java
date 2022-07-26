@@ -28,6 +28,7 @@ public class TriplerApiLogicService extends BaseService<TriplerApiRequest, Tripl
                 .regDate(tripler.getRegDate())
                 .likeCount(tripler.getLikeCount())
                 .replyCount(tripler.getReplyCount())
+                .userId(tripler.getUsers().getIdx())
                 .build();
         return triplerApiResponse;
     }

@@ -42,7 +42,7 @@ public class Guide {
     private LocalDateTime regDate;
     private Integer reviewCount;
 
-//    @ManyToOne
-//    private AdminUser adminUser;
+    @ManyToOne
+    private AdminUser adminUser;
 
 }

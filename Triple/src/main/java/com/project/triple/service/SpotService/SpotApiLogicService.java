@@ -16,6 +16,7 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
     private SpotApiResponse response(Spot spot){
         SpotApiResponse spotApiResponse = SpotApiResponse.builder()
                 .idx(spot.getIdx())
+                .type(spot.getType())
                 .spotNum(spot.getSpotNum())
                 .spotName(spot.getSpotName())
                 .country(spot.getCountry())

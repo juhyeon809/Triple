@@ -35,6 +35,6 @@ public class Mysave {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 }

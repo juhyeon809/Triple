@@ -32,9 +32,9 @@ public class UserCoupon {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private Users users;
-//
-//    @ManyToOne
-//    private Coupon coupon;
+    @ManyToOne
+    private Users users;
+
+    @ManyToOne
+    private Coupon coupon;
 }

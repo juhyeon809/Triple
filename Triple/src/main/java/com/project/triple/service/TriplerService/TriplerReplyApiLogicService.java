@@ -25,6 +25,7 @@ public class TriplerReplyApiLogicService extends BaseService<TriplerReplyApiRequ
                 .nickname(triplerReply.getNickname())
                 .likeCount(triplerReply.getLikeCount())
                 .regDate(triplerReply.getRegDate())
+                .userId(triplerReply.getUsers().getIdx())
                 .build();
         return triplerReplyApiResponse;
     }

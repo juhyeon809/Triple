@@ -39,6 +39,6 @@ public class Review {
     private String ticketNum;
 //    private Integer userid;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 }

@@ -19,7 +19,7 @@ public class TourSpotReviewReplyResponse {
     private String title;
     private String content;
     private String nickname;
-//    private String userId;
+    private Long userId;
     private Integer likeCount;
     private LocalDateTime regDate;
 }
