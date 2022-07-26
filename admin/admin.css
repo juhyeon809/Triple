@@ -595,7 +595,7 @@ main td {
     margin-right: 10px;
     padding: 0 10px;
     border-radius: 100px;
-    border: 2px solid #00bac4;
+    border: 2px solid #0098A1;
 }
 .content2 nav form .form-group input {
     width: 120px;
@@ -1907,7 +1907,7 @@ input[type="time"]{
 /* productlist */
 
 .admin_productlist_select {
-    width: 800px;
+    /* width: 800px; */
     display: flex;
     justify-content: space-around;
 }
