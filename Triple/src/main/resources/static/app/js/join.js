@@ -16,52 +16,48 @@ $(".checkbox_group").on("click", ".normal", function(){
         $("#check_all").prop("checked", is_checked);
 });
 
-$(function(){
-    $(document).on('click', '#email', function (){
+
+$(function() {
+
+    $(document).on('keydown', '#email', function (){
         $('#email').attr("check_result","fail");
         $('#email_ok').hide();
         $('#email_duplicate').hide();
         $('#check_need').show();
-        alert('이메일 중복체크를 다시 해주세요');
     })
-})
 
-$(function() {
     $(document).on('click', '#emailCheck', function () {
 
-    let email = $('#email').val();
+        let email = $('#email').val();
 
-    $.ajax({
+        $.ajax({
 
-        url: '/api/user/emailCheck',
-        type: 'post',
-        data: {email : email},
-        success:function (cnt){
-            console.log("검사 성공");
-            if(cnt != 1){
-                alert("사용가능한 이메일입니다.")
-                $('#email_ok').show();
-                $('#email_duplicate').hide();
-                $('#check_need').hide();
-                $('#email').attr("check_result","success");
-            }else{
-                alert("중복된 이메일입니다.")
-                $('#email_ok').hide();
-                $('#email_duplicate').show();
-                $('#check_need').hide();
-                $('#email').attr("check_result","fail");
+            url: '/api/user/emailCheck',
+            type: 'post',
+            data: {email : email},
+            success:function(cnt){
+                console.log("검사 성공");
+                if(cnt != 1){
+                    alert("사용가능한 이메일입니다.")
+                    $('#email_ok').show();
+                    $('#email_duplicate').hide();
+                    $('#check_need').hide();
+                    $('#email').attr("check_result","success");
+                }else{
+                    alert("중복된 이메일입니다.")
+                    $('#email_ok').hide();
+                    $('#email_duplicate').show();
+                    $('#check_need').hide();
+                    $('#email').attr("check_result","fail");
+                }
+            },
+            error:function(){
+                console.log("검사실패");
+                alert("이메일을 입력해주세요")
             }
-        },
-        error:function(){
-            console.log("검사실패");
-            alert("이메일을 입력해주세요")
-        }
 
         });
     });
-});
-
-$(function() {
     $(document).on('click', '#sendit', function () {
 
         const email = document.getElementById('email');
@@ -122,6 +118,7 @@ $(function() {
             userpw_re.focus();
             return false;
         }
+
 
         // 닉네임 형식 확인
         if (!expNicknameText.test(nickname.value)) {
