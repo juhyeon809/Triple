@@ -30,14 +30,15 @@ li{
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    box-shadow: 1px 1px 1px #e9e9e9;
+    /* box-shadow: 1px 1px 1px #e9e9e9; */
     border: none;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 12;
     width: 100%; 
-    background-color: #0098A1;
+    background:linear-gradient( to top, #0b9fa7, #14bec7 );
+    /* background-color: #13abb3; */
     margin-bottom: 20px;
     min-height: 70px;
 }
@@ -55,6 +56,61 @@ li{
     vertical-align: middle;
     align-items: center;
 }
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+}
+.user-info {
+    padding: 5px 30px 0 15px;
+    left: 0;
+    white-space: nowrap;
+    position: relative;
+    /* border-bottom: 1px solid #e9e9e9; */
+    /* background-color: #13abb3; */
+    background:linear-gradient( to top, #0b9fa7, #14bec7 );
+    height: 80px; 
+    box-sizing: border-box;
+    display: flex;
+    color: #fff;
+}
+.user-info .info-container {
+    cursor: default;
+    display: block;
+    position: relative;
+    top: 14px;
+    margin-left: 15px;
+}
+.sidebar .user-info .info-container .name {
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    max-width: 200px;
+    color: #fff; 
+}
+.sidebar .user-info .info-container .email {
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    max-width: 200px;
+    color: #fff; 
+}
+.sidebar .user-info .info-container .user-helper-dropdown {
+    position: absolute;
+    right: -3px;
+    bottom: -12px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    color: #fff; 
+}
 .navbar .navbar-toggle {
     text-decoration: none;
     color: #fff;
@@ -68,7 +124,7 @@ li{
 .navbar .navbar-collapse.in {
     overflow: visible; }
 .navbar-header {
-    padding: 10px 7px; 
+    padding: 15px 10px 0 20px; 
 }
 .navbar-header .bars {
     float: left;
@@ -124,65 +180,19 @@ section{
     z-index: 11 !important;
     box-sizing: border-box;
 }
-.sidebar .user-info {
-    padding: 13px 15px 12px 15px;
-    white-space: nowrap;
-    position: relative;
-    border-bottom: 1px solid #e9e9e9;
-    background-color: #0098A1;
-    height: 80px; 
-    box-sizing: border-box;
-    display: flex;
-}
-.sidebar .user-info .image {
+
+/* .sidebar .user-info .image {
     margin-right: 12px;
     display: inline-block; 
-}
-.sidebar .user-info .image img {
+} */
+/* .sidebar .user-info .image img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%;
     vertical-align: bottom !important; 
-}
-.sidebar .user-info .info-container {
-    cursor: default;
-    display: block;
-    position: relative;
-    top: 14px;
-    margin-left: 15px;
-}
-.sidebar .user-info .info-container .name {
-    white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 14px;
-    max-width: 200px;
-    color: #fff; 
-}
-.sidebar .user-info .info-container .email {
-    white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 12px;
-    max-width: 200px;
-    color: #fff; 
-}
-.sidebar .user-info .info-container .user-helper-dropdown {
-    position: absolute;
-    right: -3px;
-    bottom: -12px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none;
-    cursor: pointer;
-    color: #fff; 
-}
+} */
+
 
 #sidebar ::-webkit-scrollbar {
     display: none;
