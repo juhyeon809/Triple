@@ -8,9 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="../admin.css">
-    </head>
-    <body>
-        
     <style>
 
     form{
@@ -19,7 +16,7 @@
 
     form ul {
                 list-style: none;
-                width:980px;
+                width:100%;
                 padding: 0;
                 margin: 0 0 0 20px;
     }
@@ -37,18 +34,16 @@
         text-align: center;
         font-weight: bold;
         margin-right: 10px;
-        
+        width: 30%;
+        background-color: #0098A1;
     }
-    .regForm ul{
-        width: 800px;
-        text-align: center;
-    }
+    
     .regForm ul input{
-        width: 200px;
+        width:50%;
         height: 30px;
     }
     .regForm ul li{
-        width: 300px;
+        width:100%;
         margin-bottom: 30px;
     }
     .reg_content{
@@ -57,9 +52,27 @@
 
 
     </style>
-        <!-- 사이드바-->
-        <selction id="sidebar">
-            <a href="../main.html" class="active"><img src="../img-main-logo-white@3x.png" alt=""></a>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a> -->
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
+            </div>
+            <div class="user-info">
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
+                </div>
+            </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -145,10 +158,17 @@
                 </li>
                 <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
             </ul>
-        </selction>
-        <!--사이드바 끝-->
+        </aside>
+    </section>
+    <!--사이드바 끝-->
         <section class="content2">
-            <h2>취항지 신규 등록</h2>
+            <div class="content2-fluid">
+                <!--타이틀-->
+            <div class="header_box">
+                <h2>취항지 신규 등록</h2>
+            </div>
+            <!--타이틀 끝-->
+            
             <!--취항지 정보 등록-->
             <div class="form">
                 <form action="#" class="regForm" onsubmit="return destination()">
@@ -185,26 +205,9 @@
                 </form>
             </div>
             <!--취항지 정보 등록 끝-->
-</section>
+        </div>
+    </section>
 <script src="../script.js"></script>
-<script>
-    function destination(){
-        const airport = RegExp(/[a-zA-Z가-힣]/);
-        const code = RegExp(/[a-zA-Z]/);
-
-            if(!airport.test($('.name').val())){
-                alert('공항명을 입력해주세요')
-            $('.name').focus();
-            return false;
-            }
-            if(!code.test($('.code').val())){
-                alert('공항코드을 입력해주세요')
-            $('.code  ').focus();
-            return false;
-            }
-        return true;
-    }
-
-</script>
+<script src="/admin/js/register.js"></script>
 </body>
 </html>
