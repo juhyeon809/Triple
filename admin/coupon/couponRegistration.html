@@ -145,20 +145,17 @@
         <script src="../script.js"></script>
         <script>
             function coupon(){
-                const coupon = RegExp(/[a-zA-Z가-힣0-9]/);
-                const code = RegExp(/[a-zA-Z가-힣0-9]/);
-
-                if(!coupon.test($('.name').val())){ 
-                    alert('쿠폰 이름을 입력해주세요');
+                
+                if($('.name').val() == ''){
+                    alert('쿠폰 이름을 입력해주세요')
                     $('.name').focus();
                     return false 
                 }
-                if(!coupon.test($('.code').val())){ 
-                    alert('쿠폰코드를 입력해주세요');
+                if($('.code').val() == ''){
+                    alert('쿠폰 이름을 입력해주세요')
                     $('.code').focus();
                     return false 
                 }
-
                 if(!$('#couponDis > option:selected').val()) {
                     alert("할인내용을 선택해주세요");
                     return false 

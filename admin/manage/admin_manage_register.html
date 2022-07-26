@@ -101,15 +101,16 @@
         </ul>
     </selction>
 <!--사이드바 끝-->
-<!--타이틀-->
+
+    <section class="content2">
+        <!--타이틀-->
     <div class="header_box">
         <h2>관리자 등록</h2>
     </div>
     <!--타이틀 끝-->
-    <section class="content2">
         <!--main-->
         <!--관리자 정보 등록-->
-            <form action=""  onsubmit="return adminRegister()">
+            <form action="" onsubmit="return adminRegister()">
                 <div class="admin_manage_form_container">
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_adminid">아이디 </p>
@@ -169,8 +170,8 @@
     <script>
         function adminRegister(){
             const id = document.querySelector('.admin_register_adminid_content');
-            const pw = document.querySelector('.dmin_register_adminpw');
-            const pwCheck = document.querySelector('.admin_register_adminpwre');
+            const pw = document.querySelector('.admin_register_adminpw_content');
+            const pwCheck = document.querySelector('.admin_register_adminpwre_content');
             const ph = document.querySelector('.admin_register_hp_content');
             const email = document.querySelector('.admin_register_email_content');
             const name = document.querySelector('.admin_register_name_content');
@@ -189,13 +190,12 @@
             }
             if(!expid.test(id.value)){
                 alert('아이디를 다시 확인해주세요');
-                $('.admin_register_adminid_content').val('');
-                $('.admin_register_adminid_content').focus();
+                id.focus();
                 return false
             }
             if(pw.value == ''){
                 alert('비밀번호를 입력하세요')
-                id.focus();
+                pw.focus();
                 return false;
             }
             if(!exppw.test(pw.value)){
@@ -203,7 +203,7 @@
                 pw.focus();
                 return false
             }
-            f(name.value == ''){
+            if(name.value == ''){
                 alert('이름을 입력하세요')
                 name.focus();
                 return false;
@@ -229,11 +229,11 @@
                 return false
             }
 
-            if(!$('#admin_register_department_content option:selected').val()) {
+            if(!$('#admin_register_department_content option:selected').val()){
                 alert("부서를 선택해주세요");
             }
 
-            f(email.value == ''){
+            if(email.value == ''){
                 alert('이메일을 입력하세요')
                 email.focus();
                 return false;

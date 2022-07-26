@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | FAQ등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -107,56 +108,58 @@
         </div>
         <!--타이틀 끝-->
         <!--카테고리 분류-->
-        <div>
-            <p class="admin_inquiry_category1">분류
-                <select name="" class="admin_inquiry_category2">
-                    <option value="전체">전체</option>
-                    <option value="BEST">BEST</option>
-                    <option value="항공">항공</option>
-                    <option value="숙소">숙소</option>
-                    <option value="투어,티켓">투어,티켓</option>
-                    <option value="서비스일반">서비스일반</option>
-                    <option value="공통">공통</option>
-                </select>
-            </p>
-        </div>
-        <!--카테코리 분류 끝-->
-        <div class="admin_inquiry_qtext">자주하는 질문</div>
-        <!--자주묻는질문-->
-        <div>
+        <form action="" onsubmit="return category()">
             <div>
-                <div class="admin_inquiry_q3">
-                    <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 720px; height: 200px;">
-                            <p>계정을 잃어버렸어요.</p>
-                        </textarea>
+                <p class="admin_inquiry_category1">분류
+                    <select id="faqCategory" class="admin_inquiry_category2">
+                        <option value="">전체</option>
+                        <option value="BEST">BEST</option>
+                        <option value="항공">항공</option>
+                        <option value="숙소">숙소</option>
+                        <option value="투어,티켓">투어,티켓</option>
+                        <option value="서비스일반">서비스일반</option>
+                        <option value="공통">공통</option>
+                    </select>
+                </p>
+            </div>
+            <!--카테코리 분류 끝-->
+            <div class="admin_inquiry_qtext">자주하는 질문</div>
+            <!--자주묻는질문-->
+            <div>
+                <div>
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 720px; height: 200px;">
+                                <p>계정을 잃어버렸어요.</p>
+                            </textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--자주묻는질문 끝-->
-        <!--질문 답변 작성-->
-        <div class="admin_inquiry_atext">답변</div>
-        <div class="admin_inquiry_a1">
-            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 720px; height: 200px;">
-                <p>[간편로그인 - 계정 연결 서비스 확인 방법]<br>
-                    - 카카오톡<br>
-                    카카오톡 앱 > 더보기 > 설정 > 개인/보안 > 카카오 계정 > 연결된 서비스 관리<br>
-                    - 네이버<br>
-                    네이버 앱/웹 좌측 상단 [   ] > 로그인 > 좌측 OOO님 터치 > 이력관리 > 연결된 서비스 관리<br>
-                    - 페이스북<br>
-                    페이스북 앱 우측 상단 또는 하단 [   ] > 설정 및 개인정보 > 설정 > 앱 및 웹사이트<br>
-                    - 애플<br>
-                    휴대폰 설정 > 사용자 이름(Apple ID) > 암호 및 보안 > Apple ID를 사용하는 앱
-                </p>
-            </textarea>
-        </div>
-        <!--질문 답변 작성 끝-->
-        <!--등록버튼-->
-        <div class="admin_inquiry_datail_btn">
-            <button class="admin_inquiry_datail_btn1" value="등록">등록</button>
-        </div>
-        <!--등록버튼 끝-->
+            <!--자주묻는질문 끝-->
+            <!--질문 답변 작성-->
+            <div class="admin_inquiry_atext">답변</div>
+            <div class="admin_inquiry_a1">
+                <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 720px; height: 200px;">
+                    <p>[간편로그인 - 계정 연결 서비스 확인 방법]<br>
+                        - 카카오톡<br>
+                        카카오톡 앱 > 더보기 > 설정 > 개인/보안 > 카카오 계정 > 연결된 서비스 관리<br>
+                        - 네이버<br>
+                        네이버 앱/웹 좌측 상단 [   ] > 로그인 > 좌측 OOO님 터치 > 이력관리 > 연결된 서비스 관리<br>
+                        - 페이스북<br>
+                        페이스북 앱 우측 상단 또는 하단 [   ] > 설정 및 개인정보 > 설정 > 앱 및 웹사이트<br>
+                        - 애플<br>
+                        휴대폰 설정 > 사용자 이름(Apple ID) > 암호 및 보안 > Apple ID를 사용하는 앱
+                    </p>
+                </textarea>
+            </div>
+            <!--질문 답변 작성 끝-->
+            <!--등록버튼-->
+            <div class="admin_inquiry_datail_btn">
+                <button class="admin_inquiry_datail_btn1" value="등록">등록</button>
+            </div>
+            <!--등록버튼 끝-->
+        </form>
     <script src="../script.js"></script>
     <script>
         var oEditors = [];
@@ -173,7 +176,16 @@
         sSkinURI : "../smarteditor/SmartEditor2Skin.html",
         fCreator : "createSEditor2",
         });
-
+        function category(){
+            if(!$('#faqCategory > option:selected').val()) {
+                alert("분류를 선택해주세요");
+                $('#faqCategory').focus();
+                return false
+            }
+            return true;
+        }
+        
     </script>
+    
 </body>
 </html>

@@ -102,14 +102,15 @@
         </ul>
     </selction>
     <!--사이드바 끝-->
-    <!--타이틀-->
-    <div class="header_box">
-        <h2>매거진 등록</h2>
-    </div>
-    <!--타이틀 끝-->
+    
     <section class="content2">
+        <!--타이틀-->
+        <div class="header_box">
+            <h2>매거진 등록</h2>
+        </div>
+        <!--타이틀 끝-->
         <!--매거진 정보 입력-->
-        <form action="" onsubmit="return magazineRegister()">
+        <form action="" onsubmit="return magazineRegister()" name="form1">
             <div class="magazine_register">
                 <div class="magazine_register_1">
                         <div class="magazine_register_1_1">분류</div>
@@ -137,14 +138,14 @@
                 <div class="magazine_register_4">
                     <div class="magazine_register_2_1">해시태그</div>
                     <div class="magazine_register_2_2">
-                        <input type="text">
+                        <input type="text" class="tag">
                     </div>
                 </div>
 
                 <div class="magazine_register_5">
                     <div class="magazine_register_5_1">썸네일 이미지</div>
                     <div class="magazine_register_5_2">
-                        <input type="file" name="" id="" multiple>
+                        <input type="file" name="img" id="" multiple>
                     </div>
                 </div>
 
@@ -159,7 +160,7 @@
                     <div class="magazine_register_6">
                         <div class="magazine_register_6_1"><br>바로가기 이미지</div>
                         <div class="magazine_register_6_2">
-                            <input type="file">
+                            <input type="file" name="shortcuts">
                         </div>
                     </div>
 
@@ -189,7 +190,7 @@
                 <div class="magazine_register_11">
                     <div class="magazine_register_11_1">명소 이미지</div>
                     <div class="magazine_register_11_2">
-                        <input type="file" multiple>
+                        <input type="file" name="sights" multiple>
                     </div>
                 </div>
                 <div class="magazine_register_12">
@@ -218,26 +219,48 @@
         });
     </script>
     <script>
-        function magazineRegister(frm){
-            const title = RegExp(/[가-힣a-zA-Z\!\.\?\*\+\-]/);
-            const place = RegExp(/[가-힣a-zA-Z\!\.\?\*\+\-]/);
-            const file = frm.upfile.value;
-            
+        function magazineRegister(){
+            const title = document.querySelector('.title');
+            const place = document.querySelector('.place');
+            const tag = document.querySelector('.tag');
+
+            const file =  "\\.(bmp|gif|jpg|jpeg|png)$";
+            const fileImg = document.form1.img.value;
+            const shortcuts = document.form1.shortcuts.value;
+            const sights = document.form1.sights.value;
+
+
             if(!$('#Mcategory > option:selected').val()) {
                 alert("분류를 선택해주세요");
+                $('#Mcategory').focus();
+                return false
             }
-            if(!title.test($('.title').val())){
+            if(title.value == ''){
                 alert('제목을 입력해주세요');
-                $('.title').focus();
+                title.focus();
                 return false
             }
-            if(!place.test($('.place').val())){
+            if(tag.value == ''){
+                alert('해시태그를 입력해주세요');
+                tag.focus();
+                return false
+            }
+            if(!(new RegExp(file,"i")).test(fileImg)){
+                alert("썸네일 파일을 선택하여 주세요");
+                return false;
+            }
+            if(!(new RegExp(file,"i")).test(shortcuts)){
+                alert("바로가기 이미지 파일을 선택하여 주세요");
+                return false;
+            }
+            if(place.value == ''){
                 alert('장소명을 입력해주세요');
-                $('.place').focus();
+                place.focus();
                 return false
             }
-            if( !file ){ 
-                alert( "파일을 선택하여 주세요");
+            
+            if(!(new RegExp(file,"i")).test(sights)){
+                alert("명소 파일을 선택하여 주세요");
                 return false;
             }
             return true
