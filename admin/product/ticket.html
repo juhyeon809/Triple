@@ -129,7 +129,7 @@
                     <ul class="formbox_ul">
                         <li>
                             <!--상품 분류 선택-->
-                            <div class="formbox_div4">
+                            <div class="formbox_div4 ticket">
                                 <p class="formbox_ul_title">분류</p>
                                 <select name="" id="" class="formbox_ul_select1">
                                     <option value="">상품분류</option>
@@ -157,9 +157,9 @@
                             <!--상품 분류 선택 끝-->
                         </li>
                         <li>
-                            <div class="formbox_div4">
+                            <div class="formbox_div4 ticket">
                                 <p class="formbox_ul_title">상품명</p>
-                                <input type="text" width="200px" height="25px">
+                                <input type="text">
                             </div>
                         </li>
                         <li>
@@ -181,8 +181,8 @@
                         <li>
                             <!--연령대별 가격-->
                             <div class="formbox_div3">
-                                <p class="formbox_ul_title">상품가격</p>
-                                <div class="formbox_input_price">
+                                <p class="formbox_ul_title" style="line-height: 150px;">상품가격</p>
+                                <div class="formbox_input_price" style="width: 75%; padding-top: 15px;">
                                     <p>
                                         <input type="text" placeholder="성인" readonly style="width: 60px; text-align: center;"> / <input type="text" name="" id="">원
                                     </p>
@@ -200,10 +200,12 @@
                             <!--연령대별 가격 끝-->
                         </li>
                         <li>
-                            <div class="formbox_div6">
-                                <p class="formbox_ul_title_info">상품 프로그램</p>
-                                <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                            <div class="formbox_div6 ticket">
+                                <p class="formbox_ul_title_info">불포함사항</p>
                             </div>
+                                <div style="width: 100%;">
+                                    <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 250px; width: 100%;" ></textarea>
+                                </div>
                         </li>
                         <!--등록버튼-->
                         <li class="formbox_ul_btn">
