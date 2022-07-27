@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 @Builder
 public class QuestionApiRequest {
     private Long idx;
-    private Integer inquaryId;
-    private Integer ticketNum;
-    private Integer userId;
+    private Long inquaryId;
+//    private Integer ticketNum;
+//    private Integer userId;
     private String typeCategory;
     private String typeDetail;
     private String content;

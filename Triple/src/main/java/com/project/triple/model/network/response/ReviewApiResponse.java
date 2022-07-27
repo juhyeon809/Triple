@@ -24,5 +24,5 @@ public class ReviewApiResponse {
     private Integer likeCount;
     private LocalDateTime regDate;
     private String ticketNum;
-//    private Integer userid;
+    private Long userId;
 }

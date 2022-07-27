@@ -18,5 +18,5 @@ public class ReservationApiResponse {
     private String email;
     private String hp;
     private String emergencyHp;
-//    private Integer userid;
+    private Long userId;
 }

@@ -7,6 +7,7 @@
     <title>관리자 | 항공권 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
+    <script src="./prduct.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -123,12 +124,65 @@
                 <h2>상품등록 | 항공권</h2>
             </div>
             <!--타이틀 끝-->
-            <div class="formbox register">
+            <div class="register">
                 <!--항공권 정보 등록-->
-                <form action="">
+                <form action="" onsubmit="return productAir()" name="aform">
                     <div class="box">
-                        <div class="leftbox">
-                            <p class="mintit">로고 <input type="file"></p>
+                        <div class="center">
+                            <ul>
+                                <li>
+                                    <p >로고 </p>
+                                    <input type="file" id="logo_img">
+                                </li>
+                                <li><p>국내/국외 </p>
+                                    <select name="" id="DOcategory">
+                                        <option value="">선택</option>
+                                        <option value="국내">국내</option>
+                                        <option value="국외">국외</option>
+                                    </select>
+                                </li>
+                                <li> 
+                                    <p>출발시간</p> 
+                                    <input type="time" name="" id="" class="go_time">
+                                </li>
+                                <li>
+                                    <p>도착시간</p> 
+                                    <input type="time" name="" id=""  class="arr_time">
+                                </li>
+                                <li>
+                                    <p>비행시간</p><input type="text" class="flytime">
+                                </li>
+                                <li>
+                                    <p>도착지</p> 
+                                    <input type="text" class="arrive">
+                                </li>
+                                <li>
+                                    <p>항공사명</p> 
+                                    <select name="" id="airline">
+                                        <option value="">선택</option>
+                                        <option value="대한항공">대한항공</option>
+                                        <option value="아시아나항공">아시아나항공</option>
+                                        <option value="제주항공">제주항공</option>
+                                        <option value="진에어">진에어</option>
+                                        <option value="부산에어">부산에어</option>
+                                    </select>
+                                </li>
+                                <li> 
+                                    <p>항공기명</p> 
+                                    <select name="" id="plane_name">
+                                        <option value="">선택</option>
+                                        <option value="1"></option>
+                                        <option value="1"></option>
+                                        <option value="1"></option>
+                                        <option value="1"></option>
+                                    </select>
+                                </li>
+                                <li> 
+                                    <p>수화물</p> 
+                                    <input type="text" class="hydrate">
+                                </li>
+                            </ul>
+                            <!-- <p class="mintit">로고 <input type="file"></p>
                             
                             <p class="mintit">국내/국외 <select name="" id="">
                                 <option value="">국내</option>
@@ -139,8 +193,6 @@
                             
                             <p>비행시간 <input type="text"></p>
                             
-                        </div>
-                        <div class="rightbox">
                             <p>항공사명 
                                 <select name="" id="">
                                     <option value="">대한항공</option>
@@ -162,7 +214,7 @@
                             
                             <p>도착시간 <input type="time" name="" id=""></p>
                             
-                            <p>수화물 <input type="text" style="margin-left: 35px;"></p>
+                            <p>수화물 <input type="text" style="margin-left: 35px;"></p> -->
                         </div>
                     </div>
                     <!--좌석별 가격-->

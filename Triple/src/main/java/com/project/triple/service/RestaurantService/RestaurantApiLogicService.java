@@ -17,6 +17,7 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         RestaurantApiResponse restaurantApiResponse = RestaurantApiResponse.builder()
 
                 .idx(restaurant.getIdx())
+                .type(restaurant.getType())
                 .restNum(restaurant.getRestNum())
                 .restName(restaurant.getRestName())
                 .country(restaurant.getCountry())

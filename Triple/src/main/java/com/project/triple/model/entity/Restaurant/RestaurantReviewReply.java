@@ -37,6 +37,6 @@ public class RestaurantReviewReply {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 }

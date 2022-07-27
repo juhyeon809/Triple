@@ -33,7 +33,7 @@ public class Reservation {
     private String hp;
     private String emergencyHp;
 //    private Integer userid;
-//
-//    @ManyToOne
-//    private Users users;
+
+    @ManyToOne
+    private Users users;
 }

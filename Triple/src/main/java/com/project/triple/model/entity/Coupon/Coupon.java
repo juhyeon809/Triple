@@ -29,7 +29,7 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_coupon")
     private Long idx;
-//    private Integer couponId;
+    private Long couponId;
     private String name;
     private String type;
     private BigDecimal price;
@@ -42,7 +42,7 @@ public class Coupon {
     @Enumerated(EnumType.STRING)
     private CouponUse couponUse;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
-//    private List<UserCoupon> userCouponList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
+    private List<UserCoupon> userCouponList;
 
 }

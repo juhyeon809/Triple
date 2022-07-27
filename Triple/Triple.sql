@@ -112,7 +112,7 @@ create sequence seq_air_ticket
 
 create table reservation_airuse(
     idx number(7) primary key,
-    userid number(7) not null,
+    user_id number(7) not null,
     ticket_type varchar2(10) not null,
     ticket_num number(7) not null,
     eng_lastname number(7) not null,
@@ -251,7 +251,7 @@ create table reservation(
     email varchar2(30) not null,
     hp varchar2(20) not null,
     emergency_hp varchar2(20) not null,
-    userid number(7) not null
+    user_id number(7) not null
 );
 
 create sequence seq_reservation
@@ -266,7 +266,7 @@ create table review(
     content varchar2(300) not null,
     star_count varchar2(20) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     uploadPath varchar2(200),
     fileName varchar2(200),
     fileType varchar2(10),
@@ -287,7 +287,7 @@ create table review_reply(
     title varchar2(50) not null,
     content varchar2(100) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     like_count number(5),
     reg_date date default sysdate
 );
@@ -359,7 +359,7 @@ create table spot_review(
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     uploadPath varchar2(200),
     fileName varchar2(200),
     fileType varchar2(10),
@@ -381,7 +381,7 @@ create table tourspot_review_reply(
     title varchar2(50) not null,
     content varchar2(100) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     like_count number(5) default 0,
     reg_date date default sysdate
 );
@@ -422,7 +422,7 @@ create table restaurant_review(
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     uploadPath varchar2(200),
     fileName varchar2(200),
     fileType varchar2(10),
@@ -444,7 +444,7 @@ create table restaurant_review_reply(
     title varchar2(50) not null,
     content varchar2(100) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     like_count number(5) default 0,
     reg_date date default sysdate
 );
@@ -475,7 +475,7 @@ create sequence seq_coupon
 
 create table user_coupon(
     idx number(7) primary key,
-    userid varchar(10),
+    user_id number(7) not null,
     coupon_id number(7),
     reg_date date default sysdate
 );
@@ -489,7 +489,7 @@ create table guide(
     idx number(7) primary key,
     type varchar2(10) unique not null,
     guide_num number(7) not null,
-    adminuser_id varchar2(10) not null,
+    adminuser_id number(7) not null,
     country varchar2(20) not null,
     city varchar2(20) not null,
     adminuser_name varchar2(20) not null,
@@ -513,7 +513,7 @@ create table guide_review(
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     uploadPath varchar2(200),
     fileName varchar2(200),
     fileType varchar2(10),
@@ -534,7 +534,7 @@ create table guide_review_reply(
     title varchar2(50) not null,
     content varchar2(100) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     like_count number(5) default 0,
     reg_date date default sysdate
 );
@@ -569,7 +569,7 @@ create table answer(
     idx number(7) primary key,
     answer_num number(7) not null,
     inquary_id number(7) not null,
-    adminuser_id number(8) not null,
+    adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
     title varchar2(20) not null,
     content varchar2(300) not null,
@@ -584,7 +584,7 @@ create sequence seq_answer
 create table tripler(
     idx number(7) primary key,
     tripler_num number(7) not null,
-    userid varchar2(10) not null,
+    user_id number(7) not null,
     country varchar2(20) not null,
     city varchar2(20) not null,
     nickname	 varchar2(20) not null,
@@ -610,7 +610,7 @@ create table tripler_reply(
     title varchar2(50) not null,
     content varchar2(100) not null,
     nickname varchar2(20) not null,
-    user_id varchar2(30) not null,
+    user_id number(7) not null,
     like_count number(5) default 0,
     reg_date date default sysdate
 );
@@ -622,7 +622,7 @@ create sequence seq_tripler_reply
 
 create table mysave(
     idx number(7) primary key,
-    userid number(7) not null,
+    user_id number(7) not null,
     item_num number(7) not null,
     save_yn varchar2(10) not null,
     memo varchar2(100),

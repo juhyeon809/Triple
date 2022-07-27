@@ -17,6 +17,8 @@ public class UserCouponApiLogicService extends BaseService<UserCouponApiRequest,
         UserCouponApiResponse userCouponApiResponse = UserCouponApiResponse.builder()
                 .idx(userCoupon.getIdx())
                 .regDate(userCoupon.getRegDate())
+                .userId(userCoupon.getUsers().getIdx())
+                .couponId(userCoupon.getCoupon().getCouponId())
                 .build();
         return userCouponApiResponse;
     }

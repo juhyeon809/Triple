@@ -17,7 +17,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         GuideApiResponse guideApiResponse = GuideApiResponse.builder()
                 .idx(guide.getIdx())
                 .guideNum(guide.getGuideNum())
-
+                .type(guide.getType())
                 .country(guide.getCountry())
                 .adminuserName(guide.getAdminuserName())
                 .title(guide.getTitle())
@@ -27,6 +27,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
                 .fileType(guide.getFileType())
                 .regDate(guide.getRegDate())
                 .reviewCount(guide.getReviewCount())
+                .adminuserId(guide.getAdminUser().getIdx())
                 .build();
         return guideApiResponse;
     }

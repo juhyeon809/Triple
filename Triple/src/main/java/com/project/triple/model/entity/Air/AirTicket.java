@@ -1,6 +1,7 @@
 package com.project.triple.model.entity.Air;
 
 
+import com.project.triple.model.entity.QnA.Question;
 import com.project.triple.model.enumclass.TicketStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +13,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -46,10 +48,13 @@ public class AirTicket {
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
 
-//    @ManyToOne
-//    private Airline airline;
-//
-//    @ManyToOne
-//    private Aircraft aircraft;
+    @ManyToOne
+    private Airline airline;
+
+    @ManyToOne
+    private Aircraft aircraft;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airTicket")
+    private List<Question> questionList;
 
 }

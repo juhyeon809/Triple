@@ -32,10 +32,10 @@ public class Airline {
     private String contactNum1;
     private String contactNum2;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
-//    private List<Aircraft> aircraftList;
-//
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
-//    private List<AirTicket> airTicketList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
+    private List<Aircraft> aircraftList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
+    private List<AirTicket> airTicketList;
 
 }

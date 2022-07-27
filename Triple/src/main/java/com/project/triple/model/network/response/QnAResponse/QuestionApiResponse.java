@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 @Builder
 public class QuestionApiResponse {
     private Long idx;
-    private Integer inquaryId;
-    private Integer ticketNum;
-    private Integer userId;
+    private Long inquaryId;
+    private String ticketNum;
+    private Long userId;
     private String typeCategory;
     private String typeDetail;
     private String content;

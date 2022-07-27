@@ -39,6 +39,6 @@ public class Faq {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private AdminUser adminUser;
+    @ManyToOne
+    private AdminUser adminUser;
 }

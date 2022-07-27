@@ -39,6 +39,6 @@ public class Lodging {
     private String email;
     private Integer likeCount;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
-//    private List<LodgingRoom> lodgingRoomList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
+    private List<LodgingRoom> lodgingRoomList;
 }

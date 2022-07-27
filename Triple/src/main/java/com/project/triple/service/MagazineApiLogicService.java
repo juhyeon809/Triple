@@ -25,6 +25,7 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
                 .fileName(magazine.getFileName())
                 .fileType(magazine.getFileType())
                 .regDate(magazine.getRegDate())
+                .adminuserId(magazine.getAdminUser().getIdx())
                 .build();
         return magazineApiResponse;
     }

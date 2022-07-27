@@ -41,7 +41,7 @@ public class RestaurantReview {
     private LocalDateTime regDate;
     private String starCount;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 
 }

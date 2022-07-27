@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+    <script src="./prduct.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -124,33 +125,36 @@
             </div>
             <!--타이틀 끝-->
             <!--숙소 정보 입력폼-->
-            <form action="">
+            <form action="" onsubmit="return productRoom()" name="rform">
                 <div class="formbox">
                     <ul class="formbox_ul">
                         <li>
                             <!--숙소 상세 분류-->
                             <div class="formbox_div1">
                                 <p class="formbox_ul_title">분류</p>
-                                <select name="" id="" class="formbox_ul_select1">
+                                <select name="" id="" class="formbox_ul_select1 Rcategory">
                                     <option value="">선택</option>
-                                    <option value="">호텔</option>
-                                    <option value="">모텔</option>
-                                    <option value="">리조트</option>
-                                    <option value="">펜션</option>
-                                    <option value="">글램핑</option>
-                                    <option value="">카라반</option>
+                                <option value="호텔">호텔</option>
+                                <option value="모텔">모텔</option>
+                                <option value="리조트">리조트</option>
+                                <option value="펜션">펜션</option>
+                                <option value="글램핑">글램핑</option>
+                                <option value="카라반">카라반</option>
                                 </select>
                             </div>
+                        </li>
+                        <li>
                             <div class="formbox_div1">
                                 <p class="formbox_ul_title">도시</p>    <!--onclick="showPopup()"-->
-                                <select name="" id="" class="formbox_ul_select2">
-                                    <option value="">대한민국</option>
-                                    <option value="">미국</option>
-                                    <option value="">일본</option>
-                                    <option value="">중국</option>
-                                    <option value="">러시아</option>
-                                    <option value="">인도네시아</option>
-                                    <option value="">태국</option>
+                                <select name="" id="" class="formbox_ul_select2 Tcategory">
+                                    <option value="">선택</option>
+                                    <option value="대한민국">대한민국</option>
+                                    <option value="미국">미국</option>
+                                    <option value="일본">일본</option>
+                                    <option value="중국">중국</option>
+                                    <option value="러시아">러시아</option>
+                                    <option value="인도네시아">인도네시아</option>
+                                    <option value="태국">태국</option>
                                 </select>
                             </div>
                             <!--숙소 상세 분류 끝-->
@@ -161,57 +165,61 @@
                                 <input type="text" width="200px" height="25px" class="formbox_ul_text">
                             </div>
                         </li>
-                        <li>
+                        <li style="display: block;">
                             <div class="formbox_div2">
                                 <p class="formbox_ul_title">객실정보</p>
-                                <input type="file" name="" id="" multiple>
+                                <input type="file" name="" id="room_img" multiple>
+                            </div>
+                            <div style="margin: 10px 0 0 18%; ">
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                             </div>
                         </li>
                         <li>
-                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 890px;" ></textarea>
+                            
                         </li>
                         <li>
                             <!--객실옵션-->
                             <div class="formbox_div3">
-                                <p class="formbox_ul_title_op">객실옵션</p>
-                                <select name="" id="" class="formbox_ul_select3">
+                                <p class="formbox_ul_title" style="width: 18%;">객실옵션</p>
+                                <select name="" id="" class="formbox_ul_select3 Pcategory">
                                     <option value="">인원</option>
-                                    <option value="">최대2명</option>
-                                    <option value="">최대3명</option>
-                                    <option value="">최대4명</option>
+                                    <option value="최대2명">최대2명</option>
+                                    <option value="최대3명">최대3명</option>
+                                    <option value="최대4명">최대4명</option>
                                 </select>
-                                <select name="" id="" class="formbox_ul_select3">
-                                    <option value="">흡연가능</option>
-                                    <option value="">인원불가능</option>
+                                <select name="" class="formbox_ul_select3 SPcategory">
+                                    <option value="">선택</option>
+                                    <option value="흡연가능">흡연가능</option>
+                                    <option value="인원불가능">인원불가능</option>
                                 </select>
-                                <select name="" id="" class="formbox_ul_select3">
-                                    <option value="">오션뷰</option>
-                                    <option value="">시티뷰</option>
+                                <select name="" class="formbox_ul_select3 Viewcategory">
+                                    <option value="">선택</option>
+                                    <option value="오션뷰">오션뷰</option>
+                                    <option value="시티뷰">시티뷰</option>
                                 </select>
-                                <select name="" id="" class="formbox_ul_select3">
-                                    <option value="">방사이즈</option>
-                                    <option value="">인원</option>
+                                <select name="" class="formbox_ul_select3 RPcategory">
+                                    <option value="">선택</option>
+                                    <option value="방사이즈">방사이즈</option>
+                                    <option value="인원">인원</option>
                                 </select>
-                                <select name="" id="" class="formbox_ul_select3">
-                                    <option value="">싱글침대</option>
-                                    <option value="">싱글침대2개</option>
-                                    <option value="">더블침대1개</option>
-                                    <option value="">퀸침대1개</option>
+                                <select name="" class="formbox_ul_select3 Bcategory">
+                                    <option value="">선택</option>
+                                    <option value="싱글침대">싱글침대</option>
+                                    <option value="싱글침대2개">싱글침대2개</option>
+                                    <option value="더블침대1개">더블침대1개</option>
+                                    <option value="퀸침대1개">퀸침대1개</option>
                                 </select>
                             </div>
                             <!--객실옵션 끝-->
                         </li>
                         <li>
-                            <div style="width: 890px;">
-                                <p class="formbox_ul_title_info">숙소소개</p>
-                                <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
-                            </div>
+                            <p class="formbox_ul_title_info">숙소소개</p>
+                            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                         </li>
                         <li>
-                            <div style="width: 890px;">
                                 <p class="formbox_ul_title_info">기본정보</p>
-                                <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
-                            </div>
+                                <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+
                         </li>
                         <li>
                             <!--편의시설-->
@@ -219,34 +227,34 @@
                                 <p class="formbox_ul_title_op">편의시설</p>
                                 <ul class="service_list">
                                     <li>
-                                        <label for=""><input type="radio" name="breakfast" value="조식"> 조식</label>
-                                        <label for=""><input type="radio" name="parking" value="주차"> 주차</label>
-                                        <label for=""><input type="radio" name="wifi" value="인터넷"> 인터넷</label>
-                                        <label for=""><input type="radio" name="cancel_free" value="무료취소"> 무료취소</label>
+                                        <label for=""><input type="radio"  name="cf" value="조식"> 조식</label>
+                                        <label for=""><input type="radio"  name="cf"  value="주차"> 주차</label>
+                                        <label for=""><input type="radio" name="cf" value="인터넷"> 인터넷</label>
+                                        <label for=""><input type="radio"  name="cf" value="무료취소"> 무료취소</label>
                                     </li>
                                     <li>
-                                        <label for=""><input type="radio" name="shuttle" value="셔틀"> 셔틀</label>
-                                        <label for=""><input type="radio" name="storage" value="짐보관서비스"> 짐보관서비스</label>
-                                        <label for=""><input type="radio" name="sauna" value="사우나"> 사우나</label>
-                                        <label for=""><input type="radio" name="spar" value="스파·욕조"> 스파·욕조</label>
+                                        <label for=""><input type="radio" name="cf" value="셔틀"> 셔틀</label>
+                                        <label for=""><input type="radio"  name="cf" value="짐보관서비스"> 짐보관서비스</label>
+                                        <label for=""><input type="radio"  name="cf" value="사우나"> 사우나</label>
+                                        <label for=""><input type="radio"  name="cf" value="스파·욕조"> 스파·욕조</label>
                                     </li>
                                     <li>
-                                        <label for=""><input type="radio" name="swimming_pool" value="수영장"> 수영장</label>
-                                        <label for=""><input type="radio" name="kids" value="키즈클럽"> 키즈클럽</label>
-                                        <label for=""><input type="radio" name="meeting_room" value="미팅룸"> 미팅룸</label>
-                                        <label for=""><input type="radio" name="cleaning" value="세탁시설"> 세탁시설</label>
+                                        <label for=""><input type="radio"  name="cf" value="수영장"> 수영장</label>
+                                        <label for=""><input type="radio"  name="cf" value="키즈클럽"> 키즈클럽</label>
+                                        <label for=""><input type="radio"   name="cf" value="미팅룸"> 미팅룸</label>
+                                        <label for=""><input type="radio"  name="cf" value="세탁시설"> 세탁시설</label>
                                     </li>
                                     <li>
-                                        <label for=""><input type="radio" name="pets" value="반려동물"> 반려동물</label>
-                                        <label for=""><input type="radio" name="no_smoking" value="금연객실"> 금연객실</label>
-                                        <label for=""><input type="radio" name="support" value="장애인지원"> 장애인지원</label>
-                                        <label for=""><input type="radio" name="service_language_kor" value="한국어지원"> 한국어지원</label>
+                                        <label for=""><input type="radio" name="cf" value="반려동물"> 반려동물</label>
+                                        <label for=""><input type="radio"  name="cf" value="금연객실"> 금연객실</label>
+                                        <label for=""><input type="radio"  name="cf" value="장애인지원"> 장애인지원</label>
+                                        <label for=""><input type="radio"name="cf" value="한국어지원"> 한국어지원</label>
                                     </li>
                                     <li>
-                                        <label for=""><input type="radio" name="service_language_japan" value="일본어지원"> 일본어지원</label>
-                                        <label for=""><input type="radio" name="service_language_eng" value="영어지원"> 영어지원</label>
-                                        <label for=""><input type="radio" name="service_language_china" value="중국어지원"> 중국어지원</label>
-                                        <label for=""><input type="radio" name="service_language_tai" value="태국어지원"> 태국어지원</label>
+                                        <label for=""><input type="radio" id="cf" name="service_language_japan" value="일본어지원"> 일본어지원</label>
+                                        <label for=""><input type="radio" id="cf" name="service_language_eng" value="영어지원"> 영어지원</label>
+                                        <label for=""><input type="radio"  id="cf" name="service_language_china" value="중국어지원"> 중국어지원</label>
+                                        <label for=""><input type="radio" id="cf" name="service_language_tai" value="태국어지원"> 태국어지원</label>
                                     </li>
                                 </ul>
                             </div>
@@ -254,29 +262,31 @@
                         </li>
                         <li>
                             <!--체크인아웃-->
-                            <div class="formbox_div3">
-                                <p class="formbox_ul_title">숙소정책</p>
-                                <div class="formbox_div3_part">
-                                    <p class="formbox_ul_title">체크인 시간</p>
-                                    <input type="time">
+                                <p class="formbox_ul_title"style="">숙소정책</p>
+                                <div class="formbox_div3" style="flex-direction: column;">
+                                <div class="formbox_div3_part" >
+                                    <div>
+                                        <p class="">체크인 시간</p>
+                                        <input type="time" id="check_in">
+                                    </div>
+                                    <div> 
+                                        <p class="">체크아웃 시간</p>
+                                        <input type="time" id="check_out">
+                                    </div>
                                 </div>
-                                <div class="formbox_div3_part">
-                                    <p class="formbox_ul_title">체크아웃 시간</p>
-                                    <input type="time">
+                                <div class="formbox_div3">
+                                    <textarea class="weditor3" id="weditor3" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                                 </div>
                             </div>
                             <!--체크인아웃 끝-->
                         </li>
                         <li>
-                            <div class="formbox_div3">
-                                <textarea class="weditor3" id="weditor3" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
-                            </div>
+                            
                         </li>
                         <li>
-                            <div style="width: 890px;">
-                                <p class="formbox_ul_title_info">숙소 주요정보</p>
-                                <textarea class="weditor4" id="weditor4" cols="100" rows="10" style="height: 300px; width: 885px;" ></textarea>
-                            </div>
+                            <p class="formbox_ul_title_info">숙소 주요정보</p>
+                            <textarea class="weditor4" id="weditor4" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                            
                         </li>
                         <li class="formbox_ul_btn">
                             <div>

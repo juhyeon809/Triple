@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class MysaveApiResponse {
     private Long idx;
-    //    private Integer userid;
+    private Long userId;
     private Integer itemNum;
     private String saveYn;
     private String memo;

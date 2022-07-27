@@ -15,7 +15,7 @@ public class GuideApiResponse {
     private Long idx;
     private String type;
     private Integer guideNum;
-//    private String adminuserId;
+    private Long adminuserId;
     private String country;
     private String adminuserName;
     private String title;

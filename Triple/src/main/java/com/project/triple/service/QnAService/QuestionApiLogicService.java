@@ -17,9 +17,6 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
     private QuestionApiResponse response(Question question){
         QuestionApiResponse questionApiResponse = QuestionApiResponse.builder()
                 .idx(question.getIdx())
-                .inquaryId(question.getInquaryId())
-                .ticketNum(question.getTicketNum())
-                .userId(question.getUserId())
                 .typeCategory(question.getTypeCategory())
                 .typeDetail(question.getTypeDetail())
                 .content(question.getContent())
@@ -28,6 +25,11 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
                 .fileType(question.getFileType())
                 .infoAgree(question.getInfoAgree())
                 .regDate(question.getRegDate())
+                .inquaryId(question.getInquaryId())
+                .ticketNum(question.getAirTicket().getTicketNum())
+                .ticketNum(question.getLodgingTicket().getTicketNum())
+                .ticketNum(question.getTourTicket().getTicketNum())
+                .userId(question.getUsers().getIdx())
                 .build();
         return questionApiResponse;
     }

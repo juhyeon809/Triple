@@ -23,6 +23,7 @@ public class RestaurantReviewReplyApiLogicService extends BaseService<Restaurant
                 .nickname(restaurantReviewReply.getNickname())
                 .likeCount(restaurantReviewReply.getLikeCount())
                 .regDate(restaurantReviewReply.getRegDate())
+                .userId(restaurantReviewReply.getUsers().getIdx())
                 .build();
         return restaurantReviewReplyApiResponse;
     }

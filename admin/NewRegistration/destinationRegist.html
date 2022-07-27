@@ -16,7 +16,6 @@
 
     form ul {
                 list-style: none;
-                width:100%;
                 padding: 0;
                 margin: 0 0 0 20px;
     }
@@ -25,30 +24,32 @@
         padding: 50px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        
         font-size: 20px;
         align-items: center;
+        
         
     }
     .tit_lbl {
         text-align: center;
         font-weight: bold;
         margin-right: 10px;
-        width: 30%;
         background-color: #0098A1;
+        color: #fff;
+        width: 40%;
     }
     
     .regForm ul input{
-        width:50%;
+        width:100%;
         height: 30px;
     }
     .regForm ul li{
-        width:100%;
         margin-bottom: 30px;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
     }
-    .reg_content{
-        float: right;
-    }
+
 
 
     </style>
@@ -176,22 +177,22 @@
                         <div>
                             <ul>
                                 <li class="clear">
-                                    <span class="tit_lbl">공항명</span>
+                                    <p class="tit_lbl">공항명</p>
                                     <div class="reg_content">
                                         <input type="text" class="name">
                                     </div>
                                 </li>
 
                                 <li class="clear">
-                                    <span class="tit_lbl">공항코드</span>
+                                    <p class="tit_lbl">공항코드</p>
                                     <div class="reg_content"><input type="text" class="code"></div>
                                 </li>
                                 <li class="clear">
-                                    <span class="tit_lbl">국가</span>
+                                    <p class="tit_lbl">국가</p>
                                     <div class="reg_content"><input type="text" class="textBox"></div>
                                 </li>
                                 <li class="clear">
-                                    <span class="tit_lbl">도시</span>
+                                    <p class="tit_lbl">도시</p>
                                     <div class="reg_content"><input type="text" class="textBox"></div>
                                 </li>
                             </ul>

@@ -59,6 +59,8 @@ li{
 .navbar .container-fluid {
     display: flex;
     justify-content: space-between;
+    
+
 }
 .user-info {
     padding: 5px 30px 0 15px;
@@ -593,7 +595,7 @@ main td {
     margin-right: 10px;
     padding: 0 10px;
     border-radius: 100px;
-    border: 2px solid #00bac4;
+    border: 2px solid #0098A1;
 }
 .content2 nav form .form-group input {
     width: 120px;
@@ -810,24 +812,29 @@ table a:visited{
 }
 .formbox > .formbox_ul > li{
     margin: 0 auto;
-    width: 900px;
+    width: 100%;
     display: flex;
     margin-bottom: 20px;
 }
+.formbox > .formbox_ul > li textarea{
+    width: 100%;
+}
 .formbox_div1{
-    width: 150px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-right: 40px;
 }
 .formbox_div2{
-    width: 340px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-right: 40px;
 }
+.formbox_div2 input[type="file"]{
+    width: 100%;
+}
+
 .formbox_div3{
-    width: 890px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -888,55 +895,149 @@ font-size: 13px;
     margin-left: 10px;
 }
 .formbox_div3_part{
-    width: 43%;
+    width: 46%;
+    display: flex;
+    justify-content: space-around;
 }
 .formbox_div3_part > .formbox_ul_title{
-    width: 100px;
+    width: 100%;
 }
-.formbox_div3_part > input[type="time"]{
-    width: 170px;
+input[type="time"]{
+    width: 200px;
+    margin-bottom: 10px;
 }
 .formbox_ul_title {
-    width: 20%;
+    width: 300px;
+    top: 50%;
+    line-height: 30px;
+    text-align: center;
     display: inline-block;
     margin-right: 5px;
     font-weight: bold;
+    background-color: #0098A1;
+    color: #fff;
 }
 .formbox_ul_title_op{
     display: inline-block;
     margin-right: 20px;
     font-weight: bold;
+    text-align: center;
+    width: 240px;
+    line-height: 150px;
+    background-color: #0098A1;
+    color: #fff;
 }
 .formbox_ul_select1{
-    width: 83px;
+    width: 100%;
+
 }
 .formbox_ul_select2{
-    width: 100px;
+    width: 100%;
 }
-/* .formbox_ul_select3{
-    width: 130px;
-} */
+.formbox_ul_select3{
+    width: 15%;
+}
 .formbox_ul_text{
-    width: 300px;
+    width: 100%;
+}
+.formbox_div4.ticket{
+    width: 100%;
+}
+.formbox_div4.ticket select{
+    width: 15%;
+    height: 30px;
+}
+.formbox_div4.ticket input{
+    width: 61%;
+    height: 30px;
 }
 .formbox_ul_title_info{
     display: block;
     font-weight: bold;
     margin-bottom: 10px;
+    width: 300px;
+    line-height:300px;
+    text-align: center;
+    background-color: #0098A1;
+    color: #fff;
+    margin-right: 5px;
+    justify-content: center;
 }
 .formbox_ul_btn div{
     margin: 20px auto 0;
-
 }
+.formbox_ul.packgeForm {
+    width: 100%;
+    margin: auto;
+}
+.formbox_ul.packgeForm ul{
+    width: 100%;
+}
+.formbox_ul.packgeForm li{
+    width: 100%;
+    
+}
+.formbox_ul.packgeForm li select,
+.formbox_ul.packgeForm li input[type="text"]{
+    width: 70%;
+    height: 30px;
+}
+.formbox_ul.packgeForm .formbox_div4{
+    width: 100%;
+}
+.formbox_ul.packgeForm .formbox_div5{
+    width: 100%;
+    height: 150px;
+}
+.formbox_ul.packgeForm li .formbox_div5 div{
+    width: 75%;
+    height: 120px;
+}
+.formbox_ul.packgeForm li .formbox_div5 input{
+    width: 20%;
+}
+.formbox_ul.packgeForm .formbox_div6,
+.formbox_ul .formbox_div6.ticket {
+    width:30%;
+    margin-top: 0;
+}
+
+
+.formbox_ul.packgeForm li .formbox_ul_title_info{
+    width: 300px;
+}
+
 .box {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 30px;
+    /* display: flex; */
+    /* justify-content: space-between;  */
+    /* margin-top: 30px; */
     /* width: 1000px; */
     width: 100%;
-    margin-bottom: 70px;
+    margin: 0 auto 70px;
 }
-
+.register .box .center {
+    margin: 0 auto;
+    margin-left: 20%;
+}
+.center ul{
+    width: 100%;
+}
+.center ul li {
+    margin: 0 auto;
+    display: flex;
+    height: 50px;
+}
+.center ul li p{
+    width: 30%;
+    text-align: center;
+    padding-top: 4px;
+    background-color: #0098A1;
+    color: #fff;
+}
+.center ul li input,
+.center ul li select {
+    width: 60%;
+}
 .box p{
     margin-bottom: 20px;
     font-size: 18px;
@@ -953,20 +1054,21 @@ font-size: 13px;
     height: 25px;
     margin-left: 20px;
 }
-.leftbox {
+/* .leftbox {
     width: 500px;
-}
+} */
 
-.rightbox {
+/* .rightbox {
     width: 500px;
-}
+} */
 .flbox {
     display: flex;
     justify-content: space-between;
 }
 .flbox2{
+    width: 100%;
     flex-direction: column;
-    
+    margin-left: 20%;
 }
 .plus{
     width: 50px;
@@ -1805,7 +1907,7 @@ font-size: 13px;
 /* productlist */
 
 .admin_productlist_select {
-    width: 800px;
+    /* width: 800px; */
     display: flex;
     justify-content: space-around;
 }

@@ -45,6 +45,6 @@ public class ReservationAiruse {
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private Users users;
+    @ManyToOne
+    private Users users;
 }
