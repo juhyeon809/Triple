@@ -52,21 +52,30 @@ public class PageController {
 
     //로그인검증
     @PostMapping("/loginok")
-    public String loginOk(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
+    public ModelAndView loginOk(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
         if(usersApiLogicService.login(email, userpw).getData() != null){
             HttpSession session = request.getSession();
             String nickname = usersApiLogicService.login(email, userpw).getData().getNickname();
             session.setAttribute("email", email);
             session.setAttribute("nickname", nickname);
 
-            ScriptUtils.alertAndMovePage(response, "로그인 성공", "/Triple" );
-            return null;
+            ScriptUtils.alert(response, "로그인 성공" );
+            return new ModelAndView("/pages/main");
 
         }else{
-            ScriptUtils.alertAndMovePage(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요", "/Triple/login" );
-            return null;
+            ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
+            return new ModelAndView("/pages/login");
 
         }
+    }
+    @RequestMapping("/logout")
+    public ModelAndView logOut(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("email",null);
+        session.setAttribute("nickname", null);
+
+        ScriptUtils.alert(response, "로그아웃 되었습니다.");
+        return new ModelAndView("/pages/main");
     }
 
     @RequestMapping(path = "/flightList")

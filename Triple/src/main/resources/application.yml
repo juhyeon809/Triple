@@ -3,8 +3,5 @@ spring:
     driver-class-name: oracle.jdbc.OracleDriver
     url: jdbc:oracle:thin:@db20220704095701_high?TNS_ADMIN=C:/java_1900_hdh/classcontent/Wallet_DB20220704095701
     username: admin
-<<<<<<< HEAD
     password: Gksehdgh121!
-=======
-    password: Gksehdgh121!
->>>>>>> 93b5be7fc895ceb4aebf86e4bac493ea849ff555
+
