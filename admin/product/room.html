@@ -130,12 +130,12 @@
                     <div class="admin_inquiry_q3">
                         <select name="" id="" class="admin_inquiry_category2 Rcategory">
                             <option value="">선택</option>
-                            <option value="">호텔</option>
-                            <option value="">모텔</option>
-                            <option value="">리조트</option>
-                            <option value="">펜션</option>
-                            <option value="">글램핑</option>
-                            <option value="">카라반</option>
+                            <option value="호텔">호텔</option>
+                            <option value="모텔">모텔</option>
+                            <option value="리조트">리조트</option>
+                            <option value="펜션">펜션</option>
+                            <option value="글램핑">글램핑</option>
+                            <option value="카라반">카라반</option>
                         </select>
                     </div>
                 </div>
@@ -143,13 +143,14 @@
                     <div class="admin_inquiry_title">도시</div>
                     <div class="admin_inquiry_q3">
                         <select name="" id="" class="admin_inquiry_category2 Tcategory">
-                            <option value="">대한민국</option>
-                            <option value="">미국</option>
-                            <option value="">일본</option>
-                            <option value="">중국</option>
-                            <option value="">러시아</option>
-                            <option value="">인도네시아</option>
-                            <option value="">태국</option>
+                            <option value="">도시선택</option>
+                            <option value="대한민국">대한민국</option>
+                            <option value="미국">미국</option>
+                            <option value="일본">일본</option>
+                            <option value="중국">중국</option>
+                            <option value="러시아">러시아</option>
+                            <option value="인도네시아">인도네시아</option>
+                            <option value="태국">태국</option>
                         </select>
                     </div>
                 </div>
@@ -162,7 +163,7 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">숙소 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" id="room_img class="admin_inquiry_category2">
+                        <input type="file" id="room_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -176,27 +177,29 @@
                     <div class="option">
                         <select name="" id="" class="option_type Pcategory">
                             <option value="">인원</option>
-                            <option value="">최대2명</option>
-                            <option value="">최대3명</option>
-                            <option value="">최대4명</option>
+                            <option value="최대2명">최대2명</option>
+                            <option value="최대3명">최대3명</option>
+                            <option value="최대4명">최대4명</option>
                         </select>
                         <select name="" id="" class="option_type SPcategory">
-                            <option value="">흡연가능</option>
-                            <option value="">인원불가능</option>
+                            <option value="">흡연여부</option>
+                            <option value="흡연가능">흡연가능</option>
+                            <option value="인원불가능">흡연불가능</option>
                         </select>
                         <select name="" id="" class="option_type Viewcategory">
-                            <option value="">오션뷰</option>
-                            <option value="">시티뷰</option>
+                            <option value="">호텔뷰</option>
+                            <option value="오션뷰">오션뷰</option>
+                            <option value="시티뷰">시티뷰</option>
                         </select>
                         <select name="" id="" class="option_type RPcategory">
                             <option value="">방사이즈</option>
-                            <option value="">인원</option>
+                            <option value="27m²">27m²</option>
                         </select>
                         <select name="" id="" class="option_type Bcategory">
                             <option value="">싱글침대</option>
-                            <option value="">싱글침대2개</option>
-                            <option value="">더블침대1개</option>
-                            <option value="">퀸침대1개</option>
+                            <option value="싱글침대2개">싱글침대2개</option>
+                            <option value="더블침대1개">더블침대1개</option>
+                            <option value="퀸침대1개">퀸침대1개</option>
                         </select>
                     </div>
                 </div>
@@ -216,47 +219,47 @@
                     <div class="admin_inquiry_title">편의시설</div>
                     <ul class="admin_inquiry_q3">
                         <li>
-                            <label for=""><input type="radio" name="breakfast" value="조식"> 조식</label>
-                            <label for=""><input type="radio" name="parking" value="주차"> 주차</label>
-                            <label for=""><input type="radio" name="wifi" value="인터넷"> 인터넷</label>
-                            <label for=""><input type="radio" name="cancel_free" value="무료취소"> 무료취소</label>
+                            <label for="breakfast"><input type="radio" name="cf" id="breakfast" value="조식"> 조식</label>
+                            <label for="parking"><input type="radio" name="cf" id="parking" value="주차"> 주차</label>
+                            <label for="wifi"><input type="radio" name="cf" id="wifi" value="인터넷"> 인터넷</label>
+                            <label for="cancel_free"><input type="radio" name="cf" id="cancel_free" value="무료취소"> 무료취소</label>
                         </li>
                         <li>
-                            <label for=""><input type="radio" name="shuttle" value="셔틀"> 셔틀</label>
-                            <label for=""><input type="radio" name="storage" value="짐보관서비스"> 짐보관서비스</label>
-                            <label for=""><input type="radio" name="sauna" value="사우나"> 사우나</label>
-                            <label for=""><input type="radio" name="spar" value="스파·욕조"> 스파·욕조</label>
+                            <label for="shuttle"><input type="radio" name="cf" id="shuttle" value="셔틀"> 셔틀</label>
+                            <label for="storage"><input type="radio" name="cf" id="storage" value="짐보관서비스"> 짐보관서비스</label>
+                            <label for="sauna"><input type="radio" name="cf" id="sauna" value="사우나"> 사우나</label>
+                            <label for="spar"><input type="radio" name="cf" id="spar" value="스파·욕조"> 스파·욕조</label>
                         </li>
                         <li>
-                            <label for=""><input type="radio" name="swimming_pool" value="수영장"> 수영장</label>
-                            <label for=""><input type="radio" name="kids" value="키즈클럽"> 키즈클럽</label>
-                            <label for=""><input type="radio" name="meeting_room" value="미팅룸"> 미팅룸</label>
-                            <label for=""><input type="radio" name="cleaning" value="세탁시설"> 세탁시설</label>
+                            <label for="swimming_pool"><input type="radio" name="cf" id="swimming_pool" value="수영장"> 수영장</label>
+                            <label for="kids"><input type="radio" name="cf" id="kids" value="키즈클럽"> 키즈클럽</label>
+                            <label for="meeting_room"><input type="radio" name="cf" id="meeting_room" value="미팅룸"> 미팅룸</label>
+                            <label for="cleaning"><input type="radio" name="cf" id="cleaning" value="세탁시설"> 세탁시설</label>
                         </li>
                         <li>
-                            <label for=""><input type="radio" name="pets" value="반려동물"> 반려동물</label>
-                            <label for=""><input type="radio" name="no_smoking" value="금연객실"> 금연객실</label>
-                            <label for=""><input type="radio" name="support" value="장애인지원"> 장애인지원</label>
-                            <label for=""><input type="radio" name="service_language_kor" value="한국어지원"> 한국어지원</label>
+                            <label for="pets"><input type="radio" name="cf" id="pets" value="반려동물"> 반려동물</label>
+                            <label for="no_smoking"><input type="radio" name="cf" id="no_smoking" value="금연객실"> 금연객실</label>
+                            <label for="support"><input type="radio" name="cf" id="support" value="장애인지원"> 장애인지원</label>
+                            <label for="service_language_kor"><input type="radio" name="cf" id="service_language_kor" value="한국어지원"> 한국어지원</label>
                         </li>
                         <li>
-                            <label for=""><input type="radio" name="service_language_japan" value="일본어지원"> 일본어지원</label>
-                            <label for=""><input type="radio" name="service_language_eng" value="영어지원"> 영어지원</label>
-                            <label for=""><input type="radio" name="service_language_china" value="중국어지원"> 중국어지원</label>
-                            <label for=""><input type="radio" name="service_language_tai" value="태국어지원"> 태국어지원</label>
+                            <label for="service_language_japan"><input type="radio" name="cf" id="service_language_japan" value="일본어지원"> 일본어지원</label>
+                            <label for="service_language_eng"><input type="radio" name="cf" id="service_language_eng" value="영어지원"> 영어지원</label>
+                            <label for="service_language_china"><input type="radio" name="cf" id="service_language_china" value="중국어지원"> 중국어지원</label>
+                            <label for="service_language_tai"><input type="radio" name="cf" id="service_language_tai" value="태국어지원"> 태국어지원</label>
                         </li>
                     </ul>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">CHECK-IN</div>
                     <div class="admin_inquiry_q3">
-                        <input type="time" class="admin_inquiry_category2">
+                        <input type="time" id="check_in" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">CHECK-OUT</div>
                     <div class="admin_inquiry_q3">
-                        <input type="time" class="admin_inquiry_category2">
+                        <input type="time" id="check_out" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
