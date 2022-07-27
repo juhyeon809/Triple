@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -60,7 +58,8 @@ public class PageController {
             session.setAttribute("nickname", nickname);
 
             ScriptUtils.alert(response, "로그인 성공" );
-            return new ModelAndView("/pages/main");
+            return new ModelAndView("/pages/main").addObject("email", email)
+                    .addObject("nickname", nickname);
 
         }else{
             ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
@@ -69,11 +68,10 @@ public class PageController {
         }
     }
     @RequestMapping("/logout")
-    public ModelAndView logOut(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
+    public ModelAndView logOut(HttpServletResponse response, HttpServletRequest request) throws IOException {
         HttpSession session = request.getSession();
         session.setAttribute("email",null);
         session.setAttribute("nickname", null);
-
         ScriptUtils.alert(response, "로그아웃 되었습니다.");
         return new ModelAndView("/pages/main");
     }
