@@ -8,8 +8,12 @@
         <form id="menu_form">
             <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
         </form>
-        <div id="login_join"><a href="/Triple/login">LOGIN</a> | <a href="/Triple/join">JOIN</a></div>
-        <div id="logout_mypage" style="display: none"><a href="/member/login_join/login.html">MYPAGE</a> | <a href="/member/login_join/login.html">LOGOUT</a></div>
+        <div id="login_join">
+            <a th:if ="${session.email == null}" href="/Triple/login">LOGIN</a>
+            <a th:if ="${session.email != null}" href="/Triple/logout">LOGOUT</a>
+            | <a th:if ="${session.email == null}" href="/Triple/join">JOIN</a>
+            <a th:if ="${session.email != null}" href="/Triple/mypage">MYPAGE</a>
+        </div>
     </div>
     <div id="menu_area">
         <ul id="menus">

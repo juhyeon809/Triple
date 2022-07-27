@@ -31,7 +31,6 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
                 .specialSeat(aircraft.getSpecialSeat())
                 .familySeat(aircraft.getFamilySeat())
                 .vipSeat(aircraft.getVipSeat())
-                .airlineId(aircraft.getAirline().getIdx())
                 .build();
         return aircraftApiResponse;
     }
