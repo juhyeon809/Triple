@@ -9,23 +9,18 @@ function productAir(){
     const flytime = document.querySelector('.flytime');
     const arrive= document.querySelector('.arrive');
     const hydrate= document.querySelector('.hydrate');
+    const exhd=RegExp(/^[A-Za-z0-9]+$/);
     const go_time=document.querySelector('.go_time');
     const arr_time= document.querySelector('.arr_time');
 
     if(img.value==''){
         alert("로고 파일을 선택해주세요");
+        img.focus();
         return false;
     }
     if(docategory.value==''){
         alert('국내/국외를 선택해주세요');
-        return false;
-    }
-    if(airline.value==''){
-        alert('항공사를 선택해주세요');
-        return false;
-    }
-    if(plane_name.value==''){
-        alert('항공기를 선택해주세요');
+        docategory.focus();
         return false;
     }
     if(go_time.value==''){
@@ -33,27 +28,46 @@ function productAir(){
         go_time.focus();
         return false;
     }
-    if(flytime.value == ''){
-        alert('비행시간을 입력해주세요');
-        flytime.focus();
-        return false
-    }
-    if(arrive.value == ''){
-        alert('도착지를 입력해주세요');
-        arrive.focus();
-        return false
-    }
     if(arr_time.value==''){
         alert('도착 시간을 선택해주세요');
         arr_time.focus();
         return false;
     }
+    if(flytime.value == ''){
+        alert('비행시간을 입력해주세요');
+        flytime.focus();
+        return false
+    }
+
+    if(arrive.value == ''){
+        alert('도착지를 입력해주세요');
+        arrive.focus();
+        return false
+    }
+    
+    if(airline.value==''){
+        alert('항공사를 선택해주세요');
+        airline.focus();
+        return false;
+    }
+    if(plane_name.value==''){
+        alert('항공기를 선택해주세요');
+        plane_name.focus();
+        return false;
+    }
     if(hydrate.value == ''){
         alert('수화물을 입력해주세요');
         hydrate.focus();
-        return false
+        return false;
+    }
+    //수화물
+    if(!exhd.test($('.hydrate').val())){
+        alert('형식에맞게 입력해주세요 예)10kg');
+        $('.hydrate').focus();
+        return false;
     }
     //가격
+    
     return true;
 }
 
