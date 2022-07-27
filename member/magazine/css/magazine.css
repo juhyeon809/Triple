@@ -7,6 +7,8 @@
 }
 .mag_area{
     text-align: center;
+    width: 900px;
+    margin: 0 auto;
 }
 
 .mag_area > #mag_list{
