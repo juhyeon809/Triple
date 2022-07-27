@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,28 +17,7 @@
     <script src="/app/js/flyScript.js"></script>
 <body>
     <!--header 시작-->
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-            <form id="menu_form">
-                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-            </form>
-            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-
-        </div>
-        <div id="menu_area">
-            <ul id="menus">
-                <li><a href="/member/overseas_travel/overseas_travel_main.html">해외여행</a></li>
-                <li><a href="/member/domestic_travel/domestic_travel.html">국내여행</a></li>
-                <li><a href="/member/flight_reservation/flight_main.html" style="color:rgb(63, 63, 63)">항공예약</a></li>
-                <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                <li><a href="/member/travel_package/travel_package.html">패키지여행</a></li>
-                <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
-                <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
-            </ul>
-        </div>
-    </header>
+    <div th:replace="fragement/header :: header"></div>
     <!--header 끝-->
     
     <div id="container">
@@ -249,32 +230,12 @@
             </div>
             <div id="icon_box">
                 <div id="sns_box">
-                    <div>
-                        <a href="#">
-                            <img src="../../img/btn-social-blog@3x.png" alt="SNS">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="../../img/btn-social-insta@3x.png" alt="SNS">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="../../img/btn-social-fb@3x.png" alt="SNS">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="../../img/btn-social-brunch@3x.png" alt="SNS">
-                        </a>
-                    </div>
+                    <div><a href="#"><img src="/lib/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
                 </div>
-                <div id="TRIP">
-                    <a href="#">
-                        <img src="../../img/footer_TRIP.png" alt="TRIP">
-                    </a>
-                </div>
+                <div id="TRIP"><a href="#"><img src="/lib/img/footer_TRIP.png" alt="TRIP"></a></div>
             </div>
         </div>
     </footer>

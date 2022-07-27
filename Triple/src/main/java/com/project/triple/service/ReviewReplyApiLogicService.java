@@ -8,8 +8,6 @@ import com.project.triple.repository.ReviewReplyRepository;
 import com.project.triple.service.BaseService.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.LocalDateTime;
-
 public class ReviewReplyApiLogicService extends BaseService<ReviewReplyApiRequest, ReviewReplyApiResponse, ReviewReply> {
 
     @Autowired

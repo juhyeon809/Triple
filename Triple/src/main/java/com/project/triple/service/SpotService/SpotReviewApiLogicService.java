@@ -1,10 +1,8 @@
 package com.project.triple.service.SpotService;
 
-import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.entity.Spot.SpotReview;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.SpotRequest.SpotReviewApiRequest;
-import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
 import com.project.triple.repository.SpotReviewRepository;
 import com.project.triple.service.BaseService.BaseService;

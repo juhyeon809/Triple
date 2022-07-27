@@ -1,10 +1,8 @@
 package com.project.triple.service;
 
-import com.project.triple.model.entity.Terms;
 import com.project.triple.model.entity.Tour;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.TourApiRequest;
-import com.project.triple.model.network.response.TermsApiResponse;
 import com.project.triple.model.network.response.TourApiResponse;
 
 import com.project.triple.repository.TourRepository;

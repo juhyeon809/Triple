@@ -3,18 +3,15 @@ package com.project.triple.service.AirService;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.Pagination;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.repository.AirTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -83,10 +80,10 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
     }
 
     public Header<List<AirTicketApiResponse>> search(){
-       List<AirTicket> airTicketList = airTicketRepository.findAll();
-       List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
-               .map(airTicket -> response(airTicket))
-               .collect(Collectors.toList());
+        List<AirTicket> airTicketList = airTicketRepository.findAll();
+        List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
+                .map(airTicket -> response(airTicket))
+                .collect(Collectors.toList());
         return Header.OK(airTicketApiResponseList);
     }
 }

@@ -7,7 +7,6 @@ import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

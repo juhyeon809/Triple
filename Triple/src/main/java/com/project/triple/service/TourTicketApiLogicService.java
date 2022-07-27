@@ -1,10 +1,8 @@
 package com.project.triple.service;
 
-import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.TourTicket;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.TourTicketApiRequest;
-import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.TourTicketApiResponse;
 import com.project.triple.repository.TourTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
