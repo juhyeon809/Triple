@@ -131,59 +131,42 @@
             <div class="header_box">
                 <h2>항공사 신규 등록</h2>
             </div>
-            <div class="formbox register">
-                <!--항공사 정보 등록-->
-                <form action="" onsubmit="return airline()">
-                    <div class="box new">
-                        <ul>
-                            <li>
-                                <p>항공사명 (Kor) </p>
-                                <div>
-                                    <input type="text" class="kor">
-                                </div>
-                            </li>
-                            <li>
-                                <p>항공사명 (Eng) </p>
-                                <div>
-                                    <input type="text" class="eng">
-                                </div>
-                            </li>
-                            <li>
-                                <p>항공사 코드</p>
-                                <div>
-                                    <input type="text" >
-                                </div>
-                            </li>
-                            <li>
-                                <p>운항 노선 </p>
-                                <div>
-                                    <select name="" id="">
-                                        <option value="">국내</option>
-                                        <option value="">국외</option>
-                                        <option value="">국내·국외</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <p>대표번호</p>
-                                <div>
-                                    <input type="text">
-                                </div>
-                            </li>
-                            <li>
-                                <p>고객센터</p>
-                                <div>
-                                    <input type="text">
-                                </div>
-                            </li>
-                        </ul>
+            <!--항공사 정보 등록-->
+            <form action="" onsubmit="return airline()">
+                <div class="admin_manage_form_container">
+                    <div class="admin_manage_form_container_ul1">
+                        <p class="admin_register_item">항공사명 (Kor) </p>
+                        <p class="admin_register_item">항공사 코드 </p>
+                        <p class="admin_register_item">대표번호 </p>
                     </div>
-                    <div class="hbt non">
-                        <button type="submit" class="regis " value="등록">등록</button>
+                    <div class="admin_manage_form_container_ul2">
+                        <p><input type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content premium" placeholder="항공사 코드를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content" placeholder="대표번호를 입력하세요"></p>
                     </div>
-                </form>
-                <!--항공사 정보등록 끝-->
-            </div>
+                    <div class="admin_manage_form_container_ul1">
+                        <p class="admin_register_item">항공사명 (Eng) </p>
+                        <p class="admin_register_item">운항노선 </p>
+                        <p class="admin_register_item">고객센터 </p>
+                    </div>
+                    <div class="admin_manage_form_container_ul2">
+                        <p><input type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
+                        <p>
+                            <select name="" id="" class="admin_register_content">
+                                <option value="">국내</option>
+                                <option value="">국외</option>
+                                <option value="">국내·국외</option>
+                            </select>
+                        </p>
+                        <p><input type="text" class="admin_register_content" placeholder="고객센터 번호를 입력하세요"></p>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="등록"><a href="#">등록</a></button>
+                    <button value="취소"><a href="#">취소</a></button>
+                </div>
+            </form>
+            <!--항공사 정보등록 끝-->
         </div>
     </div>
 

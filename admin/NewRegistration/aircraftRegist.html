@@ -137,76 +137,52 @@
                 <h2>항공기 신규 등록</h2>
             </div>
             <!--타이틀 끝-->
-            <div class="formbox register">
-                <!--항공기 정보 등록-->
-                <form action="" onsubmit="return aircraft()">
-                    <div class="box new">
-                        <ul>
-                            <li>
-                                <p>항공사명</p>
-                                <div>
-                                    <select name="" id="airlineName">
-                                        <option value="">선택</option>
-                                        <option value="제주">제주</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li><p>항공기명</p>
-                                <div><input type="text" class="aircraftName"></div>
-                            </li>
-                            <li>
-                                <p>제조회사</p>
-                                <div>
-                                    <select name="" id="comp">
-                                        <option value="">선택</option>
-                                        <option value="보잉">보잉</option>
-                                        <option value="에어버스">에어버스</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <p>VIP석</p>
-                                <div>
-                                    <input type="text" class="vip">
-                                </div>
-                            </li>
-                            <li>
-                                <p>패밀리석</p>
-                                <div>
-                                    <input type="text" class="family">
-                                </div>
-                            </li>
-                            <li>
-                                <p>특가석</p>
-                                <div>
-                                    <input type="text" class="special">
-                                </div>
-                            </li>
-                            <li>
-                                <p>프리미엄석</p>
-                                <div
-                                ><input type="text" class="premium">
-                                </div>
-                            </li>
-                            <li>
-                                <p>일반석</p>
-                                <div>
-                                    <input type="text" class="economy">
-                                </div>
-                            </li>
-                            <li>
-                                <p>총 좌석 수</p>
-                                <div>
-                                    <input type="text" class="total">
-                                </div>
-                            </li>
-                        </ul>
+            <!--항공기 정보 등록-->
+            <form action="" onsubmit="return aircraft()">
+                <div class="admin_manage_form_container">
+                    <div class="admin_manage_form_container_ul1">
+                        <p class="admin_register_item">항공사명 </p>
+                        <p class="admin_register_item">제조회사 </p>
+                        <p class="admin_register_item">패밀리석 </p>
+                        <p class="admin_register_item">프리미엄석 </p>
+                        <p class="admin_register_item">총 좌석수 </p>
                     </div>
-                    <div class="hbt non">
-                        <button type="submit" class="regis" value="등록">등록</button>
+                    <div class="admin_manage_form_container_ul2">
+                        <p>
+                            <select name="" id="airlineName" class="admin_register_adminid_content">
+                                <option value="">선택</option>
+                                <option value="제주">제주</option>
+                            </select>
+                        </p>
+                        <p>
+                            <select name="" id="comp" class="admin_register_name_content">
+                                <option value="">선택</option>
+                                <option value="보잉">보잉</option>
+                                <option value="에어버스">에어버스</option>
+                            </select>
+                        </p>
+                        <p><input type="text" class="admin_register_content family" placeholder="family 좌석 수를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content premium" placeholder="premium 좌석 수를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content total" placeholder="총 좌석수를 입력하세요"></p>
                     </div>
-                </form>
-            </div>
+                    <div class="admin_manage_form_container_ul1 aircraft_reg">
+                        <p class="admin_register_item">항공기명 </p>
+                        <p class="admin_register_item">VIP석 </p>
+                        <p class="admin_register_item">특가석 </p>
+                        <p class="admin_register_item">일반석 </p>
+                    </div>
+                    <div class="admin_manage_form_container_ul2 aircraft_reg">
+                        <p><input type="text" class="admin_register_content aircraftName" placeholder="항공기명을 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content vip" placeholder="vip 좌석 수를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content special" placeholder="특가석 좌석 수를 입력하세요"></p>
+                        <p><input type="text" class="admin_register_content economy" placeholder="일반석 좌석 수를 입력하세요"></p>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="등록"><a href="#">등록</a></button>
+                    <button value="취소"><a href="#">취소</a></button>
+                </div>
+            </form>
             <!--항공기 정보등록 끝-->
         </div>
     </section>

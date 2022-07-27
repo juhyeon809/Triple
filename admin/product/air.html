@@ -7,7 +7,6 @@
     <title>관리자 | 항공권 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
-    <script src="./prduct.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -124,125 +123,129 @@
                 <h2>상품등록 | 항공권</h2>
             </div>
             <!--타이틀 끝-->
-            <div class="register">
-                <!--항공권 정보 등록-->
-                <form action="" onsubmit="return productAir()" name="aform">
-                    <div class="box">
-                        <div class="center">
-                            <ul>
-                                <li>
-                                    <p >로고 </p>
-                                    <input type="file" id="logo_img">
-                                </li>
-                                <li><p>국내/국외 </p>
-                                    <select name="" id="DOcategory">
-                                        <option value="">선택</option>
-                                        <option value="국내">국내</option>
-                                        <option value="국외">국외</option>
-                                    </select>
-                                </li>
-                                <li> 
-                                    <p>출발시간</p> 
-                                    <input type="time" name="" id="" class="go_time">
-                                </li>
-                                <li>
-                                    <p>도착시간</p> 
-                                    <input type="time" name="" id=""  class="arr_time">
-                                </li>
-                                <li>
-                                    <p>비행시간</p><input type="text" class="flytime">
-                                </li>
-                                <li>
-                                    <p>도착지</p> 
-                                    <input type="text" class="arrive">
-                                </li>
-                                <li>
-                                    <p>항공사명</p> 
-                                    <select name="" id="airline">
-                                        <option value="">선택</option>
-                                        <option value="대한항공">대한항공</option>
-                                        <option value="아시아나항공">아시아나항공</option>
-                                        <option value="제주항공">제주항공</option>
-                                        <option value="진에어">진에어</option>
-                                        <option value="부산에어">부산에어</option>
-                                    </select>
-                                </li>
-                                <li> 
-                                    <p>항공기명</p> 
-                                    <select name="" id="plane_name">
-                                        <option value="">선택</option>
-                                        <option value="1"></option>
-                                        <option value="1"></option>
-                                        <option value="1"></option>
-                                        <option value="1"></option>
-                                    </select>
-                                </li>
-                                <li> 
-                                    <p>수화물</p> 
-                                    <input type="text" class="hydrate">
-                                </li>
-                            </ul>
-                            <!-- <p class="mintit">로고 <input type="file"></p>
-                            
-                            <p class="mintit">국내/국외 <select name="" id="">
-                                <option value="">국내</option>
-                                <option value="">국외</option>
-                            </select></p>
-                            
-                            <p>출발시간 <input type="time" name="" id=""></p>
-                            
-                            <p>비행시간 <input type="text"></p>
-                            
-                            <p>항공사명 
-                                <select name="" id="">
-                                    <option value="">대한항공</option>
-                                    <option value="">아시아나항공</option>
-                                    <option value="">제주항공</option>
-                                    <option value="">진에어</option>
-                                    <option value="">부산에어</option>
-                                </select>
-                            </p>
-                            <p>항공기명 <select name="" id="">
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                            </select></p>
-                            
-                            <p>도착지 <input type="text" style="margin-left: 35px;"></p>
-                            
-                            <p>도착시간 <input type="time" name="" id=""></p>
-                            
-                            <p>수화물 <input type="text" style="margin-left: 35px;"></p> -->
+            <!--항공권 정보 등록-->
+            <form action="">
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">로고</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="file" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">국내/국외</div>
+                    <div class="admin_inquiry_q3">
+                        <select name="" class="admin_inquiry_category2">
+                            <option value="">국내</option>
+                            <option value="">국외</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">출발시간</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="time" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">도착시간</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="time" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">비행시간</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">도착지</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">항공사명</div>
+                    <div class="admin_inquiry_q3">
+                        <select name="" class="admin_inquiry_category2">
+                            <option value="">대한항공</option>
+                            <option value="">아시아나항공</option>
+                            <option value="">제주항공</option>
+                            <option value="">진에어</option>
+                            <option value="">부산에어</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">항공기명</div>
+                    <div class="admin_inquiry_q3">
+                        <select name="" class="admin_inquiry_category2">
+                            <option value="">300-KO-001</option>
+                            <option value="">300-KO-002</option>
+                            <option value="">300-KO-003</option>
+                            <option value="">300-KO-004</option>
+                            <option value="">300-KO-005</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">수하물</div>
+                    <div class="admin_inquiry_q3 keyword">
+                        <label for="free" class="checkb"><input type="checkbox" name="free">포함</label>
+                        <label for="sale" class="checkb"><input type="checkbox" name="sale">미포함</label>
+                    </div>
+                </div>
+                <!--좌석별 가격-->
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">가격</div>
+                </div>
+                <div class="admin_inquiry_qtext round">
+                    <div class="admin_inquiry_title">일반석</div>
+                    <div class="admin_inquiry_q3">
+                        <div class="seat_type">
+                            <span>성인<input type="text" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" class="seat_type_input">원</span> 
                         </div>
                     </div>
-                    <!--좌석별 가격-->
-                    <div class="box flbox flbox2">
-                        <div class="bottombox btbox">
-                            <p>가격 <input type="text" placeholder="일반석" readonly class="readonly"></p>
-                            <p class="span">성인<input type="text">원 / 소아 <input type="text">원 / 유아 <input type="text">원</p>
-                        </div>
-                        <div class="bottombox btbox">
-                            <p class="fl"><input type="text" placeholder="프리미엄 일반석" readonly class="readonly"></p>
-                            <p class="span">성인<input type="text">원 / 소아 <input type="text">원 / 유아 <input type="text">원</p>
-                        </div>
-                        <div class="bottombox btbox">
-                            <p style="margin-left:35px;"><input type="text" placeholder="비즈니스석" readonly class="readonly"></p>
-                            <p class="span">성인<input type="text">원 / 소아 <input type="text">원 / 유아 <input type="text">원</p>
-                        </div>
-                        <div class="bottombox btbox" >
-                            <p><input type="text" placeholder="일등석" readonly class="readonly"></p>
-                            <p class="span">성인<input type="text">원 / 소아 <input type="text">원 / 유아 <input type="text">원</p>
+                </div>
+                <div class="admin_inquiry_qtext round">
+                    <div class="admin_inquiry_title">프리미엄</div>
+                    <div class="admin_inquiry_q3">
+                        <div class="seat_type">
+                            <span>성인<input type="text" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" class="seat_type_input">원</span> 
                         </div>
                     </div>
-                    <!--좌석별 가격 끝-->
-                    <div class="hbt">
-                        <button type="submit" class="regis" value="등록">등 록</button>
+                </div>
+                <div class="admin_inquiry_qtext round">
+                    <div class="admin_inquiry_title">비즈니스</div>
+                    <div class="admin_inquiry_q3">
+                        <div class="seat_type">
+                            <span>성인<input type="text" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" class="seat_type_input">원</span> 
+                        </div>
                     </div>
-                </form>
-                <!--항공권 정보 등록 끝-->
-            </div> 
+                </div>
+                <div class="admin_inquiry_qtext round">
+                    <div class="admin_inquiry_title">일등석</div>
+                    <div class="admin_inquiry_q3">
+                        <div class="seat_type">
+                            <span>성인<input type="text" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" class="seat_type_input">원</span> 
+                        </div>
+                    </div>
+                </div>
+                <!--좌석별 가격 끝-->
+            </form>
+            <!--항공권 정보 등록 끝-->
+            <div class="btnlist">
+                <button value="등록"><a href="#">등록</a></button>
+                <button value="취소"><a href="#">취소</a></button>
+            </div>
         </div>
     </section>
     <script src="../script.js"></script>
