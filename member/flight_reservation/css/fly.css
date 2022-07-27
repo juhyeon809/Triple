@@ -1065,7 +1065,7 @@ p.sm {
 .bbox { 
     margin-bottom: 20px;
 }
-.bbox input[type="checkbox"] {
+.bbox input[type="radio"] {
     width: 12px; 
     margin-right: 5px; 
     height: 15px;

@@ -63,17 +63,17 @@ function sendit(){
         $('#birth').focus();
         return false
     }
-    let gender = false
-    for(let i=0; i<$("input:checkbox[name='gender']").length; i++){
-        if($("input:checkbox[name='gender']").eq(1).is(":checked")==true){
-            gender = true
-            break
-        }
-        if(!gender){
-            alert('성별을 체크해주세요')
-            return false
-        }
-    }
+    // let gender = false
+    // for(let i=0; i<$("input:checkbox[name='gender']").length; i++){
+    //     if($("input:checkbox[name='gender']").eq(1).is(":checked")==true){
+    //         gender = true
+    //         break
+    //     }
+    //     if(!gender){
+    //         alert('성별을 체크해주세요')
+    //         return false
+    //     }
+    // }
     //국적
     
     if(!$('#nationality option:selected').val()) {
