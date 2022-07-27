@@ -124,7 +124,7 @@
             </div>
             <!--타이틀 끝-->
             <!--패키지 정보 등록-->
-            <form action="">
+            <form action="" onsubmit="return productPackge()">
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">분류</div>
                     <div class="admin_inquiry_q3">
@@ -185,13 +185,13 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품 프로그램</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">포함사항</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -234,15 +234,9 @@
     sSkinURI : "../smarteditor/SmartEditor2Skin.html",
     fCreator : "createSEditor2",
     });
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor3",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
 </script>
 
     <script src="../script.js"></script>
+    <script src="/admin/js/prduct.js"></script>
 </body>
 </html>

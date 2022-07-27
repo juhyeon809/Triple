@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 항공권 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
 </head>
@@ -124,50 +125,51 @@
             </div>
             <!--타이틀 끝-->
             <!--항공권 정보 등록-->
-            <form action="">
+            <form action="" onsubmit="return productAir()">
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">로고</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" class="admin_inquiry_category2">
+                        <input type="file"" id="logo_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">국내/국외</div>
                     <div class="admin_inquiry_q3">
-                        <select name="" class="admin_inquiry_category2">
-                            <option value="">국내</option>
-                            <option value="">국외</option>
+                        <select name="" id="DOcategory" class="admin_inquiry_category2">
+                            <option value="">선택</option>
+                            <option value="국내">국내</option>
+                            <option value="국외">국외</option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">출발시간</div>
                     <div class="admin_inquiry_q3">
-                        <input type="time" class="admin_inquiry_category2">
+                        <input type="time" class="admin_inquiry_category2 go_time">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">도착시간</div>
                     <div class="admin_inquiry_q3">
-                        <input type="time" class="admin_inquiry_category2">
+                        <input type="time" class="admin_inquiry_category2 arr_time">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">비행시간</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" class="admin_inquiry_category2">
+                        <input type="text" class="admin_inquiry_category2 flytime">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">도착지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" class="admin_inquiry_category2">
+                        <input type="text" class="admin_inquiry_category2 arrive">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">항공사명</div>
                     <div class="admin_inquiry_q3">
-                        <select name="" class="admin_inquiry_category2">
+                        <select name="" id="airline" class="admin_inquiry_category2">
                             <option value="">대한항공</option>
                             <option value="">아시아나항공</option>
                             <option value="">제주항공</option>
@@ -179,7 +181,7 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">항공기명</div>
                     <div class="admin_inquiry_q3">
-                        <select name="" class="admin_inquiry_category2">
+                        <select name="" id="plane_name" class="admin_inquiry_category2">
                             <option value="">300-KO-001</option>
                             <option value="">300-KO-002</option>
                             <option value="">300-KO-003</option>
@@ -240,14 +242,16 @@
                     </div>
                 </div>
                 <!--좌석별 가격 끝-->
-            </form>
+            
             <!--항공권 정보 등록 끝-->
             <div class="btnlist">
                 <button value="등록"><a href="#">등록</a></button>
                 <button value="취소"><a href="#">취소</a></button>
             </div>
+        </form>
         </div>
     </section>
     <script src="../script.js"></script>
+    <script src="/admin/js/prduct.js"></script>
 </body>
 </html>

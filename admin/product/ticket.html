@@ -124,16 +124,16 @@
             </div>
             <!--타이틀 끝-->
             <!--티켓 정보 입력 폼-->
-            <form action="">
+            <form action="" onsubmit="return productTicket()">
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">분류</div>
                     <div class="option">
-                        <select name="" id="" class="option_type2">
+                        <select name="" id="" class="option_type2 DOcategory">
                             <option value="">상품분류</option>
                             <option value="">국내</option>
                             <option value="">해외</option>
                         </select>
-                        <select name="" id="" class="option_type2">
+                        <select name="" id="" class="option_type2 Recategory">
                             <option value="">제주</option>
                             <option value="">서울</option>
                             <option value="">인천</option>
@@ -143,10 +143,10 @@
                             <option value="">경상</option>
                             <option value="">경북</option>
                         </select>
-                        <select name="" id="" class="option_type2">
+                        <select name="" id="" class="option_type2 Orcategory">
                             <option value="">오사카</option>
                         </select>
-                        <select name="" id="" class="option_type2">
+                        <select name="" id="" class="option_type2 TAcategory">
                             <option value="">투어</option>
                                     <option value="">액티비티</option>
                         </select>
@@ -155,23 +155,28 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품명</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" class="admin_inquiry_category2">
+                        <input type="text" id="pro_name" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" multiple class="admin_inquiry_category2">
+                        <input type="file" multiple id="pro_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">키워드</div>
                     <div class="admin_inquiry_q3 keyword">
-                        <label for="free" class="checkb"><input type="checkbox" name="free">자유일정</label>
-                        <label for="sale" class="checkb"><input type="checkbox" name="sale">특가</label>
-                        <label for="no_option" class="checkb"><input type="checkbox" name="no_option">노옵션 노쇼핑</label>
-                        <label for="confirmation" class="checkb"><input type="checkbox" name="confirmation">출발확정</label>
-                        <label for="timesale" class="checkb"><input type="checkbox" name="timesale">한정특가</label>
+                        <label for="free" class="checkb">
+                            <input type="checkbox" id="free" name="keywordchk">자유일정</label>
+                        <label for="sale" class="checkb">
+                            <input type="checkbox" id="sale" name="keywordchk">특가</label>
+                        <label for="no_option" class="checkb">
+                            <input type="checkbox" id="no_option" name="keywordchk">노옵션 노쇼핑</label>
+                        <label for="confirmation" class="checkb">
+                            <input type="checkbox" id="confirmation" name="keywordchk">출발확정</label>
+                        <label for="timesale" class="checkb">
+                            <input type="checkbox" id="timesale" name="keywordchk">한정특가</label>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -201,12 +206,13 @@
                         <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
-            </form>
+            
             <!--티켓 정보 입력 폼 끝-->
             <div class="btnlist">
                 <button value="등록"><a href="#">등록</a></button>
                 <button value="취소"><a href="#">취소</a></button>
             </div>
+        </form>
         </div>
     </section>
 <script>
@@ -219,5 +225,6 @@
     });
 </script>
     <script src="../script.js"></script>
+    <script src="/admin/js/prduct.js"></script>
 </body>
 </html>
