@@ -4,7 +4,7 @@
     height: 250px; 
     margin: 0 auto; 
     margin-bottom: 0; 
-    background-image: url('/lib.img/domestic_travel_img/domestic_main_img.png');
+    background-image: url('/lib/img/domestic_travel_img/domestic_main_img.png');
     background-size: cover; 
     background-repeat: no-repeat; 
 }
@@ -95,44 +95,44 @@ div.domestic_main > .domestic_subtitle{
     border-radius: 10px; 
 }
 .item_back_img1{ 
-    background-image: url('/lib.img/domestic_travel/img/example1.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example1.jpg');
     background-position: left center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 .item_back_img2{ 
-    background-image: url('/lib.img/domestic_travel/img/example2.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example2.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 .item_back_img3{ 
-    background-image: url('/lib.img/domestic_travel/img/example3.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example3.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 
 .item_back_img4{ 
-    background-image: url('/lib.img/domestic_travel/img/example4.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example4.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 .item_back_img5{ 
-    background-image: url('/lib.img/domestic_travel/img/example5.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example5.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 .item_back_img6{ 
-    background-image: url('/lib.img/domestic_travel/img/example6.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example6.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 .item_back_img7{ 
-    background-image: url('/lib.img/domestic_travel/img/example7.jpg');
+    background-image: url('/lib/img/domestic_travel/img/example7.jpg');
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: cover; 
