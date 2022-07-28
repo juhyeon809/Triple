@@ -1,5 +1,6 @@
 package com.project.triple.controller.page;
 
+import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class PageController {
 
     @Autowired
     private UsersApiLogicService usersApiLogicService;
+
+    @Autowired
+    private AirTicketApiLogicService airTicketApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -87,6 +91,8 @@ public class PageController {
             email = (String) session.getAttribute("email");
             name = (String) session.getAttribute("name");
         }
+
+
 
         return new ModelAndView("/pages/flight_reservation/flight_list").addObject("email", email)
                 .addObject("name", name);

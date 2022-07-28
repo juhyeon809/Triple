@@ -192,17 +192,18 @@
             <div class="fly_item"  v-for="airTicket in airTicketList" >
                 <ul class="fly_item_ul" >
                     <li >
-                        <div class="fly_item_img">
-                            <img src="/static/lib/img/fly_img/jinair.svg" alt="jinair">
+                        <div class="fly_item_img" id="logo_select">
+                            <img  v-if="airTicket.airlineIdx != 4444" src="/static/lib/img/fly_img/jinair.svg" alt="jinair">
+                            <img v-else src="/static/lib/img/fly_img/jejuair.svg" alt="jejuair">
                         </div>
                         <div class="fly_item_info" >
                             <ul class="fly_item_info_ul" >
                                 <li>
                                     <p>{{airTicket.departureDate}} - {{airTicket.landingDate}}</p>
-                                    <p>직항 4시간 25분</p>
+                                    <p>직항 4시간 25분 </p>
                                 </li>
                                 <li>
-                                    <p>{{airTicket.departureAirport}}-{{airTicket.landingAirport}}, 진에어</p>
+                                    <p>{{airTicket.departureAirport}}-{{airTicket.landingAirport}}</p>
                                     <p>무료수화물 {{airTicket.baggage}}개</p>
                                 </li>
                             </ul>
@@ -210,7 +211,7 @@
                     </li>
                 </ul>
                 <div class="fly_item_price">
-                    <a href="flight_view.html">{{airTicket.price}}</a>
+                    <a href="flight_view.html">{{airTicket.price}}원</a>
                 </div>
             </div>
             <!--항공권 1개 끝-->
