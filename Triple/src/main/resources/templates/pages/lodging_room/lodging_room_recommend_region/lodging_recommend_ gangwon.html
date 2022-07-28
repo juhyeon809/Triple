@@ -17,30 +17,10 @@
 <body>
     <div id="backg_image_area">
         <!--header 시작-->
-        <header>
-            <div id="logo_area">
-                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-                <form id="menu_form">
-                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-                </form>
-                <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/login.html">JOIN</a></div>
-            </div>
-            <div id="menu_area">
-                <ul id="menus">
-                    <li><a href="/templates/pages/overseas_travel/overseas_travel.html">해외여행</a></li>
-                    <li><a href="/templates/pages/domestic_travel/domestic_main.html">국내여행</a></li>
-                    <li><a href="/templates/pages/flight_reservation/flight_main.html">항공예약</a></li>
-                    <li><a href="/templates/pages/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                    <li><a href="/templates/pages/travel_package/package_main.html">패키지여행</a></li>
-                    <li><a href="/templates/pages/magazine/magazine.html">여행매거진</a></li>
-                    <li><a href="/templates/pages/event/event_main.html">혜택/렌터카</a></li>
-                </ul>
-            </div>
-        </header>
+        <div th:replace="fragement/header :: header"></div>
         <!--header 끝-->
         <!--main 시작-->
-        <div class="lodging_main" id="lodging_main" style="background: url(/member/lodging_room/img/lodging_list_main.svg); height: 250px;">
+        <div class="lodging_main" id="lodging_main" style="background: url(/lib/img/lodging_room_img/lodging_list_main.svg); height: 250px;">
             <p class="content content1">#가족여행 #여름준비</p>
             <p class="content content2">가족과 함께 떠나는<br>여름휴가 BEST 숙소</p>
             <p class="content content3">#호텔·리조트 #독채펜션 #키즈룸숙소</p>
@@ -71,7 +51,7 @@
                     <p><div class="reco_box" id="reco_item_back1">
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -85,7 +65,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -99,7 +79,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -117,7 +97,7 @@
                     <p><div class="reco_box" id="reco_item_back1">
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -131,7 +111,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -145,7 +125,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -163,7 +143,7 @@
                     <p><div class="reco_box" id="reco_item_back1">
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -177,7 +157,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -191,7 +171,7 @@
                         </div>
                         <div class="reco_item_back">
                             <div class="reco_item1">
-                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                                <img src="/lib/img/lodging_room_img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
                             </div>
                             <div class="reco_item2">
                                 <div class="item_box">
@@ -218,7 +198,7 @@
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
-                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                        <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="">
                     </div>
                     <div class="region_reco_item_info">
                         <ul>
@@ -241,7 +221,7 @@
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
-                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                        <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="">
                     </div>
                     <div class="region_reco_item_info">
                         <ul>
@@ -264,7 +244,7 @@
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
-                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                        <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="">
                     </div>
                     <div class="region_reco_item_info">
                         <ul>
@@ -287,7 +267,7 @@
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
-                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                        <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="">
                     </div>
                     <div class="region_reco_item_info">
                         <ul>
@@ -310,7 +290,7 @@
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
-                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                        <img src="/lib/img/lodging_room_img/lodging_package_item1.jpg" alt="">
                     </div>
                     <div class="region_reco_item_info">
                         <ul>
@@ -333,29 +313,13 @@
                 </div>
             </div>
             <!--국내 도별 숙소 추천 끝-->
+            </div>
         </section>
         <!--secion 끝-->
         <!--main 끝-->
-        <!--footer 시작-->
-        <footer>
-            <div id="enterprise_info">
-                <div id="enterprise_info_text">
-                    <p id="bold">트리플 사업자 정보</p>
-                    <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                    <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-                    <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-                </div>
-                <div id="icon_box">
-                    <div id="sns_box">
-                        <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                        <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                        <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                        <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                    </div>
-                    <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
-                </div>
-            </div>
-        </footer>
-        <!--footer 끝-->
+        <!-- footer 시작 -->
+        <footer th:replace="fragement/footer :: footer"></footer>
+        <!-- footer 끝 -->
+    </div>
 </body>
 </html>

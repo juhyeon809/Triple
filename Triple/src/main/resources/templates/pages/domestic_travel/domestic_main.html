@@ -9,7 +9,7 @@
     <title>TRIPLE | 국내여행</title>
     <link rel="stylesheet" href="/app/css/domestic_travel.css">
     <link rel="stylesheet" href="/app/css/common.css">
-    <script src="/member/domestic_travel/js/domestic_travel.js"></script>
+    <script src="/app/js/domestic_travel.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -18,27 +18,7 @@
 </head>
 <body>
     <!--header 시작-->
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-            <form id="menu_form">
-                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-            </form>
-            <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/login.html">JOIN</a></div>
-        </div>
-        <div id="menu_area">
-            <ul id="menus">
-                <li><a href="/templates/pages/overseas_travel/overseas_travel_main.html">해외여행</a></li>
-                <li><a href="/templates/pages/domestic_travel/domestic_main.html" style="color:rgb(63, 63, 63)">국내여행</a></li>
-                <li><a href="/templates/pages/flight_reservation/flight_main.html">항공예약</a></li>
-                <li><a href="/templates/pages/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                <li><a href="/templates/pages/travel_package/package_main.html">패키지여행</a></li>
-                <li><a href="/templates/pages/magazine/magazine.html">여행매거진</a></li>
-                <li><a href="/templates/pages/event/event_main.html">혜택/렌터카</a></li>
-            </ul>
-        </div>
-    </header>
+    <div th:replace="fragement/header :: header"></div>
     <!--header 끝-->
     <div id="domestic_main_img"></div>
     <!--section 시작-->
@@ -125,22 +105,22 @@
         <div class="domestic_main">
             <p class="domestic_title">여행, 어디로 가시나요?</p>
             <div class="region_list">
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_gangwon.png" alt="gangwon"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_seoul.png" alt="seoul"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_gyeongbuk.png" alt="gyeonbuk"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_gyeonggi.png" alt="gyeonggi"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_busan.png" alt="busan"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_gangwon.png" alt="gangwon"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_seoul.png" alt="seoul"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_gyeongbuk.png" alt="gyeonbuk"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_gyeonggi.png" alt="gyeonggi"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_busan.png" alt="busan"></a>
             </div>
             <div class="region_list">
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_jeonnam.png" alt="jeonnam"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_jeju.png" alt="jeju"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_chungnam.png" alt="chungnam"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_gangnam.png" alt="gangnam"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_chungbuk.png" alt="chungbuk"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_jeonnam.png" alt="jeonnam"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_jeju.png" alt="jeju"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_chungnam.png" alt="chungnam"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_gangnam.png" alt="gangnam"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_chungbuk.png" alt="chungbuk"></a>
             </div>
             <div class="region_list" id="region_list">
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_jeonbuk.png" alt="jeonbuk"></a>
-                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="./img/domestic_incheon.png" alt="incheon"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_jeonbuk.png" alt="jeonbuk"></a>
+                <a href="/templates/pages/travel_spot/spot_domestic.html"><img src="/lib/img/domestic_travel_img/domestic_incheon.png" alt="incheon"></a>
             </div>
         </div>
         <!--여행 어디로가시나요 끝-->
@@ -152,11 +132,11 @@
                 <p>출발지와 도착지를 입력해주세요</p>
                 <ul>
                     <li>
-                        <img src="./img/icon_map_pointer.svg" alt="map">
+                        <img src="/lib/img/domestic_travel_img/icon_map_pointer.svg" alt="map">
                         <input type="text" placeholder="출발지를 입력하세요">
                     </li>
                     <li>
-                        <img src="./img/icon_map_pointer.svg" alt="map">
+                        <img src="/lib/img/domestic_travel_img/icon_map_pointer.svg" alt="map">
                         <input type="text" placeholder="도착지를 입력하세요">
                     </li>
                 </ul>
@@ -174,22 +154,22 @@
                 <ul>
                     <li>
                         <p>
-                            <img src="./img/logo_tway.svg" alt="logo_tway">
+                            <img src="/lib/img/domestic_travel_img/logo_tway.svg" alt="logo_tway">
                             8월 30일(화) 출발<span class="detail_info">가는편 기준</span><a href="/templates/pages/flight_reservation/flight_reservation.html"><span class="air_price">34,300원</span><span class="detail_info">직항</span>&nbsp&nbsp&nbsp&nbsp > </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <img src="./img/logo_jeju.svg" alt="logo_jeju">
+                            <img src="/lib/img/domestic_travel_img/logo_jeju.svg" alt="logo_jeju">
                             8월 30일(화) 출발<span class="detail_info">가는편 기준</span><a href="/templates/pages/flight_reservation/flight_reservation.html"><span class="air_price">34,300원</span><span class="detail_info">직항</span>&nbsp&nbsp&nbsp&nbsp > </a>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <img src="./img/logo_jinair.svg" alt="logo_jinair">
+                            <img src="/lib/img/domestic_travel_img/logo_jinair.svg" alt="logo_jinair">
                             8월 30일(화) 출발<span class="detail_info">가는편 기준</span><a href="/templates/pages/flight_reservation/flight_reservation.html"><span class="air_price">34,300원</span><span class="detail_info">직항</span>&nbsp&nbsp&nbsp&nbsp > </a>
                         </p>
-                        <a href="/templates/pages/flight_reservation/flylist.html">항공권 더보기</a>
+                        <a href="/templates/pages/flight_reservation/flight_list.html">항공권 더보기</a>
                     </li>
                 </ul>
             </div>
@@ -546,7 +526,7 @@
                         <td>
                             <div class="travels_content">
                                 <p class="travels_profile">
-                                    <img src="./img/travels_profile.svg" alt="프로필">
+                                    <img src="/lib/img/domestic_travel_img/travels_profile.svg" alt="프로필">
                                     <span>오렌지님의 일정</span>
                                 </p>
                                 <p class="travels_table_title">가평과 서울을 넘나드는 여행</p>
@@ -557,7 +537,7 @@
                         <td>
                             <div class="travels_content">
                                 <p class="travels_profile">
-                                    <img src="./img/travels_profile.svg" alt="프로필">
+                                    <img src="/lib/img/domestic_travel_img/travels_profile.svg" alt="프로필">
                                     <span>오렌지님의 일정</span>
                                 </p>
                                 <p class="travels_table_title">가평과 서울을 넘나드는 여행</p>
@@ -570,7 +550,7 @@
                         <td>
                             <div class="travels_content">
                                 <p class="travels_profile">
-                                    <img src="./img/travels_profile.svg" alt="프로필">
+                                    <img src="/lib/img/domestic_travel_img/travels_profile.svg" alt="프로필">
                                     <span>오렌지님의 일정</span>
                                 </p>
                                 <p class="travels_table_title">가평과 서울을 넘나드는 여행</p>
@@ -581,7 +561,7 @@
                         <td>
                             <div class="travels_content">
                                 <p class="travels_profile">
-                                    <img src="./img/travels_profile.svg" alt="프로필">
+                                    <img src="/lib/img/domestic_travel_img/travels_profile.svg" alt="프로필">
                                     <span>오렌지님의 일정</span>
                                 </p>
                                 <p class="travels_table_title">가평과 서울을 넘나드는 여행</p>
@@ -605,26 +585,8 @@
         </div>
     </section>
     <!--secion 끝-->
-    <!--footer 시작-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="../../img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="../../img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
-    <!--footer 끝-->
+    <!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+    <!-- footer 끝 -->
 </body>
 </html>
