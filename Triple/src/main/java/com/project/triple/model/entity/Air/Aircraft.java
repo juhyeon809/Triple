@@ -36,9 +36,9 @@ public class Aircraft {
     private Integer vipSeat;
 //    private Integer airlineId;
 
-//    @ManyToOne
-//    private Airline airline;
-//
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aircraft")
-//    private List<AirTicket> airTicketList;
+    @ManyToOne
+    private Airline airline;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "aircraft")
+    private List<AirTicket> airTicketList;
 }

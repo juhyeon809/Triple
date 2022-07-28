@@ -98,4 +98,20 @@ public class PageController {
                 .addObject("name", name);
     }
 
+    @RequestMapping(path = "/flightMain")
+    public ModelAndView flightMain(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
+                .addObject("name", name);
+    }
+
 }

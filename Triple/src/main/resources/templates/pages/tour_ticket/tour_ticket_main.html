@@ -7,48 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRIPLE | 투어/티켓</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/app/css/tour_ticket.css">
+  <link rel="stylesheet" href=/app/css/common.css">
 
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 </head>
 
 <body>
-  <!--header-->
-  <header>
-    <div id="logo_area">
-        <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-        <form id="menu_form">
-            <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-        </form>
-        <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-
-    </div>
-    <div id="menu_area">
-      <ul id="menus">
-        <li><a href="/member/overseas_travel/overseas_travel_main.html">해외여행</a></li>
-        <li><a href="/member/domestic_travel/domestic_main.html">국내여행</a></li>
-        <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
-        <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-        <li><a href="/member/tour_ticket/tour_ticket_main.html" style="color:rgb(63, 63, 63)">투어·티켓</a></li>
-        <li><a href="/member/travel_package/package_main.html">패키지여행</a></li>
-        <li><a href="/member/magazine/magazine.html" >여행매거진</a></li>
-        <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
-    </ul>
-    </div>
-</header>
+<!--header 시작-->
+<div th:replace="fragement/header :: header"></div>
 <!--header 끝-->
   <div id="main" class="container">
     <section class="main-visual wide-section">
-      <img src="img/list_visual.jpg" alt="">
+      <img src="/static/lib/img/ticket_img/list_visual.jpg" alt="">
     </section>
     <!--검색창-->
     <section class="tour-search">
       <h1 class="section-title">투어∙티켓∙패키지 여행에 필요한 모든 것 </h1>
       <form action="">
         <input type="text" name="" placeholder="지역, 상품명으로 검색해보세요">
-        <button type="submit"><img src="img/icon_search.svg" alt=""></button>
+        <button type="submit"><img src="/static/lib/img/ticket_img/icon_search.svg" alt=""></button>
       </form>
     </section>
     <!--검색창 끝-->
@@ -59,27 +38,27 @@
       </div>
 
       <ul class="flex flex-between">
-        <li class="flex flex-column"><img src="img/category_1.png" alt="">투어/관광</li>
-        <li class="flex flex-column"><img src="img/category_2.png" alt="">액티비티</li>
-        <li class="flex flex-column"><img src="img/category_3.png" alt="">제주 여행</li>
-        <li class="flex flex-column"><img src="img/category_4.png" alt="">패키지 여행</li>
-        <li class="flex flex-column"><img src="img/category_5.png" alt="">wifi/유심</li>
-        <li class="flex flex-column"><img src="img/category_6.png" alt="">교통수단</li>
-        <li class="flex flex-column"><img src="img/category_7.png" alt="">어트랙션</li>
-        <li class="flex flex-column"><img src="img/category_8.png" alt="">프라이빗<br>단독투어</li>
-        <li class="flex flex-column"><img src="img/category_9.png" alt="">다이닝</li>
-        <li class="flex flex-column"><img src="img/category_10.png" alt="">스냅</li>
-        <li class="flex flex-column"><img src="img/category_11.png" alt="">수상/해양레저</li>
-        <li class="flex flex-column"><img src="img/category_12.png" alt="">클래스/체험</li>
-        <li class="flex flex-column"><img src="img/category_13.png" alt="">스파/온천</li>
-        <li class="flex flex-column"><img src="img/category_14.png" alt="">테마파크</li>
-        <li class="flex flex-column"><img src="img/category_15.png" alt="">키즈</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_1.png" alt="">투어/관광</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_2.png" alt="">액티비티</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_3.png" alt="">제주 여행</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_4.png" alt="">패키지 여행</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_5.png" alt="">wifi/유심</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_6.png" alt="">교통수단</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_7.png" alt="">어트랙션</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_8.png" alt="">프라이빗<br>단독투어</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_9.png" alt="">다이닝</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_10.png" alt="">스냅</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_11.png" alt="">수상/해양레저</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img//category_12.png" alt="">클래스/체험</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img//category_13.png" alt="">스파/온천</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img//category_14.png" alt="">테마파크</li>
+        <li class="flex flex-column"><img src="/static/lib/img/ticket_img/category_15.png" alt="">키즈</li>
         <li></li>
       </ul>
     </section>
 
     <section class="tour-list">
-      <h1 class="section-title"><img src="img/icon_pin.svg" alt=""><span>괌</span> 에서<img src="img/icon_down.svg" alt="">
+      <h1 class="section-title"><img src="/static/lib/img/ticket_img/icon_pin.svg" alt=""><span>괌</span> 에서<img src="/static/lib/img/ticket_img/icon_down.svg" alt="">
       </h1>
 
       <div class="tag-wrap tag-wrap2">
@@ -97,7 +76,7 @@
 
       <ul class="flex flex-between">
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>괌 항공 + 호텔 포함 자유여행 4박 5일</p>
             <p><span>★</span> 5 (331)</p>
@@ -106,7 +85,7 @@
           </div>
         </li>
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>괌 항공 + 호텔 포함 자유여행 4박 5일</p>
             <p><span>★</span> 5 (331)</p>
@@ -115,7 +94,7 @@
           </div>
         </li>
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>괌 항공 + 호텔 포함 자유여행 4박 5일</p>
             <p><span>★</span> 5 (331)</p>
@@ -124,7 +103,7 @@
           </div>
         </li>
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>괌 항공 + 호텔 포함 자유여행 4박 5일</p>
             <p><span>★</span> 5 (331)</p>
@@ -142,19 +121,19 @@
 
       <ul class="flex">
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>두짓 타니 괌 리조트<br>6.18(토) - 6.19(일)</p>
           </div>
         </li>
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>두짓 타니 괌 리조트<br>6.18(토) - 6.19(일)</p>
           </div>
         </li>
         <li>
-          <img src="img/bg_card.jpg" alt="">
+          <img src="/static/lib/img/ticket_img/bg_card.jpg" alt="">
           <div class="info-wrap">
             <p>두짓 타니 괌 리조트<br>6.18(토) - 6.19(일)</p>
           </div>
@@ -163,26 +142,9 @@
     </section>
   </div>
 
-  <footer>
-    <div id="enterprise_info">
-      <div id="enterprise_info_text">
-        <p id="bold">트리플 사업자 정보</p>
-        <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-        <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-        <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-      </div>
-      <div id="icon_box">
-        <div id="sns_box">
-          <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-          <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-          <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-          <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-        </div>
-        <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
-      </div>
-    </div>
-  </footer>
+  <!-- footer 시작 -->
+  <footer th:replace="fragement/footer :: footer"></footer>
+  <!-- footer 끝 -->
 
   <script>
     $('document').ready(function () {

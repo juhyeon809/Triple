@@ -7,62 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TRIPLE | 예약정보입력</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/app/css/tour_ticket.css">
+  <link rel="stylesheet" href=/app/css/common.css">
 
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 </head>
 
 <body>
-  <!--header-->
-  <header>
-    <div id="logo_area">
-        <div id="logo">
-          <a href="/main.html">
-            <img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;">
-          </a>
-        </div>
-        <form id="menu_form">
-            <div id="search">
-              <input type="text" placeholder="어디로 떠나시나요?">
-              <button type="submit" value="검색" style="cursor: pointer;">검색</button>
-            </div>
-        </form>
-        <div id="login_join">
-          <a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a>
-        </div>
-
-    </div>
-    <div id="menu_area">
-        <ul id="menus">
-            <li>
-              <a href="/member/overseas_travel/overseas_travel_main.html">해외여행</a>
-            </li>
-            <li>
-              <a href="/member/domestic_travel/domestic_travel.html">국내여행</a>
-            </li>
-            <li>
-              <a href="/member/flight_reservation/flight_main.html">항공예약</a>
-            </li>
-            <li>
-              <a href="/member/lodging_room/lodging_main.html">숙소예약</a>
-            </li>
-            <li>
-              <a href="/member/tour_ticket/tour_ticket_main.html" style="color:rgb(63, 63, 63)">투어·티켓</a>
-            </li>
-            <li>
-              <a href="/member/travel_package/package_main.html">패키지여행</a>
-            </li>
-            <li>
-              <a href="/member/magazine/magazine.html" >여행매거진</a>
-            </li>
-            <li>
-              <a href="/member/event/event_main.html">혜택/렌터카</a>
-            </li>
-        </ul>
-    </div>
-</header>
+<!--header 시작-->
+<div th:replace="fragement/header :: header"></div>
 <!--header 끝-->
   <div id="main" class="container form">
     <!--상단 예약 안내-->
@@ -80,7 +34,7 @@
     <!--상단 예약 안내 끝-->
     <!--정보입력-->
     <section class="form-input">
-      <form action="js/ticket.js" name="regform" method="post" onsubmit="return sendit()" target="iframe">
+      <form action="/static/app/js/ticket.js" name="regform" method="post" onsubmit="return sendit()" target="iframe">
         <!--예약자 정보입력-->
         <div class="input-group booker-input">
           <h1>예약자 정보</h1>
@@ -215,49 +169,10 @@
       <!--정보입력 끝-->
     </section>
   </div>
-<!--footer-->
-  <footer>
-    <div id="enterprise_info">
-      <div id="enterprise_info_text">
-        <p id="bold">트리플 사업자 정보</p>
-        <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-        <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-        <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-      </div>
-      <div id="icon_box">
-        <div id="sns_box">
-          <div>
-            <a href="#">
-            <img src="./img/btn-social-blog@3x.png" alt="SNS">
-          </a>
-          </div>
-          <div>
-            <a href="#">
-            <img src="./img/btn-social-insta@3x.png" alt="SNS">
-          </a>
-          </div>
-          <div>
-            <a href="#">
-            \<img src="./img/btn-social-fb@3x.png" alt="SNS">
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <img src="./img/btn-social-brunch@3x.png" alt="SNS">
-            </a>
-          </div>
-        </div>
-        <div id="TRIP">
-          <a href="#">
-            <img src="./img/footer_TRIP.png" alt="TRIP">
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-<!--footer 끝-->
-<script src="js/ticket.js"></script>
+<!-- footer 시작 -->
+<footer th:replace="fragement/footer :: footer"></footer>
+<!-- footer 끝 -->
+<script src="/static/app/js/ticket.js"></script>
   <script>
     $('document').ready(function () {
       $('.button-wrap button').on('click', function () {

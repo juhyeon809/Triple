@@ -826,13 +826,13 @@ section#tabs p {
 .agree-checkbox input[type="checkbox"] + label{
   width: 18px;
   height: 18px;
-  background-image: url('../img/icon_check_gray.svg');
+  background-image: url('../../lib/img/ticket_img/icon_check_gray.svg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 .agree-checkbox input[type="checkbox"]:checked + label{
-  background-image: url('../img/icon_check.svg');
+  background-image: url('../../lib/img/ticket_img/icon_check.svg');
 }
 .form .submit {
   height: 50px;
@@ -944,13 +944,13 @@ section#tabs p {
   left: -24px;
   width: 22px;
   height: 22px;
-  background-image: url('../img/radio-check.svg');
+  background-image: url('../../lib/img/ticket_img/radio-check.svg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 .option-form input[type="checkbox"]:checked::before{
-  background-image: url('../img/radio-checked.svg');
+  background-image: url('../../lib/img/ticket_img/radio-checked.svg');
 }
 .option-form input[type="number"] {
   margin: -20px 10px 0;

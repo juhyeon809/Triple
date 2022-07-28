@@ -259,7 +259,7 @@ input[type="button"]{ width: 100px;}
 .special .imgbox {
     width: 160px; height: 150px;
     border-radius: 10px; 
-    background-image: url("/member/flight_reservation/fly_img/box.png");  
+    background-image: url("/lib/img/fly_img/box.png");
     margin: 0; padding: 0; 
     margin-right: 20px;
     margin-left: 2px;
