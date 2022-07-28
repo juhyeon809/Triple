@@ -155,5 +155,145 @@ public class PageController {
     }
 
 
+    //magazine
+    @RequestMapping(path = "/magazine")
+    public ModelAndView magazine(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine_recommend")
+    public ModelAndView magazine_recommend(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_recommend").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_tip")
+    public ModelAndView magazine_tip(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_tip").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_eatplace")
+    public ModelAndView magazine_eatplace(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_eatplace").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_airport")
+    public ModelAndView magazine_airport(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_airport").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_guesthouse")
+    public ModelAndView magazine_guesthouse(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_guesthouse").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_tourticket")
+    public ModelAndView magazine_tourticket(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_tourticket").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_shop")
+    public ModelAndView magazine_shop(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_shop").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine_travels")
+    public ModelAndView magazine_travels(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_travels").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+
+
 
 }
