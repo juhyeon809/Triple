@@ -24,6 +24,16 @@ a:visited{color: #000; }
 li{
     list-style: none;
 }
+input[type="text"], input[type="password"], input[type="date"], input[type="time"] select{
+    border: 1px solid #999;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="time"]:focus, select:focus{
+    outline-color: #0098A1;
+    outline-style: 1px solid;
+}
+input[type="border"], input[type="radio"], input[type="checkbox"]{
+    border: none;
+}
 /* Navbar ====================================== */
 .navbar {
     -webkit-border-radius: 0;
@@ -567,11 +577,14 @@ main td {
     padding-left: 40px;
     margin-right: auto;
     margin-left: auto;
+    min-width: 1300px;
 }
 .header_box{
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    min-width: 1300px;
+    color: #4F4F4F;
 }
 .content2 h2 {
     margin: 0;
@@ -687,8 +700,8 @@ table select {
     text-align: center;
 }
 th {
-    border-bottom: 1.5px solid #000;
-    font-size: 16x;
+    border-bottom: 1.5px solid #4f4f4f;
+    font-size: 18px;
     padding-bottom: 10px;
     padding-top: 8px;
     text-align: center;
@@ -903,8 +916,8 @@ font-size: 13px;
     width: 100%;
 }
 input[type="time"]{
-    width: 200px;
-    margin-bottom: 10px;
+    width: 100%;
+
 }
 .formbox_ul_title {
     width: 300px;
@@ -1310,7 +1323,7 @@ input[type="time"]{
     height: 30px;
     float:left;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .notice_b input{
@@ -1873,8 +1886,10 @@ input[type="time"]{
     flex-direction: column;
     justify-content: center;
     display: flex;
+    min-height: 35px;
 }
 
+.admin_register_content, 
 .admin_register_adminid_content, .admin_register_name_content, .admin_register_hp_content, .admin_register_email_content, .admin_register_adminpw_content, .admin_register_adminpwre_content, .admin_register_department_content, .admin_register_title_content{
     width: 100%;
     height: 30px;
@@ -1882,7 +1897,13 @@ input[type="time"]{
     font-size: 15px;
     text-align: center;
     border: 1px solid gray;
+    min-height: 35px;
     /* border-radius: 10px; */
+}
+.aircraft_reg{
+    min-width: 275px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
 }
 
 /* .admin_register_btn {
@@ -1986,8 +2007,64 @@ input[type="time"]{
     justify-content: center;
     margin-top: 30px;
 }
+.admin_inquiry_title3{
+    width: 25%;
+    background-color: #0098A1;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .admin_inquiry_q3{
     width: 79%;
+}
+.admin_inquiry_q3 > li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 30px;
+}
+.admin_inquiry_q3 > li > label{
+    width: 25%;
+    font-size: 16px;
+    font-weight: normal;
+}
+.admin_inquiry_q3 > .baggage{
+    margin-right: 10px;
+    height: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    
+}
+.admin_inquiry_q3 input[type="text"]::placeholder{
+    text-indent: 5px;
+    font-size: 16px;
+}
+.admin_inquiry_q3 input[type="radio"]{
+    margin-right: 10px;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.admin_inquiry_q3 input[type="file"]{
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.admin_inquiry_q3 .checkb > input{
+    margin-right: 5px;
+}
+.admin_inquiry_q3 .checkb{
+    font-size: 16px;
+    font-weight: normal;
+    vertical-align: middle;
+    align-items: center;
+    margin-right: 20px;
 }
 .admin_inquiry_q3 > p, .admin_inquiry_a1 > div > p {
     margin-left: 15px;
@@ -2005,6 +2082,11 @@ input[type="time"]{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    min-height: 35px;
+}
+.round .admin_inquiry_title{
+    border-radius: 4px;
+    background-color: #0173b0;
 }
 .admin_inquiry_qtext:last-child{
     margin-bottom: 20px;
@@ -2013,6 +2095,57 @@ input[type="time"]{
     font-size: 18px;
     width: 100%;
     height: 35px;
+}
+.admin_inquiry_category3{
+    font-size: 18px;
+    height: 35px;
+    width: 24%;
+}
+.seat_type{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.seat_type_input {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 35px;
+}
+.price{
+    font-size: 14px;
+    background-color: #0173b0;
+    border-radius: 5px;
+}
+.item_price{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.item_price_input {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 35px;
+    width: 230px;
+}
+.option {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    width: 79%;
+}
+.option_type{
+    width: 19%;
+}
+.option_type2{
+    width: 24%;
+}
+.admin_inquiry_category2 span {
+    width: 30%;
 }
 
 .admin_inquiry_a1{

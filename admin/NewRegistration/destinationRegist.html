@@ -10,46 +10,32 @@
         <link rel="stylesheet" href="../admin.css">
     <style>
 
-    form{
-        margin-top: 100px;
-    }
-
-    form ul {
-                list-style: none;
-                padding: 0;
-                margin: 0 0 0 20px;
-    }
-    .regForm ul{
-        background: none;
-        padding: 50px;
-        display: flex;
-        flex-wrap: wrap;
-        
-        font-size: 20px;
-        align-items: center;
-        
-        
-    }
+    
+    
     .tit_lbl {
         text-align: center;
         font-weight: bold;
         margin-right: 10px;
+        width: 40%;
         background-color: #0098A1;
         color: #fff;
-        width: 40%;
     }
-    
+    .regForm ul{
+        padding: 50px;
+        font-size: 20px;
+        align-items: center;
+    }
     .regForm ul input{
-        width:100%;
+        width:80%;
         height: 30px;
     }
     .regForm ul li{
-        margin-bottom: 30px;
-        width: 50%;
+        width:80%;
         display: flex;
         justify-content: space-around;
+        margin: 0 auto 30px;
     }
-
+    
 
 
     </style>
@@ -58,8 +44,6 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a> -->
                 <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
             <div class="user-info">
@@ -173,35 +157,33 @@
             <!--취항지 정보 등록-->
             <div class="form">
                 <form action="#" class="regForm" onsubmit="return destination()">
-                    <div class="register">
-                        <div>
-                            <ul>
-                                <li class="clear">
-                                    <p class="tit_lbl">공항명</p>
-                                    <div class="reg_content">
-                                        <input type="text" class="name">
-                                    </div>
-                                </li>
-
-                                <li class="clear">
-                                    <p class="tit_lbl">공항코드</p>
-                                    <div class="reg_content"><input type="text" class="code"></div>
-                                </li>
-                                <li class="clear">
-                                    <p class="tit_lbl">국가</p>
-                                    <div class="reg_content"><input type="text" class="textBox"></div>
-                                </li>
-                                <li class="clear">
-                                    <p class="tit_lbl">도시</p>
-                                    <div class="reg_content"><input type="text" class="textBox"></div>
-                                </li>
-                            </ul>
+                    <div class="admin_inquiry_qtext">
+                        <div class="admin_inquiry_title">공항명</div>
+                        <div class="admin_inquiry_q3">
+                            <input type="text" class="admin_inquiry_category2 portname">
                         </div>
-                        <!--등록-->
-                        <div class="hbt" style="clear: both;">
-                            <button type="submit" class="regis " value="등록">등록</button>
+                    </div>
+                    <div class="admin_inquiry_qtext">
+                        <div class="admin_inquiry_title">공항코드</div>
+                        <div class="admin_inquiry_q3">
+                            <input type="text" class="admin_inquiry_category2 code">
                         </div>
-                        <!--등록 끝-->
+                    </div>
+                    <div class="admin_inquiry_qtext">
+                        <div class="admin_inquiry_title">국가</div>
+                        <div class="admin_inquiry_q3">
+                            <input type="text" class="admin_inquiry_category2 country">
+                        </div>
+                    </div>
+                    <div class="admin_inquiry_qtext">
+                        <div class="admin_inquiry_title">도시</div>
+                        <div class="admin_inquiry_q3">
+                            <input type="text" class="admin_inquiry_category2 textBox">
+                        </div>
+                    </div>
+                    <div class="btnlist">
+                        <button value="등록"><a href="#">등록</a></button>
+                        <button value="취소"><a href="#">취소</a></button>
                     </div>
                 </form>
             </div>

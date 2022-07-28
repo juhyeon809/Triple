@@ -197,6 +197,10 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: auto;
+}
+#triple_sale div{
+    height: 230px;
 }
 #triple_sale div a img {
     width: 320px;
@@ -235,10 +239,17 @@ main {
     margin: 20px 0;
     margin-left: 20px;
 }
+#travel_package_contents .city{
+    margin-left: 30px;
+}
 .packagebox {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
+}
+.packagebox div.pacagebox_innerdiv{
+    width: 450px;
 }
 #red_text{
     color: #FF0101;
@@ -247,6 +258,7 @@ main {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 220px;
 }
 #merchandise_mark div p {
     font-size: 14px;

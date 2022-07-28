@@ -2,14 +2,42 @@ function airline(){
     const kor = RegExp(/[가-힣]+$/);
     const eng = RegExp(/[a-zA-Z]/);
     
+    if($('.kor').val() == ''){
+        alert('항공사명을 입력해주세요')
+        $('.kor').focus();
+        return false
+    }
     if(!kor.test($('.kor').val())){
         alert('한글만 입력해주세요');
+        $('.kor').val('');
         $('.kor').focus();
+        return false
+    }
+    if($('.eng').val() == ''){
+        alert('항공사 영문을 입력해주세요')
+        $('.eng').focus();
         return false
     }
     if(!eng.test($('.eng').val())){
         alert('영어만 입력해주세요');
+        $('.eng').val('');
         $('.eng').focus();
+        return false
+    }
+    if($('.premium').val() == ''){
+        alert('항공사 코드를 입력해주세요')
+        $('.premium').focus();
+        return false
+    }
+    if(!$('#route option:selected').val()) {
+        alert("운항노선을 선택해주세요");
+        $('#route').focus();
+        return false
+    }
+    
+    if($('.center').val() == ''){
+        alert('고객센터 번호를 입력해주세요')
+        $('.center').focus();
         return false
     }
     return true;
@@ -19,15 +47,36 @@ function destination(){
     const airport = RegExp(/[a-zA-Z가-힣]/);
     const code = RegExp(/[a-zA-Z]/);
 
-        if(!airport.test($('.name').val())){
+        if($('.portname').val() == ''){
             alert('공항명을 입력해주세요')
-            $('.name').focus();
+            $('.portname').focus();
+            return false
+        }
+        if(!airport.test($('.portname').val())){
+            alert('공항명을 확인해주세요')
+            $('.portname').val('');
+            $('.portname').focus();
             return false;
         }
-        if(!code.test($('.code').val())){
+        if($('.code').val() == ''){
             alert('공항코드을 입력해주세요')
+            $('.code').focus();
+            return false
+        }
+        if(!code.test($('.code').val())){
+            alert('공항코드을 확인해주세요')
         $('.code').focus();
         return false;
+        }
+        if($('.country').val() == ''){
+            alert('나라를 입력해주세요')
+            $('.country').focus();
+            return false
+        }
+        if($('.textBox').val() == ''){
+            alert('도시를 입력해주세요')
+            $('.textBox').focus();
+            return false
         }
     return true;
 }
@@ -56,14 +105,29 @@ function aircraft(){
         $('#comp').focus();
         return false
     }
+    if($('.vip').val() == ''){
+        alert('VIP석 수를 입력해주세요')
+        $('.cevipnter').focus();
+        return false
+    }
     if(!seatNum.test($('.vip').val())){
-        alert('vip좌석 수를 입력해주세요')
+        alert('숫자만 입력해주세요')
         $('.vip').focus();
         return false
     }
-    if(!seatNum.test($('.family').val())){
-        alert('패밀리좌석 수를 입력해주세요')
+    if($('.family').val() == ''){
+        alert('패밀리석 수를 입력해주세요')
         $('.family').focus();
+        return false
+    }
+    if(!seatNum.test($('.family').val())){
+        alert('숫자만 입력해주세요')
+        $('.family').focus();
+        return false
+    }
+    if($('.special').val() == ''){
+        alert('특가석 수를 입력해주세요')
+        $('.special').focus();
         return false
     }
     if(!seatNum.test($('.special').val())){
@@ -71,17 +135,37 @@ function aircraft(){
         $('.special').focus();
         return false
     }
-    if(!seatNum.test($('.premium').val())){
-        alert('프리미엄좌석 수를 입력해주세요')
+    if($('.premium').val() == ''){
+        alert('프리미엄석 수를 입력해주세요')
         $('.premium').focus();
         return false
     }
-    if(!seatNum.test($('.economy').val())){
-        alert('일반좌석 수를 입력해주세요')
+    if(!seatNum.test($('.premium').val())){
+        alert('숫자만 입력해주세요')
+        $('.premium').focus();
+        return false
+    }
+    if($('.economy').val() == ''){
+        alert('일반석 수를 입력해주세요')
         $('.economy').focus();
         return false
     }
-          
+    if(!seatNum.test($('.economy').val())){
+        alert('숫자만 입력해주세요')
+        $('.economy').focus();
+        return false
+    }
+    if($('.total').val() == ''){
+        alert('총 좌석수를 입력해주세요')
+        $('.total').focus();
+        return false
+    }
+    if(!seatNum.test($('.total').val())){
+        alert('숫자만 입력해주세요')
+        $('.total').focus();
+        return false
+    }
+
 
     return true;
 }
