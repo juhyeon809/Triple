@@ -118,7 +118,7 @@ public class PageController {
             name = (String) session.getAttribute("name");
         }
 
-        return new ModelAndView("/pages/mypage_reserve/my_inquiry_write").addObject("email", email)
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_write").addObject("email", email)
                 .addObject("name", name);
     }
 
@@ -134,7 +134,7 @@ public class PageController {
             name = (String) session.getAttribute("name");
         }
 
-        return new ModelAndView("/pages/mypage_reserve/my_inquiry_list").addObject("email", email)
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_list").addObject("email", email)
                 .addObject("name", name);
     }
 

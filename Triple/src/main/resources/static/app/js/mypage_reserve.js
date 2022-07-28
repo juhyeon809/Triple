@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 console.log("reserve.js 작동중")
 
 $(document).ready(function() {
@@ -116,7 +115,6 @@ $(function (){
     })
 
 })
-=======
 function cancel1(){
     let rtn;
 
@@ -185,5 +183,4 @@ function sendit(){
     alert('접수되었습니다');
     return true;
 }
->>>>>>> 7fb256faffbc9bd0b15646b2a2493ac6fa2694e6
 
