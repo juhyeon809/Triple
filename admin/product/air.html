@@ -13,8 +13,6 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a> -->
                 <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
             <div class="user-info">
@@ -129,7 +127,7 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">로고</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file"" id="logo_img" class="admin_inquiry_category2">
+                        <input type="file" id="logo_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -170,11 +168,12 @@
                     <div class="admin_inquiry_title">항공사명</div>
                     <div class="admin_inquiry_q3">
                         <select name="" id="airline" class="admin_inquiry_category2">
-                            <option value="">대한항공</option>
-                            <option value="">아시아나항공</option>
-                            <option value="">제주항공</option>
-                            <option value="">진에어</option>
-                            <option value="">부산에어</option>
+                            <option value="">항공사 선택</option>
+                            <option value="대한항공">대한항공</option>
+                            <option value="아시아나항공">아시아나항공</option>
+                            <option value="제주항공">제주항공</option>
+                            <option value="진에어">진에어</option>
+                            <option value="부산에어">부산에어</option>
                         </select>
                     </div>
                 </div>
@@ -182,19 +181,20 @@
                     <div class="admin_inquiry_title">항공기명</div>
                     <div class="admin_inquiry_q3">
                         <select name="" id="plane_name" class="admin_inquiry_category2">
-                            <option value="">300-KO-001</option>
-                            <option value="">300-KO-002</option>
-                            <option value="">300-KO-003</option>
-                            <option value="">300-KO-004</option>
-                            <option value="">300-KO-005</option>
+                            <option value="">항공기 선택</option>
+                            <option value="300-KO-001">300-KO-001</option>
+                            <option value="300-KO-002">300-KO-002</option>
+                            <option value="300-KO-003">300-KO-003</option>
+                            <option value="300-KO-004">300-KO-004</option>
+                            <option value="300-KO-005">300-KO-005</option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">수하물</div>
                     <div class="admin_inquiry_q3 keyword">
-                        <label for="free" class="checkb"><input type="checkbox" name="free">포함</label>
-                        <label for="sale" class="checkb"><input type="checkbox" name="sale">미포함</label>
+                        <label for="free" class="checkb"><input type="radio" name="hydrate" id="free">포함</label>
+                        <label for="sale" class="checkb"><input type="radio" name="hydrate" id="sale">미포함</label>
                     </div>
                 </div>
                 <!--좌석별 가격-->
@@ -205,9 +205,9 @@
                     <div class="admin_inquiry_title">일반석</div>
                     <div class="admin_inquiry_q3">
                         <div class="seat_type">
-                            <span>성인<input type="text" class="seat_type_input">원</span> /
-                            <span>소아<input type="text" class="seat_type_input">원</span> /
-                            <span>유아<input type="text" class="seat_type_input">원</span> 
+                            <span>성인<input type="text" id="Eadult" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" id="Einfant" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" id="Echild" class="seat_type_input">원</span> 
                         </div>
                     </div>
                 </div>
@@ -225,9 +225,9 @@
                     <div class="admin_inquiry_title">비즈니스</div>
                     <div class="admin_inquiry_q3">
                         <div class="seat_type">
-                            <span>성인<input type="text" class="seat_type_input">원</span> /
-                            <span>소아<input type="text" class="seat_type_input">원</span> /
-                            <span>유아<input type="text" class="seat_type_input">원</span> 
+                            <span>성인<input type="text" id="Badult" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" id="Binfant" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" id="Bchild" class="seat_type_input">원</span> 
                         </div>
                     </div>
                 </div>
@@ -235,9 +235,9 @@
                     <div class="admin_inquiry_title">일등석</div>
                     <div class="admin_inquiry_q3">
                         <div class="seat_type">
-                            <span>성인<input type="text" class="seat_type_input">원</span> /
-                            <span>소아<input type="text" class="seat_type_input">원</span> /
-                            <span>유아<input type="text" class="seat_type_input">원</span> 
+                            <span>성인<input type="text" id="Fadult" class="seat_type_input">원</span> /
+                            <span>소아<input type="text" id="Finfant" class="seat_type_input">원</span> /
+                            <span>유아<input type="text" id="Fchild" class="seat_type_input">원</span> 
                         </div>
                     </div>
                 </div>

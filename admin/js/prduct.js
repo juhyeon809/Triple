@@ -8,10 +8,11 @@ function productAir(){
 
     const flytime = document.querySelector('.flytime');
     const arrive= document.querySelector('.arrive');
-    const hydrate= document.querySelector('.hydrate');
     const exhd=RegExp(/^[A-Za-z0-9]+$/);
     const go_time=document.querySelector('.go_time');
     const arr_time= document.querySelector('.arr_time');
+
+
 
     if(img.value==''){
         alert("로고 파일을 선택해주세요");
@@ -55,26 +56,82 @@ function productAir(){
         plane_name.focus();
         return false;
     }
-    if(hydrate.value == ''){
-        alert('수화물을 입력해주세요');
-        hydrate.focus();
-        return false;
-    }
-    //수화물
-    if(!exhd.test($('.hydrate').val())){
-        alert('형식에맞게 입력해주세요 예)10kg');
-        $('.hydrate').focus();
-        return false;
-    }
     //가격
+    if($('#Eadult').val()==''){
+        alert('성인좌석가격을 입력해주세요');
+        $('#Eadult').focus();
+        return false;
+    }
+    if($('#Einfant').val()==''){
+        alert('소아좌석가격을 입력해주세요');
+        $('#Einfant').focus();
+        return false;
+    }
     
+    if($('#Echild').val()==''){
+        alert('유아좌석 가격을 입력해주세요');
+        $('#Echild').focus();
+        return false;
+    }
+    if($('#Padult').val()==''){
+        alert('성인좌석 가격을 입력해주세요');
+        $('#Padult').focus();
+        return false;
+    }
+    if($('#Pinfant').val()==''){
+        alert('소아좌석가격을 입력해주세요');
+        $('#Pinfant').focus();
+        return false;
+    }
+    
+    if($('#Pchild').val()==''){
+        alert('유아좌석 가격을 입력해주세요');
+        $('#Pchild').focus();
+        return false;
+    }
+    if($('#Badult').val()==''){
+        alert('성인좌석 가격을 입력해주세요');
+        $('#Badult').focus();
+        return false;
+    }
+    if($('#Binfant').val()==''){
+        alert('소아좌석가격을 입력해주세요');
+        $('#Binfant').focus();
+        return false;
+    }
+    
+    if($('#Bchild').val()==''){
+        alert('유아좌석 가격을 입력해주세요');
+        $('#Bchild').focus();
+        return false;
+    }
+    if($('#Fadult').val()==''){
+        alert('성인좌석 가격을 입력해주세요');
+        $('#Fadult').focus();
+        return false;
+    }
+    if($('#Finfant').val()==''){
+        alert('소아좌석가격을 입력해주세요');
+        $('#Finfant').focus();
+        return false;
+    }
+    
+    if($('#Fchild').val()==''){
+        alert('유아좌석 가격을 입력해주세요');
+        $('#Fchild').focus();
+        return false;
+    }
+    
+    
+
     return true;
 }
 
 /*packge*/
 function productPackge(){
-    const concategory=document.querySelector('.formbox_ul_select1');
+    const concategory=document.querySelector('.concategory');
     const pro_name=document.querySelector('.pro_name');
+    const pro_img= document.getElementById('pro_img');
 
     if(concategory.value=='') {
         alert("나라를 선택해주세요");
@@ -194,6 +251,13 @@ function productRoom(){
         check_out.focus();
         return false;
     }
+    const exPrice=RegExp( /\B(?=(\d{3})+(?!\d))/g, ',');
+    if(!exPrice.test($('.seat_type_input').val())){
+        alert('가격을 형식에 맞게 입력해주세요');
+        $('.seat_type_input').focus();
+        return false
+    }
+    
     return true;
 }
 
@@ -205,8 +269,10 @@ function productTicket(){
     const pro_name=document.getElementById('pro_name');
     const pro_img= document.getElementById('pro_img');
     
+
     if(docategory.value==''){
         alert('상품분류를 선택해주세요');
+        docategory.focus();
         return false;
     }
     
@@ -214,6 +280,7 @@ function productTicket(){
 
     if(tacategory.value==''){
         alert('투어/액티비티중 선택해주세요');
+        tacategory.focus()
         return false;
     }
     if(pro_name.value == ''){
@@ -233,10 +300,6 @@ function productTicket(){
             break;
         }
     }
-    if(!isKCheck){
-        alert('키워드를 선택해주세요');
-        return false;
-    }
     
     const exPrice=RegExp( /\B(?=(\d{3})+(?!\d))/g, ',');
     if(!exPrice.test($('.item_price_input').val())){
@@ -247,4 +310,20 @@ function productTicket(){
 
     return true;
 
+}
+
+function noticeRegister(){
+    const notice= document.querySelector('.no_list');
+    const title=document.querySelector('.title');
+
+
+    if(notice.value==''){
+        alert('분류를 선택해주세요');
+        return false;
+    }
+    if(title.value==''){
+        alert('타이틀명을 입력해주세요');
+        return false;
+    }
+    return true;
 }

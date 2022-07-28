@@ -17,12 +17,12 @@ public class AirTicketApiResponse {
     private Long idx;
     private String ticketType;
     private String ticketNum;
-    private Long airlineId;
-    private Long aircraftId;
+    private Integer airlineIdx;
+    private Integer aircraftIdx;
     private String departureAirport;
     private String landingAirport;
-    private String departureDate;
-    private String landingDate;
+    private LocalDateTime departureDate;
+    private LocalDateTime landingDate;
     private BigDecimal price;
     private String seatNum;
     private String seatGrade;

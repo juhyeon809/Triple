@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="/app/css/fly.css">
     <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="/app/js/flyScript.js"></script>
+
 <body>
     <!--header 시작-->
     <div th:replace="fragement/header :: header"></div>
@@ -29,7 +28,7 @@
             <ul>
                 <li>
                     <div class="citysel1">
-                        <p class="boxlink1" onclick="hideshow()">서울 - 괌<img src="../../../static/lib/img/fly_img/down_icon.png" alt=""></p>
+                        <p class="boxlink1" onclick="hideshow()">서울 - 괌<img src="/lib/img/fly_img/down_icon.png" alt=""></p>
                     </div>
                 </li>
                 <li>
@@ -37,11 +36,11 @@
                 </li>
                 <li>
                     <select class="sitysel2">
-                        <option value="괌">정렬 및 필터</option>
-                        <option value="경찰">가격 높은순</option>
-                        <option value="경찰">가격 낮은순</option>
-                        <option value="경찰">출발 빠른순</option>
-                        <option value="경찰">출발 늦은순</option>
+                        <option value="">정렬 및 필터</option>
+                        <option value="높은순">가격 높은순</option>
+                        <option value="낮은순">가격 낮은순</option>
+                        <option value="빠른순">출발 빠른순</option>
+                        <option value="늦은순">출발 늦은순</option>
                     </select>
                 </li>
                 <li>
@@ -56,13 +55,13 @@
             <div class="hidebox1-1" hidden>
                 <form action="">
                 <p class="click" onclick="hideshow1()">
-                    <img src="../../../static/lib/img/fly_img/flying-airplane.png" alt=""><span class="click1">김포 GMP</span></p>
+                    <img src="/lib/img/fly_img/flying-airplane.png" alt=""><span class="click1">김포 GMP</span></p>
                 <p class="click" onclick="hideshow2()">
-                    <img src="../../../static/lib/img/fly_img/map-point-pointer.png" alt=""><span class="click2">괌 GUM</span></p>
+                    <img src="/lib/img/fly_img/map-point-pointer.png" alt=""><span class="click2">괌 GUM</span></p>
                 <p class="click" onclick="hideshow3()">
-                    <img src="../../../static/lib/img/fly_img/office-monthly-calendar.png" alt=""><span class="click3">7.02(토)</span> - <span class="click4">7.04(월)</span></p>
+                    <img src="/lib/img/fly_img/office-monthly-calendar.png" alt=""><span class="click3">7.02(토)</span> - <span class="click4">7.04(월)</span></p>
                 <p class="click" onclick="hideshow4()">
-                    <img src="../../../static/lib/img/fly_img/messenger-user-avatar.png" alt=""><span class="click4">탑승객1명, 일반석 외1</span></p>
+                    <img src="/lib/img/fly_img/messenger-user-avatar.png" alt=""><span class="click4">탑승객1명, 일반석 외1</span></p>
             
                 <div>
                     <button class="close" onclick="close()">닫기</button>
@@ -189,28 +188,31 @@
         <!--조회된 항공권 리스트-->
         <div id="airTicketList" >
             <!--항공권 1개-->
-            <div class="fly_item"  v-for="airTicket in airTicketList" >
+            <div class="fly_item"  th:each="airTicket : ${airTicketList}" >
                 <ul class="fly_item_ul" >
                     <li >
-                        <div class="fly_item_img">
-                            <img src="/static/lib/img/fly_img/jinair.svg" alt="jinair">
+                        <div class="fly_item_img" id="logo_select">
+                            <img th:if= "${airTicket.getAirlineIdx() == 4444}" src="/lib/img/fly_img/jinair.svg" alt="jinair">
+                            <img th:if= "${airTicket.getAirlineIdx() == 3333}" src="/lib/img/fly_img/jejuair.svg" alt="jejuair">
                         </div>
                         <div class="fly_item_info" >
                             <ul class="fly_item_info_ul" >
                                 <li>
-                                    <p>{{airTicket.departureDate}} - {{airTicket.landingDate}}</p>
-                                    <p>직항 4시간 25분</p>
+                                    <p th:text="${airTicket.getDepartureDate()}+' - '+${airTicket.getLandingDate()}"></p>
+                                    <th:block th:each="timeTaken : ${timeTakenList}" th:if="${airTicket.getIdx() == timeTaken.getAirTicketIdx()}">
+                                        <p  th:text="${timeTaken.getHour()}+'시간'+${timeTaken.getMinute()}+'분'"></p>
+                                    </th:block>
                                 </li>
                                 <li>
-                                    <p>{{airTicket.departureAirport}}-{{airTicket.landingAirport}}, 진에어</p>
-                                    <p>무료수화물 {{airTicket.baggage}}개</p>
+                                    <p th:text="${airTicket.getDepartureAirport()}+' - '+${airTicket.getLandingAirport()}"></p>
+                                    <p th:text="|무료수화물${airTicket.getBaggage()}|"></p>
                                 </li>
                             </ul>
                         </div>
                     </li>
                 </ul>
                 <div class="fly_item_price">
-                    <a href="flight_view.html">{{airTicket.price}}</a>
+                    <a th:text="${airTicket.getPrice()} +'원'" th:href="'Triple/flightView?ticketNum='+${airTicket.getTicketNum()}+'&ticketType='+${airTicket.getTicketType()}"></a>
                 </div>
             </div>
             <!--항공권 1개 끝-->
@@ -241,8 +243,6 @@
     </footer>
     <!--footer 끝-->
 
-    <script src="../../../static/app/js/flyScript.js"></script>
-    
     <script>
         $(function(){
            $('#datepicker').datepicker();

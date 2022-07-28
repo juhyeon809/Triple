@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLE | 강원숙소추천</title>
+    <link rel="stylesheet" href="/app/css/lodging_room_main.css">
+    <link rel="stylesheet" href="/app/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="backg_image_area">
+        <!--header 시작-->
+        <header>
+            <div id="logo_area">
+                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+                <form id="menu_form">
+                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+                </form>
+                <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/login.html">JOIN</a></div>
+            </div>
+            <div id="menu_area">
+                <ul id="menus">
+                    <li><a href="/templates/pages/overseas_travel/overseas_travel.html">해외여행</a></li>
+                    <li><a href="/templates/pages/domestic_travel/domestic_main.html">국내여행</a></li>
+                    <li><a href="/templates/pages/flight_reservation/flight_main.html">항공예약</a></li>
+                    <li><a href="/templates/pages/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
+                    <li><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
+                    <li><a href="/templates/pages/travel_package/package_main.html">패키지여행</a></li>
+                    <li><a href="/templates/pages/magazine/magazine.html">여행매거진</a></li>
+                    <li><a href="/templates/pages/event/event_main.html">혜택/렌터카</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--header 끝-->
+        <!--main 시작-->
+        <div class="lodging_main" id="lodging_main" style="background: url(/member/lodging_room/img/lodging_list_main.svg); height: 250px;">
+            <p class="content content1">#가족여행 #여름준비</p>
+            <p class="content content2">가족과 함께 떠나는<br>여름휴가 BEST 숙소</p>
+            <p class="content content3">#호텔·리조트 #독채펜션 #키즈룸숙소</p>
+        </div>
+        <!--section 시작-->
+        <section>
+            <!--날짜, 인원수 선택 시작-->
+            <div class="lodging_main">
+                <input type="date" name="lodging_calendar" value="choice_date" class="summary_reco_btn" >
+                <select name="people_number" class="summary_reco_btn">
+                    <option value="1인">1인</option>
+                    <option value="2인">2인</option>
+                    <option value="3인">3인</option>
+                    <option value="4인">4인</option>
+                    <option value="5명 이상">5명 이상</option>
+                </select>
+            </div>
+            <!--날짜, 인원수 선택 끝-->
+            <!--숙소 추천 슬라이드 시작-->
+            <div class="slidemenu">
+                <input id="slidemenu_tab1" type="radio" name="tabs" checked>
+                <label for="slidemenu_tab1">패밀리 숙소 BEST</label>
+                <input id="slidemenu_tab2" type="radio" name="tabs">
+                <label for="slidemenu_tab2">전세계 인기 호텔 얼리버드 특가 모음</label>
+                <input id="slidemenu_tab3" type="radio" name="tabs">
+                <label for="slidemenu_tab3">제주 BEST 숙소 모음</label>
+                <section id="slidemenu_content1">
+                    <p><div class="reco_box" id="reco_item_back1">
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">패밀리 호텔·리조트</p>
+                                    <p class="item_box_content">쾌적하고 넓은 가족여행 최적화 숙소</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">키즈 펜션·풀빌라</p>
+                                    <p class="item_box_content">이번 여행의 주인공은 아이들!</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">인기 독채 펜션</p>
+                                    <p class="item_box_content">우리끼리 더 안전한 여행</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                    </div></p>
+                </section>
+                <section id="slidemenu_content2">
+                    <p><div class="reco_box" id="reco_item_back1">
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">패밀리 호텔·리조트</p>
+                                    <p class="item_box_content">쾌적하고 넓은 가족여행 최적화 숙소</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">키즈 펜션·풀빌라</p>
+                                    <p class="item_box_content">이번 여행의 주인공은 아이들!</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">인기 독채 펜션</p>
+                                    <p class="item_box_content">우리끼리 더 안전한 여행</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                    </div></p>
+                </section>
+                <section id="slidemenu_content3">
+                    <p><div class="reco_box" id="reco_item_back1">
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="패밀리 호텔·리조트" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">패밀리 호텔·리조트</p>
+                                    <p class="item_box_content">쾌적하고 넓은 가족여행 최적화 숙소</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item2.jpg" alt="키즈 펜션·풀빌라" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">키즈 펜션·풀빌라</p>
+                                    <p class="item_box_content">이번 여행의 주인공은 아이들!</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reco_item_back">
+                            <div class="reco_item1">
+                                <img src="/lib/img/lodging_room_img/img/lodging_package_item3.jpg" alt="인기 독채 펜션" >
+                            </div>
+                            <div class="reco_item2">
+                                <div class="item_box">
+                                    <p class="item_box_title">인기 독채 펜션</p>
+                                    <p class="item_box_content">우리끼리 더 안전한 여행</p>
+                                </div>
+                                <div class="item_box">
+                                    <input type="button" value="패키지 상품 보기">
+                                </div>
+                            </div>
+                        </div>
+                    </div></p>
+                </section>
+                <!--숙소 추천 슬라이드 끝-->
+            <!--국내 도별 숙소 추천 시작-->
+            <div class="region_reco">
+                <div class="submenu">
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeju.html">제주</a> |
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html">서울</a> |
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongi.html">경기</a> |
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gangwon.html">강원</a> |
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html">경상</a> |
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html">전라·충청</a>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="region_reco_item">
+                    <div class="region_reco_item_img">
+                        <img src="/lib/img/lodging_room_img/img/lodging_package_item1.jpg" alt="">
+                    </div>
+                    <div class="region_reco_item_info">
+                        <ul>
+                            <li><span>숙박대전</span></li>
+                            <li>
+                                <p class="region_reco_item_info_title">더 포 그레이스 리조트</p>
+                                <p class="region_reco_item_info_content"><span>★★★★★</span> (237) · 저장 3273 · 성산 · 우도 </p>
+                            </li>
+                            <li>
+                                <div class="region_reco_item_info_include">
+                                    <p>1박, 세금포함</p>
+                                </div>
+                                <div class="region_reco_item_info_price">
+                                    <p><span>7%</span> 59,520원</p>
+                                    <p>쿠폰할인가</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--국내 도별 숙소 추천 끝-->
+        </section>
+        <!--secion 끝-->
+        <!--main 끝-->
+        <!--footer 시작-->
+        <footer>
+            <div id="enterprise_info">
+                <div id="enterprise_info_text">
+                    <p id="bold">트리플 사업자 정보</p>
+                    <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                    <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+                    <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+                </div>
+                <div id="icon_box">
+                    <div id="sns_box">
+                        <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                        <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                    </div>
+                    <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+                </div>
+            </div>
+        </footer>
+        <!--footer 끝-->
+</body>
+</html>

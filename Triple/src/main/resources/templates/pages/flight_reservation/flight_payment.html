@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 항공결제</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/member/flight_reservation/css/fly.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/app/css/fly.css">
+    <link rel="stylesheet" href="/app/css/common.css">
+
     <script>
         let time = 1799;
         let min = ""; //분
@@ -103,7 +104,7 @@
                     <p class="bold">결제불가 카드 안내</p>
                     <p>법인카드, 해외발행카드, 제3자카드, 항공사별 가맹되지 않은 카드</p>
                 </div>
-                <form action="../../../static/app/js/form.js" name="regform" method="post" onsubmit="return credit()" target="iframe">
+                <form action="/static/app/js/form.js" name="regform" method="post" onsubmit="return credit()" target="iframe">
                     <div class="mbox">
                         <ul>
                             <li>
@@ -141,8 +142,8 @@
             </div>
         </form>
             <div class="rightb">
-                <p><img src="../../../static/lib/img/fly_img/checkmark3.png" alt="check">발권 당일 오후 11시 50분까지 무료취소</p>
-                <p><img src="../../../static/lib/img/fly_img/checkmark3.png" alt="check">이후부터는 <a href="#">변경 및 취소 처리방침</a>에 따라 수수료 부과</p>
+                <p><img src="/lib/img/fly_img/checkmark3.png" alt="check">발권 당일 오후 11시 50분까지 무료취소</p>
+                <p><img src="/lib/img/fly_img/checkmark3.png" alt="check">이후부터는 <a href="#">변경 및 취소 처리방침</a>에 따라 수수료 부과</p>
             </div>
         </div>
         <!--하단 이용동의 끝-->
@@ -170,7 +171,7 @@
         </div>
     </footer>
     <!--footer 끝-->
-    <script src="../../../static/app/js/form.js"></script>
+    <script src="/static/app/js/form.js"></script>
     <script>
         let  boxshow = document.querySelector(".smallpayShow");
         let showBox = true;

@@ -31,7 +31,7 @@ public class Airline {
     private String address;
     private String contactNum1;
     private String contactNum2;
-
+//
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
 //    private List<Aircraft> aircraftList;
 //

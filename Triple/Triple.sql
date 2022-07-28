@@ -2,6 +2,8 @@ create sequence auto_increment
     increment by 1
     start with 1;
 
+select * from users;
+
 create table users(
     idx number(7) primary key,
     email varchar2(30) not null,

@@ -13,8 +13,6 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a> -->
                 <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
             <div class="user-info">
@@ -128,37 +126,37 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">분류</div>
                     <div class="admin_inquiry_q3">
-                        <select name="" class="admin_inquiry_category2">
+                        <select name="" class="admin_inquiry_category2 concategory">
                             <option value="">나라</option>
-                            <option value="">대한민국</option>
-                            <option value="">미국</option>
-                            <option value="">영국</option>
-                            <option value="">일본</option>
-                            <option value="">중국</option>
-                            <option value="">태국</option>
+                            <option value="대한민국">대한민국</option>
+                            <option value="미국">미국</option>
+                            <option value="영국">영국</option>
+                            <option value="일본">일본</option>
+                            <option value="중국">중국</option>
+                            <option value="태국">태국</option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품명</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" class="admin_inquiry_category2">
+                        <input type="text" class="admin_inquiry_category2 pro_name">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" multiple class="admin_inquiry_category2">
+                        <input type="file" id="pro_img" multiple class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">키워드</div>
                     <div class="admin_inquiry_q3 keyword">
-                        <label for="free" class="checkb"><input type="checkbox" name="free">자유일정</label>
-                        <label for="sale" class="checkb"><input type="checkbox" name="sale">특가</label>
-                        <label for="no_option" class="checkb"><input type="checkbox" name="no_option">노옵션 노쇼핑</label>
-                        <label for="confirmation" class="checkb"><input type="checkbox" name="confirmation">출발확정</label>
-                        <label for="timesale" class="checkb"><input type="checkbox" name="timesale">한정특가</label>
+                        <label for="free" class="checkb"><input type="checkbox" name="keywordchk" id="free">자유일정</label>
+                        <label for="sale" class="checkb"><input type="checkbox" name="keywordchk" id="sale">특가</label>
+                        <label for="no_option" class="checkb"><input type="checkbox" name="keywordchk" id="no_option">노옵션 노쇼핑</label>
+                        <label for="confirmation" class="checkb"><input type="checkbox" name="keywordchk" id="confirmation">출발확정</label>
+                        <label for="timesale" class="checkb"><input type="checkbox" name="keywordchk" id="timesale">한정특가</label>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -200,11 +198,12 @@
                         <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
-            </form>
+            
             <div class="btnlist">
                 <button value="등록"><a href="#">등록</a></button>
                 <button value="취소"><a href="#">취소</a></button>
             </div>
+        </form>
         </div>
     </div>
 </section>

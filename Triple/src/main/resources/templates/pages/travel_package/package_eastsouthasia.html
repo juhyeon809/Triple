@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLE | 동남아패키지</title>
+    <link rel="stylesheet" href="/app/css/travel_package.css">
+    <link rel="stylesheet" href="/app/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <header>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+            <form id="menu_form">
+                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+            </form>
+            <div id="login_join"><a href="templates/pages/login_join/login.html">LOGIN</a> | <a href="templates/pages/login_join/login.html">JOIN</a></div>
+    
+        </div>
+        <div id="menu_area">
+            <ul id="menus">
+                <li><a href="templates/pages/overseas_travel/overseas_travel_main.html">해외여행</a></li>
+                <li><a href="templates/pages/domestic_travel/domestic_main.html">국내여행</a></li>
+                <li><a href="templates/pages/flight_reservation/flight_main.html">항공예약</a></li>
+                <li><a href="templates/pages/lodging_room/lodging_main.html">숙소예약</a></li>
+                <li><a href="templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
+                <li><a href="templates/pages/travel_package/package_main.html" style="color:rgb(63, 63, 63)">패키지여행</a></li>
+                <li><a href="templates/pages/magazine/magazine.html" >여행매거진</a></li>
+                <li><a href="templates/pages/event/event_main.html">혜택/렌터카</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="travel_package_img"></div>
+    <main>
+        <div id="travel_package_main">
+            <div id="travel_package_menus">
+                <a href="#thailand">태국</a>
+                <a href="#philippines">필리핀</a>
+                <a href="#vietnam">베트남</a>
+                <a href="#kotakinabalu">코타키나발루</a>
+                <a href="#singapore">싱가포르</a>
+            </div>
+            <div id="travel_package_contents">
+                <p id="thailand" class="city">태국</p>
+                <div id="travel_package_list">
+                <div class="packagebox">
+                    <div id="packagebox_image"><a href="templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div id="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                        <p class="product_name"><a href="templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span id="red_text">쿠폰할인</span> 가능</p>
+                    </div>
+                </div>
+                </div>
+                <p id="philippines" class="city">필리핀</p>
+                <div id="travel_package_list">
+                    <div class="packagebox">
+                        <div id="packagebox_image"><a href="templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div id="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                            </div>
+                            <p class="product_name"><a href="templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                            <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                            <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                            <p class="product_price">459,000원</p>
+                            <p class="product_coupon"><span id="red_text">쿠폰할인</span> 가능</p>
+                        </div>
+                    </div>
+                </div>
+                <p id="vietnam" class="city">베트남</p>
+                <div id="travel_package_list">
+                <div class="packagebox">
+                    <div id="packagebox_image"><a href="templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div id="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                        <p class="product_name"><a href="templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span id="red_text">쿠폰할인</span> 가능</p>
+                    </div>
+                </div>
+                </div><p id="kotakinabalu" class="city">코타키나발루</p>
+                <div id="travel_package_list">
+                <div class="packagebox">
+                    <div id="packagebox_image"><a href="templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div id="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                        <p class="product_name"><a href="templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span id="red_text">쿠폰할인</span> 가능</p>
+                    </div>
+                </div>
+                </div><p id="singapore" class="city">싱가포르</p>
+                <div id="travel_package_list">
+                <div class="packagebox">
+                    <div id="packagebox_image"><a href="templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div id="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                        <p class="product_name"><a href="templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span id="red_text">쿠폰할인</span> 가능</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p id="bold">트리플 사업자 정보</p>
+                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+                <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

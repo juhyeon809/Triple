@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 티켓 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -13,8 +14,6 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a> -->
                 <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
             </div>
             <div class="user-info">
@@ -130,25 +129,27 @@
                     <div class="option">
                         <select name="" id="" class="option_type2 DOcategory">
                             <option value="">상품분류</option>
-                            <option value="">국내</option>
-                            <option value="">해외</option>
+                            <option value="국내">국내</option>
+                            <option value="해외">해외</option>
                         </select>
                         <select name="" id="" class="option_type2 Recategory">
-                            <option value="">제주</option>
-                            <option value="">서울</option>
-                            <option value="">인천</option>
-                            <option value="">전라</option>
-                            <option value="">전북</option>
-                            <option value="">강원</option>
-                            <option value="">경상</option>
-                            <option value="">경북</option>
+                            <option value="">선택</option>
+                            <option value="제주">제주</option>
+                            <option value="서울">서울</option>
+                            <option value="인천">인천</option>
+                            <option value="전라">전라</option>
+                            <option value="전북">전북</option>
+                            <option value="강원">강원</option>
+                            <option value="경상">경상</option>
+                            <option value="경북">경북</option>
                         </select>
                         <select name="" id="" class="option_type2 Orcategory">
                             <option value="">오사카</option>
                         </select>
                         <select name="" id="" class="option_type2 TAcategory">
-                            <option value="">투어</option>
-                                    <option value="">액티비티</option>
+                            <option value="">선택</option>
+                            <option value="투어">투어</option>
+                            <option value="액티비티">액티비티</option>
                         </select>
                     </div>
                 </div>

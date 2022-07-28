@@ -28,7 +28,7 @@
                     <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
                     <li><a href="/member/travel_package/package_main.html">패키지여행</a></li>
                     <li><a href="/member/magazine/magazine.html">여행매거진</a></li>
-                    <li><a href="/member/event/event.html">혜택/렌터카</a></li>
+                    <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
                 </ul>
             </div>
         </header>
@@ -41,6 +41,7 @@
         </div>
         <!--section 시작-->
         <section>
+            <!--날짜, 인원수 선택 시작-->
             <div class="lodging_main">
                 <input type="date" name="lodging_calendar" value="choice_date" class="summary_reco_btn" >
                 <select name="people_number" class="summary_reco_btn">
@@ -51,6 +52,8 @@
                     <option value="5명 이상">5명 이상</option>
                 </select>
             </div>
+            <!--날짜, 인원수 선택 끝-->
+            <!--숙소 추천 슬라이드 시작-->
             <div class="slidemenu">
                 <input id="slidemenu_tab1" type="radio" name="tabs" checked>
                 <label for="slidemenu_tab1">패밀리 숙소 BEST</label>
@@ -196,14 +199,16 @@
                         </div>
                     </div></p>
                 </section>
+                <!--숙소 추천 슬라이드 끝-->
+            <!--국내 도별 숙소 추천 시작-->
             <div class="region_reco">
                 <div class="submenu">
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_jeju.html">제주</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_seoul.html">서울</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gyeongi.html">경기</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gangwon.html">강원</a> | 
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_ gyeongsang.html">경상</a> |
-                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_lodging_recommendtest_jeolla.html">전라·충청</a>
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_jeju.html">제주</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html">서울</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongi.html">경기</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gangwon.html">강원</a> | 
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html">경상</a> |
+                    <a href="/member/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html">전라·충청</a>
                 </div>
                 <div class="region_reco_item">
                     <div class="region_reco_item_img">
@@ -321,6 +326,7 @@
                     </div>
                 </div>
             </div>
+            <!--국내 도별 숙소 추천 끝-->
         </section>
         <!--secion 끝-->
         <!--main 끝-->
