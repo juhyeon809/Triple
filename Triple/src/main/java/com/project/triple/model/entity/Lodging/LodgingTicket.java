@@ -43,6 +43,6 @@ public class LodgingTicket {
     @CreatedDate
     private LocalDateTime regDate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodgingTicket")
-    private List<Question> questionList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodgingTicket")
+//    private List<Question> questionList;
 }

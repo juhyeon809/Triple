@@ -92,4 +92,36 @@ public class PageController {
                 .addObject("name", name);
     }
 
+    @RequestMapping(path = "/inquiryWrite")
+    public ModelAndView inquiryWrite(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/mypage_reserve/my_inquiry_write").addObject("email", email)
+                .addObject("name", name);
+    }
+
+    @RequestMapping(path = "/inquiryList")
+    public ModelAndView inquiryList(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/mypage_reserve/my_inquiry_list").addObject("email", email)
+                .addObject("name", name);
+    }
+
 }

@@ -12,15 +12,16 @@ import java.time.LocalDateTime;
 @Builder
 public class QuestionApiRequest {
     private Long idx;
-    private Long inquaryId;
+    private Long inquiryId;
 //    private Integer ticketNum;
 //    private Integer userId;
     private String typeCategory;
     private String typeDetail;
+    private String title;
     private String content;
-    private String uploadPath;
-    private String fileName;
-    private String fileType;
+    private String uploadpath;
+    private String filename;
+    private String filetype;
     private String infoAgree;
     private LocalDateTime regDate;
 }

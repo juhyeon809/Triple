@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class AnswerApiResponse {
     private Long idx;
     private Integer answerNum;
-    private Long inquaryId;
+    private Long inquiryId;
     private Long adminuserId;
     private String adminuserName;
     private String title;

@@ -29,7 +29,7 @@ public class ReservationAiruseApiLogicService extends BaseService<ReservationAir
                 .passportCount(reservationAiruse.getPassportCount())
                 .infoAgree(reservationAiruse.getInfoAgree())
                 .regDate(reservationAiruse.getRegDate())
-                .userId(reservationAiruse.getUsers().getIdx())
+//                .userId(reservationAiruse.getUsers().getIdx())
                 .build();
         return reservationAiruseApiResponse;
     }

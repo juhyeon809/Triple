@@ -22,7 +22,7 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
                 .email(reservation.getEmail())
                 .hp(reservation.getHp())
                 .emergencyHp(reservation.getEmergencyHp())
-                .userId(reservation.getUsers().getIdx())
+//                .userId(reservation.getUsers().getIdx())
                 .build();
         return reservationApiResponse;
     }

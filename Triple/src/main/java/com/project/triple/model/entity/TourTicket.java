@@ -44,6 +44,6 @@ public class TourTicket {
     @CreatedDate
     private LocalDateTime regDate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tourTicket")
-    private List<Question> questionList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "tourTicket")
+//    private List<Question> questionList;
 }

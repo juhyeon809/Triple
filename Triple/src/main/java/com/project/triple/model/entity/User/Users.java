@@ -100,6 +100,6 @@ public class Users {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
     private List<Mysave> mysaveList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Question> questionList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Question> questionList;
 }
