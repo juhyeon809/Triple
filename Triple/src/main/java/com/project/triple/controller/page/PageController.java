@@ -106,7 +106,6 @@ public class PageController {
                 .addObject("name", nickname).addObject("airTicketList", airTicketList).addObject("timeTakenList", timeTakenList);
     }
 
-<<<<<<< HEAD
     @RequestMapping(path = "/inquiryWrite")
     public ModelAndView inquiryWrite(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -139,7 +138,6 @@ public class PageController {
                 .addObject("name", name);
     }
 
-=======
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -330,5 +328,4 @@ public class PageController {
 
 
 
->>>>>>> 7fb256faffbc9bd0b15646b2a2493ac6fa2694e6
 }
