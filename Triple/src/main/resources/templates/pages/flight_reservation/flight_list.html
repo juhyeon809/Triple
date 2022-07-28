@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/app/css/fly.css">
     <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -37,11 +36,11 @@
                 </li>
                 <li>
                     <select class="sitysel2">
-                        <option value="괌">정렬 및 필터</option>
-                        <option value="경찰">가격 높은순</option>
-                        <option value="경찰">가격 낮은순</option>
-                        <option value="경찰">출발 빠른순</option>
-                        <option value="경찰">출발 늦은순</option>
+                        <option value="">정렬 및 필터</option>
+                        <option value="높은순">가격 높은순</option>
+                        <option value="낮은순">가격 낮은순</option>
+                        <option value="빠른순">출발 빠른순</option>
+                        <option value="늦은순">출발 늦은순</option>
                     </select>
                 </li>
                 <li>
@@ -244,8 +243,6 @@
     </footer>
     <!--footer 끝-->
 
-
-    
     <script>
         $(function(){
            $('#datepicker').datepicker();

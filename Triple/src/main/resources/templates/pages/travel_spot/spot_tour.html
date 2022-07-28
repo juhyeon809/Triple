@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/common.css">
 </head>
 <body>
+<<<<<<< HEAD
     <header>
         <div id="logo_area">
             <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
@@ -31,6 +32,11 @@
             </ul>
         </div>
     </header>
+=======
+<!--header 시작-->
+<div th:replace="fragement/header :: header"></div>
+<!--header 끝-->
+>>>>>>> 1040ebad44c1794a57688d4ac709e3bba9ae9ff9
     <div id="travel_spot_img"></div>
     <main>
         <div id="travel_spot_menus">
@@ -143,25 +149,8 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+<!-- footer 시작 -->
+<footer th:replace="fragement/footer :: footer"></footer>
+<!-- footer 끝 -->
 </body>
 </html>

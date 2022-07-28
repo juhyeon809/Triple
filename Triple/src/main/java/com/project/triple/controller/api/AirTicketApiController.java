@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/airTicket")    // http://localhost:8080/api/user  url 주소
+@RequestMapping("/api/airTicket")    // http://localhost:9090/api/user  url 주소
 @RequiredArgsConstructor
 public class AirTicketApiController extends CrudController< AirTicketApiRequest,AirTicketApiResponse, AirTicket> {
 

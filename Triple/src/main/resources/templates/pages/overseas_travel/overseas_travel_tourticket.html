@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 투어·티켓</title>
-    <link rel="stylesheet" href="/member/overseas_travel/css/overseas_travel.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/app/css/overseas_travel.css">
+    <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
@@ -36,36 +36,15 @@
 </head>
 <body>
     <div id="backg_image_area">
-        <!--header-->
-        <header>
-            <div id="logo_area">
-                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-                <form id="menu_form">
-                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-                </form>
-                <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-    
-            </div>
-            <div id="menu_area">
-                <ul id="menus">
-                    <li><a href="/member/overseas_travel/overseas_travel_main.html" style="color:rgb(63, 63, 63)">해외여행</a></li>
-                    <li><a href="/member/domestic_travel/domestic_main.html">국내여행</a></li>
-                    <li><a href="/member/flight_reservation/flight_main.html">항공예약</a></li>
-                    <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                    <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                    <li><a href="/member/travel_package/package_main.html">패키지여행</a></li>
-                    <li><a href="/member/magazine/magazine.html" >여행매거진</a></li>
-                    <li><a href="/member/event/event_main.html">혜택/렌터카</a></li>
-                </ul>
-            </div>
-        </header>
+        <!--header 시작-->
+        <div th:replace="fragement/header :: header"></div>
         <!--header 끝-->
     </div>
     <main>
         <p class="title">트리플님, <span style="color: #50e3c2;">괌여행</span>맞춤상품을 찾아봤어요</p>
         <!--맞춤 동선 지도-->
         <div id="map">
-            <div class="container"><a href="#"><img src="./img/overseas_map_tour.svg" alt="map"></a></div>
+            <div class="container"><a href="#"><img src="/static/lib/img/overseas_travel_img/overseas_map_tour.svg" alt="map"></a></div>
             <div class="container btn_con">
                 <select name="" id="select_list_view">
                     <option value="추천순">추천순</option>
@@ -79,12 +58,12 @@
                     <div id="like_place">
                         <a href="#">
                             <div>
-                                <img src="./img/icon_heart.svg" alt="좋아요">
+                                <img src="/static/lib/img/overseas_travel_img/icon_heart.svg" alt="좋아요">
                                 <span>0</span>
                             </div>
                         </a>
                     </div>
-                    <a href="./overseas_travel_tourticket.html"><input type="button" value="투어·티켓" id="tour_btn"></a>
+                    <a href="/templates/pages/overseas_travel/overseas_travel_tourticket.html"><input type="button" value="투어·티켓" id="tour_btn"></a>
                 </div>
             </div>
         </div>
@@ -97,7 +76,7 @@
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <!--상품 끝-->
             <div class="item">
@@ -105,42 +84,42 @@
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <div class="item">
                 <p class="item_list_item_title"><a href="#">두짓 타니 괌 리조트</a> <span><i class="bi bi-heart"></i></span></p>
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <div class="item">
                 <p class="item_list_item_title"><a href="#">두짓 타니 괌 리조트</a> <span><i class="bi bi-heart"></i></span></p>
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <div class="item">
                 <p class="item_list_item_title"><a href="#">두짓 타니 괌 리조트</a> <span><i class="bi bi-heart"></i></span></p>
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <div class="item">
                 <p class="item_list_item_title"><a href="#">두짓 타니 괌 리조트</a> <span><i class="bi bi-heart"></i></span></p>
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
             <div class="item">
                 <p class="item_list_item_title"><a href="#">두짓 타니 괌 리조트</a> <span><i class="bi bi-heart"></i></span></p>
                 <p>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
                 <p><span class="review_star">★★★★★</span> (<span>331</span>) · 저장 <span>3,387</span> · <span>5성급</span> · <span>투몬, 티무닝</span></p> 
                 <p class="item_price">462,576원</p>
-                <p><img src="./img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
+                <p><img src="/static/lib/img/overseas_travel_img/guam_hotel_img.svg" alt="두짓 타니 괌 리조트"></p>
             </div>
         </div>
         <!--상품 리스트 끝-->
@@ -163,25 +142,8 @@
         
     </main>
 
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="../../img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="../../img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="../../img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+    <!-- footer 끝 -->
 </body>
 </html>
