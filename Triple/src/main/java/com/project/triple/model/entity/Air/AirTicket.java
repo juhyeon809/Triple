@@ -48,13 +48,13 @@ public class AirTicket {
     @Enumerated(EnumType.STRING)
     private TicketStatus status;
 
-    @ManyToOne
-    private Airline airline;
-
-    @ManyToOne
-    private Aircraft aircraft;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airTicket")
-    private List<Question> questionList;
+//    @ManyToOne
+//    private Airline airline;
+//
+//    @ManyToOne
+//    private Aircraft aircraft;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airTicket")
+//    private List<Question> questionList;
 
 }

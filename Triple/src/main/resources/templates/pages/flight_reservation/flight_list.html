@@ -199,8 +199,8 @@
                             <ul class="fly_item_info_ul" >
                                 <li>
                                     <p th:text="${airTicket.getDepartureDate()}+' - '+${airTicket.getLandingDate()}"></p>
-                                    <th:block th:each="timeTaken : ${timeTakenList}">
-                                        <p th:if="${airTicketList.getIdx() == timeTaken.getAirTicketIdx()}" th:text="${timeTaken.getHour()}+'시간'+${timeTaken.getMinute()}+'분'"></p>
+                                    <th:block th:each="timeTaken : ${timeTakenList}" th:if="${airTicket.getIdx() == timeTaken.getAirTicketIdx()}">
+                                        <p  th:text="${timeTaken.getHour()}+'시간'+${timeTaken.getMinute()}+'분'"></p>
                                     </th:block>
                                 </li>
                                 <li>

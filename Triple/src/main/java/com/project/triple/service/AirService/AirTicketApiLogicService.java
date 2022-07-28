@@ -1,5 +1,6 @@
 package com.project.triple.service.AirService;
 
+import com.project.triple.controller.page.TimeCollector;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
@@ -11,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -85,5 +89,15 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .map(airTicket -> response(airTicket))
                 .collect(Collectors.toList());
         return Header.OK(airTicketApiResponseList);
+    }
+
+    public TimeCollector timeSort(AirTicketApiResponse airTicketApiResponse) throws NullPointerException {
+
+                    TimeCollector timeCollector = new TimeCollector();
+                    timeCollector.setHour((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()/3600);
+                    timeCollector.setMinute(((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()%3600)/60);
+                    timeCollector.setAirTicketIdx(airTicketApiResponse.getIdx());
+
+                return timeCollector;
     }
 }

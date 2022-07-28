@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/Triple")   // http://localhost:9090/Triple
@@ -86,7 +87,7 @@ public class PageController {
     }
 
     @RequestMapping(path = "/flightList")
-    public ModelAndView flightList(HttpServletRequest request) {
+    public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -97,16 +98,9 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
         List<AirTicketApiResponse> airTicketList = airTicketApiLogicService.search().getData();
-        TimeCollector timeCollector = null;
-        List<TimeCollector> timeTakenList = null;
-
-        for(AirTicketApiResponse airTicketApiResponse :  airTicketList){
-                timeCollector.setHour((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()/3600);
-            timeCollector.setMinute(((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()%3600)/60);
-                timeCollector.setAirTicketIdx(airTicketApiResponse.getIdx());
-                timeTakenList.add(timeCollector);
-        }
-
+        List<TimeCollector> timeTakenList = airTicketList.stream().map(airTicketApiResponse ->
+           airTicketApiLogicService.timeSort(airTicketApiResponse)
+        ).collect(Collectors.toList());
 
         return new ModelAndView("/pages/flight_reservation/flight_list").addObject("email", email)
                 .addObject("name", nickname).addObject("airTicketList", airTicketList).addObject("timeTakenList", timeTakenList);
@@ -160,20 +154,6 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/flightMain")
-    public ModelAndView flightMain(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null){
 
-        }else{
-            email = (String)session.getAttribute("email");
-            name = (String)session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("name", name);
-    }
 
 }
