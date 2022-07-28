@@ -26,6 +26,8 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .idx(airticket.getIdx())
                 .ticketType(airticket.getTicketType())
                 .ticketNum(airticket.getTicketNum())
+                .airlineIdx(airticket.getAirlineIdx())
+                .aircraftIdx(airticket.getAircraftIdx())
                 .departureAirport(airticket.getDepartureAirport())
                 .landingAirport(airticket.getLandingAirport())
                 .departureDate(airticket.getDepartureDate())

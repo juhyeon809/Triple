@@ -42,6 +42,7 @@ public class ReservationAiruse {
     private String passportExp;
     private String passportCount;
     private String infoAgree;
+
     @CreatedDate
     private LocalDateTime regDate;
 

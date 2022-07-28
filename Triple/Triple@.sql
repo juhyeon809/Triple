@@ -22,7 +22,7 @@ create sequence seq_users
     increment by 1
     start with 1;
     
-
+select * from air_ticket;
 create table terms(
     idx number(7) primary key,
     terms_name varchar2(30) not null,
@@ -66,6 +66,9 @@ create sequence seq_airline
     increment by 1
     start with 1;
     
+insert into airticket values(
+    
+);
 
 create table aircraft(
     idx number(7) primary key,
@@ -80,18 +83,21 @@ create table aircraft(
     vip_seat number(3) not null,
     airline_id number(7) not null
 );
+insert into airline;
+
+select * from reservation;
 
 create sequence seq_aircraft
     increment by 1
     start with 1;
     
-
+select * from air_ticket;
 create table air_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10),
     ticket_num varchar2(10),
-    airline_id number(7) not null,
-    aircraft_id number(7) not null,
+    airline_idx number(7) not null,
+    aircraft_idx number(7) not null,
     departure_airport varchar2(20) not null,
     landing_airport varchar2(20) not null,
     departure_date date not null,
@@ -107,11 +113,14 @@ create table air_ticket(
 create sequence seq_air_ticket
     increment by 1
     start with 1;
-    
+
+select * from users;
+select * from reservation;
+drop table reservation_airuse;
 
 create table reservation_airuse(
     idx number(7) primary key,
-    user_id number(7) not null,
+    email number(7) not null,
     ticket_type varchar2(10) not null,
     ticket_num number(7) not null,
     eng_lastname number(7) not null,
@@ -241,7 +250,17 @@ create sequence seq_tour_ticket
     increment by 1
     start with 1;
     
-
+insert into reservation values(
+    1,
+    'AIR_TICKET',
+    'AIR001',
+    '',
+    'apple@apple.com',
+    '010-1111-1111',
+    '010-2222-2222'
+);
+drop table reservation;
+select * from users;
 create table reservation(
     idx number(10) primary key,
     ticket_type varchar2(10) not null,
@@ -249,8 +268,7 @@ create table reservation(
     rev_name varchar2(20) not null,
     email varchar2(30) not null,
     hp varchar2(20) not null,
-    emergency_hp varchar2(20) not null,
-    user_id number(7) not null
+    emergency_hp varchar2(20) not null
 );
 
 create sequence seq_reservation

@@ -1,14 +1,14 @@
 $(document).ready(function(){
 
-    let logoSelect = new Vue({
-        el:'#logo_select',
-        data: {
-            jinair:true
-        },
-        methods : {
-
-        }
-    });
+    // let logoSelect = new Vue({
+    //     el:'#logo_select',
+    //     data: {
+    //         jinair:true
+    //     },
+    //     methods : {
+    //
+    //     }
+    // });
 
 
     let airTicketList = new Vue({
@@ -27,6 +27,8 @@ $(document).ready(function(){
 
             return airTicketList;
         });
+
+
 
 })
 

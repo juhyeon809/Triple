@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +11,8 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/member/flight_reservation/css/fly.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/app/css/fly.css">
+    <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,23 +34,23 @@
             </p>
             <ul>
                 <li>
-                    <img src="../../../static/lib/img/fly_img/flying-airplane.png" alt="">
+                    <img src="/lib/img/fly_img/flying-airplane.png" alt="">
                     <input type="text" class="flylist icon1" placeholder="출발 도시">
                     
                 </li>
                 <li>
-                    <img src="../../../static/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
+                    <img src="/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
                     <input type="text" class="flylist icon2" placeholder="도착 도시">
                 </li>
                 <li>
-                    <img src="../../../static/lib/img/fly_img/office-monthly-calendar.png" alt="">
+                    <img src="/lib/img/fly_img/office-monthly-calendar.png" alt="">
                     <input type="text" class="flylist icon3 round1" placeholder="가는날" id="datepicker1">
                     <input type="text" class="flylist icon3 round2" placeholder="오는날" id="datepicker2">
                     <input type="text" id="datepicker" class="flylist icon3 oneway" hidden placeholder="가는날">
 
                 </li>
                 <li>
-                    <img src="../../../static/lib/img/fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
+                    <img src="/lib/img/fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
                     <div class="flylist icon4" onclick="">
                         <p>탑승객 <span class="personNum">1</span>명, <span class="seatSr">일반석</span><span class="seatCnt"> 외 1</span></p>
                     </div>
@@ -79,9 +81,9 @@
                             <span>만 12세 이상 (국내선 만 13세 이상)</span>
                         </div>
                         <div style="float: right;">
-                            <img src="../../../static/lib/img/fly_img/minus.png" alt="" onclick='count1("minus")'>
+                            <img src="/lib/img/fly_img/minus.png" alt="" onclick='count1("minus")'>
                             <span class="result1">0</span>
-                        <img src="../../../static/lib/img/fly_img/plus.png" alt="" onclick='count1("plus")'>
+                        <img src="/lib/img/fly_img/plus.png" alt="" onclick='count1("plus")'>
                     </div>
                     </div>
                     <div class="div" style="clear: both;">
@@ -90,9 +92,9 @@
                             <span>만 2세~만 12세 미만(국내선 만 13세 미만)</span>
                         </div>
                         <div style="float: right;">
-                            <img src="../../../static/lib/img/fly_img/minus.png" alt="" onclick='count2("minus")'>
+                            <img src="/lib/img/fly_img/minus.png" alt="" onclick='count2("minus")'>
                             <span class="result2">0</span>
-                            <img src="../../../static/lib/img/fly_img/plus.png" alt="" onclick='count2("plus")'>
+                            <img src="/lib/img/fly_img/plus.png" alt="" onclick='count2("plus")'>
                         </div>
                     </div>
                     <div class="div">
@@ -101,9 +103,9 @@
                             <span>만 2세 미만, 보호자와 동반착석</span>
                         </div>
                         <div style="float: right;">
-                            <img src="../../../static/lib/img/fly_img/minus.png" alt="" onclick='count3("minus")'>
+                            <img src="/lib/img/fly_img/minus.png" alt="" onclick='count3("minus")'>
                             <span class="result3">0</span>
-                            <img src="../../../static/lib/img/fly_img/plus.png" alt="" onclick='count3("plus")'>
+                            <img src="/lib/img/fly_img/plus.png" alt="" onclick='count3("plus")'>
                         </div>
                     </div>
                     <!--인원 설정 끝-->
@@ -301,13 +303,9 @@
             </div>
         </div>
     </footer>
-<<<<<<< HEAD
     <!--footer 끝-->
-    <script src="../../../static/app/js/flyScript.js"></script>
-=======
 <!--footer 끝-->
     <script src="/app/js/flyScript.js"></script>
->>>>>>> 21c48163efb93fcff4a4d43a72cb91d0bf92c33a
     <script>
 
 
