@@ -200,7 +200,7 @@
                                 <li>
                                     <p th:text="${airTicket.getDepartureDate()}+' - '+${airTicket.getLandingDate()}"></p>
                                     <th:block th:each="timeTaken : ${timeTakenList}" th:if="${airTicket.getIdx() == timeTaken.getAirTicketIdx()}">
-                                        <p  th:text="${timeTaken.getHour()}+'시간'+${timeTaken.getMinute()}+'분'"></p>
+                                        <p th:text="${timeTaken.getHour()}+'시간'+${timeTaken.getMinute()}+'분'"></p>
                                     </th:block>
                                 </li>
                                 <li>

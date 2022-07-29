@@ -34,7 +34,7 @@ public class Aircraft {
     private Integer specialSeat;
     private Integer familySeat;
     private Integer vipSeat;
-//    private Integer airlineId;
+    private Integer airlineId;
 
 //    @ManyToOne
 //    private Airline airline;
