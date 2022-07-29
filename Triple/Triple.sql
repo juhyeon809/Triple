@@ -317,17 +317,24 @@ create sequence seq_magazine
     start with 1;
     
 
-create table adminuser(
+create table admin_user(
     idx number(7) primary key,
-    admin_id varchar2(20) unique not null,
-    admin_pw varchar2(20) not null,
-    admin_name number(7) not null,
+    userid varchar2(20) not null,
+    userpw varchar2(20) not null,
+    name varchar2(20) not null,
+    hp varchar2(20) not null,
+    department varchar2(20) not null,
+    email varchar2(20) not null,
+    position varchar2(20) not null,
+    status varchar2(10) not null,
     reg_date date default sysdate
 );
 
-create sequence seq_adminuser
+create sequence seq_admin_user
     increment by 1
     start with 1;
+    
+insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
     
 
 create table spot(

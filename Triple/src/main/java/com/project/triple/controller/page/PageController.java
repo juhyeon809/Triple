@@ -138,6 +138,22 @@ public class PageController {
                 .addObject("name", name);
     }
 
+    @RequestMapping(path = "/mypage_main")
+    public ModelAndView mypage_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/mypage/my_travel/my_travel_main").addObject("email", email)
+                .addObject("name", name);
+    }
+
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -322,6 +338,22 @@ public class PageController {
         }
 
         return new ModelAndView("/pages/magazine/magazine_travels").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/coupon_main")
+    public ModelAndView coupon_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/mypage/mypage_coupon/coupon_main").addObject("email", email)
                 .addObject("nickname", nickname);
     }
 
