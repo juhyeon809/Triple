@@ -66,9 +66,7 @@ create sequence seq_airline
     increment by 1
     start with 1;
     
-insert into airticket values(
-    
-);
+
 
 create table aircraft(
     idx number(7) primary key,
@@ -90,8 +88,19 @@ select * from reservation;
 create sequence seq_aircraft
     increment by 1
     start with 1;
+drop table air_ticket;    
+select * from air_ticket; 
+insert into air_ticket values(
+    1,
+    'AIR_TICKET',
+    'JINAIR_J',
     
-select * from air_ticket;
+    
+);
+drop table admin_user;
+insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
+select * from admin_user;
+commit;
 create table air_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10),

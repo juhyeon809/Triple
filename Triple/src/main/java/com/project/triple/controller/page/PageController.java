@@ -144,6 +144,7 @@ public class PageController {
 
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
+        List<AirTicketApiResponse> airTicketList = airTicketApiLogicService.specialFlight().getData();
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -155,7 +156,7 @@ public class PageController {
         }
 
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("airTicketList", airTicketList);
     }
 
     @RequestMapping(path = "/flightReservation")
