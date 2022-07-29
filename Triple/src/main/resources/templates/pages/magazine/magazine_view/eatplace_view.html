@@ -25,15 +25,23 @@
                 <img src="/lib/img/magazine_img/eatplace_img.png" id="rec_img">
                 <div id="rec_list">
                     <div>
+<<<<<<< HEAD
                         <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                     </div>
                     <div>
                         <p id="rec_cont" th:text="${magazine.getContent()}">
+=======
+                        <p class="rec_tit">나만 알고 싶은 전국 뷰맛집 히든 스팟 6</p>
+                    </div>
+                    <div>
+                        <p class="rec_cont">바다도 산도 더 푸른 초여름의 시작, 6월이 다가왔습니다. 맑은 공기와 시원한 바람을 느끼며 야외에서 식사하기 더없이 좋은 날시죠. 그래서 준비했습니다. 청향함으로 가득한 맛집 6곳!<br>
+                            끝이 보이지 않는 푸른 바다 또는 초록빛으로 물든 산 속 어딘가로 떠날 준비 되셨나요? 보기만해도 힐링이 되는 곳에서 든든하게 배도 채우고 근처 여행지도 둘러보아요.
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                         </p>
                     </div>
                 </div>
             </div>
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="ocen">오션뷰</p>
                     <p id="sp">분위기 끝판왕 핫플레이스</p>
@@ -106,7 +114,7 @@
             </div>
         </div>
         <div id="rec_content2">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="ocen">오션뷰</p>
                     <p id="sp">분위기 끝판왕 핫플레이스</p>
@@ -178,7 +186,7 @@
             </div>
         </div>
         <div id="rec_content3">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="ocen">오션뷰</p>
                     <p id="sp">분위기 끝판왕 핫플레이스</p>
@@ -267,28 +275,9 @@
     </script>
         
 <!--메인 끝-->
-        
-    <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
 
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <!--푸터-->
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>

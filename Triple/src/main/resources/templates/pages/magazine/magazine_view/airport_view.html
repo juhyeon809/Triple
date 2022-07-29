@@ -25,17 +25,26 @@
                 </div>
                 <div id="rec_list">
                     <div>
+<<<<<<< HEAD
                         <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                         <p id="rec_cont" th:text="${magazine.getContent()}">
+=======
+                        <p class="rec_tit">출근길보다 빠르게 여행 떠나는 방법</p>
+                        <p class="rec_cont">남은 연차를 보며 괜스레 여행이 더 그리워집니다.<br>
+                            비행기 안에서 보던 하얀 구름도 생각나고요. 해외로 떠나지 못한 비행기들은 요즘, 부지런히 대한민국 하늘길을 다니고 있어요.<br> 
+                            이번 국내 여행은 비행기를 타고 떠나보는 건 어떤가요? '공항까지 오가기 번거롭지 않을까?', '지방 갈때는 차나 기차가 빠르지 않아?'라고 생각했다면 이 글에 주목해주세요. <br>
+                            길 위에서 시간을 낭비하지 않는 여행법을 알려드릴게요.<br>
+                            갈 곳은 많고, 시간은 소중하니까요! 
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                         </p>
                     </div>
                     <div><a href="/templates/pages/flight_reservation/flight_list.html"><u id="sp">최저가 국내 항공권 먼저 구경하기</u></a></div>
                 </div>
             </div>
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>토욜 점심은 바다보며 브런치를?</span></p>
-                    <p id="rec_tit">부산</p>
+                    <p class="rec_tit">부산</p>
                 </div>
                 <div id="airport_img">
                     <img src="/lib/img/magazine_img/airport_img2.PNG">
@@ -72,10 +81,10 @@
             </div>
         </div>
         <div id="rec_content2">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>토욜 점심은 바다보며 브런치를?</span></p>
-                    <p id="rec_tit">부산</p>
+                    <p class="rec_tit">부산</p>
                 </div>
                 <div id="airport_img">
                     <img src="/lib/img/magazine_img/airport_img2.PNG">
@@ -112,10 +121,10 @@
             </div>
         </div>
         <div id="rec_content3">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>토욜 점심은 바다보며 브런치를?</span></p>
-                    <p id="rec_tit">부산</p>
+                    <p class="rec_tit">부산</p>
                 </div>
                 <div id="airport_img">
                     <img src="/lib/img/magazine_img/airport_img2.PNG">
@@ -158,26 +167,7 @@
 
     <!--메인 끝-->
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>

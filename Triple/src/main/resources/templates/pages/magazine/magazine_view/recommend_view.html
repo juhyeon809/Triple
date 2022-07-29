@@ -25,15 +25,23 @@
                 </div>
                 <div id="rec_list">
                     <div>
+<<<<<<< HEAD
                         <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                     </div>
                     <div>
                         <p id="rec_cont" th:text="${magazine.getContent()}">
+=======
+                        <p class="rec_tit" >오래 기다리셨습니다, 올여름 가기 좋은 해외 휴가지 5</p>
+                    </div>
+                    <div>
+                        <p class="rec_cont">주변이 온통 푸프러지는 여름이 시작, 6월입니다. 오랜 기다림 끝에 올해는 해외여행을 떠날 수 있으니, 더 멋진 휴가를 보낼 생각에 설레게 되죠.<br>
+                            최근 트리플러들에게 관심이 높은 해외 휴양지는 어디일까요? 대체로 거리가 멀지않아 비행 시간에 대한 부담이 적은곳들이 꼽혔어요. 올여음은 그동안 꿈꿨던 해외에서 잊지 못할 시간을 보내봐요.⛱
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                         </p>
                     </div>
                 </div>
             </div>
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>지상낙원이 따로 없는</span></p>
                     <p id="guam">1. 괌</p>
@@ -84,7 +92,7 @@
             </div>
         </div>
         <div id="rec_content2">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>지상낙원이 따로 없는</span></p>
                     <p id="guam">1. 괌</p>
@@ -135,7 +143,7 @@
             </div>
         </div>
         <div id="rec_content3">
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <p id="sp"><span>지상낙원이 따로 없는</span></p>
                     <p id="guam">1. 괌</p>
@@ -201,26 +209,7 @@
     </div>  
     <!--메인 끝-->
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>

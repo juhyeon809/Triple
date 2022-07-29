@@ -26,19 +26,27 @@
                 </div>
                 <div>
                     <div>
+<<<<<<< HEAD
                         <p id="rec_tit" th:text="${magazine.getTitle()}"> </p>
                     </div>
                     <div>
                         <p id="rec_cont" th:text="${magazine.getContent()}">
+=======
+                        <p class="rec_tit">파리 & 남프랑스로 여행을 다녀왔습니다 </p>
+                    </div>
+                    <div>
+                        <p class="rec_cont">일생에 한번뿐인 신혼여행. 손꼽아 기다려온 여행의 기회를 그냥 흘려보내긴 아쉬워 해외로 다녀오기로 결정했다.<br>
+                        유럽은 점차 여행이 살아나고 있다는 뉴스에 설레는 마음을 안고 출발했다. 파리부터 남프랑스까지, 우리의 취향을 듬뿍담은 여행기를 시작한다. 
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                         </p>
                     </div>
                 </div>
             </div>
-            <div id="rec2">
+            <div class="rec2">
                 <div>
                     <div>
-                        <p id="rec_tit">파리 & 남프랑스, 그곳으로 떠난 이유</p>
-                        <p id="rec_cont">자연 경관을 좋아하는 남편과 화려한 도시가 좋은 나. 두 명의 니즈가 절충되는 곳이 바로 프랑스였다. 여행 당시였던 작년 하반기는 한국에서 백신을 맞으면 프랑스에 도착 후 자가격리 없이 여행할 수 있었는데, 이점도 여행지를 결정하는데 한몫했다. 
+                        <p class="rec_tit">파리 & 남프랑스, 그곳으로 떠난 이유</p>
+                        <p class="rec_cont">자연 경관을 좋아하는 남편과 화려한 도시가 좋은 나. 두 명의 니즈가 절충되는 곳이 바로 프랑스였다. 여행 당시였던 작년 하반기는 한국에서 백신을 맞으면 프랑스에 도착 후 자가격리 없이 여행할 수 있었는데, 이점도 여행지를 결정하는데 한몫했다.
                         </p>
                     </div>
                     <div>
@@ -48,7 +56,7 @@
                 <div>
                     <div>  
                         <p id="sp">프랑스 현지의 분위기</p>
-                        <p id="list_cont"> 
+                        <p id="list_cont">
                         뉴스에서 보던 그대로, 실외에서는 대부분 마스크를 벗고 다니는 분위기였다. 실내는 당시 우리나라와 같이 백신패스가 있어야 들어갈 수 있어서 좀 더 안심이 되었다. 
                         </p>
                         <img src="/lib/img/magazine_img/travel_img4.svg" id="tr_img2">
@@ -61,7 +69,7 @@
             <div id="rec3">
                 <div>
                     <p id="sp">In Paris</p>
-                    <p id="list_tit"> 
+                    <p id="list_tit">
                         파리지앵처럼, 튈르리 정원의 숙소 
                     </p>
                     <p id="list_cont">
@@ -123,7 +131,7 @@
             <div id="rec3">
                 <div>
                     <p id="sp">In Paris</p>
-                    <p id="list_tit"> 
+                    <p id="list_tit">
                         파리지앵처럼, 튈르리 정원의 숙소 
                     </p>
                     <p id="list_cont">
@@ -185,7 +193,7 @@
             <div id="rec3">
                 <div>
                     <p id="sp">In Paris</p>
-                    <p id="list_tit"> 
+                    <p id="list_tit">
                         파리지앵처럼, 튈르리 정원의 숙소 
                     </p>
                     <p id="list_cont">
@@ -261,26 +269,7 @@
     </script>
     <!--메인 끝-->
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>

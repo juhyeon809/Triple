@@ -31,11 +31,82 @@
         </div>
         <div class="mag_content">
             <div class="content_list">
+<<<<<<< HEAD
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
                         <p id="li_cont" th:text="${magazine.getContent().substring(0, 5)}+'...'"></p>
                         <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
+=======
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">요즘 제주 여행은 <br> '로컬 체험'이 대세래요 🍊</p>
+                        <p id="li_cont">진짜 로컬과 즐기는 단 하나뿐인 체험 총정리</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">어른이들 모여라! <br>시간 순삭 액티비티 총집합</p>
+                        <p id="li_cont"4>지금 예약 급상승 중인 인기 액티비티 & 체험</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">뉴옥 신상 핫플,<br>'써밋 전망대' 200% 즐기기</p>
+                        <p id="li_cont">사방이 거울로 된 새로운 전망대의 탄생</p>
+                        <p id="li_cont">#투어･티켓 #미주</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">요즘 국내여행은 <br>'액티비티'가 필수래요</p>
+                        <p id="li_cont">지금 즐겨야 가장 재미있는 액티비티 총정리!</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="./magazine_view/tourticket_view.html" >
+                        <p id="li_tit">여기가 진짜 한국? <br>외국 같은 액티비티 명소 10</p>
+                        <p id="li_cont">공중 그네부터 인기 서핑 해변까지</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">3월에 가기 좋은<br>제주 실내 여행 스팟 모음</p>
+                        <p id="li_cont">비가 와도 눈이 와도 안심!</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">올해 도전해 볼까?<br>제주 액티비티 버킷리스트</p>
+                        <p id="li_cont">놓칠 수 없는 인기 액티비티 총집합</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">지금 가기 딱 좋은<br>제주 인생샷 스팟 10곳</p>
+                        <p id="li_cont">가을 느낌 물씬 나는 테마별 포토존</p>
+                        <p id="li_cont">#투어･티켓 #국내</p>
+                    </a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine/tourticket_view" >
+                        <p id="li_tit">지금 준비해도 괜찮아! <br>연말연시 추천 여행지3</p>
+                        <p id="li_cont">#투어･티켓 #중화/중국</p>
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
                 </div>
@@ -44,26 +115,7 @@
     </div>
     <!--메인-->
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>
