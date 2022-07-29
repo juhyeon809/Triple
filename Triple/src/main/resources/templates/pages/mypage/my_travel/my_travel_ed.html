@@ -12,14 +12,9 @@
     <link rel="stylesheet" href="/member/mypage/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
-            <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/join.html">JOIN</a></div>
-        </div>
-    </header>
-    <!--헤더 끝-->
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
     
     <!--메인-->
     <div class="container_all">
@@ -27,7 +22,7 @@
         <div class="profile">
             <div class="profile_area">
                 <div>
-                    <img src="./img/mypage.svg" id="pro_img">
+                    <img src="/lib/img/mypage_img/mypage.svg" id="pro_img">
                 </div>
                 <div class="form_box">
                     <div class="pro_box1">
@@ -69,7 +64,7 @@
                     <div>
                         <a href="#">
                             <div class="list2">
-                                <div><img src="./img/mypage.svg" id="pro_img"></div>
+                                <div><img src="/lib/img/mypage_img/mypage.svg" id="pro_img"></div>
                                 <div><p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p></div>
                             </div>
                         </a>
@@ -77,7 +72,7 @@
                     <div>
                         <a href="#">
                             <div class="list2">
-                                <div><img src="./img/mypage.svg" id="pro_img"></div>
+                                <div><img src="/lib/img/mypage_img/mypage.svg" id="pro_img"></div>
                                 <div><p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p></div>
                             </div>
                         </a>
@@ -88,7 +83,7 @@
                     <div>
                         <a href="#">
                             <div class="list2">
-                                <div><img src="./img/mypage.svg" id="pro_img"></div>
+                                <div><img src="/lib/img/mypage_img/mypage.svg" id="pro_img"></div>
                                 <div><p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p></div>
                             </div>
                         </a>
@@ -96,7 +91,7 @@
                     <div>
                         <a href="#">
                             <div class="list2">
-                                <div><img src="./img/mypage.svg" id="pro_img"></div>
+                                <div><img src="/lib/img/mypage_img/mypage.svg" id="pro_img"></div>
                                 <div><p id="list_cont">제주 여행 <br> 2022.10.21 - 2022.10.24 | 1명과 함께</p></div>
                             </div>
                         </a>
@@ -107,23 +102,9 @@
     </div>
     <!--메인 끝-->
 
-    <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--푸터 끝-->
+<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypagefooter"></div>
+<!--푸터 끝-->
 </body>
 
 </html>
