@@ -32,8 +32,8 @@ public class Reservation {
     private String email;
     private String hp;
     private String emergencyHp;
-//    private Integer userid;
+    private Integer userid;
 
-    @ManyToOne
-    private Users users;
+//    @ManyToOne
+//    private Users users;
 }

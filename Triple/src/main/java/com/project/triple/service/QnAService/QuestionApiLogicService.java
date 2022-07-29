@@ -1,14 +1,24 @@
 package com.project.triple.service.QnAService;
 
 
+import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.QnA.Question;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.QnARequest.QuestionApiRequest;
+import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.repository.QuestionRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
 public class QuestionApiLogicService extends BaseService<QuestionApiRequest, QuestionApiResponse, Question> {
 
     @Autowired
@@ -19,24 +29,40 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
                 .idx(question.getIdx())
                 .typeCategory(question.getTypeCategory())
                 .typeDetail(question.getTypeDetail())
+                .title(question.getTitle())
                 .content(question.getContent())
-                .uploadPath(question.getUploadPath())
-                .fileName(question.getFileName())
-                .fileType(question.getFileType())
+                .uploadpath(question.getUploadpath())
+                .filename(question.getFilename())
+                .filetype(question.getFiletype())
                 .infoAgree(question.getInfoAgree())
                 .regDate(question.getRegDate())
-                .inquaryId(question.getInquaryId())
-                .ticketNum(question.getAirTicket().getTicketNum())
-                .ticketNum(question.getLodgingTicket().getTicketNum())
-                .ticketNum(question.getTourTicket().getTicketNum())
-                .userId(question.getUsers().getIdx())
+                .inquiryId(question.getInquiryId())
+//                .ticketNum(question.getAirTicket().getTicketNum())
+//                .ticketNum(question.getLodgingTicket().getTicketNum())
+//                .ticketNum(question.getTourTicket().getTicketNum())
+//                .userId(question.getUsers().getIdx())
                 .build();
         return questionApiResponse;
     }
 
     @Override
     public Header<QuestionApiResponse> create(Header<QuestionApiRequest> request) {
-        return null;
+        QuestionApiRequest questionApiRequest = request.getData();
+        Question question = Question.builder()
+                .typeCategory(questionApiRequest.getTypeCategory())
+                .typeDetail(questionApiRequest.getTypeDetail())
+                .title(questionApiRequest.getTitle())
+                .content(questionApiRequest.getContent())
+                .uploadpath(questionApiRequest.getUploadpath())
+                .filename(questionApiRequest.getFilename())
+                .filetype(questionApiRequest.getFiletype())
+                .infoAgree(questionApiRequest.getInfoAgree())
+                .regDate(questionApiRequest.getRegDate())
+                .inquiryId(questionApiRequest.getInquiryId())
+//                .airTicket(questionApiRequest.)
+                .build();
+        Question newQuestion = baseRepository.save(question);
+        return Header.OK(response(newQuestion));
     }
 
     @Override
@@ -52,5 +78,13 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
     @Override
     public Header<QuestionApiResponse> delete(Long id) {
         return null;
+    }
+
+    public Header<List<QuestionApiResponse>> search(){
+        List<Question> questionList = questionRepository.findAll();
+        List<QuestionApiResponse> questionApiResponseList = questionList.stream()
+                .map(question -> response(question))
+                .collect(Collectors.toList());
+        return Header.OK(questionApiResponseList);
     }
 }

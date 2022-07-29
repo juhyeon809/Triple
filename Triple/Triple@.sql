@@ -66,6 +66,7 @@ create sequence seq_airline
     increment by 1
     start with 1;
     
+
 insert into air_ticket values(
     4,
     'AIR_TICKET',
@@ -85,6 +86,7 @@ insert into air_ticket values(
 );
 commit;
 select * from air_ticket;
+
 create table aircraft(
     idx number(7) primary key,
     aircraft_num number(7) not null,
@@ -105,8 +107,19 @@ select * from reservation;
 create sequence seq_aircraft
     increment by 1
     start with 1;
+drop table air_ticket;    
+select * from air_ticket; 
+insert into air_ticket values(
+    1,
+    'AIR_TICKET',
+    'JINAIR_J',
     
-select * from air_ticket;
+    
+);
+drop table admin_user;
+insert into admin_user values(1, 'apple123', 'apple123!', '����', '010-1111-1111', '������', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
+select * from admin_user;
+commit;
 create table air_ticket(
     idx number(7) primary key,
     ticket_type varchar2(10),
@@ -578,7 +591,7 @@ create sequence seq_guide_review_reply
 
 create table question(
     idx number(7) primary key,
-    inquary_id number(7) not null,
+    inquiry_id number(7) not null,
     ticket_num number(7) not null,
     user_id number(7) not null,
     type_category varchar2(20) not null,
@@ -600,7 +613,7 @@ create sequence seq_question
 create table answer(
     idx number(7) primary key,
     answer_num number(7) not null,
-    inquary_id number(7) not null,
+    inquiry_id number(7) not null,
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
     title varchar2(20) not null,

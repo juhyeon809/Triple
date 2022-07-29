@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/travels.css">
+    <script src="./js/travels_script.js"></script>
+    <title>TRIPLE | 마이페이지 여행기</title>
+    <link rel="stylesheet" href="/member/mypage/css/style.css">
+</head>
+<body>
+    <!--헤더-->
+    <header>
+        <div id="logo_area">
+            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
+            <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/join.html">JOIN</a></div>
+        </div>
+    </header>
+    <!--헤더끝-->
+    
+    <!--메인-->
+    <main class="container_all">
+        <p class="mypage_title">MY PAGE</p>
+        <div class="profile">
+            <div class="profile_area">
+                <div>
+                    <img src="/lib/img/mypage_img/mypage.svg" id="pro_img">
+                </div>
+
+                <div class="form_box">
+                    <div class="pro_box1">
+                        <form action="#" name="regform" id="regform" class="regform">
+                            <div class="pro_box1_left">
+                                <input type="text" id="rename" name="rename" placeholder="김사과">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="pro_box2">
+                        <p id="done">
+                            <a href="/templates/pages/mypage/travels/travels_write.html">여행기쓰기</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_box">
+            <div class="content_list">
+                <div class="list">
+                    <li><a href="/templates/pages/mypage/my_travel/my_travel_main.html">내 여행</a></li>
+                    <li><a href="/templates/pages/mypage/review/review_main.html">리뷰</a></li>   <!--review-->
+                    <li><a href="/templates/pages/mypage/travels/travels.html"><span id="choice">여행기</span></a></li> <!--travels-->
+                </div>
+                <div class="list">
+                    <li><a href="/templates/pages/mypage/my_save/my_save_main.html">내 저장</a></li>    <!--my_save-->
+                    <li><a href="/templates/pages/mypage/mypage_reserve/my_reserve_air.html">내 예약</a></li>    <!---->
+                    <li><a href="/templates/pages/mypage/mypage_coupon/coupon_main.html">쿠폰함</a></li> <!---->
+                </div>
+                <div class="list">
+                    <li><a href="/templates/pages/mypage/mypage_settings/mypage_settings.html">설정</a></li>
+                </div>
+            </div>
+
+            <div class="content_list2">
+                <p class="content_none">작성한 여행기가 없습니다. 새로운 여행기를 작성해주세요!</p>
+            </div>
+        </div>
+    </main>
+    <!--메인 끝-->
+
+    <!--푸터-->
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--푸터 끝-->
+</body>
+
+</html>

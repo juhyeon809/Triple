@@ -63,7 +63,7 @@ a:visited {
 header {
     width: 100%;
     margin: 0 auto;
-    background-image: url('../img/header_bg.svg');
+    background-image: url('lib/travel_spot_img/header_bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -113,7 +113,7 @@ header {
     width: 1000px;
     height: 250px;
     margin: 0 auto;
-    background-image: url('../img/overseas2.svg');
+    background-image: url('lib/travel_spot_img/img/overseas2.svg');
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 50px;
@@ -404,7 +404,7 @@ main {
 #travels_bg_img_area {
     width: 440px;
     height: 300px;
-    background-image: url(../img/overseas1.svg);
+    background-image: url('lib/travel_spot_img/img/overseas1.svg');
     background-size: cover;
     display: flex;
     align-items: flex-end;
@@ -506,7 +506,7 @@ main {
 /*restaurant_info*/
 
 #restaurant_img {
-    background-image: url(/member/travel_spot/img/eggandthings.jpg);
+    background-image: url('lib/travel_spot_img/eggandthings.jpg');
     width: 1000px;
     height: 400px;
     background-size: cover;
@@ -772,7 +772,7 @@ color: #666666;
 /*tour_spot_info*/
 
 #tour_spot_img {
-    background-image: url(../img/topImg.png);
+    background-image: url('lib/travel_spot_img/topImg.png');
     width: 1000px;
     height: 400px;
     background-size: cover;
@@ -1104,14 +1104,14 @@ hr {
 /* #main_contents > #onedaytrip_box > #travel_spot_package > a >.imgbox { 
     width: 175px; 
     height: 175px;
-    background-image: url("/member/travel_spot/img/spotpackage.png");
+    background-image: url("/member/travel_spot_img/spotpackage.png");
     border-radius: 10px;
 } */
 
 #travel_spot_package > a >.imgbox { 
     width: 175px; 
     height: 175px;
-    background-image: url("/member/travel_spot/img/spotpackage.png");
+    background-image: url('lib/travel_spot_img/spotpackage.png');
     border-radius: 10px;
 }
 

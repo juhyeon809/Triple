@@ -58,48 +58,48 @@ public class Users {
     private UserStatus status;
     private String tosAgree;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<ReservationAiruse> reservationAiruseList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<ReservationAiruse> reservationAiruseList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Reservation> reservationList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Review> reviewList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<ReviewReply> reviewReplyList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<SpotReview> spotReviewList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<TourSpotReviewReply> tourSpotReviewReplyList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<RestaurantReview> restaurantReviewList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<RestaurantReviewReply> restaurantReviewReplyList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<UserCoupon> userCouponList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<GuideReview> guideReviewList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<GuideReviewReply> guideReviewReplyList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Tripler> triplerList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<TriplerReply> triplerReplyList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Mysave> mysaveList;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Reservation> reservationList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Review> reviewList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<ReviewReply> reviewReplyList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<SpotReview> spotReviewList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<TourSpotReviewReply> tourSpotReviewReplyList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<RestaurantReview> restaurantReviewList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<RestaurantReviewReply> restaurantReviewReplyList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<UserCoupon> userCouponList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<GuideReview> guideReviewList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<GuideReviewReply> guideReviewReplyList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Tripler> triplerList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<TriplerReply> triplerReplyList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Mysave> mysaveList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
-    private List<Question> questionList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "users")
+//    private List<Question> questionList;
 }

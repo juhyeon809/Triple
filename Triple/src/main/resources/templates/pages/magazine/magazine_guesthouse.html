@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLE | 매거진 숙소추천</title>
+    <link rel="stylesheet" href="/app/css/magazine.css">
+    <link rel="stylesheet" href="/app/css/common.css ">
+</head>
+<body>
+    <!-- header 시작 -->
+    <div th:replace="fragement/header :: header"></div>
+    <!-- header 끝 -->
+
+    <!--메인-->
+    <div class="container">
+        <div class="mag_area">
+            <ul id="mag_list">
+                <li><a href="/Triple/magazine"><span id="all">전체</span></a></li>
+                <li><a href="/Triple/magazine_recommend">여행지추천</a> </li>
+                <li><a href="/Triple/magazine_tip">여행꿀팁</a> </li>
+                <li><a href="/Triple/magazine_eatplace">맛집탐방</a> </li>
+                <li><a href="/Triple/magazine_airport">항공･공항</a> </li>
+                <li  style="background-color: #458cd3; border: 1px solid #458cd3;"><a href="/Triple/magazine_guesthouse"  style="color: #fff;">숙소추천</a> </li>
+                <li><a href="/Triple/magazine_tourticket">투어･티켓</a> </li>
+                <li><a href="/Triple/magazine_shop">쇼핑</a> </li>
+                <li><a href="/Triple/magazine_travels">여행기</a> </li>
+            </ul>
+        </div>
+        <div class="mag_content">
+            <div class="content_list">
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                    <p id="li_tit">인생에 한 번쯤은 꼭! <br>가보고 싶은 해외 신상 호텔 7</p><p id="li_cont">코로나 이후 가보고 싶은 이국적인 숙소들🌴</p><p id="li_cont">#숙소추천 #유럽</p></a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">숙소가 다 거기서 거기? <br>내게 맞는 인생 숙소 추천</p><p id="li_cont">힐링부터 먹방까지! 여행 스타일별 숙소 8</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">주말에 다녀오기 좋은 <br>한적한 숲캉스 숙소 6 🌿</p><p id="li_cont">여유롭게 즐기는 숲속 힐링 타임</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">개성 만점 인생샷 성지 <br>SNS속 그 호텔은 어디?</p><p id="li_cont">호텔 내 핫한 포토 스팟까지 알려드려요 📷</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">찐후기가 보장해요! <br>가족여행 최적화 숙소 6</p><p id="li_cont">지금 예약해야 싸게 갈 수 있어요</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">숙소에만 있어도 좋아요<br>근처 즐길거리 가득한 숙소</p><p id="li_cont">숙소에만 머물러도 여행이 되는 곳 7</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">힐링 보장 인기 숙소 예약하고<br>환경까지 지켜요!</p><p id="li_cont">두 마리 토끼 잡는 친환경 숙소는 어디? 🌿</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">프라이빗하게 즐겨요<br> 숲속이라 더 안전한 숙소 8</p><p id="li_cont">자연 속에서 힐링하기 좋은 곳만 모았어요🌿</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/templates/pages/magazine/magazine_view/guesthouse_view.html" id="text">
+                        <p id="li_tit">제주에서 만난, <br>인생 '뷰 맛집' 숙소 6</p><p id="li_cont">SNS에서 인기 있는 곳들만 골라봤어요🍊</p><p id="li_cont">#숙소추천 #국내</p></a>
+                        <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--메인-->
+    <!--푸터-->
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p id="bold">트리플 사업자 정보</p>
+                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
+            </div>
+        </div>
+    </footer>
+    <!--푸터 끝-->
+</body>
+</html>

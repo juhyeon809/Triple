@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLE | 매거진 여행꿀팁</title>
+    <link rel="stylesheet" href="/app/css/magazine.css">
+    <link rel="stylesheet" href="/app/css/common.css ">
+</head>
+<body>
+    <!-- header 시작 -->
+    <div th:replace="fragement/header :: header"></div>
+    <!-- header 끝 -->
+
+     <!--메인-->
+    <div class="container">
+        <div class="mag_area">
+            <ul id="mag_list">
+                <li><a href="/Triple/magazine"><span id="all">전체</span></a></li>
+                <li><a href="/Triple/magazine_recommend">여행지추천</a> </li>
+                <li  style="background-color: #458cd3; border: 1px solid #458cd3;"><a href="/Triple/magazine_tip"  style="color: #fff;">여행꿀팁</a> </li>
+                <li><a href="/Triple/magazine_eatplace">맛집탐방</a> </li>
+                <li><a href="/Triple/magazine_airport">항공･공항</a> </li>
+                <li><a href="/Triple/magazine_guesthouse">숙소추천</a> </li>
+                <li><a href="/Triple/magazine_tourticket">투어･티켓</a> </li>
+                <li><a href="/Triple/magazine_shop">쇼핑</a> </li>
+                <li><a href="/Triple/magazine_travels">여행기</a> </li>
+            </ul>
+        </div>
+        <div class="mag_content">
+            <div class="content_list">
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/tip_view.html" >
+                        <p id="li_tit">아이와 함께 떠나는 여행, <br> 온 가족이 행복한 여행지</p>
+                        <p id="li_cont">미리 골라두는 해외여행 버킷리스트📝</p>
+                        <p id="li_cont">#여행꿀팁 #미주</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/tip_view.html" >
+                        <p id="li_tit">직접 가보고 추천하는 <br> OOO과 가기 좋은 여행지</p>
+                        <p id="li_cont">#부모님#연인과#아이와#혼자</p>
+                        <p id="li_cont">#여행꿀팁 #미주</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/tip_view.html" >
+                        <p id="li_tit">나의 다음 여행, <br> '제주vs해외'어디로 갈까?</p>
+                        <p id="li_cont">'어디에도 없던 여행 혜택', 지금바로 떠나요✈</p>
+                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/tip_view.html" >
+                        <p id="li_tit">요즘 제주 여행은 <br> '로컬 체험'이 대세래요 🍊</p>
+                        <p id="li_cont">진짜 로컬과 즐기는 단 하나뿐인 체험 총정리</p>
+                        <p id="li_cont">#여행꿀팁 #국내</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/Triple/magazine_view/tip_view.html" >
+                        <p id="li_tit">2022 호텔별 <br> 딸기 뷔페 총정리 🍓</p>
+                        <p id="li_cont">딸기 덕후들 눈 번쩍 뜨일 소식</p>
+                        <p id="li_cont">#여행꿀팁 #국내</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/templates/pages/magazine/magazine_view/tip_view.html" >
+                        <p id="li_tit">2022년엔 언제 쉬지? <br> 미리 보는 황금연휴 캘린더</p>
+                        <p id="li_cont">더 알찬 휴가 계획을 위한 연차 가이드</p>
+                        <p id="li_cont">#여행꿀팁 #미주</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/templates/pages/magazine/magazine_view/tip_view.html" >
+                        <p id="li_tit">지금, 방콕은 어떤 모습일까? <br> 달라진 방콕 여행 A to Z</p>
+                        <p id="li_cont">[아임유어가이드] 딩고 트래블 편 (방콕 4박 5일)</p>
+                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/templates/pages/magazine/magazine_view/tip_view.html" >
+                        <p id="li_tit">5분이면 완전정복! <br> '무격리여행' A to Z</p>
+                        <p id="li_cont">격리 없는 해외여행, 뭘 어떻게 준비해야 할까?</p>
+                        <p id="li_cont">#여행꿀팁 #미주</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
+                </div>
+                <div class="list_box">
+                    <a href="/templates/pages/magazine/magazine_view/tip_view.html" >
+                        <p id="li_tit">격리 없는 해외여행지 <br> '이곳'도 갈 수 있다고?</p>
+                        <p id="li_cont">지금 바로 떠날 수 있어요✈</p>
+                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
+                </div>
+            </div>
+        </div>
+    </div>
+     <!--메인 끝-->
+    <!--푸터-->
+    <footer>
+        <div id="enterprise_info">
+            <div id="enterprise_info_text">
+                <p id="bold">트리플 사업자 정보</p>
+                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
+                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+
+                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+            </div>
+            <div id="icon_box">
+                <div id="sns_box">
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
+                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
+                </div>
+                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
+            </div>
+        </div>
+    </footer>
+    <!--푸터 끝-->
+</body>
+</html>

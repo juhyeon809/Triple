@@ -547,7 +547,7 @@ create sequence seq_guide_review_reply
 
 create table question(
     idx number(7) primary key,
-    inquary_id number(7) not null,
+    inquiry_id number(7) not null,
     ticket_num number(7) not null,
     user_id number(7) not null,
     type_category varchar2(20) not null,
@@ -569,7 +569,7 @@ create sequence seq_question
 create table answer(
     idx number(7) primary key,
     answer_num number(7) not null,
-    inquary_id number(7) not null,
+    inquiry_id number(7) not null,
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
     title varchar2(20) not null,

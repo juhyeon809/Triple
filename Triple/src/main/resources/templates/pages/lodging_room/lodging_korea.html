@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPLE | 국내숙소</title>
+    <link rel="stylesheet" href="/app/css/lodging_room_main.css">
+    <link rel="stylesheet" href="/app/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="backg_image_area">
+        <!--header 시작-->
+        <div th:replace="fragement/header :: header"></div>
+    </div>
+    <!--header 끝-->
+    <!--main 시작-->
+    <main>
+        <div id="loadging_regional">
+            <div id="lo_re_main">
+                <div id="lo_re_kr_1">
+                    <a href="/templates/pages/lodging_room/lodging_korea.html"><div id="lo_re_kr_1_title">국내숙소</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_global.html"><div id="lo_re_kr_1_text">해외숙소</div></a>
+                </div>
+
+                <div id="lo_re_kr_2">
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>서울</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html"><div>부산</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeju.html"><div>제주</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gangwon.html"><div>강원</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongi.html"><div>경기</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>인천</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html"><div>경상</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html"><div>충청</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html"><div>전라</div></a>
+                </div>
+
+                <div id="lo_re_kr_3">
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>서울 전체</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>강남 · 서초</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>송파 · 강동</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>동대문 · 성북</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>용산 · 종로 · 중구</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>마포 · 서대문</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>건대 · 성수 · 왕십리</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>김포공항 · 강서</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>동작 · 관악</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>강북 · 노원 · 도봉</div></a>
+                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>구로 · 금천</div></a>
+                </div>
+
+                <div id="lo_re_kr_4">
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                    <a href="#"><div></div></a>
+                </div>
+            </div>
+        </div>
+    <!--main 끝-->
+        <!-- footer 시작 -->
+        <footer th:replace="fragement/footer :: footer"></footer>
+        <!-- footer 끝 -->
+    </main>
+</body>
+</html>

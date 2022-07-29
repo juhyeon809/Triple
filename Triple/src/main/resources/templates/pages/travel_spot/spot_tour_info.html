@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,35 +11,15 @@
     <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-            <form id="menu_form">
-                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-            </form>
-            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
-    
-        </div>
-        <div id="menu_area">
-            <ul id="menus">
-                <li><a href="/member/overseas_travel/overseas_travel_main.html">해외여행</a></li>
-                <li><a href="/member/domestic_travel/domestic_main.html">국내여행</a></li>
-                <li><a href="/lib/img/flight_main.html">항공예약</a></li>
-                <li><a href="/member/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/member/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                <li><a href="/member/travel_package/package_main.html">패키지여행</a></li>
-                <li><a href="/member/magazine/magazine.html" >여행매거진</a></li>
-                <li><a href="/member/event/event.html">혜택/렌터카</a></li>
-            </ul>
-        </div>
-    </header>
-=======
-<!--header 시작-->
-<div th:replace="fragement/header :: header"></div>
-<!--header 끝-->
+    <!--header 시작-->
+    <div th:replace="fragement/header :: header"></div>
+    <!--header 끝-->
 >>>>>>> 1040ebad44c1794a57688d4ac709e3bba9ae9ff9
     <div id="tour_spot_img"></div>
     <main>
@@ -45,26 +27,26 @@
             <div id="utility_flex_box">
                 <div id="mark"><p>관광명소</p></div>
                 <div id="utility_flex_box2">
-                    <a href="../mypage/my_save/my_save.html"><div id="tour_info_btn_like"><img src="./img/icon_save.svg" alt="하트"> 저장하기</div></a>
-                    <a href="../mypage/my_travel/my_travel.html"><div id="tour_info_btn_schedule"><img src="./img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
-                    <a href="../mypage/review/review_write.html"><div id="tour_info_btn_writereview"><img src="/static/lib/img//img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
-                    <a href="#"><div id="tour_info_btn_share"><img src="./img/icon_share.svg" alt="공유"> 공유하기</div></a>
+                    <a href="/templates/pages/mypage/mysave/my_save_main.html"><div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"> 저장하기</div></a>
+                    <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="tour_info_btn_schedule"><img src="/lib/img/travel_spot_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
+                    <a href="/templates/pages/mypage/review/review_write.html"><div id="tour_info_btn_writereview"><img src="/static/lib/img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
+                    <a href="#"><div id="tour_info_btn_share"><img src="/lib/img/travel_spot_img/icon_share.svg" alt="공유"> 공유하기</div></a>
                 </div>
             </div>
             <div id="text_area"> 
                 <p id="title_text">사랑의 절벽</p>
                 <p>Two Lovers Point</p>
-                <p><span><i class="bi bi-heart"></i></span> 12,725 <img src="./img/starpoint.png" alt=""> (798)</p>
+                <p><span><i class="bi bi-heart"></i></span> 12,725 <img src="/lib/img/travel_spot_img/starpoint.png" alt=""> (798)</p>
                 <p>투몬, 타무닝 <a href=""> 지도보기></a></p>
             </div>
         </div>
         <div id="info_box">
             <p class="info_box_title">연인의 슬픈 전설이 내려오는 아름다운 전망 명소</p>
-            <div id="main_picture"><img src="./img/사랑의 절벽.png" alt=""></div>
+            <div id="main_picture"><img src="/lib/img/travel_spot_img/topImg.png" alt=""></div>
             <p class="info_box_subtitle">커플 여행객이 찾기 좋은 곳</p>
             <p class="info_box_context">식민지 시절, 스페인 장교와의 정략 결혼을 거부한 차모로 족장의 딸이 사랑하는 연인과 서로의 머리카락을 묶고 절벽 아래로 뛰어내린 슬픈 이야기가 전해지는 곳이다. 괌을 찾은 커플 여행객들이 즐겨 찾는 관광 명소로, 슬픈 이야기 속의 연인을 형상화한 동상과 영원한 사랑을 의미하는 '하트 락 월' 등의 볼거리가 있다.</p>
             <hr>
-            <div id="main_picture"><img src="./img/gaum_view.png" alt=""></div>
+            <div id="main_picture"><img src="/lib/img/travel_spot_img/gaum_view.png" alt=""></div>
             <p class="info_box_subtitle">괌의 아름다운 경치를 즐길 수 있는 전망 명소</p>
             <p class="info_box_context">절벽 위에 자리한 유료 전망시설에서는 깎아지르는 듯한 절벽 아래의 맑고 투명한 바닷물과 끝없이 펼처진 해안선을 조명할 수 있다. 투몬 베이의 산호초와 괌 북부 석회석 고원, 남부의 화산 지형을 한 눈에 담을 수 있으며, 아름다운 일몰까지 감상할 수 있어 많은 여행객이 찾는다.</p>
             <hr>
@@ -72,7 +54,7 @@
                 <p class="info_box_subtitle">주요 볼거리</p>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/topImg.png" alt="">
+                    <img src="/lib/img/travel_spot_img/topImg.png" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">동상</p>
@@ -81,7 +63,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/lovebell.png" alt="">
+                    <img src="/lib/img/travel_spot_img/lovebell.png" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">더 러브 벨</p>
@@ -90,7 +72,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/lovelock.png" alt="">
+                    <img src="/lib/img/travel_spot_img/lovelock.png" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">하트 락 월</p>
@@ -99,7 +81,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/wallpaint.png" alt="">
+                    <img src="/lib/img/travel_spot_img/wallpaint.png" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">벽화</p>
@@ -108,7 +90,7 @@
             </div>
             <div id="info_list_flex_box">
                 <div id="menu_image">
-                    <img src="./img/cowstatue.png" alt="">
+                    <img src="/lib/img/travel_spot_img/cowstatue.png" alt="">
                 </div>
                 <div id="menu_description">
                     <p class="menu_name">소 동상</p>
@@ -120,7 +102,7 @@
             <div id="basic_info">
                 <div id="basic_info_flex_box">
                 <div id="map_area">
-                    <img src="./img/map.png" alt="">
+                    <img src="/lib/img/travel_spot_img/map.png" alt="">
                 </div>
                 <div id="basic_info_text_area">
                     <table>

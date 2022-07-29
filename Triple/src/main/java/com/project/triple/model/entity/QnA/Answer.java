@@ -28,7 +28,7 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_answer")
     private Long idx;
     private Integer answerNum;
-//    private Integer inquaryId;
+//    private Integer inquiryId;
 //    private Integer adminuserId;
     private String adminuserName;
     private String title;
