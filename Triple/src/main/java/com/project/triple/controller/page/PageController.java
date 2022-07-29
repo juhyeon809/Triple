@@ -90,25 +90,7 @@ public class PageController {
         return new ModelAndView("/pages/main");
     }
 
-    @RequestMapping(path = "/flightList")
-    public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            nickname = (String) session.getAttribute("nickname");
-        }
-        List<AirTicketApiResponse> airTicketList = airTicketApiLogicService.search().getData();
-        List<TimeCollector> timeTakenList = airTicketList.stream().map(airTicketApiResponse ->
-           airTicketApiLogicService.timeSort(airTicketApiResponse)
-        ).collect(Collectors.toList());
-
-        return new ModelAndView("/pages/flight_reservation/flight_list").addObject("email", email)
-                .addObject("name", nickname).addObject("airTicketList", airTicketList).addObject("timeTakenList", timeTakenList);
-    }
+    //마이페이지
 
     @RequestMapping(path = "/inquiryWrite")
     public ModelAndView inquiryWrite(HttpServletRequest request) {
@@ -142,6 +124,9 @@ public class PageController {
                 .addObject("name", name);
     }
 
+
+
+    //항공
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -157,6 +142,27 @@ public class PageController {
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
                 .addObject("nickname", nickname);
     }
+
+    @RequestMapping(path = "/flightList")
+    public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+        List<AirTicketApiResponse> airTicketList = airTicketApiLogicService.search().getData();
+        List<TimeCollector> timeTakenList = airTicketList.stream().map(airTicketApiResponse ->
+           airTicketApiLogicService.timeSort(airTicketApiResponse)
+        ).collect(Collectors.toList());
+
+        return new ModelAndView("/pages/flight_reservation/flight_list").addObject("email", email)
+                .addObject("name", nickname).addObject("airTicketList", airTicketList).addObject("timeTakenList", timeTakenList);
+    }
+
 
     @RequestMapping(path = "/flightReservation")
     public ModelAndView flightReservation(HttpServletRequest request) {
@@ -189,6 +195,7 @@ public class PageController {
         return new ModelAndView("/pages/flight_reservation/flight_view").addObject("email",email)
                 .addObject("nickname", nickname);
     }
+
 
 
     //magazine
