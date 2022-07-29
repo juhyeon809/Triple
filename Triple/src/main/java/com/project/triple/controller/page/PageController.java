@@ -1,12 +1,16 @@
 package com.project.triple.controller.page;
 
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
+import com.project.triple.service.MagazineApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +34,9 @@ public class PageController {
 
     @Autowired
     private AdminUserApiLogicService adminUserApiLogicService;
+
+    @Autowired
+    private MagazineApiLogicService magazineApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -261,12 +268,148 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.list().getData();
 
         return new ModelAndView("/pages/magazine/magazine").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
 
-    @RequestMapping(path = "/magazine_recommend")   //http://localhost:9090/Triple/magazine_recommend
+    @RequestMapping(path = "/magazine/recommend/view/{idx}")   //http://localhost:9090/Triple/magazine_recommend
+    public ModelAndView magazine_recommend_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/recommend_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/tip/view/{idx}")     //http://localhost:9090/Triple/magazine_tip
+    public ModelAndView magazine_tip_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/tip_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/restaurant/view/{idx}")    //http://localhost:9090/Triple/magazine_eatplace
+    public ModelAndView magazine_restaurant_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/eatplace_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/air/view/{idx}")     //http://localhost:9090/Triple/magazine_airport
+    public ModelAndView magazine_air_view(@PathVariable Long idx,HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/airport_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/lodging/view/{idx}")      //http://localhost:9090/Triple/magazine_guesthouse
+    public ModelAndView magazine_lodging_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/guesthouse_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/tourticket/view/{idx}")      //http://localhost:9090/Triple/magazine_tourticket
+    public ModelAndView magazine_tourticket_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/tourticket_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/shopping/view/{idx}")        //http://localhost:9090/Triple/magazine_shop
+    public ModelAndView magazine_shopping_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/magazine/magazine_view/shop_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+    @RequestMapping(path = "/magazine/travels/view/{idx}")     //http://localhost:9090/Triple/magazine_travels
+    public ModelAndView magazine_travels_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/magazine/magazine_view/travels_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazine", magazineApiResponse);
+    }
+
+    @RequestMapping(path = "/magazine/recommend")   //http://localhost:9090/Triple/magazine_recommend
     public ModelAndView magazine_recommend(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -278,10 +421,12 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.recommend().getData();
+
         return new ModelAndView("/pages/magazine/magazine_recommend").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_tip")     //http://localhost:9090/Triple/magazine_tip
+    @RequestMapping(path = "/magazine/tip")     //http://localhost:9090/Triple/magazine_tip
     public ModelAndView magazine_tip(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -293,11 +438,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.tip().getData();
+
         return new ModelAndView("/pages/magazine/magazine_tip").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_eatplace")    //http://localhost:9090/Triple/magazine_eatplace
-    public ModelAndView magazine_eatplace(HttpServletRequest request) {
+    @RequestMapping(path = "/magazine/restaurant")    //http://localhost:9090/Triple/magazine_eatplace
+    public ModelAndView magazine_restaurant(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -307,12 +454,14 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.restaurant().getData();
 
         return new ModelAndView("/pages/magazine/magazine_eatplace").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_airport")     //http://localhost:9090/Triple/magazine_airport
-    public ModelAndView magazine_airport(HttpServletRequest request) {
+    @RequestMapping(path = "/magazine/air")     //http://localhost:9090/Triple/magazine_airport
+    public ModelAndView magazine_air(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -322,12 +471,14 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.air().getData();
 
         return new ModelAndView("/pages/magazine/magazine_airport").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_guesthouse")      //http://localhost:9090/Triple/magazine_guesthouse
-    public ModelAndView magazine_guesthouse(HttpServletRequest request) {
+    @RequestMapping(path = "/magazine/lodging")      //http://localhost:9090/Triple/magazine_guesthouse
+    public ModelAndView magazine_lodging(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -338,10 +489,12 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.lodging().getData();
+
         return new ModelAndView("/pages/magazine/magazine_guesthouse").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_tourticket")      //http://localhost:9090/Triple/magazine_tourticket
+    @RequestMapping(path = "/magazine/tourticket")      //http://localhost:9090/Triple/magazine_tourticket
     public ModelAndView magazine_tourticket(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -353,11 +506,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.tourTicket().getData();
+
         return new ModelAndView("/pages/magazine/magazine_tourticket").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_shop")        //http://localhost:9090/Triple/magazine_shop
-    public ModelAndView magazine_shop(HttpServletRequest request) {
+    @RequestMapping(path = "/magazine/shopping")        //http://localhost:9090/Triple/magazine_shop
+    public ModelAndView magazine_shopping(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -368,10 +523,12 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.shopping().getData();
+
         return new ModelAndView("/pages/magazine/magazine_shop").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine_travels")     //http://localhost:9090/Triple/magazine_travels
+    @RequestMapping(path = "/magazine/travels")     //http://localhost:9090/Triple/magazine_travels
     public ModelAndView magazine_travels(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;

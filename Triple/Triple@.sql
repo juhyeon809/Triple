@@ -67,6 +67,25 @@ create sequence seq_airline
     start with 1;
     
 
+insert into air_ticket values(
+    4,
+    'AIR_TICKET',
+    'ARI004',
+    4444,
+    6666,
+    'ICN',
+    'SIN',
+    '2022-07-27 16:00',
+    '2022-07-27 18:30',
+    230000,
+    'K597',
+    'FIRST',
+    'Y',
+    sysdate,
+    'AVAILABLE'
+);
+commit;
+select * from air_ticket;
 
 create table aircraft(
     idx number(7) primary key,
@@ -98,7 +117,7 @@ insert into air_ticket values(
     
 );
 drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', '±è»ç°ú', '010-1111-1111', '°ü¸®ÀÚ', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
+insert into admin_user values(1, 'apple123', 'apple123!', 'ï¿½ï¿½ï¿½ï¿½', '010-1111-1111', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
 select * from admin_user;
 commit;
 create table air_ticket(

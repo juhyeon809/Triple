@@ -21,18 +21,28 @@
         <div class="mag_area">
             <ul id="mag_list">
                 <li style="background-color: #458cd3; border: 1px solid #458cd3;"><a href="/Triple/magazine" style="color: #fff;"><span id="all">전체</span></a></li>
-                <li><a href="/Triple/magazine_recommend">여행지추천</a> </li>
-                <li><a href="/Triple/magazine_tip">여행꿀팁</a> </li>
-                <li><a href="/Triple/magazine_eatplace">맛집탐방</a> </li>
-                <li><a href="/Triple/magazine_airport">항공･공항</a> </li>
-                <li><a href="/Triple/magazine_guesthouse">숙소추천</a> </li>
-                <li><a href="/Triple/magazine_tourticket">투어･티켓</a> </li>
-                <li><a href="/Triple/magazine_shop">쇼핑</a> </li>
-                <li><a href="/Triple/magazine_travels">여행기</a> </li>
+                <li><a href="/Triple/magazine/recommend">여행지추천</a> </li>
+                <li><a href="/Triple/magazine/tip">여행꿀팁</a> </li>
+                <li><a href="/Triple/magazine/restaurant">맛집탐방</a> </li>
+                <li><a href="/Triple/magazine/airport">항공･공항</a> </li>
+                <li><a href="/Triple/magazine/lodging">숙소추천</a> </li>
+                <li><a href="/Triple/magazine/tourticket">투어･티켓</a> </li>
+                <li><a href="/Triple/magazine/shopping">쇼핑</a> </li>
+                <li><a href="/Triple/magazine/travels">여행기</a> </li>
             </ul>
         </div>
         <div class="mag_content">
             <div class="content_list">
+<<<<<<< HEAD
+                <div class="list_box" th:each="magazine : ${magazineList}">
+                    <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
+                        <p id="li_tit" th:text="${magazine.getTitle()}"></p>
+                        <p id="li_cont" th:text="${magazine.getContent().substring(0, 5)}+'...'"></p>
+                        <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
+                    </a>
+                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
+                </div>
+=======
                 <div class="list_box">
                     <a href="/Triple/magazine/guesthouse_view">
                         <p id="li_tit">인생에 한 번쯤은 꼭! <br> 가보고 싶은 해외 신상 호텔 7</p>
@@ -105,6 +115,7 @@
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
                 </div>  
+>>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
             </div>
         </div>
     </div>

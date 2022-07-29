@@ -1,5 +1,6 @@
 package com.project.triple.model.network.response;
 
+import com.project.triple.model.enumclass.MagazineType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +18,7 @@ public class MagazineApiResponse {
     private Long adminuserId;
     private String adminuserName;
     private Integer magazineNum;
-    private String magazineType;
+    private MagazineType magazineType;
     private String title;
     private String content;
     private String uploadPath;
