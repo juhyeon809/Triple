@@ -188,7 +188,7 @@ public class PageController {
 
 
     //magazine
-    @RequestMapping(path = "/magazine")
+    @RequestMapping(path = "/magazine")     //http://localhost:9090/Triple/magazine
     public ModelAndView magazine(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
