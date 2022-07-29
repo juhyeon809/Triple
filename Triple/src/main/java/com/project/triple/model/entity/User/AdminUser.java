@@ -46,18 +46,18 @@ public class AdminUser {
     @Enumerated(EnumType.STRING)
     private AdminUserStatus status;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
-    private List<Magazine> magazineList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
-    private List<Guide> guideList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
-    private List<Answer> answerList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
-    private List<Notice> noticeList;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
-    private List<Faq> faqList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+//    private List<Magazine> magazineList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+//    private List<Guide> guideList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+//    private List<Answer> answerList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+//    private List<Notice> noticeList;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
+//    private List<Faq> faqList;
 }

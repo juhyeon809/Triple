@@ -24,13 +24,10 @@
                 <div id="rec_list">
                     <div>
                         <div>
-                            <p id="rec_tit">파리 '샤를 드 골 공항' <br> 면세 쇼핑 안내서</p>
+                            <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                         </div>
                         <div>
-                            <p id="rec_cont">
-                                파리여행을 준비해본 분들이라면 한 번쯤 들어봤을 '파리 샤를 드 골 공항'<br>
-                                파리에는 총 3개의 공항이 있지만, 그중 가장 큰 공항은 샤를 드 골 공항이다. 인천에서 출발한 직항 항공편은 전부 이곳에서 내린다. 
-                                공항의 규모만큼 면세점 규모도 크다. 공항에서의 시간은 늘 모자라기에, 면세 쇼핑 시간을 최대한 알차고 센스있게 쓰기 위한 팁을 알려드린다!
+                            <p id="rec_cont" th:text="${magazine.getContent()}">
                             </p>
                         </div>
                     </div>

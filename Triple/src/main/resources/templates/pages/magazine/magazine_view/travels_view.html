@@ -26,11 +26,10 @@
                 </div>
                 <div>
                     <div>
-                        <p id="rec_tit">파리 & 남프랑스로 여행을 다녀왔습니다 </p>
+                        <p id="rec_tit" th:text="${magazine.getTitle()}"> </p>
                     </div>
                     <div>
-                        <p id="rec_cont">일생에 한번뿐인 신혼여행. 손꼽아 기다려온 여행의 기회를 그냥 흘려보내긴 아쉬워 해외로 다녀오기로 결정했다.<br>
-                        유럽은 점차 여행이 살아나고 있다는 뉴스에 설레는 마음을 안고 출발했다. 파리부터 남프랑스까지, 우리의 취향을 듬뿍담은 여행기를 시작한다. 
+                        <p id="rec_cont" th:text="${magazine.getContent()}">
                         </p>
                     </div>
                 </div>
