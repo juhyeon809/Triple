@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 마이페이지 항공예약</title>
-    <link rel="stylesheet" href="./css/my_reserve_main.css">
-    <link rel="stylesheet" href="/member/mypage/css/style.css">
+    <link rel="stylesheet" href="/app/css/my_reserve_main.css">
+    <link rel="stylesheet" href="/app/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <div th:replace="fragement/mypage_header :: mypage_header"></div>
-    <!--헤더끝-->
-    
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
+
     <!--메인-->
     <main class="container_all">
         <div class="mypage_title">MY PAGE | 내 예약</div>
         <div class="reserve_list">
             <ul >
-                <li><a href="./my_reserve_air.html">항공 |</a></li>
-                <li><a href="./my_reserve_lodging.html">숙소 | </a></li>
-                <li><a href="./my_reserve_tourTicket.html">투어·티켓</a></li>
+                <li><a href="my_reserve_air">항공 |</a></li>
+                <li><a href="my_reserve_lodging">숙소 | </a></li>
+                <li><a href="my_reserve_tourTicket">투어·티켓</a></li>
             </ul>
         </div>
         <div class="re_main">
@@ -38,7 +38,7 @@
                         예약번호 D596270
                     </div>
                     <div id="re_main_inq">
-                        <a href="./my_inquiry_list.html">1:1 문의</a>
+                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
                     </div>
                 </div>
                 <div id="re_main_box">
@@ -51,7 +51,7 @@
                         예약번호 D596270
                     </div>
                     <div id="re_main_inq">
-                        <a href="./my_inquiry_list.html">1:1 문의</a>
+                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                         예약번호 D596270
                     </div>
                     <div id="re_main_inq">
-                        <a href="./my_inquiry_list.html">1:1 문의</a>
+                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
                     </div>
                 </div>
                 <div id="re_main_box">
@@ -80,7 +80,7 @@
                         예약번호 D596270
                     </div>
                     <div id="re_main_inq">
-                        <a href="./my_inquiry_list.html">1:1 문의</a>
+                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
                     </div>
                 </div>
             </div>
@@ -88,8 +88,8 @@
     </main>
     <!--메인 끝-->
 
-    <!--푸터-->
-    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
-    <!--푸터 끝-->
+<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
+<!--푸터 끝-->
 </body>
 </html>

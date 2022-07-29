@@ -7,26 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 설정</title>
-    <link rel="stylesheet" href="./css/mypage_settings.css">
-    <link rel="stylesheet" href="/member/mypage/css/style.css">
+    <link rel="stylesheet" href="/app/css/mypage_settings.css">
+    <link rel="stylesheet" href="/app/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <div th:replace="fragement/mypage_header :: mypage_header"></div>
-    <!--헤더 끝-->
-    
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
+
     <!--메인-->
     <main class="container_all">
         <p class="mypage_title">MY PAGE | 설정</p>
         <div id="main_content_box">
             <div class="setting_box">
-                <p class="setting_title"><a href="/member/mypage/mypage_settings/mypage_get_password.html">프로필 및 계정 설정</a></p>
+                <p class="setting_title"><a href="/templates/pages/mypage/mypage_settings/mypage_get_password.html">프로필 및 계정 설정</a></p>
             </div>
             <div class="setting_box">
                 <p class="setting_title"><a href="">고객지원</a></p>
                 <p class="setting_p"><a href=""><span>&#183;</span>버전정보</a></p>
-                <p class="setting_p"><a href="/member/mypage/mypage_settings/mypage_notice.html"><span>&#183;</span>공지사항</a></p>
-                <p class="setting_p"><a href="/member/mypage/mypage_settings/mypage_customer_help.html"><span>&#183;</span>고객센터/도움말</a></p>
+                <p class="setting_p"><a href="/templates/pages/mypage/mypage_settings/mypage_notice.html"><span>&#183;</span>공지사항</a></p>
+                <p class="setting_p"><a href="/templates/pages/mypage/mypage_settings/mypage_customer_help.html"><span>&#183;</span>고객센터/도움말</a></p>
                 <p class="setting_p"><a href=""><span>&#183;</span>회사소개</a></p>
             </div>
             <div class="setting_box">
@@ -38,14 +38,14 @@
                 <p class="setting_p"><a href=""><span>&#183;</span>오픈소스 라이선스</a></p>
             </div>
             <div class="setting_box logout_service_out">
-                <p class="setting_title"><a href="">로그아웃</a> |<a href="/member/mypage/mypage_settings/mypage_service_out.html">서비스 탈퇴</a></p>
+                <p class="setting_title"><a href="">로그아웃</a> |<a href="/templates/pages/mypage/mypage_settings/mypage_service_out.html">서비스 탈퇴</a></p>
             </div>
         </div>
     </main>
     <!--메인 끝-->
 
-    <!--푸터-->
-    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
-    <!--푸터 끝-->
+    <<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
+<!--푸터 끝-->
 </body>
 </html>

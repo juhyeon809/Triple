@@ -1,52 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 리뷰작성</title>
-    <link rel="stylesheet" href="/member/travel_spot/css/travel_spot.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/app/css/travel_spot.css">
+    <link rel="stylesheet" href="/app/css/common.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-            <form id="menu_form">
-                <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-            </form>
-            <div id="login_join"><a href="/templates/pages/login_join/login.html">LOGIN</a> | <a href="/templates/pages/login_join/login.html">JOIN</a></div>
-    
-        </div>
-        <div id="menu_area">
-            <ul id="menus">
-                <li><a href="/templates/pages/overseas_travel/overseas_travel_main.html">해외여행</a></li>
-                <li><a href="/templates/pages/domestic_travel/domestic_main.html">국내여행</a></li>
-                <li><a href="/lib/img/flight_main.html">항공예약</a></li>
-                <li><a href="/templates/pages/lodging_room/lodging_main.html">숙소예약</a></li>
-                <li><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                <li><a href="/templates/pages/travel_package/package_main.html">패키지여행</a></li>
-                <li><a href="/templates/pages/magazine/magazine.html" >여행매거진</a></li>
-                <li><a href="/templates/pages/event/event.html">혜택/렌터카</a></li>
-            </ul>
-        </div>
-    </header>
-=======
-<!--header 시작-->
-<div th:replace="fragement/header :: header"></div>
-<!--header 끝-->
+    <!--header 시작-->
+    <div th:replace="fragement/header :: header"></div>
+    <!--header 끝-->
 >>>>>>> 1040ebad44c1794a57688d4ac709e3bba9ae9ff9
     <div id="travel_spot_img"></div>
     <main>
         <div id="travel_spot_menus">
-            <p><a href="/templates/pages/travel_spot/guide_info.html">가이드</a></p>
-            <p><a href="/lib/img/air.html">항공</a></p>
+            <p><a href="/templates/pages/travel_spot/spot_location.html">가이드</a></p>
+            <p><a href="/templates/pages/flight_reservation/flight_main.html">항공</a></p>
             <p><a href="/templates/pages/lodging_room/lodging_main.html">숙소</a></p>
-            <p><a href="/templates/pages/travel_spot/guide_tour.html">관광</a></p>
-            <p><a href="/templates/pages/travel_spot/guide_restaurant.html">맛집</a></p>
-            <p><a href="/templates/pages/tour_ticket/list.html">투어<span>&#183;</span>티켓</a></p>
-            <p><a href="#">라운지</a></p>
+            <p><a href="/templates/pages/travel_spot/spot_tour.html">관광</a></p>
+            <p><a href="/templates/pages/travel_spot/spot_restaurant.html">맛집</a></p>
+            <p><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어<span>&#183;</span>티켓</a></p>
         </div>
         <div id="writing_box">
             <p id="title_text">괌 기초 정보</p>

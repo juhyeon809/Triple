@@ -16,7 +16,7 @@ public class QuestionApiResponse {
     private Long inquiryId;
     private String ticketNum;
     private String title;
-//    private Long userId;
+    private Long userId;
     private String typeCategory;
     private String typeDetail;
     private String content;

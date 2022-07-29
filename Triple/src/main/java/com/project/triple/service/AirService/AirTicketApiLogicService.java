@@ -12,8 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -99,5 +97,13 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                     timeCollector.setAirTicketIdx(airTicketApiResponse.getIdx());
 
                 return timeCollector;
+    }
+
+    public Header<List<AirTicketApiResponse>> specialFlight() {
+        List<AirTicket> airTicketList = airTicketRepository.findTop10BySeatGrade("SPECIAL");
+        List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
+                .map(airTicket -> response(airTicket))
+                .collect(Collectors.toList());
+        return Header.OK(airTicketApiResponseList);
     }
 }

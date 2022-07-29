@@ -7,21 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 마이페이지 쿠폰함</title>
+    <link rel="stylesheet" href="/app/css/my_reserve_main.css">
     <link rel="stylesheet" href="/app/css/mypage_coupon.css">
     <link rel="stylesheet" href="/app/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <div th:replace="fragement/mypage_header :: mypage_header"></div>
-    <!--헤더 끝-->
-    
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
+
     <!--메인-->
     <main class="container_all">
         <div class="content_box">
             <p class="mypage_title">MY PAGE</p>
         </div>
         <div class="coupon_storage_box">
-            <p><a href="#" style="color: #0c8ee5;">사용가능한 쿠폰</a> | <a href="/member/mypage/mypage_coupon/mypage_inable_coupon.html">지난 쿠폰</a></p>
+            <p><a href="coupon_main" style="color: #0c8ee5;">사용가능한 쿠폰</a> | <a href="mypage_inable_coupon">지난 쿠폰</a></p>
             <div class="coupon_storage_flex_box coupon_usable_box">
                 <div>
                     <p class="coupon_name">[6월 혜택]국내 숙소 할인 3,000원</p>
@@ -200,8 +201,8 @@
     </main>
     <!--메인 끝-->
 
-    <!--푸터-->
-    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
-    <!--푸터 끝-->
+<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
+<!--푸터 끝-->
 </body>
 </html>

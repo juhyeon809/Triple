@@ -173,6 +173,53 @@ function hideshow(){
     }
 }
 
+$(function() {
+
+    $(document).on('click', '#search', function () {
+
+        const email = document.getElementById('email');
+        const userpw = document.getElementById('userpw');
+        const userpw_re = document.getElementById('userpw_re');
+        const nickname = document.getElementById('nickname');
+        const hp = document.getElementById('hp');
+
+
+
+        let jsonData = {
+            transaction_time: new Date(),
+            resultCode: "ok",
+            description: "ok",
+            data: {
+                email: $('#email').val(),
+                userpw: $('#userpw').val(),
+                nickname: $('#nickname').val(),
+                countryCode: $('#countryCode').val(),
+                hp: $('#hp').val(),
+                zipcode: $('#zipcode').val(),
+                address1: $('#address1').val(),
+                address2: $('#address2').val(),
+                address3: $('#address3').val(),
+                tosAgree: 'Y'
+            }
+        }
+
+        $.post({
+            url: '/api/user',
+            data: JSON.stringify(jsonData),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function () {
+                alert('등록성공!');
+                location.href = '/Triple/login';
+            },
+            error: function () {
+                alert('등록실패!');
+                location.reload();
+            }
+
+        });
+    });
+});
 
 
 let section1 = document.querySelector(".hidebox1-2");

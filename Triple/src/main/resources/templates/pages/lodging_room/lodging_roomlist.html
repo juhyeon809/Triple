@@ -17,34 +17,14 @@
 <body>
     <div id="backg_image_area">
         <!--header 시작-->
-        <header>
-            <div id="logo_area">
-                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
-                <form id="menu_form">
-                    <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
-                </form>
-                <div id="login_join"><a href="templates/pages/login_join/login.html">LOGIN</a> | <a href="templates/pages/login_join/login.html">JOIN</a></div>
-            </div>
-            <div id="menu_area">
-                <ul id="menus">
-                    <li><a href="/templates/pages/overseas_travel/overseas_travel.html">해외여행</a></li>
-                    <li><a href="/templates/pages/domestic_travel/domestic_main.html">국내여행</a></li>
-                    <li><a href="/templates/pages/flight_reservation/flight_main.html">항공예약</a></li>
-                    <li><a href="/templates/pages/lodging_room/lodging_main.html" style="color:rgb(63, 63, 63)">숙소예약</a></li>
-                    <li><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어·티켓</a></li>
-                    <li><a href="/templates/pages/travel_package/package_main.html">패키지여행</a></li>
-                    <li><a href="/templates/pages/magazine/magazine.html">여행매거진</a></li>
-                    <li><a href="/templates/pages/event/event_main.html">혜택/렌터카</a></li>
-                </ul>
-            </div>
-        </header>
+        <div th:replace="fragement/header :: header"></div>
         <!--header 끝-->
     </div>
     <!--main 시작-->
     <main>
         <div id="loadging_info">
             <div id="lodging_img">
-                <img src="/lib/img/lodging_room_img/img/roomreservation.png" alt="숙소예약">
+                <img src="/lib/img/lodging_room_img/roomreservation.png" alt="숙소예약">
             </div>
             <div id="lodging_info_main">
                 <div id="lodging_info_main_1">
@@ -61,11 +41,11 @@
                     </div>
                     <div id="roomlist_info_function">
                         <div id="roomlist_info_function_like">
-                            <img src="/lib/img/lodging_room_img/img/icon_heart.svg" alt="하트아이콘">
+                            <img src="/lib/img/lodging_room_img/icon_heart.svg" alt="하트아이콘">
                             <span>3,388</span>
                             <span class="starpoint"> ★★★★☆</span> (331) 
                             <a href="#review">리뷰보기 ></a></div>
-                        <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/img/icon_map.svg" alt="지도아이콘"> &nbsp;괌 투몬, 타무닝 <a href="#location_info_1">지도보기 ></a></div>
+                        <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘"> &nbsp;괌 투몬, 타무닝 <a href="#location_info_1">지도보기 ></a></div>
                         <div id="roomlist_info_function_coupon"><span>쿠폰할인</span> 최대 할인 쿠폰 적용중<div id="aaa"><a href="#">쿠폰받기</a></div></div>
                         <div id="roomlist_info_function_benefit"><span>결제혜택</span> 카드 결제 최대 1만원 할인 <div id="bbb"><a href="#">혜택보기</a></div></div>
                     </div>
@@ -84,10 +64,10 @@
                     </div>
                 </div>
                 <div id="lodging_info_main_3">
-                    <a href="templates/pages/mypage/my_save/my_save_main.html"><div id="roomlist_info_btn_like"><img src="/lib/img/lodging_room_img/img/icon_save.svg" alt="하트"> 저장하기</div></a>
-                    <a href="templates/pages/mypage/my_travel/my_travel_main.html"><div id="roomlist_info_btn_schedule"><img src="/lib/img/lodging_room_img/img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
-                    <a href="templates/pages/mypage/review/review_write.html"><div id="roomlist_info_btn_writereview"><img src="/lib/img/lodging_room_img/img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
-                    <a href="#"><div id="roomlist_info_btn_share"><img src="/lib/img/lodging_room_img/img/icon_share.svg" alt="공유"> 공유하기</div></a>
+                    <a href="/templates/pages/mypage/mysave/my_save_main.html"><div id="roomlist_info_btn_like"><img src="/lib/img/lodging_room_img/icon_save.svg" alt="하트"> 저장하기</div></a>
+                    <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="roomlist_info_btn_schedule"><img src="/lib/img/lodging_room_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
+                    <a href="/templates/pages/mypage/review/review_write.html"><div id="roomlist_info_btn_writereview"><img src="/lib/img/lodging_room_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
+                    <a href="#"><div id="roomlist_info_btn_share"><img src="/lib/img/lodging_room_img/icon_share.svg" alt="공유"> 공유하기</div></a>
                 </div>
             </div>
         </div>     
@@ -112,7 +92,7 @@
                                 </div>
                                 <div id="rl1_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" id="roomlist_roomlist_reservation_info_box_show"><div id="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
-                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/img/room1.png" alt="객실"></div>
+                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room1.png" alt="객실"></div>
                         </div>
                     </div>
                 </div>
@@ -134,7 +114,7 @@
                                 </div>
                                 <div id="rl2_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" id="roomlist_roomlist_reservation_info_box_show"><div id="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
-                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/img/room2.png" alt="객실"></div>
+                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room2.png" alt="객실"></div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +136,7 @@
                                 </div>
                                 <div id="rl3_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" id="roomlist_roomlist_reservation_info_box_show"><div id="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
-                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/img/room3.png" alt="객실"></div>
+                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room3.png" alt="객실"></div>
                         </div>
                     </div>
                 </div>
@@ -178,7 +158,7 @@
                                 </div>
                                 <div id="rl4_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" id="roomlist_roomlist_reservation_info_box_show"><div id="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
-                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/img/room4.png" alt="객실"></div>
+                            <div id="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room4.png" alt="객실"></div>
                         </div>
                     </div>
                 </div>
@@ -191,7 +171,7 @@
                             <div id="roomlist_location_box_map">
                                 <div id="m1"></div>
                                 <div id="m2"></div>
-                                <img src="/lib/img/lodging_room_img/img/map.png" alt="지도">
+                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">
                             </div>
                             <div id="roomlist_location_box_location_info">
                                 <div id="loc_info_1">
@@ -286,21 +266,21 @@
                                 </ul>
                             </div>
                             <div id="roomlist_lodging_specificinfo_box_room">
-                                <div><img src="/lib/img/lodging_room_img/img/roomsub1.png" alt="객실서브1"></div>
+                                <div><img src="/lib/img/lodging_room_img/roomsub1.png" alt="객실서브1"></div>
                                 <div id="roomlist_lodging_specificinfo_box_text">
                                     <span>뷰가 아름다운 쾌적한 거실</span><br>
                                     2015년에 오픈한 리조트로 객실 상태가 다른 호텔과 비교할 수 없을 정도로 우수하다. 또한, 30층의 고층 건물로 이루어져 객실을 비롯해 호텔 곳곳에서 탁 트인 바다 전망을 감상할 수 있기로 유명하다. 일부 객실에는 무료 미니바, 클럽 라운지에서의 티타임, 칵테일 등의 혜택이 제공되어 더욱 만족스러운 휴가를 즐길 수 있다.
                                 </div>
                             </div>
                             <div id="roomlist_lodging_specificinfo_box_amenity">
-                                <div><img src="/lib/img/lodging_room_img/img/roomsub2.png" alt="객실서브2"></div>
+                                <div><img src="/lib/img/lodging_room_img/roomsub2.png" alt="객실서브2"></div>
                                 <div id="roomlist_lodging_specificinfo_box_text">
                                     <span>즐길거리가 많은 부대시설</span><br>
                                     다양한 부대 시설을 갖추고 있어 즐길 거리가 많다. 아름다운 전용 해변, 그리고 바다와 맞닿은 듯 보이는 인피니티 풀이 있어 기념사진을 남기기도 좋다. 특히, 워터 슬라이드가 있는 낮은 수심의 풀이 있어 아이들과 물놀이를 즐기기에도 제격이다. 이밖에도, 고급스러운 전문 스파 시설을 갖추고 있어 여행의 질을 한 단계 높여준다. 
                                 </div>
                             </div>
                             <div id="roomlist_lodging_specificinfo_box_around">
-                                <div><img src="/lib/img/lodging_room_img/img/roomsub3.png" alt="객실서브3"></div>
+                                <div><img src="/lib/img/lodging_room_img/roomsub3.png" alt="객실서브3"></div>
                                 <div id="roomlist_lodging_specificinfo_box_text">
                                     <span>쇼핑을 즐기기에 탁월한 위치</span><br>
                                     섬 전체가 면세 지역인 괌에서는 쇼핑을 빼놓을 수 없다. 호텔 로비에 다양한 브랜드 숍은 물론이고, 레스토랑, 바, 클럽 등이 있는 '더 플라자'까지와도 연결되어 있다. 뿐만 아니라 명품 브랜드가 다수 입점한 'T 갤러리아 DFS'가 도보 1분 거리에 있고, 기념품과 간식거리를 구매하기 좋은 'JP 슈퍼 스토어'도 인근에 있어 매우 편리하다. 
@@ -313,10 +293,10 @@
             <div id="review">
                 <div id="review_1">
                     <div id="roomlist_review_title">리뷰 <span>332</span></div>
-                    <div id="roomlist_review_btn"><a href="templates/pages/mypage/review/review_write.html">리뷰쓰기</a> <a href="templates/pages/mypage/review/review_view.html">리뷰 전체보기</a></div>
+                    <div id="roomlist_review_btn"><a href="/templates/pages/mypage/review/review_write.html">리뷰쓰기</a> <a href="/templates/pages/mypage/review/review_view.html">리뷰 전체보기</a></div>
                 </div>
                 <div id="review_2">
-                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/img/review2.png" alt="리뷰2"></div>
+                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
                     <div id="roomlist_review_star">
                         <span id="sp1">APPLE123</span><br>
                         LEVEL1 / 2개의 리뷰<br>
@@ -328,7 +308,7 @@
                     </div>
                 </div>
                 <div id="review_2">
-                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/img/review2.png" alt="리뷰2"></div>
+                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
                     <div id="roomlist_review_star">
                         <span id="sp1">APPLE123</span><br>
                         LEVEL1 / 2개의 리뷰<br>
@@ -340,7 +320,7 @@
                     </div>
                 </div>
                 <div id="review_2">
-                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/img/review2.png" alt="리뷰2"></div>
+                    <div id="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
                     <div id="roomlist_review_star">
                         <span id="sp1">APPLE123</span><br>
                         LEVEL1 / 2개의 리뷰<br>
@@ -360,7 +340,7 @@
                     <div id="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -368,7 +348,7 @@
                     </div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -376,7 +356,7 @@
                     </div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -390,7 +370,7 @@
                     <div id="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -398,7 +378,7 @@
                     </div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -406,7 +386,7 @@
                     </div>
                 </div>
                 <div id="roomlist_around_lodging_recommend_list">
-                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/img/roomrecommend.png" alt="추천숙소"></div>
+                    <div id="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
                     <div id="roomlist_around_lodging_recommend_list_text">
                         괌 플라자 리조트 & 스파<br>
                         <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
@@ -417,27 +397,8 @@
         </div>
     </main>
     <!--main 끝-->
-    <!--footer 시작-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="./img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="./img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="./img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
-    <!--footer 끝-->
+    <!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+    <!-- footer 끝 -->
 </body>
 </html>

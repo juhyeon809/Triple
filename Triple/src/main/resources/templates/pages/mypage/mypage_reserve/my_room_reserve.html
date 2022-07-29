@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 마이페이지 내예약</title>
-    <link rel="stylesheet" href="./css/my_reserve_main.css">
     <script src="./js/reserve.js"></script>
-    <link rel="stylesheet" href="/member/mypage/css/style.css">
+    <link rel="stylesheet" href="/app/css/my_reserve_main.css">
+    <link rel="stylesheet" href="/app/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <div th:replace="fragement/mypage_header :: mypage_header"></div>
-    <!--헤더끝-->
-    
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
+
     <!--메인-->
     <main class="container_all">
         <div class="mypage_title">MY PAGE | 내 예약</div>
@@ -24,7 +24,7 @@
                 <span>서귀포 마가렛펜션(리뉴얼, 엔틱의상대여)</span><br>
                 Seoguipo Margaret Pension [Newly built in 2016]  
             </div>
-            <div class="rm_main_box"><img src="./img/reserve_map.png" alt="예약지도"></div>
+            <div class="rm_main_box"><img src="/lib/img/mypage_img/myreserve_img/reserve_map.png" alt="예약지도"></div>
             <div class="rm_main_box_div">
                 <div class="rm_main_box_left">
                     <div class="rm_main_box_left_div">
@@ -133,15 +133,15 @@
                 </div>
                 <div class="rm_info_content">결제일시 : 2022-01-24 10:57</div>
             </div>
-            <form id="form" action="./my_room_reserve_cancle.html">
+            <form id="form" action="/templates/pages/mypage/mypage_reserve/my_room_reserve_cancle.html">
                 <div id="cancel_btn_box"><input type="submit" value="예약취소" onclick="cancel2()"></div>
             </form>
         </div>
     </main>
     <!--메인 끝-->
 
-    <!--푸터-->
-    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
-    <!--푸터 끝-->
+<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
+<!--푸터 끝-->
 </body>
 </html>

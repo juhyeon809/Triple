@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/member/mypage/review/css/review.css">
-    <script src="./js/review_script.js"></script>
+    <link rel="stylesheet" href="/app/css/mypage_review.css">
+    <script src="/app/js/mypage_review.js"></script>
     <title>TRIPLE | 마이페이지 리뷰수정</title>
-    <link rel="stylesheet" href="/member/mypage/css/style.css">
+    <link rel="stylesheet" href="/app/css/style.css">
 </head>
 <body>
-    <!--헤더-->
-    <div th:replace="fragement/mypage_header :: mypage_header"></div>
-    <!--헤더끝-->
-    
+<!--헤더-->
+<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<!--헤더끝-->
+
     <!--메인-->
     <main class="container_all">
         <p class="mypage_title">리뷰 수정</p>
@@ -36,7 +36,7 @@
                             for="rate5">★</label>
                     </fieldset>
                 </form> 
-                <p class="review_subtitle"><a href="/member/mypage/review/review_done.html">완료</a></p>
+                <p class="review_subtitle"><a href="/templates/pages/mypage/review/review_done.html">완료</a></p>
             </div>
             <textarea name="" id="review_cont" cols="30" rows="10">너무 좋았어요! 편안하게 쉬다 갑니다 ^^</textarea>
         </div>
@@ -54,9 +54,9 @@
     <!--메인 끝-->
 
 
-    <!--푸터-->
-    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
-    <!--푸터 끝-->
+<!--푸터-->
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
+<!--푸터 끝-->
 </body>
 
 </html>
