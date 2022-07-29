@@ -388,13 +388,135 @@ public class PageController {
     }
 
 
+    //magazine_view
+    @RequestMapping(path = "/magazine/recommend_view") //에러
+    public ModelAndView recommend_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
 
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
 
+        return new ModelAndView("/pages/magazine/magazine_view/recommend_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+    @RequestMapping(path = "/magazine/airport_view")
+    public ModelAndView airport_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
 
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
 
+        return new ModelAndView("/pages/magazine/magazine_view/airport_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
 
+    @RequestMapping(path = "/magazine/tip_view")
+    public ModelAndView tip_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
 
-    /* 관리자 페이지 */
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/tip_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine/eatplace_view")
+    public ModelAndView eatplace_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/eatplace_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine/guesthouse_view")
+    public ModelAndView guesthouse_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/guesthouse_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine/tourticket_view")
+    public ModelAndView tourticket_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/tourticket_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine/shop_view")
+    public ModelAndView shop_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/shop_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/magazine/travels_view")
+    public ModelAndView travels_view(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/magazine/magazine_view/travels_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+     /* 관리자 페이지 */
     /* 관리자 페이지 로그인*/
     @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
     public ModelAndView admin_main(HttpServletRequest request){
