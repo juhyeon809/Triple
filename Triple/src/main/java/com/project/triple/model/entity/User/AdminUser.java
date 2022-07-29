@@ -5,14 +5,12 @@ import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Notice;
 import com.project.triple.model.entity.QnA.Answer;
-import com.project.triple.model.enumclass.UserStatus;
+import com.project.triple.model.enumclass.AdminUserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -24,23 +22,29 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_adminuser",
-        sequenceName = "seq_adminuser",
+        name="seq_admin_user",
+        sequenceName = "seq_admin_user",
         initialValue = 1,
-
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
 public class AdminUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminuser")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_admin_user")
     private Long idx;
     private String userid;
     private String userpw;
     private String name;
+    private String hp;
+    private String email;
+    private String department;
+    private String position;
     @CreatedDate
     private LocalDateTime regDate;
+
+    @Enumerated(EnumType.STRING)
+    private AdminUserStatus status;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "adminUser")
     private List<Magazine> magazineList;
