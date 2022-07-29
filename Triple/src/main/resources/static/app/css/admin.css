@@ -371,7 +371,7 @@ section{
 /*main*/
 
 main {
-    width: 85%;
+    /*width: 85%;*/
     padding: 24px 20px 20px 20px;
 }
 
@@ -436,7 +436,7 @@ main .card .progress::before {
     left: 0;
     height: 100%;
     background: #1775F1;
-    /*width: var(--value);*/
+    width: var(--value);
 }
 main .card .label{
     font-size: 14px;
@@ -548,7 +548,7 @@ main td {
     padding: 20px 10px 20px;
     border: none;
     font-size: 18px;
-    color:#fff;
+    color:#000000;
     outline: none;
     margin-bottom: 20px;
     border-radius: 5px;
