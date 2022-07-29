@@ -11,12 +11,7 @@
 </head>
 <body>
     <!--헤더-->
-    <header>
-        <div id="logo_area">
-            <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt=""></a></div>
-            <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/join.html">JOIN</a></div>
-        </div>
-    </header>
+    <div th:replace="fragement/mypage_header :: mypage_header"></div>
     <!--헤더 끝-->
     
     <!--메인-->
@@ -109,21 +104,7 @@
     <!--메인끝-->
 
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/mypage_footer :: mypage_footer"></div>
     <!--푸터 끝-->
 </body>
 

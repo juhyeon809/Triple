@@ -44,4 +44,5 @@ public class QuestionApiController extends CrudController<QuestionApiRequest, Qu
     public Header<List<QuestionApiResponse>> findAll() {
         return questionApiLogicService.search();
     }
+
 }
