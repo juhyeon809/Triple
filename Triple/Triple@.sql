@@ -66,10 +66,25 @@ create sequence seq_airline
     increment by 1
     start with 1;
     
-insert into airticket values(
-    
+insert into air_ticket values(
+    4,
+    'AIR_TICKET',
+    'ARI004',
+    4444,
+    6666,
+    'ICN',
+    'SIN',
+    '2022-07-27 16:00',
+    '2022-07-27 18:30',
+    230000,
+    'K597',
+    'FIRST',
+    'Y',
+    sysdate,
+    'AVAILABLE'
 );
-
+commit;
+select * from air_ticket;
 create table aircraft(
     idx number(7) primary key,
     aircraft_num number(7) not null,
