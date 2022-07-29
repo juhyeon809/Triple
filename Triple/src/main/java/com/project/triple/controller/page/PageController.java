@@ -3,6 +3,7 @@ package com.project.triple.controller.page;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
+import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,9 @@ public class PageController {
 
     @Autowired
     private AirTicketApiLogicService airTicketApiLogicService;
+
+    @Autowired
+    private AdminUserApiLogicService adminUserApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -327,5 +331,51 @@ public class PageController {
 
 
 
+    /* 관리자 페이지 */
+    /* 관리자 페이지 로그인*/
+    @RequestMapping(path={"/adminUser"})
+    public ModelAndView admin_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
+                .addObject("name", name);
+
+    }
+    @RequestMapping(path="/admin/admin_login")
+    public ModelAndView admin_login() {
+        return new ModelAndView("/pages/admin/admin_login");
+    }
+    @RequestMapping(path="/admin/admin_join")
+    public ModelAndView admin_join() {
+        return new ModelAndView("/pages/admin/admin_join");
+    }
+
+    //로그인검증
+    @PostMapping("/admin_loginOk")
+    public ModelAndView admin_loginOk(HttpServletResponse response, HttpServletRequest request, String userid, String userpw) throws IOException {
+        if(adminUserApiLogicService.admin_login(userid, userpw).getData() != null){
+            HttpSession session = request.getSession();
+            String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
+            session.setAttribute("userid", userid);
+            session.setAttribute("userpw", userpw);
+
+            ScriptUtils.alert(response, "로그인 성공" );
+            return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
+                    .addObject("name", name);
+
+        }else{
+            ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
+            return new ModelAndView("/pages/admin/admin_login");
+
+        }
+    }
 
 }
