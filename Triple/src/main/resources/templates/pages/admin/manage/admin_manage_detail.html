@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 | 관리자 상세</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="/app/css/admin.css">
+    <script src="/app/js/script.js.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
+            </div>
+            <div class="user-info">
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
+                </div>
+            </div>
+        </div>
+        
+    </nav>
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
+            <ul class="side-menu">
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../member/memberlist.html">회원목록</a></li>
+                        <li><a href="../member/memberSign-up.html">회원가입</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="all.html">전체</a></li>
+                        <li><a href="fly_reservation.html">항공권</a></li>
+                        <li><a href="room_resevation.html">숙소</a></li>
+                        <li><a href="packge_reservation.html">패키지</a></li>
+                        <li><a href="ticket_reservation.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../product/air.html">항공권</a></li>
+                        <li><a href="../product/room.html">숙소</a></li>
+                        <li><a href="../product/packge.html">패키지</a></li>
+                        <li><a href="../product/ticket.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    </ul>
+                </li>
+                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                </li>
+                <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponList.html">목록</a></li>
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventList.html">목록</a></li>
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../notice/notice-list.html">목록</a></li>
+                        <li><a href="../notice/notice-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/magazine/magazine-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+                    
+                </li>
+                <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="admin_manage_list.html" style="color:darkslategray; font-weight: bold;">목록</a></li>
+                        <li><a href="..//manage/admin_manage_register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            </ul>
+        </aside>
+    </section>
+    <!--사이드바 끝-->
+    <section class="content2">
+        <div class="content2-fluid">
+            <!--타이틀-->
+            <div class="header_box">
+                <h2>관리자 상세정보</h2>
+            </div>
+            <!--타이틀 끝-->
+            <!--관리자 정보 입력-->
+            <form action="#" method="post">
+                <div class="admin_manage_form_container">
+                    <div class="admin_manage_form_container_ul1">
+                        <p class="admin_register_item">아이디 </p>
+                        <p class="admin_register_item">이름 </p>
+                        <p class="admin_register_item">연락처 </p>
+                        <p class="admin_register_item">이메일 </p>
+                    </div>
+                    <div class="admin_manage_form_container_ul2">
+                        <p><input type="text" class="admin_register_adminid_content" placeholder="apple1"></p>
+                        <p><input type="name" class="admin_register_name_content" placeholder="김사과"></p>
+                        <p><input type="hp" class="admin_register_hp_content" placeholder="010-1111-1111"></p>
+                        <p><input type="email" class="admin_register_email_content" placeholder="apple@triple.com"></p>
+                    </div>
+                    <div class="admin_manage_form_container_ul3">
+                        <p class="admin_register_item">비밀번호 </p>
+                        <p class="admin_register_item">비밀번호 확인 </p>
+                        <p class="admin_register_item">부서 </p>
+                        <p class="admin_register_item">직함 </p>
+                    </div>
+                    <div class="admin_manage_form_container_ul4">
+                        <p><input type="password" class="admin_register_adminpw_content" placeholder="******"></p>
+                        <p><input type="password" class="admin_register_adminpwre_content" placeholder="******"></p>
+                        <p>
+                            <select name="department" class="admin_register_department_content">
+                                <option value="전체">전체</option>
+                                <option value="관리자">관리자</option>
+                                <option value="영업">영업</option>
+                                <option value="마케팅">마케팅</option>
+                            </select>
+                        </p>
+                        <p>
+                            <!--직함 선택-->
+                            <select name="title" class="admin_register_title_content">
+                                <option value="전체">전체</option>
+                                <option value="대표">대표</option>
+                                <option value="팀장">팀장</option>
+                                <option value="부장">부장</option>
+                                <option value="차장">차장</option>
+                                <option value="대리">대리</option>
+                                <option value="주임">주임</option>
+                                <option value="사원">사원</option>
+                            </select>
+                            <!--직함 선택 끝-->
+                        </p>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="수정"><a href="#">수정</a></button>
+                    <button value="목록"><a href="#">목록</a></button>
+                </div>
+            </form>
+            <!--관리자 정보입력 끝-->
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
