@@ -59,7 +59,7 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
                 .infoAgree(questionApiRequest.getInfoAgree())
                 .regDate(questionApiRequest.getRegDate())
                 .inquiryId(questionApiRequest.getInquiryId())
-//                .airTicket(questionApiRequest.)
+//                .u
                 .build();
         Question newQuestion = baseRepository.save(question);
         return Header.OK(response(newQuestion));

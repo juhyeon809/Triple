@@ -370,19 +370,19 @@
     padding-top:30px;
 }
 
-#roomlist_roomlist_info {
+.roomlist_roomlist_info {
     width: 300px;
     height: 270px;
     float:left;
 }
 
-#roomlist_roomlist_name {
+.roomlist_roomlist_name {
     font-size: 18px;
     font-weight: bold;
     color: #425052;
 }
 
-#roomlist_roomlist_info_specific {
+.roomlist_roomlist_info_specific {
     font-size: 16px;
     font-weight: bold;
     position:relative;
@@ -391,19 +391,19 @@
     color: #666666;
 }
 /* 30 240 30 */
-#roomlist_roomlist_reservation {
+.roomlist_roomlist_reservation {
     width: 620px;
     float:left;
     background-color: #ffffff;
     border-radius: 15px;
 }
 
-#roomlist_roomlist_reservation_info {
+.roomlist_roomlist_reservation_info {
     width: 620px;
     height: 220px;
 }
 /* 655-208 */
-#roomlist_roomlist_reservation_info_box {
+.roomlist_roomlist_reservation_info_box {
     width: 400px;
     height: 220px;
     float:left;
@@ -429,7 +429,7 @@
     height: 35px;
 }
 
-#roomlist_roomlist_reservation_info_box_coupon {
+.roomlist_roomlist_reservation_info_box_coupon {
     width:95px;
     height:35px;
     margin-right:6px;
@@ -443,7 +443,7 @@
     font-size: 16px;
 }
 
-#roomlist_roomlist_reservation_info_box_triplemember {
+.roomlist_roomlist_reservation_info_box_triplemember {
     width:100px;
     height:35px;
     float:left;
@@ -456,7 +456,7 @@
     font-size: 16px;
 }
 
-#roomlist_roomlist_reservation_info_box_price {
+.roomlist_roomlist_reservation_info_box_price {
     width: 168px;
     height: 35px;
     font-size: 18px;
@@ -466,7 +466,7 @@
     text-align: right;
 }
 
-#roomlist_roomlist_reservation_info_box_price > span {
+.roomlist_roomlist_reservation_info_box_price > span {
     color:#FF0101;
 }
 
@@ -474,7 +474,7 @@
     height: 94px;
 }
 
-#roomlist_roomlist_reservation_info_box_show {
+.roomlist_roomlist_reservation_info_box_show {
     background-color: #2680EB;
     width: 85px;
     height: 35px;
@@ -491,12 +491,12 @@
     top: 8px
 }
 
-#roomlist_roomlist_img, #room_list_3_2_1_2, #room_list_4_2_1_2, #room_list_5_2_1_2{
+.roomlist_roomlist_img, #room_list_3_2_1_2, #room_list_4_2_1_2, #room_list_5_2_1_2{
     width: 190px;
     float:left;
 }
 
-#roomlist_roomlist_img > img, #room_list_3_2_1_2 > img, #room_list_4_2_1_2 > img, #room_list_5_2_1_2 > img{
+.roomlist_roomlist_img > img, #room_list_3_2_1_2 > img, #room_list_4_2_1_2 > img, #room_list_5_2_1_2 > img{
     width: 180px;
     height: 140px;
     border-radius: 15px;
@@ -599,7 +599,7 @@
     padding-left: 32px;
 }
 
-#loc_info_4, #loc_info_5{
+.loc_info_4, .loc_info_5{
     width: 153px;
     height: 42px;
     border-radius: 30px;
@@ -609,7 +609,7 @@
     float:left;
 }
 
-#loc_info_4{ 
+.loc_info_4{
     margin-right: 10px;
     background-color: white;
     color: #666666;
@@ -622,7 +622,7 @@
     border: 0.5px solid #707070;
 }
 
-#loc_info_5{
+.loc_info_5{
     background-color: #2680EB;
     border:0;
     color: white;
@@ -814,7 +814,7 @@
     padding-right: 40px;
 }
 
-#roomlist_lodging_specificinfo_box_text{
+.roomlist_lodging_specificinfo_box_text{
     font-size: 16px;
     letter-spacing: 0.5px;
     line-height: 25px;
@@ -886,17 +886,17 @@
 
 /* 53  250  775 */
 
-#review_2{
+.review_2{
     height: 105px;
     margin-bottom: 15px;;
 }
 
-#roomlist_review_img{
+.roomlist_review_img{
     width: 50px;
     float:left;
 }
 
-#roomlist_review_star{
+.roomlist_review_star{
     width: 200px;
     box-sizing: border-box;
     padding-left: 20px;
@@ -906,18 +906,18 @@
     color: #666666;
 }
 
-#roomlist_review_text{
+.roomlist_review_text{
     width: 620px;
     float:left;
     font-weight: normal;
     font-size: 14px;
 }
 
-#sp1{
+.sp1{
     font-weight: bold;
 }
 
-#sp2{
+.sp2{
     color: #FFDC00;
 }
 
@@ -943,25 +943,16 @@
     border-radius: 15px;
 }
 
-#lodging_sub_1{
+.lodging_sub_1{
     width: 500px;
     float:left;
 }
 
-#lodging_sub_1{
-    width: 500px;
-    float:left;
-}
-
-#roomlist_around_lodging_recommend{
+.roomlist_around_lodging_recommend{
     height: 36px;
 }
 
-#roomlist_around_lodging_recommend{
-    height: 36px;
-}
-
-#roomlist_around_lodging_recommend_title{
+.roomlist_around_lodging_recommend_title{
     width: 420px;
     float:left;
     font-size: 16px;
@@ -987,15 +978,7 @@
     color: #458cd3;
 }
 
-#roomlist_around_lodging_recommend_title{
-    width: 420px;
-    float:left;
-    box-sizing: border-box;
-    padding-left: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #666666;
-}
+
 
 #roomlist_around_lodging_recommend_more{
     width: 80px;
@@ -1013,7 +996,7 @@
     color: #2680EB;
 }
 
-#roomlist_around_lodging_recommend_list {
+.roomlist_around_lodging_recommend_list {
     height: 158px;
     box-sizing: border-box;
     margin-right: 25px;
@@ -1022,22 +1005,14 @@
     border-bottom: 1px solid #bdbdbd;
 }
 
-#roomlist_around_lodging_recommend_list {
-    height: 158px;
-    box-sizing: border-box;
-    margin-left: 25px;
-    margin-right: 25px;
-    padding-top: 25px;
-    border-bottom: 1px solid #bdbdbd;
-}
 /* 110 415  */
 
-#roomlist_around_lodging_recommend_list_img {
+.roomlist_around_lodging_recommend_list_img {
     width: 110px;
     float: left;
 }
 
-#roomlist_around_lodging_recommend_list_text {
+.roomlist_around_lodging_recommend_list_text {
     width: 340px;
     float: left;
     box-sizing: border-box;
@@ -1227,7 +1202,7 @@
     margin-left: 50px;
 }
 
-#lg_rm_if_main_2_info_priceinfo{
+.lg_rm_if_main_2_info_priceinfo{
     font-size: 18px;
     font-weight: bold;
     color: #425052;
@@ -1328,20 +1303,20 @@
     height: 175px;
 }
 
-#if_sub_1{
+.if_sub_1{
     font-size: 16px;
     font-weight: bold;
     color: #666666;
 }
 
-#if_sub_1_notice{
+.if_sub_1_notice{
     font-size: 16px;
     font-weight: bold;
     height: 40px;
     color: #666666;
 }
 
-#if_sub_2{
+.if_sub_2{
     box-sizing: border-box;
     margin-top: 10px;
     font-size: 14px;
@@ -1349,7 +1324,7 @@
     font-weight: normal;
 }
 
-#if_sub_2 span {
+.if_sub_2 span {
     font-weight: bold;
 }
 

@@ -1,6 +1,5 @@
 package com.project.triple.controller.page;
 
-import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
@@ -9,6 +8,7 @@ import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -101,7 +99,94 @@ public class PageController {
 
 
 
+
 //    항공
+
+    @RequestMapping(path = "/inquiryWrite")
+    public ModelAndView inquiryWrite(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("nickname");
+        }
+        model.addAttribute("email", (String)session.getAttribute("email"));
+        model.addAttribute("nickname", (String)session.getAttribute("nickname"));
+
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_write").addObject("email", email)
+                .addObject("nickname", name);
+    }
+
+    @RequestMapping(path = "/inquiryList")
+    public ModelAndView inquiryList(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            email = (String) session.getAttribute("email");
+            name = (String) session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_list").addObject("email", email)
+                .addObject("nickname", name);
+    }
+
+    @RequestMapping(path = "/couponMain")
+    public ModelAndView coupon_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/mypage/mypage_coupon/coupon_main").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/mypageMain")
+    public ModelAndView  my_travel_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/mypage/my_travel/my_travel_main").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+
+
+    //항공
+//    @RequestMapping(path = "/flightMain")       //http://localhost:9090/Triple/flightMain
+//    public ModelAndView flightMain(HttpServletRequest request) {
+//        HttpSession session = request.getSession(false);
+//        String email = null;
+//        String nickname = null;
+//        if(session == null){
+//
+//        }else{
+//            email = (String)session.getAttribute("email");
+//            nickname = (String)session.getAttribute("nickname");
+//        }
+//
+//        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
+//                .addObject("nickname", nickname);
+//    }
+
 
     @RequestMapping(path = "/flightList")   //http://localhost:9090/Triple/flightList
     public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
@@ -124,53 +209,6 @@ public class PageController {
     }
 
 
-    @RequestMapping(path = "/inquiryWrite")
-    public ModelAndView inquiryWrite(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_write").addObject("email", email)
-                .addObject("name", name);
-    }
-
-    @RequestMapping(path = "/inquiryList")
-    public ModelAndView inquiryList(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_list").addObject("email", email)
-                .addObject("name", name);
-    }
-
-    @RequestMapping(path = "/mypage_main")
-    public ModelAndView mypage_main(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/my_travel/my_travel_main").addObject("email", email)
-                .addObject("name", name);
-    }
 
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
@@ -641,29 +679,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-
-
-
-
-    @RequestMapping(path = "/coupon_main")
-    public ModelAndView coupon_main(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_coupon/coupon_main").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-
-
-    /* 관리자 페이지 */
+     /* 관리자 페이지 */
     /* 관리자 페이지 로그인*/
     @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
     public ModelAndView admin_main(HttpServletRequest request){

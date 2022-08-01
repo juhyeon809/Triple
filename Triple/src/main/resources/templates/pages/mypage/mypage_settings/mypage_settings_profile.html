@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 마이페이지 정보수정</title>
-    <link rel="stylesheet" href="./css/mypage_settings.css">
+    <link rel="stylesheet" href="/app/css/mypage_settings.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="./js/settings.js"></script>
+    <script src="/app/js/mypage_settings.js"></script>
     <script>
         function sample6_execDaumPostcode() {
             new daum.Postcode({
@@ -66,7 +66,7 @@
 <!--헤더-->
 <div th:replace="fragement/mypageHeader:: mypageHeader"></div>
 <!--헤더끝-->
-    
+
     <!--메인-->
     <main class="container_all">
         <p class="mypage_title">MY PAGE | 설정</p>
@@ -128,7 +128,7 @@
     <!--메인 끝-->
 
 <!--푸터-->
-<div th:replace="fragement/mypageFooter :: mypagefooter"></div>
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
 <!--푸터 끝-->
 </body>
 </html>

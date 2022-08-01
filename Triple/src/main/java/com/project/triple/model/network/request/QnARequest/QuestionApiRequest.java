@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class QuestionApiRequest {
     private Long idx;
     private Long inquiryId;
-//    private Integer ticketNum;
+    private Integer ticketNum;
 //    private Integer userId;
     private String typeCategory;
     private String typeDetail;

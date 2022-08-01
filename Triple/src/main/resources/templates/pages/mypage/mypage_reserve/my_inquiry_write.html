@@ -14,7 +14,7 @@
 </head>
 <body>
 <!--헤더-->
-<div th:replace="fragement/mypageHeader:: mypageHeader"></div>
+<div th:replace="fragement/mypageHeader :: mypageHeader"></div>
 <!--헤더끝-->
 <!--메인-->
 <main class="container_all">
@@ -37,8 +37,8 @@
             </div>
             <div class="inq_wr_box">
                 <div class="inq_wr_box_title">이름</div>
-                <div class="inq_wr_box_input">
-                    <input type="text" value="" id="nickname" spellcheck="false" data-ms-editor="true">
+                <div class="inq_wr_box_input" th:text="${nickname}">
+                    <input type="text" value=""  id="nickname" spellcheck="false" data-ms-editor="true">
                     <editor-squiggler>
                         <style>
                             @media print {
@@ -56,11 +56,11 @@
             </div>
             <div class="inq_wr_box">
                 <div class="inq_wr_box_title">이메일</div>
-                <div class="inq_wr_box_input"><input type="text" placeholder=" apple@apple.com" spellcheck="false" data-ms-editor="true" readonly name="email" id="email"></div>
+                <div class="inq_wr_box_input" th:text="${email}" ><input type="text"  spellcheck="false" data-ms-editor="true" readonly name="email" id="email"></div>
             </div>
             <div class="inq_wr_box">
                 <div class="inq_wr_box_title">문의내용</div>
-                <div><textarea class="inq_wr_box_input" id="content" cols="40" rows="5" style="height: 150px;"></textarea></div>
+                <div><textarea class="inq_wr_box_input" id="content"  cols="40" rows="5" style="height: 150px; resize: none" ></textarea></div>
             </div>
             <div class="inq_wr_box">
                 <div class="inq_wr_box_title">첨부파일</div>
@@ -81,7 +81,7 @@
 </main>
 <!--메인 끝-->
 <!--푸터-->
-<div th:replace="fragement/mypageFooter :: mypagefooter"></div>
+<div th:replace="fragement/mypageFooter :: mypageFooter"></div>
 <!--푸터 끝-->
 </body>
 </html>

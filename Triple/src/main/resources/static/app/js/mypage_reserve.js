@@ -127,17 +127,18 @@ function cancel1(){
     }
 }
 
-function cancel2(){
+function cancel2() {
     let rtn;
 
     rtn = confirm("예약을 취소하시겠습니까?");
 
-    if(rtn){
+    if (rtn) {
         alert('예약이 취소되었습니다');
     } else {
-        
-    }
 
+    }
+}
+// }
 
 // function sendit(){
 //     const category = document.getElementById('category');
@@ -181,5 +182,5 @@ function cancel2(){
 //     }
 //     alert('접수되었습니다');
 //     return true;
-}
+//
 
