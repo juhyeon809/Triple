@@ -32,83 +32,11 @@
         </div>
         <div class="mag_content">
             <div class="content_list">
-<<<<<<< HEAD
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
                         <p id="li_cont" th:text="${magazine.getContent().substring(0, 5)}+'...'"></p>
                         <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
-=======
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">아이와 함께 떠나는 여행, <br> 온 가족이 행복한 여행지</p>
-                        <p id="li_cont">미리 골라두는 해외여행 버킷리스트📝</p>
-                        <p id="li_cont">#여행꿀팁 #미주</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">직접 가보고 추천하는 <br> OOO과 가기 좋은 여행지</p>
-                        <p id="li_cont">#부모님#연인과#아이와#혼자</p>
-                        <p id="li_cont">#여행꿀팁 #미주</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">나의 다음 여행, <br> '제주vs해외'어디로 갈까?</p>
-                        <p id="li_cont">'어디에도 없던 여행 혜택', 지금바로 떠나요✈</p>
-                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">요즘 제주 여행은 <br> '로컬 체험'이 대세래요 🍊</p>
-                        <p id="li_cont">진짜 로컬과 즐기는 단 하나뿐인 체험 총정리</p>
-                        <p id="li_cont">#여행꿀팁 #국내</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">2022 호텔별 <br> 딸기 뷔페 총정리 🍓</p>
-                        <p id="li_cont">딸기 덕후들 눈 번쩍 뜨일 소식</p>
-                        <p id="li_cont">#여행꿀팁 #국내</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">2022년엔 언제 쉬지? <br> 미리 보는 황금연휴 캘린더</p>
-                        <p id="li_cont">더 알찬 휴가 계획을 위한 연차 가이드</p>
-                        <p id="li_cont">#여행꿀팁 #미주</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">지금, 방콕은 어떤 모습일까? <br> 달라진 방콕 여행 A to Z</p>
-                        <p id="li_cont">[아임유어가이드] 딩고 트래블 편 (방콕 4박 5일)</p>
-                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">5분이면 완전정복! <br> '무격리여행' A to Z</p>
-                        <p id="li_cont">격리 없는 해외여행, 뭘 어떻게 준비해야 할까?</p>
-                        <p id="li_cont">#여행꿀팁 #미주</p>
-                    </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img"  >
-                </div>
-                <div class="list_box">
-                    <a href="/Triple/magazine/tip_view" >
-                        <p id="li_tit">격리 없는 해외여행지 <br> '이곳'도 갈 수 있다고?</p>
-                        <p id="li_cont">지금 바로 떠날 수 있어요✈</p>
-                        <p id="li_cont">#여행꿀팁 #동남아시아</p>
->>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
                 </div>

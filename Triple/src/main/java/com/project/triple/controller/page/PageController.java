@@ -97,61 +97,11 @@ public class PageController {
         return new ModelAndView("/pages/main");
     }
 
-    //마이페이지
 
-<<<<<<< HEAD
-=======
-    @RequestMapping(path = "/inquiryWrite")     //http://localhost:9090/Triple/inquiryWrite
-    public ModelAndView inquiryWrite(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_write").addObject("email", email)
-                .addObject("name", name);
-    }
-
-    @RequestMapping(path = "/inquiryList")      //http://localhost:9090/Triple/inquiryList
-    public ModelAndView inquiryList(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_list").addObject("email", email)
-                .addObject("name", name);
-    }
 
 
 
 //    항공
-    @RequestMapping(path = "/flightMain")       //http://localhost:9090/Triple/flightMain
-    public ModelAndView flightMain(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
->>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
 
     @RequestMapping(path = "/flightList")   //http://localhost:9090/Triple/flightList
     public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
@@ -758,6 +708,168 @@ public class PageController {
             return new ModelAndView("/pages/admin/admin_login");
 
         }
+    }
+
+
+    //투어 메인
+    @RequestMapping(path = "/spot_tour")
+    public ModelAndView spot_tour(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_tour").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_tour_info")
+    public ModelAndView spot_tour_info(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_review")
+    public ModelAndView spot_review(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_review").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_restaurant")
+    public ModelAndView spot_restaurant(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_restaurant").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_restaurant_list")
+    public ModelAndView spot_restaurant_list(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_restaurant_list").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_restaurant_info")
+    public ModelAndView spot_restaurant_info(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_overseas")
+    public ModelAndView spot_overseas(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_overseas").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_location_info")
+    public ModelAndView spot_location_info(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_location")
+    public ModelAndView spot_location(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_location").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_domestic")
+    public ModelAndView spot_domestic(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_domestic").addObject("email", email)
+                .addObject("nickname", nickname);
     }
 
 }

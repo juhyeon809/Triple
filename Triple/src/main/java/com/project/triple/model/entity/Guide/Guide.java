@@ -30,7 +30,7 @@ public class Guide {
     private Long idx;
     private String type;
     private Integer guideNum;
-//    private String adminuserId;
+    private String adminuserId;
     private String country;
     private String adminuserName;
     private String title;
@@ -42,7 +42,7 @@ public class Guide {
     private LocalDateTime regDate;
     private Integer reviewCount;
 
-    @ManyToOne
-    private AdminUser adminUser;
+//    @ManyToOne
+//    private AdminUser adminUser;
 
 }
