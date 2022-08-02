@@ -36,10 +36,10 @@
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
-                        <p id="li_cont" th:text="${magazine.getContent().substring(0, 5)}+'...'"></p>
-                        <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
+                        <p id="li_cont" th:text="${magazine.getSummary()}"></p>
+                        <p id="li_cont" th:text="${magazine.getTag()}"></p>
                     </a>
-                    <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
+                    <img th:src="@{${magazine.getUploadPath()}}" id="list_img">
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@ public class GuideReviewReplyApiLogicService extends BaseService<GuideReviewRepl
                 .nickname(guideReviewReply.getNickname())
                 .likeCount(guideReviewReply.getLikeCount())
                 .regDate(guideReviewReply.getRegDate())
-                .userId(guideReviewReply.getUsers().getIdx())
+                .userId(guideReviewReply.getIdx())
                 .build();
         return guideReviewReplyApiResponse;
     }

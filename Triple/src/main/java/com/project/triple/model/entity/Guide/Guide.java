@@ -2,6 +2,7 @@ package com.project.triple.model.entity.Guide;
 
 
 import com.project.triple.model.entity.User.AdminUser;
+import com.project.triple.model.enumclass.GuideType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,10 +29,12 @@ public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide")
     private Long idx;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private GuideType type;
     private Integer guideNum;
-    private String adminuserId;
+    private Long adminuserId;
     private String country;
+    private String city;
     private String adminuserName;
     private String title;
     private String content;

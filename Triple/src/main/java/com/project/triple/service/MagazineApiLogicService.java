@@ -8,11 +8,15 @@ import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.repository.MagazineRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.boot.model.source.spi.EmbeddableMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -26,34 +30,35 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
     private MagazineApiResponse response(Magazine magazine){
         MagazineApiResponse magazineApiResponse = MagazineApiResponse.builder()
                 .idx(magazine.getIdx())
+                .adminuserId(magazine.getAdminuserId())
                 .adminuserName(magazine.getAdminuserName())
-                .magazineNum(magazine.getMagazineNum())
                 .magazineType(magazine.getMagazineType())
+                .tag(magazine.getTag())
+                .summary(magazine.getSummary())
                 .title(magazine.getTitle())
                 .content(magazine.getContent())
-                .uploadPath(magazine.getUploadPath())
                 .fileName(magazine.getFileName())
-                .fileType(magazine.getFileType())
+                .uploadPath(magazine.getUploadPath())
                 .regDate(magazine.getRegDate())
-                .adminuserId(magazine.getIdx())
                 .build();
         return magazineApiResponse;
     }
 
     @Override
     public Header<MagazineApiResponse> create(Header<MagazineApiRequest> request) {
-        MagazineApiRequest magazineApiRequest = request.getData();
-        Magazine magazine = Magazine.builder().adminuserId(magazineApiRequest.getAdminuserId())
-                .adminuserName(magazineApiRequest.getAdminuserName())
-                .magazineNum(magazineApiRequest.getMagazineNum())
-                .magazineType(magazineApiRequest.getMagazineType())
-                .title(magazineApiRequest.getTitle())
-                .content(magazineApiRequest.getContent())
-                .uploadPath(magazineApiRequest.getUploadPath())
-                .fileName(magazineApiRequest.getFileName())
-                .fileType(magazineApiRequest.getFileType()).build();
-        Magazine newMagazine = baseRepository.save(magazine);
-        return Header.OK(response(newMagazine));
+//        MagazineApiRequest magazineApiRequest = request.getData();
+//        Magazine magazine = Magazine.builder().adminuserId(magazineApiRequest.getAdminuserId())
+//                .adminuserName(magazineApiRequest.getAdminuserName())
+//                .magazineNum(magazineApiRequest.getMagazineNum())
+//                .magazineType(magazineApiRequest.getMagazineType())
+//                .title(magazineApiRequest.getTitle())
+//                .content(magazineApiRequest.getContent())
+//                .uploadPath(magazineApiRequest.getUploadPath())
+//                .fileName(magazineApiRequest.getFileName())
+//                .fileType(magazineApiRequest.getFileType()).build();
+//        Magazine newMagazine = baseRepository.save(magazine);
+//        return Header.OK(response(newMagazine));
+        return null;
     }
 
     @Override
@@ -110,5 +115,22 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
         List<MagazineApiResponse> magazineApiResponseList = magazineRepository.findAllByMagazineType(MagazineType.SHOPPING).stream().map(magazine -> response(magazine)).collect(Collectors.toList());
         return Header.OK(magazineApiResponseList);
     }
+    public Header<List<MagazineApiResponse>> travels(){
+        List<MagazineApiResponse> magazineApiResponseList = magazineRepository.findAllByMagazineType(MagazineType.TRAVELS).stream().map(magazine -> response(magazine)).collect(Collectors.toList());
+        return Header.OK(magazineApiResponseList);
+    }
+
+    public void write(Magazine magazine, MultipartFile file) throws Exception{
+
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        magazine.setFileName(filename);
+        magazine.setUploadPath("/files/"+filename);
+        magazineRepository.save(magazine);
+    }
+
 
 }

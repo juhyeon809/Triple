@@ -1,8 +1,12 @@
 package com.project.triple.controller.page;
 
+import com.project.triple.model.entity.Guide.Guide;
+import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
+import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
@@ -37,6 +41,9 @@ public class PageController {
 
     @Autowired
     private MagazineApiLogicService magazineApiLogicService;
+
+    @Autowired
+    private GuideApiLogicService guideApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -432,6 +439,25 @@ public class PageController {
         return new ModelAndView("/pages/magazine/magazine_recommend").addObject("email", email)
                 .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
+
+    @RequestMapping(path = "/magazine/travels")   //http://localhost:9090/Triple/magazine_recommend
+    public ModelAndView magazine_travels(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.recommend().getData();
+
+        return new ModelAndView("/pages/magazine/magazine_recommend").addObject("email", email)
+                .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
+    }
+
     @RequestMapping(path = "/magazine/tip")     //http://localhost:9090/Triple/magazine_tip
     public ModelAndView magazine_tip(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -534,150 +560,7 @@ public class PageController {
         return new ModelAndView("/pages/magazine/magazine_shop").addObject("email", email)
                 .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
-    @RequestMapping(path = "/magazine/travels")     //http://localhost:9090/Triple/magazine_travels
-    public ModelAndView magazine_travels(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
 
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_travels").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-
-    //magazine_view
-    @RequestMapping(path = "/magazine/recommend_view") //에러
-    public ModelAndView recommend_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/recommend_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-    @RequestMapping(path = "/magazine/airport_view")
-    public ModelAndView airport_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/airport_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/tip_view")
-    public ModelAndView tip_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/tip_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/eatplace_view")
-    public ModelAndView eatplace_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/eatplace_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/guesthouse_view")
-    public ModelAndView guesthouse_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/guesthouse_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/tourticket_view")
-    public ModelAndView tourticket_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/tourticket_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/shop_view")
-    public ModelAndView shop_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/shop_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/magazine/travels_view")
-    public ModelAndView travels_view(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/magazine/magazine_view/travels_view").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
 
      /* 관리자 페이지 */
     /* 관리자 페이지 로그인*/
@@ -713,7 +596,7 @@ public class PageController {
             HttpSession session = request.getSession();
             String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
             session.setAttribute("userid", userid);
-            session.setAttribute("userpw", userpw);
+            session.setAttribute("name", name);
 
             ScriptUtils.alert(response, "로그인 성공" );
             return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
@@ -840,8 +723,8 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_location_info")
-    public ModelAndView spot_location_info(HttpServletRequest request){
+    @RequestMapping(path = "/spot_location_info/{id}")
+    public ModelAndView spot_location_info(HttpServletRequest request, @PathVariable Long id){
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -852,8 +735,10 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        GuideApiResponse guide = guideApiLogicService.read(id).getData();
+
         return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("guide", guide);
     }
 
     @RequestMapping(path = "/spot_location")
@@ -868,8 +753,14 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<GuideApiResponse> guideApiResponseList1 = guideApiLogicService.typeList(GuideType.AIRPORT).getData();
+        List<GuideApiResponse> guideApiResponseList2 = guideApiLogicService.typeList(GuideType.CHECK).getData();
+        List<GuideApiResponse> guideApiResponseList3 = guideApiLogicService.typeList(GuideType.DOMESTICAIR).getData();
+
+
         return new ModelAndView("/pages/travel_spot/spot_location").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("AirportList", guideApiResponseList1)
+                .addObject("CheckList", guideApiResponseList2).addObject("DomesticAirList", guideApiResponseList3);
     }
 
     @RequestMapping(path = "/spot_domestic")
@@ -888,4 +779,20 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
+    // 마이페이지 메거진 등록
+    @RequestMapping(path = "/magazine_register")
+    public ModelAndView magazine_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/magazine/magazine-register").addObject("userid", userid)
+                .addObject("name", name);
+    }
 }

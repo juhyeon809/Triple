@@ -134,94 +134,63 @@
                 <!--타이틀 끝-->
             </div>
             <!--매거진 정보 입력-->
-            <form action="" onsubmit="return magazineRegister()" name="form">
+            <form th:action="@{/api/magazine/register}" name="form" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="adminuserId" th:value="${session.userid}">
+                <input type="hidden" name="adminuserName" th:value="${session.name}">
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">분류</div>
                 <div class="admin_inquiry_q3">
-                    <select name="" id="Mcategory" class="admin_inquiry_category2">
+                    <select name="magazineType" id="magazineType" class="admin_inquiry_category2">
                         <option value="">선택</option>
-                        <option value="#여행지추천">#여행지추천</option>
-                        <option value="#여행꿀팁">#여행꿀팁</option>
-                        <option value="#맛집탐방">#맛집탐방</option>
-                        <option value="#여행기">#여행기</option>
-                        <option value="#항공·공항">#항공·공항</option>
-                        <option value="#숙소추천">#숙소추천</option>
-                        <option value="#투어·티켓">#투어·티켓</option>
-                        <option value="#쇼핑">#쇼핑</option>
+                        <option value="RECOMMEND">#여행지추천</option>
+                        <option value="TIP">#여행꿀팁</option>
+                        <option value="RESTAURANT">#맛집탐방</option>
+                        <option value="AIR">#여행기</option>
+                        <option value="LODGING">#항공·공항</option>
+                        <option value="TOURTICKET">#숙소추천</option>
+                        <option value="SHOPPING">#투어·티켓</option>
+                        <option value="SHOPPING">#쇼핑</option>
                     </select>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">제목</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" id="title" class="admin_inquiry_category2">
+                    <input type="text" name="title" class="admin_inquiry_category2">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">해시태그</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" id="tag" class="admin_inquiry_category2">
+                    <input type="text" name="tag" id="tag" class="admin_inquiry_category2">
                 </div>
             </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">내용요약</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" name="summary" id="summary" class="admin_inquiry_category2">
+                    </div>
+                </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">썸네일 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="img" class="admin_inquiry_category2" multiple >
+                    <input type="file" name="file" class="admin_inquiry_category2" enctype="multipart/form-data" >
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">매거진 내용</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                        <textarea class="weditor" name="content" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
                             매거진 내용을 입력하세요
                         </textarea>
                     </div>
                     
                 </div>
             </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">바로가기 이미지</div>
-                <div class="admin_inquiry_q3">
-                    <input type="file" name="shortcuts" class="admin_inquiry_category2" multiple >
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">여행지 바로가기</div>
-                <div class="admin_inquiry_q3">
-                    <input type="text" placeholder="괌 바로가기" class="admin_inquiry_category2">
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title2">주요명소</div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">장소명</div>
-                <div class="admin_inquiry_q3">
-                    <input type="text" id="place" class="admin_inquiry_category2">
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">명소 소개</div> 
-                <div class="admin_inquiry_q3">
-                    <div class="admin_inquiry_a1">
-                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            <p>명소 소개 내용을 입력하세요</p>
-                        </textarea>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">명소 이미지</div>
-                <div class="admin_inquiry_q3">
-                    <input type="file" name="sights" class="admin_inquiry_category2" multiple>
-                </div>
-            </div>
             <!--매거진 정보입력 끝-->
             <div class="btnlist">
-                <button value="등록"><a href="#">등록</a></button>
-                <button value="취소"><a href="#">취소</a></button>
+                <input type="submit" value="등록" class="join_btn">
             </div>
         </div>
     </form>

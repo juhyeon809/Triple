@@ -29,7 +29,7 @@
             <p><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어<span>&#183;</span>티켓</a></p>
         </div>
         <div id="box_information">
-            <p class="title_text">괌 기초 정보</p>
+            <p class="title_text" th:text="${guide.getTitle()}"></p>
             <div id="sub_flex_box">
             <p id="sub_text">리뷰 53 저장 828</p>
             <div id="like_save_box">
@@ -38,9 +38,7 @@
             </div>
             <div id="box_information_img"><img src="/lib/img/travel_spot_img/overseas2.svg" alt=""></div>
             <div id="context_box">
-                <p>비행기로 4시간 반이면 닿는 동서남북 에메랄드빛 바다를 품고 있는 괌</p>
-                <p>미국령으로 공식 명칙은 미국령 괌 준주(United States Island Territory of Gaum)다.</p>
-                <p>수도는 아가냐, 인도네시아 사람이 살기 시작해 이후 스페인과 일본의 지배를 받아 다양한 문화가 존재하는 곳이다.</p>
+                <p th:text="${guide.getContent()}"></p>
             </div>
         </div>
         <hr>
