@@ -349,5 +349,121 @@ function coupon(){
             }
             return true;
         }
-
+        function spotRestaurant(){
+            const file =  "\\.(bmp|gif|jpg|jpeg|png)$";
+            const fileImg = document.form.menu_img.value;
         
+            if($('#placeName').val() == ''){
+                alert('장소명을 입력해주세요')
+                $('#placeName').focus();
+                return false
+            }
+            if($('#place_name').val() == ''){
+                alert('식당 타이틀을 입력해주세요')
+                $('#place_title').focus();
+                return false
+            }
+            if(!(new RegExp(file,"i")).test(fileImg)){
+                alert("메뉴 이미지를 선택하여 주세요");
+                return false;
+            }
+            if($('#menu_name').val() == ''){
+                alert('메뉴 이름을 입력해주세요')
+                $('#menu_name').focus();
+                return false
+            }
+            if($('#menu_tit').val() == ''){
+                alert('메뉴 설명을 입력해주세요')
+                $('#menu_tit').focus();
+                return false
+            }
+            if($('#menu_price').val() == ''){
+                alert('메뉴 가격을 입력해주세요')
+                $('#menu_price').focus();
+                return false
+            }
+            if($('#Basic1').val() == ''){
+                alert('가는방법을 입력해주세요')
+                $('#Basic1').focus();
+                return false
+            }
+            if($('#Basic2').val() == ''){
+                alert('이용가능시간을 입력해주세요')
+                $('#Basic2').focus();
+                return false
+            }
+            if($('#Basic3').val() == ''){
+                alert('이용팁을 입력해주세요')
+                $('#Basic3').focus();
+                return false
+            }
+            return true;
+        }
+
+function spotTour(){
+    const file =  "\\.(bmp|gif|jpg|jpeg|png)$";
+    const fileImg1 = document.form.pro_img1.value;
+    const fileImg2 = document.form.pro_img2.value;
+    const main1 = document.form.main_img1.value;
+
+    if($('#placeName').val() == ''){
+        alert('장소명을 입력해주세요')
+        $('#placeName').focus();
+        return false
+    }
+    if($('#place_name').val() == ''){
+        alert('장소 타이틀을 입력해주세요')
+        $('#place_title').focus();
+        return false
+    }
+    if(!(new RegExp(file,"i")).test(fileImg1)){
+        alert("장소 이미지를 선택하여 주세요");
+        return false;
+    }
+    if($('#mini_name').val() == ''){
+        alert('장소 미니 타이틀을 입력해주세요')
+        $('#mini_name').focus();
+        return false
+    }
+    if($('#weditor').val() == ''){
+        alert('장소 설명을 입력해주세요')
+        $('#menu_tit').focus();
+        return false
+    }
+    if(!(new RegExp(file,"i")).test(main_img1)){
+        alert("주요 볼거리 이미지를 선택하여 주세요");
+        return false;
+    }
+    if($('#main_tit').val() == ''){
+        alert('주요 볼거리 타이틀을 입력해주세요')
+        $('#main_tit').focus();
+        return false
+    }
+    if($('#main_name').val() == ''){
+        alert('주요 볼거리 설명을 입력해주세요')
+        $('#main_name').focus();
+        return false
+    }
+
+    if($('#recommend').val() == ''){
+        alert('권장 체류시간을 입력해주세요')
+        $('#recommend').focus();
+        return false
+    }
+    if($('#way').val() == ''){
+        alert('가는방법을 입력해주세요')
+        $('#way').focus();
+        return false
+    }
+    if($('#time').val() == ''){
+        alert('이용가능시간 입력해주세요')
+        $('#time').focus();
+        return false
+    }
+    if($('#pay').val() == ''){
+        alert('이용료를 입력해주세요')
+        $('#pay').focus();
+        return false
+    }
+    return true;
+}

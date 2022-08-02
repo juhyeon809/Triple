@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 항공사 등록</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>관리자 | 이벤트 목록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
-    <style>
-        .formbox{
-            margin-top: 150px;
-        }
-        .hbt{
-            margin-right: 100px;
-        }
-    </style>
+
 </head>
 <body>
     <nav class="navbar">
@@ -44,20 +36,19 @@
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../booking/all.html">전체</a></li>
-                        <li><a href="../booking/fly_reservation.html">항공권</a></li>
-                        <li><a href="../booking/room_resevation.html">숙소</a></li>
-                        <li><a href="../booking/packge_reservation.html">패키지</a></li>
-                        <li><a href="../booking/ticket_reservation.html">티켓</a></li>
+                        <li><a href="../all.html">전체</a></li>
+                        <li><a href="../fly_reservation.html">항공권</a></li>
+                        <li><a href="../room_resevation.html">숙소</a></li>
+                        <li><a href="../packge_reservation.html">패키지</a></li>
+                        <li><a href="../ticket_reservation.html">티켓</a></li>
                     </ul>
                 </li>
-                <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown show">
-                        <li><a href="airlineRegist.html" style="color:darkslategray; font-weight: bold;">항공사 신규 등록</a></li>
-                        <li><a href="aircraftRegist.html">항공기 신규 등록</a></li>
-                        <li><a href="destinationList.html">취항지 목록</a></li>
-                        <li><a href="destinationRegist.html">취항지 신규 등록</a></li>
-                        
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -84,7 +75,7 @@
                         <li><a href="../coupon/couponList.html">목록</a></li>
                         <li><a href="../coupon/couponRegistration.html">등록</a></li>
                     </ul>
-                </li>    
+                </li>
                 <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="../event/eventList.html">목록</a></li>
@@ -97,10 +88,17 @@
                         <li><a href="../notice/notice-register.html">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <li><a href="#""><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../magazine/magazine-list.html">목록</a></li>
-                        <li><a href="../magazine/magazine-register.html">등록</a></li>
+                        <li><a href="/admin/magazine/magazine-list.html">목록</a></li>
+                        <li><a href="/admin/magazine/magazine-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="/admin/spot/spotList.html" style="color:darkslategray; font-weight: bold;">목록</a></li>
+                        <li><a href="/admin/spot/spot_tourism.html">관광지 등록</a></li>
+                        <li><a href="/admin/spot/spot_restaurant.html">맛집 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
@@ -123,53 +121,60 @@
         </aside>
     </section>
     <!--사이드바 끝-->
-    <div class="content2">
+    
+    <section class="content2">
         <div class="content2-fluid">
-            <!--타이틀-->
             <div class="header_box">
-                <h2>항공사 신규 등록</h2>
-            </div>
-            <!--항공사 정보 등록-->
-            <form action="" onsubmit="return airline()">
-                <div class="admin_manage_form_container">
-                    <div class="admin_manage_form_container_ul1">
-                        <p class="admin_register_item">항공사명 (Kor) </p>
-                        <p class="admin_register_item">항공사 코드 </p>
-                        <p class="admin_register_item">대표번호 </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul2">
-                        <p><input type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content premium" placeholder="항공사 코드를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content daepyo" placeholder="대표번호를 입력하세요"></p>
-                    </div>
-                    <div class="admin_manage_form_container_ul1">
-                        <p class="admin_register_item">항공사명 (Eng)</p>
-                        <p class="admin_register_item">운항노선 </p>
-                        <p class="admin_register_item">고객센터 </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul2">
-                        <p><input type="text" class="admin_register_content eng" placeholder="항공사의 영문명을 입력하세요"></p>
-                        <p>
-                            <select name="" id="route" class="admin_register_content">
-                                <option value="">선택</option>
-                                <option value="국내">국내</option>
-                                <option value="국외">국외</option>
-                                <option value="국내·국외">국내·국외</option>
+                <h2>스팟 목록</h2>
+                <nav>
+                    
+                    <form action="#">
+                        <div class="form-group">
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="맛집">맛집</option>
+                                <option value="관광지">관광지</option>
                             </select>
-                        </p>
-                        <p><input type="text" class="admin_register_content center" placeholder="고객센터 번호를 입력하세요"></p>
-                    </div>
-                </div>
-                <div class="btnlist">
-                    <button value="등록"><a href="#">등록</a></button>
-                    <button value="취소"><a href="#">취소</a></button>
-                </div>
-            </form>
-            <!--항공사 정보등록 끝-->
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">장소</option>
+                                <option value="">제목</option>
+                            </select>
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button type="submit">검색</button>
+                        </div>
+                    </form>
+                </nav>
+            </div>
+            <table class="tbList">
+                <tr>
+                    <th>
+                        번호
+                    </th>
+                    <th>
+                        분류
+                    </th>
+                    <th>
+                        제목
+                    </th>
+                    <th>
+                        작성날짜
+                    </th>
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2022.06.27</td>
+                </tr>
+                
+            </table>
+            <div class="pageNum">
+                <p>1 2 3 4 5</p>
+            </div>
         </div>
-    </div>
 
-    <script src="../script.js"></script>
-    <script src="/admin/js/register.js"></script>
+    </section>
+    <script src="/admin/script.js"></script>
 </body>
 </html>
