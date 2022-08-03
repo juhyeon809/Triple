@@ -843,7 +843,7 @@ public class PageController {
     }
 
     //패키지 등록
-    @RequestMapping(path = "/package_register")
+    @RequestMapping(path = "/package_register")     //http://localhost:9090/Triple/package_register
     public ModelAndView package_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -860,7 +860,7 @@ public class PageController {
     }
 
     //패키지 메인
-    @RequestMapping(path = "/package")
+    @RequestMapping(path = "/package")      //http://localhost:9090/Triple/package
     public ModelAndView package_main(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -983,7 +983,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/magazine_guesthouse
+    @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/package/view/
     public ModelAndView package_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;

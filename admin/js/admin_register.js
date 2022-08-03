@@ -465,5 +465,65 @@ function spotTour(){
         $('#pay').focus();
         return false
     }
+    
     return true;
+}
+
+function spotGuide(){
+    const file =  "\\.(bmp|gif|jpg|jpeg|png)$";
+    const fileImg1 = document.form.pro_img1.value;
+
+    if($('#placeName').val() == ''){
+        alert('타이틀을 입력해주세요')
+        $('#placeName').focus();
+        return false
+    }
+    if(!(new RegExp(file,"i")).test(pic)){
+        alert("이미지를 선택하여 주세요");
+        return false;
+    }
+    
+    if($('#language').val() == ''){
+        alert('언어를 입력해주세요')
+        $('#language').focus();
+        return false
+    }
+    if($('#area').val() == ''){
+        alert('면적을 입력해주세요')
+        $('#area').focus();
+        return false
+    }
+    
+    if($('#people').val() == ''){
+        alert('인구 수를 입력해주세요')
+        $('#people').focus();
+        return false
+    }
+    if($('#time').val() == ''){
+        alert('시차를 입력해주세요')
+        $('#time').focus();
+        return false
+    }
+
+    if($('#religion').val() == ''){
+        alert('종교 입력해주세요')
+        $('#religion').focus();
+        return false
+    }
+    if($('#voltage').val() == ''){
+        alert('전압을 입력해주세요')
+        $('#voltage').focus();
+        return false
+    }
+    if($('#pay').val() == ''){
+        alert('통화를 입력해주세요')
+        $('#pay').focus();
+        return false
+    }
+    if($('#call').val() == ''){
+        alert('국가번호 및 지역번호를 입력해주세요')
+        $('#call').focus();
+        return false
+    }
+return true;
 }
