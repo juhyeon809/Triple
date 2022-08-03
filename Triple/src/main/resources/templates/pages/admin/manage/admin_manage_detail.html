@@ -12,20 +12,9 @@
 
 </head>
 <body>
-<nav class="navbar">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/Triple/adminUser">TRIPLE</a>
-        </div>
-        <div class="user-info">
-            <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                <div class="email">john.doe@example.com</div>
-            </div>
-        </div>
-    </div>
-
-</nav>
+    <!--header-->
+    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
     <aside id="leftsidebar" class="sidebar">
@@ -102,7 +91,8 @@
                     <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                     <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
                     <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
-                </ul>
+                        <li><a href="/templates/pages/admin/spot/spot_guide.html">가이드 등록</a></li>
+                    </ul>
             </li>
             <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
 
