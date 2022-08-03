@@ -32,7 +32,7 @@ public class Reservation {
     private String email;
     private String hp;
     private String emergencyHp;
-    private Integer userid;
+    private Long userId;
 
 //    @ManyToOne
 //    private Users users;

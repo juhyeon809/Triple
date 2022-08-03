@@ -18,6 +18,6 @@ public class ReservationApiRequest {
     private String email;
     private String hp;
     private String emergencyHp;
-//    private Ineger userid;
+    private Long userId;
 
 }

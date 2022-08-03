@@ -6,8 +6,15 @@ import com.project.triple.model.network.request.CouponRequest.CouponApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.repository.CouponRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
 public class CouponApiLogicService extends BaseService<CouponApiRequest, CouponApiResponse, Coupon> {
 
     @Autowired
@@ -49,4 +56,18 @@ public class CouponApiLogicService extends BaseService<CouponApiRequest, CouponA
     public Header<CouponApiResponse> delete(Long id) {
         return null;
     }
+
+    public Header<List<CouponApiResponse>> search(Long couponId){
+        List<CouponApiResponse> couponList = couponRepository.findByCouponId(couponId).stream()
+                .map(coupon -> response(coupon)).collect(Collectors.toList());
+        return Header.OK(couponList);
+    }
+//    public Long findUserId(Long idx){
+//        Long couponId = userCouponRepository.findByUserId(idx).get().getCouponId();
+//
+//        return couponId;
+//    }
+//    public Long findCouponId(Long couponId){
+//
+//    }
 }

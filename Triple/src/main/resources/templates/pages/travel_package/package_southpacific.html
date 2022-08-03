@@ -21,39 +21,45 @@
     <div id="travel_package_img"></div>
     <main>
         <div id="travel_package_main">
-
+            <div id="travel_package_menus">
+                <a href="#guam">괌</a>
+                <a href="#sipan">사이판</a>
+            </div>
             <div id="travel_package_contents">
-                <p id="guam" class="city">괌/사이판</p>
-                <div class="travel_package_list" th:each="guam : ${guamList}">
-                    <div class="packagebox">
-                        <div class="packagebox_image"><a th:href="'/Triple/package/view/'+ ${guam.getIdx()}"><img th:src="@{${guam.getUploadPath()}}" alt=""></a></div>
+                <p id="guam" class="city">괌</p>
+                <div class="travel_package_list">
+                <div class="packagebox">
+                    <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
                         <div class="pacagebox_innerdiv">
                             <div class="merchandise_mark">
-                                <div><p th:text="${guam.getKeyword()}"></p></div>
-                            </div>
-                            <p class="product_name"><a th:href="'/Triple/package/view/'+ ${guam.getIdx()}"  th:text="${guam.getTitle()}"></a></p>
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                        <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
+                    </div>
+                </div>
+                </div>
+                <p id="sipan" class="city">사이판</p>
+                <div class="travel_package_list">
+                    <div class="packagebox">
+                        <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="pacagebox_innerdiv">
+                            <div class="merchandise_mark">
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
+                        </div>
+                            <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                            <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
                             <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                            <p class="product_price" th:text="${guam.getAdultPr()}+'원'"></p>
+                            <p class="product_price">459,000원</p>
+                            <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
                         </div>
                     </div>
                 </div>
-<!--                <p id="sipan" class="city">사이판</p>-->
-<!--                <div class="travel_package_list">-->
-<!--                    <div class="packagebox">-->
-<!--                        <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>-->
-<!--                        <div class="pacagebox_innerdiv">-->
-<!--                            <div class="merchandise_mark">-->
-<!--                                <div><p>6월 한정 특가</p></div>-->
-<!--                                <div><p>노옵션 노쇼핑</p></div>-->
-<!--                        </div>-->
-<!--                            <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>-->
-<!--                            <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>-->
-<!--                            <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>-->
-<!--                            <p class="product_price">459,000원</p>-->
-<!--                            <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
             </div>
         </div>
     </main>

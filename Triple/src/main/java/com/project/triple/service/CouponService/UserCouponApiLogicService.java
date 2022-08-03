@@ -4,10 +4,18 @@ import com.project.triple.model.entity.Coupon.UserCoupon;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.CouponRequest.UserCouponApiRequest;
 import com.project.triple.model.network.response.CouponResponse.UserCouponApiResponse;
+import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.repository.UserCouponRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
 public class UserCouponApiLogicService extends BaseService<UserCouponApiRequest, UserCouponApiResponse, UserCoupon> {
 
     @Autowired
@@ -17,8 +25,8 @@ public class UserCouponApiLogicService extends BaseService<UserCouponApiRequest,
         UserCouponApiResponse userCouponApiResponse = UserCouponApiResponse.builder()
                 .idx(userCoupon.getIdx())
                 .regDate(userCoupon.getRegDate())
-                .userId(userCoupon.getUsers().getIdx())
-                .couponId(userCoupon.getCoupon().getCouponId())
+                .userId(userCoupon.getUserId())
+                .couponId(userCoupon.getCouponId())
                 .build();
         return userCouponApiResponse;
     }
@@ -42,4 +50,11 @@ public class UserCouponApiLogicService extends BaseService<UserCouponApiRequest,
     public Header<UserCouponApiResponse> delete(Long id) {
         return null;
     }
+
+    public Long findUserId(Long userId){
+        Long couponId = userCouponRepository.findByUserId(userId).get().getCouponId();
+
+        return couponId;
+    }
+
 }

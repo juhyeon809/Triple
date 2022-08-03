@@ -28,48 +28,56 @@
             </div>
             <div id="travel_package_contents">
                 <p id="hawaii" class="city">하와이</p>
-                <div class="travel_package_list" th:each="hawaii : ${hawaiiList}">
+                <div class="travel_package_list">
                 <div class="packagebox">
-                    <div class="packagebox_image"><a th:href="'/Triple/package/view'+${hawaii.getIdx()}"><img th:src="@{${hawaii.getUploadPath()}}" alt=""></a></div>
+                    <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
                     <div class="pacagebox_innerdiv">
                         <div class="merchandise_mark">
-                            <div><p th:text="${hawaii.getKeyword()}"></p></div>
+                            <div><p>6월 한정 특가</p></div>
+                            <div><p>노옵션 노쇼핑</p></div>
                         </div>
-                        <p class="product_name"><a th:href="'/Triple/package/view'+${hawaii.getIdx()}" th:text="${hawaii.getTitle()}"></a></p>
+                        <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
                         <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                        <p class="product_price" th:text="${hawaii.getAdultPr()}+'원'"></p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
                     </div>
                 </div>
                 </div>
                 <p id="LA" class="city">LA</p>
-                <div class="travel_package_list" th:each="LA : ${LAList}">
+                <div class="travel_package_list">
                     <div class="packagebox">
-                        <div class="packagebox_image"><a th:href="'/Triple/package/view'+${LA.getIdx()}"><img th:src="@{${LA.getUploadPath()}}" alt=""></a></div>
+                        <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
                         <div class="pacagebox_innerdiv">
                             <div class="merchandise_mark">
-                                <div><p th:text="${LA.getKeyword()}"></p></div>
+                                <div><p>6월 한정 특가</p></div>
+                                <div><p>노옵션 노쇼핑</p></div>
                             </div>
-                            <p class="product_name"><a th:href="'/Triple/package/view'+${LA.getIdx()}" th:text="${LA.getTitle()}"></a></p>
+                            <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                            <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
                             <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                            <p class="product_price" th:text="${LA.getAdultPr()}+'원'"></p>
+                            <p class="product_price">459,000원</p>
+                            <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
                         </div>
                     </div>
                 </div>
                 <p id="newyork" class="city">뉴욕</p>
-                <div class="travel_package_list" th:each=" newYork : ${newYorkList}">
-                    <div class="packagebox">
-                        <div class="packagebox_image"><a th:href="'/Triple/package/view'+${newYork.getIdx()}"><img th:src="@{${newYork.getUploadPath()}}" alt=""></a></div>
-                        <div class="pacagebox_innerdiv">
-                            <div class="merchandise_mark">
-                                <div><p th:text="${newYork.getKeyword()}"></p></div>
-                            </div>
-                            <p class="product_name"><a th:href="'/Triple/package/view'+${newYork.getIdx()}" th:text="${newYork.getTitle()}"></a></p>
-                            <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                            <p class="product_price" th:text="${newYork.getAdultPr()}+'원'"></p>
+                <div class="travel_package_list">
+                <div class="packagebox">
+                    <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                    <div class="pacagebox_innerdiv">
+                        <div class="merchandise_mark">
+                            <div><p>6월 한정 특가</p></div>
+                            <div><p>노옵션 노쇼핑</p></div>
                         </div>
+                        <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
+                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                        <p class="product_price">459,000원</p>
+                        <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
                     </div>
                 </div>
-            </div>
+        </div>
     </main>
     <!-- footer 시작 -->
     <footer th:replace="fragement/footer :: footer"></footer>

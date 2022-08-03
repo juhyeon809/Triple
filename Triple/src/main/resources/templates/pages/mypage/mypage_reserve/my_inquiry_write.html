@@ -24,6 +24,7 @@
         <!--            <form action="./my_inquiry_list.html" onsubmit="return sendit()">-->
         <form method="POST">
             <div class="inq_wr_box">
+                <input type="hidden" id="idx" th:value="${idx}"/>
                 <div class="inq_wr_box_title">유형 <span>*</span></div>
                 <div class="inq_wr_box_input">
                     <input type="text" value="" spellcheck="false" data-ms-editor="true" name="typeCategory" id="typeCategory" placeholder="항공 or 숙소 or 투어티켓">
@@ -79,9 +80,56 @@
         </form>
     </div>
 </main>
+<!--<script type="text/javascript" th:inline="javascript":>-->
+<!--    $(document).ready(function(){-->
+<!--        /*<![CDATA[*/-->
+<!--        var idx = [[${idx}]];-->
+<!--        console.log(idx)-->
+<!--        /*]]>*/-->
+<!--    });-->
+
+<!--    // fetch("./jsonData.json")-->
+<!--    //     .then(response => {-->
+<!--    //-->
+<!--    //     })-->
+
+<!--    $(document).on('click', '#sendit', function () {-->
+<!--        let jsonData = {-->
+<!--            transaction_time: new Date(),-->
+<!--            resultCode: "ok",-->
+<!--            description: "ok",-->
+<!--            data: {-->
+<!--                typeCategory: $('#typeCategory').val(),-->
+<!--                title: $('#title').val(),-->
+<!--                content: $('#content').val(),-->
+<!--                filename: $('#filename').val(),-->
+<!--                userId: idx.getData(),-->
+<!--                infoAgree:'Y'-->
+<!--            }-->
+<!--        }-->
+
+<!--        $.post({-->
+<!--            url: '/api/inquiry',-->
+<!--            data: JSON.stringify(jsonData),-->
+<!--            dataType: 'json',-->
+<!--            contentType: 'application/json',-->
+<!--            success: function () {-->
+<!--                alert('등록성공!');-->
+<!--                location.href = '/Triple/inquiryList';-->
+<!--            },-->
+<!--            error: function () {-->
+<!--                alert('등록실패!');-->
+<!--                location.reload();-->
+<!--            }-->
+<!--        })-->
+
+<!--    })-->
+<!--</script>-->
+
 <!--메인 끝-->
 <!--푸터-->
 <div th:replace="fragement/mypageFooter :: mypageFooter"></div>
 <!--푸터 끝-->
+
 </body>
 </html>

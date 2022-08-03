@@ -7,6 +7,7 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
 import com.project.triple.model.network.request.AirRequest.AirTicketSearchRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.repository.AirTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -33,8 +34,8 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .idx(airticket.getIdx())
                 .ticketType(airticket.getTicketType())
                 .ticketNum(airticket.getTicketNum())
-                .airlineIdx(airticket.getAirlineIdx())
-                .aircraftIdx(airticket.getAircraftIdx())
+//                .airlineIdx(airticket.getAirlineIdx())
+//                .aircraftIdx(airticket.getAircraftIdx())
                 .departureAirport(airticket.getDepartureAirport())
                 .landingAirport(airticket.getLandingAirport())
                 .departureDate(airticket.getDepartureDate())
@@ -118,6 +119,18 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
         String departureAirport = request.getData().getDepartureAirport();
         String landingAirport = request.getData().getLandingAirport();
         List<AirTicketApiResponse> airTicketList = airTicketRepository.findAllByDepartureDateContainingAndDepartureAirportAndLandingAirport(departureDate, departureAirport, landingAirport);
+        return Header.OK(airTicketList);
+    }
+
+    public String findAllTicketNum(String tNum){
+        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+
+        return ticketNum;
+    }
+
+    public Header<List<AirTicketApiResponse>> search2(String ticketNum){
+        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(ticketNum).stream()
+                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
         return Header.OK(airTicketList);
     }
 }

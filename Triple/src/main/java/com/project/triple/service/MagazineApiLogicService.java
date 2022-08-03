@@ -37,6 +37,9 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
                 .summary(magazine.getSummary())
                 .title(magazine.getTitle())
                 .content(magazine.getContent())
+//                .uploadPath(magazine.getUploadPath())
+//                .fileName(magazine.getFileName())
+//                .fileType(magazine.getFileType())
                 .fileName(magazine.getFileName())
                 .uploadPath(magazine.getUploadPath())
                 .regDate(magazine.getRegDate())
@@ -46,6 +49,18 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
 
     @Override
     public Header<MagazineApiResponse> create(Header<MagazineApiRequest> request) {
+        MagazineApiRequest magazineApiRequest = request.getData();
+        Magazine magazine = Magazine.builder().adminuserId(magazineApiRequest.getAdminuserId())
+                .adminuserName(magazineApiRequest.getAdminuserName())
+//                .magazineNum(magazineApiRequest.getMagazineNum())
+                .magazineType(magazineApiRequest.getMagazineType())
+                .title(magazineApiRequest.getTitle())
+                .content(magazineApiRequest.getContent()).build();
+//                .uploadPath(magazineApiRequest.getUploadPath())
+//                .fileName(magazineApiRequest.getFileName())
+//                .fileType(magazineApiRequest.getFileType()).build();
+        Magazine newMagazine = baseRepository.save(magazine);
+        return Header.OK(response(newMagazine));
 //        MagazineApiRequest magazineApiRequest = request.getData();
 //        Magazine magazine = Magazine.builder().adminuserId(magazineApiRequest.getAdminuserId())
 //                .adminuserName(magazineApiRequest.getAdminuserName())
@@ -58,7 +73,7 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
 //                .fileType(magazineApiRequest.getFileType()).build();
 //        Magazine newMagazine = baseRepository.save(magazine);
 //        return Header.OK(response(newMagazine));
-        return null;
+//        return null;
     }
 
     @Override

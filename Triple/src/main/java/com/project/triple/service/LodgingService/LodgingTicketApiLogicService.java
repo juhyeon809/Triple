@@ -3,11 +3,20 @@ package com.project.triple.service.LodgingService;
 import com.project.triple.model.entity.Lodging.LodgingTicket;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingTicketApiRequest;
+import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.repository.LodgingTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
 public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRequest, LodgingTicketApiResponse, LodgingTicket> {
 
     @Autowired
@@ -50,5 +59,19 @@ public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRe
     @Override
     public Header<LodgingTicketApiResponse> delete(Long id) {
         return null;
+    }
+
+    public String findAllTicketNum(String tNum){
+        String ticketNum = lodgingTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+
+        return ticketNum;
+    }
+
+
+
+    public Header<List<LodgingTicketApiResponse>> search2(String ticketNum){
+        List<LodgingTicketApiResponse> lodgingTicketList = lodgingTicketRepository.findByTicketNum(ticketNum).stream()
+                .map(lodgingTicket -> response(lodgingTicket)).collect(Collectors.toList());
+        return Header.OK(lodgingTicketList);
     }
 }
