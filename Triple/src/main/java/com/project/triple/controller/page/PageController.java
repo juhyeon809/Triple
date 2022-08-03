@@ -108,9 +108,9 @@ public class PageController {
 
 
 
-//    항공
 
-    @RequestMapping(path = "/inquiryWrite")
+
+    @RequestMapping(path = "/inquiryWrite")     // http://localhost:9090/Triple/inquiryWrite
     public ModelAndView inquiryWrite(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -128,7 +128,7 @@ public class PageController {
                 .addObject("nickname", name);
     }
 
-    @RequestMapping(path = "/inquiryList")
+    @RequestMapping(path = "/inquiryList")      // http://localhost:9090/Triple/inquiryList
     public ModelAndView inquiryList(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -144,7 +144,7 @@ public class PageController {
                 .addObject("nickname", name);
     }
 
-    @RequestMapping(path = "/couponMain")
+    @RequestMapping(path = "/couponMain")       // http://localhost:9090/Triple/couponMain
     public ModelAndView coupon_main(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
