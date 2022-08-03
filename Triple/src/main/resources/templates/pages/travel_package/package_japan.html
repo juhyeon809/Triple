@@ -27,36 +27,30 @@
             </div>
             <div id="travel_package_contents">
                 <p id="hokkaido" class="city">북해도(훗카이도)</p>
-                <div class="travel_package_list">
-                <div class="packagebox">
-                    <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                <div class="travel_package_list" th:each="hokkaido : ${hokkaidoList}">
+                    <div class="packagebox">
+                        <div class="packagebox_image"><a th:href="'/Triple/package/view/'+ ${hokkaido.getIdx()}"><img th:src="@{${hokkaido.getUploadPath()}}" alt=""></a></div>
                         <div class="pacagebox_innerdiv">
                             <div class="merchandise_mark">
-                                <div><p>6월 한정 특가</p></div>
-                                <div><p>노옵션 노쇼핑</p></div>
+                                <div><p th:text="${hokkaido.getKeyword()}"></p></div>
+                            </div>
+                            <p class="product_name"><a th:href="'/Triple/package/view/'+ ${hokkaido.getIdx()}"  th:text="${hokkaido.getTitle()}"></a></p>
+                            <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
+                            <p class="product_price" th:text="${hokkaido.getAdultPr()}+'원'"></p>
                         </div>
-                        <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
-                        <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
-                        <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                        <p class="product_price">459,000원</p>
-                        <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
                     </div>
                 </div>
-                </div>
                 <p id="osaka" class="city">오사카</p>
-                <div class="travel_package_list">
+                <div class="travel_package_list" th:each="osaka : ${osakaList}">
                     <div class="packagebox">
-                        <div class="packagebox_image"><a href="/templates/pages/overseas_travel/overseas_travel_main.html"><img src="/lib/img/travel_package_img/overseas1.svg" alt=""></a></div>
+                        <div class="packagebox_image"><a th:href="'/Triple/package/view/'+ ${osaka.getIdx()}"><img th:src="@{${osaka.getUploadPath()}}" alt=""></a></div>
                         <div class="pacagebox_innerdiv">
                             <div class="merchandise_mark">
-                                <div><p>6월 한정 특가</p></div>
-                                <div><p>노옵션 노쇼핑</p></div>
-                        </div>
-                            <p class="product_name"><a href="/templates/pages/overseas_travel/overseas_travel_main.html">푸꾸옥 5성급 노보텔 조식포함 자유여행 5일</a></p>
-                            <p class="product_air">(비엣젯<span>&#183;</span>대한항공)</p>
+                                <div><p th:text="${osaka.getKeyword()}"></p></div>
+                            </div>
+                            <p class="product_name"><a th:href="'/Triple/package/view/'+ ${osaka.getIdx()}"  th:text="${osaka.getTitle()}"></a></p>
                             <p class="product_star"><img src="/lib/img/travel_package_img/ic_star_24px.png" alt="">5</p>
-                            <p class="product_price">459,000원</p>
-                            <p class="product_coupon"><span class="red_text">쿠폰할인</span> 가능</p>
+                            <p class="product_price" th:text="${osaka.getAdultPr()}+'원'"></p>
                         </div>
                     </div>
                 </div>
