@@ -5,9 +5,11 @@ import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
+import com.project.triple.model.network.response.PackageApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
+import com.project.triple.service.PackageApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +46,9 @@ public class PageController {
 
     @Autowired
     private GuideApiLogicService guideApiLogicService;
+
+    @Autowired
+    private PackageApiLogicService packageApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -795,4 +800,149 @@ public class PageController {
         return new ModelAndView("/pages/admin/magazine/magazine-register").addObject("userid", userid)
                 .addObject("name", name);
     }
+
+    //패키지 등록
+    @RequestMapping(path = "/package_register")
+    public ModelAndView package_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/product/packge").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    //패키지 메인
+    @RequestMapping(path = "/package")
+    public ModelAndView package_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        List<PackageApiResponse> guams = packageApiLogicService.sort_by_country("괌/사이판").getData();
+        List<PackageApiResponse> vietnams = packageApiLogicService.sort_by_country("베트남").getData();
+        List<PackageApiResponse> Singapores = packageApiLogicService.sort_by_country("싱가포르").getData();
+        List<PackageApiResponse> Italys = packageApiLogicService.sort_by_country("이탈리아").getData();
+        List<PackageApiResponse> americas = packageApiLogicService.sort_double("하와이","LA").getData();
+
+
+        return new ModelAndView("/pages/travel_package/package_main").addObject("email", email)
+                .addObject("nickname", nickname).addObject("guams", guams).addObject("vietnams",vietnams)
+                .addObject("Singapores", Singapores).addObject("Italys", Italys).addObject("americas", americas);
+    }
+
+    @RequestMapping(path = "/package/america")
+    public ModelAndView package_america(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/eastsouthasia")
+    public ModelAndView package_eastsouthasia(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_eastsouthasia").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/europe")
+    public ModelAndView package_europe(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_europe").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/japan")
+    public ModelAndView package_japan(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_japan").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/southpacific")
+    public ModelAndView package_southpacific(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/specialprice")
+    public ModelAndView package_specialprice(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+
+
+
+
+
 }

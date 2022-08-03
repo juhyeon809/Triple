@@ -6,8 +6,12 @@ import com.project.triple.model.network.request.MysaveApiRequest;
 import com.project.triple.model.network.response.MysaveApiResponse;
 import com.project.triple.repository.MysaveRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveApiResponse, Mysave> {
 
     @Autowired

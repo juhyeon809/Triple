@@ -6,8 +6,12 @@ import com.project.triple.model.network.request.TourTicketApiRequest;
 import com.project.triple.model.network.response.TourTicketApiResponse;
 import com.project.triple.repository.TourTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class TourTicketApiLogicService extends BaseService<TourTicketApiRequest, TourTicketApiResponse, TourTicket> {
 
     @Autowired

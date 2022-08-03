@@ -132,41 +132,51 @@
             </div>
             <!--타이틀 끝-->
             <!--패키지 정보 등록-->
-            <form action="" onsubmit="return productPackge()">
+            <form th:action="@{/api/package/register}" onsubmit="return productPackge()" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="adminuserId" th:value="${session.userid}">
+                <input type="hidden" name="adminuserName" th:value="${session.name}">
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">분류</div>
                     <div class="admin_inquiry_q3">
-                        <select name="" class="admin_inquiry_category2 concategory">
-                            <option value="">나라</option>
+                        <select name="country" class="admin_inquiry_category2 concategory">
+                            <option value="">지역</option>
                             <option value="대한민국">대한민국</option>
-                            <option value="미국">미국</option>
-                            <option value="영국">영국</option>
-                            <option value="일본">일본</option>
-                            <option value="중국">중국</option>
-                            <option value="태국">태국</option>
+                            <option value="필리핀">필리핀</option>
+                            <option value="베트남">베트남</option>
+                            <option value="코타키나발루">코타키나발루</option>
+                            <option value="싱가포르">싱가포르</option>
+                            <option value="괌/사이판">괌/사이판</option>
+                            <option value="스페인">스페인</option>
+                            <option value="터키">터키</option>
+                            <option value="스위스">스위스</option>
+                            <option value="이탈리아">이탈리아</option>
+                            <option value="크로아티아">크로아티아</option>
+                            <option value="하와이">하와이</option>
+                            <option value="LA">LA</option>
+                            <option value="뉴욕">뉴욕</option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품명</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" class="admin_inquiry_category2 pro_name">
+                        <input name="title" type="text" class="admin_inquiry_category2 pro_name">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" id="pro_img" multiple class="admin_inquiry_category2">
+                        <input name="file" type="file" id="pro_img" multiple class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">키워드</div>
-                    <div class="admin_inquiry_q3 keyword">
-                        <label for="free" class="checkb"><input type="checkbox" name="keywordchk" id="free">자유일정</label>
-                        <label for="sale" class="checkb"><input type="checkbox" name="keywordchk" id="sale">특가</label>
-                        <label for="no_option" class="checkb"><input type="checkbox" name="keywordchk" id="no_option">노옵션 노쇼핑</label>
-                        <label for="confirmation" class="checkb"><input type="checkbox" name="keywordchk" id="confirmation">출발확정</label>
-                        <label for="timesale" class="checkb"><input type="checkbox" name="keywordchk" id="timesale">한정특가</label>
+                    <div class="admin_inquiry_q3 keyword" >
+                        <label for="free" class="checkb"><input type="checkbox" value="자유일정" name="keyword" id="free">자유일정</label>
+                        <label for="sale" class="checkb"><input type="checkbox" value="특가" name="keyword" id="sale">특가</label>
+                        <label for="no_option" class="checkb"><input type="checkbox" value="노옵션 노쇼핑" name="keyword" id="no_option">노옵션 노쇼핑</label>
+                        <label for="confirmation" class="checkb"><input type="checkbox" value="출발확정" name="keyword" id="confirmation">출발확정</label>
+                        <label for="timesale" class="checkb"><input type="checkbox" value="한정특가" name="keyword" id="timesale">한정특가</label>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -174,44 +184,44 @@
                     <div class="admin_inquiry_q3">
                         <div class="item_price">
                             <span class="admin_inquiry_title price">성인</span>&nbsp;
-                            / <input type="text" class="item_price_input">원
+                            / <input type="text" name="adultPr" class="item_price_input">원
                         </div>
                         <div class="item_price">
                             <span class="admin_inquiry_title price">소아</span>&nbsp;
-                            / <input type="text" class="item_price_input">원
+                            / <input type="text" name="kidPr" class="item_price_input">원
                         </div>
                         <div class="item_price">
                             <span class="admin_inquiry_title price">유아</span>&nbsp;
-                            / <input type="text" class="item_price_input">원
+                            / <input type="text" name="infantPr" class="item_price_input">원
                         </div>
                         <div class="item_price">
                             <span class="admin_inquiry_title price">성인·유아</span>&nbsp;
-                            / <input type="text" class="item_price_input">원
+                            / <input type="text" name="adultInfantPr" class="item_price_input">원
                         </div>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">상품 프로그램</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea name="program" class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">포함사항</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea name="contained" class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">불포함사항</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea name="notContained" class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
             
             <div class="btnlist">
-                <button value="등록"><a href="#">등록</a></button>
-                <button value="취소"><a href="#">취소</a></button>
+                <input type="submit" value="등록">
+                <input type="reset" value="초기화">
             </div>
         </form>
         </div>

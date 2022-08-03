@@ -6,8 +6,12 @@ import com.project.triple.model.network.request.TermsApiRequest;
 import com.project.triple.model.network.response.TermsApiResponse;
 import com.project.triple.repository.TermsRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class TermsApiLogicService extends BaseService<TermsApiRequest, TermsApiResponse, Terms> {
 
     @Autowired

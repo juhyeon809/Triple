@@ -373,7 +373,27 @@ create table adminuser(
 create sequence seq_adminuser
     increment by 1
     start with 1;
-    
+ 
+ create table PACKAGE(
+    idx number(7) primary key,
+    country varchar2(20) not null,
+    title varchar2(20) not null,
+    upload_path varchar2(200) not null,
+    file_name varchar2(200) not null,
+    keyword varchar2(20) not null,
+    adult_pr number(10) not null,
+    kid_pr number(10) not null,
+    infant_pr number(10) not null,
+    adult_infant_pr number(10) not null,
+    program varchar2(400) not null,
+    contained varchar2(400) not null,
+    not_contained varchar2(400) not null
+    reg_date date default sysdate  
+);
+
+create sequence seq_package
+    increment by 1
+    start with 1;   
 
 create table spot(
     idx number(7) primary key,
