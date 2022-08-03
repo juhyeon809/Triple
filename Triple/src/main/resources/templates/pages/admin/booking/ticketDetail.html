@@ -19,20 +19,10 @@
     <script src="/static/app/js/admin.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/Triple/adminUser">TRIPLE</a>
-            </div>
-            <div class="user-info">
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
-                </div>
-            </div>
-        </div>
-        
-    </nav>
+    <!--header-->
+    <div th:replace="fragement/adminHeader :: adminHeader"></div>
+<!--header 끝-->
+
     <!-- 사이드바-->
     <section id="sidebar">
         <aside id="leftsidebar" class="sidebar">

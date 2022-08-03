@@ -5,11 +5,8 @@ import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
-<<<<<<< HEAD
 import com.project.triple.model.network.response.PackageApiResponse;
-=======
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
->>>>>>> d0b8fe370a126ad8f19b542a0edd2feb10639be3
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
@@ -746,121 +743,6 @@ public class PageController {
 
 
 
-    /* 관리자 페이지 */
-    /* 관리자 페이지 로그인*/
-    @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
-    public ModelAndView admin_main(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String userid = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            userid = (String)session.getAttribute("userid");
-            name = (String)session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
-                .addObject("name", name);
-
-    }
-    @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
-    public ModelAndView admin_login() {
-        return new ModelAndView("/pages/admin/admin_login");
-    }
-    @RequestMapping(path="/admin/admin_join")       //http://localhost:9090/Triple/admin/admin_join
-    public ModelAndView admin_join() {
-        return new ModelAndView("/pages/admin/manage/admin_manage_register");
-    }
-
-    //로그인검증
-    @PostMapping("/admin_loginOk")      //http://localhost:9090/Triple/admin/admin_loginOk
-    public ModelAndView admin_loginOk(HttpServletResponse response, HttpServletRequest request, String userid, String userpw) throws IOException {
-        if(adminUserApiLogicService.admin_login(userid, userpw).getData() != null){
-            HttpSession session = request.getSession();
-            String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
-            session.setAttribute("userid", userid);
-            session.setAttribute("userpw", userpw);
-
-            ScriptUtils.alert(response, "로그인 성공" );
-            return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
-                    .addObject("name", name);
-
-        }else{
-            ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
-            return new ModelAndView("/pages/admin/admin_login");
-
-        }
-    }
-    /* 관리자 로그아웃 */
-    @RequestMapping("/admin/logout")
-    public ModelAndView admin_logout(HttpServletResponse response, HttpServletRequest request) throws IOException {
-        HttpSession session = request.getSession();
-        session.setAttribute("userid",null);
-        session.setAttribute("name", null);
-        ScriptUtils.alert(response, "로그아웃 되었습니다.");
-        return new ModelAndView("/pages/admin/admin_login");
-    }
-
-    /*관리자 리스트*/
-    @RequestMapping(path = "/adminList")   //http://localhost:9090/Triple/adminList
-    public ModelAndView adminList(HttpServletRequest request) throws NullPointerException {
-        HttpSession session = request.getSession(false);
-        String userid = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            userid = (String) session.getAttribute("userid");
-            name = (String) session.getAttribute("name");
-        }
-        List<AdminUserApiResponse> adminUserList = adminUserApiLogicService.search().getData();
-        //        List<TimeCollector> timeTakenList = adminUserList.stream().map(adminUserApiResponse ->
-        //                adminUserApiLogicService.timeSort(adminUserApiResponse)
-        //        ).collect(Collectors.toList());
-
-        return new ModelAndView("/pages/admin/manage/admin_manage_list").addObject("userid", userid)
-                .addObject("name", name).addObject("adminUserList", adminUserList);
-    }
-
-    /* 관리자 상세보기 페이지 */
-    @RequestMapping(path="/adminList/admin_detail")       //http://localhost:9090/Triple/adminList/admin_detail
-    public ModelAndView admin_detail() {
-        return new ModelAndView("/pages/admin/manage/admin_manage_detail");
-    }
-    // 마이페이지 메거진 등록
-    @RequestMapping(path = "/admin/magazine_register")
-    public ModelAndView magazine_register(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String userid = null;
-        String name = null;
-        if(session == null){
-
-        }else{
-            userid = (String)session.getAttribute("userid");
-            name = (String)session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/admin/magazine/magazine-register").addObject("userid", userid)
-                .addObject("name", name);
-    }
-
-    //패키지 등록
-    @RequestMapping(path = "/package_register")
-    public ModelAndView package_register(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String userid = null;
-        String name = null;
-        if(session == null){
-
-        }else{
-            userid = (String)session.getAttribute("userid");
-            name = (String)session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/admin/product/packge").addObject("userid", userid)
-                .addObject("name", name);
-    }
 
     //패키지 메인
     @RequestMapping(path = "/package")
@@ -986,6 +868,121 @@ public class PageController {
 
 
 
+    /* 관리자 페이지 */
+    /* 관리자 페이지 로그인*/
+    @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
+    public ModelAndView admin_main(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
+                .addObject("name", name);
+
+    }
+    @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
+    public ModelAndView admin_login() {
+        return new ModelAndView("/pages/admin/admin_login");
+    }
+    @RequestMapping(path="/admin/admin_join")       //http://localhost:9090/Triple/admin/admin_join
+    public ModelAndView admin_join() {
+        return new ModelAndView("/pages/admin/manage/admin_manage_register");
+    }
+
+    //로그인검증
+    @PostMapping("/admin_loginOk")      //http://localhost:9090/Triple/admin/admin_loginOk
+    public ModelAndView admin_loginOk(HttpServletResponse response, HttpServletRequest request, String userid, String userpw) throws IOException {
+        if(adminUserApiLogicService.admin_login(userid, userpw).getData() != null){
+            HttpSession session = request.getSession();
+            String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
+            session.setAttribute("userid", userid);
+            session.setAttribute("userpw", userpw);
+
+            ScriptUtils.alert(response, "로그인 성공" );
+            return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
+                    .addObject("name", name);
+
+        }else{
+            ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
+            return new ModelAndView("/pages/admin/admin_login");
+
+        }
+    }
+    /* 관리자 로그아웃 */
+    @RequestMapping("/admin/logout")
+    public ModelAndView admin_logout(HttpServletResponse response, HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession();
+        session.setAttribute("userid",null);
+        session.setAttribute("name", null);
+        ScriptUtils.alert(response, "로그아웃 되었습니다.");
+        return new ModelAndView("/pages/admin/admin_login");
+    }
+
+    /*관리자 리스트*/
+    @RequestMapping(path = "/adminList")   //http://localhost:9090/Triple/adminList
+    public ModelAndView adminList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<AdminUserApiResponse> adminUserList = adminUserApiLogicService.search().getData();
+        //        List<TimeCollector> timeTakenList = adminUserList.stream().map(adminUserApiResponse ->
+        //                adminUserApiLogicService.timeSort(adminUserApiResponse)
+        //        ).collect(Collectors.toList());
+
+        return new ModelAndView("/pages/admin/manage/admin_manage_list").addObject("userid", userid)
+                .addObject("name", name).addObject("adminUserList", adminUserList);
+    }
+
+    /* 관리자 상세보기 페이지 */
+    @RequestMapping(path="/adminList/admin_detail")       //http://localhost:9090/Triple/adminList/admin_detail
+    public ModelAndView admin_detail() {
+        return new ModelAndView("/pages/admin/manage/admin_manage_detail");
+    }
+    // 마이페이지 메거진 등록
+    @RequestMapping(path = "/admin/magazine_register")
+    public ModelAndView magazine_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/magazine/magazine-register").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    //패키지 등록
+    @RequestMapping(path = "/package_register")
+    public ModelAndView package_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/product/packge").addObject("userid", userid)
+                .addObject("name", name);
+    }
 
 
 
