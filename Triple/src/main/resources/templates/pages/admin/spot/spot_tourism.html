@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 패키지 등록</title>
+    <title>관리자 | 관광지스팟 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
-    <script src="/static/app/js/script.js"></script>
-    <script src="/static/app/js/admin.js"></script>
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
@@ -61,11 +52,11 @@
                         <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown show">
-                        <li><a href=/templates/pages/admin/product/air.html">항공권</a></li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html" style="color:darkslategray; font-weight: bold;">패키지</a></li>
+                        <li><a href="/templates/pages/adminproduct/packge.html">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -104,10 +95,10 @@
                         <li><a href="/Triple/admin/magazine_register">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
+                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
                         <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
-                        <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_tourism.html" style="color:darkslategray; font-weight: bold;">관광지 등록</a></li>
                         <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
                     </ul>
                 </li>
@@ -131,138 +122,155 @@
         </aside>
     </section>
     <!--사이드바 끝-->
-
     <section class="content2">
         <div class="content2-fluid">
             <div class="header_box">
-                <h2>상품등록 | 패키지</h2>
+                <!--타이틀-->
+                <h2>스팟 등록 | 관광</h2>
+                <!--타이틀 끝-->
             </div>
-            <!--타이틀 끝-->
-            <!--패키지 정보 등록-->
-            <form th:action="@{/api/package/register}" onsubmit="return productPackge()" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="adminuserId" th:value="${session.userid}">
-                <input type="hidden" name="adminuserName" th:value="${session.name}">
+            <!--매거진 정보 입력-->
+            <form action="" onsubmit="return spotTour()" name="form">
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">분류</div>
+                    <div class="admin_inquiry_title">장소명</div>
                     <div class="admin_inquiry_q3">
-                        <select name="country" class="admin_inquiry_category2 concategory">
-                            <option value="">지역</option>
-                            <option value="대한민국">대한민국</option>
-                            <option value="필리핀">필리핀</option>
-                            <option value="베트남">베트남</option>
-                            <option value="코타키나발루">코타키나발루</option>
-                            <option value="싱가포르">싱가포르</option>
-                            <option value="괌/사이판">괌/사이판</option>
-                            <option value="스페인">스페인</option>
-                            <option value="터키">터키</option>
-                            <option value="스위스">스위스</option>
-                            <option value="이탈리아">이탈리아</option>
-                            <option value="크로아티아">크로아티아</option>
-                            <option value="하와이">하와이</option>
-                            <option value="LA">LA</option>
-                            <option value="뉴욕">뉴욕</option>
-                        </select>
+                        <input type="text" id="placeName" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">상품명</div>
+                    <div class="admin_inquiry_title">장소타이틀</div>
                     <div class="admin_inquiry_q3">
-                        <input name="title" type="text" class="admin_inquiry_category2 pro_name">
+                        <input type="text" id="place_title" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">상품 이미지</div>
+                    <div class="admin_inquiry_title">장소 이미지1</div>
                     <div class="admin_inquiry_q3">
-                        <input name="file" type="file" id="pro_img" multiple class="admin_inquiry_category2">
+                        <input type="file" id="pro_img1" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">키워드</div>
-                    <div class="admin_inquiry_q3 keyword" >
-                        <label for="free" class="checkb"><input type="checkbox" value="자유일정" name="keyword" id="free">자유일정</label>
-                        <label for="sale" class="checkb"><input type="checkbox" value="특가" name="keyword" id="sale">특가</label>
-                        <label for="no_option" class="checkb"><input type="checkbox" value="노옵션 노쇼핑" name="keyword" id="no_option">노옵션 노쇼핑</label>
-                        <label for="confirmation" class="checkb"><input type="checkbox" value="출발확정" name="keyword" id="confirmation">출발확정</label>
-                        <label for="timesale" class="checkb"><input type="checkbox" value="한정특가" name="keyword" id="timesale">한정특가</label>
+                    <div class="admin_inquiry_title">장소 미니 타이틀1</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="mini_name" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">상품가격</div>
+                    <div class="admin_inquiry_title">스팟 내용1</div> 
                     <div class="admin_inquiry_q3">
-                        <div class="item_price">
-                            <span class="admin_inquiry_title price">성인</span>&nbsp;
-                            / <input type="text" name="adultPr" class="item_price_input">원
-                        </div>
-                        <div class="item_price">
-                            <span class="admin_inquiry_title price">소아</span>&nbsp;
-                            / <input type="text" name="kidPr" class="item_price_input">원
-                        </div>
-                        <div class="item_price">
-                            <span class="admin_inquiry_title price">유아</span>&nbsp;
-                            / <input type="text" name="infantPr" class="item_price_input">원
-                        </div>
-                        <div class="item_price">
-                            <span class="admin_inquiry_title price">성인·유아</span>&nbsp;
-                            / <input type="text" name="adultInfantPr" class="item_price_input">원
+                        <div class="admin_inquiry_a1">
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                                스팟내용을 입력해주세요
+                            </textarea>
                         </div>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">상품 프로그램</div>
+                    <div class="admin_inquiry_title">상품 이미지2</div>
                     <div class="admin_inquiry_q3">
-                        <textarea name="program" class="weditor1" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <input type="file" id="pro_img2" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">포함사항</div>
+                    <div class="admin_inquiry_title">장소 미니 타이틀2</div>
                     <div class="admin_inquiry_q3">
-                        <textarea name="contained" class="weditor2" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <input type="text" id="pro_name" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">불포함사항</div>
+                    <div class="admin_inquiry_title">스팟 내용2</div> 
                     <div class="admin_inquiry_q3">
-                        <textarea name="notContained" class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <div class="admin_inquiry_a1">
+                            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
+                                스팟내용을 입력해주세요
+                            </textarea>
+                        </div>
                     </div>
                 </div>
-            
-            <div class="btnlist">
-                <input type="submit" value="등록">
-                <input type="reset" value="초기화">
-            </div>
-        </form>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">주요 볼거리</div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 1</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main1_img" class="admin_inquiry_category2">
+                            <input type="text" id="main_tit" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="main_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 2</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main2_img" class="admin_inquiry_category2">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 3</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main3_img" class="admin_inquiry_category2">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">기본 정보</div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title" style="height: 450px;">기본정보 입력</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="text" id="recommend" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="권장체류시간">
+                            <input type="text" id="way" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="가는방법">
+                            <input type="text" id="time" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일">
+                            <input type="text" id="pay" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용료">
+                            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px; margin-top: 15px;">
+                            이곳의 이용방법
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="등록"><a href="#">등록</a></button>
+                    <button value="취소"><a href="#">취소</a></button>
+                </div>
+            </form>
         </div>
-    </div>
-</section>
+    </section>
 
+    <script src="/admin/script.js"></script>
+    <script src="/admin/js/register.js"></script>
+    <script>
+        var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    
+            var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor1",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
 
-
-<script>
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
-
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor1",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor2",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
-</script>
-
-    <script src="../script.js"></script>
-    <script src="/admin/js/prduct.js"></script>
+            var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor2",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    </script>
 </body>
 </html>

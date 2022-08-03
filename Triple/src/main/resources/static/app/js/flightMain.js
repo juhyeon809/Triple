@@ -177,6 +177,16 @@ $(function() {
         $('#search1').hide();
     })
 
+    //직항 수화물버튼클릭시 색상변경
+    let direct = document.querySelector(".direct");
+    direct.addEventListener('click',function(){
+        direct.classList.toggle("color");
+    });
+    let luggage = document.querySelector(".luggage");
+    luggage.addEventListener('click', function(){
+        luggage.classList.toggle("color");
+    })
+
 
     $(document).on('click', '#search2', function () {
 
@@ -223,3 +233,4 @@ $(function() {
     });
 
 });
+

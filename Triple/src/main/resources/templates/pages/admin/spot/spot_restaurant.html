@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 회원 항공권정보</title>
+    <title>관리자 | 맛집스팟 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
-    <script src="/static/app/js/script.js"></script>
-    <script src="/static/app/js/admin.js"></script>
-    <style>
-        .infolist{
-            margin-bottom: 150px;
-        }
-    </style>
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -42,9 +29,9 @@
     <section id="sidebar">
         <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
-                <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/member/memberlist.html" style="color:darkslategray; font-weight: bold;">회원목록</a></li>
+                        <li><a href="/templates/pages/admin/member/memberlist.html">회원목록</a></li>
                         <li><a href="/templates/pages/admin/member/memberSign-up.html">회원가입</a></li>
                     </ul>
                 </li>
@@ -58,12 +45,11 @@
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown show">
+                    <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
-
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -83,7 +69,7 @@
                         <li><a href="/templates/pages/admin/productlist/admin_productlist_restaurant.html">다이닝</a></li>
                     </ul>
                 </li>
-                <li><a href="/templates/pages/admin/review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -109,15 +95,15 @@
                         <li><a href="/Triple/admin/magazine_register">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
+                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
                         <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                         <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
-                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html" style="color:darkslategray; font-weight: bold;">맛집 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
-
+                    
                 </li>
                 <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -136,103 +122,97 @@
         </aside>
     </section>
     <!--사이드바 끝-->
-    <section class="content2"> 
+    <section class="content2">
         <div class="content2-fluid">
-
-            <!--타이틀-->
             <div class="header_box">
-                <h2 style="width: 300px;">김사과님의 항공권예약</h2>
+                <!--타이틀-->
+                <h2>스팟 등록 | 맛집</h2>
+                <!--타이틀 끝-->
             </div>
-            <!--타이틀 끝-->
-            <div class="header_box">
-                <h2>가는편</h2>
-            </div>
-            <!--항공편정보1-->
-            <table class="tbList colortb">
-                <tr>
-                    <th>예약자</th>
-                    <td>김사과</td>
-                    <th>연락처</th>
-                    <td>010-1111-1111</td>
-                </tr>
-                <tr>
-                    <th>예약자(영문)</th>
-                    <td>Kim Sagwa</td>
-                    <th>예약번호</th>
-                    <td>T421357</td>
-                </tr>
-                <tr>
-                    <th>출발지</th>
-                    <td>인천</td>
-                    <th>도착지</th>
-                    <td>다낭</td>
-                </tr>
-                <tr>
-                    <th>편도/왕복</th>
-                    <td>왕복</td>
-                    <th>예약날짜</th>
-                    <td>2022.07.13</td>
-                </tr>
-                <tr>
-                    <th>결제금액</th>
-                    <td>268,100원</td>
-                    <th>결제날짜</th>
-                    <td>2022.03.18</td>
-                </tr>
-                <tr>
-                    <th>결제</th>
-                    <td>결제완료</td>
-                    <th>승인내역</th>
-                    <td>승인</td>
-                </tr>
-            </table>
-            <!--항공편정보1 끝-->
-            <div class="header_box">
-                <h2 >오는편</h2>
-            </div>
-            <!--항공편정보2-->
-            <table class="tbList colortb">
-                <tr>
-                    <th>예약자</th>
-                    <td>김사과</td>
-                    <th>연락처</th>
-                    <td>010-1111-1111</td>
-                </tr>
-                <tr>
-                    <th>예약자(영문)</th>
-                    <td>Kim Sagwa</td>
-                    <th>예약번호</th>
-                    <td>T421345</td>
-                </tr>
-                <tr>
-                    <th>출발지</th>
-                    <td>다낭</td>
-                    <th>도착지</th>
-                    <td>인천</td>
-                </tr>
-                <tr>
-                    <th>편도/왕복</th>
-                    <td>왕복</td>
-                    <th>예약날짜</th>
-                    <td>2022.07.17</td>
-                </tr>
-                <tr>
-                    <th>결제금액</th>
-                    <td>268,100원</td>
-                    <th>결제날짜</th>
-                    <td>2022.03.18</td>
-                </tr>
-                <tr>
-                    <th>결제</th>
-                    <td>결제완료</td>
-                    <th>승인내역</th>
-                    <td>승인</td>
-                </tr>
-            </table>
-            <!--항공편정보2 끝-->
+            <!--매거진 정보 입력-->
+            <form action="" onsubmit="return spotRestaurant()" name="form">
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소명</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="placeName" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">식당 타이틀</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="place_title" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">대표메뉴</div>
+                </div>
+                <div class="admin_inquiry_qtext"  style="height: 220px;">
+                    <div class="admin_inquiry_title" style="height: 200px;">메뉴1</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="menu_img" class="admin_inquiry_category2">
+                            <input type="text" id="menu_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input type="text" id="menu_tit" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input type="text" id="menu_price" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 220px;">
+                    <div class="admin_inquiry_title" style="height: 200px;">메뉴2</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="menu_img2" class="admin_inquiry_category2">
+                            <input type="text" id="menu_name2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input type="text" id="menu_tit2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input type="text" id="menu_price2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title" style="height: 200px;">메뉴3</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="menu_img3" class="admin_inquiry_category2">
+                            <input type="text" id="menu_name3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input type="text" id="menu_tit3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input type="text" id="menu_price3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">기본 정보</div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title" style="height: 400px;">기본정보 입력</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="text" id="Basic1" class="admin_inquiry_category2" placeholder="가는방법">
+                            <input type="text" id="Basic2" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일">
+                            <input type="text" id="Basic3" class="admin_inquiry_category2" style="margin-top: 15px; margin-bottom: 10px;" placeholder="이용팁">
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="등록"><a href="#">등록</a></button>
+                    <button value="취소"><a href="#">취소</a></button>
+                </div>
+            </form>
         </div>
     </section>
 
-    <script src="../script.js"></script>
+    <script src="/admin/script.js"></script>
+    <script src="/admin/js/register.js"></script>
+    <script>
+        var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    
+            
+    </script>
 </body>
 </html>
