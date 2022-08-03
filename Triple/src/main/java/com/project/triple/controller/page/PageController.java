@@ -6,11 +6,13 @@ import com.project.triple.model.network.response.AirResponse.AirTicketApiRespons
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.PackageApiResponse;
+import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
 import com.project.triple.service.PackageApiLogicService;
+import com.project.triple.service.RestaurantService.RestaurantApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +52,9 @@ public class PageController {
 
     @Autowired
     private PackageApiLogicService packageApiLogicService;
+
+    @Autowired
+    private RestaurantApiLogicService restaurantApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -1034,7 +1039,7 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
 
-    //패키지 등록
+    //맛집 등록
     @RequestMapping(path = "/restaurant_register")
     public ModelAndView restaurant_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -1049,6 +1054,42 @@ public class PageController {
 
         return new ModelAndView("/pages/admin/spot/spot_restaurant").addObject("userid", userid)
                 .addObject("name", name);
+    }
+
+    @RequestMapping(path = "/spot/restaurant")      //http://localhost:9090/Triple/package/view/
+    public ModelAndView restaurant_list( HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        List<RestaurantApiResponse> restaurantApiResponseList = restaurantApiLogicService.list().getData();
+
+        return new ModelAndView("/pages/travel_spot/spot_restaurant_list").addObject("email", email)
+                .addObject("nickname", nickname).addObject("restaurantList", restaurantApiResponseList);
+    }
+
+    @RequestMapping(path = "/spot/restaurant/view/{idx}")      //http://localhost:9090/Triple/package/view/
+    public ModelAndView restaurant_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        RestaurantApiResponse restaurantApiResponse = restaurantApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
+                .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse);
     }
 
 

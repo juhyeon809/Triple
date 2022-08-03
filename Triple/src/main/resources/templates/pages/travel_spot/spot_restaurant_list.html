@@ -21,96 +21,23 @@
 
     <div id="travel_spot_img"></div>
     <main>
-    <p class="title_text">괌 관광 <select name="" id=""></select></p>
+    <p class="title_text">맛집 리스트 <select name="" id=""></select></p>
     <div class="restaurant_list_box">
-        <div class="restaurant_flex_box">
+        <div class="restaurant_flex_box" th:each="restaurant : ${restaurantList}">
             <div class="image_area">
-                <a href="./spot_restaurant_info.html"><img src="/lib/img/travel_spot_img/beachinshrimp.jpg" alt=""></a>
+                <a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}"><img th:src="@{${restaurant.getUploadPath1()}}" alt=""></a>
             </div>
             <div class="text_area">
-                <p class="restauran_list_title_text"><a href="/templates/pages/travel_spot/spot_restaurant_info.html"> 비치 인 쉬림프 1호점</a></p>
-                <p>신선한 재료를 사용하는 새우 요리 전문점</p>
+                <p class="restauran_list_title_text"><a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}" th:text="${restaurant.getTitle()}"> </a></p>
+                <p th:text="${restaurant.getSummary()}"></p>
                 <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬,타무닝</p>
+                <p th:text="${restaurant.getLocation()}"></p>
                 <br>
                 <p class="bold_font">이용가능시간,휴무일</p>
-                <p class="bold_font">오늘 11:00 - 21:00</p>
-                <p class="bold_font">비정기 휴무 있음 (홈페이지 참고)</p>
+                <p class="bold_font" th:text="${restaurant.getAvailableAt()}"></p>
             </div>
+            <hr>
         </div>
-        <hr>
-    </div>
-    <div class="restaurant_list_box">
-        <div class="restaurant_flex_box">
-            <div class="image_area">
-                <a href="./spot_restaurant_info.html"><img src="/lib/img/travel_spot_img/eggandthings.jpg" alt=""></a>
-            </div>
-            <div class="text_area">
-                <p class="title_text"><a href="./spot_restaurant_info.html"> 에그 앤 띵스</a></p>
-                <p>하와이안 브런치 메뉴를 맛볼 수 있는 레스토랑</p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬,타무닝</p>
-                <br>
-                <p class="bold_font">이용가능시간,휴무일</p>
-                <p class="bold_font">오늘 11:00 - 21:00</p>
-                <p class="bold_font">비정기 휴무 있음 (홈페이지 참고)</p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="restaurant_list_box">
-        <div class="restaurant_flex_box">
-            <div class="image_area">
-                <a href="/templates/pages/travel_spot/spot_restaurant_info.html"><img src="/lib/img/travel_spot_img/proa.jpg" alt=""></a>
-            </div>
-            <div class="text_area">
-                <p class="title_text"><a href="./spot_restaurant_info.html"> 프로아 1호점</a></p>
-                <p>숯불에 구워 육즙 가득한 다양한 종류의 바비큐 립이 유명한 레스토랑</p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬,타무닝</p>
-                <br>
-                <p class="bold_font">이용가능시간,휴무일</p>
-                <p class="bold_font">오늘 11:00 - 21:00</p>
-                <p class="bold_font">비정기 휴무 있음 (홈페이지 참고)</p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="restaurant_list_box">
-        <div class="restaurant_flex_box">
-            <div class="image_area">
-                <a href="/templates/pages/travel_spot/spot_restaurant_info.html"><img src="/lib/img/travel_spot_img/pikascafe.webp" alt=""></a>
-            </div>
-            <div class="text_area">
-                <p class="title_text"><a href="/templates/pages/travel_spot/spot_restaurant_info.html"> 피카스 카페</a></p>
-                <p>하와이안 덮밥 '로코모코'를 맛볼 수 있는 브런치 카페</p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬,타무닝</p>
-                <br>
-                <p class="bold_font">이용가능시간,휴무일</p>
-                <p class="bold_font">오늘 11:00 - 21:00</p>
-                <p class="bold_font">비정기 휴무 있음 (홈페이지 참고)</p>
-            </div>
-        </div>
-        <hr>
-    </div>
-    <div class="restaurant_list_box">
-        <div class="restaurant_flex_box">
-            <div class="image_area">
-                <a href="/templates/pages/travel_spot/spot_restaurant_info.html"><img src="/lib/img/travel_spot_img/beachbarandgrill.jpg" alt=""></a>
-            </div>
-            <div class="text_area">
-                <p class="title_text"><a href="/templates/pages/travel_spot/spot_restaurant_info.html"> 비치 바 앤 그릴</a></p>
-                <p>탁 트인 해변에서 볼 수 있는 일몰과 각종 라이브 공연이 유명한 비치 바</p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬,타무닝</p>
-                <br>
-                <p class="bold_font">이용가능시간,휴무일</p>
-                <p class="bold_font">오늘 11:00 - 21:00</p>
-                <p class="bold_font">비정기 휴무 있음 (홈페이지 참고)</p>
-            </div>
-        </div>
-        <hr>
     </div>
     </main>
 <!-- footer 시작 -->

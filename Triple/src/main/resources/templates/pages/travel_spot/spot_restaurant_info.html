@@ -18,7 +18,7 @@
     <!--header 시작-->
     <div th:replace="fragement/header :: header"></div>
     <!--header 끝-->
-    <div id="restaurant_img"></div>
+    <div id="restaurant_img"><img th:src="@{${restaurant.getUploadPath1()}}"></div>
     <main>
         <div id="utility_box">
             <div id="utility_flex_box">
@@ -31,104 +31,90 @@
                 </div>
             </div>
             <div class="text_area">
-                <p class="title_text">비치 인 쉬림프 1호점</p>
-                <p>신선한 재료를 사용하는 새우 요리 전문점</p>
+                <p class="title_text" th:text="${restaurant.getTitle()}"></p>
+                <p th:text="${restaurant.getSummary()}"></p>
                 <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장10,981</p>
-                <p>음식점 <span>&#183;</span> 투몬, 타무닝</p>
+                <p th:text="${restaurant.getLocation()}"></p>
             </div>
         </div>
         <div id="info_box">
-            <p class="info_box_title">신선한 재료를 사용하는 새우 요리 전문점</p>
+            <p class="info_box_title" th:text="${restaurant.getTitle()}"></p>
             <p class="info_box_subtitle">대표 메뉴</p>
             <div class="info_list_flex_box">
                 <div class="menu_image">
-                    <img src="/lib/img/travel_spot_img/frenchbreadwithshrimp.webp" alt="">
+                    <img th:src="@{${restaurant.getUploadPath2()}}" alt="">
                 </div>
                 <div class="menu_description">
-                    <p class="menu_name">프렌지 빵과 비친 쉬림프</p>
-                    <p class="menu_description_text">특제 비법 육수와 새우를 넣고 조리한 수프에 빵을 곁들여 먹는 메뉴</p>
-                    <p class="menu_price">18.99$</p>
+                    <p class="menu_name" th:text="${restaurant.getMenuName1()}"></p>
+                    <p class="menu_description_text" th:text="${restaurant.getMenuDescription1()}"></p>
+                    <p class="menu_price" th:text="${restaurant.getMenuPrice1()} + '원'"></p>
                 </div>
             </div>
             <div class="info_list_flex_box">
                 <div class="menu_image">
-                    <img src="/lib/img/travel_spot_img/gambas.webp" alt="">
+                    <img th:src="@{${restaurant.getUploadPath3()}}" alt="">
                 </div>
                 <div class="menu_description">
-                    <p class="menu_name">감바스 알 아질로</p>
-                    <p class="menu_description_text">올리브유와 마늘에 새우를 볶아낸 메뉴</p>
-                    <p class="menu_price">17.99$</p>
+                    <p class="menu_name" th:text="${restaurant.getMenuName2()}"></p>
+                    <p class="menu_description_text" th:text="${restaurant.getMenuDescription2()}"></p>
+                    <p class="menu_price" th:text="${restaurant.getMenuPrice2()} + '원'"></p>
                 </div>
             </div>
             <div class="info_list_flex_box">
                 <div class="menu_image">
-                    <img src="/lib/img/travel_spot_img/californiaroll.webp" alt="">
+                    <img th:src="@{${restaurant.getUploadPath4()}}" alt="">
                 </div>
                 <div class="menu_description">
-                    <p class="menu_name">캘리포니아 새우 롤</p>
-                    <p class="menu_description_text">새우와 아보카도, 몬테레이 잭 치즈, 베이컨 등을 넣어 튀겨낸 스프링 롤</p>
-                    <p class="menu_price">12.99$</p>
-                </div>
-            </div>
-            <div class="info_list_flex_box">
-                <div class="menu_image">
-                    <img src="/lib/img/travel_spot_img/coconutshrimp.webp" alt="">
-                </div>
-                <div class="menu_description">
-                    <p class="menu_name">코코넛 새우와 고구마 튀김</p>
-                    <p class="menu_description_text">튀김옷과 코코넛 가루를 입혀 튀겨낸 새우에 칠리소스를 곁들인 메뉴</p>
-                    <p class="menu_price">18.99$</p>
+                    <p class="menu_name" th:text="${restaurant.getMenuName3()}"></p>
+                    <p class="menu_description_text" th:text="${restaurant.getMenuDescription3()}"></p>
+                    <p class="menu_price" th:text="${restaurant.getMenuPrice3()} + '원'"></p>
                 </div>
             </div>
             <p id="basic_info_text">기본 정보</p>
             <div id="basic_info">
                 <div id="basic_info_flex_box">
-                    <div id="map_area">
-                        <img src="/lib/img/travel_spot_img/map.png" alt="">
-                    </div>
-                    <div id="basic_info_text_area">
-                        <table>
-                            <tr>
-                                <td class="table_index">주소</td>
-                                <td>Tumon, Guam, Mariana Islands</td>
-                            </tr>
-                            <tr>
-                                <td class="table_index">전화</td>
-                                <td>+16716474107</td>
-                            </tr>
-                            <tr>
-                                <td class="table_index">홈페이지</td>
-                                <td><a href="http://www.puntandosamantes.com">http://www.puntandosamantes.com</a></td>
-                            </tr>
-                        </table>
-                        <div id="button_box">
-                            <a href=""><div id="asking"><p>현지에서 길묻기</p></div></a>
-                            <a href=""><div id="finding"><p>길찾기</p></div></a>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div id="tips_for_visiting">
+<!--                    <div id="map_area">-->
+<!--                        <img src="/lib/img/travel_spot_img/map.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div id="basic_info_text_area">-->
+<!--                        <table>-->
+<!--                            <tr>-->
+<!--                                <td class="table_index">주소</td>-->
+<!--                                <td>Tumon, Guam, Mariana Islands</td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td class="table_index">전화</td>-->
+<!--                                <td>+16716474107</td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td class="table_index">홈페이지</td>-->
+<!--                                <td><a href="http://www.puntandosamantes.com">http://www.puntandosamantes.com</a></td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                        <div id="button_box">-->
+<!--                            <a href=""><div id="asking"><p>현지에서 길묻기</p></div></a>-->
+<!--                            <a href=""><div id="finding"><p>길찾기</p></div></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+                <div id="tips_for_visiting" >
                     <div class="flex_div">
                         <p class="index_p">가는방법</p>
-                        <p class="context_p">마이크로네시아 몰에서 차로 4분</p>
+                        <p class="context_p"th:text="${restaurant.getHowToGO()}"></p>
                     </div>
                     <div class="flex_div">
-                        <p class="index_p">이용가능시간, 휴무일</p>
-                        <p class="context_p"><span class="blue_text">오늘 07:00 - 19:00</span></p>
+                        <p class="index_p" >이용가능시간, 휴무일</p>
+                        <p class="context_p"><span class="blue_text" th:text="${restaurant.getAvailableAt()}"></span></p>
                     </div>
                     <div class="flex_div">
                         <p class="index_p">이곳의 이용팁</p>
-                        <p class="context_p">유료 셔틀 버스 운행</p>
+                        <p class="context_p" th:text="${restaurant.getTip()}"></p>
                     </div>
                     <div id="no_border_box" class="flex_div">
                         <p class="index_p"></p>
                     <div>
-                        <p class="context_p">- T 갤러리아 DFS <-> 사랑의 절벽</p>
-                        <p class="context_p">- 왕복 10달러(전망대 입장료 포함)</p>
-                        <p class="context_p">- 마이크로네시아 몰 경유</p>
-                        <p class="context_p">전망대 입장권 뒷면에 레스토랑 제휴 할인 쿠폰 있음</p>
-                        <p class="context_p">배틀트립 촬영 장소</p>
+                        <p class="context_p" th:text="${restaurant.getEtc()}"></p>
                     </div>
                 </div>
                 </div>

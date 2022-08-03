@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -63,7 +65,10 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
     @Override
     public Header<RestaurantApiResponse> read(Long id) {
-        return null;
+
+        return restaurantRepository.findById(id).map(restaurant -> response(restaurant)).map(Header::OK)
+                .orElseGet(()->Header.ERROR("데이터 없음"));
+
     }
 
     @Override
@@ -104,5 +109,12 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         restaurant.setFileName4(filename4);
         restaurant.setUploadPath4("/files/" + filename4);
         restaurantRepository.save(restaurant);
+    }
+
+    public Header<List<RestaurantApiResponse>> list(){
+
+        List<RestaurantApiResponse> restaurantApiResponseList =  restaurantRepository.findAll().stream().map(restaurant -> response(restaurant)).collect(Collectors.toList());
+
+        return Header.OK(restaurantApiResponseList);
     }
 }
