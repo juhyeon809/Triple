@@ -899,8 +899,14 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<PackageApiResponse> hawaii = packageApiLogicService.sort_by_country("하와이").getData();
+        List<PackageApiResponse> LA = packageApiLogicService.sort_by_country("LA").getData();
+        List<PackageApiResponse> newYork = packageApiLogicService.sort_by_country("뉴욕").getData();
+
         return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("hawaiiList", hawaii).addObject("LAList", LA)
+                .addObject("newYorkList", newYork);
+
     }
 
     @RequestMapping(path = "/package/eastsouthasia")
@@ -915,8 +921,17 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<PackageApiResponse> thailand = packageApiLogicService.sort_by_country("태국").getData();
+        List<PackageApiResponse> philipine = packageApiLogicService.sort_by_country("필리핀").getData();
+        List<PackageApiResponse> cota = packageApiLogicService.sort_by_country("코타키나발루").getData();
+        List<PackageApiResponse> singapore = packageApiLogicService.sort_by_country("싱가포르").getData();
+        List<PackageApiResponse> vietnam = packageApiLogicService.sort_by_country("베트남").getData();
+
+
         return new ModelAndView("/pages/travel_package/package_eastsouthasia").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("thailandList", thailand)
+                .addObject("philipineList",philipine).addObject("cotaList",cota)
+                .addObject("singList",singapore).addObject("vietnamList",vietnam);
     }
 
     @RequestMapping(path = "/package/europe")
@@ -930,9 +945,17 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+        List<PackageApiResponse> spain = packageApiLogicService.sort_by_country("스페인").getData();
+        List<PackageApiResponse> turkey = packageApiLogicService.sort_by_country("터키").getData();
+        List<PackageApiResponse> swiss = packageApiLogicService.sort_by_country("스위스").getData();
+        List<PackageApiResponse> italy = packageApiLogicService.sort_by_country("이탈리아").getData();
+        List<PackageApiResponse> croatia = packageApiLogicService.sort_by_country("크로아티아").getData();
+
 
         return new ModelAndView("/pages/travel_package/package_europe").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("spainList", spain)
+                .addObject("turkeyList", turkey).addObject("swissList",swiss)
+                .addObject("italyList", italy).addObject("croatia", croatia);
     }
 
     @RequestMapping(path = "/package/japan")
@@ -947,8 +970,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<PackageApiResponse> hokkaido = packageApiLogicService.sort_by_country("북해도").getData();
+        List<PackageApiResponse> osaka = packageApiLogicService.sort_by_country("오사카").getData();
+
+
         return new ModelAndView("/pages/travel_package/package_japan").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("hokkaidoList", hokkaido)
+                .addObject("osakaList", osaka);
     }
 
     @RequestMapping(path = "/package/southpacific")
@@ -963,8 +991,11 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
-                .addObject("nickname", nickname);
+        List<PackageApiResponse> guam = packageApiLogicService.sort_by_country("괌/사이판").getData();
+
+
+        return new ModelAndView("/pages/travel_package/package_southpacific").addObject("email", email)
+                .addObject("nickname", nickname).addObject("guamList", guam);
     }
 
     @RequestMapping(path = "/package/specialprice")
@@ -979,8 +1010,10 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
-                .addObject("nickname", nickname);
+        List<PackageApiResponse> special = packageApiLogicService.sort_by_keyword("특가").getData();
+
+        return new ModelAndView("/pages/travel_package/package_specialprice").addObject("email", email)
+                .addObject("nickname", nickname).addObject("specialList", special);
     }
 
     @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/magazine_guesthouse
@@ -1000,5 +1033,7 @@ public class PageController {
         return new ModelAndView("/pages/travel_package/package_view").addObject("email", email)
                 .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
+
+
 
 }
