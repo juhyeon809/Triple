@@ -777,7 +777,7 @@ public class PageController {
             HttpSession session = request.getSession();
             String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
             session.setAttribute("userid", userid);
-            session.setAttribute("userpw", userpw);
+            session.setAttribute("name", name);
 
             ScriptUtils.alert(response, "로그인 성공" );
             return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)

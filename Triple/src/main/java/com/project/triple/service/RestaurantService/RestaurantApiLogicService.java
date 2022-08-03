@@ -28,16 +28,15 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
                 .location(restaurant.getLocation())
                 .title(restaurant.getTitle())
                 .summary(restaurant.getSummary())
-                .menu1Description(restaurant.getMenu1Description())
-                .menu1Name(restaurant.getMenu1Name())
-                .menu1Description(restaurant.getMenu1Description())
-                .menu1Price(restaurant.getMenu1Price())
-                .menu2Name(restaurant.getMenu2Name())
-                .menu2Description(restaurant.getMenu2Description())
-                .menu2Price(restaurant.getMenu2Price())
-                .menu3Name(restaurant.getMenu3Name())
-                .menu3Description(restaurant.getMenu3Description())
-                .menu3Price(restaurant.getMenu3Price())
+                .menuDescription1(restaurant.getMenuDescription1())
+                .menuName1(restaurant.getMenuName1())
+                .menuPrice1(restaurant.getMenuPrice1())
+                .menuName2(restaurant.getMenuName2())
+                .menuDescription2(restaurant.getMenuDescription2())
+                .menuPrice2(restaurant.getMenuPrice2())
+                .menuDescription3(restaurant.getMenuDescription3())
+                .menuName3(restaurant.getMenuName3())
+                .menuPrice3(restaurant.getMenuPrice3())
                 .howToGO(restaurant.getHowToGO())
                 .tip(restaurant.getTip())
                 .etc(restaurant.getEtc())
@@ -80,25 +79,28 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
     public void write(Restaurant restaurant, MultipartFile restaurantpic, MultipartFile menu1img,MultipartFile menu2img,MultipartFile menu3img) throws Exception{
 
         String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
-        UUID uuid = UUID.randomUUID();
-        String filename1 = uuid + "_" + restaurantpic.getOriginalFilename();
+        UUID uuid1 = UUID.randomUUID();
+        UUID uuid2 = UUID.randomUUID();
+        UUID uuid3 = UUID.randomUUID();
+        UUID uuid4 = UUID.randomUUID();
+        String filename1 = uuid1 + "_" + restaurantpic.getOriginalFilename();
         File savFile1 = new File(projectpath, filename1);
-        String filename2 = uuid + "_" + menu1img.getOriginalFilename();
-        File savFile2 = new File(projectpath, filename1);
-        String filename3 = uuid + "_" + menu2img.getOriginalFilename();
-        File savFile3 = new File(projectpath, filename1);
-        String filename4 = uuid + "_" + menu3img.getOriginalFilename();
-        File savFile4 = new File(projectpath, filename1);
+        String filename2 = uuid2 + "_" + menu1img.getOriginalFilename();
+        File savFile2 = new File(projectpath, filename2);
+        String filename3 = uuid3 + "_" + menu2img.getOriginalFilename();
+        File savFile3 = new File(projectpath, filename3);
+        String filename4 = uuid4 + "_" + menu3img.getOriginalFilename();
+        File savFile4 = new File(projectpath, filename4);
         restaurantpic.transferTo(savFile1);
         restaurant.setFileName1(filename1);
         restaurant.setUploadPath1("/files/" + filename1);
-        restaurantpic.transferTo(savFile2);
+        menu1img.transferTo(savFile2);
         restaurant.setFileName2(filename2);
         restaurant.setUploadPath2("/files/" + filename2);
-        restaurantpic.transferTo(savFile3);
+        menu2img.transferTo(savFile3);
         restaurant.setFileName3(filename3);
         restaurant.setUploadPath3("/files/" + filename3);
-        restaurantpic.transferTo(savFile4);
+        menu3img.transferTo(savFile4);
         restaurant.setFileName4(filename4);
         restaurant.setUploadPath4("/files/" + filename4);
         restaurantRepository.save(restaurant);
