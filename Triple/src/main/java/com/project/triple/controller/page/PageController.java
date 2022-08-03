@@ -1001,9 +1001,4 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
 
-
-
-
-
-
 }
