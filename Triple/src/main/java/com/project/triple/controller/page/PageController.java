@@ -5,11 +5,8 @@ import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
-<<<<<<< HEAD
 import com.project.triple.model.network.response.PackageApiResponse;
-=======
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
->>>>>>> d0b8fe370a126ad8f19b542a0edd2feb10639be3
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
@@ -814,13 +811,13 @@ public class PageController {
             userid = (String) session.getAttribute("userid");
             name = (String) session.getAttribute("name");
         }
-        List<AdminUserApiResponse> adminUserList = adminUserApiLogicService.search().getData();
+//        List<AdminUserApiResponse> adminUserList = adminUserApiLogicService.search().getData();
         //        List<TimeCollector> timeTakenList = adminUserList.stream().map(adminUserApiResponse ->
         //                adminUserApiLogicService.timeSort(adminUserApiResponse)
         //        ).collect(Collectors.toList());
 
-        return new ModelAndView("/pages/admin/manage/admin_manage_list").addObject("userid", userid)
-                .addObject("name", name).addObject("adminUserList", adminUserList);
+        return new ModelAndView("/pages/admin/manage/admin_manage_list").addObject("userid", userid);
+//                .addObject("name", name).addObject("adminUserList", adminUserList);
     }
 
     /* 관리자 상세보기 페이지 */
@@ -881,11 +878,13 @@ public class PageController {
         List<PackageApiResponse> Singapores = packageApiLogicService.sort_by_country("싱가포르").getData();
         List<PackageApiResponse> Italys = packageApiLogicService.sort_by_country("이탈리아").getData();
         List<PackageApiResponse> americas = packageApiLogicService.sort_double("하와이","LA").getData();
+        List<PackageApiResponse> confirmed = packageApiLogicService.sort_by_keyword("출발확정").getData();
 
 
         return new ModelAndView("/pages/travel_package/package_main").addObject("email", email)
                 .addObject("nickname", nickname).addObject("guams", guams).addObject("vietnams",vietnams)
-                .addObject("Singapores", Singapores).addObject("Italys", Italys).addObject("americas", americas);
+                .addObject("Singapores", Singapores).addObject("Italys", Italys).addObject("americas", americas)
+                .addObject("confirmedList",confirmed);
     }
 
     @RequestMapping(path = "/package/america")
@@ -982,6 +981,24 @@ public class PageController {
 
         return new ModelAndView("/pages/travel_package/package_america").addObject("email", email)
                 .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/magazine_guesthouse
+    public ModelAndView package_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        PackageApiResponse packageApiResponse = packageApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/travel_package/package_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
 
 

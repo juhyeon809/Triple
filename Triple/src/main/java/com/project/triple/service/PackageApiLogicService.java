@@ -56,7 +56,8 @@ public class PackageApiLogicService extends BaseService<PackageApiRequest, Packa
 
     @Override
     public Header<PackageApiResponse> read(Long id) {
-        return null;
+        return packageRepository.findById(id).map(aPackage -> response(aPackage)).map(Header::OK)
+                .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
     @Override
