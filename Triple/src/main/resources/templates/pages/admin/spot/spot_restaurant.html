@@ -120,17 +120,27 @@
                 <!--타이틀 끝-->
             </div>
             <!--매거진 정보 입력-->
-            <form action="" onsubmit="return spotRestaurant()" name="form">
+            <form th:action="@{/api/restaurant/register}" onsubmit="return spotRestaurant()" name="form" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="adminuserId" th:value="${session.userid}">
+                <input type="hidden" name="adminuserName" th:value="${session.name}">
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">장소명</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" id="placeName" class="admin_inquiry_category2">
+                        <input name="location" type="text" id="placeName" class="admin_inquiry_category2">
+                        <input name="restaurantpic" type="file" id="pro_img" multiple class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">식당 타이틀</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" id="place_title" class="admin_inquiry_category2">
+                        <input name="title" type="text" id="place_title" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">요약</div>
+                    <div class="admin_inquiry_q3">
+                        <input name="summary" type="text"  class="admin_inquiry_category2">
+
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -140,10 +150,10 @@
                     <div class="admin_inquiry_title" style="height: 200px;">메뉴1</div> 
                     <div class="admin_inquiry_q3">
                         <div class="admin_inquiry_a1">
-                            <input type="file" id="menu_img" class="admin_inquiry_category2">
-                            <input type="text" id="menu_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
-                            <input type="text" id="menu_tit" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
-                            <input type="text" id="menu_price" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                            <input name="menu1img" type="file" id="menu_img" class="admin_inquiry_category2">
+                            <input name="menu1Name" type="text" id="menu_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input name="menu1Description" type="text" id="menu_tit" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input name="menu1Price" type="text" id="menu_price" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
                         </div>
                     </div>
                 </div>
@@ -151,10 +161,10 @@
                     <div class="admin_inquiry_title" style="height: 200px;">메뉴2</div> 
                     <div class="admin_inquiry_q3">
                         <div class="admin_inquiry_a1">
-                            <input type="file" id="menu_img2" class="admin_inquiry_category2">
-                            <input type="text" id="menu_name2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
-                            <input type="text" id="menu_tit2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
-                            <input type="text" id="menu_price2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                            <input name="menu2img" type="file" id="menu_img2" class="admin_inquiry_category2">
+                            <input name="menu2Name" type="text" id="menu_name2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input name="menu2Description" type="text" id="menu_tit2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input name="menu2Price" type="text" id="menu_price2" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
                         </div>
                     </div>
                 </div>
@@ -162,10 +172,10 @@
                     <div class="admin_inquiry_title" style="height: 200px;">메뉴3</div> 
                     <div class="admin_inquiry_q3">
                         <div class="admin_inquiry_a1">
-                            <input type="file" id="menu_img3" class="admin_inquiry_category2">
-                            <input type="text" id="menu_name3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
-                            <input type="text" id="menu_tit3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
-                            <input type="text" id="menu_price3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
+                            <input name="menu3img" type="file" id="menu_img3" class="admin_inquiry_category2">
+                            <input name="menu3Name" type="text" id="menu_name3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="메뉴 이름">
+                            <input name="menu3Description" type="text" id="menu_tit3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                            <input name="menu3Price" type="text" id="menu_price3" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="가격을 입력해주세요">
                         </div>
                     </div>
                 </div>
@@ -176,10 +186,10 @@
                     <div class="admin_inquiry_title" style="height: 400px;">기본정보 입력</div> 
                     <div class="admin_inquiry_q3">
                         <div class="admin_inquiry_a1">
-                            <input type="text" id="Basic1" class="admin_inquiry_category2" placeholder="가는방법">
-                            <input type="text" id="Basic2" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일">
-                            <input type="text" id="Basic3" class="admin_inquiry_category2" style="margin-top: 15px; margin-bottom: 10px;" placeholder="이용팁">
-                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
+                            <input name="howToGo" type="text" id="Basic1" class="admin_inquiry_category2" placeholder="가는방법">
+                            <input name="availableAt" type="text" id="Basic2" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일">
+                            <input name="tip" type="text" id="Basic3" class="admin_inquiry_category2" style="margin-top: 15px; margin-bottom: 10px;" placeholder="이용팁">
+                            <textarea name="etc" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
                         </div>
                     </div>
                 </div>

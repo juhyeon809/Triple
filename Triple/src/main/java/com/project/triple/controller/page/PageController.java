@@ -1034,6 +1034,22 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
 
+    //패키지 등록
+    @RequestMapping(path = "/restaurant_register")
+    public ModelAndView restaurant_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/spot/spot_restaurant").addObject("userid", userid)
+                .addObject("name", name);
+    }
 
 
 }
