@@ -33,7 +33,6 @@
         </div>
         <div class="mag_content">
             <div class="content_list">
-<<<<<<< HEAD
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
@@ -42,7 +41,6 @@
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
                 </div>
-=======
                 <div class="list_box">
                     <a href="/Triple/magazine/guesthouse_view">
                         <p id="li_tit">인생에 한 번쯤은 꼭! <br> 가보고 싶은 해외 신상 호텔 7</p>
@@ -115,7 +113,6 @@
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
                 </div>  
->>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
             </div>
         </div>
     </div>

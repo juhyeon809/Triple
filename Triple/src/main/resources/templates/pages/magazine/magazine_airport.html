@@ -31,7 +31,6 @@
         </div>
         <div class="mag_content">
             <div class="content_list">
-<<<<<<< HEAD
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
@@ -39,7 +38,6 @@
                         <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
-=======
                 <div class="list_box">
                     <a href="/Triple/magazine/airport_view" id="text">
                         <p id="li_tit">출근길보다 빠르게<br> 여행 떠나는 방법</p>

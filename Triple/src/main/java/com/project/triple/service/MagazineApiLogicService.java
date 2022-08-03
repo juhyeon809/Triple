@@ -31,9 +31,9 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
                 .magazineType(magazine.getMagazineType())
                 .title(magazine.getTitle())
                 .content(magazine.getContent())
-                .uploadPath(magazine.getUploadPath())
-                .fileName(magazine.getFileName())
-                .fileType(magazine.getFileType())
+//                .uploadPath(magazine.getUploadPath())
+//                .fileName(magazine.getFileName())
+//                .fileType(magazine.getFileType())
                 .regDate(magazine.getRegDate())
                 .adminuserId(magazine.getIdx())
                 .build();
@@ -48,10 +48,10 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
                 .magazineNum(magazineApiRequest.getMagazineNum())
                 .magazineType(magazineApiRequest.getMagazineType())
                 .title(magazineApiRequest.getTitle())
-                .content(magazineApiRequest.getContent())
-                .uploadPath(magazineApiRequest.getUploadPath())
-                .fileName(magazineApiRequest.getFileName())
-                .fileType(magazineApiRequest.getFileType()).build();
+                .content(magazineApiRequest.getContent()).build();
+//                .uploadPath(magazineApiRequest.getUploadPath())
+//                .fileName(magazineApiRequest.getFileName())
+//                .fileType(magazineApiRequest.getFileType()).build();
         Magazine newMagazine = baseRepository.save(magazine);
         return Header.OK(response(newMagazine));
     }

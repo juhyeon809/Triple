@@ -42,7 +42,7 @@ public class Coupon {
     @Enumerated(EnumType.STRING)
     private CouponUse couponUse;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
-    private List<UserCoupon> userCouponList;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "coupon")
+//    private List<UserCoupon> userCouponList;
 
 }

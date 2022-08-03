@@ -33,7 +33,7 @@ public class Question {
     private Long idx;
     private Long inquiryId;
 //    private Integer ticketNum;
-//    private Long userId;
+    private Long userId;
     private String typeCategory;
     private String typeDetail;
     private String title;
