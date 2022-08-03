@@ -15,8 +15,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
-    <script src="/static/app/js/script.js"></script>
     <script src="/static/app/js/admin.js"></script>
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
     
@@ -56,7 +54,7 @@
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown show">
+                    <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
@@ -102,9 +100,9 @@
                     </ul>
                 </li>
                 <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
+                    <ul class="side-dropdown show">
                         <li><a href="/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
-                        <li><a href="/templates/pages/admin/magazine/magazine-register.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
+                        <li><a href="/Triple/admin/magazine_register" style="color:darkslategray; font-weight: bold;">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
@@ -124,7 +122,7 @@
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
+                    <ul class="side-dropdown show">
                         <li><a href="/Triple/adminList">목록</a></li>
                         <li><a href="/Triple/admin/admin_join">등록</a></li>
                     </ul>
@@ -224,6 +222,6 @@
         });
 </script>
 <script src="/admin/js/register.js"></script>
-
+    <script src="/app/js/script.js"></script>
 </body>
 </html>
