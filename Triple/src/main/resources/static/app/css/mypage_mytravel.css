@@ -77,7 +77,7 @@ form>p{
     justify-content: space-between;
 }
 .pro_box1{
-    width: 76%;
+    width: 78%;
     display: flex;
     justify-content: space-between;
     
@@ -94,7 +94,7 @@ form>p{
     height: 30px;
     font-size: 18px;
     border: none;
-    border-bottom: 1px solid gray;
+    /*border-bottom: 1px solid gray;*/
 }
 
 .pro_box1_left > p{

@@ -25,12 +25,11 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public class Notice {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_notice")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_mysave")
     private Long idx;
     private Integer noticeNum;
-    private String adminuserId;
+//    private Integer adminuserId;
     private String adminuserName;
-    private String noticeType;
     private String title;
     private String content;
     private String uploadPath;

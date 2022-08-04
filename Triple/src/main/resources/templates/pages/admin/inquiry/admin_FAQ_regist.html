@@ -16,9 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-        <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
-
 </head>
 <body>
     <!--header-->
@@ -57,7 +54,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -151,15 +148,6 @@
                         <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
                             <p>계정을 잃어버렸어요.</p>
                         </textarea></div>
-                            <script>
-                                var oEditors = [];
-                                nhn.husky.EZCreator.createInIFrame({
-                                oAppRef : oEditors,
-                                elPlaceHolder : "weditor",//
-                                sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                                fCreator : "createSEditor2",
-                                });
-                            </script>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
@@ -189,17 +177,7 @@
         </div>
     </form>
     </section>
-    <script src="../script.js"></script>
-    <script>
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor1",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-        
-    </script>
-    <script src="/admin/js/register.js"></script>
+    <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>

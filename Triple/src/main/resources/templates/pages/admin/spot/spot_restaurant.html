@@ -46,7 +46,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -203,7 +203,18 @@
         </div>
     </section>
 
-    <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
+    <script src="/admin/script.js"></script>
+    <script src="/admin/js/register.js"></script>
+    <script>
+        var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    
+            
+    </script>
 </body>
 </html>
