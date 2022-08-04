@@ -16,10 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-        <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
-
-</head>
+        </head>
 <body>
     <!--header-->
     <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
@@ -224,16 +221,8 @@
         </form>
         </div>
     </section>
-<script>
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-    oAppRef : oEditors,
-    elPlaceHolder : "weditor",//
-    sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-    fCreator : "createSEditor2",
-    });
-</script>
-    <script src="../script.js"></script>
-    <script src="/admin/js/prduct.js"></script>
+
+    <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>

@@ -6,23 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>관리자 | 스팟가이드 등록</title>
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="../admin.css">
+  <link rel="stylesheet" href="/app/css/admin.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
-    </div>
-    <div class="user-info">
-      <div class="info-container">
-        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-        <div class="email">john.doe@example.com</div>
-      </div>
-    </div>
-  </div>
-
-</nav>
+<!--header-->
+<div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
   <aside id="leftsidebar" class="sidebar">
@@ -262,7 +251,7 @@
 </section>
 
 
-<script src="/admin/script.js"></script>
-<script src="/admin/js/register.js"></script>
+<script src="/app/js/script.js"></script>
+<script src="/app/js/admin.js"></script>
 </body>
 </html>tml>
