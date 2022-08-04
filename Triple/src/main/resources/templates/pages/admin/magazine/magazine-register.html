@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
     <script src="/static/app/js/admin.js"></script>
-    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
     
 </head>
 <body>
@@ -178,8 +178,7 @@
                 <div class="admin_inquiry_title">매거진 내용</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" name="content" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            매거진 내용을 입력하세요
+                        <textarea class="weditor" name="content" id="weditor" cols="100" rows="10" style="width: 100%; height: 250px;">매거진 내용을 입력하세요
                         </textarea>
                     </div>
                     
@@ -194,25 +193,7 @@
     </section>
 
 
-<script src="../script.js"></script>
-<script>
-    var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor1",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-</script>
-<script src="/admin/js/register.js"></script>
     <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>
