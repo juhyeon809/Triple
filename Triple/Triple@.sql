@@ -110,11 +110,21 @@ create sequence seq_aircraft
 drop table air_ticket;    
 select * from air_ticket; 
 insert into air_ticket values(
-    1,
+    16,
     'AIR_TICKET',
-    'JINAIR_J',
-    
-    
+    'JEJU802',
+    2222,
+    80,
+    'ICN',
+    'GUAM',
+    '2022-08-26 09:30',
+    '2022-08-30 12:30',
+    240000,
+    'LI400',
+    'SPECIAL',
+    'Y',
+    sysdate,
+    'AVAILABLE'
 );
 drop table admin_user;
 insert into admin_user values(1, 'apple123', 'apple123!', '����', '010-1111-1111', '������', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
@@ -388,7 +398,9 @@ create sequence seq_adminuser
     adult_infant_pr number(10) not null,
     program varchar2(400) not null,
     contained varchar2(400) not null,
-    not_contained varchar2(400) not null
+    not_contained varchar2(400) not null,
+    adminuser_id varchar2(40) not null,
+    adminuser_name varchar2(40) not null,
     reg_date date default sysdate  
 );
 
