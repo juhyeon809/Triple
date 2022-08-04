@@ -10,6 +10,7 @@ import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.NoticeApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.model.network.response.TourTicketApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
@@ -20,6 +21,7 @@ import com.project.triple.service.MagazineApiLogicService;
 import com.project.triple.service.NoticeApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
+import com.project.triple.service.SpotService.SpotApiLogicService;
 import com.project.triple.service.TourTicketApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
@@ -94,6 +96,9 @@ public class PageController {
 
     @Autowired
     private RestaurantApiLogicService restaurantApiLogicService;
+
+    @Autowired
+    private SpotApiLogicService spotApiLogicService;
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -1346,10 +1351,45 @@ public class PageController {
             name = (String)session.getAttribute("name");
         }
 
-        return new ModelAndView("/pages/admin/spot/spot_restaurant").addObject("userid", userid)
+        return new ModelAndView("/pages/admin/spot/spot_tourism").addObject("userid", userid)
                 .addObject("name", name);
     }
 
+    @RequestMapping(path = "/spot/tour")
+    public ModelAndView tour_list(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        List<SpotApiResponse> spotApiResponseList = spotApiLogicService.list().getData();
+
+        return new ModelAndView("/pages/travel_spot/spot_tour").addObject("userid", userid)
+                .addObject("name", name).addObject("tourList" , spotApiResponseList);
+    }
+
+    @RequestMapping(path = "/spot/tour/view/{id}")
+    public ModelAndView tour_list(@PathVariable Long id, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
+
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userid", userid)
+                .addObject("name", name).addObject("tour" , spotApiResponse);
+    }
 
 
 }
