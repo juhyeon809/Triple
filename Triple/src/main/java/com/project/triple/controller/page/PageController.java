@@ -477,7 +477,7 @@ public class PageController {
 //        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
 //                .addObject("nickname", nickname);
 //    }
->>>>>>> 9e28bdf62665e05f99d75c9ae2817b57154e8cd8
+
 
 
     @RequestMapping(path = "/flightList")   //http://localhost:9090/Triple/flightList
@@ -1334,6 +1334,22 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse);
     }
 
+    @RequestMapping(path = "/tourism_register")
+    public ModelAndView tourism_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
 
->>>>>>> ee1347ab267a873a8131770f6338b1e25dd1fee0
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/spot/spot_restaurant").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+
+
 }

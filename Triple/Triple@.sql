@@ -398,7 +398,9 @@ create sequence seq_adminuser
     adult_infant_pr number(10) not null,
     program varchar2(400) not null,
     contained varchar2(400) not null,
-    not_contained varchar2(400) not null
+    not_contained varchar2(400) not null,
+    adminuser_id varchar2(40) not null,
+    adminuser_name varchar2(40) not null,
     reg_date date default sysdate  
 );
 
