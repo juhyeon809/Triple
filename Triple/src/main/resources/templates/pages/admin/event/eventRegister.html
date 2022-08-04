@@ -18,7 +18,7 @@
 
         <script src="/app/js/script.js"></script>
     <script src="/app/js/admin.js"></script>
-    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
 
 </head>
 <body>
@@ -161,19 +161,9 @@
                 <div class="admin_inquiry_title">이벤트 내용</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            <p>이벤트 내용을 입력하세요</p>
+                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 250px;">이벤트 내용을 입력하세요
                         </textarea>
                     </div>
-                    <script>
-                        var oEditors = [];
-                        nhn.husky.EZCreator.createInIFrame({
-                        oAppRef : oEditors,
-                        elPlaceHolder : "weditor",//
-                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                        fCreator : "createSEditor2",
-                        });
-                    </script>
                 </div>
             </div>
             <div class="btnlist">
@@ -182,7 +172,9 @@
         </form>
         <!--이벤트 등록 끝-->
     </section>
-    <script src="../script.js"></script>
-    <script src="/admin/js/register.js"></script>
+
+
+    <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>
