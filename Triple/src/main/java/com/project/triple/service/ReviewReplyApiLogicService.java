@@ -6,8 +6,12 @@ import com.project.triple.model.network.request.ReviewReplyApiRequest;
 import com.project.triple.model.network.response.ReviewReplyApiResponse;
 import com.project.triple.repository.ReviewReplyRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class ReviewReplyApiLogicService extends BaseService<ReviewReplyApiRequest, ReviewReplyApiResponse, ReviewReply> {
 
     @Autowired

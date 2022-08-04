@@ -59,7 +59,7 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
                 .infoAgree(questionApiRequest.getInfoAgree())
                 .regDate(questionApiRequest.getRegDate())
                 .inquiryId(questionApiRequest.getInquiryId())
-//                .airTicket(questionApiRequest.)
+                .userId(questionApiRequest.getUserId())
                 .build();
         Question newQuestion = baseRepository.save(question);
         return Header.OK(response(newQuestion));
@@ -87,4 +87,13 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
                 .collect(Collectors.toList());
         return Header.OK(questionApiResponseList);
     }
+
+    public Header<List<QuestionApiResponse>> search2(Long userId){
+        List<QuestionApiResponse> questionList = questionRepository.findAllByUserId(userId).stream()
+                .map(question -> response(question)).collect(Collectors.toList());
+
+        return Header.OK(questionList);
+    }
+
+
 }

@@ -6,16 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRIPLE | 항공권 예약</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+    <title>TRIPLE | 항공권 메인</title>
     <link rel="stylesheet" href="/app/css/fly.css">
     <link rel="stylesheet" href="/app/css/common.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/app/js/flightMain.js"></script>
 </head>
 <body>
     <!--header 시작-->
@@ -28,8 +26,8 @@
         <form action="/Triple/flightList" method="POST">
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
-                <a><input type="button" value="왕복" class="flybtn flybtn1" onclick="change()"></a>
-                <a><input type="button" value="편도" class="flybtn flybtn2" onclick="change2()"></a>
+                <a><input type="button" value="왕복" class="flybtn flybtn1" id="both"></a>
+                <a><input type="button" value="편도" class="flybtn flybtn2" id="one_way"></a>
             </p>
             <ul>
                 <li>
@@ -49,14 +47,8 @@
 
                 </li>
                 <li>
-                    <img src="/lib/img/fly_img/messenger-user-avatar.png" alt="" style="width: 24px; padding-left: 2px;">
-                    <div class="flylist icon4" onclick="">
-                        <p>탑승객 <span class="personNum">1</span>명, <span class="seatSr">일반석</span><span class="seatCnt"> 외 1</span></p>
-                    </div>
-                    
-                </li>
-                <li>
-                        <input type="button" class="flysearch" value="항공권 검색" id="search">
+                        <input type="button" class="flysearch" value="왕복 검색" id="search1">
+                        <input type="button" class="flysearch" value="편도 검색" id="search2" hidden>
                 </li>
             </ul>
             <!--항공권 검색 박스 인원조회 팝업-->
@@ -150,7 +142,7 @@
                 <div class="special">
                     <div class="imgbox" th:each="airTicket : ${airTicketList}">
                         <p th:text="${airTicket.getPrice()}+'원'"></p>
-                        <a th:href="'Triple/flightView'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}">오사카(직항)</a>
+                        <a th:href="'Triple/flightView?Idx='+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}">오사카(직항)</a>
                         <p th:text="${airTicket.getDepartureDate().getMonthValue()}+'.'+${airTicket.getDepartureDate().getDayOfMonth()}+'-'+${airTicket.getLandingDate().getMonthValue()}+'.'+${airTicket.getLandingDate().getDayOfMonth()}">7.8(금)-7.11(월)</p>
                     </div>
                 </div>
@@ -225,35 +217,16 @@
         <!--전체 특가 항공권 끝-->
     </div>
 
-    <!--footer 시작-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
+    <!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+    <!-- footer 끝 -->
 
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
-    <!--footer 끝-->
-<!--footer 끝-->
-    <script src="/static/app/js/flyScript.js"></script>
     <script>
 
-
         $(function(){
-           $('#datepicker').datepicker();
+           $('#datepicker').datepicker({
+               dateFormat:'yy-mm-dd'
+           });
         })
 
 
@@ -261,9 +234,7 @@
         $("#datepicker1, #datepicker2").datepicker({
             dateFormat: 'yy-mm-dd'
         });
-    });
-
-    
+         });
 
   </script>
 </body>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 | 관광지스팟 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/app/css/admin.css">
+    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+</head>
+<body>
+    <!--header-->
+    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header 끝-->
+
+    <!-- 사이드바-->
+    <section id="sidebar">
+        <aside id="leftsidebar" class="sidebar">
+            <ul class="side-menu">
+                <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/member/memberlist.html">회원목록</a></li>
+                        <li><a href="/templates/pages/admin/member/memberSign-up.html">회원가입</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/booking/all.html">전체</a></li>
+                        <li><a href="/templates/pages/admin/booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/booking/room_resevation.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                        <li><a href="/templates/pages/adminproduct/packge.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                    </ul>
+                </li>
+                <li><a href="/templates/pages/admin/review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                </li>
+                <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/coupon/couponList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/event/eventList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/notice/notice-list.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/notice/notice-register.html">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
+                        <li><a href="/Triple/admin/magazine_register">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_tourism.html" style="color:darkslategray; font-weight: bold;">관광지 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_guide.html">가이드 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+                    
+                </li>
+                <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/Triple/adminList">목록</a></li>
+                        <li><a href="/Triple/admin/admin_join">등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            </ul>
+        </aside>
+    </section>
+    <!--사이드바 끝-->
+    <section class="content2">
+        <div class="content2-fluid">
+            <div class="header_box">
+                <!--타이틀-->
+                <h2>스팟 등록 | 관광</h2>
+                <!--타이틀 끝-->
+            </div>
+            <!--매거진 정보 입력-->
+            <form action="" onsubmit="return spotTour()" name="form">
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소명</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="placeName" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소타이틀</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="place_title" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소 이미지1</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="file" id="pro_img1" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소 미니 타이틀1</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="mini_name" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">스팟 내용1</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                                스팟내용을 입력해주세요
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">상품 이미지2</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="file" id="pro_img2" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">장소 미니 타이틀2</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" id="pro_name" class="admin_inquiry_category2">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">스팟 내용2</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
+                                스팟내용을 입력해주세요
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">주요 볼거리</div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 1</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main1_img" class="admin_inquiry_category2">
+                            <input type="text" id="main_tit" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="main_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 2</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main2_img" class="admin_inquiry_category2">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext" style="height: 150px;">
+                    <div class="admin_inquiry_title" style="height: 140px;">볼거리 등록 3</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="file" id="main3_img" class="admin_inquiry_category2">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="볼거리 타이틀">
+                            <input type="text" id="pro_name" class="admin_inquiry_category2" style="margin-top: 20px;" placeholder="한 줄 설명을 적어주세요">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title2">기본 정보</div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title" style="height: 450px;">기본정보 입력</div> 
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <input type="text" id="recommend" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="권장체류시간">
+                            <input type="text" id="way" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="가는방법">
+                            <input type="text" id="time" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일">
+                            <input type="text" id="pay" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용료">
+                            <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px; margin-top: 15px;">
+                            이곳의 이용방법
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <button value="등록"><a href="#">등록</a></button>
+                    <button value="취소"><a href="#">취소</a></button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script src="/admin/script.js"></script>
+    <script src="/admin/js/register.js"></script>
+    <script>
+        var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    
+            var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor1",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+
+            var oEditors = [];
+            nhn.husky.EZCreator.createInIFrame({
+            oAppRef : oEditors,
+            elPlaceHolder : "weditor2",//
+            sSkinURI : "../smarteditor/SmartEditor2Skin.html",
+            fCreator : "createSEditor2",
+            });
+    </script>
+</body>
+</html>

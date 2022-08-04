@@ -15,110 +15,107 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
-    <script src="/static/app/js/script.js"></script>
     <script src="/static/app/js/admin.js"></script>
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
     
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
-            </div>
-            <div class="user-info">
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
-                </div>
-            </div>
-        </div>
-        
-    </nav>
+    <!--header-->
+    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header 끝-->
+
     <!-- 사이드바-->
     <section id="sidebar">
         <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../member/memberlist.html">회원목록</a></li>
-                        <li><a href="../member/memberSign-up.html">회원가입</a></li>
+                        <li><a href="/templates/pages/admin/member/memberlist.html">회원목록</a></li>
+                        <li><a href="/templates/pages/admin/member/memberSign-up.html">회원가입</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/all.html">전체</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/fly_reservation.html">항공권</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/room_resevation.html">숙소</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/packge_reservation.html">패키지</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/booking/all.html">전체</a></li>
+                        <li><a href="/templates/pages/admin/booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/booking/room_resevation.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                        <li><a href="../NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
-                        <li><a href="../NewRegistration/destinationList.html">취항지 목록</a></li>
-                        <li><a href="../NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../product/air.html">항공권</a></li>
-                        <li><a href="../product/room.html">숙소</a></li>
-                        <li><a href="../product/packge.html">패키지</a></li>
-                        <li><a href="../product/ticket.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
-                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
-                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
-                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
-                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_restaurant.html">다이닝</a></li>
                     </ul>
                 </li>
-                <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
+                <li><a href="/templates/pages/admin/review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponList.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/coupon/couponList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventList.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/event/eventList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/event/eventRegister.html">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../notice/notice-list.html">목록</a></li>
-                        <li><a href="../notice/notice-register.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/notice/notice-list.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/notice/notice-register.html">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown show">
-                        <li><a href="/admin/magazine/magazine-list.html">목록</a></li>
-                        <li><a href="/admin/magazine/magazine-register.html"  style="color:darkslategray; font-weight: bold;">등록</a></li>
+                        <li><a href="/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
+                        <li><a href="/Triple/admin/magazine_register" style="color:darkslategray; font-weight: bold;">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
-                    
+                <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_guide.html">가이드 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
+
                 </li>
                 <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                        <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
-                        <li><a href="../manage/admin_manage_list.html">목록</a></li>
-                        <li><a href="../manage/admin_manage_register.html">등록</a></li>
+                    <ul class="side-dropdown show">
+                        <li><a href="/Triple/adminList">목록</a></li>
+                        <li><a href="/Triple/admin/admin_join">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -134,94 +131,63 @@
                 <!--타이틀 끝-->
             </div>
             <!--매거진 정보 입력-->
-            <form action="" onsubmit="return magazineRegister()" name="form">
+            <form th:action="@{/api/magazine/register}" name="form" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="adminuserId" th:value="${session.userid}">
+                <input type="hidden" name="adminuserName" th:value="${session.name}">
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">분류</div>
                 <div class="admin_inquiry_q3">
-                    <select name="" id="Mcategory" class="admin_inquiry_category2">
+                    <select name="magazineType" id="magazineType" class="admin_inquiry_category2">
                         <option value="">선택</option>
-                        <option value="#여행지추천">#여행지추천</option>
-                        <option value="#여행꿀팁">#여행꿀팁</option>
-                        <option value="#맛집탐방">#맛집탐방</option>
-                        <option value="#여행기">#여행기</option>
-                        <option value="#항공·공항">#항공·공항</option>
-                        <option value="#숙소추천">#숙소추천</option>
-                        <option value="#투어·티켓">#투어·티켓</option>
-                        <option value="#쇼핑">#쇼핑</option>
+                        <option value="RECOMMEND">#여행지추천</option>
+                        <option value="TIP">#여행꿀팁</option>
+                        <option value="RESTAURANT">#맛집탐방</option>
+                        <option value="AIR">#여행기</option>
+                        <option value="LODGING">#항공·공항</option>
+                        <option value="TOURTICKET">#숙소추천</option>
+                        <option value="SHOPPING">#투어·티켓</option>
+                        <option value="SHOPPING">#쇼핑</option>
                     </select>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">제목</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" id="title" class="admin_inquiry_category2">
+                    <input type="text" name="title" class="admin_inquiry_category2">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">해시태그</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" id="tag" class="admin_inquiry_category2">
+                    <input type="text" name="tag" id="tag" class="admin_inquiry_category2">
                 </div>
             </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">내용요약</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" name="summary" id="summary" class="admin_inquiry_category2">
+                    </div>
+                </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">썸네일 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="img" class="admin_inquiry_category2" multiple >
+                    <input type="file" name="file" class="admin_inquiry_category2" enctype="multipart/form-data" >
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">매거진 내용</div> 
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                        <textarea class="weditor" name="content" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
                             매거진 내용을 입력하세요
                         </textarea>
                     </div>
                     
                 </div>
             </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">바로가기 이미지</div>
-                <div class="admin_inquiry_q3">
-                    <input type="file" name="shortcuts" class="admin_inquiry_category2" multiple >
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">여행지 바로가기</div>
-                <div class="admin_inquiry_q3">
-                    <input type="text" placeholder="괌 바로가기" class="admin_inquiry_category2">
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title2">주요명소</div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">장소명</div>
-                <div class="admin_inquiry_q3">
-                    <input type="text" id="place" class="admin_inquiry_category2">
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">명소 소개</div> 
-                <div class="admin_inquiry_q3">
-                    <div class="admin_inquiry_a1">
-                        <textarea class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            <p>명소 소개 내용을 입력하세요</p>
-                        </textarea>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">명소 이미지</div>
-                <div class="admin_inquiry_q3">
-                    <input type="file" name="sights" class="admin_inquiry_category2" multiple>
-                </div>
-            </div>
             <!--매거진 정보입력 끝-->
             <div class="btnlist">
-                <button value="등록"><a href="#">등록</a></button>
-                <button value="취소"><a href="#">취소</a></button>
+                <input type="submit" value="등록" class="join_btn">
             </div>
         </div>
     </form>
@@ -247,6 +213,6 @@
         });
 </script>
 <script src="/admin/js/register.js"></script>
-
+    <script src="/app/js/script.js"></script>
 </body>
 </html>

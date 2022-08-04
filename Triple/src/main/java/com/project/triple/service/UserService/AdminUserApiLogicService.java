@@ -1,17 +1,23 @@
 package com.project.triple.service.UserService;
 
+import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.enumclass.AdminUserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.AdminUserApiRequest;
+import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.AdminUserRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -101,5 +107,16 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
         }
         return result;
     }
+
+    /*관리자 조회*/
+    public Header<List<AdminUserApiResponse>> search(){
+        List<AdminUser> adminUserList = adminUserRepository.findAll();
+        List<AdminUserApiResponse> adminUserApiResponseList = adminUserList.stream()
+                .map(adminUser -> response(adminUser))
+                .collect(Collectors.toList());
+        return Header.OK(adminUserApiResponseList);
+    }
+
+
 
 }

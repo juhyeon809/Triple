@@ -1,6 +1,7 @@
 package com.project.triple.model.entity;
 
 import com.project.triple.model.entity.User.AdminUser;
+import com.project.triple.model.enumclass.MagazineType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,19 +28,23 @@ public class Magazine {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_magazine")
     private Long idx;
-//    private Integer adminuserId;
+    private String adminuserId;
     private String adminuserName;
-    private Integer magazineNum;
-    private String magazineType;
+    private String tag;
+    private String summary;
+    @Enumerated(EnumType.STRING)
+    private MagazineType magazineType;
     private String title;
     private String content;
+//    private String uploadPath;
+//    private String fileName;
+//    private String fileType;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     @CreatedDate
     private LocalDateTime regDate;
 
-    @ManyToOne
-    private AdminUser adminUser;
+//    @ManyToOne
+//    private AdminUser adminUser;
 
 }

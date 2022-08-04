@@ -130,7 +130,7 @@
 #main_content_box form table tr #address3 input {
     width: 620px;
 }
-#main_content_box form table tr #email_description {
+#main_content_box form table tr #email {
     font-weight: 400;
 }
 
@@ -156,7 +156,7 @@
     text-decoration: none;
     color: #50e3c2;
 }
-#form_flex_box button {
+#form_flex_box input {
     margin-left: 20px;
     width: 150px;
     height: 40px;

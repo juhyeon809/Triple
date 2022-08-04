@@ -27,14 +27,14 @@ public class UserCoupon {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_user_coupon")
     private Long idx;
-//    private String userId;
-//    private Integer couponId;
+    private Long userId;
+    private Long couponId;
     @CreatedDate
     private LocalDateTime regDate;
 
-    @ManyToOne
-    private Users users;
-
-    @ManyToOne
-    private Coupon coupon;
+//    @ManyToOne
+//    private Users users;
+//
+//    @ManyToOne
+//    private Coupon coupon;
 }

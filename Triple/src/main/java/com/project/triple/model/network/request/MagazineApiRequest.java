@@ -1,10 +1,14 @@
 package com.project.triple.model.network.request;
 
+import com.project.triple.model.enumclass.MagazineType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDateTime;
 
 @Data
@@ -14,14 +18,14 @@ import java.time.LocalDateTime;
 public class MagazineApiRequest {
 
     private Long idx;
-//    private Integer adminuserId;
+    private String adminuserId;
     private String adminuserName;
-    private Integer magazineNum;
-    private String magazineType;
+    private MagazineType magazineType;
+    private String tag;
+    private String summary;
     private String title;
     private String content;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     private LocalDateTime regDate;
 }

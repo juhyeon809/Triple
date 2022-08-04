@@ -1,9 +1,11 @@
 package com.project.triple.service.UserService;
 
+import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
+import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -11,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @Service
@@ -72,17 +75,12 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
         return users.map(
                         user -> {
-                            user.setEmail(usersApiRequest.getEmail());
                             user.setUserpw(usersApiRequest.getUserpw());
                             user.setNickname(usersApiRequest.getNickname());
-                            user.setCountryCode(usersApiRequest.getCountryCode());
                             user.setZipcode(usersApiRequest.getZipcode());
                             user.setAddress1(usersApiRequest.getAddress1());
                             user.setAddress2(usersApiRequest.getAddress2());
                             user.setAddress3(usersApiRequest.getAddress3());
-                            user.setRegDate(usersApiRequest.getRegDate());
-                            user.setStatus(usersApiRequest.getStatus());
-                            user.setTosAgree(usersApiRequest.getTosAgree());
                             return user;
                         }).map(user -> baseRepository.save(user)).map(user -> response(user)).map(Header::OK)
                 .orElseGet(() -> Header.ERROR("데이터 없음"));
@@ -112,4 +110,13 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
         }
         return result;
     }
+
+    public Long findIdx(String email){
+       Long idx = usersRepository.findByEmail(email).get().getIdx();
+
+       return idx;
+    }
+
+
+
 }

@@ -9,6 +9,8 @@ import com.project.triple.service.UserService.AdminUserApiLogicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/admin")    // http://localhost:9090/api/admin
 @RequiredArgsConstructor
@@ -52,6 +54,7 @@ public class AdminUserApiController extends CrudController<AdminUserApiRequest, 
         return adminUserApiLogicService.update(request);
     }
 
+    /* 관리자 삭제 */
     @Override
     @DeleteMapping("{id}")  // http://localhost:9090/api/admin/{id} (delete)
     public Header<AdminUserApiResponse> delete(@PathVariable Long id) {
@@ -64,7 +67,7 @@ public class AdminUserApiController extends CrudController<AdminUserApiRequest, 
     public int adminIdCheck(@RequestParam("userid") String userid){
         int cnt = adminUserApiLogicService.IdCheck(userid);
         return cnt;
-
     }
+
 
 }

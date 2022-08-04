@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class UserCouponApiRequest {
     private Long idx;
-//    private String userId;
-//    private Integer couponId;
+    private Long userId;
+    private Long couponId;
     private LocalDateTime regDate;
 }

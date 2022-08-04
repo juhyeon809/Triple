@@ -29,7 +29,7 @@
             <p><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어<span>&#183;</span>티켓</a></p>
         </div>
         <div id="box_information">
-            <p id="title_text">괌 기초 정보</p>
+            <p class="title_text" th:text="${guide.getTitle()}"></p>
             <div id="sub_flex_box">
             <p id="sub_text">리뷰 53 저장 828</p>
             <div id="like_save_box">
@@ -38,84 +38,82 @@
             </div>
             <div id="box_information_img"><img src="/lib/img/travel_spot_img/overseas2.svg" alt=""></div>
             <div id="context_box">
-                <p>비행기로 4시간 반이면 닿는 동서남북 에메랄드빛 바다를 품고 있는 괌</p>
-                <p>미국령으로 공식 명칙은 미국령 괌 준주(United States Island Territory of Gaum)다.</p>
-                <p>수도는 아가냐, 인도네시아 사람이 살기 시작해 이후 스페인과 일본의 지배를 받아 다양한 문화가 존재하는 곳이다.</p>
+                <p th:text="${guide.getContent()}"></p>
             </div>
         </div>
         <hr>
         <div id="table_information">
-            <p id="title_text">기본정보</p>
+            <p class="title_text">기본정보</p>
             <table>
                 <tr>
-                    <td id="table_index">언어</td>
+                    <td class="table_index">언어</td>
                     <td>영어, 차모로어</td>
                 </tr>
                 <tr>
-                    <td id="table_index">면적</td>
+                    <td class="table_index">면적</td>
                     <td>546km^2(제주도 면적의 1/3)</td>
                 </tr>
                 <tr>
-                    <td id="table_index">인구</td>
+                    <td class="table_index">인구</td>
                     <td>약 168,801명(2021년)</td>
                 </tr>
                 <tr>
-                    <td id="table_index">시차</td>
+                    <td class="table_index">시차</td>
                     <td>한국보다 1시간 빠름(한국이 오전 9시일 때 괌은 오전 10시)</td>
                 </tr>
                 <tr>
-                    <td id="table_index">종교</td>
+                    <td class="table_index">종교</td>
                     <td>가톨릭(75%), 개신교(18%)</td>
                 </tr>
                 <tr>
-                    <td id="table_index">전압</td>
+                    <td class="table_index">전압</td>
                     <td>120V 60Hz, 우리나라와 콘센트 모양이 달라 돼지코 또는 멀티 어댑터를 챙겨가야 한다.</td>
                 </tr>
                 <tr>
-                    <td id="table_index">통화</td>
+                    <td class="table_index">통화</td>
                     <td>달러</td>
                 </tr>
                 <tr>
-                    <td id="table_index">전화</td>
+                    <td class="table_index">전화</td>
                     <td>국가번호 1, 지역번호 671</td>
                 </tr>
                 <tr>
-                    <td id="table_index">비자</td>
+                    <td class="table_index">비자</td>
                     <td >
                         <p>귀국 항공권이 있으면 45일 무비자 방문 가능, 전자 여행 허가(ESTA)를 승인 받았다면 90일까지 머물 수
                             있다(관광목적). 여권 유효기간은 체류 예정 기간보다 길게 남아있으면 되지만, 만일을 대비해 6개월 정도 여유가 있는 것이 좋다.</p>
                     </td>
                 </tr>
                 <tr>
-                    <td id="table_index">물가</td>
+                    <td class="table_index">물가</td>
                     <td>
                         <p>괌은 섬 전체가 관광이 주 산업이라 교통, 숙박, 식비 등이 한국보다 조금 비싼 편.</p>
                         <p>단, 공산품의 경우 판매세가 붙지 않아 한국보다 저렴하다.</p>
                     </td>
                 </tr>
                 <tr>
-                    <td id="table_index">항공</td>
+                    <td class="table_index">항공</td>
                     <td>
                         <p style=" margin: 0;">인천에서 출발하는 고마 직향편은 대한항공이 매일 2~3회, 저가 항공인 진에어, 제주항공, 티웨이항공, 에어 서울도 매일 운항하고 있다. 김해에서는 진에어, 에어부산, 제주항공이 매일 운항하고 있다. 비행소요시간은 모두 약 4시간 30분.</p><p style="text-align: right; margin: 0;"><a href="/templates/pages/flight_reservation/flight_main.html">현재 운항 중인 항공편 조회하기</a></p>
                         
                     </td>
                 </tr>
                 <tr>
-                    <td id="table_index">기후</td>
+                    <td class="table_index">기후</td>
                     <td>
                         <p>고온 다습한 열대 해양성 기후. 연평균 기온 26.1도 1~5월 건기, 6~13월 우기.</p>
                         <p>때때로 태풍이 상륙하기도 한다.</p>
                     </td>
                 </tr>
                 <tr>
-                    <td id="table_index"> 여행 최적기</td>
+                    <td class="table_index"> 여행 최적기</td>
                     <td>
                         <p>건기의 최정점인 3월과 4월은 괌 여행의 최적기.</p>
                         <p>이 시기엔 태풍도 없고, 온화하면서 건조하여 야외 액티비티를 하기 좋은 계절이다.</p>
                     </td>
                 </tr>
                 <tr>
-                    <td id="table_index">간단한 회화</td>
+                    <td class="table_index">간단한 회화</td>
                     <td>
                         <ul>
                             <li>여기서 드시나요? 아니면 포장인가요? : For here to go?(포 히얼 투 고)</li>

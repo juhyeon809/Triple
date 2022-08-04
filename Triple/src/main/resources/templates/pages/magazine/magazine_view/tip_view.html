@@ -14,178 +14,31 @@
     <!-- header 시작 -->
     <div th:replace="fragement/header :: header"></div>
     <!-- header 끝 -->
-
-
     <!--메인-->
     <div id="container">
         <div id="rec_content1">
             <div id="rec1">
-                <img src="/lib/img/magazine_img/tip_img.png" id="rec_img" >
+                <div>
+                    <img th:src="@{${magazine.getUploadPath()}}" id="rec_img">
+                </div>
                 <div id="rec_list">
                     <div>
-                        <div>
-                            <p id="rec_tit">직접 가보고 추천하는 OOO과 가기 좋은 여행지</p>
-                        </div>
-                        <div>
-                            <p id="rec_cont">여행은 어디를 가느냐도 중요하지만 '누구와 가느냐'가 더 중요할 때가 있습니다. 여행의 목적, 장소, 일정까지 모두 바귈수 있기 때문이죠.<br>
-                                부모님과 간다면 이곳이, 아이와 간다면 이곳이 좀 더 좋은, 동행자별로 달라지는 베스트 여행지는 분명 있습니다. 같이 여행을 떠나고 싶은 그 살마을 가만히 떠올려보며 읽어보세요. 참, 동행자가 없더라도 걱정 마세요. 혼자 떠나기 좋은 곳까기 알려드릴게요!
-                            </p>
-                        </div>
+                        <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                     </div>
-                    
-                </div>
-            </div>
-            <div id="rec2">
-                <div>
-                    <p id="sp">#부담은덜고 #여행을즐기는 #풀패키지</p>
-                    <p id="rec_tit">부모님과</p>
-                    <p id="rec_cont">아무리 여행을 많이 다니는 사람도 어려운 것이 부모님과의 여행이다. 비행시간이나 현지 교통편은 괜찮은지, 부모님 입맛에 맞는 음식은 있는지, 부모님 취향의 관광지는 있는지, 사진 찍을 곳은 적당한지 등 옇애의 시작부터 끝까지 고려해야할 점이 한두 가지가 아니기 때문이다.</p>
-                </div>
-                <div>
-                    <img src="/lib/img/magazine_img/tip_img2.png" id="tip_img2" >
-                </div>
-                <div>
-                    <p id="rec_cont">우리 부모님의 마음은 부모님도 모르는 경우가 많기 때문에, 내가 모든 걸 책임지려고 하지 말자. 이때는 현지 이동, 매 끼니와 사진 찍을 곳까지 모두 검증된 풀 패키지 상품이 베스트 초이스. 여행 스케줄이 모두 짜여 있고, 전문 인솔자가 안전하고 꼼꼼하게 여행을 책임진다. 평균 이상의 여행 퀄리티가 보장되어 있다는 점도 큰 장점이다.</p>
-                </div>
-            </div>
-            <div id="rec3">
-                <div>
-                    <p id="list_tit">부모님과 이런 여행은 어때요?</p>
                     <div>
-                        <div id="tip_list">
-                            <div><img src="/lib/img/magazine_img/tip_list_img.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img2.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img3.svg" id="t_img"></div>
-                        </div>  
-                        <div id="tip_list2">
-                            <div>
-                                <p id="list_tit">[터키] 완벽 일주 9일</p><p id="list_cont">요즘 부모님 세대의 인기 여행지, 터기 완전 정복! 안전한 여행을 위해 인솔자가 100% 동반한다. 터키의 핵심 관광지와 열기구로 유명한 카피도키아까지 둘러본다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[다낭&호이안&바나힐]패키지</p><p id="list_cont">부모님들의 원픽 여행지 다낭. 다낭시내의 4성 호텔에서 머물며 편안한 패키지 여행을 질겨보자. 일정에 포함된 베트남 전신마사지는 피로를 풀어준다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[터키&두바이] 한 번에 즐기기</p><p id="list_cont">두바이 & 터기를 한 번에 여핸한다. 금시장, 버즈칼리파, 지하도시, 파묵칼레 등 두바이와 터키 전역의 명소를 꼼꼼하게 둘러본다. 이국적인 명소로 가득해 만족도가 높다.</p>
-                            </div>
-                        </div>
-                        <div id="tip_package">
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html">패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                        </div>
+                        <img th:src="@{${magazine.getUploadPath()}}">
+                        <p id="rec_cont" th:text="${magazine.getContent()}">
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="rec_content2">
-            <div id="rec2">
-                <div>
-                    <p id="sp">#부담은덜고 #여행을즐기는 #풀패키지</p>
-                    <p id="rec_tit">부모님과</p>
-                    <p id="rec_cont">아무리 여행을 많이 다니는 사람도 어려운 것이 부모님과의 여행이다. 비행시간이나 현지 교통편은 괜찮은지, 부모님 입맛에 맞는 음식은 있는지, 부모님 취향의 관광지는 있는지, 사진 찍을 곳은 적당한지 등 옇애의 시작부터 끝까지 고려해야할 점이 한두 가지가 아니기 때문이다.</p>
-                </div>
-                <div>
-                    <img src="/lib/img/magazine_img/tip_img2.png" id="tip_img2" >
-                </div>
-                <div>
-                    <p id="rec_cont">우리 부모님의 마음은 부모님도 모르는 경우가 많기 때문에, 내가 모든 걸 책임지려고 하지 말자. 이때는 현지 이동, 매 끼니와 사진 찍을 곳까지 모두 검증된 풀 패키지 상품이 베스트 초이스. 여행 스케줄이 모두 짜여 있고, 전문 인솔자가 안전하고 꼼꼼하게 여행을 책임진다. 평균 이상의 여행 퀄리티가 보장되어 있다는 점도 큰 장점이다.</p>
-                </div>
-            </div>
-            <div id="rec3">
-                <div>
-                    <p id="list_tit">부모님과 이런 여행은 어때요?</p>
-                    <div>
-                        <div id="tip_list">
-                            <div><img src="/lib/img/magazine_img/tip_list_img.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img2.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img3.svg" id="t_img"></div>
-                        </div>  
-                        <div id="tip_list2">
-                            <div>
-                                <p id="list_tit">[터키] 완벽 일주 9일</p><p id="list_cont">요즘 부모님 세대의 인기 여행지, 터기 완전 정복! 안전한 여행을 위해 인솔자가 100% 동반한다. 터키의 핵심 관광지와 열기구로 유명한 카피도키아까지 둘러본다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[다낭&호이안&바나힐]패키지</p><p id="list_cont">부모님들의 원픽 여행지 다낭. 다낭시내의 4성 호텔에서 머물며 편안한 패키지 여행을 질겨보자. 일정에 포함된 베트남 전신마사지는 피로를 풀어준다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[터키&두바이] 한 번에 즐기기</p><p id="list_cont">두바이 & 터기를 한 번에 여핸한다. 금시장, 버즈칼리파, 지하도시, 파묵칼레 등 두바이와 터키 전역의 명소를 꼼꼼하게 둘러본다. 이국적인 명소로 가득해 만족도가 높다.</p>
-                            </div>
-                        </div>
-                        <div id="tip_package">
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html">패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="rec_content3">
-            <div id="rec2">
-                <div>
-                    <p id="sp">#부담은덜고 #여행을즐기는 #풀패키지</p>
-                    <p id="rec_tit">부모님과</p>
-                    <p id="rec_cont">아무리 여행을 많이 다니는 사람도 어려운 것이 부모님과의 여행이다. 비행시간이나 현지 교통편은 괜찮은지, 부모님 입맛에 맞는 음식은 있는지, 부모님 취향의 관광지는 있는지, 사진 찍을 곳은 적당한지 등 옇애의 시작부터 끝까지 고려해야할 점이 한두 가지가 아니기 때문이다.</p>
-                </div>
-                <div>
-                    <img src="/lib/img/magazine_img/tip_img2.png" id="tip_img2" >
-                </div>
-                <div>
-                    <p id="rec_cont">우리 부모님의 마음은 부모님도 모르는 경우가 많기 때문에, 내가 모든 걸 책임지려고 하지 말자. 이때는 현지 이동, 매 끼니와 사진 찍을 곳까지 모두 검증된 풀 패키지 상품이 베스트 초이스. 여행 스케줄이 모두 짜여 있고, 전문 인솔자가 안전하고 꼼꼼하게 여행을 책임진다. 평균 이상의 여행 퀄리티가 보장되어 있다는 점도 큰 장점이다.</p>
-                </div>
-            </div>
-            <div id="rec3">
-                <div>
-                    <p id="list_tit">부모님과 이런 여행은 어때요?</p>
-                    <div>
-                        <div id="tip_list">
-                            <div><img src="/lib/img/magazine_img/tip_list_img.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img2.svg" id="t_img"></div>
-                            <div><img src="/lib/img/magazine_img/tip_list_img3.svg" id="t_img"></div>
-                        </div>  
-                        <div id="tip_list2">
-                            <div>
-                                <p id="list_tit">[터키] 완벽 일주 9일</p><p id="list_cont">요즘 부모님 세대의 인기 여행지, 터기 완전 정복! 안전한 여행을 위해 인솔자가 100% 동반한다. 터키의 핵심 관광지와 열기구로 유명한 카피도키아까지 둘러본다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[다낭&호이안&바나힐]패키지</p><p id="list_cont">부모님들의 원픽 여행지 다낭. 다낭시내의 4성 호텔에서 머물며 편안한 패키지 여행을 질겨보자. 일정에 포함된 베트남 전신마사지는 피로를 풀어준다.</p>
-                            </div>
-                            <div>
-                                <p id="list_tit">[터키&두바이] 한 번에 즐기기</p><p id="list_cont">두바이 & 터기를 한 번에 여핸한다. 금시장, 버즈칼리파, 지하도시, 파묵칼레 등 두바이와 터키 전역의 명소를 꼼꼼하게 둘러본다. 이국적인 명소로 가득해 만족도가 높다.</p>
-                            </div>
-                        </div>
-                        <div id="tip_package">
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html">패키지 상품 가격 확인하기</a></div>
-                            <div><a href="/templates/pages/travel_package/package_eastsouthasia.html" >패키지 상품 가격 확인하기</a></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 <!--메인 끝-->
     <!--푸터-->
-    <footer>
-        <div id="enterprise_info">
-            <div id="enterprise_info_text">
-                <p id="bold">트리플 사업자 정보</p>
-                <p>(주)트리플은 통신판매중개로서 통신판매의 당사자가 아니며 상품 거래정보 및 거래등에 대해 책임을 지지 않습니다.</p>
-                <p>항공, 숙소 및 투어, 티켓문의 1588-0000</p>
-
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
-            </div>
-            <div id="icon_box">
-                <div id="sns_box">
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-blog@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-insta@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-fb@3x.png" alt="SNS"></a></div>
-                    <div><a href="#"><img src="/lib/img/magazine_img/btn-social-brunch@3x.png" alt="SNS"></a></div>
-                </div>
-                <div id="TRIP"><a href="#"><img src="/lib/img/magazine_img/footer_TRIP.png" alt="TRIP"></a></div>
-            </div>
-        </div>
-    </footer>
+    <div th:replace="fragement/footer :: footer"></div>
     <!--푸터 끝-->
 </body>
 </html>
