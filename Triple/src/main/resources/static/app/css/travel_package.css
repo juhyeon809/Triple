@@ -232,13 +232,6 @@ main {
     color: #666666;
 }
 
-#travel_package_contents p{
-    font-size: 16px;
-    font-weight: bold;
-    color: #666666;
-    margin: 20px 0;
-    margin-left: 20px;
-}
 #travel_package_contents .city{
     margin-left: 30px;
 }
@@ -254,24 +247,7 @@ main {
 .red_text{
     color: #FF0101;
 }
-.merchandise_mark {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 220px;
-}
-.merchandise_mark div p {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0px;
-    color: white;
-}
-.merchandise_mark div {
-    background-color: #2680EB;
-    padding: 5px;
-    margin-right: 10px;
-    border-radius: 10px;
-}
+
 .travel_package_list .product_name ,.travel_package_list .product_air, .travel_package_list .product_star,.travel_package_list .product_coupon {
     font-size: 16px;
     font-weight: bold;
@@ -337,31 +313,7 @@ main {
     color: #666666;
     
 }
-.merchandise_mark {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.merchandise_mark div p {
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0px;
-    color: white;
-}
-.merchandise_mark div {
-    background-color: #2680EB;
-    padding: 5px;
-    margin-right: 10px;
-    border-radius: 10px;
-}
 
-#travel_package_contents p{
-    font-size: 16px;
-    font-weight: bold;
-    color: #666666;
-    margin: 20px 0;
-    margin-left: 20px;
-}
 .packagebox {
     display: flex;
     justify-content: space-around;
@@ -440,11 +392,11 @@ main {
 }
 
 #travel_package_contents p{
-    font-size: 16px;
-    font-weight: bold;
-    color: #666666;
-    margin: 20px 0;
-    margin-left: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    /*color: #666666;*/
+    /*margin: 20px 0;*/
+    /*margin-left: 10px;*/
 }
 .packagebox {
     display: flex;
@@ -518,7 +470,7 @@ main {
 .merchandise_mark div p {
     font-size: 14px;
     font-weight: normal;
-    margin: 0px;
+    margin: 5px;
     color: white;
 }
 .merchandise_mark div {

@@ -6,8 +6,12 @@ import com.project.triple.model.network.request.FaqApiRequest;
 import com.project.triple.model.network.response.FaqApiResponse;
 import com.project.triple.repository.FaqRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiResponse, Faq> {
 
     @Autowired

@@ -1,13 +1,9 @@
 package com.project.triple.service;
 
 import com.project.triple.model.entity.Notice;
-import com.project.triple.model.entity.User.AdminUser;
-import com.project.triple.model.enumclass.AdminUserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.NoticeApiRequest;
-import com.project.triple.model.network.request.UserRequest.AdminUserApiRequest;
 import com.project.triple.model.network.response.NoticeApiResponse;
-import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.NoticeRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -66,16 +62,16 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
         Optional<Notice> notice = baseRepository.findById(noticeApiRequest.getIdx());
 
         return notice.map(
-                notice1 -> {
-                    notice1.setNoticeType(noticeApiRequest.getNoticeType());
-                    notice1.setTitle(noticeApiRequest.getTitle());
-                    notice1.setContent(noticeApiRequest.getContent());
-                    notice1.setFileName(noticeApiRequest.getFileName());
-                    notice1.setUploadPath(noticeApiRequest.getUploadPath());
-                    notice1.setRegDate(noticeApiRequest.getRegDate());
-                    return notice1;
-                }).map(notice1 -> baseRepository.save(notice1)).map(notice1 -> response(notice1)).map(Header::OK)
-        .orElseGet(() -> Header.ERROR("데이터 없음"));
+                        notice1 -> {
+                            notice1.setNoticeType(noticeApiRequest.getNoticeType());
+                            notice1.setTitle(noticeApiRequest.getTitle());
+                            notice1.setContent(noticeApiRequest.getContent());
+                            notice1.setFileName(noticeApiRequest.getFileName());
+                            notice1.setUploadPath(noticeApiRequest.getUploadPath());
+                            notice1.setRegDate(noticeApiRequest.getRegDate());
+                            return notice1;
+                        }).map(notice1 -> baseRepository.save(notice1)).map(notice1 -> response(notice1)).map(Header::OK)
+                .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     @Override

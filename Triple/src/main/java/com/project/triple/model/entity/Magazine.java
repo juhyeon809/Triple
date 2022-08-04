@@ -36,6 +36,9 @@ public class Magazine {
     private MagazineType magazineType;
     private String title;
     private String content;
+//    private String uploadPath;
+//    private String fileName;
+//    private String fileType;
     private String uploadPath;
     private String fileName;
     @CreatedDate

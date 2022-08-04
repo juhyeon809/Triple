@@ -72,18 +72,21 @@
         <p class="mypage_title">MY PAGE | 설정</p>
         <div id="main_content_box">
             <div id="profile_box">
-                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="">김사과</p>
+
+                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${nickname}"></p>
             </div>
             <div id="account_name">
                 <p class="title_p">연결된 계정</p>
-                <p class="subtitle_p">apple@apple.com</p>
+                <p class="subtitle_p" th:text="${email}"></p>
             </div>
-            <form action="" name="edit_profile" id="edit_profile" onsubmit="return sendit()">
-                <p>회원 정보</p>
+            <form method="post">
+                <input type="hidden" name="_method" value="put" />
+                <input type="hidden" id="idx" th:value="${idx}"/>
+                <p></p>
                 <table>
                     <tr>
-                        <td>이름</td>
-                        <td><input type="text" name="name" id="name"></td>
+                        <td>닉네임</td>
+                        <td><input type="text" name="nickname" id="nickname"></td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>
@@ -99,11 +102,7 @@
                     </tr>
                     <tr>
                         <td>이메일</td>
-                        <td id="email_description" name="email" >apple@apple.com</td>
-                    </tr>
-                    <tr>
-                        <td>닉네임</td>
-                        <td><input type="text" name="userid" id="userid"></td>
+                        <td id="email" name="email" th:text="${email}"></td>
                     </tr>
                     <tr>
                         <td>우편번호</td>
@@ -119,8 +118,8 @@
                     </tr>
                 </table>
                 <div id="form_flex_box">
-                    <div id="back_box"><a href="/templates/pages/mypage/mypage_settings/mypage_settings.html">돌아가기</a></div>
-                    <button type="submit">수정하기</button>
+                    <div id="back_box"><a href="mypage_settings.html">돌아가기</a></div>
+                    <input type="button" id="sendit" value="수정하기">
                 </div>
             </form>
         </div>

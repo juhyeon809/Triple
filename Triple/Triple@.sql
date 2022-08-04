@@ -373,7 +373,28 @@ create table adminuser(
 create sequence seq_adminuser
     increment by 1
     start with 1;
-    
+ 
+ select * from package;
+ create table PACKAGE(
+    idx number(7) primary key,
+    country varchar2(20) not null,
+    title varchar2(20) not null,
+    upload_path varchar2(200) not null,
+    file_name varchar2(200) not null,
+    keyword varchar2(20) not null,
+    adult_pr number(10) not null,
+    kid_pr number(10) not null,
+    infant_pr number(10) not null,
+    adult_infant_pr number(10) not null,
+    program varchar2(400) not null,
+    contained varchar2(400) not null,
+    not_contained varchar2(400) not null
+    reg_date date default sysdate  
+);
+
+create sequence seq_package
+    increment by 1
+    start with 1;   
 
 create table spot(
     idx number(7) primary key,
@@ -436,22 +457,34 @@ create sequence seq_tourspot_review_reply
     increment by 1
     start with 1;
     
+drop table restaurant;
 
 create table restaurant(
     idx number(7) primary key,
-    type varchar2(10) unique not null,
-    rest_num number(7) unique not null,
-    rest_name varchar2(20) not null,
-    country varchar2(20) not null,
-    city varchar2(20) not null,
-    hp varchar2(20) not null,
-    address varchar2(30) not null,
-    title varchar2(500) not null,
-    content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
-    operation_status varchar2(4),
+    location varchar2(200) not null,
+    title varchar2(50) not null,
+    summary varchar2(50) not null,
+    menu1_name varchar2(30) not null,
+    menu1_description varchar2(100) not null,
+    menu1_price number(7) not null,
+    menu2_name varchar2(30) not null,
+    menu2_description varchar2(100) not null,
+    menu2_price number(7) not null,
+    menu3_name varchar2(30) not null,
+    menu3_description varchar2(100) not null,
+    menu3_price number(7) not null,
+    how_to_go varchar2(200),
+    available_at varchar2(200),
+    tip varchar2(200),
+    etc varchar2(200),
+    upload_path1 varchar2(200),
+    file_name1 varchar2(200),
+    upload_path2 varchar2(200),
+    file_name2 varchar2(200),
+    upload_path3 varchar2(200),
+    file_name3 varchar2(200),
+    upload_path4 varchar2(200),
+    file_name4 varchar2(200),
     reg_date date default sysdate,
     like_count number(7) default 0,
     review_count number(7) default 0

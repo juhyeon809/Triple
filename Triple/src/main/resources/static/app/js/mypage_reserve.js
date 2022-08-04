@@ -2,23 +2,35 @@ console.log("reserve.js 작동중")
 
 $(document).ready(function() {
 
-    let inquiryList = new Vue({
-        el: "#inquiryList",
-        data: {
-            inquiryList:{}
-        }
-    });
 
-    $.get("/api/inquiry/list", function(response){
-        console.log("함수 작동");
-        inquiryList.inquiryList = response.data;
-        return inquiryList;
-    })
+
+    // let inquiryList = new Vue({
+    //     el: "#inquiryList",
+    //     data: {
+    //         inquiryList:{}
+    //     }
+    // });
+
+    // $.get("/api/inquiry/list", function(response){
+    //     console.log("함수 작동");
+    //     inquiryList.inquiryList = response.data;
+    //     return inquiryList;
+    // })
 
 })
 
 
 $(function (){
+
+    $('.accordion .content').eq(0).show()
+    $('.accordion .title').click(function(){
+        $(this).siblings('.accordion .content').slideUp()
+        $(this).next().stop().slideToggle(300)
+        $(this).toggleClass('active')
+        $(this).siblings('.accordion .title').removeClass('active')
+    })
+
+
     function cancel1(){
         let rtn;
 
@@ -48,7 +60,6 @@ $(function (){
         const title = document.getElementById('title');
         const content = document.getElementById('content')
         const box = document.getElementsByName('box');
-
 
         const expCategoryText = /[항공|숙소|투어티켓|]/;
 
@@ -84,6 +95,7 @@ $(function (){
             return false;
         }
 
+
         let jsonData = {
             transaction_time: new Date(),
             resultCode: "ok",
@@ -93,6 +105,7 @@ $(function (){
                 title: $('#title').val(),
                 content: $('#content').val(),
                 filename: $('#filename').val(),
+                userId: $('#idx').val(),
                 infoAgree:'Y'
             }
         }
@@ -113,6 +126,8 @@ $(function (){
         })
 
     })
+
+
 
 })
 function cancel1(){
