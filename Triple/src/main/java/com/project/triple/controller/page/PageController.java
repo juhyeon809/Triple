@@ -1051,6 +1051,7 @@ public class PageController {
             String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
             session.setAttribute("userid", userid);
             session.setAttribute("userpw", userpw);
+            session.setAttribute("name", name);
 
             ScriptUtils.alert(response, "로그인 성공" );
             return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
@@ -1112,6 +1113,24 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("adminUser", adminUserApiResponse);
     }
+    /* 공지사항 리스트 */
+    @RequestMapping(path = "/admin/noticeList")   //http://localhost:9090/Triple/admin/noticeList
+    public ModelAndView noticeList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<NoticeApiResponse> noticeList = noticeApiLogicService.search().getData();
+
+        return new ModelAndView("/pages/admin/notice/notice-list").addObject("userid", userid)
+                .addObject("name", name).addObject("noticeList", noticeList);
+    }
+
 
     /* 공지사항 등록 */
     @RequestMapping(path = "/admin/notice/register")
@@ -1131,22 +1150,23 @@ public class PageController {
                 .addObject("name", name);
     }
 
-    /* 공지사항 리스트 */
-    @RequestMapping(path = "/admin/noticeList")   //http://localhost:9090/Triple/admin/noticeList
-    public ModelAndView noticeList(HttpServletRequest request) throws NullPointerException {
+    /* 공지사항 상세보기 페이지 */
+    @RequestMapping(path="/admin/noticeList/view/{idx}")       //http://localhost:9090/Triple/adminList/view/{idx}
+    public ModelAndView noticeList_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
-        if(session == null) {
+        if(session == null){
 
         }else{
-            userid = (String) session.getAttribute("userid");
-            name = (String) session.getAttribute("name");
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
         }
-        List<AdminUserApiResponse> noticeList = adminUserApiLogicService.search().getData();
-
-        return new ModelAndView("/pages/admin/notice/notice-list").addObject("userid", userid)
-                .addObject("name", name).addObject("noticeList", noticeList);
+        NoticeApiResponse noticeApiResponse = noticeApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/notice/notice-detail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("notice", noticeApiResponse);
     }
 
 

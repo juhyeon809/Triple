@@ -152,65 +152,11 @@
                     작성날짜
                 </th>
             </tr>
-            <tr>
+            <tr th:each="notice : ${noticeList}" th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}">
                 <td class="check"><input type="checkbox" name="notice"></td>
-                <td onclick="location.href='notice-detail.html'">항공</td>
-                <td onclick="location.href='notice-detail.html'">코로나 관련 안전수칙 안내드립니다.</td>
-                <td onclick="location.href='notice-detail.html'">2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
-            </tr>
-            <tr>
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td>항공</td>
-                <td>코로나 관련 안전수칙 안내드립니다.</td>
-                <td>2022-06-22</td>
+                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getNoticeType()}"></a></td>
+                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getTitle}"></a></td>
+                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getRegDate()}"></a></td>
             </tr>
         </table>
         <!--공지 리스트 테이블 끝-->

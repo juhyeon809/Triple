@@ -9,8 +9,13 @@ import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -22,9 +27,8 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
     private NoticeApiResponse response (Notice notice) {
         NoticeApiResponse noticeApiResponse = NoticeApiResponse.builder()
                 .idx(notice.getIdx())
-                .noticeNum(notice.getNoticeNum())
-                .adminuserId(notice.getAdminUser().getUserid())
-                .adminuserName(notice.getAdminUser().getName())
+                .adminuserId(notice.getAdminuserId())
+                .adminuserName(notice.getAdminuserName())
                 .noticeType(notice.getNoticeType())
                 .title(notice.getTitle())
                 .content(notice.getContent())
@@ -81,5 +85,28 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
             baseRepository.delete(notice1);
             return Header.OK();
         }).orElseGet(() -> Header.ERROR("데이터 없음"));
+    }
+
+    /* 공지사항 조회 */
+    public Header<List<NoticeApiResponse>> search(){
+        List<Notice> noticeList = noticeRepository.findAll();
+        List<NoticeApiResponse> noticeApiResponseList = noticeList.stream()
+                .map(notice -> response(notice))
+                .collect(Collectors.toList());
+        return Header.OK(noticeApiResponseList);
+    }
+
+
+
+    public void write(Notice notice, MultipartFile file) throws Exception{
+
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        notice.setFileName(filename);
+        notice.setUploadPath("/files/"+filename);
+        noticeRepository.save(notice);
     }
 }

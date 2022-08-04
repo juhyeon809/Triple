@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 - 등록</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--    <link rel="stylesheet" href="/resources/demos/style.css">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
-    <script src="/static/app/js/admin/notice_regist.js"></script>
-    <script src="/static/app/js/admin.js"></script>
-    <!--    <script src="/static/app/js/script.js"></script>    -->
-    <script type="text/javascript" src="/static/app/js/smarteditor/service/HuskyEZCreator.js" charset="utf-8"></script>
+<!--    <script src="/static/app/js/admin.js"></script>-->
+<!--    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>-->
 
 </head>
 <body>
@@ -120,7 +120,9 @@
             <h2>공지사항 | 등록</h2>
         </div>
         <!--타이틀 끝-->
-        <form name="regform" id="regform" method="POST" class="register_form">
+        <form th:action="@{/api/admin/notice/register}" name="form" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="adminuserId" th:value="${session.userid}">
+            <input type="hidden" name="adminuserName" th:value="${session.name}">
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">공지 분류</div>
                 <div class="admin_inquiry_q3">
@@ -152,24 +154,25 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">첨부파일</div>
                 <div class="admin_inquiry_q3">
-                    <input type="file" name="uploadPath" id="uploadPath" class="admin_inquiry_category2" enctype="multipart/form-data" >
+                    <input type="file" name="file" class="admin_inquiry_category2" enctype="multipart/form-data" >
                 </div>
             </div>
             <div class="btnlist">
-                <input type="button" value="등록" class="notice_register_btn" id="sendit_r" >
-                <input type="button" value="취소" class="notice_cancel_btn" id="sendit_c" >
+                <input type="submit" value="등록" class="register_btn">
+                <input type="submit" value="취소" class="cancel_btn">
             </div>
         </form>
     </div>
 </section>
-<script>
-    var oEditors = [];
-    nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor1",//
-        sSkinURI : "/pages/smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-    });
-</script>
+<!--<script src="../script.js"></script>-->
+<!--<script>-->
+<!--    var oEditors = [];-->
+<!--    nhn.husky.EZCreator.createInIFrame({-->
+<!--        oAppRef : oEditors,-->
+<!--        elPlaceHolder : "weditor1",//-->
+<!--        sSkinURI : "/pages/smarteditor/SmartEditor2Skin.html",-->
+<!--        fCreator : "createSEditor2",-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

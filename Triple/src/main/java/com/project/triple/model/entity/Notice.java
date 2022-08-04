@@ -27,7 +27,6 @@ public class Notice {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_notice")
     private Long idx;
-    private Integer noticeNum;
     private String adminuserId;
     private String adminuserName;
     private String noticeType;
@@ -35,10 +34,9 @@ public class Notice {
     private String content;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     @CreatedDate
     private LocalDateTime regDate;
 
-    @ManyToOne
-    private AdminUser adminUser;
+//    @ManyToOne
+//    private AdminUser adminUser;
 }
