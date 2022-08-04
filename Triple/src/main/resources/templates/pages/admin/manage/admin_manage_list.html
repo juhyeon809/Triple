@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 관리자목록</title>
     <link rel="stylesheet" href="/app/css/admin.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="/static/app/js/script.js"></script>
     <script src="/static/app/js/admin/manage_list.js"></script>
@@ -89,7 +93,7 @@
             <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/pages/admin/notice/notice-list.html">목록</a></li>
-                    <li><a href="/pages/admin/notice/notice-register.html">등록</a></li>
+                    <li><a href="admin/notice/register">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
@@ -150,15 +154,15 @@
                 <th>연락처</th>
                 <th>직함</th>
             </tr>
-            <tr th:each="adminuser : ${adminUserList}">
+            <tr th:each="adminuser : ${adminUserList}" th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}">
                 <td>
                     <input type="checkbox" name="manager">
                 </td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.idx}">101</td>
-                <td onclick="location.href='adminList/admin_detail'" th:href="@{/read(id=${adminuser.idx})}" th:text="${adminuser.userid}">apple</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.name}">김사과</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.hp}">010-1111-1111</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.position}">대표</td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.idx}"></a></td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.userid}"></a></td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.name}"></a></td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.hp}"></a></td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.position}"></a></td>
             </tr>
         </table>
         <script>
