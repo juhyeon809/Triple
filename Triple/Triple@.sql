@@ -360,15 +360,15 @@ create table magazine(
 create sequence seq_magazine
     increment by 1
     start with 1;
-    
 
-create table adminuser(
-    idx number(7) primary key,
-    admin_id varchar2(20) unique not null,
-    admin_pw varchar2(20) not null,
-    admin_name number(7) not null,
-    reg_date date default sysdate
-);
+
+-- create table adminuser(
+--     idx number(7) primary key,
+--     admin_id varchar2(20) unique not null,
+--     admin_pw varchar2(20) not null,
+--     admin_name number(7) not null,
+--     reg_date date default sysdate
+-- );
 
 create sequence seq_adminuser
     increment by 1
