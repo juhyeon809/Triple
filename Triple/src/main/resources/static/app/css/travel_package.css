@@ -394,7 +394,7 @@ main {
 #travel_package_contents p{
     font-size: 14px;
     font-weight: normal;
-    color: white;
+    /*color: #666666;*/
     /*margin: 20px 0;*/
     /*margin-left: 10px;*/
 }
