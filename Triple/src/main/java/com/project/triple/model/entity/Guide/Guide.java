@@ -29,18 +29,24 @@ public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide")
     private Long idx;
-    @Enumerated(EnumType.STRING)
-    private GuideType type;
-    private Integer guideNum;
-    private Long adminuserId;
-    private String country;
-    private String city;
-    private String adminuserName;
     private String title;
-    private String content;
     private String uploadPath;
     private String fileName;
-    private String fileType;
+    private String content;
+    private String language;
+    private String area;
+    private String population;
+    private String timeDifference;
+    private String myth;
+    private String voltage;
+    private String currency;
+    private String countryCode;
+    private String visa;
+    private String prices;
+    private String air;
+    private String climate;
+    private String bestTime;
+    private String simpleConversation;
     @CreatedDate
     private LocalDateTime regDate;
     private Integer reviewCount;

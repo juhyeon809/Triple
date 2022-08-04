@@ -994,14 +994,10 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        List<GuideApiResponse> guideApiResponseList1 = guideApiLogicService.typeList(GuideType.AIRPORT).getData();
-        List<GuideApiResponse> guideApiResponseList2 = guideApiLogicService.typeList(GuideType.CHECK).getData();
-        List<GuideApiResponse> guideApiResponseList3 = guideApiLogicService.typeList(GuideType.DOMESTICAIR).getData();
 
 
         return new ModelAndView("/pages/travel_spot/spot_location").addObject("email", email)
-                .addObject("nickname", nickname).addObject("AirportList", guideApiResponseList1)
-                .addObject("CheckList", guideApiResponseList2).addObject("DomesticAirList", guideApiResponseList3);
+                .addObject("nickname", nickname);
     }
 
     @RequestMapping(path = "/spot_domestic")
@@ -1436,6 +1432,22 @@ public class PageController {
 
         return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userid", userid)
                 .addObject("name", name).addObject("tour" , spotApiResponse);
+    }
+
+    @RequestMapping(path = "/guide_register")
+    public ModelAndView guide_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/spot/spot_guide").addObject("userid", userid)
+                .addObject("name", name);
     }
 
 
