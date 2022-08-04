@@ -126,23 +126,6 @@ public class PageController {
 
 
 
-    //항공
-    @RequestMapping(path = "/flightMain")       //http://localhost:9090/Triple/flightMain
-    public ModelAndView flightMain(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
     @RequestMapping(path = "/flightList")   //http://localhost:9090/Triple/flightList
     public ModelAndView flightList(HttpServletRequest request) throws NullPointerException {
         HttpSession session = request.getSession(false);
@@ -163,38 +146,7 @@ public class PageController {
                 .addObject("name", nickname).addObject("airTicketList", airTicketList).addObject("timeTakenList", timeTakenList);
     }
 
-<<<<<<< HEAD
-    @RequestMapping(path = "/inquiryWrite")
-    public ModelAndView inquiryWrite(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
 
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_write").addObject("email", email)
-                .addObject("name", name);
-    }
-
-    @RequestMapping(path = "/inquiryList")
-    public ModelAndView inquiryList(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String name = null;
-        if(session == null) {
-
-        }else{
-            email = (String) session.getAttribute("email");
-            name = (String) session.getAttribute("name");
-        }
-
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_inquiry_list").addObject("email", email)
-                .addObject("name", name);
-    }
 
     @RequestMapping(path = "/flightMain")
     public ModelAndView flightMain(HttpServletRequest request) {
@@ -212,8 +164,7 @@ public class PageController {
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
                 .addObject("nickname", nickname).addObject("airTicketList", airTicketList);
     }
-=======
->>>>>>> 6bef618e8840ecc12517240e3808ab3b3ce4bb1e
+
 
     @RequestMapping(path = "/flightReservation")
     public ModelAndView flightReservation(HttpServletRequest request) {

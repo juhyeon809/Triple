@@ -91,11 +91,21 @@ create sequence seq_aircraft
 drop table air_ticket;    
 select * from air_ticket; 
 insert into air_ticket values(
-    1,
+    16,
     'AIR_TICKET',
-    'JINAIR_J',
-    
-    
+    'JEJU802',
+    2222,
+    80,
+    'ICN',
+    'GUAM',
+    '2022-08-26 09:30',
+    '2022-08-30 12:30',
+    240000,
+    'LI400',
+    'SPECIAL',
+    'Y',
+    sysdate,
+    'AVAILABLE'
 );
 drop table admin_user;
 insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
