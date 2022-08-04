@@ -661,7 +661,8 @@ main td {
     border: none;
     margin-right: 10px;
 }
-.btnlist input[type="submit"] {
+.btnlist input[type="submit"],
+.btnlist input[type="reset"]{
     width: 100px;
     height: 35px;
     font-size: 14px;

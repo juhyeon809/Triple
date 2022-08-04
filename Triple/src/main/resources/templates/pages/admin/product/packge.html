@@ -15,8 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-    <script src="/static/app/js/script.js"></script>
-    <script src="/static/app/js/admin.js"></script>
+
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 <body>
@@ -53,7 +52,7 @@
                 </li>
                 <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown show">
-                        <li><a href=/templates/pages/admin/product/air.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
                         <li><a href="/templates/pages/admin/product/packge.html" style="color:darkslategray; font-weight: bold;">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
@@ -98,7 +97,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                         <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
-                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
+                        <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
                         <li><a href="/templates/pages/admin/spot/spot_guide.html">가이드 등록</a></li>
                     </ul>
                 </li>
@@ -227,7 +226,8 @@
 </section>
 
 
-
+    <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 <script>
     var oEditors = [];
     nhn.husky.EZCreator.createInIFrame({
@@ -253,7 +253,6 @@
     });
 </script>
 
-    <script src="../script.js"></script>
-    <script src="/admin/js/prduct.js"></script>
+
 </body>
 </html>

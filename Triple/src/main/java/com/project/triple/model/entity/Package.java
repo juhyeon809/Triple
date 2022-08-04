@@ -1,6 +1,7 @@
 package com.project.triple.model.entity;
 
 
+import com.project.triple.model.entity.User.AdminUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

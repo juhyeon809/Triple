@@ -63,7 +63,7 @@ a:visited {
 header {
     width: 100%;
     margin: 0 auto;
-    background-image: url('lib/travel_spot_img/header_bg.svg');
+    background-image: url('/lib/img/travel_spot_img/header_bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }

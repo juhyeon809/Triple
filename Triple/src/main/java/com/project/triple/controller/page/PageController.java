@@ -738,7 +738,7 @@ public class PageController {
 
         List<MagazineApiResponse> magazineApiResponseList = magazineApiLogicService.recommend().getData();
 
-        return new ModelAndView("/pages/magazine/magazine_recommend").addObject("email", email)
+        return new ModelAndView("/pages/magazine/magazine_travels").addObject("email", email)
                 .addObject("nickname", nickname).addObject("magazineList",magazineApiResponseList);
     }
 
@@ -883,7 +883,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_review")
+    @RequestMapping(path = "/spot_review")          //http://localhost:9090/Triple/spot_review
     public ModelAndView spot_review(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -899,7 +899,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_restaurant")
+    @RequestMapping(path = "/spot_restaurant")          //http://localhost:9090/Triple/spot_restaurant
     public ModelAndView spot_restaurant(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -915,7 +915,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_restaurant_list")
+    @RequestMapping(path = "/spot_restaurant_list")               //http://localhost:9090/Triple/spot_restaurant_list
     public ModelAndView spot_restaurant_list(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -947,7 +947,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_overseas")
+    @RequestMapping(path = "/spot_overseas")            //http://localhost:9090/Triple/spot_overseas
     public ModelAndView spot_overseas(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -963,7 +963,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_location_info/{id}")
+    @RequestMapping(path = "/spot_location_info/{id}")      //http://localhost:9090/Triple/spot_location_info/{id}
     public ModelAndView spot_location_info(HttpServletRequest request, @PathVariable Long id){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -981,7 +981,7 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("guide", guide);
     }
 
-    @RequestMapping(path = "/spot_location")
+    @RequestMapping(path = "/spot_location")        //http://localhost:9090/Triple/spot_location
     public ModelAndView spot_location(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1023,7 +1023,7 @@ public class PageController {
 
     /* 관리자 페이지 */
     /* 관리자 페이지 로그인*/
-    @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
+        @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
     public ModelAndView admin_main(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -1121,7 +1121,7 @@ public class PageController {
     }
 
     //패키지 등록
-    @RequestMapping(path = "/package_register")
+    @RequestMapping(path = "/package_register")         //http://localhost:9090/Triple/package_register
     public ModelAndView package_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -1138,7 +1138,7 @@ public class PageController {
     }
 
     //패키지 메인
-    @RequestMapping(path = "/package")
+    @RequestMapping(path = "/package")          //http://localhost:9090/Triple/package
     public ModelAndView package_main(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1165,7 +1165,7 @@ public class PageController {
                 .addObject("confirmedList",confirmed);
     }
 
-    @RequestMapping(path = "/package/america")
+    @RequestMapping(path = "/package/america")          //http://localhost:9090/Triple/package/america
     public ModelAndView package_america(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1181,7 +1181,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/eastsouthasia")
+    @RequestMapping(path = "/package/eastsouthasia")        //http://localhost:9090/Triple/package/eastsouthasia
     public ModelAndView package_eastsouthasia(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1197,7 +1197,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/europe")
+    @RequestMapping(path = "/package/europe")               //http://localhost:9090/Triple/package/europe
     public ModelAndView package_europe(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1213,7 +1213,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/japan")
+    @RequestMapping(path = "/package/japan")            //http://localhost:9090/Triple/package/japan
     public ModelAndView package_japan(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1229,7 +1229,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/southpacific")
+    @RequestMapping(path = "/package/southpacific")         //http://localhost:9090/Triple/package/southpacific
     public ModelAndView package_southpacific(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1245,7 +1245,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/specialprice")
+    @RequestMapping(path = "/package/specialprice")     //http://localhost:9090/Triple/package/specialprice
     public ModelAndView package_specialprice(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1261,7 +1261,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/magazine_guesthouse
+    @RequestMapping(path = "/package/view/{idx}")      //http://localhost:9090/Triple/package/view/{idx}
     public ModelAndView package_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1279,10 +1279,9 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("package", packageApiResponse);
     }
 
-<<<<<<< HEAD
-=======
+
     //맛집 등록
-    @RequestMapping(path = "/restaurant_register")
+    @RequestMapping(path = "/restaurant_register")      //http://localhost:9090/Triple/restaurant_register
     public ModelAndView restaurant_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -1335,5 +1334,4 @@ public class PageController {
     }
 
 
->>>>>>> ee1347ab267a873a8131770f6338b1e25dd1fee0
 }
