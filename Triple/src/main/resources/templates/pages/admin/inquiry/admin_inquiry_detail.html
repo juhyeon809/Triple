@@ -15,10 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-        <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
-    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-</head>
+        </head>
 <body>
     <!--header-->
     <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
@@ -56,7 +53,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -161,15 +158,6 @@
                             <p class="admin_inquiry_a2">안녕하세요 user2님, Triple입니다. <br>예약번호 room_resevation_abcd_1234 취소 도와드리겠습니다. <br> 감사합니다.</p>
                         </textarea>
                     </div>
-                    <script>
-                        var oEditors = [];
-                        nhn.husky.EZCreator.createInIFrame({
-                        oAppRef : oEditors,
-                        elPlaceHolder : "weditor1",//
-                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                        fCreator : "createSEditor2",
-                        });
-                    </script>
                 </div>
             </div>
             <div class="btnlist">
@@ -178,6 +166,7 @@
             </div>
         </div>
 
-    <script src="../script.js"></script>
+        <script src="/app/js/script.js"></script>
+        <script src="/app/js/admin.js"></script>
 </body>
 </html>

@@ -15,8 +15,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-    <script src="/static/app/js/admin.js"></script>
-    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
     
 </head>
 <body>
@@ -56,7 +55,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -194,25 +193,7 @@
     </section>
 
 
-<script src="../script.js"></script>
-<script>
-    var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-        oAppRef : oEditors,
-        elPlaceHolder : "weditor1",//
-        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-        fCreator : "createSEditor2",
-        });
-</script>
-<script src="/admin/js/register.js"></script>
     <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>

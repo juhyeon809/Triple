@@ -15,10 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-        <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
-    <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-</head>
+        </head>
 <body>
     <!--header-->
     <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
@@ -56,7 +53,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -150,15 +147,7 @@
                             <p>경로상 추천이 무엇인가요?</p>
                         </textarea>
                     </div>
-                    <script>
-                        var oEditors = [];
-                        nhn.husky.EZCreator.createInIFrame({
-                        oAppRef : oEditors,
-                        elPlaceHolder : "weditor",//
-                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                        fCreator : "createSEditor2",
-                        });
-                    </script>
+
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
@@ -170,15 +159,7 @@
                             </p>
                         </textarea>
                     </div>
-                    <script>
-                        var oEditors = [];
-                        nhn.husky.EZCreator.createInIFrame({
-                        oAppRef : oEditors,
-                        elPlaceHolder : "weditor1",//
-                        sSkinURI : "../smarteditor/SmartEditor2Skin.html",
-                        fCreator : "createSEditor2",
-                        });
-                    </script>
+
                 </div>
             </div>
             <div class="btnlist">
@@ -189,7 +170,8 @@
         </div>
         <!--수정버튼 끝-->
     </section>
-    <script src="../script.js"></script>
-    
+
+    <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin.js"></script>
 </body>
 </html>

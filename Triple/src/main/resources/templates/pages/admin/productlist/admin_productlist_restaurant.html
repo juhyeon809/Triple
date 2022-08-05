@@ -16,10 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-        <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
-
-</head>
+        </head>
 <body>
     <!--header-->
     <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
@@ -56,7 +53,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -264,7 +261,8 @@
             <!--넘버링 끝-->
         </div>
     </section>
-    <script src="../script.js"></script>
+
+    <script src="/app/js/script.js"></script>
     <script>
         $(document).ready(function(){
         //약관동의 체크박스 전체 선택

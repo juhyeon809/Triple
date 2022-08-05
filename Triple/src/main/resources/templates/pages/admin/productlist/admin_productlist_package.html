@@ -55,7 +55,7 @@
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
-                        <li><a href="/templates/pages/admin/product/packge.html">패키지</a></li>
+                        <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
@@ -175,13 +175,13 @@
                     <th>
                         상품번호
                     </th>
-                </tr> 
-                <tr>
+                </tr>
+                <tr th:each="list :${list}">
                     <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
+                    <td>[[${list.title}]]</td>
+                    <td>[[${list.adultInfantPr}]]</td>
+                    <td>[[${list.title}]]</td>
+                    <td>[[${list.read}]]</td>
                 </tr>
                 <tr>
                     <td><input class="package" type="checkbox"></td>
@@ -261,8 +261,8 @@
             <!--넘버링 끝-->
         </div>
     </section>
+
     <script src="/app/js/script.js"></script>
-    <script src="/static/app/js/admin.js"></script>
     <script>
         $(document).ready(function(){
         //약관동의 체크박스 전체 선택

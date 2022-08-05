@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface GuideRepository extends JpaRepository<Guide, Long> {
 
-    List<Guide> findAllByType(GuideType type);
+//    List<Guide> findAllByType(GuideType type);
 }

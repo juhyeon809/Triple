@@ -6,23 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>관리자 | 스팟가이드 등록</title>
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="../admin.css">
+  <link rel="stylesheet" href="/app/css/admin.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
-    </div>
-    <div class="user-info">
-      <div class="info-container">
-        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-        <div class="email">john.doe@example.com</div>
-      </div>
-    </div>
-  </div>
-
-</nav>
+<!--header-->
+<div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
   <aside id="leftsidebar" class="sidebar">
@@ -129,22 +118,22 @@
       <!--타이틀 끝-->
     </div>
     <!--매거진 정보 입력-->
-    <form action="" onsubmit="return spotRestaurant()" name="form">
+    <form th:action="@{/api/guide/register}" onsubmit="return spotRestaurant()" name="form" method="post" enctype="multipart/form-data">
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title2">기초 정보</div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">타이틀명</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="placeName" class="admin_inquiry_category2">
+          <input name="title" type="text" id="placeName" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title" style="height: 250px;">장소 설명</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-            <input type="file" id="pic" class="admin_inquiry_category2" style="margin-bottom: 10px;">
-            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
+            <input name="img1" type="file" id="pic" class="admin_inquiry_category2" style="margin-bottom: 10px;">
+            <textarea name="content" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
           </div>
         </div>
       </div>
@@ -154,56 +143,56 @@
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">언어</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="language" class="admin_inquiry_category2">
+          <input  name="language" type="text" id="language" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">면적</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="area" class="admin_inquiry_category2">
+          <input name="area" type="text" id="area" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">인구</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="people" class="admin_inquiry_category2">
+          <input name="population" type="text" id="people" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">시차</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="time" class="admin_inquiry_category2">
+          <input name="timeDifference" type="text" id="time" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">종교</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="religion" class="admin_inquiry_category2">
+          <input name="myth" type="text" id="religion" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">전압</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="voltage" class="admin_inquiry_category2">
+          <input name="voltage" type="text" id="voltage" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">통화</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="pay" class="admin_inquiry_category2">
+          <input name="currency" type="text" id="pay" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">전화</div>
         <div class="admin_inquiry_q3">
-          <input type="text" id="call" class="admin_inquiry_category2">
+          <input name="countryCode" type="text" id="call" class="admin_inquiry_category2">
         </div>
       </div>
       <div class="admin_inquiry_qtext" style="height: 100px;">
         <div class="admin_inquiry_title">비자</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
+                            <textarea name="visa" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
                             </textarea>
           </div>
         </div>
@@ -212,7 +201,7 @@
         <div class="admin_inquiry_title">물가</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
+                            <textarea  name="prices" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
                             </textarea>
           </div>
         </div>
@@ -221,7 +210,7 @@
         <div class="admin_inquiry_title">항공</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
+                            <textarea name="air" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
                             </textarea>
           </div>
         </div>
@@ -230,7 +219,7 @@
         <div class="admin_inquiry_title">기후</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
+                            <textarea name="climate" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
                             </textarea>
           </div>
         </div>
@@ -239,7 +228,7 @@
         <div class="admin_inquiry_title">여행최적기</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
+                            <textarea name="bestTime" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;">
                             </textarea>
           </div>
         </div>
@@ -248,21 +237,21 @@
         <div class="admin_inquiry_title">간단한 회화</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-                            <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
+                            <textarea name="simpleConversation" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
                             </textarea>
           </div>
         </div>
       </div>
       <div class="btnlist">
-        <button value="등록"><a href="#">등록</a></button>
-        <button value="취소"><a href="#">취소</a></button>
+        <input type="submit" value="등록">
+        <input type="reset" value="초기화">
       </div>
     </form>
   </div>
 </section>
 
 
-<script src="/admin/script.js"></script>
-<script src="/admin/js/register.js"></script>
+<script src="/app/js/script.js"></script>
+<script src="/app/js/admin.js"></script>
 </body>
 </html>tml>
