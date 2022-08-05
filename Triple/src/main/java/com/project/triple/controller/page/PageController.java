@@ -917,7 +917,7 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        return new ModelAndView("/pages/travel_spot/spot_restaurant").addObject("email", email)
+        return new ModelAndView("/pages/travel_spot/spot_restaurant_list").addObject("email", email)
                 .addObject("nickname", nickname);
     }
 
@@ -1143,7 +1143,7 @@ public class PageController {
 
 
     /* 공지사항 등록 */
-    @RequestMapping(path = "/admin/notice/register")
+    @RequestMapping(path = "/admin/notice/register")        //http://localhost:9090/Triple/admin/notice/register
     public ModelAndView notice_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -1180,7 +1180,7 @@ public class PageController {
     }
 
     // 마이페이지 메거진 등록
-    @RequestMapping(path = "/admin/magazine_register")
+    @RequestMapping(path = "/admin/magazine_register")      //http://localhost:9090/Triple/admin/magazine_register
     public ModelAndView magazine_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;

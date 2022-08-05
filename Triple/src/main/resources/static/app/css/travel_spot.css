@@ -109,11 +109,11 @@ header {
     color: white;
     font-weight: 700;   
 }
-#travel_spot_img {
+#travel_spot_img{
     width: 1000px;
     height: 250px;
     margin: 0 auto;
-    background-image: url('lib/travel_spot_img/img/overseas2.svg');
+    background-image: url("/lib/img/travel_spot_img/overseas2.svg");
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 50px;
