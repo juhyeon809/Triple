@@ -15,6 +15,10 @@
     
 }
 
+ul#mag_list {
+    width: 850px;
+    margin: 0 auto;
+}
 .mag_area > #mag_list > li{
     list-style: none;
     margin: 7px;

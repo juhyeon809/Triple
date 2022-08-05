@@ -164,88 +164,26 @@
                         <input type="checkbox" id="checkAll">
                     </th>
                     <th>
+                        상품번호
+                    </th>
+                    <th>
+                        분류
+                    </th>
+                    <th>
                         상품명
                     </th>
                     <th>
-                        가격
-                    </th>
-                    <th>
-                        여행사
-                    </th>
-                    <th>
-                        상품번호
+                        가격(성인기준)
                     </th>
                 </tr>
                 <tr th:each="list :${list}">
                     <td><input class="package" type="checkbox"></td>
-                    <td>[[${list.title}]]</td>
-                    <td>[[${list.adultInfantPr}]]</td>
-                    <td>[[${list.title}]]</td>
-                    <td>[[${list.read}]]</td>
+                    <td th:text="${list.idx}"></td>
+                    <td th:text="${list.country}"></td>
+                    <td th:text="${list.title}"></td>
+                    <td th:text="${list.adultPr}"></td>
                 </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
-                <tr>
-                    <td><input class="package" type="checkbox"></td>
-                    <td>하노이 하롱베이 5성 알찬일정 패키지 3박 5일</td>
-                    <td>299,000원</td>
-                    <td>인터파크투어</td>
-                    <td>Package 101</td>
-                </tr>
+
             </table>
             <!--패키지 리스트 테이블 끝-->
             <!--버튼 리스트-->

@@ -64,6 +64,7 @@ input[type="border"], input[type="radio"], input[type="checkbox"]{
     letter-spacing: 1.5px;
     vertical-align: middle;
     align-items: center;
+    padding: 15px 10px 0 20px;
 }
 .navbar .container-fluid {
     display: flex;
