@@ -84,7 +84,7 @@ form>p{
 }
 .form_box {
     align-items: center;
-    width: 785px;
+    width: 800px;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
@@ -93,6 +93,7 @@ form>p{
     width: 400px;
     height: 30px;
     font-size: 18px;
+    font-weight: bold;
     border: none;
     /*border-bottom: 1px solid gray;*/
 }
@@ -130,7 +131,7 @@ form>p{
 }
 #pro_img{
     padding-right: 20px;
-    width: 90px;
+    width: 100px;
 }
 .content_list{
     font-size: 16px;

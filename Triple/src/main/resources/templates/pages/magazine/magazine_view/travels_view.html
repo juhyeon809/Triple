@@ -29,7 +29,7 @@
                         <p id="rec_tit" th:text="${magazine.getTitle()}"></p>
                     </div>
                     <div>
-                        <img th:src="@{${magazine.getUploadPath()}}">
+                        <img id="cont_img" th:src="@{${magazine.getUploadPath()}}">
                         <p id="rec_cont" th:text="${magazine.getContent()}">
                         </p>
                     </div>

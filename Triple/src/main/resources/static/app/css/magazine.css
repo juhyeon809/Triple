@@ -80,6 +80,7 @@ ul#mag_list {
     border-radius: 10px;
     padding-left: 130px;
     height:200px;
+    width: 150px;
 }
 #like_box_list{
     float: left;
@@ -176,6 +177,10 @@ a{
     list-style: none;
     display: flex;
     margin-right: 20px;
+}
+#cont_img{
+    width:500px;
+    height: 400px;
 }
 
 /*여행지추천*/
@@ -439,12 +444,8 @@ a > #sp {
     height:500px;
 }
 
-
 /*여행기*/
-#cont_img{
-    width:500px;
-    height: 400px;
-}
+
 #tr_img2{
     width:1000px;
 }

@@ -88,10 +88,9 @@ form>p{
     justify-content: space-between;
     vertical-align: middle;
 }
-.pro_box1_left > p{
-    font-size: 14px;
-    color: #777777;
-
+.pro_box1_left{
+    font-size: 18px;
+    font-weight: bold;
 }
 .pro_box1_right{
     padding-top: 15px;
@@ -121,7 +120,7 @@ form>p{
 }
 #pro_img{
     padding-right: 20px;
-    width: 90px;
+    width: 100px;
 }
 .content_list{
     font-size: 16px;
