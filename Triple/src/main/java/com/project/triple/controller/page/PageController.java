@@ -201,7 +201,7 @@ public class PageController {
     }
 
     //쿠폰 메인
-    @RequestMapping(path = "/mypage/coupon")
+    @RequestMapping(path = "/mypage/coupon")        // http://localhost:9090/Triple/mypage/coupon
     public ModelAndView coupon_main(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;

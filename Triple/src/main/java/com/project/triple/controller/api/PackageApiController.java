@@ -31,6 +31,6 @@ public class PackageApiController extends CrudController<PackageApiRequest, Pack
         packageApiLogicService.write(package1, file);
 
         ScriptUtils.alert( response , "패키지 작성완료!");
-        return new ModelAndView("/pages/admin/productlist/admin_productlist_package");
+        return new ModelAndView("/pages/admin/product/packge");
     }
 }

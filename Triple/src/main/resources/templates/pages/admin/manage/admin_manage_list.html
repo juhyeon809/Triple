@@ -155,11 +155,11 @@
                 <td>
                     <input type="checkbox" name="manager">
                 </td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.idx}">101</td>
-                <td onclick="location.href='adminList/admin_detail'" th:href="@{/read(id=${adminuser.idx})}" th:text="${adminuser.userid}">apple</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.name}">김사과</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.hp}">010-1111-1111</td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.position}">대표</td>
+                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.idx}"></td>
+                <td onclick="location.href='adminList/admin_detail'" th:href="@{/read(id=${adminuser.idx})}" th:text="${adminuser.userid}"></td>
+                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.name}"></td>
+                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.hp}"></td>
+                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.position}"></td>
             </tr>
         </table>
         <script>

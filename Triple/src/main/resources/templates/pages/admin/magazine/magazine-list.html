@@ -165,44 +165,17 @@
                         분류
                     </th>
                     <th>
-                        작성주차
+                        작성일
                     </th>
                 </tr> 
-                <tr>
-                    <td>25</td>
-                    <td>Triple</td>
-                    <td><a href="#">아이와 함께 떠나는 여행, ...</a></td>
-                    <td>#여행지추천</td>
-                    <td>6월 4주차</td>
+                <tr th:each="magazine : ${magazineList}">
+                    <td th:text="${magazine.idx}"></td>
+                    <td th:href="@{/read(id=${magazine.idx})}" th:text="${magazine.userid}">Triple</td>
+                    <td th:text="${magazine.title}"></td>
+                    <td th:text="${magazine.magazineType}">#여행지추천</td>
+                    <td th:text="${magazine.regDate}"></td>
                 </tr>
-                <tr>
-                    <td>24</td>
-                    <td>Triple</td>
-                    <td><a href="#">'차 없이도 괜찮아요' 초록색 ...</a></td>
-                    <td>#여행지추천</td>
-                    <td>6월 4주차</td>
-                </tr>
-                <tr>
-                    <td>23</td>
-                    <td>Triple</td>
-                    <td><a href="#">올여름 휴가로 딱! 바다가 반기...</a></td>
-                    <td>#여행지추천</td>
-                    <td>6월 3주차</td>
-                </tr>
-                <tr>
-                    <td>22</td>
-                    <td>Triple</td>
-                    <td><a href="#">숙소가 다 거기서 거기? 내게 ...</a></td>
-                    <td>#숙소추천</td>
-                    <td>6월 3주차</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>Triple</td>
-                    <td><a href="#">우리들의 블루스 촬영지, 제주...</a></td>
-                    <td>#여행지추천</td>
-                    <td>6월 2주차</td>
-                </tr>
+
             </table>
             <!--매거진 리스트 테이블 끝-->
             <!--넘버링-->
