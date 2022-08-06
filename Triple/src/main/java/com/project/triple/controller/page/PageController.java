@@ -2,36 +2,30 @@ package com.project.triple.controller.page;
 
 import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.enumclass.GuideType;
+import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.model.network.response.CouponResponse.UserCouponApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
-import com.project.triple.model.network.response.MagazineApiResponse;
-import com.project.triple.model.network.response.NoticeApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
-import com.project.triple.model.network.response.TourTicketApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
+import com.project.triple.service.*;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.CouponService.CouponApiLogicService;
 import com.project.triple.service.CouponService.UserCouponApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
-import com.project.triple.service.MagazineApiLogicService;
-import com.project.triple.service.NoticeApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
 import com.project.triple.service.SpotService.SpotApiLogicService;
-import com.project.triple.service.TourTicketApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
-import com.project.triple.model.network.response.PackageApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
-import com.project.triple.service.PackageApiLogicService;
 import com.project.triple.service.RestaurantService.RestaurantApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
@@ -80,6 +74,9 @@ public class PageController {
     private NoticeApiLogicService noticeApiLogicService;
 
     @Autowired
+    private EventApiLogicService eventApiLogicService;
+
+    @Autowired
     private ReservationApiLogicService reservationApiLogicService;
 
     @Autowired
@@ -99,6 +96,7 @@ public class PageController {
 
     @Autowired
     private SpotApiLogicService spotApiLogicService;
+
 
     // 메인페이지
     @RequestMapping(path={""})
@@ -1132,8 +1130,8 @@ public class PageController {
         if(session == null) {
 
         }else{
-            userid = (String) session.getAttribute("userid");
-            name = (String) session.getAttribute("name");
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
         }
         List<NoticeApiResponse> noticeList = noticeApiLogicService.search().getData();
 
@@ -1177,6 +1175,42 @@ public class PageController {
                 .addObject("userid", userid)
                 .addObject("name", name)
                 .addObject("notice", noticeApiResponse);
+    }
+
+    /* 이벤트 리스트 */
+    @RequestMapping(path = "/admin/eventList")   //http://localhost:9090/Triple/admin/eventList
+    public ModelAndView eventList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        List<EventApiResponse> eventList = eventApiLogicService.search().getData();
+
+        return new ModelAndView("/pages/admin/event/eventList").addObject("userid", userid)
+                .addObject("name", name).addObject("eventList", eventList);
+    }
+
+    /* 이벤트 등록 */
+    @RequestMapping(path = "/admin/event/register")        //http://localhost:9090/Triple/admin/event/register
+    public ModelAndView event_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/event/eventRegister")
+                .addObject("userid", userid)
+                .addObject("name", name);
     }
 
     // 마이페이지 메거진 등록

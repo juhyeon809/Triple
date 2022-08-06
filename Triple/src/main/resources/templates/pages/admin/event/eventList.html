@@ -76,8 +76,8 @@
                 </li>
                 <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/event/eventList.html" style="color:darkslategray; font-weight: bold;">목록</a></li>
-                        <li><a href="/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                        <li><a href="/Triple/admin/eventList" style="color:darkslategray; font-weight: bold;">목록</a></li>
+                        <li><a href="/Triple/admin/event/register">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
@@ -163,29 +163,11 @@
                     <td>하노이 여행 특가</td>
                     <td>2022.06.27</td>
                 </tr>
-                <tr>
-                    <td>25</td>
-                    <td>7월 이벤트</td>
-                    <td>하노이 여행 특가</td>
-                    <td>2022.06.27</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>7월 이벤트</td>
-                    <td>하노이 여행 특가</td>
-                    <td>2022.06.27</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>7월 이벤트</td>
-                    <td>하노이 여행 특가</td>
-                    <td>2022.06.27</td>
-                </tr>
-                <tr>
-                    <td>25</td>
-                    <td>7월 이벤트</td>
-                    <td>하노이 여행 특가</td>
-                    <td>2022.06.27</td>
+                <tr th:each="event : ${eventList}" th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}">
+                    <td><a th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}" th:text="${event.getIdx()}"></a></td>
+                    <td><a th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}" th:text="${event.getEventType()}"></a></td>
+                    <td><a th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}" th:text="${event.getTitle}"></a></td>
+                    <td><a th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}" th:text="${event.getRegDate()}"></a></td>
                 </tr>
                 
             </table>
@@ -195,6 +177,23 @@
         </div>
 
     </section>
+    <script>
+        $(document).ready(function(){
+            //약관동의 체크박스 전체 선택
+            $("#checkAll").click(function() {
+                if($("#checkAll").is(":checked")) $("input[name='event']").prop("checked", true);
+                else $("input[name='event']").prop("checked", false);
+            });
+            $("input[name='event']").click(function() {
+                var total = $("input[name='event']").length;
+                var checked = $("input[name='event']:checked").length;
+
+                //개별선택 해제시 전체체크박스 해제
+                if(total != checked) $("#checkAll").prop("checked", false);
+                else $("#checkAll").prop("checked", true);
+            });
+        });
+    </script>
 
     <script src="/app/js/script.js"></script>
 </body>
