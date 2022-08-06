@@ -27,7 +27,7 @@ public class RestaurantApiResponse {
     private String menuName3;
     private String menuDescription3;
     private Integer menuPrice3;
-    private String howToGO;
+    private String howTogo;
     private String availableAt;
     private String tip;
     private String etc;

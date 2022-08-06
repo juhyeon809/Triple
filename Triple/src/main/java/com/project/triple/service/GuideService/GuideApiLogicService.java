@@ -85,13 +85,13 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         return Header.OK();
     }
 
-    public void write(Guide guide, MultipartFile img1) throws Exception{
+    public void write(Guide guide, MultipartFile file) throws Exception{
 
         String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
         UUID uuid = UUID.randomUUID();
-        String filename = uuid + "_" + img1.getOriginalFilename();
+        String filename = uuid + "_" + file.getOriginalFilename();
         File savFile = new File(projectpath, filename);
-        img1.transferTo(savFile);
+        file.transferTo(savFile);
         guide.setFileName(filename);
         guide.setUploadPath("/files/"+filename);
         guideRepository.save(guide);

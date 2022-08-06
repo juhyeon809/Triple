@@ -101,11 +101,11 @@
                 <div id="tips_for_visiting" >
                     <div class="flex_div">
                         <p class="index_p">가는방법</p>
-                        <p class="context_p"th:text="${restaurant.getHowToGO()}"></p>
+                        <p class="context_p"th:text="${restaurant.getHowTogo()}"></p>
                     </div>
                     <div class="flex_div">
                         <p class="index_p" >이용가능시간, 휴무일</p>
-                        <p class="context_p"><span class="blue_text" th:text="${restaurant.getAvailableAt()}"></span></p>
+                        <p class="context_p blue_text" th:text="${restaurant.getAvailableAt()}"></p>
                     </div>
                     <div class="flex_div">
                         <p class="index_p">이곳의 이용팁</p>
@@ -122,41 +122,19 @@
                 <div id="review_top">
                     <p class="index_p">리뷰 <span class="blue_text">332</span></p>
                     <div id="review_write_see">
-                    <p id="write_review"><a href="">리뷰 쓰기</a></p>
+                    <p id="write_review"><a th:href="'/Triple/spot/review/restaurant/'+ ${restaurant.getIdx()}">리뷰 쓰기</a></p>
                     <p id="see_review"><a href="">리뷰 전체보기</a></p>
                     </div>
                 </div>
-                <div class="review_content">
+                <div class="review_content" th:each="review : ${reviewList}">
                     <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
                     <div class="user_info_area">
-                        <p class="userid_area">Apple123</p>
+                        <p class="userid_area" th:text="${review.getUserEmail()}"></p>
                         <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
                         <p class="star_area"><span class="star_point">★★★★☆</span></p>
                     </div>
-                    <div class="review_context">
-                        <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>
-                    </div>
-                </div>
-                <div class="review_content">
-                    <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
-                    <div class="user_info_area">
-                    <p class="userid_area">Apple123</p>
-                    <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
-                    </div>
-                    <div class="review_context">
-                        <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>
-                    </div>
-                </div>
-                <div class="review_content">
-                    <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
-                    <div class="user_info_area">
-                    <p class="userid_area">Apple123</p>
-                    <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
-                    </div>
-                    <div class="review_context">
-                        <p>최신정보보시라고 리뷰 남깁니다<br>위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요 ^^ 수영장은 바람이 많이 부니까 이용하시려면 따듯하게 수건 챙겨가시는거 추천드려요! 주변에는 스노클링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋아요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘쉬다 갑니다~~</p>
+                    <div class="review_context" >
+                        <p th:text="${review.getContent()}"></p>
                     </div>
                 </div>
             </div>

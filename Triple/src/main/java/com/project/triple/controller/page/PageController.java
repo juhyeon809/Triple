@@ -1,38 +1,37 @@
 package com.project.triple.controller.page;
 
-import com.project.triple.model.entity.Guide.Guide;
-import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
-import com.project.triple.model.network.response.CouponResponse.UserCouponApiResponse;
+import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
-import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.RestaurantResponse.RestaurantReviewApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
-import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
 import com.project.triple.service.*;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.CouponService.CouponApiLogicService;
 import com.project.triple.service.CouponService.UserCouponApiLogicService;
+import com.project.triple.service.GuideService.GuideReviewApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
+import com.project.triple.service.RestaurantService.RestaurantReviewApiLogicService;
 import com.project.triple.service.SpotService.SpotApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
-import com.project.triple.service.AirService.AirTicketApiLogicService;
 import com.project.triple.service.GuideService.GuideApiLogicService;
 import com.project.triple.service.MagazineApiLogicService;
 import com.project.triple.service.RestaurantService.RestaurantApiLogicService;
+import com.project.triple.service.SpotService.SpotReviewApiLogicService;
 import com.project.triple.service.UserService.AdminUserApiLogicService;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -96,6 +95,15 @@ public class PageController {
 
     @Autowired
     private SpotApiLogicService spotApiLogicService;
+
+    @Autowired
+    private RestaurantReviewApiLogicService restaurantReviewApiLogicService;
+
+    @Autowired
+    private SpotReviewApiLogicService spotReviewApiLogicService;
+
+    @Autowired
+    private GuideReviewApiLogicService guideReviewApiLogicService;
 
 
     // 메인페이지
@@ -867,6 +875,8 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+
+
         return new ModelAndView("/pages/travel_spot/spot_tour").addObject("email", email)
                 .addObject("nickname", nickname);
     }
@@ -899,41 +909,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        return new ModelAndView("/pages/travel_spot/spot_review").addObject("email", email)
+        return new ModelAndView("spot_review_restaurant").addObject("email", email)
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_restaurant")          //http://localhost:9090/Triple/spot_restaurant
-    public ModelAndView spot_restaurant(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
 
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
 
-        return new ModelAndView("/pages/travel_spot/spot_restaurant_list").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
 
-    @RequestMapping(path = "/spot_restaurant_list")               //http://localhost:9090/Triple/spot_restaurant_list
-    public ModelAndView spot_restaurant_list(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/travel_spot/spot_restaurant_list").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
 
     @RequestMapping(path = "/spot_restaurant_info")
     public ModelAndView spot_restaurant_info(HttpServletRequest request){
@@ -967,8 +949,9 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path = "/spot_location_info/{id}")      //http://localhost:9090/Triple/spot_location_info/{id}
-    public ModelAndView spot_location_info(HttpServletRequest request, @PathVariable Long id){
+    //가이드 상세 페이지
+   @RequestMapping(path = "/spot/location/view/{id}")      //http://localhost:9090/Triple/spot_location_info/{id}
+    public ModelAndView spot_guide_info(HttpServletRequest request, @PathVariable Long id){
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -980,13 +963,16 @@ public class PageController {
         }
 
         GuideApiResponse guide = guideApiLogicService.read(id).getData();
+        Long guideIdx = guide.getIdx();
+        List<GuideReviewApiResponse> guideReviewApiResponseList = guideReviewApiLogicService.findReview(guideIdx).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
-                .addObject("nickname", nickname).addObject("guide", guide);
+                .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
     }
 
-    @RequestMapping(path = "/spot_location")        //http://localhost:9090/Triple/spot_location
-    public ModelAndView spot_location(HttpServletRequest request){
+    //가이드 리스트
+    @RequestMapping(path = "/spot/location")        //http://localhost:9090/Triple/spot_location
+    public ModelAndView spot_guide(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -998,6 +984,7 @@ public class PageController {
         }
 
         List<GuideApiResponse> guideApiResponseList = guideApiLogicService.list().getData();
+
 
         return new ModelAndView("/pages/travel_spot/spot_location").addObject("email", email)
                 .addObject("nickname", nickname).addObject("guideList",guideApiResponseList);
@@ -1426,21 +1413,27 @@ public class PageController {
     }
 
     @RequestMapping(path = "/spot/restaurant/view/{idx}")      //http://localhost:9090/Triple/package/view/
-    public ModelAndView restaurant_view(@PathVariable Long idx, HttpServletRequest request) {
+    public ModelAndView restaurant_view(@PathVariable Long idx, HttpServletRequest request ,HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
         if(session == null){
 
         }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
+
+                email = (String) session.getAttribute("email");
+                nickname = (String) session.getAttribute("nickname");
+
         }
 
+
         RestaurantApiResponse restaurantApiResponse = restaurantApiLogicService.read(idx).getData();
+        Long restaurantId = restaurantApiResponse.getIdx();
+        List<RestaurantReviewApiResponse> restaurantReviewApiResponseList = restaurantReviewApiLogicService.findReview(restaurantId).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
-                .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse);
+                .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse)
+                .addObject("reviewList",restaurantReviewApiResponseList);
     }
 
     @RequestMapping(path = "/tourism_register")
@@ -1478,7 +1471,7 @@ public class PageController {
     }
 
     @RequestMapping(path = "/spot/tour/view/{id}")
-    public ModelAndView tour_list(@PathVariable Long id, HttpServletRequest request){
+    public ModelAndView tour_view(@PathVariable Long id, HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
@@ -1490,11 +1483,14 @@ public class PageController {
         }
 
         SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
+        Long tourId = spotApiResponse.getIdx();
+        List<SpotReviewApiResponse> spotReviewApiResponses = spotReviewApiLogicService.findReview(tourId).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userid", userid)
-                .addObject("name", name).addObject("tour" , spotApiResponse);
+                .addObject("name", name).addObject("tour" , spotApiResponse).addObject("reviewList", spotReviewApiResponses);
     }
 
+    //가이드 등록
     @RequestMapping(path = "/guide_register")
     public ModelAndView guide_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -1509,6 +1505,37 @@ public class PageController {
 
         return new ModelAndView("/pages/admin/spot/spot_guide").addObject("userid", userid)
                 .addObject("name", name);
+    }
+
+    @RequestMapping(path = "/spot/review/{kind}/{id}")
+    public ModelAndView spot_review(@PathVariable String kind, @PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+            ScriptUtils.alertAndMovePage( response,"로그인 후 이용하세요", "/Triple/login");
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        if(kind.equals("restaurant")){
+
+            return new ModelAndView("/pages/travel_spot/spot_review_restaurant").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("postId", id);
+        }
+        if(kind.equals("guide")){
+            return new ModelAndView("/pages/travel_spot/spot_review_guide").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("postId", id);
+        }
+        if(kind.equals("tour")){
+            return new ModelAndView("/pages/travel_spot/spot_review_tour").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("postId", id);
+        }
+        else{
+            ScriptUtils.alertAndMovePage(response, "잘못된 접근입니다", "/Triple");
+            return null;
+        }
     }
 
 

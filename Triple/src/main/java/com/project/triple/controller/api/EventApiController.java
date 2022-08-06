@@ -29,7 +29,6 @@ import java.util.Stack;
 public class EventApiController extends CrudController<EventApiRequest, EventApiResponse, Event> {
     private final EventApiLogicService eventApiLogicService;
 
-    private final NoticeApiLogicService noticeApiLogicService;
 
     @PostMapping("/register")
     public ModelAndView register( HttpServletResponse response , Event event, MultipartFile file) throws Exception
