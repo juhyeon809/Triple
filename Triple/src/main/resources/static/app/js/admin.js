@@ -150,18 +150,18 @@ function productPackge(){
     }
 
     //키워드
-    var isKCheck=false;
-    var arrKeyword=document.getElementsByName("keywordchk");
-    for(var i=0; i<arrKeyword.length; i++){
-        if(arrKeyword[i].checked == true){
-            isKCheck=true;
-            break;
-        }
-    }
-    if(!isKCheck){
-        alert('키워드를 선택해주세요');
-        return false;
-    }
+    // var isKCheck=false;
+    // var arrKeyword=document.getElementsByName("keywordchk");
+    // for(var i=0; i<arrKeyword.length; i++){
+    //     if(arrKeyword[i].checked == true){
+    //         isKCheck=true;
+    //         break;
+    //     }
+    // }
+    // if(!isKCheck){
+    //     alert('키워드를 선택해주세요');
+    //     return false;
+    // }
     //상품가격
     return true
 }

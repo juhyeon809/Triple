@@ -5,7 +5,7 @@
 <header th:fragment="mypageHeader">
   <div id="logo_area">
     <div id="logo"><a href="/Triple"><img src="/lib/img/logo_triple.svg" alt=""></a></div>
-    <div id="logo"><a href="/Triple/"><img src="/lib/img/logo_triple.svg" alt=""></a></div>
+
     <div id="login_join">
       <a th:if ="${session.email == null}" href="/Triple/login">LOGIN</a>
       <a th:if ="${session.email != null}" href="/Triple/logout">LOGOUT</a>

@@ -316,7 +316,7 @@ create sequence seq_magazine
     increment by 1
     start with 1;
     
-
+select * from admin_user;
 create table admin_user(
     idx number(7) primary key,
     userid varchar2(20) not null,
@@ -334,7 +334,7 @@ create sequence seq_admin_user
     increment by 1
     start with 1;
     
-insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹€ì‚¬ê³¼', '010-1111-1111', 'ê´€ë¦¬ì', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+insert into admin_user values(1, 'apple123', 'apple123!', '±è»ç°ú', '010-1111-1111', '°ü¸®ÀÚ', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
     
 
 create table spot(

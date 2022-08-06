@@ -232,9 +232,7 @@ main {
     color: #666666;
 }
 
-#travel_package_contents .city{
-    margin-left: 30px;
-}
+
 .packagebox {
     display: flex;
     justify-content: space-around;
@@ -390,7 +388,11 @@ main {
     color: #666666;
     
 }
-
+#travel_package_contents .city{
+    margin-left: 30px;
+    font-weight: bold;
+    color: #666666;
+}
 #travel_package_contents p{
     font-size: 14px;
     font-weight: normal;
@@ -524,6 +526,7 @@ main > p {
 .packagebox_image a img {
     width: 430px;
     height: 300px;
+    border-radius: 5px;
 }
 
 

@@ -517,6 +517,7 @@ font-size: 16px;
 }
 .tour-desc .last .flex.Included p{
   margin-top: -5px;
+  width: 350px;
 }
 .tour-desc article .refundPolicy li{
   font-size: 14px;
