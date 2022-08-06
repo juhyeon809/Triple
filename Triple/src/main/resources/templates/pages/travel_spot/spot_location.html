@@ -33,37 +33,11 @@
         </div>
         <div class="guide_content_box">
             <p class="list_title">출발 전 확인</p>
-            <div class="content_list" th:each="check : ${CheckList}">
+            <div class="content_list" th:each="guide : ${guideList}">
                 <div class="content_flex_box">
                     <div>
-                        <p class="title_text"><a th:href="'/Triple/spot_location_info/'+${check.getIdx()}" th:text="${check.getTitle()}"></a></p>
-                        <p th:text="${check.getContent().substring(0,5)}+'....'"></p>
-                    </div>
-                    <div><img src="/lib/img/travel_spot_img/overseas3.svg" alt=""></div>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <div class="guide_content_box">
-            <p class="list_title">국내공항 안내</p>
-            <div class="content_list" th:each="DomesticAir : ${DomesticAirList}">
-                <div class="content_flex_box">
-                    <div>
-                        <p class="title_text"><a th:href="'/Triple/spot_location_info/'+ ${DomesticAir.getIdx()}" th:text="${DomesticAir.getTitle()}"></a></p>
-                        <p th:text="${DomesticAir.getContent().substring(0,5)}+'...'"></p>
-                    </div>
-                    <div><img src="/lib/img/travel_spot_img/overseas3.svg" alt=""></div>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <div class="guide_content_box">
-            <p class="list_title">공항정보</p>
-            <div class="content_list" th:each="Airport : ${AirportList}">
-                <div class="content_flex_box">
-                    <div>
-                        <p class="title_text"><a th:href="'/Triple/spot_location_info/'+ ${Airport.getIdx()}" th:text="${Airport.getTitle()}"></a></p>
-                        <p th:text="${Airport.getContent().substring(0, 5)}+ '...'"></p>
+                        <p class="title_text"><a th:href="'/Triple/spot_location_info/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
+                        <p th:text="${guide.getContent().substring(0,5)}+'....'"></p>
                     </div>
                     <div><img src="/lib/img/travel_spot_img/overseas3.svg" alt=""></div>
                 </div>

@@ -97,5 +97,11 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         guideRepository.save(guide);
     }
 
+    public Header<List<GuideApiResponse>> list() {
+        List<GuideApiResponse> guideApiResponseList = guideRepository.findAll().stream().map(guide -> response(guide)).collect(Collectors.toList());
+
+        return Header.OK(guideApiResponseList);
+    }
+
 
 }

@@ -999,10 +999,10 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-
+        List<GuideApiResponse> guideApiResponseList = guideApiLogicService.list().getData();
 
         return new ModelAndView("/pages/travel_spot/spot_location").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("guideList",guideApiResponseList);
     }
 
     @RequestMapping(path = "/spot_domestic")
