@@ -98,7 +98,7 @@ create sequence seq_aircraft
 
 
 drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', '����', '010-1111-1111', '������', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
+insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
 commit;
 create table air_ticket(
@@ -355,13 +355,13 @@ create sequence seq_magazine
     start with 1;
 
 
--- create table adminuser(
---     idx number(7) primary key,
---     admin_id varchar2(20) unique not null,
---     admin_pw varchar2(20) not null,
---     admin_name number(7) not null,
---     reg_date date default sysdate
--- );
+create table adminuser(
+    idx number(7) primary key,
+    admin_id varchar2(20) unique not null,
+    admin_pw varchar2(20) not null,
+    admin_name number(7) not null,
+    reg_date date default sysdate
+);
 
 create sequence seq_adminuser
     increment by 1
@@ -533,6 +533,7 @@ create sequence seq_restaurant_review
     start with 1;
     
 select * from event;
+
 create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,

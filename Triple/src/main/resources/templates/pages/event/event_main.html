@@ -30,16 +30,19 @@
                 <!--혜택 리스트-->
                 <div class="line ">
                     <!--혜택-->
-                    <div class="flex" id="content_box" th:each=" event : ${eventList}">
-                        <div>
-                            <p class="purpleTit" th:text="${event.getEventType()}"></p>
-                            <p class="boldTxT" th:text="${event.getTitle()}" ></p>
-                            <p th:text="${event.getContent()}"></p>
-                        </div>
-                        <div class="img">
-                            <img th:src="@{${event.getUploadPath()}}" alt="">
-                        </div>
-                    </div><!--혜택 끝-->
+                    <div id="content_box" th:each=" event : ${eventList}">
+
+                        <div class="flex">
+                            <div>
+                                <p class="purpleTit" th:text="${event.getEventType()}"></p>
+                                <p class="boldTxT" th:text="${event.getTitle()}" ></p>
+                                <p th:text="${event.getContent()}"></p>
+                            </div>
+                            <div class="img">
+                                <img th:src="@{${event.getUploadPath()}}" alt="">
+                            </div>
+                        </div><!--혜택 끝-->
+                    </div>
                 </div>
             </div>
             <!--혜택 리스트 끝-->
