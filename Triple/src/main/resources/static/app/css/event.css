@@ -50,9 +50,12 @@ main h2{
 }
 .line{
     display: flex;
+    flex: 2;
     justify-content: space-between;
     width: 850px;
     margin: 30px 0;
+    flex-grow:0;
+    flex-wrap: wrap-reverse;
 }
 
 .flex {
@@ -60,7 +63,7 @@ main h2{
     vertical-align: middle;
     width: 400px;
     height: 130px;
-    margin: 0;
+    margin: 30px 0;
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -81,6 +84,7 @@ main h2{
     height: 120px;
     margin: auto;
     padding-top: 5px;
+    border-radius: 5px;
 }
 .purpleTit{
     color: #8700ff;
