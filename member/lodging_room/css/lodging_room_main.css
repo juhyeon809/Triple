@@ -2846,51 +2846,78 @@ input:checked + label {
 
 /* lodging_regional_korea */
 /* 208 */
-#loadging_regional{
-    width: 1000px;
-    height: 918px;
+#searchbox{
+    position: absolute;
+    top: 80px;
+    right: 650px;
+    width: 200px;
+    height: 400px;
     margin:0 auto;
-    margin-bottom: 57px;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 
-#lo_re_main{
-    height: 918px;
+#searchbox::before{
+    content: "";
+  display: block;
+  position: absolute;
+  width: 35px;
+  left: 5px;
+  top: 0;
+  height: 20px;
+  transform: rotate(135deg);
+  background:white;
+}
+
+.title{
+    width: 150px;
     margin: 0 auto;
-    padding: 0;
-    border: 1px solid #F1F0F0;
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 15px 15px;
-    margin-top: 50px;
-    padding-left: 65px;
-    padding-right: 65px;
-    padding-top: 50px;
-}
-
-#lo_re_main a {
-    color: #425052;
-}
-
-#lo_re_kr_1{
-    height: 36px;
-    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
     font-weight: bold;
     color: #425052;
 }
 
-#lo_re_kr_1 a {
-    color: #425052;
-    text-decoration: none;
+.title_kor{
+    text-decoration: underline;
 }
-
-#lo_re_kr_1 div {
+.title_global{
+    color: #b6b6b6;
+}
+.cityList_kor,
+.cityList_global{
+    width: 60px;
+    height: 350px;
+    float:left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #425052;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #F1F0F0;
+}
+.dropdown{
+    list-style: none;
+}
+.city{
+    width: 200px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #425052;
+    box-sizing: border-box;
+}
+/* #lo_re_kr_1 div {
     width :434px;
     height: 56px;
     float:left;
     text-align: center;
-}
+} */
 
 #lo_re_kr_1_title{
     border-bottom: 4px solid #2680EB;
@@ -2900,17 +2927,7 @@ input:checked + label {
     border-bottom: 4px solid #ffffff;
 }
 
-#lo_re_kr_2{
-    width: 148px;
-    height: 808px;
-    float:left;
-    font-size: 18px;
-    font-weight: bold;
-    color: #425052;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: #F1F0F0;
-}
+
 
 
 #lo_re_kr_2 div{
@@ -2925,15 +2942,7 @@ input:checked + label {
 
 }
 
-#lo_re_kr_3{
-    width: 360px;
-    height: 808px;
-    float:left;
-    font-size: 18px;
-    font-weight: bold;
-    color: #425052;
-    box-sizing: border-box;
-}
+
 
 #lo_re_kr_3 div {
     width: 360px;

@@ -2,6 +2,8 @@ package com.project.triple.model.entity.Reservation;
 
 
 import com.project.triple.model.entity.User.Users;
+import com.project.triple.model.enumclass.ServiceLife;
+import com.project.triple.model.enumclass.TicketType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -26,13 +29,19 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_reservation")
     private Long idx;
-    private String ticketType;
+    @Enumerated(EnumType.STRING)
+    private TicketType ticketType;
     private String ticketNum;
     private String revName;
     private String email;
     private String hp;
     private String emergencyHp;
     private Long userId;
+    private String title;
+    private String content;
+    private LocalDateTime revDate;
+    @Enumerated(EnumType.STRING)
+    private ServiceLife serviceLife;
 
 //    @ManyToOne
 //    private Users users;

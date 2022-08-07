@@ -1,7 +1,13 @@
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
+<<<<<<< HEAD
     url: jdbc:oracle:thin:@dbTNS_ADMIN=
     username: admin
     password:
 
+=======
+    url: jdbc:oracle:thin:@db20220622131602_high?TNS_ADMIN=D:/SimJ/Wallet_DB20220622131602
+    username: admin
+    password:
+>>>>>>> 95b8e018729a1675b4eaabc1472d96e45b86a585

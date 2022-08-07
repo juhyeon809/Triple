@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
@@ -34,12 +35,12 @@ public class LodgingRoom {
     private String width;
     private Integer roomCapacity;
     private String roomPolicy;
-    private Integer price;
-//    private Integer lodgingId;
+    private BigDecimal price;
+    private Long lodgingId;
     private LocalDateTime useDate;
     @Enumerated(EnumType.STRING)
     private LodgingRoomStatus status;
 
-    @ManyToOne
-    private Lodging lodging;
+//    @ManyToOne
+//    private Lodging lodging;
 }

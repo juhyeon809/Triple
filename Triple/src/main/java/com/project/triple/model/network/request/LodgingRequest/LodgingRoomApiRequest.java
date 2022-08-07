@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
@@ -22,8 +24,8 @@ public class LodgingRoomApiRequest {
     private String width;
     private Integer roomCapacity;
     private String roomPolicy;
-    private Integer price;
-//    private Integer lodgingId;
+    private BigDecimal price;
+    private Long lodgingId;
     private LocalDateTime useDate;
     private LodgingRoomStatus status;
 }

@@ -27,60 +27,39 @@
         </div>
         <div class="re_main">
             <div class="re_main_2">
-                <div id="re_main_tit">지나간 예약 2</div>
-                <div id="re_main_box">
-                    <div id="re_main_place">
-                        괌<br>
-                        두짓 타니 괌 리조트
-                    </div>
-                    <div id="re_main_date">
-                        예약일정 2022.02.25<br>
-                        예약번호 D596270
-                    </div>
+                <div id="re_main_tit">진행중인 예약</div>
+                <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('USABLE')}" th:each="reserve : ${reserveList}">
+                    <a th:href="'/Triple/mypage/reserve/lodging/'+${reserve.getTicketNum()}">
+                        <div id="re_main_place"><span th:text="${reserve.getTitle()}"></span>
+                            <br>
+                            <span th:text="${reserve.getContent()}"></span>
+                        </div>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                            <br >
+                            <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
+                        </div>
+                    </a>
                     <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
+                        <a href="/Triple/inquiryList">1:1 문의</a>
                     </div>
                 </div>
-                <div id="re_main_box">
-                    <div id="re_main_place">
-                        괌<br>
-                        두짓 타니 괌 리조트
-                    </div>
-                    <div id="re_main_date">
-                        예약일정 2022.02.25<br>
-                        예약번호 D596270
-                    </div>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
-                    </div>
-                </div>
-            </div>
-            <div class="re_main_3">
-                <div id="re_main_tit">진행중인 예약 2</div>
-                <div id="re_main_box">
-                    <div id="re_main_place">
-                        괌<br>
-                        두짓 타니 괌 리조트
-                    </div>
-                    <div id="re_main_date">
-                        예약일정 2022.02.25<br>
-                        예약번호 D596270
-                    </div>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
-                    </div>
-                </div>
-                <div id="re_main_box">
-                    <div id="re_main_place">
-                        괌<br>
-                        두짓 타니 괌 리조트
-                    </div>
-                    <div id="re_main_date">
-                        예약일정 2022.02.25<br>
-                        예약번호 D596270
-                    </div>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
+                <br>
+                <div class="re_main_3">
+                    <div id="re_main_tit">지나간 예약</div>
+                    <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('unUSABLE')}" th:each="reserve : ${reserveList}">
+                        <a th:href="'/Triple/mypage/reserve/lodging/'+${reserve.getTicketNum()}">
+                            <div id="re_main_place"><span th:text="${reserve.getTitle()}"></span>
+                                <br>
+                                <span th:text="${reserve.getContent()}"></span>
+                            </div>
+                            <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                                <br >
+                                <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
+                            </div>
+                        </a>
+                        <div id="re_main_inq">
+                            <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
+                        </div>
                     </div>
                 </div>
             </div>

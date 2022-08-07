@@ -103,13 +103,16 @@ create table air_ticket(
     seat_grade varchar2(10) not null,
     baggage varchar2(10) not null,
     rev_date date,
-    status varchar2(10) not null
+    status varchar2(10) not null,
+    user_id number(7) not null
 );
 
 create sequence seq_air_ticket
     increment by 1
     start with 1;
     
+insert into air_ticket values(1, 'AIR', 'a111', '2222', '3333', '김포공항', '제주공항', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 3);
+insert into air_ticket values(2, 'AIR', 'a112', '2222', '3333', '김포공항', '제주공항', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 4);
 
 create table reservation_airuse(
     idx number(7) primary key,
@@ -126,13 +129,15 @@ create table reservation_airuse(
     passport_exp varchar2(10) not null,
     passport_country varchar2(20) not null,
     info_agree varchar2(10) not null,
-    reg_date date default sysdate
+    reg_date date default sysdate,
+    passenger_name varchar2(20) not null
 );
 
 create sequence seq_reservation_airuse
     increment by 1
     start with 1;
     
+insert into reservation_airuse values(1, 3, 'AIR', 'a111', 'a', 'pple', '001010', 'MALE', '010-1111-1111', '대한민국', '1111', '1111', '대한민국', 'Y', '2022-08-01', '김사과');
 
 create table lodging(
     idx number(7) primary key,
@@ -175,6 +180,7 @@ create sequence seq_lodging_room
     increment by 1
     start with 1;
     
+insert into lodging_room values (1, 'b555', '호텔', 'AVAILABLE', TO_DATE('2022-08-01 15:00:00','YYYY-MM-DD HH24:MI:SS'), TO_DATE('2022-08-02 11:00:00','YYYY-MM-DD HH24:MI:SS'), '32평', 5, '객실정책', 200000, 999, '2022-08-01', 'SOLDOUT');
 
 create table lodging_ticket(
     idx number(7) primary key,
@@ -189,13 +195,18 @@ create table lodging_ticket(
     use_birth varchar2(20) not null,
     use_requests varchar2(100),
     info_agree varchar2(10) not null,
-    reg_date date default sysdate	
+    reg_date date default sysdate,
+    user_id number(7) not null,
+    guest_num number(7) not null,
+    transportation varchar2(50)
 );
 
 create sequence seq_lodging_ticket
     increment by 1
     start with 1;
     
+insert into lodging_ticket values(1, '숙소', 'b111', 'b555', '김사과', '010-1111-1111', 'apple@apple.com', 'a', 'pple', '001010', null, 'Y', sysdate, 3, 2, '자가용 이동');
+insert into lodging_ticket values(2, '숙소', 'b112', 'b556', '이메론', '010-1111-1111', 'melon@melon.com', 'm', 'elon', '000810', null, 'Y', sysdate, 4, 2, '자가용 이동');
 
 create table tour( 
     idx number(7) primary key,
@@ -236,13 +247,16 @@ create table tour_ticket(
     lodging_name varchar2(30),
     use_lastname varchar2(20) not null,
     use_firstname varchar2(20) not null,
-    reg_date date default sysdate
+    reg_date date default sysdate,
+    user_id number(7) not null
 );
 
 create sequence seq_tour_ticket
     increment by 1
     start with 1;
     
+insert into tour_ticket values(1, '투어', 'c111', '김사과', '010-1111-1111', 'apple@apple.com', '010-1111-1111', 'a', 'pple', '001010', 'apple', null, 'a', 'pple', sysdate, 3);
+insert into tour_ticket values(2, '투어', 'c112', '이메론', '010-2222-2222', 'melon@melon.com', '010-2222-2222', 'm', 'elon', '000810', 'melon', null, 'm', 'elon', sysdate, 4);
 
 create table reservation(
     idx number(10) primary key,
@@ -252,13 +266,20 @@ create table reservation(
     email varchar2(30) not null,
     hp varchar2(20) not null,
     emergency_hp varchar2(20) not null,
-    user_id number(7) not null
+    user_id number(7) not null,
+    title varchar2(30) not null,
+    content varchar2(30) not null,
+    rev_date date default sysdate,
+    service_life varchar2(10) not null
 );
 
 create sequence seq_reservation
     increment by 1
     start with 1;
     
+insert into reservation values (1, 'AIR', 'a111', '김사과', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'CJU-GMP', '[편도]제주 - 서울 항공권', '2022-07-30', 'USABLE');
+insert into reservation values (2, 'LODGING', 'b111', '김사과', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, '괌', '두짓 타니 괌 리조트', '2022-07-30', 'USABLE');
+insert into reservation values (3, 'TOUR', 'c111', '김사과', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, '괌', '괌 항공 + 호텔 포함 자유여행 4박 5일', '2022-07-30' ,'USABLE');
 
 create table review(
     idx number(7) primary key,
@@ -334,7 +355,11 @@ create sequence seq_admin_user
     increment by 1
     start with 1;
     
+<<<<<<< HEAD
+insert into admin_user values(1, 'apple123', 'apple123!', '源??궗怨?', '010-1111-1111', '愿?由ъ옄', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+=======
 insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+>>>>>>> 2c3980fece3607f185c34f20895706cb44ce3928
     
 
 create table spot(
@@ -479,7 +504,9 @@ create table coupon(
 create sequence seq_coupon
     increment by 1
     start with 1;
-    
+
+insert into coupon values (1, 1, '[8월 혜택]국내 숙소 할인 3,000원]', 'LODGING', 3000, '5만원 이상 예약 시', 'USABLE', 'bbb', null, '2022-08-31', 'USABLE');
+insert into coupon values (2, 1, '[7월 혜택]국내 숙소 할인 3,000원]', 'LODGING', 3000, '5만원 이상 예약 시', 'unUSABLE', 'bbb', null, '2022-07-31', 'EXPIRED');
 
 create table user_coupon(
     idx number(7) primary key,
@@ -491,7 +518,8 @@ create table user_coupon(
 create sequence seq_user_coupon
     increment by 1
     start with 1;
-    
+
+insert into user_coupon values(1, 3, 1, '2022-08-01');
 
 create table guide(
     idx number(7) primary key,
@@ -642,6 +670,17 @@ create sequence seq_mysave
     increment by 1
     start with 1;
     
+insert into mysave values(1, 3, 111, 'Y', null, '가이드', '2022-08-01');
+insert into mysave values(2, 3, 222, 'Y', null, '가이드', '2022-08-01');
+insert into mysave values(3, 3, 333, 'Y', null, '관광', '2022-08-01');
+insert into mysave values(4, 3, 444, 'Y', null, '관광', '2022-08-01');
+insert into mysave values(5, 3, 555, 'Y', null, '맛집', '2022-08-01');
+insert into mysave values(6, 3, 666, 'Y', null, '맛집', '2022-08-01');
+insert into mysave values(7, 3, 777, 'Y', null, '숙소', '2022-08-01');
+insert into mysave values(8, 3, 888, 'Y', null, '숙소', '2022-08-01');
+insert into mysave values(9, 3, 999, 'Y', null, '투어', '2022-08-01');
+insert into mysave values(10, 3, 1010, 'Y', null, '투어', '2022-08-01');
+
 
 create table notice(
     idx number(7),
@@ -680,7 +719,7 @@ create sequence seq_faq
     start with 1;
 
 
-
+insert into faq values (1, 1, '항공', 1, '사과', '항공티켓은 여기서 받으세요', '공항의 각 항공사에서 받으시면 됩니다', null, null, null, '2022-08-01');
 
 
 

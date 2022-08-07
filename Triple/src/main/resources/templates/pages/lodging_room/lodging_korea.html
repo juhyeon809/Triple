@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 국내숙소</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
     <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -17,61 +18,98 @@
 <body>
     <div id="backg_image_area">
         <!--header 시작-->
-        <div th:replace="fragement/header :: header"></div>
+        <header>
+            <div id="logo_area">
+                <div id="logo"><a href="/main.html"><img src="/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
+                <form id="menu_form">
+                    <div id="search"><input type="text" class="search" placeholder="어디로 떠나시나요?" onclick="hideshow()"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+                </form>
+                <div id="login_join"><a href="/member/login_join/login.html">LOGIN</a> | <a href="/member/login_join/login.html">JOIN</a></div>
+            </div>
+            <div id="menu_area">
+                <ul id="menus">
+                    <li><a href="/templates/pages/overseas_travel/overseas_travel_main.html">해외여행</a></li>
+                    <li><a href="/templates/pages/domestic_travel/domestic_travel.html">국내여행</a></li>
+                    <li><a href="/Triple/flightMain">항공예약</a></li>
+                    <li><a href="/templates/pages/lodging_room/lodging_main.html">숙소예약</a></li>
+                    <li><a href="/">투어·티켓</a></li>
+                    <li><a href="/Triple/package">패키지여행</a></li>
+                    <li><a href="/Triple/magazine" >여행매거진</a></li>
+                    <li><a href="/templates/pages/event/event_main.html">혜택/렌터카</a></li>
+                </ul>
+            </div>
+        </header>
     </div>
     <!--header 끝-->
     <!--main 시작-->
-    <main>
-        <div id="loadging_regional">
-            <div id="lo_re_main">
-                <div id="lo_re_kr_1">
-                    <a href="/templates/pages/lodging_room/lodging_korea.html"><div id="lo_re_kr_1_title">국내숙소</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_global.html"><div id="lo_re_kr_1_text">해외숙소</div></a>
-                </div>
+    <div id="searchbox" hidden>
+        <div>
+            <div class="title">
+                <p class="title_kor" onclick="change()">국내숙소</p>
+                <p class="title_global" onclick="change2()">해외숙소</p>
+            </div>
 
-                <div id="lo_re_kr_2">
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>서울</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html"><div>부산</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeju.html"><div>제주</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gangwon.html"><div>강원</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongi.html"><div>경기</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>인천</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_ gyeongsang.html"><div>경상</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html"><div>충청</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_jeolla.html"><div>전라</div></a>
-                </div>
+            <div class="cityList_kor">
+                <p class="kor1" onclick="seoul()">서울</p>
+                <p class="kor2" onclick="busan()">부산</p>
+                <p class="kor3" onclick="jeju()">제주</p>
+                <p class="kor4">강원</p>
+                <p class="kor5">경기</p>
+                <p class="kor6">인천</p>
+                <p class="kor7">경상</p>
+                <p class="kor8">충청</p>
+                <p class="kor9">전라</p>
+            </div>
+            <div class="cityList_global" hidden>
+                <p>일본</p>
+                <p>동남아시아</p>
+                <p>서아시아</p>
+                <p>중화/중국</p>
+                <p>미주</p>
+                <p>남태평양</p>
+                <p>유럽</p>
+            </div>
+            <div class="city seoul " hidden>
+                <a href="#" onclick="statusChange(this)"><p>서울 전체</p></a>
+                <a href="#" onclick="statusChange(this)"><p>강남 · 서초</p></a>
+                <a href="#" onclick="statusChange(this)"><p>송파 · 강동</p></a>
+                <a href="#" onclick="statusChange(this)"><p>동대문 · 성북</p></a>
+                <a href="#" onclick="statusChange(this)"><p>용산 · 종로 · 중구</p></a>
+                <a href="#" onclick="statusChange(this)"><p>마포 · 서대문</p></a>
+                <a href="#" onclick="statusChange(this)"><p>건대 · 성수 · 왕십리</p></a>
+                <a href="#" onclick="statusChange(this)"><p>김포공항 · 강서</p></a>
+                <a href="#" onclick="statusChange(this)"><p>동작 · 관악</p></a>
+                <a href="#" onclick="statusChange(this)"><p>강북 · 노원 · 도봉</p></a>
+                <a href="#" onclick="statusChange(this)"><p>구로 · 금천</p></a>
+            </div>
 
-                <div id="lo_re_kr_3">
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>서울 전체</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>강남 · 서초</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>송파 · 강동</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>동대문 · 성북</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>용산 · 종로 · 중구</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>마포 · 서대문</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>건대 · 성수 · 왕십리</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>김포공항 · 강서</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>동작 · 관악</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>강북 · 노원 · 도봉</div></a>
-                    <a href="/templates/pages/lodging_room/lodging_room_recommend_region/lodging_recommend_seoul.html"><div>구로 · 금천</div></a>
-                </div>
-
-                <div id="lo_re_kr_4">
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                    <a href="#"><div></div></a>
-                </div>
+            <div class="city busan " hidden>
+                <a href="#" onclick="statusChange(this)"><p>부산 전체</p></a>
+                <a href="#" onclick="statusChange(this)"><p>해운대 광안리</p></a>
+                <a href="#" onclick="statusChange(this)"><p>기장</p></a>
+                <a href="#" onclick="statusChange(this)"><p>부산역 남포 영도</p></a>
+                <a href="#" onclick="statusChange(this)"><p>서면 연산 범일</p></a>
+                <a href="#" onclick="statusChange(this)"><p>동래 사상</p></a>
+            </div>
+            <div class="city jeju " hidden>
+                <a href="#" onclick="statusChange(this)"><p>제주 전체</p></a>
+                <a href="#" onclick="statusChange(this)"><p>제주시내</p></a>
+                <a href="#" onclick="statusChange(this)"><p>애월 한림</p></a>
+                <a href="#" onclick="statusChange(this)"><p>중문</p></a>
+                <a href="#" onclick="statusChange(this)">서귀포</a>
+                <a href="#" onclick="statusChange(this)">성산 우도</a>
+                <a href="#" onclick="statusChange(this)">조천 구좌</a>
             </div>
         </div>
+
+
+
     <!--main 끝-->
         <!-- footer 시작 -->
         <footer th:replace="fragement/footer :: footer"></footer>
         <!-- footer 끝 -->
-    </main>
+
+
+        <script src="/app/js/lodginpop.js"></script>
 </body>
 </html>

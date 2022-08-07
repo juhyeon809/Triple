@@ -33,6 +33,8 @@ public class AirTicket {
     private Long idx;
     private String ticketType;
     private String ticketNum;
+    private Long airlineId;
+    private Long aircraftId;
 //    private Integer airlineIdx;
 //    private Integer aircraftIdx;
     private String departureAirport;
@@ -51,8 +53,7 @@ public class AirTicket {
 //    @ManyToOne
 //    private Airline airline;
 //
-//    @ManyToOne
-//    private Aircraft aircraft;
+
 //
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airTicket")
 //    private List<Question> questionList;

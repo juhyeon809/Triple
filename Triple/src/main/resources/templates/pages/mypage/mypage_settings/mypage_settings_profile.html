@@ -80,6 +80,7 @@
                 <p class="title_p">연결된 계정</p>
                 <p class="subtitle_p" th:text="${email}"></p>
             </div>
+            <form method="post" id="deleteForm">
             <form method="post">
                 <input type="hidden" name="_method" value="put" />
                 <input type="hidden" id="idx" th:value="${idx}"/>

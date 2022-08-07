@@ -27,64 +27,10 @@
                     </form>
                     <p class="category_p"><a href="">전체</a><a href="">항공</a><a href="">숙소</a><a href="">투어티켓</a><a href="">서비스일반</a><a href="">공통</a></p>
                 </div>
-                <div class="FAQ_list_box_main list_box_info">
+                <div class="FAQ_list_box_main list_box_info" th:each="faqList : ${faqList}">
                     <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="FAQ_list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
-                    </p>
-                </div>
-                <div class="list_box_main list_box_info">
-                    <p class="list_title">
-                        <span class="blue_text">[ 계정 관련 ]</span>
-                        <a href="/templates/pages/mypage/mypage_settings/FAQ_detail.html">예약은 어디서 볼 수 있나요?</a>
+                        <span class="blue_text" th:text="'[ '+${faqList.getFaqCategory()}+' ]'">[ 계정 관련 ]</span>
+                        <a th:href="'/Triple/mypage/settings/customer/faq/'+${faqList.getIdx()}" th:text="${faqList.getTitle()}">예약은 어디서 볼 수 있나요?</a>
                     </p>
                 </div>
             </div>

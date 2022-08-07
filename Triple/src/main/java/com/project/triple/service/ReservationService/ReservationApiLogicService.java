@@ -1,9 +1,12 @@
 package com.project.triple.service.ReservationService;
 
 import com.project.triple.model.entity.Reservation.Reservation;
+import com.project.triple.model.entity.Reservation.ReservationAiruse;
+import com.project.triple.model.enumclass.TicketType;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.ReservationApiRequest;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.ReservationAiruseApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
 import com.project.triple.repository.ReservationRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -32,6 +35,10 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
                 .hp(reservation.getHp())
                 .emergencyHp(reservation.getEmergencyHp())
 //                .userId(reservation.getUsers().getIdx())
+                .title(reservation.getTitle())
+                .content(reservation.getContent())
+                .revDate(reservation.getRevDate())
+                .serviceLife(reservation.getServiceLife())
                 .build();
         return reservationApiResponse;
     }
@@ -43,7 +50,12 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
 
     @Override
     public Header<ReservationApiResponse> read(Long id) {
-        return null;
+
+        Reservation reservation = reservationRepository.findByIdx(id);
+
+        ReservationApiResponse reservationApiResponse = response(reservation);
+
+        return Header.OK(reservationApiResponse);
     }
 
     @Override
@@ -62,6 +74,32 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
         return ticketNum;
     }
 
+    public Header<List<ReservationApiResponse>> air(){
+        List<ReservationApiResponse> reservationApiResponseList = reservationRepository.findAllByTicketType(TicketType.AIR)
+                .stream().map(reservation -> response(reservation)).collect(Collectors.toList());
+        return Header.OK(reservationApiResponseList);
+    }
+
+    public Header<List<ReservationApiResponse>> lodging(){
+        List<ReservationApiResponse> reservationApiResponseList = reservationRepository.findAllByTicketType(TicketType.LODGING)
+                .stream().map(reservation -> response(reservation)).collect(Collectors.toList());
+        return Header.OK(reservationApiResponseList);
+    }
+
+    public Header<List<ReservationApiResponse>> tour(){
+        List<ReservationApiResponse> reservationApiResponseList = reservationRepository.findAllByTicketType(TicketType.TOUR)
+                .stream().map(reservation -> response(reservation)).collect(Collectors.toList());
+        return Header.OK(reservationApiResponseList);
+    }
+
+    public Header<ReservationApiResponse> read2(String ticketNum) {
+
+        Reservation reservation = reservationRepository.findByTicketNum(ticketNum);
+
+        ReservationApiResponse reservationApiResponse = response(reservation);
+
+        return Header.OK(reservationApiResponse);
+    }
 //    public Header<List<ReservationApiResponse>> findTicketNum(Long userId){
 //        List<ReservationApiResponse> reservationApiResponseList = reservationRepository.findByUserId(userId).stream()
 //                .map(reservation -> response(reservation)).collect(Collectors.toList());
