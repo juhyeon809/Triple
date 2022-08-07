@@ -25,9 +25,7 @@ public class Airport {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_airport")
     private Long idx;
-    private String airportNum;
     private String airportName;
-    private String airportCode;
     private String country;
     private String city;
 

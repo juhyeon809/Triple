@@ -142,7 +142,7 @@
             </div>
             <!--타이틀 끝-->
             <!--항공기 정보 등록-->
-            <form action="" onsubmit="return aircraft()">
+            <form th:action="@{/api/aircraft/register}" method="post" onsubmit="return aircraft()">
                 <div class="admin_manage_form_container">
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_item">항공사명 </p>
@@ -153,21 +153,16 @@
                     </div>
                     <div class="admin_manage_form_container_ul2">
                         <p>
-                            <select name="" id="airlineName" class="admin_register_adminid_content">
-                                <option value="">선택</option>
-                                <option value="제주">제주</option>
+                            <select name="airlineName" id="airlineName" class="admin_register_adminid_content">
+                                <option  th:each="airline : ${airlineList}" th:value="${airline.getKrName()}" th:text="${airline.getKrName()}"></option>
                             </select>
                         </p>
                         <p>
-                            <select name="" id="comp" class="admin_register_name_content">
-                                <option value="">선택</option>
-                                <option value="보잉">보잉</option>
-                                <option value="에어버스">에어버스</option>
-                            </select>
+                             <input type="text" name="madeBy" placeholder="제조사를 입력하세요">
                         </p>
-                        <p><input type="text" class="admin_register_content family" placeholder="family 좌석 수를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content premium" placeholder="premium 좌석 수를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content total" placeholder="총 좌석수를 입력하세요"></p>
+                        <p><input name="familySeat" type="text" class="admin_register_content family" placeholder="family 좌석 수를 입력하세요"></p>
+                        <p><input name="premiumSeat" type="text" class="admin_register_content premium" placeholder="premium 좌석 수를 입력하세요"></p>
+                        <p><input name="aircraftCapacity" type="text" class="admin_register_content total" placeholder="총 좌석수를 입력하세요"></p>
                     </div>
                     <div class="admin_manage_form_container_ul1 aircraft_reg">
                         <p class="admin_register_item">항공기명 </p>
@@ -176,15 +171,15 @@
                         <p class="admin_register_item">일반석 </p>
                     </div>
                     <div class="admin_manage_form_container_ul2 aircraft_reg">
-                        <p><input type="text" class="admin_register_content aircraftName" placeholder="항공기명을 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content vip" placeholder="vip 좌석 수를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content special" placeholder="특가석 좌석 수를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content economy" placeholder="일반석 좌석 수를 입력하세요"></p>
+                        <p><input name="aircraftName" type="text" class="admin_register_content aircraftName" placeholder="항공기명을 입력하세요"></p>
+                        <p><input name="vipSeat" type="text" class="admin_register_content vip" placeholder="vip 좌석 수를 입력하세요"></p>
+                        <p><input name="specialSeat" type="text" class="admin_register_content special" placeholder="특가석 좌석 수를 입력하세요"></p>
+                        <p><input name="normalSeat" type="text" class="admin_register_content economy" placeholder="일반석 좌석 수를 입력하세요"></p>
                     </div>
                 </div>
                 <div class="btnlist">
-                    <button value="등록"><a href="#">등록</a></button>
-                    <button value="취소"><a href="#">취소</a></button>
+                    <input type="submit" value="등록">
+                    <input type="reset" value="초기화">
                 </div>
             </form>
             <!--항공기 정보등록 끝-->

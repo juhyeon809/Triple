@@ -11,9 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AirportApiResponse {
     private Long idx;
-    private String airportNum;
     private String airportName;
-    private String airportCode;
     private String country;
     private String city;
 }

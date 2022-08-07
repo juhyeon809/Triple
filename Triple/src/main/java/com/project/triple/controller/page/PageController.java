@@ -1,7 +1,10 @@
 package com.project.triple.controller.page;
 
+import com.project.triple.model.entity.Air.Airline;
+import com.project.triple.model.entity.Event;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
@@ -11,6 +14,7 @@ import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
 import com.project.triple.service.*;
 import com.project.triple.service.AirService.AirTicketApiLogicService;
+import com.project.triple.service.AirService.AirlineApiLogicService;
 import com.project.triple.service.CouponService.CouponApiLogicService;
 import com.project.triple.service.CouponService.UserCouponApiLogicService;
 import com.project.triple.service.GuideService.GuideReviewApiLogicService;
@@ -104,6 +108,9 @@ public class PageController {
 
     @Autowired
     private GuideReviewApiLogicService guideReviewApiLogicService;
+
+    @Autowired
+    private AirlineApiLogicService airlineApiLogicService;
 
 
     // 메인페이지
@@ -1508,6 +1515,7 @@ public class PageController {
                 .addObject("name", name);
     }
 
+    //리뷰 작성 페이지
     @RequestMapping(path = "/spot/review/{kind}/{id}")
     public ModelAndView spot_review(@PathVariable String kind, @PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession(false);
@@ -1539,6 +1547,7 @@ public class PageController {
         }
     }
 
+    //이벤트 리스트 페이지
     @RequestMapping(path = "/event")
     public ModelAndView event_main( HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -1551,11 +1560,80 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-
+            List<EventApiResponse> eventList = eventApiLogicService.search().getData();
 
         return new ModelAndView("/pages/event/event_main").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("eventList", eventList);
     }
 
+    //항공기 등록
+    @RequestMapping(path = "/aircraft_register")
+    public ModelAndView aircraft_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        List<AirlineApiResponse>  airlineApiResponseList = airlineApiLogicService.list().getData();
+
+        return new ModelAndView("/pages/admin/NewRegistration/aircraftRegist").addObject("userid", userid)
+                .addObject("name", name).addObject("airlineList", airlineApiResponseList);
+    }
+
+    //항공사 등록
+    @RequestMapping(path = "/airline_register")
+    public ModelAndView airline_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/NewRegistration/airlineRegist").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    //취항지 등록
+    @RequestMapping(path = "/destination_register")
+    public ModelAndView destination_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/NewRegistration/destinationRegist").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    //항공권 등록
+    @RequestMapping(path = "/air_register")
+    public ModelAndView air_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/product/air").addObject("userid", userid)
+                .addObject("name", name);
+    }
 
 }

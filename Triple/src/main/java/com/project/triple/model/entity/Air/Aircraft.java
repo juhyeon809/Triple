@@ -25,16 +25,15 @@ public class Aircraft {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_aircraft")
     private Long idx;
-    private Integer aircraftNum;
     private String aircraftName;
     private String madeBy;
     private Integer aircraftCapacity;
     private Integer normalSeat;
-    private Integer economySeat;
     private Integer specialSeat;
     private Integer familySeat;
+    private Integer premiumSeat;
     private Integer vipSeat;
-    private Integer airlineId;
+    private String airlineName;
 
 //    @ManyToOne
 //    private Airline airline;

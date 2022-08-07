@@ -162,34 +162,28 @@
             
             <!--취항지 정보 등록-->
             <div class="form">
-                <form action="#" class="regForm" onsubmit="return destination()">
+                <form th:action="@{/api/airport/register}" class="regForm" onsubmit="return destination()" method="post">
                     <div class="admin_inquiry_qtext">
                         <div class="admin_inquiry_title">공항명</div>
                         <div class="admin_inquiry_q3">
-                            <input type="text" class="admin_inquiry_category2 portname">
-                        </div>
-                    </div>
-                    <div class="admin_inquiry_qtext">
-                        <div class="admin_inquiry_title">공항코드</div>
-                        <div class="admin_inquiry_q3">
-                            <input type="text" class="admin_inquiry_category2 code">
+                            <input name="airportName" type="text" class="admin_inquiry_category2 portname">
                         </div>
                     </div>
                     <div class="admin_inquiry_qtext">
                         <div class="admin_inquiry_title">국가</div>
                         <div class="admin_inquiry_q3">
-                            <input type="text" class="admin_inquiry_category2 country">
+                            <input name="country" type="text" class="admin_inquiry_category2 country">
                         </div>
                     </div>
                     <div class="admin_inquiry_qtext">
                         <div class="admin_inquiry_title">도시</div>
                         <div class="admin_inquiry_q3">
-                            <input type="text" class="admin_inquiry_category2 textBox">
+                            <input name="city" type="text" class="admin_inquiry_category2 textBox">
                         </div>
                     </div>
                     <div class="btnlist">
-                        <button value="등록"><a href="#">등록</a></button>
-                        <button value="취소"><a href="#">취소</a></button>
+                        <input type="submit" value="등록">
+                        <input type="reset" value="초기화">
                     </div>
                 </form>
             </div>

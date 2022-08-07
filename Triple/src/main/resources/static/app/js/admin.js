@@ -416,7 +416,7 @@ function aircraft(){
     const name = RegExp(/[a-zA-Z가-힣0-9\-]/);
     const seatNum = RegExp( /^[0-9]+$/)
 
-    if(!$('#airlineName option:selected').val()) {
+    if(!$('#airlineName').val()) {
         alert("항공사명을 선택해주세요");
         $('#airlineName').focus();
         return false
@@ -431,11 +431,11 @@ function aircraft(){
         $('.aircraftName').focus();
         return false
     }
-    if(!$('#comp option:selected').val()) {
-        alert("제조회사를 선택해주세요");
-        $('#comp').focus();
-        return false
-    }
+    // if(!$('#comp').val()) {
+    //     alert("제조회사를 선택해주세요");
+    //     $('#comp').focus();
+    //     return false
+    // }
     if($('.vip').val() == ''){
         alert('VIP석 수를 입력해주세요')
         $('.cevipnter').focus();

@@ -22,15 +22,15 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
     private AircraftApiResponse response(Aircraft aircraft){
         AircraftApiResponse aircraftApiResponse = AircraftApiResponse.builder()
                 .idx(aircraft.getIdx())
-                .aircraftNum(aircraft.getAircraftNum())
                 .aircraftName(aircraft.getAircraftName())
                 .madeBy(aircraft.getMadeBy())
                 .aircraftCapacity(aircraft.getAircraftCapacity())
                 .normalSeat(aircraft.getNormalSeat())
-                .economySeat(aircraft.getEconomySeat())
                 .specialSeat(aircraft.getSpecialSeat())
                 .familySeat(aircraft.getFamilySeat())
+                .premiumSeat(aircraft.getPremiumSeat())
                 .vipSeat(aircraft.getVipSeat())
+                .airlineName(aircraft.getAirlineName())
                 .build();
         return aircraftApiResponse;
     }
@@ -38,15 +38,16 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
     @Override
     public Header<AircraftApiResponse> create(Header<AircraftApiRequest> request) {
         AircraftApiRequest aircraftApiRequest = request.getData();
-        Aircraft aircraft = Aircraft.builder().aircraftNum(aircraftApiRequest.getAircraftNum())
+        Aircraft aircraft = Aircraft.builder()
                 .aircraftName(aircraftApiRequest.getAircraftName())
                 .madeBy(aircraftApiRequest.getMadeBy())
                 .aircraftCapacity(aircraftApiRequest.getAircraftCapacity())
                 .normalSeat(aircraftApiRequest.getNormalSeat())
-                .economySeat(aircraftApiRequest.getEconomySeat())
                 .specialSeat(aircraftApiRequest.getSpecialSeat())
                 .familySeat(aircraftApiRequest.getFamilySeat())
+                .premiumSeat(aircraftApiRequest.getPremiumSeat())
                 .vipSeat(aircraftApiRequest.getVipSeat())
+                .airlineName(aircraftApiRequest.getAirlineName())
                 .build();
         Aircraft newAircraft = baseRepository.save(aircraft);
 
@@ -66,15 +67,14 @@ public class AircraftApiLogicService extends BaseService<AircraftApiRequest, Air
 
         return aircraft.map(
                 aircraft1 -> {
-                    aircraft1.setAircraftNum(aircraftApiRequest.getAircraftNum());
                     aircraft1.setAircraftName(aircraftApiRequest.getAircraftName());
                     aircraft1.setMadeBy(aircraftApiRequest.getMadeBy());
                     aircraft1.setAircraftCapacity(aircraftApiRequest.getAircraftCapacity());
                     aircraft1.setNormalSeat(aircraftApiRequest.getNormalSeat());
-                    aircraft1.setEconomySeat(aircraftApiRequest.getEconomySeat());
                     aircraft1.setSpecialSeat(aircraftApiRequest.getSpecialSeat());
                     aircraft1.setFamilySeat(aircraftApiRequest.getFamilySeat());
-                    aircraft1.setFamilySeat(aircraftApiRequest.getFamilySeat());
+                    aircraft1.setPremiumSeat(aircraftApiRequest.getPremiumSeat());
+                    aircraft1.setAirlineName(aircraftApiRequest.getAirlineName());
                     aircraft1.setVipSeat(aircraftApiRequest.getVipSeat());
                     return aircraft1;
                 }).map(aircraft1 -> baseRepository.save(aircraft1)).map(aircraft1 -> response(aircraft1)).map(Header::OK)

@@ -11,14 +11,13 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AircraftApiResponse {
     private Long idx;
-    private Integer aircraftNum;
     private String aircraftName;
     private String madeBy;
     private Integer aircraftCapacity;
     private Integer normalSeat;
-    private Integer economySeat;
     private Integer specialSeat;
     private Integer familySeat;
+    private Integer premiumSeat;
     private Integer vipSeat;
-    private Long airlineId;
+    private String airlineName;
 }

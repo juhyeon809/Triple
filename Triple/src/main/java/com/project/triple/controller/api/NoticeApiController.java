@@ -27,7 +27,7 @@ public class NoticeApiController extends CrudController<NoticeApiRequest, Notice
     {
         noticeApiLogicService.write(notice, file);
 
-        ScriptUtils.alert( response , "등록되었습니다");
-        return new ModelAndView("/pages/admin/notice/notice-list");
+        ScriptUtils.alertAndMovePage(response, "등록되었습니다", "/Triple/admin/noticeList");
+        return null;
     }
 }

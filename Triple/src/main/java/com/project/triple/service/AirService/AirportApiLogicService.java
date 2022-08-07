@@ -21,9 +21,7 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
     private AirportApiResponse response(Airport airport){
         AirportApiResponse airportApiResponse = AirportApiResponse.builder()
                 .idx(airport.getIdx())
-                .airportNum(airport.getAirportNum())
                 .airportName(airport.getAirportName())
-                .airportCode(airport.getAirportCode())
                 .country(airport.getCountry())
                 .city(airport.getCity())
                 .build();
@@ -33,7 +31,14 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
 
     @Override
     public Header<AirportApiResponse> create(Header<AirportApiRequest> request) {
-        return null;
+        AirportApiRequest airportApiRequest = request.getData();
+        Airport airport = Airport.builder()
+                .airportName(airportApiRequest.getAirportName())
+                .country(airportApiRequest.getCountry())
+                .city(airportApiRequest.getCity())
+                .build();
+        Airport newAirport = baseRepository.save(airport);
+        return Header.OK(response(newAirport));
     }
 
     @Override

@@ -35,31 +35,31 @@ create table terms(
 create sequence seq_terms
     increment by 1
     start with 1;
-    
-
+ 
+select * from airport;
+drop table airport;
 create table airport(
     idx number(7)  primary key,
-    airport_num varchar2(10) not null,
-    airport_name varchar2(20) not null,
-    airport_code varchar2(10) not null,
-    country varchar2(20) not null,
-    city varchar2(20) not null  
+    airport_name varchar2(50) not null,
+    country varchar2(50) not null,
+    city varchar2(50) not null  
 );
 
 create sequence seq_airport
     increment by 1
     start with 1;
     
-
+drop table airline;
+select * from airline;
 create table airline(
     idx number(7) primary key,
-    airline_num number(7) not null,
     kr_name varchar2(20) not null,
     en_name varchar2(20) not null,
-    airline_code varchar2(10) not null,
-    address varchar2(30) not null,
-    contact_num1 varchar2(20) not null,
-    contact_num2 varchar2(20)
+    route varchar2(20) not null,
+    rep_num varchar2(20) not null,
+    support_num varchar2(20) not null,
+    upload_path varchar2(200) not null,
+    file_name varchar2(200) not null
 );
 
 create sequence seq_airline
@@ -86,19 +86,18 @@ insert into air_ticket values(
 );
 commit;
 select * from air_ticket;
-
+drop table aircraft;
 create table aircraft(
     idx number(7) primary key,
-    aircraft_num number(7) not null,
-    aircraft_name varchar2(20) not null,
-    made_by varchar2(20) not null,
+    aircraft_name varchar2(50) not null,
+    made_by varchar2(50) not null,
     aircraft_capacity number(4) not null,
-    normal_seat number(3) not null,
-    economy_seat number(3) not null,
-    special_seat number(3) not null,
-    family_seat number(3) not null,
-    vip_seat number(3) not null,
-    airline_id number(7) not null
+    normal_seat number(4) not null,
+    special_seat number(4) not null,
+    family_seat number(4) not null,
+    premium_seat number(4) not null,
+    vip_seat number(4) not null,
+    airline_name varchar2(50) not null
 );
 insert into airline;
 

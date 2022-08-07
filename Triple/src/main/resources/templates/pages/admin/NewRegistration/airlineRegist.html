@@ -136,17 +136,17 @@
                 <h2>항공사 신규 등록</h2>
             </div>
             <!--항공사 정보 등록-->
-            <form action="" onsubmit="return airline()">
+            <form th:action="@{/api/airline/register}" method="post" onsubmit="return airline()" enctype="multipart/form-data">
                 <div class="admin_manage_form_container">
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_item">항공사명 (Kor) </p>
-                        <p class="admin_register_item">항공사 코드 </p>
                         <p class="admin_register_item">대표번호 </p>
+                        <p class="admin_register_item">항공사로고 </p>
                     </div>
                     <div class="admin_manage_form_container_ul2">
-                        <p><input type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content premium" placeholder="항공사 코드를 입력하세요"></p>
-                        <p><input type="text" class="admin_register_content daepyo" placeholder="대표번호를 입력하세요"></p>
+                        <p><input name="krName" type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
+                        <p><input name="repNum" type="text" class="admin_register_content daepyo" placeholder="대표번호를 입력하세요"></p>
+                        <p><input name="file" type="file" ></p>
                     </div>
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_item">항공사명 (Eng) </p>
@@ -154,21 +154,21 @@
                         <p class="admin_register_item">고객센터 </p>
                     </div>
                     <div class="admin_manage_form_container_ul2">
-                        <p><input type="text" class="admin_register_content eng" placeholder="항공사의 영문명을 입력하세요"></p>
+                        <p><input name="enName" type="text" class="admin_register_content eng" placeholder="항공사의 영문명을 입력하세요"></p>
                         <p>
-                            <select name="" id="route" class="admin_register_content">
+                            <select name="route" id="route" class="admin_register_content">
                                 <option value="">선택</option>
                                 <option value="국내">국내</option>
                                 <option value="국외">국외</option>
-                                <option value="국내·국외">국내·국외</option>
+                                <option value="국내/국외">국내·국외</option>
                             </select>
                         </p>
-                        <p><input type="text" class="admin_register_content center" placeholder="고객센터 번호를 입력하세요"></p>
+                        <p><input name="supportNum" type="text" class="admin_register_content center" placeholder="고객센터 번호를 입력하세요"></p>
                     </div>
                 </div>
                 <div class="btnlist">
-                    <button value="등록"><a href="#">등록</a></button>
-                    <button value="취소"><a href="#">취소</a></button>
+                    <input type="submit" value="등록">
+                    <input type="reset" value="초기화">
                 </div>
             </form>
             <!--항공사 정보등록 끝-->

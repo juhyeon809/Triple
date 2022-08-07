@@ -5,9 +5,7 @@ import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
-import com.project.triple.model.network.request.AirRequest.AirTicketSearchRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
-import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.repository.AirTicketRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -113,14 +110,6 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
         return Header.OK(airTicketApiResponseList);
     }
 
-    public Header<List<AirTicketApiResponse>> searchTicket(@RequestBody Header<AirTicketSearchRequest> request) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate departureDate = LocalDate.parse(request.getData().getDepartureDate(), formatter);
-        String departureAirport = request.getData().getDepartureAirport();
-        String landingAirport = request.getData().getLandingAirport();
-        List<AirTicketApiResponse> airTicketList = airTicketRepository.findAllByDepartureDateContainingAndDepartureAirportAndLandingAirport(departureDate, departureAirport, landingAirport);
-        return Header.OK(airTicketList);
-    }
 
     public String findAllTicketNum(String tNum){
         String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
