@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/api/package")    // http://localhost:9090/api/magazine  url 주소
+@RequestMapping("/api/package")    // http://localhost:9090/api/package  url 주소
 @RequiredArgsConstructor
 public class PackageApiController extends CrudController<PackageApiRequest, PackageApiResponse, Package> {
 
@@ -30,7 +30,7 @@ public class PackageApiController extends CrudController<PackageApiRequest, Pack
     {
         packageApiLogicService.write(package1, file);
 
-        ScriptUtils.alert( response , "매거진 작성완료!");
-        return new ModelAndView("/pages/admin/magazine/magazine-list");
+        ScriptUtils.alert( response , "패키지 작성완료!");
+        return new ModelAndView("/pages/admin/product/packge");
     }
 }

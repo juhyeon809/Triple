@@ -17,4 +17,5 @@ public interface LodgingTicketRepository extends JpaRepository<LodgingTicket, Lo
 
     LodgingTicket findByTicketNum(String ticketNum);
 
+//    List<LodgingTicket> findByTicketNum(String ticketNum);
 }

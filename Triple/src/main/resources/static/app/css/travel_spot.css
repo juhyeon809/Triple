@@ -63,7 +63,7 @@ a:visited {
 header {
     width: 100%;
     margin: 0 auto;
-    background-image: url('lib/travel_spot_img/header_bg.svg');
+    background-image: url('/lib/img/travel_spot_img/header_bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -109,11 +109,11 @@ header {
     color: white;
     font-weight: 700;   
 }
-#travel_spot_img {
+#travel_spot_img{
     width: 1000px;
     height: 250px;
     margin: 0 auto;
-    background-image: url('lib/travel_spot_img/img/overseas2.svg');
+    background: url("/lib/img/travel_spot_img/overseas2.svg") center;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 50px;
@@ -571,6 +571,7 @@ main {
     padding: 50px;
     margin-bottom: 500px;
     color: rgb(77, 76, 76);
+    border-radius: 5px;
 }
 #info_box .info_box_title{
     font-size: 24px;
@@ -1111,7 +1112,7 @@ hr {
 .travel_spot_package > a >.imgbox {
     width: 175px; 
     height: 175px;
-    background-image: url('lib/travel_spot_img/spotpackage.png');
+    background-image: url("/lib/img/travel_spot_img/spotpackage.png");
     border-radius: 10px;
 }
 
@@ -1173,7 +1174,11 @@ hr {
 #info_icon {
     display: flex;
     justify-content: space-around;
-    margin: 50px auto 20px;
+    margin: 50px auto;
+}
+#info_icon img{
+    border-radius: 10px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .08);
 }
 #view_info_flex{
     display: flex;
@@ -1203,7 +1208,7 @@ hr {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 .region_info_box {
     width: 440px;
@@ -1211,7 +1216,7 @@ hr {
     padding: 20px;
     border-radius: 15px;
     border: 0.1px solid rgb(240, 240, 240);;
-    box-shadow: 0px 10px 0px -4px rgb(224, 224, 224);
+    box-shadow: 4px 10px 4px -4px rgb(224, 224, 224);
     margin-top: 50px;
 }
 .region_info_box .title_text {
@@ -1227,6 +1232,7 @@ hr {
 .view_button_flex {
     display: flex;
     justify-content: center;
+    padding-top: 25px;
 }
 .view_button_flex div {
     width: 160px;

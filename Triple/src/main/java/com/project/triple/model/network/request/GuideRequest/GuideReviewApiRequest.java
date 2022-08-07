@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
@@ -13,15 +14,15 @@ import java.time.LocalDateTime;
 @Builder
 public class GuideReviewApiRequest {
     private Long idx;
-    private Integer reviewNum;
+    private Long postId;
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+    private String userEmail;
     private String uploadPath;
     private String fileName;
-    private String fileType;
-    private LocalDateTime regDate;
     private Integer likeCount;
     private Integer replyCount;
+    private LocalDateTime regDate;
+    private String starCount;
 }

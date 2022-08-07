@@ -93,4 +93,10 @@ public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRe
 
         return roomNum;
     }
+
+//    public Header<List<LodgingTicketApiResponse>> search2(String ticketNum){
+//        List<LodgingTicketApiResponse> lodgingTicketList = lodgingTicketRepository.findByTicketNum(ticketNum).stream()
+//                .map(lodgingTicket -> response(lodgingTicket)).collect(Collectors.toList());
+//        return Header.OK(lodgingTicketList);
+//    }
 }

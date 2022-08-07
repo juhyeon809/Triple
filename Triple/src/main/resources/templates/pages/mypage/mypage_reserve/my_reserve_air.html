@@ -39,11 +39,8 @@
                             <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                         </div>
                     </a>
-                    <div id="re_main_inq">
-                        <a href="/Triple/inquiryList">1:1 문의</a>
-                    </div>
                 </div>
-                <br>
+            </div>
             <div class="re_main_3">
                 <div id="re_main_tit">지나간 예약</div>
                 <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('unUSABLE')}" th:each="reserve : ${reserveList}">
@@ -57,12 +54,8 @@
                             <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                         </div>
                     </a>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
-                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
     <!--메인 끝-->

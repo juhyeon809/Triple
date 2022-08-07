@@ -1,0 +1,19 @@
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
+
+<nav class="navbar" th:fragment="adminTopbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/Triple/adminUser">TRIPLE</a>
+    </div>
+    <div class="user-info">
+      <div class="info-container">
+        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${session.userid}">userid</div>
+        <div class="email" th:text="${session.name}">name</div>
+      </div>
+    </div>
+  </div>
+
+</nav>
+</html>

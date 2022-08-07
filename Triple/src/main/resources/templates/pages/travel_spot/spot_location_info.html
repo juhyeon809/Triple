@@ -21,12 +21,12 @@
     <div id="travel_spot_img"></div>
     <main>
         <div id="travel_spot_menus">
-            <p><a href="/templates/pages/travel_spot/spot_location.html">가이드</a></p>
-            <p><a href="/templates/pages/flight_reservation/flight_main.html">항공</a></p>
-            <p><a href="/templates/pages/lodging_room/lodging_main.html">숙소</a></p>
-            <p><a href="/templates/pages/travel_spot/spot_tour.html">관광</a></p>
-            <p><a href="/templates/pages/travel_spot/spot_restaurant.html">맛집</a></p>
-            <p><a href="/templates/pages/tour_ticket/tour_ticket_main.html">투어<span>&#183;</span>티켓</a></p>
+            <p><a href="/Triple/spot_location">가이드</a></p>
+            <p><a href="/Triple/flightMain">항공</a></p>
+            <p><a href="/Triple/lodgingMain">숙소</a></p>
+            <p><a href="/Triple/spot_tour">관광</a></p>
+            <p><a href="/Triple/spot_restaurant">맛집</a></p>
+            <p><a href="/Triple/tour_ticket_main">투어<span>&#183;</span>티켓</a></p>
         </div>
         <div id="box_information">
             <p class="title_text" th:text="${guide.getTitle()}"></p>
@@ -47,85 +47,95 @@
             <table>
                 <tr>
                     <td class="table_index">언어</td>
-                    <td>영어, 차모로어</td>
+                    <td th:text="${guide.getLanguage()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">면적</td>
-                    <td>546km^2(제주도 면적의 1/3)</td>
+                    <td th:text="${guide.getArea()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">인구</td>
-                    <td>약 168,801명(2021년)</td>
+                    <td th:text="${guide.getPopulation()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">시차</td>
-                    <td>한국보다 1시간 빠름(한국이 오전 9시일 때 괌은 오전 10시)</td>
+                    <td th:text="${guide.getTimeDifference()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">종교</td>
-                    <td>가톨릭(75%), 개신교(18%)</td>
+                    <td th:text="${guide.getMyth()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">전압</td>
-                    <td>120V 60Hz, 우리나라와 콘센트 모양이 달라 돼지코 또는 멀티 어댑터를 챙겨가야 한다.</td>
+                    <td th:text="${guide.getVoltage()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">통화</td>
-                    <td>달러</td>
+                    <td th:text="${guide.getCurrency()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">전화</td>
-                    <td>국가번호 1, 지역번호 671</td>
+                    <td th:text="${guide.getCountryCode()}"></td>
                 </tr>
                 <tr>
                     <td class="table_index">비자</td>
-                    <td >
-                        <p>귀국 항공권이 있으면 45일 무비자 방문 가능, 전자 여행 허가(ESTA)를 승인 받았다면 90일까지 머물 수
-                            있다(관광목적). 여권 유효기간은 체류 예정 기간보다 길게 남아있으면 되지만, 만일을 대비해 6개월 정도 여유가 있는 것이 좋다.</p>
+                    <td>
+                        <p th:text="${guide.getVisa()}"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">물가</td>
                     <td>
-                        <p>괌은 섬 전체가 관광이 주 산업이라 교통, 숙박, 식비 등이 한국보다 조금 비싼 편.</p>
-                        <p>단, 공산품의 경우 판매세가 붙지 않아 한국보다 저렴하다.</p>
+                        <p th:text="${guide.getPrices()}"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">항공</td>
                     <td>
-                        <p style=" margin: 0;">인천에서 출발하는 고마 직향편은 대한항공이 매일 2~3회, 저가 항공인 진에어, 제주항공, 티웨이항공, 에어 서울도 매일 운항하고 있다. 김해에서는 진에어, 에어부산, 제주항공이 매일 운항하고 있다. 비행소요시간은 모두 약 4시간 30분.</p><p style="text-align: right; margin: 0;"><a href="/templates/pages/flight_reservation/flight_main.html">현재 운항 중인 항공편 조회하기</a></p>
+                        <p style=" margin: 0;" th:text="${guide.getAir()}"></p>
+                        <p style="text-align: right; margin: 0;"><a href="/templates/pages/flight_reservation/flight_main.html">현재 운항 중인 항공편 조회하기</a></p>
                         
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">기후</td>
                     <td>
-                        <p>고온 다습한 열대 해양성 기후. 연평균 기온 26.1도 1~5월 건기, 6~13월 우기.</p>
-                        <p>때때로 태풍이 상륙하기도 한다.</p>
+                        <p th:text="${guide.getClimate()}"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index"> 여행 최적기</td>
                     <td>
-                        <p>건기의 최정점인 3월과 4월은 괌 여행의 최적기.</p>
-                        <p>이 시기엔 태풍도 없고, 온화하면서 건조하여 야외 액티비티를 하기 좋은 계절이다.</p>
+                        <p th:text="${guide.getBestTime()}"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">간단한 회화</td>
                     <td>
-                        <ul>
-                            <li>여기서 드시나요? 아니면 포장인가요? : For here to go?(포 히얼 투 고)</li>
-                            <li>실례합니다, 절 도와주실 수 있나요? : Excuse me, can you help me?(익스큐즈미, 캔 유 헬프 미)</li>
-                            <li>요금은 얼마입니까? : How much is the fare?(하우 머치 이즈 더 페어)</li>
-                            <li>제가 잔돈이 없는데요 : I don't have change(아이 돈 해브 체인지)</li>
-                            <li>버스 정류장은 어디입니까? : Where is the bus station?(웨얼 이즈 더 버스 스테이션)</li>
-                            <li>이거 입어봐도 되나요? : Can I try this on?(캔 아이 트라이 디스 온)</li>
-                        </ul>
+                        <p th:text="${guide.getSimpleConversation()}"></p>
                     </td>
                 </tr>
             </table>
+        </div>
+        <div id="review_box">
+            <div id="review_top">
+                <p class="index_p">리뷰 <span class="blue_text">332</span></p>
+                <div id="review_write_see">
+                    <p id="write_review"><a th:href="'/Triple/spot/review/guide/'+ ${guide.getIdx()}">리뷰 쓰기</a></p>
+                    <p id="see_review"><a href="">리뷰 전체보기</a></p>
+                </div>
+            </div>
+            <div class="review_content" th:each="review : ${reviewList}">
+                <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
+                <div class="user_info_area">
+                    <p class="userid_area" th:text="${review.getUserEmail()}"></p>
+                    <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
+                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
+                </div>
+                <div class="review_context" >
+                    <p th:text="${review.getContent()}"></p>
+                </div>
+            </div>
         </div>
     </main>
     <!-- footer 시작 -->

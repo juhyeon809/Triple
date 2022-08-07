@@ -35,6 +35,8 @@ public class AirTicket {
     private String ticketNum;
     private Long airlineId;
     private Long aircraftId;
+//    private Integer airlineIdx;
+//    private Integer aircraftIdx;
     private String departureAirport;
     private String landingAirport;
     private LocalDateTime departureDate;

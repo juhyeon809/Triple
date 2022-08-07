@@ -111,12 +111,11 @@
                 <div class="rm_main_box_price_title">결제 정보</div>
                 <div class="rm_info">
                     <div class="rm_info_content">예약 금액(세금 포함)</div>
-                    <div class="rm_info_content" th:text="${#numbers.formatInteger(lodgingRoom.price, 6, 'COMMA')}">75,000원</div>
+                    <div class="rm_info_content" th:text="${#numbers.formatInteger(lodgingRoom.price, 6, 'COMMA')}+'원'">75,000원</div>
                 </div>
                 <div class="rm_info" th:if="${coupon1.getUseStatus().toString().equals('USABLE')}" th:each="coupon1 : ${coupon}">
                     <div class="rm_info_content">쿠폰 할인 금액</div>
-                    th:if="${coupon.getUseStatus().toString().equals('USABLE')}"
-                    <div class="rm_info_content" th:if="${coupon1.getType().toString().equals('LODGING')}"><span th:text="'-'+${#numbers.formatInteger(coupon1.price, 4, 'COMMA')}+'원'"></span>-7,500원</div>
+                    <div class="rm_info_content" th:if="${coupon1.getType().toString().equals('LODGING')}"><span th:text="'-'+${#numbers.formatInteger(coupon1.price, 4, 'COMMA')}+'원'"></span></div>
                 </div>
                 <div class="rm_info">
                     <div class="rm_info_content">예약일</div>
@@ -126,9 +125,11 @@
             <div class="rm_main_box rm_main_box_info">
                 <div class="rm_info">
                     <div class="rm_main_box_price_title">총 결제금액</div>
-<!--                    <div class="rm_info_content" th:text="${#numbers.formatInteger((${lodgingRoom.price}-${coupon1.price}), 6, 'COMMA')}">67,500원</div>-->
+                    <div th:if="${coupon1.getUseStatus().toString().equals('USABLE')}" th:each="coupon1 : ${coupon}">
+                    <div class="rm_info_content" th:text="${#numbers.formatInteger(((lodgingRoom.price)-(coupon1.price)), 6, 'COMMA')+'원'}">67,500원</div>
+                    </div>
                 </div>
-                <div class="rm_info_content" th:text="'결제일시 : '${lodgingTicket.regDate}">결제일시 : 2022-01-24 10:57</div>
+                <div class="rm_info_content" th:text="'결제일시 : '+${#temporals.format(lodgingTicket.regDate, 'yyyy-mm-dd')}">결제일시 : 2022-01-24 10:57</div>
             </div>
             <form id="form" action="/templates/pages/mypage/mypage_reserve/my_room_reserve_cancle.html">
                 <div id="cancel_btn_box"><input type="submit" value="예약취소" onclick="cancel2()"></div>

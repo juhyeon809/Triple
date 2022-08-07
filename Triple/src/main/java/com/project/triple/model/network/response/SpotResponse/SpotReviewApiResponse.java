@@ -13,14 +13,13 @@ import java.time.LocalDateTime;
 @Builder
 public class SpotReviewApiResponse {
     private Long idx;
-    private String reviewNum;
+    private Long postId;
     private String title;
     private String content;
     private String nickname;
-    private Long userId;
+    private String userEmail;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     private Integer likeCount;
     private Integer replyCount;
     private LocalDateTime regDate;

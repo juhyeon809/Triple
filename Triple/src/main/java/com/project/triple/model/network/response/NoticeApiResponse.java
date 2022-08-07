@@ -13,13 +13,12 @@ import java.time.LocalDateTime;
 @Builder
 public class NoticeApiResponse {
     private Long idx;
-    private Integer noticeNum;
-    private Long adminuserId;
+    private String adminuserId;
     private String adminuserName;
+    private String noticeType;
     private String title;
     private String content;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     private LocalDateTime regDate;
 }

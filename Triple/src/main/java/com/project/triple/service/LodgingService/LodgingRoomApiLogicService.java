@@ -30,7 +30,7 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
                 .roomCapacity(lodgingRoom.getRoomCapacity())
                 .roomPolicy(lodgingRoom.getRoomPolicy())
                 .price(lodgingRoom.getPrice())
-                .lodgingId(lodgingRoom.getLodging().getIdx())
+                .lodgingId(lodgingRoom.getLodgingId())
                 .build();
         return lodgingRoomApiResponse;
     }

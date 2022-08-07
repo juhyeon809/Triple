@@ -100,6 +100,11 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
 
         return Header.OK(reservationApiResponse);
     }
+//    public Header<List<ReservationApiResponse>> findTicketNum(Long userId){
+//        List<ReservationApiResponse> reservationApiResponseList = reservationRepository.findByUserId(userId).stream()
+//                .map(reservation -> response(reservation)).collect(Collectors.toList());
+//        return Header.OK(reservationApiResponseList);
+//    }
 
 
 }

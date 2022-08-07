@@ -64,6 +64,7 @@ input[type="border"], input[type="radio"], input[type="checkbox"]{
     letter-spacing: 1.5px;
     vertical-align: middle;
     align-items: center;
+    padding: 15px 10px 0 20px;
 }
 .navbar .container-fluid {
     display: flex;
@@ -91,89 +92,15 @@ input[type="border"], input[type="radio"], input[type="checkbox"]{
     top: 14px;
     margin-left: 15px;
 }
-.sidebar .user-info .info-container .name {
-    white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 14px;
-    max-width: 200px;
-    color: #fff;
-}
-.sidebar .user-info .info-container .email {
-    white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 12px;
-    max-width: 200px;
-    color: #fff;
-}
-.sidebar .user-info .info-container .user-helper-dropdown {
-    position: absolute;
-    right: -3px;
-    bottom: -12px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    box-shadow: none;
-    cursor: pointer;
-    color: #fff;
-}
-.navbar .navbar-toggle {
-    text-decoration: none;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    margin-top: -4px;
-    margin-right: 17px; }
-.navbar .navbar-toggle:before {
-    content: '\E8D5';
-    font-size: 26px; }
-.navbar .navbar-collapse.in {
-    overflow: visible; }
+
 .navbar-header {
     padding: 15px 10px 0 20px;
 }
-.navbar-header .bars {
-    float: left;
-    text-decoration: none;
-}
-
-.navbar .bars {
-    float: left;
-    padding: 10px 20px;
-    font-size: 22px;
-    color: #fff;
-    margin-right: 10px;
-    margin-left: -10px;
-    margin-top: 4px;
-}
-
-.navbar .bars:hover {
-    background-color: rgba(0, 0, 0, 0.08); }
 
 /*nav 끝*/
 
 /* 사이드바 */
-/*
-#sidebar {
-    position: fixed;
-    max-width: 260px;
-    width: 100%;
-    background: #0098A1;
-    top:0;
-    left:0;
-    height: 100%;
-    overflow-y: auto;
-    scrollbar-width: none;
-    transition: all .3s ease-in;
-    z-index: 200;
 
-}
-*/
 section{
     display: block;
 }
@@ -181,7 +108,7 @@ section{
     transition: all 0.5s;
     background-color: #0098A1;
     width: 300px;
-    overflow: hidden;
+    overflow: scroll;
     display: inline-block;
     height: calc(100vh - 70px);
     position: fixed;
@@ -661,7 +588,8 @@ main td {
     border: none;
     margin-right: 10px;
 }
-.btnlist input[type="submit"] {
+.btnlist input[type="submit"],
+.btnlist input[type="reset"]{
     width: 100px;
     height: 35px;
     font-size: 14px;

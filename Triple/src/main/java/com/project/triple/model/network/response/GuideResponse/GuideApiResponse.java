@@ -14,17 +14,26 @@ import java.time.LocalDateTime;
 @Builder
 public class GuideApiResponse {
     private Long idx;
-    private GuideType type;
-    private Integer guideNum;
-    private Long adminuserId;
     private String country;
     private String city;
-    private String adminuserName;
     private String title;
-    private String content;
     private String uploadPath;
     private String fileName;
-    private String fileType;
+    private String content;
+    private String language;
+    private String area;
+    private String population;
+    private String timeDifference;
+    private String myth;
+    private String voltage;
+    private String currency;
+    private String countryCode;
+    private String visa;
+    private String prices;
+    private String air;
+    private String climate;
+    private String bestTime;
+    private String simpleConversation;
     private LocalDateTime regDate;
     private Integer reviewCount;
 }

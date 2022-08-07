@@ -36,6 +36,8 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .ticketNum(airticket.getTicketNum())
                 .airlineId(airticket.getAirlineId())
                 .aircraftId(airticket.getAircraftId())
+//                .airlineIdx(airticket.getAirlineIdx())
+//                .aircraftIdx(airticket.getAircraftIdx())
                 .departureAirport(airticket.getDepartureAirport())
                 .landingAirport(airticket.getLandingAirport())
                 .departureDate(airticket.getDepartureDate())
@@ -142,4 +144,16 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
 
         return Header.OK(airTicketApiResponse);
     }
+
+//    public String findAllTicketNum(String tNum){
+//        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+//
+//        return ticketNum;
+//    }
+
+//    public Header<List<AirTicketApiResponse>> search2(String ticketNum){
+//        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(ticketNum).stream()
+//                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
+//        return Header.OK(airTicketList);
+//    }
 }
