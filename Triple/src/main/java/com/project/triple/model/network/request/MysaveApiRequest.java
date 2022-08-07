@@ -1,5 +1,6 @@
 package com.project.triple.model.network.request;
 
+import com.project.triple.model.enumclass.SaveType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +15,10 @@ import java.time.LocalDateTime;
 @Builder
 public class MysaveApiRequest {
     private Long idx;
-    //    private Integer userid;
-    private Integer itemNum;
+    private Long userid;
+    private Long itemNum;
     private String saveYn;
     private String memo;
-    private String saveType;
+    private SaveType saveType;
     private LocalDateTime regDate;
 }

@@ -4,10 +4,15 @@ import com.project.triple.model.entity.Lodging.LodgingRoom;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingRoomApiRequest;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
+import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.repository.LodgingRoomRepository;
 import com.project.triple.service.BaseService.BaseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@RequiredArgsConstructor
 public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiRequest, LodgingRoomApiResponse, LodgingRoom> {
 
     @Autowired
@@ -49,5 +54,15 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
     @Override
     public Header<LodgingRoomApiResponse> delete(Long id) {
         return null;
+    }
+
+    public Header<LodgingRoomApiResponse> read2(String roomNum){
+        LodgingRoom lodgingRoom = lodgingRoomRepository.findByRoomNum(roomNum);
+
+        LodgingRoomApiResponse lodgingRoomApiResponse = response(lodgingRoom);
+
+        return Header.OK(lodgingRoomApiResponse);
+
+
     }
 }

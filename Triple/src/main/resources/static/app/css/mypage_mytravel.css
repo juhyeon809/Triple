@@ -84,11 +84,19 @@ form>p{
 }
 .form_box {
     align-items: center;
-    width: 800px;
+    width: 785px;
     display: flex;
     justify-content: space-between;
     vertical-align: middle;
 }
+.pro_box1_left {
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
 .pro_box1_left > p{
     font-size: 14px;
     color: #777777;

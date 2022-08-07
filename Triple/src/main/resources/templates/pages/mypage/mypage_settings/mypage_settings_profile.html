@@ -60,7 +60,7 @@
             }).open();
         }
     </script>
-    <link rel="stylesheet" href="/member/mypage/css/style.css">
+    <link rel="stylesheet" href="/static/app/css/style.css">
 </head>
 <body>
 <!--헤더-->
@@ -73,13 +73,14 @@
         <div id="main_content_box">
             <div id="profile_box">
 
-                <p><img src="./img/triple_london.svg" alt="" th:text="${nickname}"></p>
+                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${nickname}"></p>
             </div>
             <div id="account_name">
                 <p class="title_p">연결된 계정</p>
                 <p class="subtitle_p" th:text="${email}"></p>
             </div>
-            <form method="put">
+            <form method="post" id="deleteForm">
+                <input type="hidden" name="_method" value="put" />
                 <input type="hidden" id="idx" th:value="${idx}"/>
                 <p></p>
                 <table>

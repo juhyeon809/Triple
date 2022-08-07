@@ -15,7 +15,7 @@ public class ReservationAiruseApiResponse {
     private Long idx;
     private Long userId;
     private String ticketType;
-    private Integer ticketNum;
+    private String ticketNum;
     private String engLastname;
     private String engFirstname;
     private String birth;
@@ -24,7 +24,8 @@ public class ReservationAiruseApiResponse {
     private String nationality;
     private String passportNum;
     private String passportExp;
-    private String passportCount;
+    private String passportCountry;
     private String infoAgree;
     private LocalDateTime regDate;
+    private String passengerName;
 }

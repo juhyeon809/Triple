@@ -27,7 +27,7 @@ public class SpotReviewApiLogicService extends BaseService<SpotReviewApiRequest,
                 .replyCount(spotReview.getReplyCount())
                 .regDate(spotReview.getRegDate())
                 .starCount(spotReview.getStarCount())
-                .userId(spotReview.getUsers().getIdx())
+                .userId(spotReview.getIdx())
                 .build();
         return spotReviewApiResponse;
     }

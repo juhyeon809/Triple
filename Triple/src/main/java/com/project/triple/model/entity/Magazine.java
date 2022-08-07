@@ -28,9 +28,10 @@ public class Magazine {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_magazine")
     private Long idx;
-    private Integer adminuserId;
+    private String adminuserId;
     private String adminuserName;
-    private Integer magazineNum;
+    private String tag;
+    private String summary;
     @Enumerated(EnumType.STRING)
     private MagazineType magazineType;
     private String title;
@@ -38,6 +39,8 @@ public class Magazine {
 //    private String uploadPath;
 //    private String fileName;
 //    private String fileType;
+    private String uploadPath;
+    private String fileName;
     @CreatedDate
     private LocalDateTime regDate;
 

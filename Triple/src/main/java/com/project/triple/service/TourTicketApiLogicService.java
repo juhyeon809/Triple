@@ -68,8 +68,8 @@ public class TourTicketApiLogicService extends BaseService<TourTicketApiRequest,
         return ticketNum;
     }
 
-    public Header<List<TourTicketApiResponse>> search2(String ticketNum){
-        List<TourTicketApiResponse> tourTicketList = tourTicketRepository.findByTicketNum(ticketNum).stream()
+    public Header<List<TourTicketApiResponse>> search2(Long idx){
+        List<TourTicketApiResponse> tourTicketList = tourTicketRepository.findByIdx(idx).stream()
                 .map(lodgingTicket -> response(lodgingTicket)).collect(Collectors.toList());
         return Header.OK(tourTicketList);
     }

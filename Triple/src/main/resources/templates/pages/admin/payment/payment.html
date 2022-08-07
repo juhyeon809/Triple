@@ -20,103 +20,100 @@
     
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/admin/main.html">TRIPLE</a>
-            </div>
-            <div class="user-info">
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
-                </div>
-            </div>
-        </div>
-        
-    </nav>
+    <!--header-->
+    <div th:replace="fragement/adminHeader :: adminHeader"></div>
+<!--header 끝-->
+
     <!-- 사이드바-->
     <section id="sidebar">
         <aside id="leftsidebar" class="sidebar">
             <ul class="side-menu">
                 <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/member/memberlist.html">회원목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/member/memberSign-up.html">회원가입</a></li>
+                        <li><a href="/templates/pages/admin/member/memberlist.html">회원목록</a></li>
+                        <li><a href="/templates/pages/admin/member/memberSign-up.html">회원가입</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/all.html">전체</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/fly_reservation.html">항공권</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/room_resevation.html">숙소</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/packge_reservation.html">패키지</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/booking/all.html">전체</a></li>
+                        <li><a href="/templates/pages/admin/booking/fly_reservation.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/booking/room_resevation.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/booking/packge_reservation.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../product/air.html">항공권</a></li>
-                        <li><a href="../product/room.html">숙소</a></li>
-                        <li><a href="../product/packge.html">패키지</a></li>
-                        <li><a href="../product/ticket.html">티켓</a></li>
+                        <li><a href="/templates/pages/adminproduct/air.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/packge.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../productlist/admin_productlist_airline.html">항공권</a></li>
-                        <li><a href="../productlist/admin_productlist_lodging.html">숙소</a></li>
-                        <li><a href="../productlist/admin_productlist_package.html">패키지</a></li>
-                        <li><a href="../productlist/admin_productlist_ticket.html">티켓</a></li>
-                        <li><a href="../productlist/admin_productlist_restaurant.html">다이닝</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_airline.html">항공권</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_lodging.html">숙소</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_package.html">패키지</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_ticket.html">티켓</a></li>
+                        <li><a href="/templates/pages/admin/productlist/admin_productlist_restaurant.html">다이닝</a></li>
                     </ul>
                 </li>
                 <li><a href="../review/review.html"><i class='bx bxs-inbox icon'></i>상품후기</a>
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponList.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/coupon/couponList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/coupon/couponRegistration.html">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventList.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/event/eventList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/event/eventRegister.html">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/notice/notice-list.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/notice/notice-register.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/notice/notice-list.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/notice/notice-register.html">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/magazine/magazine-register.html">등록</a></li>
+                        <li><a href="/templates/pages/admin/magazine/magazine-list.html">목록</a></li>
+                        <li><a href="/Triple/admin/magazine_register">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="payment.html" style="background-color: white; color: #0098A1;"><i class='bx bx-credit-card icon'></i>결제</a>
+                <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
+                        <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
+                        <li><a href="/templates/pages/admin/spot/spot_restaurant.html">맛집 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="/templates/pages/admin/payment/payment.html" style="background-color: white; color: #0098A1;"><i class='bx bx-credit-card icon'></i>결제</a>
                     
                 </li>
                 <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                        <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
+                        <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/manage/admin_manage_list.html">목록</a></li>
-                        <li><a href="../../../../../../../../../Triple2/Triple/src/main/resources/templates/pages/admin/manage/admin_manage_register.html">등록</a></li>
+                        <li><a href="/Triple/adminList">목록</a></li>
+                        <li><a href="/Triple/admin/admin_join">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>

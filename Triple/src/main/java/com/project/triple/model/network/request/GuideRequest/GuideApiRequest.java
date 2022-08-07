@@ -1,5 +1,6 @@
 package com.project.triple.model.network.request.GuideRequest;
 
+import com.project.triple.model.enumclass.GuideType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +14,11 @@ import java.time.LocalDateTime;
 @Builder
 public class GuideApiRequest {
     private Long idx;
-    private String type;
+    private GuideType type;
     private Integer guideNum;
-//    private String adminuserId;
+    private Long adminuserId;
     private String country;
+    private String city;
     private String adminuserName;
     private String title;
     private String content;

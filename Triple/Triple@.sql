@@ -340,19 +340,20 @@ create table review_reply(
 create sequence seq_review_reply
     increment by 1
     start with 1;
-    
-
+select * from admin_user;
+drop table magazine;
+select * from magazine;
 create table magazine(
     idx number(7) primary key,
-    adminuser_id number(7) not null,
+    adminuser_id varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    magazine_num number(7) not null,
-    magazine_type varchar2(10) not null,
-    title varchar2(20) not null,
+    magazine_type varchar2(20) not null,
+    title varchar2(100) not null,
+    summary varchar2(100) not null,
+    tag varchar2(50) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
+    upload_path varchar2(200),
+    file_name varchar2(200),
     reg_date date default sysdate
 );
 
@@ -372,7 +373,27 @@ create table adminuser(
 create sequence seq_adminuser
     increment by 1
     start with 1;
-    
+ 
+ create table PACKAGE(
+    idx number(7) primary key,
+    country varchar2(20) not null,
+    title varchar2(20) not null,
+    upload_path varchar2(200) not null,
+    file_name varchar2(200) not null,
+    keyword varchar2(20) not null,
+    adult_pr number(10) not null,
+    kid_pr number(10) not null,
+    infant_pr number(10) not null,
+    adult_infant_pr number(10) not null,
+    program varchar2(400) not null,
+    contained varchar2(400) not null,
+    not_contained varchar2(400) not null
+    reg_date date default sysdate  
+);
+
+create sequence seq_package
+    increment by 1
+    start with 1;   
 
 create table spot(
     idx number(7) primary key,
@@ -529,20 +550,21 @@ create sequence seq_user_coupon
     increment by 1
     start with 1;
     
-
+select * from guide;
+drop table guide;
 create table guide(
     idx number(7) primary key,
-    type varchar2(10) unique not null,
+    type varchar2(20) unique not null,
     guide_num number(7) not null,
     adminuser_id number(7) not null,
     country varchar2(20) not null,
     city varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    title varchar2(30) not null,
+    title varchar2(50) not null,
     content varchar2(500),
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
+    upload_path varchar2(200),
+    file_name varchar2(200),
+    file_type varchar2(10),
     reg_date date default sysdate,
     review_count number(7) default 0
 );

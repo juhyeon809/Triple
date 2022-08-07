@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 @Builder
 public class ReservationAiruseApiRequest {
     private Long idx;
-//    private Integer userid;
+    private Long userId;
     private String ticketType;
-    private Integer ticketNum;
+    private String ticketNum;
     private String engLastname;
     private String engFirstname;
     private String birth;
@@ -25,7 +25,8 @@ public class ReservationAiruseApiRequest {
     private String nationality;
     private String passportNum;
     private String passportExp;
-    private String passportCount;
+    private String passportCountry;
     private String infoAgree;
     private LocalDateTime regDate;
+    private String passengerName;
 }

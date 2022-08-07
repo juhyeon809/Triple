@@ -208,7 +208,7 @@ hr {
     font-size: 16px;
     font-weight: normal;
 }
-#service_out_box form p button {
+#service_out_box form p #sendit {
     margin-top: 10px;
     width: 900px;
     height: 60px;

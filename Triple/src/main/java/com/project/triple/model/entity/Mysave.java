@@ -1,6 +1,7 @@
 package com.project.triple.model.entity;
 
 import com.project.triple.model.entity.User.Users;
+import com.project.triple.model.enumclass.SaveType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,14 +28,15 @@ public class Mysave {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_mysave")
     private Long idx;
-//    private Integer userid;
-    private Integer itemNum;
+    private Long userid;
+    private Long itemNum;
     private String saveYn;
     private String memo;
-    private String saveType;
+    @Enumerated(EnumType.STRING)
+    private SaveType saveType;
     @CreatedDate
     private LocalDateTime regDate;
 
-    @ManyToOne
-    private Users users;
+//    @ManyToOne
+//    private Users users;
 }

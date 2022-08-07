@@ -88,8 +88,8 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
 
     @Override
-    public Header delete(Long id) {
-        Optional<Users> users = baseRepository.findById(id);
+    public Header delete(Long idx) {
+        Optional<Users> users = baseRepository.findById(idx);
         return users.map(user->{
             baseRepository.delete(user);
             return Header.OK();
@@ -116,6 +116,8 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
 
        return idx;
     }
+
+
 
 
 

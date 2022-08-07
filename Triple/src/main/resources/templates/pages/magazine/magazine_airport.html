@@ -34,8 +34,8 @@
                 <div class="list_box" th:each="magazine : ${magazineList}">
                     <a th:href="'/Triple/magazine/'+${magazine.getMagazineType().toString().toLowerCase()}+'/view/'+${magazine.getIdx()}">
                         <p id="li_tit" th:text="${magazine.getTitle()}"></p>
-                        <p id="li_cont" th:text="${magazine.getContent().substring(0, 5)}+'...'"></p>
-                        <p id="li_cont" th:text="${magazine.getMagazineType().getDescription()}"></p>
+                        <p id="li_cont" th:text="${magazine.getSummary()}"></p>
+                        <p id="li_cont" th:text="${magazine.getTag()}"></p>
                     </a>
                     <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img">
                 <div class="list_box">
@@ -97,7 +97,7 @@
                         <p id="li_tit">따뜻한 연말을 위한 <br>항공권 미리 준비하기</p>
                         <p id="li_cont">#항공･공항 #동남아시아</p></a>
                         <img src="/lib/img/magazine_img/back_img (4).svg" id="list_img" >
->>>>>>> bc9bbdac6f7bdec022ebe38d74825f43d6c6afe8
+                    <img th:src="@{${magazine.getUploadPath()}}" id="list_img">
                 </div>
             </div>
         </div>

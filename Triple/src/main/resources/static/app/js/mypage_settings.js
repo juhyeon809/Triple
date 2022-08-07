@@ -2,7 +2,7 @@ $(function (){
 
     $(document).on('click', '#sendit', function () {
         const idCheck = RegExp(/[a-zA-Z0-9]{6,20}$/);
-        const pwCheck = RegExp(/[a-zA-Z0-9]{6,20}$/);
+        const pwCheck = RegExp(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/);
         const nameCheck = RegExp(/^[가-힣]+$/);
         const hpCheck = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
         const emailCheck = RegExp(/^[a-zA-Z0-9\.\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]+/);
@@ -61,13 +61,16 @@ $(function (){
             }
         }
 
-        $.put({
+        $.ajax({
             url: '/api/user',
+            type: 'PUT',
             data: JSON.stringify(jsonData),
             dataType: 'json',
             contentType: 'application/json',
             success: function () {
                 alert('수정성공!');
+                sessionStorage.setItem('nickname', $('#nickname').val())
+                sessionStorage.setItem('userpw', $('#userpw').val())
                 location.href = '/Triple/mypage/settings';
             },
             error: function () {

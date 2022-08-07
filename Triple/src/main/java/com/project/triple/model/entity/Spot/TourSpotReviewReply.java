@@ -32,11 +32,11 @@ public class TourSpotReviewReply {
     private String title;
     private String content;
     private String nickname;
-//    private String userId;
+    private String userId;
     private Integer likeCount;
     @CreatedDate
     private LocalDateTime regDate;
 
-    @ManyToOne
-    private Users users;
+//    @ManyToOne
+//    private Users users;
 }
