@@ -28,6 +28,8 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
     private SpotApiResponse response(Spot spot){
         SpotApiResponse spotApiResponse = SpotApiResponse.builder()
                 .idx(spot.getIdx())
+                .country(spot.getCountry())
+                .city(spot.getCity())
                 .placeName(spot.getPlaceName())
                 .title(spot.getTitle())
                 .uploadPath1(spot.getUploadPath1())

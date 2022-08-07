@@ -31,6 +31,8 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
     private GuideApiResponse response(Guide guide){
         GuideApiResponse guideApiResponse = GuideApiResponse.builder()
                 .idx(guide.getIdx())
+                .country(guide.getCountry())
+                .city(guide.getCity())
                 .title(guide.getTitle())
                 .uploadPath(guide.getUploadPath())
                 .fileName(guide.getFileName())

@@ -916,7 +916,7 @@ public class PageController {
 
 
 
-
+    //맛집 상세 페이지
     @RequestMapping(path = "/spot_restaurant_info")
     public ModelAndView spot_restaurant_info(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -932,7 +932,7 @@ public class PageController {
         return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
                 .addObject("nickname", nickname);
     }
-
+    //스팟 해외
     @RequestMapping(path = "/spot_overseas")            //http://localhost:9090/Triple/spot_overseas
     public ModelAndView spot_overseas(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -990,6 +990,7 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("guideList",guideApiResponseList);
     }
 
+    // 스팟 국내
     @RequestMapping(path = "/spot_domestic")
     public ModelAndView spot_domestic(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -1184,12 +1185,12 @@ public class PageController {
 
     /* 이벤트 등록 */
     @RequestMapping(path = "/admin/event/register")        //http://localhost:9090/Triple/admin/event/register
-    public ModelAndView event_register(HttpServletRequest request){
+    public ModelAndView event_register(HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
         if(session == null){
-
+            ScriptUtils.alertAndMovePage(response, "관리자 로그인 후 이용하세요", "/Triple/admin/admin_login");
         }else{
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
@@ -1536,6 +1537,24 @@ public class PageController {
             ScriptUtils.alertAndMovePage(response, "잘못된 접근입니다", "/Triple");
             return null;
         }
+    }
+
+    @RequestMapping(path = "/event")
+    public ModelAndView event_main( HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+
+        return new ModelAndView("/pages/event/event_main").addObject("email", email)
+                .addObject("nickname", nickname);
     }
 
 

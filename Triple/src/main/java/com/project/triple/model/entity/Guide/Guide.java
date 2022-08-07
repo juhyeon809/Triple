@@ -29,6 +29,8 @@ public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide")
     private Long idx;
+    private String country;
+    private String city;
     private String title;
     private String uploadPath;
     private String fileName;

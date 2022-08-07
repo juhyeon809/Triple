@@ -14,6 +14,8 @@ import java.time.LocalDateTime;
 @Builder
 public class GuideApiRequest {
     private Long idx;
+    private String country;
+    private String city;
     private String title;
     private String uploadPath;
     private String fileName;

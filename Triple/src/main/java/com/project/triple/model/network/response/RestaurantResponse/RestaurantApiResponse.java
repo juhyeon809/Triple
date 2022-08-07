@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
 @Builder
 public class RestaurantApiResponse {
     private Long idx;
+    private String country;
+    private String city;
     private String location;
     private String title;
     private String summary;

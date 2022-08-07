@@ -412,6 +412,8 @@ drop table spot;
 select * from spot;
 create table spot(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     place_name varchar2(100) not null,
     title varchar2(100) not null,
     upload_path1 varchar2(200) not null,
@@ -491,6 +493,8 @@ drop table restaurant;
 
 create table restaurant(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     location varchar2(200) not null,
     title varchar2(50) not null,
     summary varchar2(50) not null,
@@ -545,7 +549,7 @@ create sequence seq_restaurant_review
     increment by 1
     start with 1;
     
-
+select * from event;
 create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
@@ -597,6 +601,8 @@ select * from guide;
 drop table guide;
 create table guide(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     title varchar2(100) not null,
     upload_path varchar2(200) not null,
     file_name varchar2(200) not null,
@@ -643,7 +649,7 @@ create sequence seq_guide_review
     increment by 1
     start with 1;
     
-
+select * from guide_review;
 create table guide_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
@@ -751,17 +757,16 @@ create sequence seq_mysave
     increment by 1
     start with 1;
     
-
+select * from notice;
 create table notice(
     idx number(7),
-    notice_num number(7) not null,
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
+    notice_type varchar2(30) not null,
     title varchar2(30) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(20),
+    upload_path varchar2(200),
+    file_name varchar2(200),
     reg_date date default sysdate
 );
 

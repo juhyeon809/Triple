@@ -123,6 +123,44 @@
             <form th:action="@{/api/restaurant/register}" onsubmit="return spotRestaurant()" name="form" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="adminuserId" th:value="${session.userid}">
                 <input type="hidden" name="adminuserName" th:value="${session.name}">
+                <div class="admin_inquiry_q3">
+                    <select name="country" class="admin_inquiry_category2 concategory">
+                        <option value="">국가</option>
+                        <option value="대한민국">대한민국</option>
+                        <option value="필리핀">필리핀</option>
+                        <option value="베트남">베트남</option>
+                        <option value="코타키나발루">코타키나발루</option>
+                        <option value="싱가포르">싱가포르</option>
+                        <option value="괌/사이판">괌/사이판</option>
+                        <option value="스페인">스페인</option>
+                        <option value="터키">터키</option>
+                        <option value="스위스">스위스</option>
+                        <option value="이탈리아">이탈리아</option>
+                        <option value="크로아티아">크로아티아</option>
+                        <option value="하와이">하와이</option>
+                        <option value="LA">LA</option>
+                        <option value="뉴욕">뉴욕</option>
+                    </select>
+                </div>
+                <div class="admin_inquiry_q3">
+                    <select name="city" class="admin_inquiry_category2 concategory">
+                        <option value="">도시</option>
+                        <option value="대한민국">대한민국</option>
+                        <option value="필리핀">필리핀</option>
+                        <option value="베트남">베트남</option>
+                        <option value="코타키나발루">코타키나발루</option>
+                        <option value="싱가포르">싱가포르</option>
+                        <option value="괌/사이판">괌/사이판</option>
+                        <option value="스페인">스페인</option>
+                        <option value="터키">터키</option>
+                        <option value="스위스">스위스</option>
+                        <option value="이탈리아">이탈리아</option>
+                        <option value="크로아티아">크로아티아</option>
+                        <option value="하와이">하와이</option>
+                        <option value="LA">LA</option>
+                        <option value="뉴욕">뉴욕</option>
+                    </select>
+                </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">장소명</div>
                     <div class="admin_inquiry_q3">
