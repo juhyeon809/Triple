@@ -412,94 +412,94 @@ function destination(){
     return true;
 }
 
-function aircraft(){
-    const name = RegExp(/[a-zA-Z가-힣0-9\-]/);
-    const seatNum = RegExp( /^[0-9]+$/)
-
-    if(!$('#airlineName').val()) {
-        alert("항공사명을 선택해주세요");
-        $('#airlineName').focus();
-        return false
-    }
-    // if($('.name').val() == ''){
-    //     alert('항공기명을 입력해주세요')
-    //     $('.name').focus();
-    //     return false
-    // }
-    if(!name.test($('.aircraftName').val())){
-        alert('항공기명을 입력해주세요')
-        $('.aircraftName').focus();
-        return false
-    }
-    // if(!$('#comp').val()) {
-    //     alert("제조회사를 선택해주세요");
-    //     $('#comp').focus();
-    //     return false
-    // }
-    if($('.vip').val() == ''){
-        alert('VIP석 수를 입력해주세요')
-        $('.cevipnter').focus();
-        return false
-    }
-    if(!seatNum.test($('.vip').val())){
-        alert('숫자만 입력해주세요')
-        $('.vip').focus();
-        return false
-    }
-    if($('.family').val() == ''){
-        alert('패밀리석 수를 입력해주세요')
-        $('.family').focus();
-        return false
-    }
-    if(!seatNum.test($('.family').val())){
-        alert('숫자만 입력해주세요')
-        $('.family').focus();
-        return false
-    }
-    if($('.special').val() == ''){
-        alert('특가석 수를 입력해주세요')
-        $('.special').focus();
-        return false
-    }
-    if(!seatNum.test($('.special').val())){
-        alert('특가좌석 수를 입력해주세요')
-        $('.special').focus();
-        return false
-    }
-    if($('.premium').val() == ''){
-        alert('프리미엄석 수를 입력해주세요')
-        $('.premium').focus();
-        return false
-    }
-    if(!seatNum.test($('.premium').val())){
-        alert('숫자만 입력해주세요')
-        $('.premium').focus();
-        return false
-    }
-    if($('.economy').val() == ''){
-        alert('일반석 수를 입력해주세요')
-        $('.economy').focus();
-        return false
-    }
-    if(!seatNum.test($('.economy').val())){
-        alert('숫자만 입력해주세요')
-        $('.economy').focus();
-        return false
-    }
-    if($('.total').val() == ''){
-        alert('총 좌석수를 입력해주세요')
-        $('.total').focus();
-        return false
-    }
-    if(!seatNum.test($('.total').val())){
-        alert('숫자만 입력해주세요')
-        $('.total').focus();
-        return false
-    }
-
-
-    return true;
-}
+// function aircraft(){
+//     const name = RegExp(/[a-zA-Z가-힣0-9\-]/);
+//     const seatNum = RegExp( /^[0-9]+$/)
+//
+//     if(!$('#airlineName').val()) {
+//         alert("항공사명을 선택해주세요");
+//         $('#airlineName').focus();
+//         return false
+//     }
+//     // if($('.name').val() == ''){
+//     //     alert('항공기명을 입력해주세요')
+//     //     $('.name').focus();
+//     //     return false
+//     // }
+//     if(!name.test($('.aircraftName').val())){
+//         alert('항공기명을 입력해주세요')
+//         $('.aircraftName').focus();
+//         return false
+//     }
+//     // if(!$('#comp').val()) {
+//     //     alert("제조회사를 선택해주세요");
+//     //     $('#comp').focus();
+//     //     return false
+//     // }
+//     if($('.vip').val() == ''){
+//         alert('VIP석 수를 입력해주세요')
+//         $('.cevipnter').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.vip').val())){
+//         alert('숫자만 입력해주세요')
+//         $('.vip').focus();
+//         return false
+//     }
+//     if($('.family').val() == ''){
+//         alert('패밀리석 수를 입력해주세요')
+//         $('.family').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.family').val())){
+//         alert('숫자만 입력해주세요')
+//         $('.family').focus();
+//         return false
+//     }
+//     if($('.special').val() == ''){
+//         alert('특가석 수를 입력해주세요')
+//         $('.special').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.special').val())){
+//         alert('특가좌석 수를 입력해주세요')
+//         $('.special').focus();
+//         return false
+//     }
+//     if($('.premium').val() == ''){
+//         alert('프리미엄석 수를 입력해주세요')
+//         $('.premium').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.premium').val())){
+//         alert('숫자만 입력해주세요')
+//         $('.premium').focus();
+//         return false
+//     }
+//     if($('.economy').val() == ''){
+//         alert('일반석 수를 입력해주세요')
+//         $('.economy').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.economy').val())){
+//         alert('숫자만 입력해주세요')
+//         $('.economy').focus();
+//         return false
+//     }
+//     if($('.total').val() == ''){
+//         alert('총 좌석수를 입력해주세요')
+//         $('.total').focus();
+//         return false
+//     }
+//     if(!seatNum.test($('.total').val())){
+//         alert('숫자만 입력해주세요')
+//         $('.total').focus();
+//         return false
+//     }
+//
+//
+//     return true;
+// }
 function magazineRegister(){
     const title = document.querySelector('#title');
     const place = document.querySelector('#place');

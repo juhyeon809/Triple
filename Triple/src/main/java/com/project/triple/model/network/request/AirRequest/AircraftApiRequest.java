@@ -14,11 +14,10 @@ public class AircraftApiRequest {
     private String aircraftName;
     private String madeBy;
     private Integer aircraftCapacity;
-    private Integer normalSeat;
-    private Integer specialSeat;
-    private Integer familySeat;
     private Integer premiumSeat;
-    private Integer vipSeat;
+    private Integer firstSeat;
+    private Integer businessSeat;
+    private Integer economySeat;
     private String airlineName;
 //    private Integer airlineId;
 }

@@ -1,6 +1,7 @@
 package com.project.triple.controller.api;
 
 import com.project.triple.controller.CrudController;
+import com.project.triple.controller.page.ScriptUtils;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -22,10 +25,13 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
 
     private final AirTicketApiLogicService airTicketApiLogicService;
 
-    @Override
-    @PostMapping("")
-    public Header<AirTicketApiResponse> create(@RequestBody Header<AirTicketApiRequest> request) {
-        return airTicketApiLogicService.create(request);
+
+    @PostMapping("/register")
+    public Header<AirTicketApiResponse> create(HttpServletResponse response , AirTicket airTicket) throws IOException {
+        airTicketApiLogicService.write(airTicket);
+        ScriptUtils.alertAndMovePage(response ,"항공권 등록 완료","/Triple");
+
+        return null;
     }
 
     @Override
@@ -43,10 +49,7 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
         return super.delete(id);
     }
 
-    @GetMapping("/list")
-    public Header<List<AirTicketApiResponse>> findAll() {
-        return airTicketApiLogicService.search();
-    }
+
 
 
 }

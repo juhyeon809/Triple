@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class AirportApiLogicService extends BaseService<AirportApiRequest, AirportApiResponse, Airport> {
@@ -54,5 +57,9 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
     @Override
     public Header<AirportApiResponse> delete(Long id) {
         return null;
+    }
+
+    public Header<List<AirportApiResponse>> list(){
+      return Header.OK(airportRepository.findAll().stream().map(airport -> response(airport)).collect(Collectors.toList()));
     }
 }

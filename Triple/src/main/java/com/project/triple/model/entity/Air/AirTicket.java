@@ -31,31 +31,32 @@ public class AirTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_air_ticket")
     private Long idx;
-    private String ticketType;
-    private String ticketNum;
-    private Long airlineId;
-    private Long aircraftId;
-//    private Integer airlineIdx;
-//    private Integer aircraftIdx;
+    private String airRoute;
     private String departureAirport;
     private String landingAirport;
-    private LocalDateTime departureDate;
-    private LocalDateTime landingDate;
-    private BigDecimal price;
-    private String seatNum;
-    private String seatGrade;
+    private String departureTime;
+    private String landingTime;
+    private String flightTime;
+    private String airlineName;
+    private String aircraftName;
     private String baggage;
+    private Integer economyAdultPrice;
+    private Integer economyChildPrice;
+    private Integer economyInfantPrice;
+    private Integer premiumAdultPrice;
+    private Integer premiumChildPrice;
+    private Integer premiumInfantPrice;
+    private Integer businessAdultPrice;
+    private Integer businessChildPrice;
+    private Integer businessInfantPrice;
+    private Integer firstAdultPrice;
+    private Integer firstChildPrice;
+    private Integer firstInfantPrice;
+    private Integer premiumSeatCount;
+    private Integer firstSeatCount;
+    private Integer businessSeatCount;
+    private Integer economySeatCount;
     @CreatedDate
-    private LocalDateTime revDate;
-    @Enumerated(EnumType.STRING)
-    private TicketStatus status;
-
-//    @ManyToOne
-//    private Airline airline;
-//
-
-//
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airTicket")
-//    private List<Question> questionList;
+    private LocalDateTime regDate;
 
 }

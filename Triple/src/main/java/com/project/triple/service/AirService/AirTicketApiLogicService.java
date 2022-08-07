@@ -2,11 +2,14 @@ package com.project.triple.service.AirService;
 
 import com.project.triple.controller.page.TimeCollector;
 import com.project.triple.model.entity.Air.AirTicket;
+import com.project.triple.model.entity.Air.Aircraft;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
+import com.project.triple.model.network.response.AirResponse.AircraftApiResponse;
 import com.project.triple.repository.AirTicketRepository;
+import com.project.triple.repository.AircraftRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,25 +29,38 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
     @Autowired
     private AirTicketRepository airTicketRepository;
 
+    @Autowired
+    private AircraftRepository aircraftRepository;
+
     private AirTicketApiResponse response(AirTicket airticket){
         AirTicketApiResponse airTicketApiResponse = AirTicketApiResponse.builder()
                 .idx(airticket.getIdx())
-                .ticketType(airticket.getTicketType())
-                .ticketNum(airticket.getTicketNum())
-                .airlineId(airticket.getAirlineId())
-                .aircraftId(airticket.getAircraftId())
-//                .airlineIdx(airticket.getAirlineIdx())
-//                .aircraftIdx(airticket.getAircraftIdx())
+                .airRoute(airticket.getAirRoute())
                 .departureAirport(airticket.getDepartureAirport())
                 .landingAirport(airticket.getLandingAirport())
-                .departureDate(airticket.getDepartureDate())
-                .landingDate(airticket.getLandingDate())
-                .price(airticket.getPrice())
-                .seatNum(airticket.getSeatNum())
-                .seatGrade(airticket.getSeatGrade())
+                .departureTime(airticket.getDepartureTime())
+                .landingTime(airticket.getLandingTime())
+                .flightTime(airticket.getFlightTime())
+                .airlineName(airticket.getAirlineName())
+                .aircraftName(airticket.getAircraftName())
                 .baggage(airticket.getBaggage())
-                .revDate(airticket.getRevDate())
-                .status(airticket.getStatus())
+                .economyAdultPrice(airticket.getEconomyAdultPrice())
+                .economyChildPrice(airticket.getEconomyChildPrice())
+                .economyInfantPrice(airticket.getEconomyInfantPrice())
+                .premiumAdultPrice(airticket.getPremiumAdultPrice())
+                .premiumChildPrice(airticket.getPremiumChildPrice())
+                .premiumInfantPrice(airticket.getPremiumInfantPrice())
+                .businessAdultPrice(airticket.getBusinessAdultPrice())
+                .businessChildPrice(airticket.getBusinessChildPrice())
+                .businessInfantPrice(airticket.getBusinessInfantPrice())
+                .firstAdultPrice(airticket.getFirstAdultPrice())
+                .firstChildPrice(airticket.getFirstChildPrice())
+                .firstInfantPrice(airticket.getFirstInfantPrice())
+                .premiumSeatCount(airticket.getPremiumSeatCount())
+                .firstSeatCount(airticket.getFirstSeatCount())
+                .businessSeatCount(airticket.getBusinessSeatCount())
+                .economySeatCount(airticket.getEconomySeatCount())
+                .regDate(airticket.getRegDate())
                 .build();
 
 
@@ -53,20 +69,15 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
 
     @Override
     public Header<AirTicketApiResponse> create(Header<AirTicketApiRequest> request) {
-        AirTicketApiRequest airTicketApiRequest = request.getData();
-        AirTicket airTicket = AirTicket.builder().ticketType(airTicketApiRequest.getTicketType())
-                .ticketNum(airTicketApiRequest.getTicketNum())
-                .departureAirport(airTicketApiRequest.getDepartureAirport())
-                .landingAirport(airTicketApiRequest.getLandingAirport())
-                .departureDate(airTicketApiRequest.getDepartureDate())
-                .landingDate(airTicketApiRequest.getLandingDate())
-                .price(airTicketApiRequest.getPrice())
-                .seatNum(airTicketApiRequest.getSeatNum())
-                .seatGrade(airTicketApiRequest.getSeatGrade())
-                .baggage(airTicketApiRequest.getBaggage())
-                .revDate(airTicketApiRequest.getRevDate())
-                .status(TicketStatus.AVAILABLE)
-                .build();
+        return null;
+    }
+
+    public Header<AirTicketApiResponse> write(AirTicket airTicket) {
+        Aircraft aircraft = aircraftRepository.findByAircraftName(airTicket.getAircraftName());
+        airTicket.setPremiumSeatCount(aircraft.getPremiumSeat());
+        airTicket.setFirstSeatCount(aircraft.getFirstSeat());
+        airTicket.setBusinessSeatCount(aircraft.getBusinessSeat());
+        airTicket.setEconomySeatCount(aircraft.getEconomySeat());
         AirTicket newAirTicket = baseRepository.save(airTicket);
         return Header.OK(response(newAirTicket));
     }
@@ -94,55 +105,10 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
         return Header.OK(airTicketApiResponseList);
     }
 
-    public TimeCollector timeSort(AirTicketApiResponse airTicketApiResponse) throws NullPointerException {
-
-                    TimeCollector timeCollector = new TimeCollector();
-                    timeCollector.setHour((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()/3600);
-                    timeCollector.setMinute(((Duration.between(airTicketApiResponse.getDepartureDate(),airTicketApiResponse.getLandingDate())).getSeconds()%3600)/60);
-                    timeCollector.setAirTicketIdx(airTicketApiResponse.getIdx());
-
-                return timeCollector;
-    }
-
-    public Header<List<AirTicketApiResponse>> specialFlight() {
-        List<AirTicket> airTicketList = airTicketRepository.findTop10BySeatGrade("SPECIAL");
-        List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
-                .map(airTicket -> response(airTicket))
-                .collect(Collectors.toList());
-        return Header.OK(airTicketApiResponseList);
-    }
 
 
-//    public String findAllTicketNum(String tNum){
-//        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
-//
-//        return ticketNum;
-//    }
 
-//    public Header<List<AirTicketApiResponse>> search2(Long idx){
-//        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(idx).stream()
-//                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
-//        return Header.OK(airTicketList);
-//    }
 
-    public Header<AirTicketApiResponse> read2(String ticketNum) {
 
-        AirTicket airTicket = airTicketRepository.findByTicketNum(ticketNum);
 
-        AirTicketApiResponse airTicketApiResponse = response(airTicket);
-
-        return Header.OK(airTicketApiResponse);
-    }
-
-//    public String findAllTicketNum(String tNum){
-//        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
-//
-//        return ticketNum;
-//    }
-
-//    public Header<List<AirTicketApiResponse>> search2(String ticketNum){
-//        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(ticketNum).stream()
-//                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
-//        return Header.OK(airTicketList);
-//    }
 }

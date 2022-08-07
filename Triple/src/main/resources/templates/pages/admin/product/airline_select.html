@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 항공기등록</title>
+    <title>관리자 | 항공권 등록</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -16,18 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
 
-    <style>
-        .formbox{
-            margin-top: 100px;
-        }
-        .leftbox div,
-        .rightbox div{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-    </style>
-</head>
+        </head>
 <body>
     <!--header-->
     <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
@@ -52,18 +41,18 @@
                         <li><a href="/templates/pages/admin/booking/ticket_reservation.html">티켓</a></li>
                     </ul>
                 </li>
-                <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown show">
+                <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html" style="color:darkslategray; font-weight: bold;">항공기 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
-                    <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
+                <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
+                    <ul class="side-dropdown show">
+                        <li><a href="/templates/pages/admin/product/air.html" style="color:darkslategray; font-weight: bold;">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
                         <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
@@ -133,52 +122,17 @@
     </section>
     <!--사이드바 끝-->
 
-    <section class="content2">
+    <section class="content2"> 
         <div class="content2-fluid">
-            
             <!--타이틀-->
             <div class="header_box">
-                <h2>항공기 신규 등록</h2>
+                <h2>상품등록 | 항공권</h2>
             </div>
             <!--타이틀 끝-->
-            <!--항공기 정보 등록-->
-            <form th:action="@{/api/airTicket/register}" method="post" onsubmit="return aircraft()">
-                <div class="admin_manage_form_container">
-                    <div class="admin_manage_form_container_ul1">
-                        <p class="admin_register_item">항공사명 </p>
-                        <p class="admin_register_item">제조회사 </p>
-                        <p class="admin_register_item">프리미엄석 </p>
-                        <p class="admin_register_item">총 좌석수 </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul2">
-                        <p>
-                            <select name="airlineName" id="airlineName" class="admin_register_adminid_content">
-                                <option  th:each="airline : ${airlineList}" th:value="${airline.getKrName()}" th:text="${airline.getKrName()}"></option>
-                            </select>
-                        </p>
-                        <p><input type="text" name="madeBy" placeholder="제조사를 입력하세요"></p>
-                        <p><input name="premiumSeat" type="text" class="admin_register_content family" placeholder="premium 좌석 수를 입력하세요"></p>
-                        <p><input name="aircraftCapacity" type="text" class="admin_register_content total" placeholder="총 좌석수를 입력하세요"></p>
-                    </div>
-                    <div class="admin_manage_form_container_ul1 aircraft_reg">
-                        <p class="admin_register_item">항공기명 </p>
-                        <p class="admin_register_item">일등석 </p>
-                        <p class="admin_register_item">비즈니스석 </p>
-                        <p class="admin_register_item">이코노미석 </p>
-                    </div>
-                    <div class="admin_manage_form_container_ul2 aircraft_reg">
-                        <p><input name="aircraftName" type="text" class="admin_register_content aircraftName" placeholder="항공기명을 입력하세요"></p>
-                        <p><input name="firstSeat" type="text" class="admin_register_content vip" placeholder="vip 좌석 수를 입력하세요"></p>
-                        <p><input name="businessSeat" type="text" class="admin_register_content special" placeholder="특가석 좌석 수를 입력하세요"></p>
-                        <p><input name="economySeat" type="text" class="admin_register_content economy" placeholder="일반석 좌석 수를 입력하세요"></p>
-                    </div>
-                </div>
-                <div class="btnlist">
-                    <input type="submit" value="등록">
-                    <input type="reset" value="초기화">
-                </div>
-            </form>
-            <!--항공기 정보등록 끝-->
+            <!--항공권 정보 등록-->
+            <div>
+                <p th:each="airline : ${airlineList}"><a th:href="'/Triple/air_register/' + ${airline.getKrName()}" th:text="${airline.getKrName()}"></a></p>
+            </div>
         </div>
     </section>
 
