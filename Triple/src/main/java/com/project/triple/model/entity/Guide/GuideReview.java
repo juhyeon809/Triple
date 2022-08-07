@@ -25,20 +25,20 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public class GuideReview {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_guide_review")
     private Long idx;
-    private Integer reviewNum;
+    private Long postId;
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+    private String userEmail;
     private String uploadPath;
     private String fileName;
-    private String fileType;
-    @CreatedDate
-    private LocalDateTime regDate;
     private Integer likeCount;
     private Integer replyCount;
+    @CreatedDate
+    private LocalDateTime regDate;
+    private String starCount;
 
 //    @ManyToOne
 //    private Users users;

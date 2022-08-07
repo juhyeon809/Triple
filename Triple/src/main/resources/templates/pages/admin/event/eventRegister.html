@@ -76,8 +76,8 @@
                 </li>
                 <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/event/eventList.html">목록</a></li>
-                        <li><a href="/templates/pages/admin/event/eventRegister.html" style="color:darkslategray; font-weight: bold;">등록</a></li>
+                        <li><a href="/Triple/admin/eventList">목록</a></li>
+                        <li><a href="/Triple/admin/event/register" style="color:darkslategray; font-weight: bold;">등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
@@ -95,9 +95,9 @@
                 <li><a href="#"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
-                        <li><a href="/templates/pages/admin/spot/spot_tourism.html">관광지 등록</a></li>
+                        <li><a href="/Triple/tourism_register">관광지 등록</a></li>
                         <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
-                        <li><a href="/templates/pages/admin/spot/spot_guide.html">가이드 등록</a></li>
+                        <li><a href="/Triple/guide_register">가이드 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
@@ -122,55 +122,64 @@
     <!--사이드바 끝-->
     <section class="content2">
         <div class="content2-fluid">
+            <!--타이틀-->
             <div class="header_box">
                 <h2>이벤트 | 등록</h2>
             </div>
-            <form action="" onsubmit="return eventRegister()">
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">이벤트 분류</div>
-                <div class="admin_inquiry_q3">
-                    <select name="" class="admin_inquiry_category2">
-                        <option value="">전체</option>
-                        <option value="">1월 이벤트</option>
-                        <option value="">2월 이벤트</option>
-                        <option value="">3월 이벤트</option>
-                        <option value="">4월 이벤트</option>
-                        <option value="">5월 이벤트</option>
-                        <option value="">6월 이벤트</option>
-                        <option value="">7월 이벤트</option>
-                        <option value="">8월 이벤트</option>
-                        <option value="">9월 이벤트</option>
-                        <option value="">10월 이벤트</option>
-                        <option value="">11월 이벤트</option>
-                        <option value="">12월 이벤트</option>
-                    </select>
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">이벤트 제목</div>
-                <div class="admin_inquiry_q3">
-                    <input type="text" class="admin_inquiry_category2">
-                </div>
-            </div>
-            <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">이벤트 내용</div> 
-                <div class="admin_inquiry_q3">
-                    <div class="admin_inquiry_a1">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;">
-                            <p>이벤트 내용을 입력하세요</p>
-                        </textarea>
+            <!--타이틀 끝-->
+            <form th:action="@{/api/admin/event/register}" name="form" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="adminuserId" th:value="${session.userid}">
+                <input type="hidden" name="adminuserName" th:value="${session.name}">
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">이벤트 분류</div>
+                    <div class="admin_inquiry_q3">
+                        <select name="eventType" id="eventType" class="admin_inquiry_category2 no_list" required>
+                            <option value="" disabled selected>선택</option>
+                            <option value="1월 이벤트">1월 이벤트</option>
+                            <option value="2월 이벤트">2월 이벤트</option>
+                            <option value="3월 이벤트">3월 이벤트</option>
+                            <option value="4월 이벤트">4월 이벤트</option>
+                            <option value="5월 이벤트">5월 이벤트</option>
+                            <option value="6월 이벤트">6월 이벤트</option>
+                            <option value="7월 이벤트">7월 이벤트</option>
+                            <option value="8월 이벤트">8월 이벤트</option>
+                            <option value="9월 이벤트">9월 이벤트</option>
+                            <option value="10월 이벤트">10월 이벤트</option>
+                            <option value="11월 이벤트">11월 이벤트</option>
+                            <option value="12월 이벤트">12월 이벤트</option>
+                        </select>
                     </div>
-
                 </div>
-            </div>
-            <div class="btnlist">
-                <button type="submit" class="regis">등록</button>
-            </div>
-        </form>
-        <!--이벤트 등록 끝-->
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">이벤트 제목</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="text" name="title" id="title" class="admin_inquiry_category2 title">
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">이벤트 내용</div>
+                    <div class="admin_inquiry_q3">
+                        <div class="admin_inquiry_a1">
+                            <textarea name="content" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px;">내용을 입력하세요
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">첨부파일</div>
+                    <div class="admin_inquiry_q3">
+                        <input type="file" name="file" class="admin_inquiry_category2" enctype="multipart/form-data" >
+                    </div>
+                </div>
+                <div class="btnlist">
+                    <input type="submit" value="등록" class="register_btn" onclick="location.href='pages/admin/event/eventList'">
+                    <input type="submit" value="취소" class="cancel_btn" onclick="location.reload()">
+                </div>
+            </form>
+        </div>
     </section>
 
-    <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
+<script src="/app/js/script.js"></script>
+<script src="/app/js/admin.js"></script>
 </body>
 </html>

@@ -31,6 +31,8 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
     private GuideApiResponse response(Guide guide){
         GuideApiResponse guideApiResponse = GuideApiResponse.builder()
                 .idx(guide.getIdx())
+                .country(guide.getCountry())
+                .city(guide.getCity())
                 .title(guide.getTitle())
                 .uploadPath(guide.getUploadPath())
                 .fileName(guide.getFileName())
@@ -85,16 +87,22 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         return Header.OK();
     }
 
-    public void write(Guide guide, MultipartFile img1) throws Exception{
+    public void write(Guide guide, MultipartFile file) throws Exception{
 
         String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
         UUID uuid = UUID.randomUUID();
-        String filename = uuid + "_" + img1.getOriginalFilename();
+        String filename = uuid + "_" + file.getOriginalFilename();
         File savFile = new File(projectpath, filename);
-        img1.transferTo(savFile);
+        file.transferTo(savFile);
         guide.setFileName(filename);
         guide.setUploadPath("/files/"+filename);
         guideRepository.save(guide);
+    }
+
+    public Header<List<GuideApiResponse>> list() {
+        List<GuideApiResponse> guideApiResponseList = guideRepository.findAll().stream().map(guide -> response(guide)).collect(Collectors.toList());
+
+        return Header.OK(guideApiResponseList);
     }
 
 

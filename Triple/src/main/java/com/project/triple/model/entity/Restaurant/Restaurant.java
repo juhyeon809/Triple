@@ -27,6 +27,8 @@ public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_restaurant")
     private Long idx;
+    private String country;
+    private String city;
     private String location;
     private String title;
     private String summary;
@@ -39,7 +41,7 @@ public class Restaurant {
     private String menuName3;
     private String menuDescription3;
     private Integer menuPrice3;
-    private String howToGO;
+    private String howTogo;
     private String availableAt;
     private String tip;
     private String etc;

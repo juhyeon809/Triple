@@ -31,7 +31,7 @@ public class GuideApiController extends CrudController<GuideApiRequest, GuideApi
     {
         guideApiLogicService.write(guide, file);
 
-        ScriptUtils.alert( response , "매거진 작성완료!");
+        ScriptUtils.alert( response , "가이드 작성완료!");
         return new ModelAndView("/pages/admin/spot/spotList");
     }
 }

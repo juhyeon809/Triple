@@ -27,14 +27,13 @@ public class SpotReview {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot_review")
     private Long idx;
-    private String reviewNum;
+    private Long postId;
     private String title;
     private String content;
     private String nickname;
-    private String userId;
+    private String userEmail;
     private String uploadPath;
     private String fileName;
-    private String fileType;
     private Integer likeCount;
     private Integer replyCount;
     @CreatedDate

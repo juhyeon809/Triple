@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
 @Builder
 public class RestaurantApiRequest {
     private Long idx;
+    private String country;
+    private String city;
     private String location;
     private String title;
     private String summary;
@@ -27,7 +29,7 @@ public class RestaurantApiRequest {
     private String menuName3;
     private String menuDescription3;
     private Integer menuPrice3;
-    private String howToGO;
+    private String howTogo;
     private String availableAt;
     private String tip;
     private String etc;

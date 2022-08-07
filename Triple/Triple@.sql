@@ -412,6 +412,8 @@ drop table spot;
 select * from spot;
 create table spot(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     place_name varchar2(100) not null,
     title varchar2(100) not null,
     upload_path1 varchar2(200) not null,
@@ -453,18 +455,17 @@ commit;
 
 create table spot_review(
     idx number(7) primary key,
-    review_num varchar2(10) not null,
+    post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id number(7) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
-    like_count number(5),
+    user_email varchar2(50) not null,
+    upload_path varchar2(200),
+    file_name varchar2(200),
+    like_count number(5) default 0,
     reply_count number(5) default 0,
     reg_date date default sysdate,
-    star_count varchar2(20) not null
+    star_count number(5) default 0
 );
 
 create sequence seq_spot_review
@@ -492,6 +493,8 @@ drop table restaurant;
 
 create table restaurant(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     location varchar2(200) not null,
     title varchar2(50) not null,
     summary varchar2(50) not null,
@@ -524,29 +527,29 @@ create table restaurant(
 create sequence seq_restaurant
     increment by 1
     start with 1;
-    
-
+select *from restaurant_review;
+drop table restaurant_review;
+delete from restaurant_review where idx = 7;
 create table restaurant_review(
     idx number(7) primary key,
-    review_num varchar2(10) not null,
+    post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id number(7) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
+    user_email varchar2(50) not null,
+    upload_path varchar2(200),
+    file_name varchar2(200),
     like_count number(5) default 0,
-    reply_count number(5),
+    reply_count number(5) default 0,
     reg_date date default sysdate,
-    star_count varchar2(20) not null
+    star_count number(5) default 0
 );
 
 create sequence seq_restaurant_review
     increment by 1
     start with 1;
     
-
+select * from event;
 create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
@@ -598,10 +601,12 @@ select * from guide;
 drop table guide;
 create table guide(
     idx number(7) primary key,
+    country varchar2(30) not null,
+    city varchar2(30) not null,
     title varchar2(100) not null,
     upload_path varchar2(200) not null,
     file_name varchar2(200) not null,
-    content varcahr2(500) not null,
+    content varchar2(500) not null,
     language varchar2(50) not null,
     area varchar2(50) not null,
     population varchar2(50) not null,
@@ -614,8 +619,8 @@ create table guide(
     prices varchar2(500) not null,
     air varchar2(500) not null,
     climate varchar2(500) not null,
-    bestTime varchar2(200) not null,
-    simple_conversation(1000) not null,
+    best_time varchar2(200) not null,
+    simple_conversation varchar2(1000) not null,
     reg_date date default sysdate,
     review_count number(7) default 0
 );
@@ -627,24 +632,24 @@ create sequence seq_guide
 
 create table guide_review(
     idx number(7) primary key,
-    review_num number(7) not null,
+    post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_id number(7) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(10),
-    reg_date date default sysdate,
+    user_email varchar2(50) not null,
+    upload_path varchar2(200),
+    file_name varchar2(200),
     like_count number(5) default 0,
-    reply_count number(5)
+    reply_count number(5) default 0,
+    reg_date date default sysdate,
+    star_count number(5) default 0
 );
 
 create sequence seq_guide_review
     increment by 1
     start with 1;
     
-
+select * from guide_review;
 create table guide_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
@@ -752,17 +757,16 @@ create sequence seq_mysave
     increment by 1
     start with 1;
     
-
+select * from notice;
 create table notice(
     idx number(7),
-    notice_num number(7) not null,
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
+    notice_type varchar2(30) not null,
     title varchar2(30) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(20),
+    upload_path varchar2(200),
+    file_name varchar2(200),
     reg_date date default sysdate
 );
 

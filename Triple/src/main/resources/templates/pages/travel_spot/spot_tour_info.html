@@ -102,6 +102,27 @@
                 </div>
             </div>
         </div>
+            <div id="review_box">
+                <div id="review_top">
+                    <p class="index_p">리뷰 <span class="blue_text">332</span></p>
+                    <div id="review_write_see">
+                        <p id="write_review"><a th:href="'/Triple/spot/review/tour/'+ ${tour.getIdx()}">리뷰 쓰기</a></p>
+                        <p id="see_review"><a href="">리뷰 전체보기</a></p>
+                    </div>
+                </div>
+                <div class="review_content" th:each="review : ${reviewList}">
+                    <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
+                    <div class="user_info_area">
+                        <p class="userid_area" th:text="${review.getUserEmail()}"></p>
+                        <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
+                        <p class="star_area"><span class="star_point">★★★★☆</span></p>
+                    </div>
+                    <div class="review_context" >
+                        <p th:text="${review.getContent()}"></p>
+                    </div>
+                </div>
+            </div>
+
         <script>
             var i = 0;
             $('.bi-heart').on('click',function(){

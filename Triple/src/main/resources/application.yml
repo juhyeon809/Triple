@@ -1,6 +1,7 @@
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@db20220704095701_high?TNS_ADMIN=E:/hk/triple_e_wallet/Wallet_DB20220704095701
+    url:
     username: admin
-    password: Gksehdgh121!
+    password: 
+

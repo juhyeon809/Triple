@@ -28,6 +28,8 @@ public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_spot")
     private Long idx;
+    private String country;
+    private String city;
     private String placeName;
     private String title;
     private String uploadPath1;

@@ -43,7 +43,7 @@
         <ul class="side-dropdown">
           <li><a href="../product/air.html">항공권</a></li>
           <li><a href="../product/room.html">숙소</a></li>
-          <li><a href="../product/packge.html">패키지</a></li>
+          <li><a href="/Triple/package_register">패키지</a></li>
           <li><a href="../product/ticket.html">티켓</a></li>
         </ul>
       </li>
@@ -66,28 +66,28 @@
       </li>
       <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
         <ul class="side-dropdown">
-          <li><a href="../event/eventList.html">목록</a></li>
-          <li><a href="../event/eventRegister.html">등록</a></li>
+          <li><a href="/Triple/admin/eventList">목록</a></li>
+          <li><a href="/Triple/admin/event/register">등록</a></li>
         </ul>
       </li>
       <li><a href="#"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
         <ul class="side-dropdown">
-          <li><a href="../notice/notice-list.html">목록</a></li>
-          <li><a href="../notice/notice-register.html">등록</a></li>
+          <li><a href="/Triple/admin/noticeList">목록</a></li>
+          <li><a href="/Triple/admin/notice/register">등록</a></li>
         </ul>
       </li>
-      <li><a href="#""><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+      <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
         <ul class="side-dropdown">
-          <li><a href="/admin/magazine/magazine-list.html">목록</a></li>
-          <li><a href="/admin/magazine/magazine-register.html">등록</a></li>
+          <li><a href="/Triple/">목록</a></li>
+          <li><a href="/Triple/admin/magazine_register">등록</a></li>
         </ul>
       </li>
       <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-map icon'></i>여행스팟<i class='bx bx-chevron-right icon-right'></i></a>
         <ul class="side-dropdown show">
           <li><a href="/admin/spot/spotList.html">목록</a></li>
-          <li><a href="/admin/spot/spot_tourism.html">관광지 등록</a></li>
-          <li><a href="/admin/spot/spot_restaurant.html">맛집 등록</a></li>
-          <li><a href="/admin/spot/spot_guide.html" style="color:darkslategray; font-weight: bold;">가이드 등록</a></li>
+          <li><a href="/Triple/tourism_register">관광지 등록</a></li>
+          <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
+          <li><a href="/Triple/guide_register" style="color:darkslategray; font-weight: bold;">가이드 등록</a></li>
         </ul>
       </li>
       <li><a href="../payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
@@ -101,8 +101,8 @@
       </li>
       <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
         <ul class="side-dropdown">
-          <li><a href="../manage/admin_manage_list.html">목록</a></li>
-          <li><a href="../manage/admin_manage_register.html">등록</a></li>
+          <li><a href="/Triple/adminList">목록</a></li>
+          <li><a href="/Triple/admin/admin_join">등록</a></li>
         </ul>
       </li>
       <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
@@ -132,13 +132,51 @@
         <div class="admin_inquiry_title" style="height: 250px;">장소 설명</div>
         <div class="admin_inquiry_q3">
           <div class="admin_inquiry_a1">
-            <input name="img1" type="file" id="pic" class="admin_inquiry_category2" style="margin-bottom: 10px;">
+            <input name="file" type="file" id="pic" class="admin_inquiry_category2" style="margin-bottom: 10px;">
             <textarea name="content" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;"> 기타 정보</textarea>
           </div>
         </div>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title2">기본 정보</div>
+      </div>
+      <div class="admin_inquiry_q3">
+        <select name="country" class="admin_inquiry_category2 concategory">
+          <option value="">국가</option>
+          <option value="대한민국">대한민국</option>
+          <option value="필리핀">필리핀</option>
+          <option value="베트남">베트남</option>
+          <option value="코타키나발루">코타키나발루</option>
+          <option value="싱가포르">싱가포르</option>
+          <option value="괌/사이판">괌/사이판</option>
+          <option value="스페인">스페인</option>
+          <option value="터키">터키</option>
+          <option value="스위스">스위스</option>
+          <option value="이탈리아">이탈리아</option>
+          <option value="크로아티아">크로아티아</option>
+          <option value="하와이">하와이</option>
+          <option value="LA">LA</option>
+          <option value="뉴욕">뉴욕</option>
+        </select>
+      </div>
+      <div class="admin_inquiry_q3">
+        <select name="city" class="admin_inquiry_category2 concategory">
+          <option value="">도시</option>
+          <option value="대한민국">대한민국</option>
+          <option value="필리핀">필리핀</option>
+          <option value="베트남">베트남</option>
+          <option value="코타키나발루">코타키나발루</option>
+          <option value="싱가포르">싱가포르</option>
+          <option value="괌/사이판">괌/사이판</option>
+          <option value="스페인">스페인</option>
+          <option value="터키">터키</option>
+          <option value="스위스">스위스</option>
+          <option value="이탈리아">이탈리아</option>
+          <option value="크로아티아">크로아티아</option>
+          <option value="하와이">하와이</option>
+          <option value="LA">LA</option>
+          <option value="뉴욕">뉴욕</option>
+        </select>
       </div>
       <div class="admin_inquiry_qtext">
         <div class="admin_inquiry_title">언어</div>
