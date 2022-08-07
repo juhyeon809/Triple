@@ -31,6 +31,8 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .idx(airticket.getIdx())
                 .ticketType(airticket.getTicketType())
                 .ticketNum(airticket.getTicketNum())
+                .airlineId(airticket.getAirlineId())
+                .aircraftId(airticket.getAircraftId())
 //                .airlineIdx(airticket.getAirlineIdx())
 //                .aircraftIdx(airticket.getAircraftIdx())
                 .departureAirport(airticket.getDepartureAirport())
@@ -111,15 +113,36 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
     }
 
 
-    public String findAllTicketNum(String tNum){
-        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+//    public String findAllTicketNum(String tNum){
+//        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+//
+//        return ticketNum;
+//    }
 
-        return ticketNum;
+//    public Header<List<AirTicketApiResponse>> search2(Long idx){
+//        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(idx).stream()
+//                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
+//        return Header.OK(airTicketList);
+//    }
+
+    public Header<AirTicketApiResponse> read2(String ticketNum) {
+
+        AirTicket airTicket = airTicketRepository.findByTicketNum(ticketNum);
+
+        AirTicketApiResponse airTicketApiResponse = response(airTicket);
+
+        return Header.OK(airTicketApiResponse);
     }
 
-    public Header<List<AirTicketApiResponse>> search2(String ticketNum){
-        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(ticketNum).stream()
-                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
-        return Header.OK(airTicketList);
-    }
+//    public String findAllTicketNum(String tNum){
+//        String ticketNum = airTicketRepository.findAllByTicketNum(tNum).get().getTicketNum();
+//
+//        return ticketNum;
+//    }
+
+//    public Header<List<AirTicketApiResponse>> search2(String ticketNum){
+//        List<AirTicketApiResponse> airTicketList = airTicketRepository.findByTicketNum(ticketNum).stream()
+//                .map(airTicket -> response(airTicket)).collect(Collectors.toList());
+//        return Header.OK(airTicketList);
+//    }
 }

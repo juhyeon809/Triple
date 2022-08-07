@@ -25,4 +25,7 @@ public class LodgingTicketApiRequest {
     private String useRequests;
     private String infoAgree;
     private LocalDateTime regDate;
+    private Long userId;
+    private Long guestNum;
+    private String transportation;
 }

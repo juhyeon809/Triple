@@ -1,5 +1,6 @@
 package com.project.triple.service.LodgingService;
 
+import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.Lodging.LodgingTicket;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingTicketApiRequest;
@@ -37,6 +38,9 @@ public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRe
                 .useRequests(lodgingTicket.getUseRequests())
                 .infoAgree(lodgingTicket.getInfoAgree())
                 .regDate(lodgingTicket.getRegDate())
+                .userId(lodgingTicket.getUserId())
+                .guestNum(lodgingTicket.getGuestNum())
+                .transportation(lodgingTicket.getTransportation())
                 .build();
         return lodgingTicketApiResponse;
     }
@@ -69,9 +73,30 @@ public class LodgingTicketApiLogicService extends BaseService<LodgingTicketApiRe
 
 
 
-    public Header<List<LodgingTicketApiResponse>> search2(String ticketNum){
-        List<LodgingTicketApiResponse> lodgingTicketList = lodgingTicketRepository.findByTicketNum(ticketNum).stream()
+    public Header<List<LodgingTicketApiResponse>> search2(Long idx){
+        List<LodgingTicketApiResponse> lodgingTicketList = lodgingTicketRepository.findByIdx(idx).stream()
                 .map(lodgingTicket -> response(lodgingTicket)).collect(Collectors.toList());
         return Header.OK(lodgingTicketList);
     }
+
+    public Header<LodgingTicketApiResponse> read2(String ticketNum) {
+
+        LodgingTicket lodgingTicket = lodgingTicketRepository.findByTicketNum(ticketNum);
+
+        LodgingTicketApiResponse lodgingTicketApiResponse = response(lodgingTicket);
+
+        return Header.OK(lodgingTicketApiResponse);
+    }
+
+    public String findRoomNum(String ticketNum){
+        String roomNum = lodgingTicketRepository.findByTicketNum(ticketNum).getRoomNum();
+
+        return roomNum;
+    }
+
+//    public Header<List<LodgingTicketApiResponse>> search2(String ticketNum){
+//        List<LodgingTicketApiResponse> lodgingTicketList = lodgingTicketRepository.findByTicketNum(ticketNum).stream()
+//                .map(lodgingTicket -> response(lodgingTicket)).collect(Collectors.toList());
+//        return Header.OK(lodgingTicketList);
+//    }
 }

@@ -1,5 +1,6 @@
 package com.project.triple.model.network.response;
 
+import com.project.triple.model.enumclass.SaveType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +15,9 @@ import java.time.LocalDateTime;
 public class MysaveApiResponse {
     private Long idx;
     private Long userId;
-    private Integer itemNum;
+    private Long itemNum;
     private String saveYn;
     private String memo;
-    private String saveType;
+    private SaveType saveType;
     private LocalDateTime regDate;
 }

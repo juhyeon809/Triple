@@ -19,8 +19,8 @@ public class FaqApiResponse {
     private String adminuserName;
     private String title;
     private String content;
-    private String uploadPath;
-    private String fileName;
-    private String fileType;
+//    private String uploadPath;
+//    private String fileName;
+//    private String fileType;
     private LocalDateTime regDate;
 }

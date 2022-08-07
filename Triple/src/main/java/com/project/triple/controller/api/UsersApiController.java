@@ -1,6 +1,7 @@
 package com.project.triple.controller.api;
 
 import com.project.triple.controller.CrudController;
+import com.project.triple.controller.page.ScriptUtils;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
@@ -8,6 +9,8 @@ import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.service.UserService.UsersApiLogicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/user")    // http://localhost:8080/api/user  url 주소
@@ -48,13 +51,19 @@ public class UsersApiController extends CrudController<UsersApiRequest, UsersApi
     @Override
     @PutMapping("")     // http://localhost:8080/api/user (put)
     public Header<UsersApiResponse> update(@RequestBody Header<UsersApiRequest> request) {
+
+
+
         return usersApiLogicService.update(request);
     }
 
-    @Override
-    @DeleteMapping("{id}")  // http://localhost:8080/api/user/{id} (delete)
-    public Header<UsersApiResponse> delete(@PathVariable Long id) {
-        return usersApiLogicService.delete(id);
+    @PostMapping("/serviceout")  // http://localhost:8080/api/user/{id} (delete)
+    public Header<UsersApiResponse> delete(String email, String userpw) throws IOException {
+
+        Long id = usersApiLogicService.login(email, userpw).getData().getIdx();
+                usersApiLogicService.delete(id);
+        return null;
+
     }
 
 

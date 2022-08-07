@@ -142,7 +142,7 @@
                 <div class="special">
                     <div class="imgbox" th:each="airTicket : ${airTicketList}">
                         <p th:text="${airTicket.getPrice()}+'원'"></p>
-                        <a th:href="'Triple/flightView?Idx='+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}">오사카(직항)</a>
+                        <a th:href="'/Triple/flightView?Idx='+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}">오사카(직항)</a>
                         <p th:text="${airTicket.getDepartureDate().getMonthValue()}+'.'+${airTicket.getDepartureDate().getDayOfMonth()}+'-'+${airTicket.getLandingDate().getMonthValue()}+'.'+${airTicket.getLandingDate().getDayOfMonth()}">7.8(금)-7.11(월)</p>
                     </div>
                 </div>

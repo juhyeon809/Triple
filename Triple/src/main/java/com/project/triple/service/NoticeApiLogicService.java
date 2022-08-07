@@ -1,8 +1,10 @@
 package com.project.triple.service;
 
+import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Notice;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.NoticeApiRequest;
+import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.NoticeApiResponse;
 import com.project.triple.repository.NoticeRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -53,12 +55,16 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
         return Header.OK(response(newNotice));
     }
 
+//    @Override
+//    public Header<NoticeApiResponse> read(Long id) {
+//        return null;
+//    }
 
-    @Override
-    public Header<NoticeApiResponse> read(Long id) {
-        return baseRepository.findById(id).map(notice -> response(notice)).map(Header::OK)
-                .orElseGet(() -> Header.ERROR("데이터 없음"));
-    }
+//    @Override
+//    public Header<NoticeApiResponse> read(Long id) {
+//        return baseRepository.findById(id).map(notice -> response(notice)).map(Header::OK)
+//                .orElseGet(() -> Header.ERROR("데이터 없음"));
+//    }
 
     @Override
     public Header<NoticeApiResponse> update(Header<NoticeApiRequest> request) {
@@ -108,5 +114,15 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
         notice.setFileName(filename);
         notice.setUploadPath("/files/"+filename);
         noticeRepository.save(notice);
+    }
+
+    @Override
+    public Header<NoticeApiResponse> read(Long idx) {
+
+        Notice notice = noticeRepository.findByIdx(idx);
+
+        NoticeApiResponse noticeApiResponse = response(notice);
+
+        return Header.OK(noticeApiResponse);
     }
 }

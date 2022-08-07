@@ -20,13 +20,14 @@
         <p class="mypage_title">MY PAGE | 설정</p>
         <div id="main_content_box">
             <div class="setting_box">
-                <p class="setting_title"><a href="/Triple/mypage/settings/profile">프로필 및 계정 설정</a></p>
+                <p class="setting_title"><a href="/Triple/mypage/settings/getPassword">프로필 및 계정 설정</a></p>
             </div>
             <div class="setting_box">
+                <input type="hidden" id="nickname" th:value="${nickname}"/>
                 <p class="setting_title"><a href="">고객지원</a></p>
                 <p class="setting_p"><a href=""><span>&#183;</span>버전정보</a></p>
                 <p class="setting_p"><a href="/Triple/mypage/settings/notice"><span>&#183;</span>공지사항</a></p>
-                <p class="setting_p"><a href="/templates/pages/mypage/mypage_settings/mypage_customer_help.html"><span>&#183;</span>고객센터/도움말</a></p>
+                <p class="setting_p"><a href="/Triple/mypage/settings/customer"><span>&#183;</span>고객센터/도움말</a></p>
                 <p class="setting_p"><a href=""><span>&#183;</span>회사소개</a></p>
             </div>
             <div class="setting_box">
@@ -38,13 +39,13 @@
                 <p class="setting_p"><a href=""><span>&#183;</span>오픈소스 라이선스</a></p>
             </div>
             <div class="setting_box logout_service_out">
-                <p class="setting_title"><a href="">로그아웃</a> |<a href="/templates/pages/mypage/mypage_settings/mypage_service_out.html">서비스 탈퇴</a></p>
+                <p class="setting_title"> <a th:if ="${session.email != null}" href="/Triple/logout">로그아웃</a> |<a href="/Triple/mypage/settings/serviceOut">서비스 탈퇴</a></p>
             </div>
         </div>
     </main>
     <!--메인 끝-->
 
-    <<!--푸터-->
+    <!--푸터-->
 <div th:replace="fragement/mypageFooter :: mypageFooter"></div>
 <!--푸터 끝-->
 </body>

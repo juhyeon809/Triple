@@ -25,40 +25,37 @@
                 <li><a href="/Triple/mypage/reserve/tour">투어·티켓</a></li>
             </ul>
         </div>
-        <div class="re_main" th:each="air : ${reserveAirList}">
+        <div class="re_main">
             <div class="re_main_2">
-                <div id="re_main_tit">지나간 예약</div>
-                <div id="re_main_box">
-                    <div id="re_main_place"><span th:text="${air.getDepartureAirport()}"></span> - <span th:text="${air.getLandingAirport()}"></span>
-                        CJU-GMP<br>
-                        [편도]제주 - 서울 항공권
-                    </div>
-                    <div id="re_main_date" th:text="${air.getPrice()}">
-                        예약일정 2022.02.25<br >
-                        예약번호 D596270
-                    </div>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
-                    </div>
-                </div>
-                <br>
-            <div class="re_main_3">
                 <div id="re_main_tit">진행중인 예약</div>
-                <div id="re_main_box">
-                    <div id="re_main_place">
-                        CJU-GMP<br>
-                        [편도]제주 - 서울 항공권
-                    </div>
-                    <div id="re_main_date">
-                        예약일정 2022.02.25<br>
-                        예약번호 D596270
-                    </div>
-                    <div id="re_main_inq">
-                        <a href="/templates/pages/mypage/mypage_reserve/my_inquiry_list">1:1 문의</a>
-                    </div>
+                <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('USABLE')}" th:each="reserve : ${reserveList}">
+                    <a th:href="'/Triple/mypage/reserve/air/'+${reserve.getTicketNum()}">
+                        <div id="re_main_place"><span th:text="${reserve.getTitle()}"></span>
+                            <br>
+                            <span th:text="${reserve.getContent()}"></span>
+                        </div>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                            <br >
+                            <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </div>
+            <div class="re_main_3">
+                <div id="re_main_tit">지나간 예약</div>
+                <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('unUSABLE')}" th:each="reserve : ${reserveList}">
+                    <a th:href="'/Triple/mypage/reserve/air/'+${reserve.getTicketNum()}">
+                        <div id="re_main_place"><span th:text="${reserve.getTitle()}"></span>
+                            <br>
+                            <span th:text="${reserve.getContent()}"></span>
+                        </div>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                            <br >
+                            <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
     <!--메인 끝-->

@@ -42,6 +42,9 @@ public class LodgingTicket {
     private String infoAgree;
     @CreatedDate
     private LocalDateTime regDate;
+    private Long userId;
+    private Long guestNum;
+    private String transportation;
 
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodgingTicket")
 //    private List<Question> questionList;
