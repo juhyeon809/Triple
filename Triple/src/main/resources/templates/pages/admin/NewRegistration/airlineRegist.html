@@ -23,6 +23,10 @@
         .hbt{
             margin-right: 100px;
         }
+        .admin_manage_form_container_ul4{
+            height: 180px;
+        }
+
     </style>
 </head>
 <body>
@@ -51,17 +55,16 @@
                 </li>
                 <li><a href="#"  style="background-color: white; color:#0098A1;"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown show">
-                        <li><a href="airlineRegist.html" style="color:darkslategray; font-weight: bold;">항공사 신규 등록</a></li>
-                        <li><a href="aircraftRegist.html">항공기 신규 등록</a></li>
-                        <li><a href="destinationList.html">취항지 목록</a></li>
-                        <li><a href="destinationRegist.html">취항지 신규 등록</a></li>
-                        <li><a href="lodgingCompany.html.html">숙소 신규 등록</a></li>
-                        
+                        <li><a href="/Triple/airline_register" style="color:darkslategray; font-weight: bold;">항공사 신규 등록</a></li>
+                        <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
+                        <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
+                        <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/product/air.html">항공권</a></li>
+                        <li><a href="/Triple/airline_select">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
                         <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
@@ -147,7 +150,7 @@
                     <div class="admin_manage_form_container_ul2">
                         <p><input name="krName" type="text" class="admin_register_content kor" placeholder="항공사의 한글명을 입력하세요"></p>
                         <p><input name="repNum" type="text" class="admin_register_content daepyo" placeholder="대표번호를 입력하세요"></p>
-                        <p><input name="file" type="file" ></p>
+                        <p><input name="file" type="file" style="height: 30px; margin-top: 25px;"></p>
                     </div>
                     <div class="admin_manage_form_container_ul1">
                         <p class="admin_register_item">항공사명 (Eng) </p>
