@@ -26,7 +26,7 @@
             <label th:for="${departure.getIdx()}">
             <div class="flyinfoBox">
                 <div class="infoMiniTit">
-                    <p th:text="'가는편' + ${departure.getDepartureAirport()} + ' - ' + ${departure.getLandingAirport()}"></p>
+                    <p th:text="'가는편 ' + ${departure.getDepartureAirport()} + ' - ' + ${departure.getLandingAirport()}"></p>
                     <span th:text="${departure.getAirlineName()}"></span>
                 </div>
                 <div class="flytimebox">
@@ -68,7 +68,7 @@
                     <label th:for="${comeback.getIdx()}">
                         <div class="flyinfoBox">
                             <div class="infoMiniTit">
-                                <p th:text="'오는편'+ ${comeback.getDepartureAirport()} + ' - ' + ${comeback.getLandingAirport()}"></p>
+                                <p th:text="'오는편 '+ ${comeback.getDepartureAirport()} + ' - ' + ${comeback.getLandingAirport()}"></p>
                                 <span th:text="${comeback.getAirlineName()}"></span>
                             </div>
                             <div class="flytimebox">

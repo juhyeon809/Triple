@@ -44,10 +44,10 @@
                     </div>
                 </div>
                 <p class="pleft">총 결제금액
-                    <span class="pright" th:if="${seatClass == 'premium'}" th:text="${departureFlight.getPremiumAdultPrice()} * ${adultNum} + ${departureFlight.getPremiumChildPrice()} * ${childNum} + ${departureFlight.getPremiumInfantPrice()} * ${infantNum} + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'first'}" th:text="${departureFlight.getFirstAdultPrice()} * ${adultNum} + ${departureFlight.getFirstChildPrice()} * ${childNum} + ${departureFlight.getFirstInfantPrice()} * ${infantNum} + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'business'}" th:text="${departureFlight.getBusinessAdultPrice()} * ${adultNum} + ${departureFlight.getBusinessChildPrice()} * ${childNum} + ${departureFlight.getBusinessInfantPrice()} * ${infantNum} + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'economy'}" th:text="${departureFlight.getEconomyAdultPrice()} * ${adultNum} + ${departureFlight.getEconomyChildPrice()} * ${childNum} + ${departureFlight.getEconomyInfantPrice()} * ${infantNum} + '원'"></span>
+                    <span class="pright" th:if="${seatClass == 'premium'}" th:text="${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + ${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + ${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></span>
+                    <span class="pright" th:if="${seatClass == 'first'}" th:text="${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()}) + ${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + ${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()()}) + '원'"></span>
+                    <span class="pright" th:if="${seatClass == 'business'}" th:text="${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + ${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + ${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()}) + '원'"></span>
+                    <span class="pright" th:if="${seatClass == 'economy'}" th:text="${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()}) + ${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()}) + ${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()()}) + '원'"></span>
                 </p>
                 <!--선택한 항공편 확인 끝-->
                 <!--상세요금 보기-->
@@ -63,11 +63,11 @@
                                         <div class="flex"><p th:text="'성인 x ' + ${adultNum}"></p><p th:text="${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + '원'"></p></div>
                                         <div class="flex"><p th:text="'소아 x ' + ${childNum}"></p><p th:text="${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + '원'"></p></div>
                                         <div class="flex"><p th:text="'유아 x ' + ${infantNum}"></p><p th:text="${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></p></div>
-                                        <div class="flex"><p th:text="'총요금 ' + ${departureFlight.getPremiumAdultPrice()} * ${adultNum} + ${departureFlight.getPremiumChildPrice()} * ${childNum} + ${departureFlight.getPremiumInfantPrice()} * ${infantNum}"></p></div>
+                                        <div class="flex"><p th:text="'총요금 ' + ${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + ${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + ${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></p></div>
                                     </div>
                                     <div class="tot">
                                         <p>최종 결제금액</p> 
-                                        <p th:text="${departureFlight.getPremiumAdultPrice()} * ${adultNum} + ${departureFlight.getPremiumChildPrice()} * ${childNum} + ${departureFlight.getPremiumInfantPrice()} * ${infantNum} + '원'"></p>
+                                        <p th:text="${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + ${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + ${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></p>
                                     </div>
                                     </div>
                                 <div th:if="${seatClass == 'first'}">
@@ -75,11 +75,11 @@
                                     <div class="flex"><p th:text="'성인 x ' + ${adultNum}"></p><p th:text="${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'소아 x ' + ${childNum}"></p><p th:text="${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'유아 x ' + ${infantNum}"></p><p th:text="${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()}) + '원'"></p></div>
-                                    <div class="flex"><p th:text="'총요금 ' + ${departureFlight.getFirstAdultPrice()} * ${adultNum} + ${departureFlight.getFirstChildPrice()} * ${childNum} + ${departureFlight.getFirstInfantPrice()} * ${infantNum}"></p></div>
+                                    <div class="flex"><p th:text="'총요금 ' + ${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()}) + ${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + ${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()()})"></p></div>
                                 </div>
                                 <div class="tot">
                                     <p>최종 결제금액</p>
-                                    <p th:text="${departureFlight.getFirstAdultPrice()} * ${adultNum} + ${departureFlight.getFirstChildPrice()} * ${childNum} + ${departureFlight.getFirstChildPrice()} * ${infantNum} + '원'"></p>
+                                    <p th:text="${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()}) + ${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + ${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()()}) + '원'"></p>
                                 </div>
                                 </div>
                                 <div th:if="${seatClass == 'business'}">
@@ -87,11 +87,11 @@
                                     <div class="flex"><p th:text="'성인 x ' + ${adultNum}"></p><p th:text="${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'소아 x ' + ${childNum}"></p><p th:text="${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'유아 x ' + ${infantNum}"></p><p th:text="${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()()}) + '원'"></p></div>
-                                    <div class="flex"><p th:text="'총요금 ' + ${departureFlight.getBusinessAdultPrice()} * ${adultNum} + ${departureFlight.getBusinessChildPrice()} * ${childNum} + ${departureFlight.getBusinessInfantPrice()} * ${infantNum}"></p></div>
+                                    <div class="flex"><p th:text="'총요금 ' + ${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + ${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + ${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()})"></p></div>
                                 </div>
                                 <div class="tot">
                                     <p>최종 결제금액</p>
-                                    <p th:text="${departureFlight.getBusinessAdultPrice()} * ${adultNum} + ${departureFlight.getBusinessChildPrice()} * ${childNum} + ${departureFlight.getBusinessInfantPrice()} * ${infantNum} + '원'"></p>
+                                    <p th:text="${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + ${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + ${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()}) + '원'"></p>
                                 </div>
                                 </div>
                                 <div th:if="${seatClass == 'economy'}">
@@ -99,11 +99,11 @@
                                     <div class="flex"><p th:text="'성인 x ' + ${adultNum}"></p><p th:text="${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'소아 x ' + ${childNum}"></p><p th:text="${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()()}) + '원'"></p></div>
                                     <div class="flex"><p th:text="'유아 x ' + ${infantNum}"></p><p th:text="${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()()}) + '원'"></p></div>
-                                    <div class="flex"><p th:text="'총요금 ' + ${departureFlight.getEconomyAdultPrice()} * ${adultNum} + ${departureFlight.getEconomyChildPrice()} * ${childNum} + ${departureFlight.getEconomyInfantPrice()} * ${infantNum}"></p></div>
+                                    <div class="flex"><p th:text="'총요금 ' + ${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()}) + ${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()}) + ${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()()})"></p></div>
                                 </div>
                                 <div class="tot">
                                     <p>최종 결제금액</p>
-                                    <p th:text="${departureFlight.getEconomyAdultPrice()} * ${adultNum} + ${departureFlight.getEconomyChildPrice()} * ${childNum} + ${departureFlight.getEconomyInfantPrice()} * ${infantNum} + '원'"></p>
+                                    <p th:text="${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()}) + ${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()}) + ${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()()}) + '원'"></p>
                                 </div>
                                 </div>
                             </div>
