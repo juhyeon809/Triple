@@ -21,7 +21,7 @@
         <div class="mypage_title">MY PAGE | 내 예약</div>
         <div class="rm_main" >
             <div class="rm_main_box">
-                <span>서귀포 마가렛펜션(리뉴얼, 엔틱의상대여)</span><br>
+                <span th:text="${lodging.companyName}">서귀포 마가렛펜션(리뉴얼, 엔틱의상대여)</span><br>
 <!--                Seoguipo Margaret Pension [Newly built in 2016]  -->
             </div>
             <div class="rm_main_box"><img src="/lib/img/mypage_img/myreserve_img/reserve_map.png" alt="예약지도"></div>
@@ -29,29 +29,29 @@
                 <div class="rm_main_box_left">
                     <div class="rm_main_box_left_div">
                         <div id="rm_main_left_box_tit">주소</div>
-                        <div id="rm_main_left_box_cont">제주특별자치도 서귀포시 예래로 68번길 11-16</div>
+                        <div id="rm_main_left_box_cont" th:text="${lodging.address}">제주특별자치도 서귀포시 예래로 68번길 11-16</div>
                     </div>
                     <div class="rm_main_box_left_div">
                         <div id="rm_main_left_box_tit">전화</div>
-                        <div id="rm_main_left_box_cont">+050350584861</div>
+                        <div id="rm_main_left_box_cont" th:text="${lodging.contactHp}">+050350584861</div>
                     </div>
                     <div class="rm_main_box_left_div">
                         <div id="rm_main_left_box_tit">홈페이지</div>
-                        <div id="rm_main_left_box_cont">http://www.margaret-pension.com
+                        <div id="rm_main_left_box_cont" th:text="${lodging.homepage}">http://www.margaret-pension.com
                         </div>
                     </div>
                     <div class="rm_main_box_left_div">
                         <div id="rm_main_left_box_tit">이메일</div>
-                        <div id="rm_main_left_box_cont">iljoo1079@hanmail.net </div>
+                        <div id="rm_main_left_box_cont" th:text="${lodging.email}">iljoo1079@hanmail.net </div>
                     </div>
                     <div class="rm_main_box_left_div"><a href="https://www.google.co.kr/maps/place/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84+%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C+%EC%98%88%EB%9E%98%EB%A1%9C68%EB%B2%88%EA%B8%B8+11-8/data=!3m1!4b1!4m5!3m4!1s0x350c5ad94d813781:0xd6e37b6e261c2ee6!8m2!3d33.2555451!4d126.3978574?hl=ko" target="_blank">길찾기</a>
                     </div>
                 </div>
                 <div class="rm_main_box_right">
                     <div class="rm_main_box_right_div">
-                        <div id="rm_main_box_right_date"><span>체크인</span><br><span th:text="${#temporals.format(lodgingRoom.checkIn, 'mm-dd ')}+${#temporals.format(lodgingRoom.checkIn, 'hh:mm')}">2.22(화) 15:00</span></div>
+                        <div id="rm_main_box_right_date"><span>체크인</span><br><span th:text="${#temporals.format(lodgingRoom.checkIn, 'MM-dd ')}+${#temporals.format(lodgingRoom.checkIn, 'hh:mm')}">2.22(화) 15:00</span></div>
                         <div id="rm_main_box_right_day">• •  1박  • •</div>
-                        <div id="rm_main_box_right_date"><span>체크아웃</span><br><span th:text="${#temporals.format(lodgingRoom.checkOut, 'mm-dd ')}+${#temporals.format(lodgingRoom.checkOut, 'hh:mm')}">2.23(수) 11:00</span> </div>
+                        <div id="rm_main_box_right_date"><span>체크아웃</span><br><span th:text="${#temporals.format(lodgingRoom.checkOut, 'MM-dd ')}+${#temporals.format(lodgingRoom.checkOut, 'hh:mm')}">2.23(수) 11:00</span> </div>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="rm_info">
                     <div class="rm_info_content">예약일</div>
-                    <div class="rm_info_content" th:text="${#temporals.format(reserve.revDate, 'yyyy-mm-dd')}">2022-01-24</div>
+                    <div class="rm_info_content" th:text="${#temporals.format(reserve.revDate, 'yyyy-MM-dd')}">2022-01-24</div>
                 </div>
             </div>
             <div class="rm_main_box rm_main_box_info">
@@ -115,11 +115,11 @@
                 </div>
                 <div class="rm_info" th:if="${coupon1.getUseStatus().toString().equals('USABLE')}" th:each="coupon1 : ${coupon}">
                     <div class="rm_info_content">쿠폰 할인 금액</div>
-                    <div class="rm_info_content" th:if="${coupon1.getType().toString().equals('LODGING')}"><span th:text="'-'+${#numbers.formatInteger(coupon1.price, 4, 'COMMA')}+'원'"></span></div>
+                    <div class="rm_info_content" th:if="${coupon1.getType().toString().equals('LODGING')}"><span th:text="'-'+${#numbers.formatInteger(coupon1.price, 1, 'COMMA')}+'원'"></span></div>
                 </div>
                 <div class="rm_info">
                     <div class="rm_info_content">예약일</div>
-                    <div class="rm_info_content" th:text="${#temporals.format(reserve.revDate, 'yyyy-mm-dd')}">2022-01-24</div>
+                    <div class="rm_info_content" th:text="${#temporals.format(reserve.revDate, 'yyyy-MM-dd')}">2022-01-24</div>
                 </div>
             </div>
             <div class="rm_main_box rm_main_box_info">

@@ -69,11 +69,8 @@ $(function (){
             contentType: 'application/json',
             success: function () {
                 alert('수정성공!');
-<<<<<<< HEAD
                 sessionStorage.setItem('nickname', $('#nickname').val())
                 sessionStorage.setItem('userpw', $('#userpw').val())
-=======
->>>>>>> 2c3980fece3607f185c34f20895706cb44ce3928
                 location.href = '/Triple/mypage/settings';
             },
             error: function () {

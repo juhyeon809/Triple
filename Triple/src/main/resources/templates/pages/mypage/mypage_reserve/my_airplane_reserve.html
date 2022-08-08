@@ -22,18 +22,19 @@
         <div class="mypage_title">MY PAGE | 내 예약</div>
         <div class="air_main">
             <div class="air_main_ticket">
+                <form method="post">
                 <div class="air_main_ticket_num">
                     <span th:text="${airTicket.departureAirport}+' - '+${airTicket.landingAirport}+' 항공권'"></span><br>
-                    <span th:text="${#temporals.format(airTicket.revDate, 'yyyy년-mm월-dd일')}+' 예약 | '"></span><span th:text="' 예약번호:'+${airTicket.ticketNum}"></span></div>
+                    <span th:text="${#temporals.format(airTicket.revDate, 'yyyy년-MM월-dd일')}+' 예약 | '"></span><span th:text="' 예약번호:'+${airTicket.ticketNum}"></span></div>
                 <div class="air_main_ticket_info">
                     <span>항공권 정보<br>편도 </span><span th:text="${airTicket.departureAirport}+' - '+${airTicket.landingAirport}"></span> <br>
                     <span th:text="'에어서울 '+${airTicket.aircraftId} ">에어서울 RS922 </span> | 무료수하물 15kg 특가석
                 </div>
                 <div class="air_main_ticket_date">
                     <div class="air_main_date_box">
-                        <div class="air_main_date_time1" th:text="${#temporals.format(airTicket.departureDate, 'hh:mm ')}+' | '+${#temporals.format(airTicket.departureDate, ' mm-dd')}">09:00 | 7.2(토)</div>
+                        <div class="air_main_date_time1" th:text="${#temporals.format(airTicket.departureDate, 'hh:mm ')}+' | '+${#temporals.format(airTicket.departureDate, ' MM-dd')}">09:00 | 7.2(토)</div>
                         <div class="air_main_date_time2">직항 4시간 30분</div>
-                        <div class="air_main_date_time3" th:text="${#temporals.format(airTicket.landingDate, 'hh:mm ')}+' | '+${#temporals.format(airTicket.landingDate, ' mm-dd')}">14:30 | 7.2(토)</div>
+                        <div class="air_main_date_time3" th:text="${#temporals.format(airTicket.landingDate, 'hh:mm ')}+' | '+${#temporals.format(airTicket.landingDate, ' MM-dd')}">14:30 | 7.2(토)</div>
                     </div>
                     
                 </div>
@@ -57,10 +58,9 @@
             <div class="air_main_pay">
                 <div class="air_main_pay_box1">
                     <div>총 결제금액</div>
-                    <di th:text="${#numbers.formatInteger(airTicket.price, 6, 'COMMA')}+'원'">57,000원</di>
+                    <di th:text="${#numbers.formatInteger(airTicket.price, 1, 'COMMA')}+'원'">57,000원</di>
                 </div>
-                <form id="frm" >
-                    <a th:href="'/Triple/mypage/reserve/air/cancle/'+${airTicket.ticketNum}"><div id="cancel_btn_box"><input type="button" id="sendit" value="예약취소"></div></a>
+                    <a th:href="'/Triple/mypage/reserve/air/cancle/'+${airTicket.ticketNum}"><div id="cancel_btn_box"><input type="button" value="예약취소"></div></a>
                 </form>
             </div>
             <div class="air_main_notice">

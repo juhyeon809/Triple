@@ -1,5 +1,6 @@
 package com.project.triple.model.network.request;
 
+import com.project.triple.model.enumclass.FaqCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

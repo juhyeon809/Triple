@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface LodgingRoomRepository extends JpaRepository<LodgingRoom, Long> {
     LodgingRoom findByRoomNum(String roomNum);
 
+
+
 }

@@ -34,7 +34,7 @@
                             <br>
                             <span th:text="${reserve.getContent()}"></span>
                         </div>
-                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${#temporals.format(reserve.getRevDate(), 'yyyy-mm-dd')}"></span>
                             <br >
                             <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                         </div>
@@ -52,7 +52,7 @@
                                 <br>
                                 <span th:text="${reserve.getContent()}"></span>
                             </div>
-                            <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                            <div id="re_main_date" ><span th:text="'예약일정 ' +${#temporals.format(reserve.getRevDate(), 'yyyy-mm-dd')}"></span>
                                 <br >
                                 <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                             </div>

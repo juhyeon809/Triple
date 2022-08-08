@@ -23,4 +23,5 @@ public class LodgingApiResponse {
     private String representative;
     private String email;
     private Integer likeCount;
+    private String homepage;
 }

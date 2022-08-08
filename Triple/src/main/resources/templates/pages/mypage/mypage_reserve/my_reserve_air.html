@@ -34,11 +34,14 @@
                             <br>
                             <span th:text="${reserve.getContent()}"></span>
                         </div>
-                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${#temporals.format(reserve.getRevDate(), 'yyyy-MM-dd')}"></span>
                             <br >
                             <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                         </div>
                     </a>
+                    <div id="re_main_inq">
+                        <a href="/Triple/inquiryList">1:1 문의</a>
+                    </div>
                 </div>
             </div>
             <div class="re_main_3">
@@ -49,11 +52,14 @@
                             <br>
                             <span th:text="${reserve.getContent()}"></span>
                         </div>
-                        <div id="re_main_date" ><span th:text="'예약일정 ' +${reserve.getRevDate()}"></span>
+                        <div id="re_main_date" ><span th:text="'예약일정 ' +${#temporals.format(reserve.getRevDate(), 'yyyy-MM-dd')}"></span>
                             <br >
                             <span th:text="'예약번호 ' +${reserve.getTicketNum()}"></span>
                         </div>
                     </a>
+                    <div id="re_main_inq">
+                        <a href="/Triple/inquiryList">1:1 문의</a>
+                    </div>
                 </div>
             </div>
         </div>
