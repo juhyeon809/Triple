@@ -1,11 +1,9 @@
 package com.project.triple.service.ReservationService;
 
-import com.project.triple.model.entity.Air.AirTicket;
-import com.project.triple.model.entity.Reservation.ReservationAiruse;
+import com.project.triple.model.entity.Reservation.RoundTicketReservation;
 import com.project.triple.model.network.Header;
-import com.project.triple.model.network.request.ReservationRequest.ReservationAiruseApiRequest;
-import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
-import com.project.triple.model.network.response.ReservationResponse.ReservationAiruseApiResponse;
+import com.project.triple.model.network.request.ReservationRequest.RoundTicketReservationApiRequest;
+import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.repository.ReservationAiruseRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -14,13 +12,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ReservationAiruseApiLogicService extends BaseService<ReservationAiruseApiRequest, ReservationAiruseApiResponse, ReservationAiruse> {
+public class ReservationAiruseApiLogicService extends BaseService<RoundTicketReservationApiRequest, RoundTicketReservationApiResponse, RoundTicketReservation> {
 
     @Autowired
     private ReservationAiruseRepository reservationAiruseRepository;
 
-    private ReservationAiruseApiResponse response(ReservationAiruse reservationAiruse){
-        ReservationAiruseApiResponse reservationAiruseApiResponse = ReservationAiruseApiResponse.builder()
+    private RoundTicketReservationApiResponse response(RoundTicketReservation reservationAiruse){
+        RoundTicketReservationApiResponse reservationAiruseApiResponse = RoundTicketReservationApiResponse.builder()
                 .idx(reservationAiruse.getIdx())
                 .ticketType(reservationAiruse.getTicketType())
                 .ticketNum(reservationAiruse.getTicketNum())
@@ -42,30 +40,30 @@ public class ReservationAiruseApiLogicService extends BaseService<ReservationAir
     }
 
     @Override
-    public Header<ReservationAiruseApiResponse> create(Header<ReservationAiruseApiRequest> request) {
+    public Header<RoundTicketReservationApiResponse> create(Header<RoundTicketReservationApiRequest> request) {
         return null;
     }
 
     @Override
-    public Header<ReservationAiruseApiResponse> read(Long id) {
+    public Header<RoundTicketReservationApiResponse> read(Long id) {
         return null;
     }
 
     @Override
-    public Header<ReservationAiruseApiResponse> update(Header<ReservationAiruseApiRequest> request) {
+    public Header<RoundTicketReservationApiResponse> update(Header<RoundTicketReservationApiRequest> request) {
         return null;
     }
 
     @Override
-    public Header<ReservationAiruseApiResponse> delete(Long id) {
+    public Header<RoundTicketReservationApiResponse> delete(Long id) {
         return null;
     }
 
-    public Header<ReservationAiruseApiResponse> read2(String ticketNum) {
+    public Header<RoundTicketReservationApiResponse> read2(String ticketNum) {
 
-        ReservationAiruse reservationAiruse = reservationAiruseRepository.findByTicketNum(ticketNum);
+        RoundTicketReservation reservationAiruse = reservationAiruseRepository.findByTicketNum(ticketNum);
 
-        ReservationAiruseApiResponse reservationAiruseApiResponse = response(reservationAiruse);
+        RoundTicketReservationApiResponse reservationAiruseApiResponse = response(reservationAiruse);
 
         return Header.OK(reservationAiruseApiResponse);
     }
