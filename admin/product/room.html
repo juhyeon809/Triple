@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 숙소 등록</title>
+    <title>관리자 | 숙소방 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../admin.css">
     <script type="text/javascript" src="../smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -118,13 +118,13 @@
         <div class="content2-fluid">
             <!--타이틀-->
             <div class="header_box">
-                <h2>상품등록 | 숙소</h2>
+                <h2>상품등록 | 객실</h2>
             </div>
             <!--타이틀 끝-->
             <!--숙소 정보 입력폼-->
             <form action="" onsubmit="return productRoom()">
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">분류</div>
+                    <div class="admin_inquiry_title">숙소속성분류</div>
                     <div class="admin_inquiry_q3">
                         <select name="" id="" class="admin_inquiry_category2 Rcategory">
                             <option value="">선택</option>
@@ -138,36 +138,35 @@
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">도시</div>
+                    <div class="admin_inquiry_title">숙박업체</div>
                     <div class="admin_inquiry_q3">
                         <select name="" id="" class="admin_inquiry_category2 Tcategory">
-                            <option value="">도시선택</option>
-                            <option value="대한민국">대한민국</option>
-                            <option value="미국">미국</option>
-                            <option value="일본">일본</option>
-                            <option value="중국">중국</option>
-                            <option value="러시아">러시아</option>
-                            <option value="인도네시아">인도네시아</option>
-                            <option value="태국">태국</option>
+                            <option value="">업체선택</option>
+                            <option value="업체1">업체1</option>
+                            <option value="업체2">업체2</option>
+                            <option value="업체3">업체3</option>
+                            <option value="업체4">업체4</option>
+                            <option value="업체5">업체5</option>
+                            <option value="업체6">업체6</option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">숙소명</div>
+                    <div class="admin_inquiry_title">객실명</div>
                     <div class="admin_inquiry_q3">
                         <input type="text" id="pro_name"class="admin_inquiry_category2 formbox_ul_text">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">숙소 이미지</div>
+                    <div class="admin_inquiry_title">객실번호</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" id="room_img" class="admin_inquiry_category2">
+                        <input type="text" id="pro_num"class="admin_inquiry_category2 formbox_ul_text">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">숙소 정보</div>
+                    <div class="admin_inquiry_title">객실 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor" id="weditor" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <input type="file" id="room_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
@@ -202,12 +201,12 @@
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">숙소 소개</div>
+                    <div class="admin_inquiry_title">객실 소개</div>
                     <div class="admin_inquiry_q3">
                         <textarea class="weditor" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
                 </div>
-                <div class="admin_inquiry_qtext">
+                <!-- <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">기본 정보</div>
                     <div class="admin_inquiry_q3">
                         <textarea class="weditor" id="weditor2" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
@@ -271,7 +270,7 @@
                     <div class="admin_inquiry_q3">
                         <textarea class="weditor" id="weditor4" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
                     </div>
-                </div>
+                </div> -->
             <!--숙소 정보 입력폼 끝-->
             <div class="btnlist">
                 <button value="등록"><a href="#">등록</a></button>

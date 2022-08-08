@@ -22,7 +22,7 @@ create sequence seq_users
     increment by 1
     start with 1;
     
-select * from air_ticket;
+
 create table terms(
     idx number(7) primary key,
     terms_name varchar2(30) not null,
@@ -35,31 +35,36 @@ create table terms(
 create sequence seq_terms
     increment by 1
     start with 1;
+ 
+create table air_ticket(
+    idx number(7) primary key,
     
-
+);
+ 
+select * from airport;
+drop table airport;
 create table airport(
     idx number(7)  primary key,
-    airport_num varchar2(10) not null,
-    airport_name varchar2(20) not null,
-    airport_code varchar2(10) not null,
-    country varchar2(20) not null,
-    city varchar2(20) not null  
+    airport_name varchar2(50) not null,
+    country varchar2(50) not null,
+    city varchar2(50) not null  
 );
 
 create sequence seq_airport
     increment by 1
     start with 1;
     
-
+drop table airline;
+select * from airline;
 create table airline(
     idx number(7) primary key,
-    airline_num number(7) not null,
     kr_name varchar2(20) not null,
     en_name varchar2(20) not null,
-    airline_code varchar2(10) not null,
-    address varchar2(30) not null,
-    contact_num1 varchar2(20) not null,
-    contact_num2 varchar2(20)
+    route varchar2(20) not null,
+    rep_num varchar2(20) not null,
+    support_num varchar2(20) not null,
+    upload_path varchar2(200) not null,
+    file_name varchar2(200) not null
 );
 
 create sequence seq_airline
@@ -67,38 +72,20 @@ create sequence seq_airline
     start with 1;
     
 
-insert into air_ticket values(
-    4,
-    'AIR_TICKET',
-    'ARI004',
-    4444,
-    6666,
-    'ICN',
-    'SIN',
-    '2022-07-27 16:00',
-    '2022-07-27 18:30',
-    230000,
-    'K597',
-    'FIRST',
-    'Y',
-    sysdate,
-    'AVAILABLE'
-);
 commit;
 select * from air_ticket;
-
+drop table aircraft;
+select * from aircraft;
 create table aircraft(
     idx number(7) primary key,
-    aircraft_num number(7) not null,
-    aircraft_name varchar2(20) not null,
-    made_by varchar2(20) not null,
+    aircraft_name varchar2(50) not null,
+    made_by varchar2(50) not null,
     aircraft_capacity number(4) not null,
-    normal_seat number(3) not null,
-    economy_seat number(3) not null,
-    special_seat number(3) not null,
-    family_seat number(3) not null,
-    vip_seat number(3) not null,
-    airline_id number(7) not null
+    premium_seat number(4) not null,
+    first_seat number(4) not null,
+    business_seat number(4) not null,
+    economy_seat number(4) not null,
+    airline_name varchar2(50) not null
 );
 insert into airline;
 
@@ -107,45 +94,41 @@ select * from reservation;
 create sequence seq_aircraft
     increment by 1
     start with 1;
-drop table air_ticket;    
-select * from air_ticket; 
-insert into air_ticket values(
-    16,
-    'AIR_TICKET',
-    'JEJU802',
-    2222,
-    80,
-    'ICN',
-    'GUAM',
-    '2022-08-26 09:30',
-    '2022-08-30 12:30',
-    240000,
-    'LI400',
-    'SPECIAL',
-    'Y',
-    sysdate,
-    'AVAILABLE'
-);
+   
+
+
 drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', '����', '010-1111-1111', '������', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);    
+insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
 commit;
 create table air_ticket(
     idx number(7) primary key,
-    ticket_type varchar2(10),
-    ticket_num varchar2(10),
-    airline_idx number(7) not null,
-    aircraft_idx number(7) not null,
+    air_route varchar2(10) not null,
     departure_airport varchar2(20) not null,
     landing_airport varchar2(20) not null,
-    departure_date date not null,
-    landing_date date not null,
-    price number(8) not null,
-    seat_num varchar2(10) not null,
-    seat_grade varchar2(10) not null,
+    departure_time varchar2(50) not null,
+    landing_time varchar2(50) not null,
+    flight_time varchar2(50) not null,
+    airline_name varchar2(50) not null,
+    aircraft_name varchar2(50) not null,
     baggage varchar2(10) not null,
-    rev_date date,
-    status varchar2(10) not null
+    economy_audult_price number(7) not null,
+    economy_child_price number(7) not null,
+    economy_infant_price number(7) not null,
+    premium_adult_price number(7) not null,
+    premium_child_price number(7) not null,
+    premium_infant_price number(7) not null,
+    business_adult_price number(7) not null,
+    business_child_price number(7) not null,
+    business_infant_price number(7) not null,
+    first_adult_price number(7) not null,
+    first_child_price number(7) not null,
+    first_infant_price number(7) not null,
+    premium_seat_count number(4) not null,
+    first_seat_count number(4) not null,
+    business_seat_count number(4) not null,
+    economy_seat_count number(4) not null,
+    reg_date date default sysdate
 );
 
 create sequence seq_air_ticket
@@ -372,13 +355,13 @@ create sequence seq_magazine
     start with 1;
 
 
--- create table adminuser(
---     idx number(7) primary key,
---     admin_id varchar2(20) unique not null,
---     admin_pw varchar2(20) not null,
---     admin_name number(7) not null,
---     reg_date date default sysdate
--- );
+create table adminuser(
+    idx number(7) primary key,
+    admin_id varchar2(20) unique not null,
+    admin_pw varchar2(20) not null,
+    admin_name number(7) not null,
+    reg_date date default sysdate
+);
 
 create sequence seq_adminuser
     increment by 1
@@ -550,6 +533,7 @@ create sequence seq_restaurant_review
     start with 1;
     
 select * from event;
+
 create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,

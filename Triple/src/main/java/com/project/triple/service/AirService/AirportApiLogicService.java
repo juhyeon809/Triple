@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class AirportApiLogicService extends BaseService<AirportApiRequest, AirportApiResponse, Airport> {
@@ -21,9 +24,7 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
     private AirportApiResponse response(Airport airport){
         AirportApiResponse airportApiResponse = AirportApiResponse.builder()
                 .idx(airport.getIdx())
-                .airportNum(airport.getAirportNum())
                 .airportName(airport.getAirportName())
-                .airportCode(airport.getAirportCode())
                 .country(airport.getCountry())
                 .city(airport.getCity())
                 .build();
@@ -33,7 +34,14 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
 
     @Override
     public Header<AirportApiResponse> create(Header<AirportApiRequest> request) {
-        return null;
+        AirportApiRequest airportApiRequest = request.getData();
+        Airport airport = Airport.builder()
+                .airportName(airportApiRequest.getAirportName())
+                .country(airportApiRequest.getCountry())
+                .city(airportApiRequest.getCity())
+                .build();
+        Airport newAirport = baseRepository.save(airport);
+        return Header.OK(response(newAirport));
     }
 
     @Override
@@ -49,5 +57,9 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
     @Override
     public Header<AirportApiResponse> delete(Long id) {
         return null;
+    }
+
+    public Header<List<AirportApiResponse>> list(){
+      return Header.OK(airportRepository.findAll().stream().map(airport -> response(airport)).collect(Collectors.toList()));
     }
 }

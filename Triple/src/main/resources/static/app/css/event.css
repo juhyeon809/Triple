@@ -50,23 +50,27 @@ main h2{
 }
 .line{
     display: flex;
+    flex: 2;
     justify-content: space-between;
+    width: 850px;
     margin: 30px 0;
+    flex-grow:0;
+    flex-wrap: wrap-reverse;
 }
+
 .flex {
     display: flex;
     vertical-align: middle;
     width: 400px;
     height: 130px;
-    margin: 0;
-    padding: auto;
+    margin: 30px 0;
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, .08), 0 6px 0 rgba(0, 0, 0, .019);
 }
 .flex div:first-child{
-    margin: auto;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -80,6 +84,7 @@ main h2{
     height: 120px;
     margin: auto;
     padding-top: 5px;
+    border-radius: 5px;
 }
 .purpleTit{
     color: #8700ff;

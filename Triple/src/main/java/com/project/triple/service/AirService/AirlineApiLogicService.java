@@ -1,6 +1,7 @@
 package com.project.triple.service.AirService;
 
 import com.project.triple.model.entity.Air.Airline;
+import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirlineApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
@@ -9,8 +10,13 @@ import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -23,26 +29,25 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
     private AirlineApiResponse response(Airline airline){
         AirlineApiResponse airlineApiResponse = AirlineApiResponse.builder()
                 .idx(airline.getIdx())
-                .airlineNum(airline.getAirlineNum())
                 .krName(airline.getKrName())
                 .enName(airline.getEnName())
-                .airlineCode(airline.getAirlineCode())
-                .address(airline.getAddress())
-                .contactNum1(airline.getContactNum1())
-                .contactNum2(airline.getContactNum2())
+                .repNum(airline.getRepNum())
+                .route(airline.getRoute())
+                .supportNum(airline.getSupportNum())
                 .build();
         return airlineApiResponse;
     }
     @Override
     public Header<AirlineApiResponse> create(Header<AirlineApiRequest> request) {
         AirlineApiRequest airlineApiRequest = request.getData();
-        Airline airline = Airline.builder().airlineNum(airlineApiRequest.getAirlineNum())
+        Airline airline = Airline.builder()
                 .krName(airlineApiRequest.getKrName())
                 .enName(airlineApiRequest.getEnName())
-                .airlineCode(airlineApiRequest.getAirlineCode())
-                .address(airlineApiRequest.getAddress())
-                .contactNum1(airlineApiRequest.getContactNum1())
-                .contactNum2(airlineApiRequest.getContactNum2())
+                .route(airlineApiRequest.getRoute())
+                .repNum(airlineApiRequest.getRepNum())
+                .supportNum(airlineApiRequest.getSupportNum())
+                .fileName(airlineApiRequest.getFileName())
+                .uploadPath(airlineApiRequest.getUploadPath())
                 .build();
         Airline newAirline = baseRepository.save(airline);
         return Header.OK(response(newAirline));
@@ -62,8 +67,26 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
         return null;
     }
 
+    public void write(Airline airline, MultipartFile file) throws Exception{
+
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        airline.setFileName(filename);
+        airline.setUploadPath("/files/"+filename);
+        airlineRepository.save(airline);
+    }
+
     @Override
     public Header<AirlineApiResponse> delete(Long id) {
         return null;
+    }
+
+    public Header<List<AirlineApiResponse>> list() {
+
+        List<AirlineApiResponse> airlineApiResponseList = airlineRepository.findAll().stream().map(airline -> response(airline)).collect(Collectors.toList());
+        return Header.OK(airlineApiResponseList);
     }
 }

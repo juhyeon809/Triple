@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AirlineApiRequest {
     private Long idx;
-    private Integer airlineNum;
     private String krName;
     private String enName;
-    private String airlineCode;
-    private String address;
-    private String contactNum1;
-    private String contactNum2;
+    private String route;
+    private String repNum;
+    private String supportNum;
+    private String uploadPath;
+    private String fileName;
 }

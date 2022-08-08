@@ -2891,7 +2891,7 @@ input:checked + label {
 .cityList_kor,
 .cityList_global{
     width: 60px;
-    height: 350px;
+    height: 320px;
     float:left;
     font-size: 14px;
     font-weight: bold;
@@ -2911,6 +2911,9 @@ input:checked + label {
     font-weight: bold;
     color: #425052;
     box-sizing: border-box;
+}
+.city a{
+    color: #425052;
 }
 /* #lo_re_kr_1 div {
     width :434px;

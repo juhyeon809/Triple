@@ -17,13 +17,4 @@ import java.util.Optional;
 @Repository
 public interface AirTicketRepository extends JpaRepository<AirTicket, Long> {
 
-    List<AirTicket> findTop10BySeatGrade(String seatGrade);
-
-    Optional<AirTicket> findAllByTicketNum(String ticketNum);
-
-    AirTicket findByTicketNum(String ticketNum);
-
-//    List<AirTicket> findByTicketNum(String ticketNum);
-
-    List<AirTicketApiResponse> findAllByDepartureDateContainingAndDepartureAirportAndLandingAirport(LocalDate departureDate, String departureAirport, String landingAirport);
 }

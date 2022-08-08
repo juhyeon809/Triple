@@ -24,13 +24,13 @@ public class Airline {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_airline")
     private Long idx;
-    private Integer airlineNum;
     private String krName;
     private String enName;
-    private String airlineCode;
-    private String address;
-    private String contactNum1;
-    private String contactNum2;
+    private String route;
+    private String repNum;
+    private String supportNum;
+    private String uploadPath;
+    private String fileName;
 //
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "airline")
 //    private List<Aircraft> aircraftList;

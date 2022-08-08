@@ -111,8 +111,8 @@ create sequence seq_air_ticket
     increment by 1
     start with 1;
     
-insert into air_ticket values(1, 'AIR', 'a111', '2222', '3333', '±èÆ÷°øÇ×', 'Á¦ÁÖ°øÇ×', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 3);
-insert into air_ticket values(2, 'AIR', 'a112', '2222', '3333', '±èÆ÷°øÇ×', 'Á¦ÁÖ°øÇ×', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 4);
+insert into air_ticket values(1, 'AIR', 'a111', '2222', '3333', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 3);
+insert into air_ticket values(2, 'AIR', 'a112', '2222', '3333', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½', '2022-08-20', '2022-08-20', '150000', '4444', 'a', 'Y', sysdate, 'AVAILABLE', 4);
 
 create table reservation_airuse(
     idx number(7) primary key,
@@ -137,7 +137,7 @@ create sequence seq_reservation_airuse
     increment by 1
     start with 1;
     
-insert into reservation_airuse values(1, 3, 'AIR', 'a111', 'a', 'pple', '001010', 'MALE', '010-1111-1111', '´ëÇÑ¹Î±¹', '1111', '1111', '´ëÇÑ¹Î±¹', 'Y', '2022-08-01', '±è»ç°ú');
+insert into reservation_airuse values(1, 3, 'AIR', 'a111', 'a', 'pple', '001010', 'MALE', '010-1111-1111', 'ï¿½ï¿½ï¿½Ñ¹Î±ï¿½', '1111', '1111', 'ï¿½ï¿½ï¿½Ñ¹Î±ï¿½', 'Y', '2022-08-01', 'ï¿½ï¿½ï¿½ï¿½');
 
 create table lodging(
     idx number(7) primary key,
@@ -182,7 +182,7 @@ create sequence seq_lodging_room
     increment by 1
     start with 1;
     
-insert into lodging_room values (1, 'b555', 'È£ÅÚ', 'AVAILABLE', TO_DATE('2022-08-01 15:00:00','YYYY-MM-DD HH24:MI:SS'), TO_DATE('2022-08-02 11:00:00','YYYY-MM-DD HH24:MI:SS'), '32Æò', 5, '°´½ÇÁ¤Ã¥', 200000, 999, '2022-08-01', 'SOLDOUT');
+insert into lodging_room values (1, 'b555', 'È£ï¿½ï¿½', 'AVAILABLE', TO_DATE('2022-08-01 15:00:00','YYYY-MM-DD HH24:MI:SS'), TO_DATE('2022-08-02 11:00:00','YYYY-MM-DD HH24:MI:SS'), '32ï¿½ï¿½', 5, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥', 200000, 999, '2022-08-01', 'SOLDOUT');
 
 create table lodging_ticket(
     idx number(7) primary key,
@@ -207,8 +207,8 @@ create sequence seq_lodging_ticket
     increment by 1
     start with 1;
     
-insert into lodging_ticket values(1, '¼÷¼Ò', 'b111', 'b555', '±è»ç°ú', '010-1111-1111', 'apple@apple.com', 'a', 'pple', '001010', null, 'Y', sysdate, 3, 2, 'ÀÚ°¡¿ë ÀÌµ¿');
-insert into lodging_ticket values(2, '¼÷¼Ò', 'b112', 'b556', 'ÀÌ¸Þ·Ð', '010-1111-1111', 'melon@melon.com', 'm', 'elon', '000810', null, 'Y', sysdate, 4, 2, 'ÀÚ°¡¿ë ÀÌµ¿');
+insert into lodging_ticket values(1, 'ï¿½ï¿½ï¿½ï¿½', 'b111', 'b555', 'ï¿½ï¿½ï¿½ï¿½', '010-1111-1111', 'apple@apple.com', 'a', 'pple', '001010', null, 'Y', sysdate, 3, 2, 'ï¿½Ú°ï¿½ï¿½ï¿½ ï¿½Ìµï¿½');
+insert into lodging_ticket values(2, 'ï¿½ï¿½ï¿½ï¿½', 'b112', 'b556', 'ï¿½Ì¸Þ·ï¿½', '010-1111-1111', 'melon@melon.com', 'm', 'elon', '000810', null, 'Y', sysdate, 4, 2, 'ï¿½Ú°ï¿½ï¿½ï¿½ ï¿½Ìµï¿½');
 
 create table tour( 
     idx number(7) primary key,
@@ -257,8 +257,8 @@ create sequence seq_tour_ticket
     increment by 1
     start with 1;
     
-insert into tour_ticket values(1, 'Åõ¾î', 'c111', '±è»ç°ú', '010-1111-1111', 'apple@apple.com', '010-1111-1111', 'a', 'pple', '001010', 'apple', null, 'a', 'pple', sysdate, 3);
-insert into tour_ticket values(2, 'Åõ¾î', 'c112', 'ÀÌ¸Þ·Ð', '010-2222-2222', 'melon@melon.com', '010-2222-2222', 'm', 'elon', '000810', 'melon', null, 'm', 'elon', sysdate, 4);
+insert into tour_ticket values(1, 'ï¿½ï¿½ï¿½ï¿½', 'c111', 'ï¿½ï¿½ï¿½ï¿½', '010-1111-1111', 'apple@apple.com', '010-1111-1111', 'a', 'pple', '001010', 'apple', null, 'a', 'pple', sysdate, 3);
+insert into tour_ticket values(2, 'ï¿½ï¿½ï¿½ï¿½', 'c112', 'ï¿½Ì¸Þ·ï¿½', '010-2222-2222', 'melon@melon.com', '010-2222-2222', 'm', 'elon', '000810', 'melon', null, 'm', 'elon', sysdate, 4);
 
 create table reservation(
     idx number(10) primary key,
@@ -279,9 +279,9 @@ create sequence seq_reservation
     increment by 1
     start with 1;
     
-insert into reservation values (1, 'AIR', 'a111', '±è»ç°ú', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'CJU-GMP', '[Æíµµ]Á¦ÁÖ - ¼­¿ï Ç×°ø±Ç', '2022-07-30', 'USABLE');
-insert into reservation values (2, 'LODGING', 'b111', '±è»ç°ú', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, '±¡', 'µÎÁþ Å¸´Ï ±¡ ¸®Á¶Æ®', '2022-07-30', 'USABLE');
-insert into reservation values (3, 'TOUR', 'c111', '±è»ç°ú', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, '±¡', '±¡ Ç×°ø + È£ÅÚ Æ÷ÇÔ ÀÚÀ¯¿©Çà 4¹Ú 5ÀÏ', '2022-07-30' ,'USABLE');
+insert into reservation values (1, 'AIR', 'a111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'CJU-GMP', '[ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½×°ï¿½ï¿½ï¿½', '2022-07-30', 'USABLE');
+insert into reservation values (2, 'LODGING', 'b111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®', '2022-07-30', 'USABLE');
+insert into reservation values (3, 'TOUR', 'c111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'ï¿½ï¿½', 'ï¿½ï¿½ ï¿½×°ï¿½ + È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½ 5ï¿½ï¿½', '2022-07-30' ,'USABLE');
 
 create table review(
     idx number(7) primary key,
@@ -357,11 +357,9 @@ create sequence seq_admin_user
     increment by 1
     start with 1;
     
-<<<<<<< HEAD
-insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹??‚¬ê³?', '010-1111-1111', 'ê´?ë¦¬ìž', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
-=======
-insert into admin_user values(1, 'apple123', 'apple123!', '±è»ç°ú', '010-1111-1111', '°ü¸®ÀÚ', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
->>>>>>> 2c3980fece3607f185c34f20895706cb44ce3928
+
+insert into admin_user values(1, 'apple123', 'apple123!', 'ï¿½ï¿½ï¿½ï¿½', '010-1111-1111', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+
     
 
 create table spot(
@@ -507,8 +505,8 @@ create sequence seq_coupon
     increment by 1
     start with 1;
 
-insert into coupon values (1, 1, '[8¿ù ÇýÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø]', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'bbb', null, '2022-08-31', 'USABLE');
-insert into coupon values (2, 1, '[7¿ù ÇýÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø]', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'unUSABLE', 'bbb', null, '2022-07-31', 'EXPIRED');
+insert into coupon values (1, 1, '[8ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 3,000ï¿½ï¿½]', 'LODGING', 3000, '5ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½', 'USABLE', 'bbb', null, '2022-08-31', 'USABLE');
+insert into coupon values (2, 1, '[7ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 3,000ï¿½ï¿½]', 'LODGING', 3000, '5ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½', 'unUSABLE', 'bbb', null, '2022-07-31', 'EXPIRED');
 
 create table user_coupon(
     idx number(7) primary key,
@@ -672,16 +670,16 @@ create sequence seq_mysave
     increment by 1
     start with 1;
     
-insert into mysave values(1, 3, 111, 'Y', null, '°¡ÀÌµå', '2022-08-01');
-insert into mysave values(2, 3, 222, 'Y', null, '°¡ÀÌµå', '2022-08-01');
-insert into mysave values(3, 3, 333, 'Y', null, '°ü±¤', '2022-08-01');
-insert into mysave values(4, 3, 444, 'Y', null, '°ü±¤', '2022-08-01');
-insert into mysave values(5, 3, 555, 'Y', null, '¸ÀÁý', '2022-08-01');
-insert into mysave values(6, 3, 666, 'Y', null, '¸ÀÁý', '2022-08-01');
-insert into mysave values(7, 3, 777, 'Y', null, '¼÷¼Ò', '2022-08-01');
-insert into mysave values(8, 3, 888, 'Y', null, '¼÷¼Ò', '2022-08-01');
-insert into mysave values(9, 3, 999, 'Y', null, 'Åõ¾î', '2022-08-01');
-insert into mysave values(10, 3, 1010, 'Y', null, 'Åõ¾î', '2022-08-01');
+insert into mysave values(1, 3, 111, 'Y', null, 'ï¿½ï¿½ï¿½Ìµï¿½', '2022-08-01');
+insert into mysave values(2, 3, 222, 'Y', null, 'ï¿½ï¿½ï¿½Ìµï¿½', '2022-08-01');
+insert into mysave values(3, 3, 333, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(4, 3, 444, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(5, 3, 555, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(6, 3, 666, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(7, 3, 777, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(8, 3, 888, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(9, 3, 999, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(10, 3, 1010, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
 
 
 create table notice(
@@ -721,7 +719,7 @@ create sequence seq_faq
     start with 1;
 
 
-insert into faq values (1, 1, 'Ç×°ø', 1, '»ç°ú', 'Ç×°øÆ¼ÄÏÀº ¿©±â¼­ ¹ÞÀ¸¼¼¿ä', '°øÇ×ÀÇ °¢ Ç×°ø»ç¿¡¼­ ¹ÞÀ¸½Ã¸é µË´Ï´Ù', null, null, null, '2022-08-01');
+insert into faq values (1, 1, 'ï¿½×°ï¿½', 1, 'ï¿½ï¿½ï¿½', 'ï¿½×°ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×°ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½Ë´Ï´ï¿½', null, null, null, '2022-08-01');
 
 
 
