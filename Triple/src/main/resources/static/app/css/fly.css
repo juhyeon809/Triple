@@ -677,11 +677,8 @@ p.sm {
 /* 항공편 정보 */
 
 .comtofly {
-    width: 1000px; 
-    height: 250px; 
+    width: 1000px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
     padding: 20px;
 }
 

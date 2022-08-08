@@ -1,27 +1,16 @@
 package com.project.triple.controller.page;
 
 
-import com.project.triple.model.entity.Air.Airline;
-import com.project.triple.model.entity.Event;
-import com.project.triple.model.entity.Guide.Guide;
-import com.project.triple.model.entity.User.Users;
-import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.*;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
-import com.project.triple.model.network.response.CouponResponse.UserCouponApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
-import com.project.triple.model.network.response.ReservationResponse.ReservationAiruseApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
-import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
-import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
-import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
-import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantReviewApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
@@ -35,18 +24,13 @@ import com.project.triple.service.CouponService.UserCouponApiLogicService;
 import com.project.triple.service.LodgingService.LodgingRoomApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
-import com.project.triple.service.ReservationService.ReservationAiruseApiLogicService;
+import com.project.triple.service.ReservationService.RoundTicketReservationApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.service.GuideService.GuideReviewApiLogicService;
-import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
-import com.project.triple.service.QnAService.QuestionApiLogicService;
-import com.project.triple.service.ReservationService.ReservationApiLogicService;
 import com.project.triple.service.RestaurantService.RestaurantReviewApiLogicService;
 import com.project.triple.service.SpotService.SpotApiLogicService;
-import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
-import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.service.GuideService.GuideApiLogicService;
@@ -58,7 +42,6 @@ import com.project.triple.service.UserService.UsersApiLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,8 +51,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/Triple")   // http://localhost:9090/Triple
@@ -124,7 +107,7 @@ public class PageController {
     private MysaveApiLogicService mysaveApiLogicService;
 
     @Autowired
-    private ReservationAiruseApiLogicService reservationAiruseApiLogicService;
+    private RoundTicketReservationApiLogicService reservationAiruseApiLogicService;
 
     @Autowired
     private LodgingRoomApiLogicService lodgingRoomApiLogicService;
@@ -862,42 +845,104 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        List<AirTicketApiResponse> overseasList = airTicketApiLogicService.find_by_route("국내").getData();
+        List<AirTicketApiResponse> domesticList = airTicketApiLogicService.find_by_route("국제").getData();
+        List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
+
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("overseasList", overseasList)
+                .addObject("domesticList", domesticList).addObject("airportList", airportApiResponseList);
     }
 
 
-    @RequestMapping(path = "/flightReservation")
-    public ModelAndView flightReservation(HttpServletRequest request) {
+    @RequestMapping(path = "/flightReservation" )
+    public ModelAndView flightReservation(AirReservationInfo airReservationInfo , HttpServletRequest request, HttpServletResponse response)throws IOException {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
         if(session == null){
-
+            ScriptUtils.alertAndMovePage(response, "로그인 후 이용하세요","/Triple/login");
         }else{
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+        Integer ChildNum = 0;
+        Integer AdultNum = 0;
+        Integer InfantNum = 0;
+        ChildNum = airReservationInfo.getChild();
+        AdultNum = airReservationInfo.getAdult();
+        InfantNum = airReservationInfo.getInfant();
+        Integer total = ChildNum + AdultNum + InfantNum;
+        List<TicketCounting> ticketCountingList = new ArrayList<>();
+        Long i = 1L;
+        while(i <= total){
 
+            for(int j = 0 ; j < AdultNum; j++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("성인");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+            for(int k = 0; k < ChildNum; k++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("소아");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+            for(int j = 0 ; j < InfantNum; j++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("유아");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+        }
         return new ModelAndView("/pages/flight_reservation/flight_reservation").addObject("email",email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("seatClass", airReservationInfo.getSeatClass())
+                .addObject("departureFlight", airTicketApiLogicService.read(airReservationInfo.getDepartureFlight()).getData())
+                .addObject("comebackFlight" , airTicketApiLogicService.read(airReservationInfo.getComebackFlight()).getData())
+                .addObject("countList", ticketCountingList).addObject("childNum", ChildNum).addObject("adultNum",AdultNum)
+                .addObject("infantNum", InfantNum);
     }
 
-    @RequestMapping(path = "/flightView")
-    public ModelAndView flightView(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/flight_reservation/flight_view").addObject("email",email)
-                .addObject("nickname", nickname);
-    }
+//    @RequestMapping(path = "/flightView/oneway/{id}")
+//    public ModelAndView flightView_oneway(@PathVariable Long id, HttpServletRequest request) {
+//        HttpSession session = request.getSession(false);
+//        String email = null;
+//        String nickname = null;
+//        if(session == null){
+//
+//        }else{
+//            email = (String)session.getAttribute("email");
+//            nickname = (String)session.getAttribute("nickname");
+//        }
+//
+//        AirTicketApiResponse airTicketApiResponse = airTicketApiLogicService.read(id).getData();
+//
+//        return new ModelAndView("/pages/flight_reservation/flight_view").addObject("email",email)
+//                .addObject("nickname", nickname).addObject("airTicket", airTicketApiResponse);
+//    }
+//    @RequestMapping(path = "/flightView/round")
+//    public ModelAndView flightView_round( HttpServletRequest request) {
+//        HttpSession session = request.getSession(false);
+//        String email = null;
+//        String nickname = null;
+//        if(session == null){
+//
+//        }else{
+//            email = (String)session.getAttribute("email");
+//            nickname = (String)session.getAttribute("nickname");
+//        }
+//
+////        AirTicketApiResponse airTicketApiResponse1 = airTicketApiLogicService.read(id1).getData();
+////        AirTicketApiResponse airTicketApiResponse2 = airTicketApiLogicService.read(id2).getData();
+//
+//        return new ModelAndView("/pages/flight_reservation/flight_view_round").addObject("email",email);
+//                .addObject("nickname", nickname).addObject("departureTicket", airTicketApiResponse1)
+//                .addObject("landingTicket", airTicketApiResponse2);
+//    }
 
 
 

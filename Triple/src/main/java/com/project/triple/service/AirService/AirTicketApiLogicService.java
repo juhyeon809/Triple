@@ -84,7 +84,7 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
 
     @Override
     public Header<AirTicketApiResponse> read(Long id) {
-        return null;
+        return airTicketRepository.findById(id).map(airTicket -> response(airTicket)).map(Header::OK).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     @Override
@@ -103,6 +103,19 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
                 .map(airTicket -> response(airTicket))
                 .collect(Collectors.toList());
         return Header.OK(airTicketApiResponseList);
+    }
+
+    public Header<List<AirTicketApiResponse>> find_by_route(String route){
+        List<AirTicketApiResponse> airTicketList = airTicketRepository.findAllByAirRoute(route).stream().map(airTicket -> response(airTicket)).collect(Collectors.toList());
+
+        return Header.OK(airTicketList);
+    }
+
+    public Header<List<AirTicketApiResponse>> find_by_departureTime( String departure, String landing, String time){
+        List<AirTicketApiResponse> airTicketApiResponse = airTicketRepository.findAllByDepartureAirportAndLandingAirportAndDepartureTimeContaining(departure, landing, time)
+                .stream().map(airTicket -> response(airTicket)).collect(Collectors.toList());
+
+        return Header.OK(airTicketApiResponse);
     }
 
 

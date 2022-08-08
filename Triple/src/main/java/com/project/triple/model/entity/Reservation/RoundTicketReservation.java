@@ -1,6 +1,5 @@
 package com.project.triple.model.entity.Reservation;
 
-import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,33 +16,32 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @SequenceGenerator(
-        name="seq_reservation_airuse",
-        sequenceName = "seq_reservation_airuse",
+        name="seq_round_ticket_reservation",
+        sequenceName = "seq_round_ticket_reservation",
         initialValue = 1,
         allocationSize = 1
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
-public class ReservationAiruse {
+public class RoundTicketReservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_reservation_airuse")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_round_ticket_reservation")
     private Long idx;
-    private Long userId;
-    private String ticketType;
-    private String ticketNum;
+    private String email;
+    private Long departureTicketId;
+    private Long comebackTicketId;
+    private String ageType;
+    private String seatClass;
     private String engLastname;
     private String engFirstname;
     private String birth;
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+    private String gender;
     private String useHp;
     private String nationality;
     private String passportNum;
     private String passportExp;
     private String passportCountry;
-    private String infoAgree;
     private String passengerName;
-
     @CreatedDate
     private LocalDateTime regDate;
 

@@ -95,12 +95,14 @@ create sequence seq_aircraft
     increment by 1
     start with 1;
    
-
-
+select * from air_ticket where departure_airport='ÀÎÃµ°øÇ×' and landing_airport='³ª¸®Å¸°øÇ×' and departure_time like '%2022-08-07%';
+commit;
+select * from air_ticket;
 drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹€ì‚¬ê³¼', '010-1111-1111', 'ê´€ë¦¬ì', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹??‚¬ê³?', '010-1111-1111', 'ê´?ë¦¬ì', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
 commit;
+delete from air_ticket where idx=26;
 create table air_ticket(
     idx number(7) primary key,
     air_route varchar2(10) not null,
@@ -138,29 +140,31 @@ create sequence seq_air_ticket
 select * from users;
 select * from reservation;
 drop table reservation_airuse;
-
-create table reservation_airuse(
+drop table round_ticket_reservation;
+create table round_ticket_reservation(
     idx number(7) primary key,
-    email number(7) not null,
-    ticket_type varchar2(10) not null,
-    ticket_num number(7) not null,
-    eng_lastname number(7) not null,
-    eng_firstname varchar2(20) not null,
+    email varchar2(50) not null,
+    departure_ticket_id number(7) not null,
+    comeback_ticket_id number(7) not null,
+    age_type varchar2(20) not null,
+    seat_class varchar2(30) not null,
+    eng_lastname varchar2(50) not null,
+    eng_firstname varchar2(50) not null,
     birth varchar2(20) not null,
     gender varchar2(20) not null,
-    use_hp varchar2(20) not null,
+    use_hp varchar2(20),
     nationality varchar2(20) not null,
     passport_num varchar2(20) not null,
-    passport_exp varchar2(10) not null,
+    passport_exp varchar2(20) not null,
     passport_country varchar2(20) not null,
-    info_agree varchar2(10) not null,
+    passenger_name varchar2(30) not null,
     reg_date date default sysdate
 );
 
-create sequence seq_reservation_airuse
+create sequence seq_round_ticket_reservation
     increment by 1
     start with 1;
-    
+select * from round_ticket_reservation;    
 
 create table lodging(
     idx number(7) primary key,

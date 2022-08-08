@@ -11,10 +11,10 @@ public class MagazineRepository extends TripleApplicationTests {
     @Autowired
     private com.project.triple.repository.MagazineRepository magazineRepository;
 
-    @Test
-    public void create(){
-        Magazine magazine = Magazine.builder().adminuserId(3).adminuserName("반하나").magazineNum(3456).magazineType(MagazineType.RECOMMEND)
-                .title("안녕하세요").content("반하나의 매거진").uploadPath(null).fileName(null).fileType(null).build() ;
-        Magazine newMagazine = magazineRepository.save(magazine);
-    }
+//    @Test
+//    public void create(){
+//        Magazine magazine = Magazine.builder().adminuserId(3).adminuserName("반하나").magazineNum(3456).magazineType(MagazineType.RECOMMEND)
+//                .title("안녕하세요").content("반하나의 매거진").uploadPath(null).fileName(null).fileType(null).build() ;
+//        Magazine newMagazine = magazineRepository.save(magazine);
+//    }
 }

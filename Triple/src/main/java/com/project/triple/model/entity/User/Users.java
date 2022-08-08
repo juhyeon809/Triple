@@ -1,20 +1,5 @@
 package com.project.triple.model.entity.User;
 
-import com.project.triple.model.entity.Coupon.UserCoupon;
-import com.project.triple.model.entity.Guide.GuideReview;
-import com.project.triple.model.entity.Guide.GuideReviewReply;
-import com.project.triple.model.entity.Mysave;
-import com.project.triple.model.entity.QnA.Question;
-import com.project.triple.model.entity.Reservation.Reservation;
-import com.project.triple.model.entity.Reservation.ReservationAiruse;
-import com.project.triple.model.entity.Restaurant.RestaurantReview;
-import com.project.triple.model.entity.Restaurant.RestaurantReviewReply;
-import com.project.triple.model.entity.Review;
-import com.project.triple.model.entity.ReviewReply;
-import com.project.triple.model.entity.Spot.SpotReview;
-import com.project.triple.model.entity.Spot.TourSpotReviewReply;
-import com.project.triple.model.entity.Tirpler.Tripler;
-import com.project.triple.model.entity.Tirpler.TriplerReply;
 import com.project.triple.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +10,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @AllArgsConstructor

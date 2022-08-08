@@ -4,24 +4,30 @@ import com.project.triple.model.entity.Reservation.RoundTicketReservation;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.RoundTicketReservationApiRequest;
 import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
-import com.project.triple.repository.ReservationAiruseRepository;
+import com.project.triple.repository.RoundTicketReservationRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
-public class ReservationAiruseApiLogicService extends BaseService<RoundTicketReservationApiRequest, RoundTicketReservationApiResponse, RoundTicketReservation> {
+public class RoundTicketReservationApiLogicService extends BaseService<RoundTicketReservationApiRequest, RoundTicketReservationApiResponse, RoundTicketReservation> {
 
     @Autowired
-    private ReservationAiruseRepository reservationAiruseRepository;
+    private RoundTicketReservationRepository roundTicketReservationRepository;
 
     private RoundTicketReservationApiResponse response(RoundTicketReservation reservationAiruse){
         RoundTicketReservationApiResponse reservationAiruseApiResponse = RoundTicketReservationApiResponse.builder()
                 .idx(reservationAiruse.getIdx())
-                .ticketType(reservationAiruse.getTicketType())
-                .ticketNum(reservationAiruse.getTicketNum())
+                .email(reservationAiruse.getEmail())
+                .departureTicketId(reservationAiruse.getDepartureTicketId())
+                .comebackTicketId(reservationAiruse.getComebackTicketId())
+                .ageType(reservationAiruse.getAgeType())
                 .engLastname(reservationAiruse.getEngLastname())
                 .engFirstname(reservationAiruse.getEngFirstname())
                 .birth(reservationAiruse.getBirth())
@@ -31,10 +37,8 @@ public class ReservationAiruseApiLogicService extends BaseService<RoundTicketRes
                 .passportNum(reservationAiruse.getPassportNum())
                 .passportExp(reservationAiruse.getPassportExp())
                 .passportCountry(reservationAiruse.getPassportCountry())
-                .infoAgree(reservationAiruse.getInfoAgree())
                 .regDate(reservationAiruse.getRegDate())
                 .passengerName(reservationAiruse.getPassengerName())
-                .userId(reservationAiruse.getIdx())
                 .build();
         return reservationAiruseApiResponse;
     }
@@ -59,12 +63,15 @@ public class ReservationAiruseApiLogicService extends BaseService<RoundTicketRes
         return null;
     }
 
-    public Header<RoundTicketReservationApiResponse> read2(String ticketNum) {
+    public Header<List<RoundTicketReservationApiResponse>> reservation(List<RoundTicketReservation> roundTicketReservationList){
+            List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = new ArrayList<>();
+            for(RoundTicketReservation roundTicketReservation : roundTicketReservationList){
+                RoundTicketReservation roundTicketReservation1 = baseRepository.save(roundTicketReservation);
+                roundTicketReservationApiResponseList.add(response(roundTicketReservation1));
+            }
 
-        RoundTicketReservation reservationAiruse = reservationAiruseRepository.findByTicketNum(ticketNum);
-
-        RoundTicketReservationApiResponse reservationAiruseApiResponse = response(reservationAiruse);
-
-        return Header.OK(reservationAiruseApiResponse);
+            return Header.OK(roundTicketReservationApiResponseList);
     }
+
+
 }

@@ -1,12 +1,9 @@
 package com.project.triple.service.ReservationService;
 
 import com.project.triple.model.entity.Reservation.Reservation;
-import com.project.triple.model.entity.Reservation.ReservationAiruse;
 import com.project.triple.model.enumclass.TicketType;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.ReservationApiRequest;
-import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
-import com.project.triple.model.network.response.ReservationResponse.ReservationAiruseApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
 import com.project.triple.repository.ReservationRepository;
 import com.project.triple.service.BaseService.BaseService;
