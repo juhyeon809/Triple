@@ -457,6 +457,15 @@
     color:#425052;
     border: 1px solid #d0d0d0;
 }
+
+.inq_wr_box_input select{
+    width: 700px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+    color:#425052;
+    border: 1px solid #d0d0d0;
+}
 .inq_wr_box_input input::placeholder{
     text-indent: 10px;
 }

@@ -71,7 +71,6 @@ $(function (){
                 alert('수정성공!');
                 sessionStorage.setItem('nickname', $('#nickname').val())
                 sessionStorage.setItem('userpw', $('#userpw').val())
-
                 location.href = '/Triple/mypage/settings';
             },
             error: function () {

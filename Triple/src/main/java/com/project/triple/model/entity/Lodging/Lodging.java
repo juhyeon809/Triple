@@ -38,6 +38,7 @@ public class Lodging {
     private String representative;
     private String email;
     private Integer likeCount;
+    private String homepage;
 
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
 //    private List<LodgingRoom> lodgingRoomList;

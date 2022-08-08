@@ -27,7 +27,12 @@
                 <input type="hidden" id="idx" th:value="${idx}"/>
                 <div class="inq_wr_box_title">유형 <span>*</span></div>
                 <div class="inq_wr_box_input">
-                    <input type="text" value="" spellcheck="false" data-ms-editor="true" name="typeCategory" id="typeCategory" placeholder="항공 or 숙소 or 투어티켓">
+                    <select name="typeCategory" id="typeCategory">
+                        <option value="항공">항공</option>
+                        <option value="숙소">숙소</option>
+                        <option value="투어티켓">투어티켓</option>
+                    </select>
+<!--                    <input type="text" value="" spellcheck="false" data-ms-editor="true" name="typeCategory" id="typeCategory" placeholder="항공 or 숙소 or 투어티켓">-->
                 </div>
             </div>
             <div class="inq_wr_box">

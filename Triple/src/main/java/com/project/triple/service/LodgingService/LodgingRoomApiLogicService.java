@@ -62,7 +62,11 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
         LodgingRoomApiResponse lodgingRoomApiResponse = response(lodgingRoom);
 
         return Header.OK(lodgingRoomApiResponse);
+    }
 
+    public Long findLodgingId(String roomNum){
+        Long lodgingId = lodgingRoomRepository.findByRoomNum(roomNum).getLodgingId();
 
+        return lodgingId;
     }
 }

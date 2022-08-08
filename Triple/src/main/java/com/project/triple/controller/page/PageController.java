@@ -4,6 +4,8 @@ package com.project.triple.controller.page;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.*;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
+import com.project.triple.model.network.response.CouponResponse.UserCouponApiResponse;
+import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
@@ -21,6 +23,7 @@ import com.project.triple.service.AirService.AirlineApiLogicService;
 import com.project.triple.service.AirService.AirportApiLogicService;
 import com.project.triple.service.CouponService.CouponApiLogicService;
 import com.project.triple.service.CouponService.UserCouponApiLogicService;
+import com.project.triple.service.LodgingService.LodgingApiLogicService;
 import com.project.triple.service.LodgingService.LodgingRoomApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
@@ -128,6 +131,7 @@ public class PageController {
     private GuideReviewApiLogicService guideReviewApiLogicService;
 
     @Autowired
+    private LodgingApiLogicService  lodgingApiLogicService;
     private AirlineApiLogicService airlineApiLogicService;
 
     @Autowired
@@ -672,11 +676,14 @@ public class PageController {
         Long idx = usersApiLogicService.findIdx(email);
         Long couponId = userCouponApiLogicService.findUserId(idx);
         List<CouponApiResponse> couponApiResponseList = couponApiLogicService.search(couponId).getData();
+        Long lodgingId = lodgingRoomApiLogicService.findLodgingId(roomNum);
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read2(lodgingId).getData();
+
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_room_reserve").addObject("email", email)
                 .addObject("nickname", nickname).addObject("lodgingTicket", lodgingTicketApiResponse)
                 .addObject("lodgingRoom", lodgingRoomApiResponse).addObject("reserve", reservationApiResponse)
-                .addObject("coupon", couponApiResponseList);
+                .addObject("coupon", couponApiResponseList).addObject("lodging", lodgingApiResponse);
     }
 
     //내예약 숙소 취소

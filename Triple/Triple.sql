@@ -152,13 +152,15 @@ create table lodging(
     contact_hp varchar2(20) not null,
     representative varchar2(20) not null,
     email varchar2(30) not null,
-    like_num number(5) default 0
+    like_count number(5) default 0,
+    homepage varchar2(30)
 );
 
 create sequence seq_lodging
     increment by 1
     start with 1;
-    
+
+insert into lodging values(1, 'LODGING', 'asdf', '1¹Ú', 'µÎÁþ Å¸´Ï ±¡ ¸®Á¶Æ®', '¤±¤¤¤·¤©', '¹Ì±¹', '±¡', 'Tamuning 1227 Pale San Vitores Road', '+16716488000', 'aaaa', 'dusit@dusit.com', 0, 'https://www.dusit.com');
 
 create table lodging_room(
     idx number(7) primary key,

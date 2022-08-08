@@ -43,16 +43,16 @@
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/templates/pages/admin/NewRegistration/airlineRegist.html">항공사 신규 등록</a></li>
-                        <li><a href="/templates/pages/admin/NewRegistration/aircraftRegist.html">항공기 신규 등록</a></li>
+                        <li><a href="/Triple/airline_register">항공사 신규 등록</a></li>
+                        <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/destinationList.html">취항지 목록</a></li>
-                        <li><a href="/templates/pages/admin/NewRegistration/destinationRegist.html">취항지 신규 등록</a></li>
+                        <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
                         <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown show">
-                        <li><a href="/templates/pages/admin/product/air.html" style="color:darkslategray; font-weight: bold;">항공권</a></li>
+                        <li><a href="/Triple/airline_select" style="color:darkslategray; font-weight: bold;">항공권</a></li>
                         <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
                         <li><a href="/Triple/package_register">패키지</a></li>
                         <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
@@ -130,8 +130,14 @@
             </div>
             <!--타이틀 끝-->
             <!--항공권 정보 등록-->
+            <div class="admin_inquiry_qtext" style="height: auto;">
+                <div class="admin_inquiry_title">항공사 리스트</div>
+                <div class="admin_inquiry_q3">
+                    <p th:each="airline : ${airlineList}"><a th:href="'/Triple/air_register/' + ${airline.getKrName()}" th:text="${airline.getKrName()}"></a></p>
+                </div>
+            </div>
             <div>
-                <p th:each="airline : ${airlineList}"><a th:href="'/Triple/air_register/' + ${airline.getKrName()}" th:text="${airline.getKrName()}"></a></p>
+
             </div>
         </div>
     </section>

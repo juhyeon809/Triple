@@ -89,7 +89,7 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
     }
 
     public Header<List<QuestionApiResponse>> search2(Long userId){
-        List<QuestionApiResponse> questionList = questionRepository.findAllByUserId(userId).stream()
+        List<QuestionApiResponse> questionList = questionRepository.findAllByUserIdOrderByIdxDesc(userId).stream()
                 .map(question -> response(question)).collect(Collectors.toList());
 
         return Header.OK(questionList);

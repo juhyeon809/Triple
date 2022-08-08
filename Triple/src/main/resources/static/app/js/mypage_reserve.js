@@ -31,29 +31,7 @@ $(function (){
     })
 
 
-    function cancel1(){
-        let rtn;
 
-        rtn = confirm("예약을 취소하시겠습니까?");
-
-        if(rtn){
-            alert('예약이 취소되었습니다');
-        } else {
-
-        }
-    }
-
-    function cancel2(){
-        let rtn;
-
-        rtn = confirm("예약을 취소하시겠습니까?");
-
-        if(rtn){
-            alert('예약이 취소되었습니다');
-        } else {
-
-        }
-    }
 
     $(document).on('click', '#sendit', function () {
         const typeCategory = document.getElementById('typeCategory');
@@ -131,23 +109,20 @@ $(function (){
 
 })
 function cancel1(){
+    if(!confirm("정말 취소하시겠습니까?\n취소하시려면 확인을 눌러주세요.")){
+        location.href='/Triple/mypage/reserve/air';
+    }else{
+        alert("취소되었습니다")
+        location.href='/Triple/mypage/reserve/air'
+    }
+}
+
+function cancel2(){
     let rtn;
 
     rtn = confirm("예약을 취소하시겠습니까?");
 
     if(rtn){
-        alert('예약이 취소되었습니다');
-    } else {
-        
-    }
-}
-
-function cancel2() {
-    let rtn;
-
-    rtn = confirm("예약을 취소하시겠습니까?");
-
-    if (rtn) {
         alert('예약이 취소되었습니다');
     } else {
 
