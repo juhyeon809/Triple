@@ -914,6 +914,57 @@ public class PageController {
                 .addObject("infantNum", InfantNum);
     }
 
+    @RequestMapping(path = "/flightReservation/oneway" )
+    public ModelAndView flightReservation_oneway(AirReservationInfo airReservationInfo , HttpServletRequest request, HttpServletResponse response)throws IOException {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+            ScriptUtils.alertAndMovePage(response, "로그인 후 이용하세요","/Triple/login");
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+        Integer ChildNum = 0;
+        Integer AdultNum = 0;
+        Integer InfantNum = 0;
+        ChildNum = airReservationInfo.getChild();
+        AdultNum = airReservationInfo.getAdult();
+        InfantNum = airReservationInfo.getInfant();
+        Integer total = ChildNum + AdultNum + InfantNum;
+        List<TicketCounting> ticketCountingList = new ArrayList<>();
+        Long i = 1L;
+        while(i <= total){
+
+            for(int j = 0 ; j < AdultNum; j++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("성인");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+            for(int k = 0; k < ChildNum; k++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("소아");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+            for(int j = 0 ; j < InfantNum; j++){
+                TicketCounting ticketcnt = new TicketCounting();
+                ticketcnt.setId(i);
+                ticketcnt.setAgeType("유아");
+                ticketCountingList.add(ticketcnt);
+                i++;
+            }
+        }
+        return new ModelAndView("/pages/flight_reservation/flight_reservation_one_way").addObject("email",email)
+                .addObject("nickname", nickname).addObject("seatClass", airReservationInfo.getSeatClass())
+                .addObject("departureFlight", airTicketApiLogicService.read(airReservationInfo.getDepartureFlight()).getData())
+                .addObject("countList", ticketCountingList).addObject("childNum", ChildNum).addObject("adultNum",AdultNum)
+                .addObject("infantNum", InfantNum);
+    }
+
 //    @RequestMapping(path = "/flightView/oneway/{id}")
 //    public ModelAndView flightView_oneway(@PathVariable Long id, HttpServletRequest request) {
 //        HttpSession session = request.getSession(false);

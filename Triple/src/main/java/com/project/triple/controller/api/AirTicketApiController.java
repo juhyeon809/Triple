@@ -49,6 +49,7 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
             nickname = (String)session.getAttribute("nickname");
         }
 
+
         String departure = searchInfo.getDepartureTime();
         String comeback = searchInfo.getComebackTime();
         String airport1 = searchInfo.getDepartureAirport();
@@ -58,9 +59,10 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
         System.out.println(comeback);
         System.out.println(airport1);
         System.out.println(airport2);
-        if(comeback == null){
-            List<AirTicketApiResponse> airTicketApiResponse= airTicketApiLogicService.find_by_departureTime(airport1, airport2, departure).getData();
-            if(airTicketApiResponse == null){
+        System.out.println(searchInfo.getOnewayTime());
+        if(!searchInfo.getOnewayTime().isEmpty()){
+            List<AirTicketApiResponse> airTicketApiResponse= airTicketApiLogicService.find_by_departureTime(airport1, airport2, searchInfo.getOnewayTime()).getData();
+            if(airTicketApiResponse.isEmpty()){
                 ScriptUtils.alertAndMovePage(response,"찾는 항공편이 없습니다","/Triple/flightMain" );
             }
             return new ModelAndView("/pages/flight_reservation/flight_view").addObject("email",email)
@@ -69,8 +71,11 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
 
             List<AirTicketApiResponse> airTicketApiResponse1 = airTicketApiLogicService.find_by_departureTime(airport1, airport2, departure).getData();
             List<AirTicketApiResponse> airTicketApiResponse2 = airTicketApiLogicService.find_by_departureTime(airport2, airport1, comeback).getData();
-            if(airTicketApiResponse1 == null || airTicketApiResponse2 == null){
-                ScriptUtils.alertAndMovePage(response,"찾는 항공편이 없습니다","/Triple/flightMain");
+            if(airTicketApiResponse1.isEmpty()){
+                ScriptUtils.alertAndMovePage(response,"출발날짜에 해당하는 항공편이 없습니다","/Triple/flightMain");
+            }
+            if(airTicketApiResponse2.isEmpty()){
+                ScriptUtils.alertAndMovePage(response,"도착날짜에 해당하는 항공편이 없습니다","/Triple/flightMain");
             }
             return new ModelAndView("/pages/flight_reservation/flight_view_round").addObject("email",email)
                     .addObject("nickname", nickname).addObject("departureList", airTicketApiResponse1).addObject("comebackList" ,airTicketApiResponse2);

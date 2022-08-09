@@ -166,6 +166,30 @@ create sequence seq_round_ticket_reservation
     start with 1;
 select * from round_ticket_reservation;    
 
+create table oneway_reservation(
+    idx number(7) primary key,
+    email varchar2(50) not null,
+    departure_ticket_id number(7) not null,
+    age_type varchar2(20) not null,
+    seat_class varchar2(30) not null,
+    eng_lastname varchar2(50) not null,
+    eng_firstname varchar2(50) not null,
+    birth varchar2(20) not null,
+    gender varchar2(20) not null,
+    use_hp varchar2(20),
+    nationality varchar2(20) not null,
+    passport_num varchar2(20) not null,
+    passport_exp varchar2(20) not null,
+    passport_country varchar2(20) not null,
+    passenger_name varchar2(30) not null,
+    reg_date date default sysdate
+);
+
+create sequence seq_oneway_reservation
+    increment by 1
+    start with 1;
+    
+select * from oneway_reservation;
 create table lodging(
     idx number(7) primary key,
     type varchar2(10) unique not null,
