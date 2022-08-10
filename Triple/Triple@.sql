@@ -462,6 +462,9 @@ create sequence seq_spot
     start with 1;
 
 commit;
+select * from air_ticket;
+
+select * from guide;
     
 
 create table spot_review(
@@ -608,7 +611,7 @@ create table user_coupon(
 create sequence seq_user_coupon
     increment by 1
     start with 1;
-    
+select count(*) from guide_review where post_id = 48;
 select * from guide;
 drop table guide;
 create table guide(
@@ -622,9 +625,9 @@ create table guide(
     language varchar2(50) not null,
     area varchar2(50) not null,
     population varchar2(50) not null,
-    time_difference varchar2(50) not null,
+    time_difference varchar2(100) not null,
     myth varchar2(50) not null,
-    voltage varchar2(50) not null,
+    voltage varchar2(200) not null,
     currency varchar2(50) not null,
     country_code varchar2(50) not null,
     visa varchar2(500) not null,
@@ -634,7 +637,8 @@ create table guide(
     best_time varchar2(200) not null,
     simple_conversation varchar2(1000) not null,
     reg_date date default sysdate,
-    review_count number(7) default 0
+    review_count number(7) default 0,
+    star_count number(10) default 0
 );
 
 create sequence seq_guide
@@ -662,6 +666,7 @@ create sequence seq_guide_review
     start with 1;
     
 select * from guide_review;
+drop table guide_review;
 create table guide_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,

@@ -36,4 +36,5 @@ public class GuideApiResponse {
     private String simpleConversation;
     private LocalDateTime regDate;
     private Integer reviewCount;
+    private Double starCount;
 }

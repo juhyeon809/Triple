@@ -33,6 +33,8 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
                 .enName(airline.getEnName())
                 .repNum(airline.getRepNum())
                 .route(airline.getRoute())
+                .uploadPath(airline.getUploadPath())
+                .fileName(airline.getFileName())
                 .supportNum(airline.getSupportNum())
                 .build();
         return airlineApiResponse;

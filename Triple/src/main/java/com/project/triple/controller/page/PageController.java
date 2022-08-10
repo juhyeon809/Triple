@@ -80,6 +80,9 @@ public class PageController {
     private UserCouponApiLogicService userCouponApiLogicService;
 
     @Autowired
+    private RoundTicketReservationApiLogicService roundTicketReservationApiLogicService;
+
+    @Autowired
     private CouponApiLogicService couponApiLogicService;
 
     @Autowired
@@ -109,8 +112,7 @@ public class PageController {
     @Autowired
     private MysaveApiLogicService mysaveApiLogicService;
 
-    @Autowired
-    private RoundTicketReservationApiLogicService reservationAiruseApiLogicService;
+
 
     @Autowired
     private LodgingRoomApiLogicService lodgingRoomApiLogicService;
@@ -132,6 +134,8 @@ public class PageController {
 
     @Autowired
     private LodgingApiLogicService  lodgingApiLogicService;
+
+    @Autowired
     private AirlineApiLogicService airlineApiLogicService;
 
     @Autowired
@@ -1409,6 +1413,27 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
     }
 
+    @RequestMapping(path = "/spot/location/review_delete/{id}/{id2}")      //http://localhost:9090/Triple/spot_location_info/{id}
+    public ModelAndView spot_location_review_delete(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable Long id2) throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        guideReviewApiLogicService.delete2(id, id2);
+
+
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot/location/view/"+id2);
+        return null;
+    }
+
+
+
     //가이드 리스트
     @RequestMapping(path = "/spot/location")        //http://localhost:9090/Triple/spot_location
     public ModelAndView spot_guide(HttpServletRequest request){
@@ -1959,6 +1984,9 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
+        if(email==null || nickname==null){
+            ScriptUtils.alertAndMovePage( response,"로그인 후 이용하세요", "/Triple/login");
+        }
 
         if(kind.equals("restaurant")){
 
@@ -2090,4 +2118,75 @@ public class PageController {
 
     }
 
+    //투어티켓 메인
+    @RequestMapping(path = "/tour_ticket_main")
+    public ModelAndView tour_ticket( HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/tour_ticket/tour_ticket_main").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    //투어티켓 캘린더
+    @RequestMapping(path = "/tour_ticket_calendar")
+    public ModelAndView tour_ticket_calendar( HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/tour_ticket/tourticket_calendar").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    //투어티켓 메인
+    @RequestMapping(path = "/tour_ticket_view")
+    public ModelAndView tour_ticket_view( HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/tour_ticket/tourticket_view").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    //투어티켓 메인
+    @RequestMapping(path = "/tour_ticket_reservation")
+    public ModelAndView tour_ticket_reservation( HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/tour_ticket/tourticket_Reservation").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
 }
