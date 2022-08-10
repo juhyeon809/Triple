@@ -31,13 +31,14 @@
                             <p class="pleft">발권 항공사<span class="pright" style="margin-bottom: 20px;" th:text="${departureFlight.getAirlineName()}"></span></p>
                         </div>
                     </div>
-                </div>
+
                 <p class="pleft">총 결제금액
                     <span class="pright" th:if="${seatClass == 'premium'}" th:text="${adultNum} * ${departureFlight.getPremiumAdultPrice()}  + ${childNum} * ${departureFlight.getPremiumChildPrice()} + ${infantNum} * ${departureFlight.getPremiumInfantPrice()} + '원'"></span>
                     <span class="pright" th:if="${seatClass == 'first'}" th:text="${adultNum} * ${departureFlight.getFirstAdultPrice()}  + ${childNum} * ${departureFlight.getFirstChildPrice()} + ${infantNum} * ${departureFlight.getFirstInfantPrice()} + '원'"></span>
                     <span class="pright" th:if="${seatClass == 'business'}" th:text="${adultNum} * ${departureFlight.getBusinessAdultPrice()} + ${childNum} * ${departureFlight.getBusinessChildPrice()}  + ${infantNum} * ${departureFlight.getBusinessInfantPrice()} + '원'"></span>
                     <span class="pright" th:if="${seatClass == 'economy'}" th:text="${adultNum} * ${departureFlight.getEconomyAdultPrice()}  + ${childNum} * ${departureFlight.getEconomyChildPrice()}  + ${infantNum} * ${departureFlight.getEconomyInfantPrice()} + '원'"></span>
                 </p>
+                </div>
                 <!--선택한 항공편 확인 끝-->
                 <!--상세요금 보기-->
                 <div class="rightbox">
@@ -109,7 +110,7 @@
             <!--예약자 정보 입력-->
             <!--예약자 정보 입력 끝-->
             <!--하단 예약정보 입력-->
-            <div class="bbox" >
+            <div class="bbox" style="display: block;">
                 <div th:each="count : ${countList}">
                     <input type="hidden" th:value="${departureFlight.getIdx()}" th:name="'infoList['+ ${count.getId()-1} + '].departureTicketId'" >
                     <input type="hidden" th:value="${session.email}" th:name="'infoList['+ ${count.getId()-1} + '].email'" >
@@ -131,7 +132,7 @@
                             </div>
                             <div class="inRight">
                                 <p class="box_title">탑승자 한글이름</p>
-                                <input type="text" id="" th:name="'infoList['+ ${count.getId()-1} + '].passengerName'" placeholder="홍길동">
+                                <input type="text" id="name" th:name="'infoList['+ ${count.getId()-1} + '].passengerName'" placeholder="홍길동" style="margin-left: 10px;">
                                 <p class="btSm">예약 후 변경 불가</p>
                             </div>
                         </div>
@@ -144,8 +145,8 @@
                             <div class="inRight">
                                 <p class="box_title">성별</p>
                                 <div class="label_box gender">
-                                    <label for="man"><input type="checkbox" th:name="'infoList['+ ${count.getId()-1} + '].gender'" id="man" value="남자">남자</label>
-                                    <label for="female"><input type="checkbox" th:name="'infoList['+ ${count.getId()-1}+ '].gender'" id="female" value="여자">여자</label>
+                                    <label for="man"><input type="radio" th:name="'infoList['+ ${count.getId()-1} + '].gender'" id="man" name="gender" value="남자">남자</label>
+                                    <label for="female"><input type="radio" th:name="'infoList['+ ${count.getId()-1}+ '].gender'" id="female" name="gender" value="여자">여자</label>
                                 </div>
                                 <p class="btSm gender">예약 후 변경 불가</p>
                             </div>
@@ -227,6 +228,7 @@
     <footer th:replace="fragement/footer :: footer"></footer>
     <!-- footer 끝 -->
 
+    <script src="/app/js/form.js"></script>
 <script>
         let  boxshow = document.querySelector(".smallpayShow");
 let showBox = true;

@@ -20,7 +20,6 @@
         </div>
         <!--선택한 항공권-->
         <form method="post" th:action="@{/Triple/flightReservation/oneway}" name="flightForm">
-            <fieldset>
                 <div class="comtofly" th:each="airTicket : ${airTicketList}">
                     <input type="radio" th:value="${airTicket.getIdx()}" th:id="${airTicket.getIdx()}" name="departureFlight">
                     <label th:for="${airTicket.getIdx()}">
@@ -59,7 +58,6 @@
                     </label>
                     <!--선택한 항공권 정보 끝-->
                 </div>
-            </fieldset>
             <!--선택한 항공권 끝-->
 
             <!--요금 안내 및 예약-->
@@ -90,6 +88,8 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
+<!--                    </div>-->
+<!--                    <div class="inner2">-->
                         <p>좌석등급</p>
                         <select name="seatClass">
                             <option value="premium">프리미엄</option>
@@ -114,7 +114,7 @@
                     <!--                        <div class="tot"><p>최종 결제금액</p> <p>542,300원</p></div>-->
                     <!--                    </div>-->
                     <!--상세요금 끝-->
-                    <p style="padding-top: 55px;">
+                    <p style="padding-top: 10px">
                         <input type="submit" value="선택한 항공권 예약하기">
                     </p>
                 </div>
