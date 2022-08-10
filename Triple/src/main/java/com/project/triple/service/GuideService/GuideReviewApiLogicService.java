@@ -75,7 +75,7 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
         Optional<GuideReview> guideReview = baseRepository.findById(id);
         GuideReviewApiResponse guideReviewApiResponse = guideReview.map(guideReview1 -> response(guideReview1)).get();
         Guide guide = guideApiLogicService.read2(id2);
-        Double newCount = (guide.getStarCount() * guide.getReviewCount()) - guideReviewApiResponse.getStarCount();
+        Double newCount = ((double)guide.getStarCount() * (double)guide.getReviewCount()) - (double)guideReviewApiResponse.getStarCount();
         Integer newReviewCount = guide.getReviewCount() - 1;
         Double zero = 0.0;
         if(newReviewCount == 0){
@@ -102,8 +102,8 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
         guideReview.setUploadPath("/files/"+filename);
         Guide guide = guideApiLogicService.read2(guideReview.getPostId());
         GuideReview newguideReview = guideReviewRepository.save(guideReview);
-        Double newStar = ((guide.getStarCount() * guide.getReviewCount()) + guideReview.getStarCount())/(guide.getReviewCount()+1);
-        guide.setStarCount(Double.valueOf(Math.round(newStar*100)/100));
+        Double newStar = ((double)(guide.getStarCount() * guide.getReviewCount()) + (double)guideReview.getStarCount())/(double)(guide.getReviewCount()+1);
+        guide.setStarCount((double)(Math.round(newStar * 100) / 100));
         guide.setReviewCount(guide.getReviewCount()+1);
         guideApiLogicService.starCountUpdate(guide);
 
