@@ -2262,14 +2262,14 @@ public class PageController {
         }else{
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
-            email = (String) session.getAttribute("email");
+//            email = (String) session.getAttribute("email");
         }
-        Long userId = usersApiLogicService.findIdx(email);
+//        Long userId = usersApiLogicService.findIdx(email);
         SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
         Long tourId = spotApiResponse.getIdx();
         List<SpotReviewApiResponse> spotReviewApiResponses = spotReviewApiLogicService.findReview(tourId).getData();
 
-        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userId", userId)
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userId", userid)
                 .addObject("name", name).addObject("tour" , spotApiResponse)
                 .addObject("reviewList", spotReviewApiResponses);
     }

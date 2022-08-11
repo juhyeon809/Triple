@@ -91,7 +91,7 @@ create sequence seq_aircraft
     increment by 1
     start with 1;
    
-select * from air_ticket where departure_airport='ÀÎÃµ°øÇ×' and landing_airport='³ª¸®Å¸°øÇ×' and departure_time like '%2022-08-07%';
+select * from air_ticket where departure_airport='?ÎÃµ°øÇ×' and landing_airport='³ª¸®Å¸°øÇ×' and departure_time like '%2022-08-07%';
 commit;
 select * from air_ticket;
 drop table admin_user;
