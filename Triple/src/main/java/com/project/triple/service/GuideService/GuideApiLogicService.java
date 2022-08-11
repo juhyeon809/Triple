@@ -53,6 +53,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
                 .simpleConversation(guide.getSimpleConversation())
                 .regDate(guide.getRegDate())
                 .reviewCount(guide.getReviewCount())
+                .starCount(guide.getStarCount())
                 .build();
         return guideApiResponse;
     }
@@ -73,6 +74,12 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         GuideApiResponse guideApiResponse = response(guideRepository.findById(id).get());
 
         return Header.OK(guideApiResponse);
+    }
+
+    public Guide read2(Long id) {
+        Guide guide = guideRepository.findById(id).get();
+
+        return guide;
     }
 
     @Override
@@ -96,6 +103,8 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         file.transferTo(savFile);
         guide.setFileName(filename);
         guide.setUploadPath("/files/"+filename);
+        guide.setReviewCount(0);
+        guide.setStarCount(0.0);
         guideRepository.save(guide);
     }
 
@@ -103,6 +112,10 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         List<GuideApiResponse> guideApiResponseList = guideRepository.findAll().stream().map(guide -> response(guide)).collect(Collectors.toList());
 
         return Header.OK(guideApiResponseList);
+    }
+
+    public void starCountUpdate(Guide guide) {
+        baseRepository.save(guide);
     }
 
 

@@ -12,6 +12,7 @@ import com.project.triple.model.network.response.AirResponse.AirTicketApiRespons
 import com.project.triple.service.AirService.AirTicketApiLogicService;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +27,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AirTicketApiController extends CrudController< AirTicketApiRequest,AirTicketApiResponse, AirTicket> {
 
+    @Autowired
     private final AirTicketApiLogicService airTicketApiLogicService;
 
 

@@ -6,7 +6,7 @@ function sendit(){
     const EmergencyPh = RegExp(/^\d{2,3}\d{3,4}\d{4}$/);
     const lastname = RegExp(/[A-Za-z]/);
     const firstname = RegExp(/[A-Za-z]/);
-    const birth = RegExp(/\d{4}\d{2}\d{2}/);
+    const birth = RegExp(/^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/);
     const ph_choice = RegExp(/^\d{2,3}\d{3,4}\d{4}$/);
     const passportNum = RegExp(/[a-zA-Z]{1}[0-9a-zA-Z]{2}[0-9]{7}/);
     const passportNum1 = RegExp(/[a-zA-Z]{1}|[a-zA-Z]{2}\d{8}/);
@@ -15,36 +15,8 @@ function sendit(){
 
 
 
-    if(!nameCheck.test($('#name').val())){ 
-        alert('이름 형식을 확인하세요!\n한글만 입력가능합니다');
-        $('#name').focus();
-        return false 
-    }
 
-    if(!phCheck.test($('#ph').val())){
-        alert('휴대폰번호 형식을 확인하세요');
-        $('#ph').focus();
-        return false;
-    }
 
-    if(!emailCheck.test($('#email').val())){
-        alert('이메일을 형식에 맞게 입력하세요');
-        $('#email').val('');
-        $('#email').focus();
-        return false
-    }
-    if(!EmergencyPh.test($('#ph2').val())){
-        alert('비상연락처를 형식에 맞게 입력하세요');
-        $('#ph2').val('');
-        $('#ph2').focus();
-        return false
-    }
-    if($('#ph').val() == $('#ph2').val()){
-        alert('비상연락처는 다른 번호로 입력해주세요')
-        $('#ph2').focus()
-
-        return false
-    }
     if(!lastname.test($('#lastname').val())){
         alert('영문 성을 입력해주세요');
         $('#lastname').val('');
@@ -57,7 +29,12 @@ function sendit(){
         $('#firstname').focus();
         return false
     }
-    
+    if(!nameCheck.test($('#name').val())){
+        alert('이름 형식을 확인하세요!\n한글만 입력가능합니다');
+        $('#name').focus();
+        return false
+    }
+
 
     if(!birth.test($('#birth').val())){
         alert('생년월일을 형식에 맞게 입력하세요');
