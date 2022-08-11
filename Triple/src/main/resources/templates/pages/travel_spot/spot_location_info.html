@@ -13,6 +13,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/app/js/mysave.js"></script>
 </head>
 <body>
     <!--header 시작-->
@@ -28,8 +29,31 @@
             <p><a href="/Triple/spot_restaurant">맛집</a></p>
             <p><a href="/Triple/tour_ticket_main">투어<span>&#183;</span>티켓</a></p>
         </div>
-        <div id="box_information">
+        <div id="utility_box">
+            <div id="utility_flex_box">
             <p class="title_text" th:text="${guide.getTitle()}"></p>
+            <p id="sub_text">리뷰 53 저장 828</p>
+                <div id="mark"><p>가이드</p></div>
+                <div id="utility_flex_box2">
+                    <form method="POST">
+                        <input type="hidden" id="itemNum" th:value="${guide.getIdx()}"/>
+                        <input type="hidden" id="userId" th:value="${userId}"/>
+                        <input type="hidden" id="location" th:value="${guide.getCity()}"/>
+                        <input type="hidden" id="title" th:value="${guide.getTitle()}"/>
+                        <input type="hidden" id="summary" th:value="${guide.getContent()}"/>
+                        <input type="hidden" id="saveType" th:value="'GUIDE'"/>
+                        <div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"><input type="button" id="sendit" value="저장하기"/></div>
+                    </form>
+                    <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="tour_info_btn_schedule"><img src="/lib/img/travel_spot_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
+                    <a href="/templates/pages/mypage/review/review_write.html"><div id="tour_info_btn_writereview"><img src="/lib/img/travel_spot_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
+                    <a href="#"><div id="tour_info_btn_share"><img src="/lib/img/travel_spot_img/icon_share.svg" alt="공유"> 공유하기</div></a>
+                </div>
+            </div>
+            <div id="like_save_box">
+            <img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt="">
+            </div>
+        </div>
+            <div id="box_information_img"><img src="/lib/img/travel_spot_img/overseas2.svg" alt=""></div>
             <div id="sub_flex_box">
             <p id="sub_text" th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
             <div id="like_save_box">

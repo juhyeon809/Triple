@@ -1,5 +1,6 @@
 package com.project.triple.model.network.response;
 
+import com.project.triple.model.enumclass.FaqCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class FaqApiResponse {
     private Long idx;
-    private String faqCategory;
+    private FaqCategory faqCategory;
     private String adminuserId;
     private String adminuserName;
     private String title;

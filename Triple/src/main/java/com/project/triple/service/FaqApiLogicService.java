@@ -1,6 +1,9 @@
 package com.project.triple.service;
 
 import com.project.triple.model.entity.Faq;
+import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.QnA.Question;
+import com.project.triple.model.enumclass.FaqCategory;
 import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.FaqApiRequest;
@@ -90,4 +93,36 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
                 .collect(Collectors.toList());
         return Header.OK(faqApiResponseList);
     }
+
+    public Header<List<FaqApiResponse>> AIR(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.AIR)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> LODGING(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.LODGING)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> TOUR(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.TOUR)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> SERVICE(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.SERVICE)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> COMMON(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.COMMON)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+
 }

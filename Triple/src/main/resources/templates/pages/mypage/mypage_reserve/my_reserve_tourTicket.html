@@ -46,7 +46,7 @@
                 <br>
                 <div class="re_main_3">
                     <div id="re_main_tit">지나간 예약</div>
-                    <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('unUSABLE')}" th:each="reserve : ${reserveList}">
+                    <div id="re_main_box" th:if="${reserve.getServiceLife().toString().equals('UNUSABLE')}" th:each="reserve : ${reserveList}">
                         <a th:href="'/Triple/reserve/'+${reserve.getTicketType().toString().toLowerCase()}+'/view/'+${reserve.getIdx()}">
                             <div id="re_main_place"><span th:text="${reserve.getTitle()}"></span>
                                 <br>

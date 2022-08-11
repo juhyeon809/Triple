@@ -26,7 +26,7 @@
                 <div>
                     <p class="coupon_name" th:text="${coupon.name}">[6월 혜택]국내 숙소 할인 3,000원</p>
                     <p class="coupon_condition" th:text="${coupon.useCondition}">5만원 이상 예약 시</p>
-                    <p class="coupon_date" th:text="${#temporals.format(coupon.getEndDate(), 'yyyy년-mm월-dd일 ')}+${#temporals.format(coupon.getEndDate(), 'hh')+'시 까지'}">2022.07.01 12시까지</p>
+                    <p class="coupon_date" th:text="${#temporals.format(coupon.getEndDate(), 'yyyy년-MM월-dd일 ')}+${#temporals.format(coupon.getEndDate(), 'hh')+'시 까지'}">2022.07.01 12시까지</p>
                     <br>
                     <div id="flex_p">
                         <p class="coupon_price" th:text="${#numbers.formatInteger(coupon.price, 4, 'COMMA')} + '원'">3,000원</p>
