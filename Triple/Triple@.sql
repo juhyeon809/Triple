@@ -500,7 +500,7 @@ create sequence seq_tourspot_review_reply
     start with 1;
     
 drop table restaurant;
-
+select * from restaurant;
 create table restaurant(
     idx number(7) primary key,
     country varchar2(30) not null,
@@ -533,6 +533,8 @@ create table restaurant(
     adminuser_name varchar2(50),
     reg_date date default sysdate,
     like_count number(7) default 0,
+    total_star number(10) default 0,
+    star_count number(3,1) default 0
     review_count number(7) default 0
 );
 
@@ -637,8 +639,9 @@ create table guide(
     reg_date date default sysdate,
     review_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(3) default 0
+    star_count number(3,1) default 0
 );
+alter table guide modify star_count number(3,1);
  
 create sequence seq_guide
     increment by 1

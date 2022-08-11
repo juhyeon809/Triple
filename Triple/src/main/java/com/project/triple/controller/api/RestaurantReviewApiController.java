@@ -35,5 +35,15 @@ public class RestaurantReviewApiController extends CrudController<RestaurantRevi
         return null ;
     }
 
+    @PostMapping("/update")
+    public ModelAndView update(HttpServletResponse response , RestaurantReview restaurantReview, MultipartFile file) throws Exception
+    {
+        restaurantReviewApiLogicService.update2(restaurantReview, file);
+        Long id = restaurantReview.getPostId();
+
+        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/restaurant/view/" + id);
+        return null ;
+    }
+
 
 }

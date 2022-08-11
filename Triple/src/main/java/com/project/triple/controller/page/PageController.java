@@ -1341,6 +1341,7 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
     }
 
+    //가이드 리뷰 삭제
     @RequestMapping(path = "/spot/location/review_delete/{id}/{id2}")      //http://localhost:9090/Triple/spot_location_info/{id}
     public ModelAndView spot_location_review_delete(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable Long id2) throws IOException{
         HttpSession session = request.getSession(false);
@@ -1357,6 +1358,26 @@ public class PageController {
 
 
         ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot/location/view/"+id2);
+        return null;
+    }
+
+    // 맛집 리뷰 삭제
+    @RequestMapping(path = "/spot/restaurant/review_delete/{id}/{id2}")      //http://localhost:9090/Triple/spot_location_info/{id}
+    public ModelAndView spot_restaurnat_review_delete(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable Long id2) throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        restaurantReviewApiLogicService.delete2(id, id2);
+
+
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot/restaurant/view/"+id2);
         return null;
     }
 

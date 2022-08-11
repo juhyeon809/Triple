@@ -24,6 +24,6 @@ public class RestaurantReviewApiResponse {
     private Integer likeCount;
     private Integer replyCount;
     private LocalDateTime regDate;
-    private String starCount;
+    private Integer starCount;
 }
 
