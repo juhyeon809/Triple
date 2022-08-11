@@ -78,8 +78,8 @@
             </li>
             <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="/Triple2/Triple/src/main/resources/Triple/admin/eventList">목록</a></li>
-                    <li><a href="/Triple2/Triple/src/main/resources/Triple/admin/event/register">등록</a></li>
+                    <li><a href="/Triple/admin/eventList">목록</a></li>
+                    <li><a href="/Triple/admin/event/register">등록</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
@@ -100,7 +100,7 @@
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="/Triple2/Triple/src/main/resources/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    <li><a href="/Triple/admin/faqList">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -109,7 +109,7 @@
                     <li><a href="/Triple/admin/admin_join">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            <li><a href="/Triple/admin/admin_login"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </aside>
 </section>
@@ -139,8 +139,8 @@
         <!--공지 리스트 테이블-->
         <table class="tbList">
             <tr>
-                <th class="check">
-                    <input type="checkbox" id="checkAll">
+                <th>
+                    번호
                 </th>
                 <th>
                     분류
@@ -152,20 +152,14 @@
                     작성날짜
                 </th>
             </tr>
-            <tr th:each="notice : ${noticeList}" th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}">
-                <td class="check"><input type="checkbox" name="notice"></td>
-                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getNoticeType()}"></a></td>
-                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getTitle}"></a></td>
-                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.getRegDate()}"></a></td>
+            <tr th:each="notice : ${noticeList}">
+                <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.idx}"></a></td>
+                <td th:text="${notice.getNoticeType()}"></td>
+                <td th:text="${notice.getTitle}"></td>
+                <td th:text="${notice.getRegDate()}"></td>
             </tr>
         </table>
         <!--공지 리스트 테이블 끝-->
-        <!--버튼 리스트-->
-        <div class="btnlist">
-            <button>등록</button>
-            <button>선택삭제</button>
-        </div>
-        <!--버튼리스트 끝-->
         <!--넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>
@@ -173,23 +167,7 @@
         <!--넘버링 끝-->
     </div>
 </section>
-<script src="../script.js"></script>
-<script>
-    $(document).ready(function(){
-        //약관동의 체크박스 전체 선택
-        $("#checkAll").click(function() {
-            if($("#checkAll").is(":checked")) $("input[name='notice']").prop("checked", true);
-            else $("input[name='notice']").prop("checked", false);
-        });
-        $("input[name='notice']").click(function() {
-            var total = $("input[name='notice']").length;
-            var checked = $("input[name='notice']:checked").length;
+<script src="/app/js/script.js"></script>
 
-            //개별선택 해제시 전체체크박스 해제
-            if(total != checked) $("#checkAll").prop("checked", false);
-            else $("#checkAll").prop("checked", true);
-        });
-    });
-</script>
 </body>
 </html>

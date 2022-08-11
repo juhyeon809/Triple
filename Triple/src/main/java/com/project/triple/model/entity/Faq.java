@@ -1,7 +1,6 @@
 package com.project.triple.model.entity;
 
 import com.project.triple.model.entity.User.AdminUser;
-import com.project.triple.model.enumclass.FaqCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,18 +27,13 @@ public class Faq {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_faq")
     private Long idx;
-    private Integer faqNum;
     private String faqCategory;
-//    private Long adminuserID;
+    private String adminuserId;
     private String adminuserName;
     private String title;
     private String content;
-//    private String uploadPath;
-//    private String fileName;
-//    private String fileType;
+
     @CreatedDate
     private LocalDateTime regDate;
 
-//    @ManyToOne
-//    private AdminUser adminUser;
 }

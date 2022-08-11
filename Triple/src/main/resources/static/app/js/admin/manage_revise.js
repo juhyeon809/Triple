@@ -5,8 +5,8 @@ $(function () {
     const expHp = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
     const expEmail = RegExp(/^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/);
 
-    $(document).on('click', '#sendit', function (){
-        const regform = document.getElementsByName('regform');
+    $(document).on('click', '#sendit_modify', function (){
+        const regform = document.getElementsByName('regForm');
         const userpw = document.getElementById('userpw');
         const userpw_re = document.getElementById('userpw_re');
         const email = document.getElementById('email');
@@ -80,6 +80,7 @@ $(function () {
             resultCode: "ok",
             description: "ok",
             data: {
+                idx: $('#idx').val(),
                 userid: $('#userid').val(),
                 name: $('#name').val(),
                 hp: $('#hp').val(),
@@ -89,22 +90,20 @@ $(function () {
                 position: $('#position option:selected').val()
             }
         }
-
         $.ajax({
-            type: "PUT",
             url: '/api/admin',
+            type: "PUT",
             data: JSON.stringify(jsonData),
             dataType: 'json',
             contentType: 'application/json',
-            success: function () {
-                alert('수정되었습니다.');
+            success: function(){
+                alert("수정했습니다");
                 location.href = "/Triple/adminList";
             },
-            error: function () {
+            error: function(){
                 alert('수정실패 (확인요망)');
                 location.reload();
             }
-
         });
     });
 });

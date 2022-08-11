@@ -6,10 +6,6 @@ $(function () {
     const expHp = RegExp(/^\d{3}-\d{3,4}-\d{4}$/);
     const expEmail = RegExp(/^[A-Za-z0-9\-\.]+@[A-Za-z0-9\-\.]+\.[A-Za-z0-9]+$/);
 
-    $(document).on('keydown', '#userid', function (){
-        $('#userid').attr("check_result","fail");
-    })
-
     $(document).on('click', '#idCheck', function () {
 
         let userid = $('#userid').val();
@@ -164,5 +160,7 @@ $(function () {
             }
 
         });
+
+
     });
 });

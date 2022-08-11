@@ -1,6 +1,7 @@
 package com.project.triple.controller.page;
 
 
+import com.project.triple.model.network.Header;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.*;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
@@ -1522,6 +1523,15 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("adminUser", adminUserApiResponse);
     }
+    /* 관리자 삭제 */
+    @RequestMapping(path="/adminList/delete/{idx}")        //http://localhost:9090/Triple/adminList/delete/{idx}
+    public ModelAndView adminListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header adminUserApiResponse = adminUserApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/adminList");
+        return null;
+
+    }
+
     /* 공지사항 리스트 */
     @RequestMapping(path = "/admin/noticeList")   //http://localhost:9090/Triple/admin/noticeList
     public ModelAndView noticeList(HttpServletRequest request) throws NullPointerException {
@@ -1560,7 +1570,7 @@ public class PageController {
     }
 
     /* 공지사항 상세보기 페이지 */
-    @RequestMapping(path="/admin/noticeList/view/{idx}")       //http://localhost:9090/Triple/adminList/view/{idx}
+    @RequestMapping(path="/admin/noticeList/view/{idx}")       //http://localhost:9090/Triple/noticeList/view/{idx}
     public ModelAndView noticeList_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -1576,6 +1586,14 @@ public class PageController {
                 .addObject("userid", userid)
                 .addObject("name", name)
                 .addObject("notice", noticeApiResponse);
+    }
+
+    /* 공지사항 삭제 */
+    @RequestMapping(path="/admin/noticeList/delete/{idx}")        //http://localhost:9090/Triple/noticeList/delete/{idx}
+    public ModelAndView noticeListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header noticeListApiResponse = noticeApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/noticeList");
+        return null;
     }
 
     /* 이벤트 리스트 */
@@ -1612,6 +1630,115 @@ public class PageController {
         return new ModelAndView("/pages/admin/event/eventRegister")
                 .addObject("userid", userid)
                 .addObject("name", name);
+    }
+
+    /* 이벤트 상세보기 페이지 */
+    @RequestMapping(path="/admin/eventList/view/{idx}")       //http://localhost:9090/Triple/eventList/view/{idx}
+    public ModelAndView eventList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        EventApiResponse eventApiResponse = eventApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/event/eventDetail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("event", eventApiResponse);
+    }
+
+    /* 이벤트 삭제 */
+    @RequestMapping(path="/admin/eventList/delete/{idx}")        //http://localhost:9090/Triple/eventList/delete/{idx}
+    public ModelAndView eventListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header eventListApiResponse = eventApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/eventList");
+        return null;
+    }
+
+    /* FAQ (관리자) 등록 */
+    @RequestMapping(path = "/admin/faq/register")        //http://localhost:9090/Triple/admin/faq/register
+    public ModelAndView faq_register(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+            ScriptUtils.alertAndMovePage(response, "관리자 로그인 후 이용하세요", "/Triple/admin/admin_login");
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        return new ModelAndView("/pages/admin/inquiry/admin_FAQ_regist")
+                .addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+
+    /* FAQ (관리자) 리스트 */
+    @RequestMapping(path = "/admin/faqList")   //http://localhost:9090/Triple/admin/faqList
+    public ModelAndView faqList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        List<FaqApiResponse> faqList = faqApiLogicService.search().getData();
+
+        return new ModelAndView("/pages/admin/inquiry/admin_FAQ_list").addObject("userid", userid)
+                .addObject("name", name).addObject("faqList", faqList);
+    }
+
+    /* faq 상세보기 페이지 */
+    @RequestMapping(path="/admin/faqList/view/{idx}")       //http://localhost:9090/Triple/adminList/view/{idx}
+    public ModelAndView faqList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        FaqApiResponse faqApiResponse = faqApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/inquiry/admin_FAQ_detail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("faq", faqApiResponse);
+    }
+    /* faq 삭제 */
+    @RequestMapping(path="/admin/faqList/delete/{idx}")        //http://localhost:9090/Triple/faqList/delete/{idx}
+    public ModelAndView faqListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header faqListApiResponse = faqApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/faqList");
+        return null;
+    }
+
+    /* faq 수정 */
+    @RequestMapping(path="/admin/faqList/modify/{idx}")       //http://localhost:9090/Triple/adminList/view/{idx}
+    public ModelAndView faqList_modify(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        FaqApiResponse faqApiResponse = faqApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/inquiry/admin_FAQ_adjust")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("faq", faqApiResponse);
     }
 
     // 마이페이지 메거진 등록

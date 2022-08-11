@@ -77,14 +77,14 @@
             </li>
             <li><a href="#"><i class='bx bx-gift icon'></i>이벤트<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="/templates/pages/admin/event/eventList.html">목록</a></li>
-                    <li><a href="/templates/pages/admin/event/eventRegister.html">등록</a></li>
+                    <li><a href="/Triple/admin/eventList">목록</a></li>
+                    <li><a href="/Triple/admin/event/register">등록</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color: #0098A1;"><i class='bx bx-list-ul icon'></i>공지사항<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
-                    <li><a href="/templates/Triple/admin/noticeList">목록</a></li>
-                    <li><a href="/templates/Triple/admin/notice/register" style="color:darkslategray; font-weight: bold;">등록</a></li>
+                    <li><a href="/Triple/admin/noticeList">목록</a></li>
+                    <li><a href="/Triple/admin/notice/register" style="color:darkslategray; font-weight: bold;">등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
@@ -99,7 +99,7 @@
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    <li><a href="/Triple/admin/faqList">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -138,14 +138,14 @@
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">제목</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" name="title" id="title" class="admin_inquiry_category2 title">
+                    <input type="text" name="title" id="title" class="admin_inquiry_category2 title" placeholder="제목을 입력하세요">
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">내용</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                            <textarea name="content" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px;">내용을 입력하세요
+                            <textarea name="content" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px;" placeholder="공지사항을 입력하세요">
                             </textarea>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
             </div>
             <div class="btnlist">
                 <input type="submit" value="등록" class="register_btn">
-                <input type="submit" value="취소" class="cancel_btn">
+                <input type="submit" value="취소" class="cancel_btn" onclick="location.href='/Triple/admin/noticeList'">
             </div>
         </form>
     </div>
