@@ -11,6 +11,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDateTime;
 
 @Data
@@ -52,6 +53,8 @@ public class Guide {
     @CreatedDate
     private LocalDateTime regDate;
     private Integer reviewCount;
+    private Integer totalStar;
+    private Double starCount;
 
 //    @ManyToOne
 //    private AdminUser adminUser;

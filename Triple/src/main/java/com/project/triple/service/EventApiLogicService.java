@@ -1,6 +1,7 @@
 package com.project.triple.service;
 
 import com.project.triple.model.entity.Event;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.EventApiRequest;
 import com.project.triple.model.network.response.EventApiResponse;
@@ -40,7 +41,7 @@ public class EventApiLogicService extends BaseService<EventApiRequest, EventApiR
     @Override
     public Header<EventApiResponse> create(Header<EventApiRequest> request) {
         EventApiRequest eventApiRequest = request.getData();
-        Event evnet = Event.builder().adminuserId(eventApiRequest.getAdminuserId())
+        Event event = Event.builder().adminuserId(eventApiRequest.getAdminuserId())
                 .adminuserName(eventApiRequest.getAdminuserName())
                 .eventType(eventApiRequest.getEventType())
                 .title(eventApiRequest.getTitle())
@@ -48,7 +49,7 @@ public class EventApiLogicService extends BaseService<EventApiRequest, EventApiR
                 .uploadPath(eventApiRequest.getUploadPath())
                 .fileName(eventApiRequest.getFileName())
                 .build();
-        Event newEvent = baseRepository.save(evnet);
+        Event newEvent = baseRepository.save(event);
         return Header.OK(response(newEvent));
     }
 
@@ -86,9 +87,9 @@ public class EventApiLogicService extends BaseService<EventApiRequest, EventApiR
         }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
-    /* 공지사항 조회 */
+    /* 이벤트 조회 */
     public Header<List<EventApiResponse>> search(){
-        List<Event> eventList = eventRepository.findAll();
+        List<Event> eventList = eventRepository.findAllByOrderByIdxDesc();
         List<EventApiResponse> eventApiResponseList = eventList.stream()
                 .map(event -> response(event))
                 .collect(Collectors.toList());

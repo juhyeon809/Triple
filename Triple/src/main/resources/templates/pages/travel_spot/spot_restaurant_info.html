@@ -42,7 +42,7 @@
             <div class="text_area">
                 <p class="title_text" th:text="${restaurant.getTitle()}"></p>
                 <p th:text="${restaurant.getSummary()}"></p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장10,981</p>
+                <p><span class="star_point" th:text="${restaurant.getStarCount()}+'점 ('+ ${restaurant.getReviewCount()}+')'" ></span><span>&#183;</span> 저장10,981</p>
                 <p th:text="${restaurant.getLocation()}"></p>
             </div>
         </div>
@@ -136,11 +136,14 @@
                     </div>
                 </div>
                 <div class="review_content" th:each="review : ${reviewList}">
+                    <div th:if="${review.getUserEmail()} == ${session.email}">
+                        <a th:href="'/Triple/spot/restaurant/review_delete/'+ ${review.getIdx()} + '/' + ${restaurant.getIdx()}">삭제하기</a>
+                        <a th:href="'/Triple/spot/review_update/restaurant/'+ ${review.getIdx()}">수정하기</a>
+                    </div>
                     <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
                     <div class="user_info_area">
                         <p class="userid_area" th:text="${review.getUserEmail()}"></p>
-                        <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                        <p class="star_area"><span class="star_point">★★★★☆</span></p>
+                        <p class="star_area"><span class="star_point" th:text="${review.getStarCount()}"></span></p>
                     </div>
                     <div class="review_context" >
                         <p th:text="${review.getContent()}"></p>

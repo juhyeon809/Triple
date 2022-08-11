@@ -107,7 +107,7 @@
                 <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                        <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                        <li><a href="/Triple/admin/faqList">FAQ</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -116,7 +116,7 @@
                         <li><a href="/Triple/admin/admin_join">등록</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+                <li><a href="/Triple/admin/admin_login"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
             </ul>
         </aside>
     </section>
@@ -161,13 +161,13 @@
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">출발지</div>
-                    <select name="departureAirport"  class="admin_inquiry_category2">
+                    <select name="departureAirport"  class="admin_inquiry_category2" style="width: 79%;">
                         <option th:each="departureairport: ${airportList}"  th:value="${departureairport.getAirportName()}" th:text="${departureairport.getAirportName()}"></option>
                     </select>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">도착지</div>
-                    <select name="landingAirport"  class="admin_inquiry_category2">
+                    <select name="landingAirport"  class="admin_inquiry_category2" style="width: 79%;">
                         <option th:each="landingairport: ${airportList}"  th:value="${landingairport.getAirportName()}" th:text="${landingairport.getAirportName()}"></option>
                     </select>
                 </div>

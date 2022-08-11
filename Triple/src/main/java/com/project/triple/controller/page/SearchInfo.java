@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class SearchInfo {
     private String departureTime;
     private String comebackTime;
+    private String onewayTime;
     private String departureAirport;
     private String landingAirport;
 }

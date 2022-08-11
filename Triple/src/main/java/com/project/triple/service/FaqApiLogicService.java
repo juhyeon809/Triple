@@ -4,18 +4,18 @@ import com.project.triple.model.entity.Faq;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.QnA.Question;
 import com.project.triple.model.enumclass.FaqCategory;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.FaqApiRequest;
 import com.project.triple.model.network.response.FaqApiResponse;
-import com.project.triple.model.network.response.MagazineApiResponse;
-import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.FaqRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,9 +33,6 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
                 .adminuserName(faq.getAdminuserName())
                 .title(faq.getTitle())
                 .content(faq.getContent())
-//                .uploadPath(faq.getUploadPath())
-//                .fileName(faq.getFileName())
-//                .fileType(faq.getFileType())
                 .regDate(faq.getRegDate())
                 .build();
         return faqApiResponse;
@@ -43,30 +40,54 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
 
     @Override
     public Header<FaqApiResponse> create(Header<FaqApiRequest> request) {
-        return null;
+        FaqApiRequest faqApiRequest = request.getData();
+        Faq faq = Faq.builder()
+                .adminuserId(faqApiRequest.getAdminuserId())
+                .adminuserName(faqApiRequest.getAdminuserName())
+                .faqCategory(faqApiRequest.getFaqCategory())
+                .title(faqApiRequest.getTitle())
+                .content(faqApiRequest.getContent())
+                .regDate(faqApiRequest.getRegDate())
+                .build();
+        Faq newFaq = baseRepository.save(faq);
+        return Header.OK(response(newFaq));
     }
-
     @Override
-    public Header<FaqApiResponse> read(Long idx) {
-        Faq faq = faqRepository.findByIdx(idx);
-
-        FaqApiResponse faqApiResponse = response(faq);
-
-        return Header.OK(faqApiResponse);
+    public Header<FaqApiResponse> read(Long id) {
+        return baseRepository.findById(id).map(faq -> response(faq)).map(Header::OK)
+                .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     @Override
     public Header<FaqApiResponse> update(Header<FaqApiRequest> request) {
-        return null;
+        FaqApiRequest faqApiRequest = request.getData();
+        Optional<Faq> faq = baseRepository.findById(faqApiRequest.getIdx());
+
+        return faq.map(
+                        faq1 -> {
+                            faq1.setAdminuserId(faqApiRequest.getAdminuserId());
+                            faq1.setAdminuserName(faqApiRequest.getAdminuserName());
+                            faq1.setFaqCategory(faqApiRequest.getFaqCategory());
+                            faq1.setTitle(faqApiRequest.getTitle());
+                            faq1.setContent(faqApiRequest.getContent());
+                            faq1.setRegDate(faqApiRequest.getRegDate());
+                            return faq1;
+                        }).map(faq1 -> baseRepository.save(faq1)).map(faq1 -> response(faq1)).map(Header::OK)
+                .orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     @Override
-    public Header<FaqApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long id) {
+        Optional<Faq> faq = baseRepository.findById(id);
+        return faq.map(faq1 -> {
+            baseRepository.delete(faq1);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
-    public Header<List<FaqApiResponse>> search(){
-        List<Faq> faqList = faqRepository.findAll();
+    /*faq 조회*/
+    public Header<List<FaqApiResponse>> search() {
+        List<Faq> faqList = faqRepository.findAllByOrderByIdxDesc();
         List<FaqApiResponse> faqApiResponseList = faqList.stream()
                 .map(faq -> response(faq))
                 .collect(Collectors.toList());

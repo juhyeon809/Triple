@@ -190,7 +190,7 @@
             <!--항공권 1개-->
             <div class="fly_item"  th:each="airTicket : ${airTicketList}" >
                 <ul class="fly_item_ul" >
-                    <li >
+                    <li>
                         <div class="fly_item_img" id="logo_select">
                             <img th:if= "${airTicket.getAirlineIdx() == 1111}" src="/lib/img/fly_img/jinair.svg" alt="jinair">
                             <img th:if= "${airTicket.getAirlineIdx() == 2222}" src="/lib/img/fly_img/jejuair.svg" alt="jejuair">

@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 관리자 상세</title>
-    <script src="/app/js/admin/join.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/app/css/admin.css">
 
 </head>
 <body>
-    <!--header-->
-    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header-->
+<div th:replace="fragement/adminTopbar :: adminTopbar"></div>
 <!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
@@ -91,8 +92,8 @@
                     <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                     <li><a href="/Triple/tourism_register">관광지 등록</a></li>
                     <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
-                        <li><a href="/Triple/guide_register">가이드 등록</a></li>
-                    </ul>
+                    <li><a href="/Triple/guide_register">가이드 등록</a></li>
+                </ul>
             </li>
             <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
 
@@ -100,7 +101,7 @@
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    <li><a href="/Triple/admin/faqList">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -109,7 +110,7 @@
                     <li><a href="/Triple/admin/admin_join">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            <li><a href="/Triple/admin/admin_login"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </aside>
 </section>
@@ -122,7 +123,7 @@
         </div>
         <!--타이틀 끝-->
         <!--관리자 정보 입력-->
-        <form name="regform" id="regform" method="POST" class="register_form">
+        <form action="#" class="regForm" id="regForm">
             <div class="admin_manage_form_container">
                 <div class="admin_manage_form_container_ul1">
                     <p class="admin_register_item">아이디 </p>
@@ -132,12 +133,14 @@
                 </div>
                 <div class="admin_manage_form_container_ul2">
                     <p class="admin_register_box">
-                        <input type="text" name="userid" id="userid" class="admin_register_adminid_content" placeholder="아이디를 입력하세요">
-                        <input type="button" name="btn" id="idCheck" value="CHECK" class="admin_register_btn">
+                        <input type="hidden" id="idx" name="idx" th:value="${adminUser.idx}">
+                        <input type="hidden" id="status" name="status" th:value="${adminUser.getStatus()}">
+                        <input type="hidden" id="regDate" name="regDate" th:value="${adminUser.getRegDate()}">
+                        <input type="text" name="userid" id="userid" class="admin_register_adminid_content" th:value="${adminUser.userid}" style="width: 100%;" readonly>
                     </p>
-                    <p><input type="name" name="name" id="name" class="admin_register_name_content" placeholder="이름을 입력하세요"></p>
-                    <p><input type="hp" name="hp" id="hp" class="admin_register_hp_content" placeholder="전화번호를 입력하세요"></p>
-                    <p><input type="email" name="email" id="email" class="admin_register_email_content" placeholder="이메일을 입력하세요"></p>
+                    <p><input type="name" name="name" id="name" class="admin_register_name_content" placeholder="이름을 입력하세요" th:value="${adminUser.name}"></p>
+                    <p><input type="hp" name="hp" id="hp" class="admin_register_hp_content" placeholder="전화번호를 입력하세요" th:value="${adminUser.hp}"></p>
+                    <p><input type="email" name="email" id="email" class="admin_register_email_content" placeholder="이메일을 입력하세요" th:value="${adminUser.email}"></p>
                 </div>
                 <div class="admin_manage_form_container_ul3">
                     <p class="admin_register_item">비밀번호 </p>
@@ -146,19 +149,19 @@
                     <p class="admin_register_item">직함 </p>
                 </div>
                 <div class="admin_manage_form_container_ul4">
-                    <p><input type="password" name="userpw" id="userpw" class="admin_register_adminpw_content" placeholder="비밀번호를 입력하세요"></p>
+                    <p><input type="password" name="userpw" id="userpw" class="admin_register_adminpw_content" placeholder="비밀번호를 입력하세요" th:value="${adminUser.userpw}"></p>
                     <p><input type="password" name="userpw_re" id="userpw_re" class="admin_register_adminpwre_content" placeholder="비밀번호를 확인해주세요"></p>
                     <p>
-                        <select name="department" id="department" class="admin_register_department_content" required>
-                            <option value="" disabled selected>전체</option>
+                        <select name="department" id="department" class="admin_register_department_content" required th:value="${adminUser.department}">
+                            <option value="" disabled>전체</option>
                             <option value="관리자">관리자</option>
                             <option value="영업">영업</option>
                             <option value="마케팅">마케팅</option>
                         </select>
                     </p>
                     <p>
-                        <select name="position" id="position" class="admin_register_title_content" required>
-                            <option value="" disabled selected>전체</option>
+                        <select name="position" id="position" class="admin_register_title_content" required th:value="${adminUser.position}">
+                            <option value="" disabled>전체</option>
                             <option value="대표">대표</option>
                             <option value="팀장">팀장</option>
                             <option value="부장">부장</option>
@@ -171,69 +174,23 @@
                 </div>
             </div>
             <div class="btnlist">
-                <input type="button" value="수정" class="change_btn" id="sendit" >
+                <input type="button" value="수정" class="change_btn" id="sendit_modify">
+                <input type="button" value="취소" class="btn" onclick="location.href='/Triple/adminList'">
+                <a th:href="'/Triple/adminList/delete/'+${adminUser.getIdx()}">
+                    <input type="button" value="삭제" class="btn" id="delete">
+                </a>
             </div>
         </form>
-        <!--관리자 정보입력 끝-->
-        <!--            &lt;!&ndash;관리자 정보 입력&ndash;&gt;-->
-        <!--            <form action="#" method="post">-->
-        <!--                <div class="admin_manage_form_container">-->
-        <!--                    <div class="admin_manage_form_container_ul1">-->
-        <!--                        <p class="admin_register_item">아이디 </p>-->
-        <!--                        <p class="admin_register_item">이름 </p>-->
-        <!--                        <p class="admin_register_item">연락처 </p>-->
-        <!--                        <p class="admin_register_item">이메일 </p>-->
-        <!--                    </div>-->
-        <!--                    <div class="admin_manage_form_container_ul2">-->
-        <!--                        <p><input type="text" class="admin_register_adminid_content" placeholder="apple1"></p>-->
-        <!--                        <p><input type="name" class="admin_register_name_content" placeholder="김사과"></p>-->
-        <!--                        <p><input type="hp" class="admin_register_hp_content" placeholder="010-1111-1111"></p>-->
-        <!--                        <p><input type="email" class="admin_register_email_content" placeholder="apple@triple.com"></p>-->
-        <!--                    </div>-->
-        <!--                    <div class="admin_manage_form_container_ul3">-->
-        <!--                        <p class="admin_register_item">비밀번호 </p>-->
-        <!--                        <p class="admin_register_item">비밀번호 확인 </p>-->
-        <!--                        <p class="admin_register_item">부서 </p>-->
-        <!--                        <p class="admin_register_item">직함 </p>-->
-        <!--                    </div>-->
-        <!--                    <div class="admin_manage_form_container_ul4">-->
-        <!--                        <p><input type="password" class="admin_register_adminpw_content" placeholder="******"></p>-->
-        <!--                        <p><input type="password" class="admin_register_adminpwre_content" placeholder="******"></p>-->
-        <!--                        <p>-->
-        <!--                            <select name="department" class="admin_register_department_content">-->
-        <!--                                <option value="전체">전체</option>-->
-        <!--                                <option value="관리자">관리자</option>-->
-        <!--                                <option value="영업">영업</option>-->
-        <!--                                <option value="마케팅">마케팅</option>-->
-        <!--                            </select>-->
-        <!--                        </p>-->
-        <!--                        <p>-->
-        <!--                            &lt;!&ndash;직함 선택&ndash;&gt;-->
-        <!--                            <select name="title" class="admin_register_title_content">-->
-        <!--                                <option value="전체">전체</option>-->
-        <!--                                <option value="대표">대표</option>-->
-        <!--                                <option value="팀장">팀장</option>-->
-        <!--                                <option value="부장">부장</option>-->
-        <!--                                <option value="차장">차장</option>-->
-        <!--                                <option value="대리">대리</option>-->
-        <!--                                <option value="주임">주임</option>-->
-        <!--                                <option value="사원">사원</option>-->
-        <!--                            </select>-->
-        <!--                            &lt;!&ndash;직함 선택 끝&ndash;&gt;-->
-        <!--                        </p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="btnlist">-->
-        <!--                    <button value="수정"><a href="#">수정</a></button>-->
-        <!--                    <button value="목록"><a href="/Triple/adminList">목록</a></button>-->
-        <!--                </div>-->
-        <!--            </form>-->
-        <!--            &lt;!&ndash;관리자 정보입력 끝&ndash;&gt;-->
     </div>
 </section>
 
+<!-- modify Js -->
+<script src="/app/js/admin/manage_revise.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="/app/js/script.js"></script>
-    <script src="/app/js/admin.js"></script>
+
+<!-- delete Js -->
+<script src="/app/js/admin/delete.js"></script>
+
 </body>
 </html>

@@ -54,6 +54,13 @@
             </div>
         </div>
             <div id="box_information_img"><img src="/lib/img/travel_spot_img/overseas2.svg" alt=""></div>
+            <div id="sub_flex_box">
+            <p id="sub_text" th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
+            <div id="like_save_box">
+            <img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt="">
+            </div>
+            </div>
+            <div id="box_information_img"><img th:src="@{${guide.getUploadPath()}}" alt=""></div>
             <div id="context_box">
                 <p th:text="${guide.getContent()}"></p>
             </div>
@@ -110,7 +117,7 @@
                     <td class="table_index">항공</td>
                     <td>
                         <p style=" margin: 0;" th:text="${guide.getAir()}"></p>
-                        <p style="text-align: right; margin: 0;"><a href="/templates/pages/flight_reservation/flight_main.html">현재 운항 중인 항공편 조회하기</a></p>
+                        <p style="text-align: right; margin: 0;"><a href="/Triple/flightMain">현재 운항 중인 항공편 조회하기</a></p>
                         
                     </td>
                 </tr>
@@ -129,25 +136,28 @@
                 <tr>
                     <td class="table_index">간단한 회화</td>
                     <td>
-                        <p th:text="${guide.getSimpleConversation()}"></p>
+                        <p style="white-space: pre-line;" th:text="${guide.getSimpleConversation()}"></p>
                     </td>
                 </tr>
             </table>
         </div>
         <div id="review_box">
             <div id="review_top">
-                <p class="index_p">리뷰 <span class="blue_text">332</span></p>
+                <p class="index_p">리뷰 <span class="blue_text" th:text="${guide.getReviewCount()}"></span></p>
                 <div id="review_write_see">
                     <p id="write_review"><a th:href="'/Triple/spot/review/guide/'+ ${guide.getIdx()}">리뷰 쓰기</a></p>
                     <p id="see_review"><a href="">리뷰 전체보기</a></p>
                 </div>
             </div>
             <div class="review_content" th:each="review : ${reviewList}">
+                <div th:if="${review.getUserEmail()} == ${session.email}">
+                 <a th:href="'/Triple/spot/location/review_delete/'+ ${review.getIdx()} + '/' + ${guide.getIdx()}">삭제하기</a>
+                 <a th:href="'/Triple/spot/review_update/guide/'+ ${review.getIdx()}">수정하기</a>
+                 </div>
                 <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
                 <div class="user_info_area">
                     <p class="userid_area" th:text="${review.getUserEmail()}"></p>
-                    <p class="userlevel_review_count">LEVEL1/2개의 리뷰</p>
-                    <p class="star_area"><span class="star_point">★★★★☆</span></p>
+                    <p class="star_area"><span class="star_point" th:text="${review.getStarCount()} + '점'"></span></p>
                 </div>
                 <div class="review_context" >
                     <p th:text="${review.getContent()}"></p>

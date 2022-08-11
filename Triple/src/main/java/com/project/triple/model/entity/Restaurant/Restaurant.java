@@ -58,6 +58,8 @@ public class Restaurant {
     @CreatedDate
     private LocalDateTime regDate;
     private Integer likeCount;
+    private Integer totalStar;
+    private Double starCount;
     private Integer reviewCount;
 
 }

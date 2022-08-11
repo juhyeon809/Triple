@@ -1,5 +1,6 @@
 package com.project.triple.service.RestaurantService;
 
+import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Restaurant.Restaurant;
 import com.project.triple.model.network.Header;
@@ -56,6 +57,8 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
                 .adminuserName(restaurant.getAdminuserName())
                 .regDate(restaurant.getRegDate())
                 .likeCount(restaurant.getLikeCount())
+                .totalStar(restaurant.getTotalStar())
+                .starCount(restaurant.getStarCount())
                 .reviewCount(restaurant.getReviewCount())
                 .build();
         return restaurantApiResponse;
@@ -72,6 +75,11 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         return restaurantRepository.findById(id).map(restaurant -> response(restaurant)).map(Header::OK)
                 .orElseGet(()->Header.ERROR("데이터 없음"));
 
+    }
+
+    public Restaurant read2(Long id){
+        Restaurant restaurant = restaurantRepository.findById(id).get();
+        return restaurant;
     }
 
     @Override
@@ -111,6 +119,9 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         menu3img.transferTo(savFile4);
         restaurant.setFileName4(filename4);
         restaurant.setUploadPath4("/files/" + filename4);
+        restaurant.setLikeCount(0);
+        restaurant.setTotalStar(0);
+        restaurant.setStarCount(0.0);
         restaurantRepository.save(restaurant);
     }
 
@@ -121,11 +132,15 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         return Header.OK(restaurantApiResponseList);
     }
 
-    public Header<RestaurantApiResponse> read2(Long itemNum){
-        Restaurant restaurant = restaurantRepository.findByIdx(itemNum);
-
-        RestaurantApiResponse restaurantApiResponse = response(restaurant);
-
-        return Header.OK(restaurantApiResponse);
+//    public Header<RestaurantApiResponse> read2(Long itemNum){
+//        Restaurant restaurant = restaurantRepository.findByIdx(itemNum);
+//
+//        RestaurantApiResponse restaurantApiResponse = response(restaurant);
+//
+//        return Header.OK(restaurantApiResponse);
+//    }
+    public void starCountUpdate(Restaurant restaurant) {
+        baseRepository.save(restaurant);
     }
+
 }

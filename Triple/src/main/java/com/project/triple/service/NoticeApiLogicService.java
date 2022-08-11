@@ -95,7 +95,7 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
 
     /* 공지사항 조회 */
     public Header<List<NoticeApiResponse>> search(){
-        List<Notice> noticeList = noticeRepository.findAll();
+        List<Notice> noticeList = noticeRepository.findAllByOrderByIdxDesc();
         List<NoticeApiResponse> noticeApiResponseList = noticeList.stream()
                 .map(notice -> response(notice))
                 .collect(Collectors.toList());

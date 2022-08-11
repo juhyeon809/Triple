@@ -20,13 +20,12 @@
         </div>
         <!--선택한 항공권-->
         <form method="post" th:action="@{/Triple/flightReservation}" name="flightForm">
-            <fieldset>
         <div class="comtofly" th:each="departure : ${departureList}">
             <input type="radio" th:value="${departure.getIdx()}" th:id="${departure.getIdx()}" name="departureFlight">
             <label th:for="${departure.getIdx()}">
             <div class="flyinfoBox">
                 <div class="infoMiniTit">
-                    <p th:text="'가는편' + ${departure.getDepartureAirport()} + ' - ' + ${departure.getLandingAirport()}"></p>
+                    <p th:text="'가는편 ' + ${departure.getDepartureAirport()} + ' - ' + ${departure.getLandingAirport()}"></p>
                     <span th:text="${departure.getAirlineName()}"></span>
                 </div>
                 <div class="flytimebox">
@@ -59,16 +58,14 @@
             </label>
             <!--선택한 항공권 정보 끝-->
         </div>
-            </fieldset>
         <!--선택한 항공권 끝-->
         <!--선택한 항공권 -->
-            <fieldset>
                 <div class="comtofly" th:each="comeback : ${comebackList}">
                     <input type="radio" th:value="${comeback.getIdx()}" th:id="${comeback.getIdx()}" name="comebackFlight">
                     <label th:for="${comeback.getIdx()}">
                         <div class="flyinfoBox">
                             <div class="infoMiniTit">
-                                <p th:text="'오는편'+ ${comeback.getDepartureAirport()} + ' - ' + ${comeback.getLandingAirport()}"></p>
+                                <p th:text="'오는편 '+ ${comeback.getDepartureAirport()} + ' - ' + ${comeback.getLandingAirport()}"></p>
                                 <span th:text="${comeback.getAirlineName()}"></span>
                             </div>
                             <div class="flytimebox">
@@ -89,7 +86,7 @@
                         <!--선택한 항공권 정보-->
                         <div class="chinfo">
                             <div>
-                                <img th:if="${comeback.getAirlineName() == '제주에어'}" src="/lib/img/fly_img/jejuair.svg" alt="">
+                                <img th:if="${comeback.getAirlineName() == '제주항공'}" src="/lib/img/fly_img/jejuair.svg" alt="">
                                 <img th:if="${comeback.getAirlineName() == '진에어'}" src="/lib/img/fly_img/jinair.svg" alt="">
                                 <img th:if="${comeback.getAirlineName() == '대한항공'}" src="/lib/img/fly_img/koreaair.svg" alt="">
                             </div>
@@ -101,7 +98,6 @@
                     </label>
                     <!--선택한 항공권 정보 끝-->
                 </div>
-            </fieldset>
             <!--요금 안내 및 예약-->
             <div class="totalPrice">
                 <div class="inner">
@@ -154,7 +150,7 @@
 <!--                        <div class="tot"><p>최종 결제금액</p> <p>542,300원</p></div>-->
 <!--                    </div>-->
                     <!--상세요금 끝-->
-                    <p style="padding-top: 55px;">
+                    <p style="padding-top: 10px">
                         <input type="submit" value="선택한 항공권 예약하기">
                     </p>
                 </div>

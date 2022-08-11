@@ -37,9 +37,10 @@
                 <div class="content_flex_box">
                     <div>
                         <p class="title_text"><a th:href="'/Triple/spot/location/view/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
-                        <p th:text="${guide.getContent().substring(0,5)}+'....'"></p>
+                        <p th:text="${guide.getContent()}"></p>
+                        <p th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
                     </div>
-                    <div><img src="/lib/img/travel_spot_img/overseas3.svg" alt=""></div>
+                    <div><img th:src="@{${guide.getUploadPath()}}" alt=""></div>
                 </div>
                 <hr>
             </div>

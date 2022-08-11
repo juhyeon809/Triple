@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="/app/js/flightMain.js"></script>
+
 </head>
 <body>
     <!--header 시작-->
@@ -32,14 +32,14 @@
             <ul>
                 <li>
                     <img src="/lib/img/fly_img/flying-airplane.png" alt="">
-                    <select name="departureAirport">
+                    <select name="departureAirport" style="width: 100%;">
                         <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                     
                 </li>
                 <li>
                     <img src="/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
-                    <select name="landingAirport">
+                    <select name="landingAirport" style="width: 91%;">
                     <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                 </li>
@@ -47,7 +47,7 @@
                     <img src="/lib/img/fly_img/office-monthly-calendar.png" alt="">
                     <input name="departureTime" type="date" class="flylist icon3 round1" placeholder="가는날" id="datepicker1">
                     <input name="comebackTime"  type="date" class="flylist icon3 round2" placeholder="오는날" id="datepicker2">
-                    <input name="departureTime" type="date" id="datepicker" class="flylist icon3 oneway" hidden placeholder="가는날">
+                    <input name="onewayTime" type="date" id="datepicker" class="flylist icon3 oneway" hidden placeholder="가는날">
 
                 </li>
                 <li>
@@ -144,8 +144,8 @@
             <div class="cheap">
                 <p class="fly_subtitle">해외 항공권</p>
                 <div class="special">
-                    <div class="imgbox" th:each="airTicket : ${overseasList}">
-                        <p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p>
+                    <div class="imgbox" th:each="airTicket : ${oversasList}">
+                        <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p></div>
                         <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
                         <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
                     </div>
@@ -157,7 +157,7 @@
                 <p class="fly_subtitle">국내 항공권</p>
                 <div class="special">
                     <div class="imgbox" th:each="airTicket : ${domesticList}">
-                        <p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p>
+                        <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p></div>
                         <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
                         <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
                     </div>
@@ -189,5 +189,6 @@
          });
 
   </script>
+    <script src="/app/js/flightMain.js"></script>
 </body>
 </html>

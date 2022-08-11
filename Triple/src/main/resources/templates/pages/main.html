@@ -25,24 +25,30 @@
         </div>
         <div id="head_search_air">
             <div id="form_area">
-                <form>
-                    <p><input type="text" placeholder="출발지" id="depart"></p>
-                    <p><input type="text" placeholder="도착지" id="arrive"></p>
+                <form th:action="@{/api/airTicket/search}" method="POST">
+                    <p> <select name="departureAirport" style="width: 100%;">
+                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
+                    </select></p>
+                    <p> <select name="departureAirport" style="width: 100%;">
+                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
+                    </select></p>
                     <select name="member" id="member">
                         <option value="선택안함" >선택안함</option>
                         <option value="성인">성인</option>
                         <option value="청소년">청소년</option>
                     </select>
                     <input type="date">
-                </form>
             </div>
-            <div id="changer"><img src="/lib/img/icon_sync.svg" alt=""></div>
+            <div id="mainSearch">
+                <button type="submit"><img src="/lib/img/search_zoom_icon.png"></button>
+            </div>
+            </form>
         </div>
     </div>
     <div id="logo_menus_area">
         <div><a href="/Triple/flightMain"><img src="/lib/img/airport.png" alt="항공권"></a></div>
         <div><a href="/templates/pages/lodging_room/lodging_main.html"><img src="/lib/img/hotel.png" alt="숙소예약"></a></div>
-        <div><a href="/templates/pages/tour_ticket/tour_ticket_main.html"><img src="/lib/img/tour_ticket.png" alt="투어/티켓"></a></div>
+        <div><a href="/Triple/tour_ticket_main"><img src="/lib/img/tour_ticket.png" alt="투어/티켓"></a></div>
         <div><a href="/Triple/package"><img src="/lib/img/package.png" alt="패키지여행"></a></div>
         <div><a href="/Triple/magazine"><img src="/lib/img/magazine.png" alt="여행매거진"></a></div>
         <div><a href="/Triple/event"><img src="/lib/img/event.png" alt="혜택/렌터카"></a></div>
