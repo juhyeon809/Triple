@@ -142,9 +142,9 @@
         <div id="cheapbox">
             <!--해외 특가 항공권-->
             <div class="cheap">
-                <p class="fly_subtitle">국내 항공권</p>
+                <p class="fly_subtitle">해외 항공권</p>
                 <div class="special">
-                    <div class="imgbox" th:each="airTicket, count(1,10) : ${overseasList}">
+                    <div class="imgbox" th:each="airTicket : ${oversasList}">
                         <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p></div>
                         <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
                         <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
@@ -154,7 +154,7 @@
             <!--해외 특가 항공권 끝-->
             <!--국내 특가 항공권-->
             <div class="cheap" >
-                <p class="fly_subtitle">해외 항공권</p>
+                <p class="fly_subtitle">국내 항공권</p>
                 <div class="special">
                     <div class="imgbox" th:each="airTicket : ${domesticList}">
                         <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p></div>

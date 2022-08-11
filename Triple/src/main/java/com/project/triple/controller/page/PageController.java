@@ -858,13 +858,12 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        List<AirTicketApiResponse> overseasList = airTicketApiLogicService.find_by_route("국내").getData();
-        List<AirTicketApiResponse> domesticList = airTicketApiLogicService.find_by_route("국제").getData();
+        List<AirTicketApiResponse> domesticList = airTicketApiLogicService.find_by_route("국내").getData();
+        List<AirTicketApiResponse> overseasList = airTicketApiLogicService.find_by_route("국제").getData();
         List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
 
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname).addObject("overseasList", overseasList)
-                .addObject("domesticList", domesticList).addObject("airportList", airportApiResponseList);
+                .addObject("nickname", nickname).addObject("oversasList", overseasList).addObject("domesticList", domesticList).addObject("airportList", airportApiResponseList);
     }
 
 

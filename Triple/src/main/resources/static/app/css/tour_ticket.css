@@ -252,6 +252,7 @@ header img, footer img {
 .tour-recent ul {
   flex-wrap: wrap;
   margin-bottom: 80px;
+
 }
 .tour-recent li {
   position: relative;
