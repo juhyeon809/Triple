@@ -534,7 +534,7 @@ create table restaurant(
     reg_date date default sysdate,
     like_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(3,1) default 0
+    star_count number(3,1) default 0,
     review_count number(7) default 0
 );
 
@@ -549,7 +549,7 @@ create table restaurant_review(
     post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
-    nickname varchar2(20) not null,
+    nickname varchar2(50) not null,
     user_email varchar2(50) not null,
     upload_path varchar2(200),
     file_name varchar2(200),
@@ -564,7 +564,7 @@ create sequence seq_restaurant_review
     start with 1;
     
 select * from event;
-
+update restaurant set review_count=0;
 create table restaurant_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,

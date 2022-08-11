@@ -122,6 +122,7 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         restaurant.setLikeCount(0);
         restaurant.setTotalStar(0);
         restaurant.setStarCount(0.0);
+        restaurant.setReviewCount(0);
         restaurantRepository.save(restaurant);
     }
 
