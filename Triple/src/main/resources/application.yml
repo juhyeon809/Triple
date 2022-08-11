@@ -4,4 +4,3 @@ spring:
     url: jdbc:oracle:thin:@db20220721173355_high?TNS_ADMIN=
     username: admin
     password:
-

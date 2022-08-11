@@ -6,7 +6,7 @@
 
 /* 항공권 예약 */
 #container {
-    margin: 0 auto; 
+    margin: 0 auto;
     width: 1000px;
 }
 .title {
@@ -33,8 +33,8 @@
     background-color:  #F7F7F7; 
     padding: 10px; 
     width: 900px;
-    height: 400px;
-    margin: 0 auto; 
+    height: 350px;
+    margin: 0 auto 100px;
 }
 .flybox > ul {
     margin: 0 auto;
@@ -248,14 +248,16 @@ input[type="button"]{ width: 100px;}
 }
 
 #cheapbox {
-    margin: 0 auto;
+    margin: 0 auto 50px;
     width: 900px;
+    height: auto;
 }
 
 .special{
     width: 900px;
     margin: 0 auto;
-    display: flexbox;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -263,22 +265,48 @@ input[type="button"]{ width: 100px;}
     width: 160px; height: 150px;
     border-radius: 10px; 
     background-image: url("/lib/img/fly_img/box.png");
-    margin: 0; padding: 0; 
-    margin-right: 20px;
-    margin-left: 2px;
+    /*margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: 20px;
+}
+.special .imgbox:nth-child(6){
+    clear: both;
+}
+
+.special .imgbox .top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #666666;
+    height: 30px;
+    margin-bottom: 40px;
+}
+.special .imgbox a{
+    color: #FFFFFF;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.special .imgbox a:valid{
+    color: #FFFFFF;
 }
 .special .imgbox:last-child, .special .imgbox:nth-child(5){
     margin-right: 0;
 }
-.special .imgbox p {
+.special .imgbox p:first-child {
     margin: 0; 
     color: white;
-    font-size: 14px;
-    width: 100px; 
+    font-size: 14px !important;
+    width: 100px;
+    padding: 5px 0 0 10px;
+}
+.special .imgbox p:last-child{
+    font-size: 12px;
+    color: white;
+    width: 100px;
+    margin: 0;
     padding-left: 10px;
 }
-.special .imgbox p:first-child {padding-top: 5px; }
-.special .imgbox p:nth-child(2) {margin-top: 80px;}
 
 .cheap{ 
     width: 900px;
@@ -287,13 +315,6 @@ input[type="button"]{ width: 100px;}
     margin: 0 auto;
 }
 
-.special .imgbox { 
-    box-sizing: border-box; 
-    float: left; 
-    margin-right: 20px;  
-    margin-bottom: 20px; 
-}
-.special .imgbox:nth-child(6) {clear: both;}
 
 h4 {font-size: 18px;}
 
@@ -690,7 +711,8 @@ p.sm {
 }
 .flyinfoBox { 
     width: 850px;
-    height: 180px; 
+    height: 180px;
+    background-color: #FFFFFF;
     border: 1px solid #eee; 
     border-radius: 10px;
     padding: 10px; 
@@ -705,8 +727,9 @@ p.sm {
     border-radius: 10px;
     padding: 10px 10px 0 10px;
     margin-left: 10px;
+    background-color: #FFFFFF;
     }
-.chinfo img {width: 30px;}
+.chinfo img {width: 25px;}
 .chinfo p {
     width: 150px; 
     margin: 0 0 0 5px; 

@@ -16,14 +16,14 @@
 
 </head>
 <body>
-<!--header 시작-->
-<div th:replace="fragement/header :: header"></div>
-<!--header 끝-->
-<div id="container">
-    <div class="title">
+    <!--header 시작-->
+    <div th:replace="fragement/header :: header"></div>
+    <!--header 끝-->
+    <div id="container">
+        <div class="title">
         <p class="fly_title">쉽고 빠르게, 트리플 항공권 예약</p></div>
-    <!--항공권 검색 박스-->
-    <form th:action="@{/api/airTicket/search}" method="POST">
+        <!--항공권 검색 박스-->
+        <form th:action="@{/api/airTicket/search}" method="POST">
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
                 <a><input type="button" value="왕복" class="flybtn flybtn1" id="both"></a>
@@ -35,12 +35,12 @@
                     <select name="departureAirport" style="width: 100%;">
                         <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
-
+                    
                 </li>
                 <li>
                     <img src="/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
-                    <select name="landingAirport" style="width: 100%;">
-                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
+                    <select name="landingAirport" style="width: 91%;">
+                    <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                 </li>
                 <li>
@@ -51,8 +51,8 @@
 
                 </li>
                 <li>
-                    <input type="submit" class="flysearch" value="왕복 검색" id="search1">
-                    <input type="submit" class="flysearch" value="편도 검색" id="search2" hidden>
+                        <input type="submit" class="flysearch" value="왕복 검색" id="search1">
+                        <input type="submit" class="flysearch" value="편도 검색" id="search2" hidden>
                 </li>
             </ul>
             <!--항공권 검색 박스 인원조회 팝업-->
@@ -76,8 +76,8 @@
                         <div style="float: right;">
                             <img src="/lib/img/fly_img/minus.png" alt="" onclick='count1("minus")'>
                             <span class="result1">0</span>
-                            <img src="/lib/img/fly_img/plus.png" alt="" onclick='count1("plus")'>
-                        </div>
+                        <img src="/lib/img/fly_img/plus.png" alt="" onclick='count1("plus")'>
+                    </div>
                     </div>
                     <div class="div" style="clear: both;">
                         <div style="float: left;">
@@ -136,58 +136,59 @@
             </div>
             <!--항공권 검색 박스 인원조회 팝업 끝-->
         </div>
-    </form>
-    <!--항공권 검색 박스 끝-->
-    <!--특가 항공권 전체-->
-    <div id="cheapbox">
-        <!--해외 특가 항공권-->
-        <div class="cheap">
-            <p class="fly_subtitle">해외 항공권</p>
-            <div class="special">
-                <div class="imgbox" th:each="airTicket : ${overseasList}">
-                    <p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p>
-                    <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
-                    <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
+        </form>
+        <!--항공권 검색 박스 끝-->
+        <!--특가 항공권 전체-->
+        <div id="cheapbox">
+            <!--해외 특가 항공권-->
+            <div class="cheap">
+                <p class="fly_subtitle">국내 항공권</p>
+                <div class="special">
+                    <div class="imgbox" th:each="airTicket, count(1,10) : ${overseasList}">
+                        <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p></div>
+                        <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
+                        <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--해외 특가 항공권 끝-->
-        <!--국내 특가 항공권-->
-        <div class="cheap" >
-            <p class="fly_subtitle">국내 항공권</p>
-            <div class="special">
-                <div class="imgbox" th:each="airTicket : ${domesticList}">
-                    <p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p>
-                    <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
-                    <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
-                </div>
+            <!--해외 특가 항공권 끝-->
+            <!--국내 특가 항공권-->
+            <div class="cheap" >
+                <p class="fly_subtitle">해외 항공권</p>
+                <div class="special">
+                    <div class="imgbox" th:each="airTicket : ${domesticList}">
+                        <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p></div>
+                        <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
+                        <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
+                    </div>
 
+                </div>
             </div>
+            <!--국내 특가 항공권 끝-->
         </div>
-        <!--국내 특가 항공권 끝-->
+        <!--전체 특가 항공권 끝-->
     </div>
-    <!--전체 특가 항공권 끝-->
-</div>
 
-<!-- footer 시작 -->
-<footer th:replace="fragement/footer :: footer"></footer>
-<!-- footer 끝 -->
-<script src="/app/js/flightMain.js"></script>
-<script>
+    <!-- footer 시작 -->
+    <footer th:replace="fragement/footer :: footer"></footer>
+    <!-- footer 끝 -->
 
-    $(function(){
-        $('#datepicker').datepicker({
-            dateFormat:'yy-mm-dd'
-        });
-    })
+    <script>
+
+        $(function(){
+           $('#datepicker').datepicker({
+               dateFormat:'yy-mm-dd'
+           });
+        })
 
 
-    $(function() {
+        $(function() {
         $("#datepicker1, #datepicker2").datepicker({
             dateFormat: 'yy-mm-dd'
         });
-    });
+         });
 
-</script>
+  </script>
+    <script src="/app/js/flightMain.js"></script>
 </body>
 </html>

@@ -54,7 +54,9 @@ ul#mag_list {
     float: left;
     margin-left: 30px;
     width: 400px;
-    
+}
+.list_box img{
+    border-radius: 10px;
 }
 /*magazine list title*/
 #li_tit{
@@ -78,7 +80,7 @@ ul#mag_list {
     background-position: center;
     border: 1px solid white; 
     border-radius: 10px;
-    padding-left: 130px;
+    margin-left: 130px;
     height:200px;
     width: 150px;
 }
