@@ -132,6 +132,8 @@ public class PageController {
 
     @Autowired
     private LodgingApiLogicService  lodgingApiLogicService;
+
+    @Autowired
     private AirlineApiLogicService airlineApiLogicService;
 
     @Autowired
