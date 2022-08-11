@@ -161,13 +161,13 @@
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">출발지</div>
-                    <select name="departureAirport"  class="admin_inquiry_category2">
+                    <select name="departureAirport"  class="admin_inquiry_category2" style="width: 79%;">
                         <option th:each="departureairport: ${airportList}"  th:value="${departureairport.getAirportName()}" th:text="${departureairport.getAirportName()}"></option>
                     </select>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">도착지</div>
-                    <select name="landingAirport"  class="admin_inquiry_category2">
+                    <select name="landingAirport"  class="admin_inquiry_category2" style="width: 79%;">
                         <option th:each="landingairport: ${airportList}"  th:value="${landingairport.getAirportName()}" th:text="${landingairport.getAirportName()}"></option>
                     </select>
                 </div>

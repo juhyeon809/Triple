@@ -9,11 +9,12 @@ $(".checkbox_group").on("click", "#check_all", function(){
 $(".checkbox_group").on("click", ".normal", function(){
     var is_checked = true;
 
-    $(".checkbox_group .normal").each(function(){
-        is_checked = is_checked && $(this).is(":checked");
-    });
 
-    $("#check_all").prop("checked", is_checked);
+        $(".checkbox_group .normal").each(function(){
+            is_checked = is_checked && $(this).is(":checked");
+        });
+
+        $("#check_all").prop("checked", is_checked);
 });
 
 
@@ -188,3 +189,4 @@ $(function() {
         });
     });
 });
+

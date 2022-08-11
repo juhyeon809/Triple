@@ -32,6 +32,10 @@ a, button, select { cursor: pointer; background: none; border: none;}
   padding-left: 0;
   padding-right: 0;
 }
+.container section.wide-section img{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 section h1 {
   font-weight: bold;
   font-size: 30px;
@@ -248,6 +252,7 @@ header img, footer img {
 .tour-recent ul {
   flex-wrap: wrap;
   margin-bottom: 80px;
+
 }
 .tour-recent li {
   position: relative;

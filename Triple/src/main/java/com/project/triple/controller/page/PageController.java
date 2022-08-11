@@ -159,8 +159,10 @@ public class PageController {
         }
 
 
+        List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
+
         return new ModelAndView("/pages/main").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("airportList", airportApiResponseList);
 
     }
     //회원가입 페이지
@@ -856,13 +858,12 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        List<AirTicketApiResponse> overseasList = airTicketApiLogicService.find_by_route("국내").getData();
-        List<AirTicketApiResponse> domesticList = airTicketApiLogicService.find_by_route("국제").getData();
+        List<AirTicketApiResponse> domesticList = airTicketApiLogicService.find_by_route("국내").getData();
+        List<AirTicketApiResponse> overseasList = airTicketApiLogicService.find_by_route("국제").getData();
         List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
 
         return new ModelAndView("/pages/flight_reservation/flight_main").addObject("email", email)
-                .addObject("nickname", nickname).addObject("overseasList", overseasList)
-                .addObject("domesticList", domesticList).addObject("airportList", airportApiResponseList);
+                .addObject("nickname", nickname).addObject("oversasList", overseasList).addObject("domesticList", domesticList).addObject("airportList", airportApiResponseList);
     }
 
 
@@ -2061,8 +2062,9 @@ public class PageController {
         return new ModelAndView("/pages/admin/product/airline_select").addObject("userid", userid)
                 .addObject("name", name).addObject("airlineList", airlineApiResponseList);
     }
-    //항공권 등록
-    @RequestMapping(path = "/air_register/{airlineName}")
+
+    //항공권 등록록
+   @RequestMapping(path = "/air_register/{airlineName}")
     public ModelAndView air_register(@PathVariable String airlineName, HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -2118,7 +2120,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    //투어티켓 메인
+    //투어티켓 상세
     @RequestMapping(path = "/tour_ticket_view")
     public ModelAndView tour_ticket_view( HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -2136,7 +2138,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    //투어티켓 메인
+    //투어티켓 예약
     @RequestMapping(path = "/tour_ticket_reservation")
     public ModelAndView tour_ticket_reservation( HttpServletRequest request){
         HttpSession session = request.getSession(false);
