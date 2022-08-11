@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 회원가입</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="/app/js/join.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.26/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="/app/css/login_join.css">
     <style>
         #hp { width: 180px; margin-top: 10px;}
@@ -89,6 +90,7 @@
                     <p class="info_form">인증번호 입력</p>
                     <div class="content text_box">
                         <input type="text" name="Certification" id="Certification" maxlength="20" placeholder="숫자 6자리, 인증번호 입력">
+                        <input type="button" id="Certification_check" value="인증번호 확인">
                     </div>
                 </li>
                 <li>
@@ -101,19 +103,19 @@
                             </li>
                             <li>
                                 <label for="check_1"><span class="pilsoo">(필수)</span> 만 14세 이상입니다.</label>
-                                <input type="checkbox" id="check_1" class="normal">
+                                <input type="checkbox" id="check_1" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_2"><span class="pilsoo">(필수)</span> 서비스 이용약관</label>
-                                <input type="checkbox" id="check_2" class="normal">
+                                <input type="checkbox" id="check_2" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_3"><span class="pilsoo">(필수)</span> 개인정보 수집 및 이용 동의</label>
-                                <input type="checkbox" id="check_3" class="normal">
+                                <input type="checkbox" id="check_3" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_4"><span class="pilsoo">(필수)</span> 위치서비스 이용 동의</label>
-                                <input type="checkbox" id="check_4" class="normal">
+                                <input type="checkbox" id="check_4" class="normal" name="pilsoo">
                             </li>
                             <li>
                                 <label for="check_5">(선택) 이벤트 및 할인 혜택 안내 동의</label>
@@ -154,5 +156,8 @@
         </div>
     </footer>
     <!--footer 끝-->
+
+
+    <script src="/app/js/join.js"></script>
 </body>
 </html>

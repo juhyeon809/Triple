@@ -1,4 +1,4 @@
-+*-ate sequence auto_increment
+create sequence auto_increment
     increment by 1
     start with 1;
 drop table users;
@@ -91,11 +91,11 @@ create sequence seq_aircraft
     increment by 1
     start with 1;
    
-select * from air_ticket where departure_airport='ÀÎÃµ°øÇ×' and landing_airport='³ª¸®Å¸°øÇ×' and departure_time like '%2022-08-07%';
+select * from air_ticket where departure_airport='Ã€ÃÃƒÂµÂ°Ã¸Ã‡Ã—' and landing_airport='Â³ÂªÂ¸Â®Ã…Â¸Â°Ã¸Ã‡Ã—' and departure_time like '%2022-08-07%';
 commit;
 select * from air_ticket;
 drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹??‚¬ê³?', '010-1111-1111', 'ê´?ë¦¬ì', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+insert into admin_user values(1, 'apple123', 'apple123!', 'ÃªÂ¹??Â‚Â¬ÃªÂ³?', '010-1111-1111', 'ÃªÂ´?Ã«Â¦Â¬Ã¬ÂÂ', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
 commit;
 delete from air_ticket where idx=26;
@@ -506,17 +506,17 @@ create table restaurant(
     country varchar2(30) not null,
     city varchar2(30) not null,
     location varchar2(200) not null,
-    title varchar2(50) not null,
+    title varchar2(200) not null,
     summary varchar2(200) not null,
-    menu_name1 varchar2(30) not null,
+    menu_name1 varchar2(60) not null,
     menu_description1 varchar2(100) not null,
-    menu_price1 number(7) not null,
-    menu_name2 varchar2(30) not null,
+    menu_price1 varchar2(30) not null,
+    menu_name2 varchar2(60) not null,
     menu_description2 varchar2(100) not null,
-    menu_price2 number(7) not null,
-    menu_name3 varchar2(30) not null,
+    menu_price2 varchar2(30) not null,
+    menu_name3 varchar2(60) not null,
     menu_description3 varchar2(100) not null,
-    menu_price3 number(7) not null,
+    menu_price3 varchar2(30) not null,
     how_togo varchar2(200),
     available_at varchar2(200),
     tip varchar2(500),
@@ -534,7 +534,7 @@ create table restaurant(
     reg_date date default sysdate,
     like_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(3,1) default 0,
+    star_count number(10) default 0,
     review_count number(7) default 0
 );
 
