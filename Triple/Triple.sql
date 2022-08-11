@@ -278,7 +278,8 @@ create table reservation(
 create sequence seq_reservation
     increment by 1
     start with 1;
-    
+
+insert into reservation values (1, 'LODGING', 'b111', 'ÇÑµ¿È£', 'handho@naver.com', '010-1111-1111', '010-1111-1111', 162, '±¡', 'µÎÁş Å¸´Ï ±¡ ¸®Á¶Æ®', '2022-08-31', 'USABLE');
 insert into reservation values (1, 'AIR', 'a111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'CJU-GMP', '[ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½×°ï¿½ï¿½ï¿½', '2022-07-30', 'USABLE');
 insert into reservation values (2, 'LODGING', 'b111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®', '2022-07-30', 'USABLE');
 insert into reservation values (3, 'TOUR', 'c111', 'ï¿½ï¿½ï¿½ï¿½', 'apple@apple.com', '010-1111-1111', '010-1111-1111', 3, 'ï¿½ï¿½', 'ï¿½ï¿½ ï¿½×°ï¿½ + È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½ 5ï¿½ï¿½', '2022-07-30' ,'USABLE');
@@ -505,8 +506,10 @@ create sequence seq_coupon
     increment by 1
     start with 1;
 
-insert into coupon values (1, 1, '[8ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 3,000ï¿½ï¿½]', 'LODGING', 3000, '5ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½', 'USABLE', 'bbb', null, '2022-08-31', 'USABLE');
-insert into coupon values (2, 1, '[7ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 3,000ï¿½ï¿½]', 'LODGING', 3000, '5ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½', 'unUSABLE', 'bbb', null, '2022-07-31', 'EXPIRED');
+insert into coupon values (1, 1, '[8¿ù ÇıÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a111', null, '2022-08-31', 'USABLE');
+insert into coupon values (2, 2, '[8¿ù ÇıÅÃ]Åõ¾î ÇÒÀÎ 3,000¿ø', 'TOUR', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a333', null, '2022-08-31', 'USABLE');
+insert into coupon values (3, 3, '[8¿ù ÇıÅÃ]Ç×°ø ÇÒÀÎ 3,000¿ø', 'AIR', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a222', null, '2022-08-31', 'USABLE');
+insert into coupon values (4, 4, '[7¿ù ÇıÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'EXPIRED', 'a111', null, '2022-08-31', 'USED');
 
 create table user_coupon(
     idx number(7) primary key,
@@ -519,7 +522,7 @@ create sequence seq_user_coupon
     increment by 1
     start with 1;
 
-insert into user_coupon values(1, 3, 1, '2022-08-01');
+insert into user_coupon values(2, 162, 4, '2022-08-01');
 
 create table guide(
     idx number(7) primary key,
@@ -662,7 +665,7 @@ create table mysave(
     item_num number(7) not null,
     save_yn varchar2(10) not null,
     memo varchar2(100),
-    save_type varchar2(10) not null,
+    save_type varchar2(20) not null,
     reg_date date default sysdate
 );
 
@@ -689,10 +692,11 @@ create table notice(
     adminuser_name varchar2(20) not null,
     title varchar2(30) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(20),
-    reg_date date default sysdate
+    upload_path varchar2(200),
+    file_name varchar2(200),
+    file_type varchar2(20),
+    reg_date date default sysdate,
+    notice_type varchar2(20)
 );
 
 create sequence seq_notice
@@ -702,15 +706,11 @@ create sequence seq_notice
 
 create table faq(
     idx number(7),
-    faq_num number(7) not null,
     faq_category varchar2(20) not null,
-    adminuser_id number(7) not null,
+    adminuser_id varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    title varchar2(30) not null,
+    title varchar2(500) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(20),
     reg_date date default sysdate
 );
 
@@ -719,8 +719,19 @@ create sequence seq_faq
     start with 1;
 
 
-insert into faq values (1, 1, 'ï¿½×°ï¿½', 1, 'ï¿½ï¿½ï¿½', 'ï¿½×°ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×°ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½Ë´Ï´ï¿½', null, null, null, '2022-08-01');
+insert into faq values(1, 'SERVICE', 1, '»ç°ú', '¿¹¾àÀº ¾îµğ¼­ º¼ ¼ö ÀÖ³ª¿ä?', 'È¸¿ø Å»Åğ´Â ¾Æ·¡ÀÇ ¹æ¹ıÀ» ÅëÇØ °¡´ÉÇÕ´Ï´Ù.
 
+- ÀÌ¸ŞÀÏ È¸¿ø
+
+Æ®¸®ÇÃ »çÀÌÆ® ¸ŞÀÎ > ¿ìÃø »ó´Ü ¸¶ÀÌÆäÀÌÁö > ¼³Á¤ > ¼­ºñ½º Å»Åğ > ºñ¹Ğ¹øÈ£ ÀÔ·Â > Å»ÅğÇÕ´Ï´Ù ¼±ÅÃ
+
+- °£Æí·Î±×ÀÎ È¸¿ø(Ä«Ä«¿À, ³×ÀÌ¹ö, ÆäÀÌ½ººÏ, ¾ÖÇÃ)
+
+Æ®¸®ÇÃ »çÀÌÆ® ¸ŞÀÎ > ¿ìÃø »ó´Ü ¸¶ÀÌÆäÀÌÁö > ¼³Á¤ > ¼­ºñ½º Å»Åğ > °£Æí·Î±×ÀÎ °èÁ¤ ÀÎÁõ > Å»ÅğÇÕ´Ï´Ù ¼±ÅÃ', '2022-08-05');
+insert into faq values(1, 'AIR', 1, '»ç°ú', 'Ç×°øÆ¼ÄÏÀº ¿©±â¼­ ¹ŞÀ¸¼¼¿ä', '°øÇ×ÀÇ °¢ Ç×°ø»ç¿¡¼­ ¹ŞÀ¸½Ã¸é µË´Ï´Ù', '2022-08-05');
+insert into faq values(1, 'LODGING', 1, '»ç°ú', '¼÷¼Ò±îÁö ¾î¶»°Ô °¡³ª¿ä', '³×ÀÌ¹ö Áöµµ¸¦ ÀÌ¿ëÇÏ¼¼¿ä', '2022-08-05');
+insert into faq values(1, 'TOUR', 1, '»ç°ú', 'Æ¼ÄÏÀ» ÀÒ¾î¹ö·È¾î¿ä', '¹ß±ŞÃ³¿¡ ¹®ÀÇÇØÁÖ¼¼¿ä', '2022-08-05');
+insert into faq values(1, 'COMMON', 1, '»ç°ú', 'Æ¼ÄÏÀ» ÀÒ¾î¹ö·È¾î¿ä', '¹ß±ŞÃ³¿¡ ¹®ÀÇÇØÁÖ¼¼¿ä', '2022-08-05');
 
 
 

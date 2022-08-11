@@ -1,4 +1,4 @@
-create sequence auto_increment
++*-ate sequence auto_increment
     increment by 1
     start with 1;
 

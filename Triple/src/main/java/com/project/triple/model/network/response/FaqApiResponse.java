@@ -14,9 +14,8 @@ import java.time.LocalDateTime;
 @Builder
 public class FaqApiResponse {
     private Long idx;
-    private Integer faqNum;
-    private String faqCategory;
-    private Long adminuserID;
+    private FaqCategory faqCategory;
+    private String adminuserId;
     private String adminuserName;
     private String title;
     private String content;

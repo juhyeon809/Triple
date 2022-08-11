@@ -3,6 +3,7 @@ package com.project.triple.service;
 import com.project.triple.model.entity.Faq;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.QnA.Question;
+import com.project.triple.model.enumclass.FaqCategory;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.FaqApiRequest;
 import com.project.triple.model.network.response.FaqApiResponse;
@@ -27,9 +28,8 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
     private FaqApiResponse response(Faq faq) {
         FaqApiResponse faqApiResponse = FaqApiResponse.builder()
                 .idx(faq.getIdx())
-                .faqNum(faq.getFaqNum())
                 .faqCategory(faq.getFaqCategory())
-//                .adminuserID(faq.getAdminuserID())
+                .adminuserId(faq.getAdminuserId())
                 .adminuserName(faq.getAdminuserName())
                 .title(faq.getTitle())
                 .content(faq.getContent())
@@ -72,4 +72,36 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
                 .collect(Collectors.toList());
         return Header.OK(faqApiResponseList);
     }
+
+    public Header<List<FaqApiResponse>> AIR(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.AIR)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> LODGING(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.LODGING)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> TOUR(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.TOUR)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> SERVICE(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.SERVICE)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+    public Header<List<FaqApiResponse>> COMMON(){
+        List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.COMMON)
+                .stream().map(faq -> response(faq)).collect(Collectors.toList());
+        return Header.OK(faqApiResponseList);
+    }
+
+
 }

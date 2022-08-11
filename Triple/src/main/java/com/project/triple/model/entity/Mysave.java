@@ -28,7 +28,7 @@ public class Mysave {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_mysave")
     private Long idx;
-    private Long userid;
+    private Long userId;
     private Long itemNum;
     private String saveYn;
     private String memo;
@@ -36,6 +36,9 @@ public class Mysave {
     private SaveType saveType;
     @CreatedDate
     private LocalDateTime regDate;
+    private String location;
+    private String title;
+    private String summary;
 
 //    @ManyToOne
 //    private Users users;

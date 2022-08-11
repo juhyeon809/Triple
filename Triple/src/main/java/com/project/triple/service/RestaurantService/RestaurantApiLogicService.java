@@ -120,4 +120,12 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
         return Header.OK(restaurantApiResponseList);
     }
+
+    public Header<RestaurantApiResponse> read2(Long itemNum){
+        Restaurant restaurant = restaurantRepository.findByIdx(itemNum);
+
+        RestaurantApiResponse restaurantApiResponse = response(restaurant);
+
+        return Header.OK(restaurantApiResponse);
+    }
 }

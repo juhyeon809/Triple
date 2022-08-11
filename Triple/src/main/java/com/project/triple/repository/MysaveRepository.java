@@ -1,6 +1,7 @@
 package com.project.triple.repository;
 
 import com.project.triple.model.entity.Mysave;
+import com.project.triple.model.entity.QnA.Question;
 import com.project.triple.model.entity.Review;
 import com.project.triple.model.enumclass.SaveType;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,5 +15,7 @@ public interface MysaveRepository extends JpaRepository<Mysave, Long> {
 //
 //    Mysave findByIdx(Long idx);
 
-    List<Mysave> findAllBySaveType(SaveType saveType);
+    List<Mysave> findAllBySaveTypeAndUserId(SaveType saveType, Long userId);
+
+    List<Mysave> findAllByUserIdOrderByIdxDesc(Long userId);
 }

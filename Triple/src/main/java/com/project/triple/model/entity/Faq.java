@@ -28,9 +28,9 @@ public class Faq {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_faq")
     private Long idx;
-    private Integer faqNum;
-    private String faqCategory;
-//    private Long adminuserID;
+    @Enumerated(EnumType.STRING)
+    private FaqCategory faqCategory;
+    private String adminuserId;
     private String adminuserName;
     private String title;
     private String content;
