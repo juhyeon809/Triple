@@ -128,7 +128,7 @@
             <div class="review_content" th:each="review : ${reviewList}">
                 <div th:if="${review.getUserEmail()} == ${session.email}">
                  <a th:href="'/Triple/spot/location/review_delete/'+ ${review.getIdx()} + '/' + ${guide.getIdx()}">삭제하기</a>
-                 <a th:href="'/Triple/spot/location/review_update/'+ ${review.getIdx()}">수정하기</a>
+                 <a th:href="'/Triple/spot/review_update/guide/'+ ${review.getIdx()}">수정하기</a>
                  </div>
                 <div><img src="/lib/img/travel_spot_img/triple_vladivostok.svg" alt="" class="profile_picture"></div>
                 <div class="user_info_area">

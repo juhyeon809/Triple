@@ -53,6 +53,7 @@ public class Guide {
     @CreatedDate
     private LocalDateTime regDate;
     private Integer reviewCount;
+    private Integer totalStar;
     private Double starCount;
 
 //    @ManyToOne

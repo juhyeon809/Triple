@@ -1302,79 +1302,6 @@ public class PageController {
 
 
 
-
-
-
-    //투어 메인
-    @RequestMapping(path = "/spot_tour")
-    public ModelAndView spot_tour(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-
-
-        return new ModelAndView("/pages/travel_spot/spot_tour").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/spot_tour_info")
-    public ModelAndView spot_tour_info(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-    @RequestMapping(path = "/spot_review")          //http://localhost:9090/Triple/spot_review
-    public ModelAndView spot_review(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("spot_review_restaurant").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
-
-
-
-
-    //맛집 상세 페이지
-    @RequestMapping(path = "/spot_restaurant_info")
-    public ModelAndView spot_restaurant_info(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-        return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
     //스팟 해외
     @RequestMapping(path = "/spot_overseas")            //http://localhost:9090/Triple/spot_overseas
     public ModelAndView spot_overseas(HttpServletRequest request){
@@ -2000,6 +1927,43 @@ public class PageController {
         if(kind.equals("tour")){
             return new ModelAndView("/pages/travel_spot/spot_review_tour").addObject("email", email)
                     .addObject("nickname", nickname).addObject("kind", kind).addObject("postId", id);
+        }
+        else{
+            ScriptUtils.alertAndMovePage(response, "잘못된 접근입니다", "/Triple");
+            return null;
+        }
+    }
+
+
+    @RequestMapping(path = "/spot/review_update/{kind}/{id}")
+    public ModelAndView spot_review_update(@PathVariable String kind, @PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+            ScriptUtils.alertAndMovePage( response,"로그인 후 이용하세요", "/Triple/login");
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+        if(email==null || nickname==null){
+            ScriptUtils.alertAndMovePage( response,"로그인 후 이용하세요", "/Triple/login");
+        }
+
+        if(kind.equals("restaurant")){
+
+            return new ModelAndView("/pages/travel_spot/spot_review_update_restaurant").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("reviewId", id);
+        }
+        if(kind.equals("guide")){
+
+            return new ModelAndView("/pages/travel_spot/spot_review_update_guide").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("review", guideReviewApiLogicService.read(id).getData())
+                    ;
+        }
+        if(kind.equals("tour")){
+            return new ModelAndView("/pages/travel_spot/spot_review_update_tour").addObject("email", email)
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("reviewId", id);
         }
         else{
             ScriptUtils.alertAndMovePage(response, "잘못된 접근입니다", "/Triple");

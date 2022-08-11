@@ -35,6 +35,13 @@
                 <input type="hidden" name="postId" th:value="${postId}">
                 <input type="hidden" name="userEmail" th:value="${session.email}">
                 <input type="hidden" name="nickname" th:value="${session.nickname}">
+                <select name="starCount">
+                    <option value="1">1점</option>
+                    <option value="2">2점</option>
+                    <option value="3">3점</option>
+                    <option value="4">4점</option>
+                    <option value="5">5점</option>
+                </select>
                 <p><button type="reset" value="취소">취소</button> | <input type="submit" value="등록"></p>
                 <input type="text" name="title">
                 <textarea name="content" id="" placeholder="이 가이드는 어떠셨나요? 여행에서 알면 좋은 팁을 나눠주세요."></textarea>

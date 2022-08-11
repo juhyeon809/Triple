@@ -93,37 +93,6 @@ function sendit(){
         }
     }
 
-    let jsonData = {
-        transaction_time: new Date(),
-        resultCode: "ok",
-        description: "ok",
-        data: {
-            name: $('#name').val(),
-            hp: $('#ph').val(),
-            email: $('#email').val(),
-            emergencyHp: $('#ph2').val(),
-
-
-        }
-    }
-
-    $.post({
-        url: '/api/user',
-        data: JSON.stringify(jsonData),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function () {
-            alert('등록성공!');
-            location.href = '/Triple/login';
-        },
-        error: function () {
-            alert('등록실패!');
-            location.reload();
-        }
-
-    });
-
-
 
 }
 

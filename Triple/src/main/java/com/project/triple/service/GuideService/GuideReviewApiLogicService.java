@@ -33,6 +33,9 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
     @Autowired
     private GuideApiLogicService guideApiLogicService;
 
+    @Autowired
+    private GuideRepository guideRepository;
+
     private GuideReviewApiResponse response(GuideReview guideReview){
         GuideReviewApiResponse guideReviewApiResponse = GuideReviewApiResponse.builder()
                 .idx(guideReview.getIdx())
@@ -58,7 +61,7 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
 
     @Override
     public Header<GuideReviewApiResponse> read(Long id) {
-        return null;
+        return Header.OK(response(guideReviewRepository.findById(id).get()));
     }
 
     @Override
@@ -75,15 +78,21 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
         Optional<GuideReview> guideReview = baseRepository.findById(id);
         GuideReviewApiResponse guideReviewApiResponse = guideReview.map(guideReview1 -> response(guideReview1)).get();
         Guide guide = guideApiLogicService.read2(id2);
-        Double newCount = ((double)guide.getStarCount() * (double)guide.getReviewCount()) - (double)guideReviewApiResponse.getStarCount();
+        Integer newTotal = (guide.getTotalStar() - guideReviewApiResponse.getStarCount());
         Integer newReviewCount = guide.getReviewCount() - 1;
-        Double zero = 0.0;
         if(newReviewCount == 0){
-            guide.setReviewCount(newReviewCount);
-            guide.setStarCount(zero);
+            guide.setReviewCount(0);
+            guide.setStarCount(0.0);
+            guide.setTotalStar(0);
         }else {
             guide.setReviewCount(newReviewCount);
-            guide.setStarCount(newCount / newReviewCount);
+            guide.setTotalStar(newTotal);
+            guide.setStarCount(((((double)newTotal/(double)newReviewCount) * 100) / 100));
+        }
+        guideRepository.save(guide);
+        File file = new File(guide.getUploadPath() + "\\" + guide.getFileName());
+        if(file.exists()){
+            file.delete();
         }
         return guideReview.map(guideReview1->{
             baseRepository.delete(guideReview1);
@@ -101,12 +110,34 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
         guideReview.setFileName(filename);
         guideReview.setUploadPath("/files/"+filename);
         Guide guide = guideApiLogicService.read2(guideReview.getPostId());
+        guideReview.setReplyCount(0);
+        guideReview.setLikeCount(0);
         GuideReview newguideReview = guideReviewRepository.save(guideReview);
-        Double newStar = ((double)(guide.getStarCount() * guide.getReviewCount()) + (double)guideReview.getStarCount())/(double)(guide.getReviewCount()+1);
-        guide.setStarCount((double)(Math.round(newStar * 100) / 100));
+        double newStar= ((double)guide.getTotalStar() + (double)guideReview.getStarCount())/(double)(guide.getReviewCount()+1);
+        guide.setStarCount(newStar);
+        guide.setTotalStar(guide.getTotalStar() + guideReview.getStarCount());
         guide.setReviewCount(guide.getReviewCount()+1);
         guideApiLogicService.starCountUpdate(guide);
 
+    }
+    public void update2(GuideReview guideReview, MultipartFile file) throws Exception{
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        guideReview.setFileName(filename);
+        guideReview.setUploadPath("/files/"+filename);
+        Guide guide = guideApiLogicService.read2(guideReview.getPostId());
+        GuideReview orgReview = guideReviewRepository.findById(guideReview.getIdx()).get();
+        double newStar= ((double)guide.getTotalStar() -(double)orgReview.getStarCount() + (double)guideReview.getStarCount())/(double)(guide.getReviewCount());
+        orgReview.setTitle(guideReview.getTitle());
+        orgReview.setContent(guideReview.getContent());
+        orgReview.setStarCount(guideReview.getStarCount());
+        guideReviewRepository.save(orgReview);
+        guide.setStarCount(newStar);
+        guide.setTotalStar(guide.getTotalStar() - orgReview.getStarCount() + guideReview.getStarCount());
+        guideApiLogicService.starCountUpdate(guide);
     }
 
     public Header<List<GuideReviewApiResponse>> findReview(Long id){

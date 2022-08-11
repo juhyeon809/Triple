@@ -53,6 +53,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
                 .simpleConversation(guide.getSimpleConversation())
                 .regDate(guide.getRegDate())
                 .reviewCount(guide.getReviewCount())
+                .totalStar(guide.getTotalStar())
                 .starCount(guide.getStarCount())
                 .build();
         return guideApiResponse;
@@ -104,6 +105,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         guide.setFileName(filename);
         guide.setUploadPath("/files/"+filename);
         guide.setReviewCount(0);
+        guide.setTotalStar(0);
         guide.setStarCount(0.0);
         guideRepository.save(guide);
     }

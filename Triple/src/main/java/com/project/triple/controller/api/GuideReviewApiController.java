@@ -34,4 +34,14 @@ public class GuideReviewApiController extends CrudController<GuideApiRequest, Gu
         return null ;
     }
 
+    @PostMapping("/update")
+    public ModelAndView update(HttpServletResponse response , GuideReview guideReview, MultipartFile file) throws Exception
+    {
+        guideReviewApiLogicService.update2(guideReview, file);
+        Long id = guideReview.getPostId();
+
+        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/location/view/" + id);
+        return null ;
+    }
+
 }

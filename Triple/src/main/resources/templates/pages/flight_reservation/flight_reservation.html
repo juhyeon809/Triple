@@ -157,8 +157,8 @@
                         <div class="inRight">
                             <p class="box_title">성별</p>
                             <div class="label_box gender">
-                                <label for="man"><input type="radio" th:name="'infoList['+ ${count.getId()-1} + '].gender'" id="man" value="남자">남자</label>
-                                <label for="female"><input type="radio" th:name="'infoList['+ ${count.getId()-1}+ '].gender'" id="female" value="여자">여자</label>
+                                <label th:for="'man'+${count.getId()}" ><input type="radio" th:name="'infoList['+ ${count.getId()-1} + '].gender'" th:id="'man'+${count.getId()}" value="남자">남자</label>
+                                <label th:for="'female'+${count.getId()}"><input type="radio" th:name="'infoList['+ ${count.getId()-1}+ '].gender'" th:id="'female'+${count.getId()}" value="여자">여자</label>
                             </div>
                             <p class="btSm gender">예약 후 변경 불가</p>
                         </div>

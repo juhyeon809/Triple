@@ -56,6 +56,8 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
                 .adminuserName(restaurant.getAdminuserName())
                 .regDate(restaurant.getRegDate())
                 .likeCount(restaurant.getLikeCount())
+                .totalStar(restaurant.getTotalStar())
+                .starCount(restaurant.getStarCount())
                 .reviewCount(restaurant.getReviewCount())
                 .build();
         return restaurantApiResponse;
@@ -111,6 +113,9 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         menu3img.transferTo(savFile4);
         restaurant.setFileName4(filename4);
         restaurant.setUploadPath4("/files/" + filename4);
+        restaurant.setLikeCount(0);
+        restaurant.setTotalStar(0);
+        restaurant.setStarCount(0.0);
         restaurantRepository.save(restaurant);
     }
 
