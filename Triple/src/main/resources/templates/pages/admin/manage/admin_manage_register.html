@@ -15,7 +15,7 @@
 </head>
 <body>
 <!--header-->
-    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<div th:replace="fragement/adminTopbar :: adminTopbar"></div>
 <!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
@@ -93,8 +93,8 @@
                     <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                     <li><a href="/Triple/tourism_register">관광지 등록</a></li>
                     <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
-                        <li><a href="/Triple/guide_register">가이드 등록</a></li>
-                    </ul>
+                    <li><a href="/Triple/guide_register">가이드 등록</a></li>
+                </ul>
             </li>
             <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
 
@@ -102,7 +102,7 @@
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    <li><a href="/Triple/admin/faqList">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -111,7 +111,7 @@
                     <li><a href="/Triple/admin/admin_join" style="color:darkslategray; font-weight: bold;">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            <li><a href="/Triple/admin/admin_login"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </aside>
 </section>

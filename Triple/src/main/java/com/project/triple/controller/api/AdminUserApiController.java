@@ -9,8 +9,6 @@ import com.project.triple.service.UserService.AdminUserApiLogicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api/admin")    // http://localhost:9090/api/admin
 @RequiredArgsConstructor
@@ -68,6 +66,7 @@ public class AdminUserApiController extends CrudController<AdminUserApiRequest, 
         int cnt = adminUserApiLogicService.IdCheck(userid);
         return cnt;
     }
+
 
 
 }

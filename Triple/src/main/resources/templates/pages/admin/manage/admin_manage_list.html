@@ -12,13 +12,13 @@
     <script
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>\
-    <script src="/static/app/js/admin/manage_list.js"></script>
+            crossorigin="anonymous"></script>
+    <!--    <script src="/static/app/js/admin/manage_list.js"></script>-->
 
 </head>
 <body>
-    <!--header-->
-    <div th:replace="fragement/adminTopbar :: adminTopbar"></div>
+<!--header-->
+<div th:replace="fragement/adminTopbar :: adminTopbar"></div>
 <!--header 끝-->
 <!-- 사이드바-->
 <section id="sidebar">
@@ -96,8 +96,8 @@
                     <li><a href="/templates/pages/admin/spot/spotList.html">목록</a></li>
                     <li><a href="/Triple/tourism_register">관광지 등록</a></li>
                     <li><a href="/Triple/restaurant_register">맛집 등록</a></li>
-                        <li><a href="/Triple/guide_register">가이드 등록</a></li>
-                    </ul>
+                    <li><a href="/Triple/guide_register">가이드 등록</a></li>
+                </ul>
             </li>
             <li><a href="/templates/pages/admin/payment/payment.html"><i class='bx bx-credit-card icon'></i>결제</a>
 
@@ -105,7 +105,7 @@
             <li><a href="#"><i class='bx bx-question-mark icon'></i>문의<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/templates/pages/admin/inquiry/admin_inquiry_list.html">1:1 문의</a></li>
-                    <li><a href="/templates/pages/admin/inquiry/admin_FAQ_list.html">FAQ</a></li>
+                    <li><a href="/Triple/admin/faqList">FAQ</a></li>
                 </ul>
             </li>
             <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-user icon'></i>관리자 관리<i class='bx bx-chevron-right icon-right'></i></a>
@@ -114,7 +114,7 @@
                     <li><a href="/Triple/admin/admin_join">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
+            <li><a href="/Triple/admin/admin_login"><i class='bx bx-log-out icon'></i>로그아웃</a></li>
         </ul>
     </aside>
 </section>
@@ -128,7 +128,7 @@
             <nav>
                 <form action="#">
                     <div class="form-group">
-                        <select  >
+                        <select>
                             <option value="전체">전체</option>
                             <option value="성명">성명</option>
                             <option value="연락처">연락처</option>
@@ -144,7 +144,6 @@
         <!--관리자 리스트 테이블-->
         <table class="tbList">
             <tr>
-                <th><input type="checkbox" name="" id="checkAll"></th>
                 <th>고유번호</th>
                 <th>아이디</th>
                 <th>성명</th>
@@ -152,39 +151,14 @@
                 <th>직함</th>
             </tr>
             <tr th:each="adminuser : ${adminUserList}">
-                <td>
-                    <input type="checkbox" name="manager">
-                </td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.idx}"></td>
-                <td onclick="location.href='adminList/admin_detail'" th:href="@{/read(id=${adminuser.idx})}" th:text="${adminuser.userid}"></td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.name}"></td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.hp}"></td>
-                <td onclick="location.href='adminList/admin_detail'" th:text="${adminuser.position}"></td>
+                <td><a th:href="'/Triple/adminList/view/'+${adminuser.getIdx()}" th:text="${adminuser.idx}"></a></td>
+                <td th:href="${adminuser.idx}" th:text="${adminuser.userid}"></td>
+                <td th:text="${adminuser.name}"></td>
+                <td th:text="${adminuser.hp}"></td>
+                <td th:text="${adminuser.position}"></td>
             </tr>
         </table>
-        <script>
-            $(document).ready(function(){
-                //약관동의 체크박스 전체 선택
-                $("#checkAll").click(function() {
-                    if($("#checkAll").is(":checked")) $("input[name='manager']").prop("checked", true);
-                    else $("input[name='manager']").prop("checked", false);
-                });
-                $("input[name='manager']").click(function() {
-                    var total = $("input[name='manager']").length;
-                    var checked = $("input[name='manager']:checked").length;
-
-                    //개별선택 해제시 전체체크박스 해제
-                    if(total != checked) $("#checkAll").prop("checked", false);
-                    else $("#checkAll").prop("checked", true);
-                });
-            });
-        </script>
         <!--관리자 리스트 테이블 끝-->
-        <!--삭제버튼-->
-        <div class="btnlist">
-            <input type="button" value="선택삭제" class="delete" id="sendit">
-        </div>
-        <!--삭제버튼 끝-->
         <!--넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>
@@ -193,6 +167,6 @@
     </div>
 </section>
 
-    <script src="/app/js/script.js"></script>
+<script src="/app/js/script.js"></script>
 </body>
 </html>

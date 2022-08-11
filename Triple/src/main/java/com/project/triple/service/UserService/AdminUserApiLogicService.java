@@ -1,20 +1,15 @@
 package com.project.triple.service.UserService;
 
-import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.enumclass.AdminUserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.AdminUserApiRequest;
-import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.AdminUserRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -52,6 +47,7 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
                 .email(adminUserApiRequest.getEmail())
                 .position(adminUserApiRequest.getPosition())
                 .status(AdminUserStatus.REGISTERED)
+                .regDate(adminUserApiRequest.getRegDate())
                 .build();
         AdminUser newAdminUser = baseRepository.save(adminUser);
         return Header.OK(response(newAdminUser));
@@ -77,8 +73,6 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
                             adminUser1.setDepartment(adminUserApiRequest.getDepartment());
                             adminUser1.setEmail(adminUserApiRequest.getEmail());
                             adminUser1.setPosition(adminUserApiRequest.getPosition());
-                            adminUser1.setStatus(adminUserApiRequest.getStatus());
-                            adminUser1.setRegDate(adminUserApiRequest.getRegDate());
                             return adminUser1;
                         }).map(adminUser1 -> baseRepository.save(adminUser1)).map(adminUser1 -> response(adminUser1)).map(Header::OK)
                 .orElseGet(() -> Header.ERROR("데이터 없음"));
@@ -110,13 +104,10 @@ public class AdminUserApiLogicService extends BaseService<AdminUserApiRequest, A
 
     /*관리자 조회*/
     public Header<List<AdminUserApiResponse>> search(){
-        List<AdminUser> adminUserList = adminUserRepository.findAll();
+        List<AdminUser> adminUserList = adminUserRepository.findAllByOrderByIdxDesc();
         List<AdminUserApiResponse> adminUserApiResponseList = adminUserList.stream()
                 .map(adminUser -> response(adminUser))
                 .collect(Collectors.toList());
         return Header.OK(adminUserApiResponseList);
     }
-
-
-
 }
