@@ -2012,8 +2012,189 @@ public class PageController {
                 .addObject("faq", faqApiResponse);
     }
 
+    /* 회원 관리 > 회원 목록 */
+    @RequestMapping(path="/admin/userList")      //http://localhost:9090/Triple/admin/userList
+    public ModelAndView admin_userList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
 
-    // 마이페이지 메거진 등록
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<UsersApiResponse> userList = usersApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/member/memberlist")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("userList", userList);
+    }
+
+    /* 회원 관리 > 회원 가입 */
+    @RequestMapping(path="/admin/user/term")      //http://localhost:9090/Triple/admin/user/term
+    public ModelAndView admin_userTerm() {
+        return new ModelAndView("/pages/admin/member/memberSign-up");
+    }
+
+    /* 예약 조회 > 전체 */
+    @RequestMapping(path="/admin/booking/all")      //http://localhost:9090/Triple/admin/booking/all
+    public ModelAndView admin_booking_all(HttpServletRequest request) throws NullPointerException {
+
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<ReservationApiResponse> bookingList = reservationApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/booking/all")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("bookingList", bookingList);
+    }
+
+    /* 예약 조회 > 항공권 */
+    @RequestMapping(path="/admin/booking/fly")      //http://localhost:9090/Triple/admin/booking/fly
+    public ModelAndView admin_booking_fly() {
+        return new ModelAndView("/pages/admin/booking/fly_reservation");
+    }
+
+    /* 예약 조회 > 숙소 */
+    @RequestMapping(path="/admin/booking/lodging")      //http://localhost:9090/Triple/admin/booking/lodging
+    public ModelAndView admin_booking_lodging() {
+        return new ModelAndView("/pages/admin/booking/room_reservation");
+    }
+
+    /* 예약 조회 > 패키지 */
+    @RequestMapping(path="/admin/booking/package")      //http://localhost:9090/Triple/admin/booking/package
+    public ModelAndView admin_booking_package() {
+        return new ModelAndView("/pages/admin/booking/package_reservation");
+    }
+
+    /* 예약 조회 > 티켓 */
+    @RequestMapping(path="/admin/booking/ticket")      //http://localhost:9090/Triple/admin/booking/ticket
+    public ModelAndView admin_booking_ticket() {
+        return new ModelAndView("/pages/admin/booking/ticket_reservation");
+    }
+
+    /* 신규 등록 > 취항지 목록 */
+    @RequestMapping(path="/admin/destinationList")      //http://localhost:9090/Triple/admin/destinationList
+    public ModelAndView admin_destinationList() {
+        return new ModelAndView("/pages/admin/NewRegistration/destinationList");
+    }
+
+    /* 상품 목록 > 항공권 */
+    @RequestMapping(path="/admin/airLineList")      //http://localhost:9090/Triple/admin/airLineList
+    public ModelAndView admin_airLineList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<AirTicketApiResponse> airTicketList = airTicketApiLogicService.search_sort().getData();
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_airline")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("airTicketList", airTicketList);
+    }
+
+    /* 상품 목록 > 숙소 */
+    @RequestMapping(path="/admin/lodgingList")      //http://localhost:9090/Triple/admin/lodgingList
+    public ModelAndView admin_lodgingList() {
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_lodging");
+    }
+
+    /* 상품 목록 > 패키지 */
+    @RequestMapping(path="/admin/packageList")      //http://localhost:9090/Triple/admin/packageList
+    public ModelAndView admin_packageList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<PackageApiResponse> packageList = packageApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_package")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("packageList", packageList);
+    }
+
+    /* 상품 목록 > 티켓 */
+    @RequestMapping(path="/admin/ticketList")      //http://localhost:9090/Triple/admin/ticketList
+    public ModelAndView admin_ticketList() {
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_ticket");
+    }
+
+    /* 상품 목록 > 다이닝 */
+    @RequestMapping(path="/admin/restaurantList")      //http://localhost:9090/Triple/admin/restaurantList
+    public ModelAndView admin_restaurantList() {
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_restaurant");
+    }
+
+    /* 상품후기 */
+    @RequestMapping(path="/admin/reviewList")      //http://localhost:9090/Triple/admin/reviewList
+    public ModelAndView admin_reviewList() {
+        return new ModelAndView("/pages/admin/review/review");
+    }
+
+    /* 쿠폰 > 목록 */
+    @RequestMapping(path="/admin/couponList")      //http://localhost:9090/Triple/admin/couponList
+    public ModelAndView admin_couponList() {
+        return new ModelAndView("/pages/admin/coupon/couponList");
+    }
+
+    /* 쿠폰 > 등록 */
+    @RequestMapping(path="/admin/coupon/register")      //http://localhost:9090/Triple/admin/coupon/register
+    public ModelAndView admin_coupon_register() {
+        return new ModelAndView("/pages/admin/coupon/couponRegistration");
+    }
+
+    /* 매거진 > 목록 */
+    @RequestMapping(path="/admin/magazineList")      //http://localhost:9090/Triple/admin/magazineList
+    public ModelAndView admin_magazineList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<MagazineApiResponse> magazineList = magazineApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/magazine/magazine-list")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("magazineList", magazineList);
+    }
+
+    /* 여행스팟 > 목록 */
+    @RequestMapping(path="/admin/spotList")      //http://localhost:9090/Triple/admin/spotList
+    public ModelAndView admin_spotList() {
+        return new ModelAndView("/pages/admin/spot/spotList");
+    }
+
+    /* 결제 */
+    @RequestMapping(path="/admin/payment")      //http://localhost:9090/Triple/admin/payment
+    public ModelAndView admin_payment() {
+        return new ModelAndView("/pages/admin/payment/payment");
+    }
+
+    /* 1:1 문의 */
+    @RequestMapping(path="/admin/inquiryList")      //http://localhost:9090/Triple/admin/inquiryList
+    public ModelAndView admin_inquiryList() {
+        return new ModelAndView("/pages/admin/inquiry/admin_inquiry_list");
+    }
+
+
+    // 마이페이지 매거진 등록
     @RequestMapping(path = "/admin/magazine_register")      //http://localhost:9090/Triple/admin/magazine_register
     public ModelAndView magazine_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);

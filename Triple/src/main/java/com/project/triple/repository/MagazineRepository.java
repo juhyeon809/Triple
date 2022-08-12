@@ -1,6 +1,7 @@
 package com.project.triple.repository;
 
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.MagazineType;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,4 +16,6 @@ public interface MagazineRepository extends JpaRepository<Magazine, Long> {
     List<Magazine> findAllByMagazineType(MagazineType magazineType);
 
     Magazine findByIdx(Long idx);
+
+    List<Magazine> findAllByOrderByIdxDesc();
 }

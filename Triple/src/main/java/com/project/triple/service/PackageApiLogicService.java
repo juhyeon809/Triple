@@ -3,10 +3,12 @@ package com.project.triple.service;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Notice;
 import com.project.triple.model.entity.Package;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.PackageApiRequest;
 import com.project.triple.model.network.response.NoticeApiResponse;
 import com.project.triple.model.network.response.PackageApiResponse;
+import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.PackageRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -104,6 +106,15 @@ public class PackageApiLogicService extends BaseService<PackageApiRequest, Packa
                 aPackage -> response(aPackage)
         ).collect(Collectors.toList());
 
+        return Header.OK(packageApiResponseList);
+    }
+
+    /*패키지 조회*/
+    public Header<List<PackageApiResponse>> search(){
+        List<Package> packageList = packageRepository.findAllByOrderByIdxDesc();
+        List<PackageApiResponse> packageApiResponseList = packageList.stream()
+                .map(package1 -> response(package1))
+                .collect(Collectors.toList());
         return Header.OK(packageApiResponseList);
     }
 }

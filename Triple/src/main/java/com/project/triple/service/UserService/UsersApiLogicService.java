@@ -1,11 +1,13 @@
 package com.project.triple.service.UserService;
 
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
 import com.project.triple.model.network.response.MagazineApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -18,7 +20,9 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -145,6 +149,14 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
             System.out.println(e.getCode());
         }
 
+    }
+    /*사용자 조회*/
+    public Header<List<UsersApiResponse>> search(){
+        List<Users> usersList = usersRepository.findAllByOrderByIdxDesc();
+        List<UsersApiResponse> usersApiResponseList = usersList.stream()
+                .map(users -> response(users))
+                .collect(Collectors.toList());
+        return Header.OK(usersApiResponseList);
     }
 
 }

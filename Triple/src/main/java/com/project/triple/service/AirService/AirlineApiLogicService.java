@@ -2,9 +2,11 @@ package com.project.triple.service.AirService;
 
 import com.project.triple.model.entity.Air.Airline;
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Reservation.Reservation;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirlineApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
 import com.project.triple.repository.AirlineRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -89,6 +91,15 @@ public class AirlineApiLogicService extends BaseService<AirlineApiRequest, Airli
     public Header<List<AirlineApiResponse>> list() {
 
         List<AirlineApiResponse> airlineApiResponseList = airlineRepository.findAll().stream().map(airline -> response(airline)).collect(Collectors.toList());
+        return Header.OK(airlineApiResponseList);
+    }
+
+    /*항공기 조회*/
+    public Header<List<AirlineApiResponse>> search(){
+        List<Airline> airlineList = airlineRepository.findAllByOrderByIdxDesc();
+        List<AirlineApiResponse> airlineApiResponseList = airlineList.stream()
+                .map(airline -> response(airline))
+                .collect(Collectors.toList());
         return Header.OK(airlineApiResponseList);
     }
 }
