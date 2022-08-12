@@ -1572,14 +1572,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        Long userId = usersApiLogicService.findIdx(email);
+
         GuideApiResponse guide = guideApiLogicService.read(id).getData();
         Long guideIdx = guide.getIdx();
         List<GuideReviewApiResponse> guideReviewApiResponseList = guideReviewApiLogicService.findReview(guideIdx).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
-                .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList)
-                .addObject("userId", userId);
+                .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
     }
 
     //가이드 리뷰 삭제
@@ -2254,23 +2253,22 @@ public class PageController {
     @RequestMapping(path = "/spot/tour/view/{id}")
     public ModelAndView tour_view(@PathVariable Long id, HttpServletRequest request){
         HttpSession session = request.getSession(false);
-        String userid = null;
-        String name = null;
+        String nickname = null;
         String email = null;
         if(session == null){
 
         }else{
-            userid = (String)session.getAttribute("userid");
-            name = (String)session.getAttribute("name");
-//            email = (String) session.getAttribute("email");
+
+            nickname = (String)session.getAttribute("name");
+            email = (String) session.getAttribute("email");
         }
-//        Long userId = usersApiLogicService.findIdx(email);
+
         SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
         Long tourId = spotApiResponse.getIdx();
         List<SpotReviewApiResponse> spotReviewApiResponses = spotReviewApiLogicService.findReview(tourId).getData();
 
-        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userId", userid)
-                .addObject("name", name).addObject("tour" , spotApiResponse)
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("email", email)
+                .addObject("nickname", nickname).addObject("tour" , spotApiResponse)
                 .addObject("reviewList", spotReviewApiResponses);
     }
 
