@@ -505,15 +505,16 @@ main {
 
 /*restaurant_info*/
 
-#restaurant_img {
-    background-image: url('lib/travel_spot_img/eggandthings.jpg');
+.restaurant_img {
     width: 1000px;
     height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0 auto;
 }
-
+.restaurant_img  img{
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+}
 #utility_flex_box {
     display: flex;
     justify-content: space-between;
@@ -772,12 +773,14 @@ color: #666666;
 
 /*tour_spot_info*/
 
-#tour_spot_img {
-    background-image: url('lib/travel_spot_img/topImg.png');
+.tour_spot_img {
     width: 1000px;
     height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+.tour_spot_img  img{
+    width: 1000px;
+    height: 400px;
     margin: 0 auto;
 }
 
