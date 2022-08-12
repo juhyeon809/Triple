@@ -120,7 +120,7 @@
                 </div>
             <div id="review_box">
                 <div id="review_top">
-                    <p class="index_p">리뷰 <span class="blue_text">332</span></p>
+                    <p class="index_p">리뷰 <span class="blue_text" th:text="${restaurant.getReviewCount()}"></span></p>
                     <div id="review_write_see">
                     <p id="write_review"><a th:href="'/Triple/spot/review/restaurant/'+ ${restaurant.getIdx()}">리뷰 쓰기</a></p>
                     <p id="see_review"><a href="">리뷰 전체보기</a></p>

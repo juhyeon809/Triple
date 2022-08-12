@@ -2343,7 +2343,7 @@ public class PageController {
         if(kind.equals("restaurant")){
 
             return new ModelAndView("/pages/travel_spot/spot_review_update_restaurant").addObject("email", email)
-                    .addObject("nickname", nickname).addObject("kind", kind).addObject("reviewId", id);
+                    .addObject("nickname", nickname).addObject("kind", kind).addObject("review", restaurantReviewApiLogicService.read(id).getData());
         }
         if(kind.equals("guide")){
 

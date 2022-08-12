@@ -95,7 +95,6 @@ create sequence seq_aircraft
     increment by 1
     start with 1;
 
-=
 
 insert into admin_user values(1, 'apple123', 'apple123!', '김사과', '010-1111-1111', '관리자', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
@@ -571,7 +570,7 @@ create table restaurant(
     reg_date date default sysdate,
     like_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(10) default 0,
+    star_count number(3,1) default 0,
     review_count number(7) default 0
 );
 
@@ -600,7 +599,7 @@ create table restaurant_review(
     like_count number(5) default 0,
     reply_count number(5) default 0,
     reg_date date default sysdate,
-    star_count number(5) default 0
+    star_count number(3) default 0
 );
 
 create sequence seq_restaurant_review
@@ -693,7 +692,7 @@ create table guide(
     reg_date date default sysdate,
     review_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(10) default 0
+    star_count number(3,1) default 0
 );
 alter table guide modify star_count number(3,1);
  
@@ -701,7 +700,7 @@ create sequence seq_guide
     increment by 1
     start with 1;
     
-drop table guide_review;
+drop table guide_review; 
 
 
 create table guide_review(
@@ -927,9 +926,27 @@ create table reservation_airuse(
     reg_date date default sysdate,
     passenger_name varchar2(20) not null
 );
+select * from restaurant;
+select * from restaurant_review;
 
+select * from admin_user;
 
+create table admin_user(
+    idx number(7) primary key,
+    userid varchar2(20) not null,
+    userpw varchar2(20) not null,
+    name varchar2(20) not null,
+    hp varchar2(20) not null,
+    department varchar2(20) not null,
+    email varchar2(20) not null,
+    position varchar2(20) not null,
+    status varchar2(10) not null,
+    reg_date date default sysdate
+);
 
+create sequence seq_admin_user
+    increment by 1
+    start with 2;
 
 
 

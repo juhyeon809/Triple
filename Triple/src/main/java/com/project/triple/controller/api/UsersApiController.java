@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/api/user")    // http://localhost:8080/api/user  url 주소
@@ -75,6 +76,20 @@ public class UsersApiController extends CrudController<UsersApiRequest, UsersApi
 
     }
 
+    @ResponseBody
+    public String sendSMS(String phoneNumber) {
 
+        Random rand  = new Random();
+        String numStr = "";
+        for(int i=0; i<4; i++) {
+            String ran = Integer.toString(rand.nextInt(10));
+            numStr+=ran;
+        }
+
+        System.out.println("수신자 번호 : " + phoneNumber);
+        System.out.println("인증번호 : " + numStr);
+        UsersApiLogicService.certifiedPhoneNumber(phoneNumber,numStr);
+        return numStr;
+    }
 
 }
