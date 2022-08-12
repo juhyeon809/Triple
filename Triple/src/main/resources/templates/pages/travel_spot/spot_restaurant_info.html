@@ -18,7 +18,7 @@
     <!--header 시작-->
     <div th:replace="fragement/header :: header"></div>
     <!--header 끝-->
-    <div id="restaurant_img"><img th:src="@{${restaurant.getUploadPath1()}}"></div>
+    <div class="restaurant_img"><img th:src="@{${restaurant.getUploadPath1()}}"></div>
     <main>
         <div id="utility_box">
             <div id="utility_flex_box">
@@ -120,7 +120,7 @@
                 </div>
             <div id="review_box">
                 <div id="review_top">
-                    <p class="index_p">리뷰 <span class="blue_text">332</span></p>
+                    <p class="index_p">리뷰 <span class="blue_text" th:text="${restaurant.getReviewCount()}"></span></p>
                     <div id="review_write_see">
                     <p id="write_review"><a th:href="'/Triple/spot/review/restaurant/'+ ${restaurant.getIdx()}">리뷰 쓰기</a></p>
                     <p id="see_review"><a href="">리뷰 전체보기</a></p>
@@ -139,6 +139,9 @@
                     <div class="review_context" >
                         <p th:text="${review.getContent()}"></p>
                     </div>
+                </div>
+                <div>
+                    <p><a th:each="page: ${pageList}" th:text="${page}" th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}+'/'+${page}"></a></p>
                 </div>
             </div>
         </div>

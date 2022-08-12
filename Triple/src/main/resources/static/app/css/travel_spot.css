@@ -210,36 +210,40 @@ hr {
     align-items: center;
 }
 #box_information_img {
-    width: 900px;
+    width: 800px;
     margin: 0 auto;
 }
 #box_information_img > img {
-    width: 900px;
+    width: 800px;
 }
 #context_box {
-    width: 900px;
-    margin: 0 auto;
-    margin-bottom: 100px;
+    width: 800px;
+    margin: 50px auto 100px;
     font-size: 14px;
     font-weight: normal;
     color: black;
+    word-break: keep-all;
+}
+#table_information{
+    width: 900px;
+    margin: 0 auto;
 }
 #table_information table {
-    width: 950px;
+    width: 800px;
     margin: 0 auto;
-    margin-bottom: 500px;
+    margin-bottom: 150px;
     margin-top: 30px;
     border-collapse: collapse;
 }
 #table_information table tr{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #a1a1a1;
 }
 #table_information table td{
     padding-bottom: 10px;
     padding: 10px 0;
     font-size: 16px;
     color: #666666;
-    border-bottom: 1px solid gray;
+    white-space: pre-line; word-break: keep-all;
 }
 #table_information table td ul {
     list-style: none;
@@ -259,8 +263,8 @@ hr {
 }
 #table_information .table_index {
     color: #666666;
-    width: 12%;
-    font-size: 14px;
+    width: 13%;
+    /*font-size: 14px;*/
     font-weight: bold;
 }
 
@@ -271,7 +275,10 @@ hr {
     margin: 0 auto;
     margin-bottom: 500px;
 }
-#writing_box button{
+#writing_box .title_text{
+    margin-bottom: 50px;
+}
+#writing_box button[type="reset"]{
     margin: 0;
     background: transparent;
     border: none;
@@ -281,12 +288,30 @@ hr {
     color: #666666;
     font-family: 'Noto Sans Kr';
 }
+#writing_box input[type="submit"]{
+    border: none;
+    background: transparent ;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4E91D5;
+}
+#writing_box select{
+    width: 15%;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+#writing_box input[type="text"]{
+    width: 85%;
+    margin-left: 20px;
+}
 
 #writing_box textarea {
     resize: none;
-    width: 900px;
+    width: 875px;
     height: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 10px;
     color: #425052;
     font-size: 18px;
@@ -329,7 +354,7 @@ main {
     padding-top: 10px;
 }
 .content_flex_box div .title_text {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: #666666;
     padding-top: 20px;
@@ -339,7 +364,16 @@ main {
 }
 .content_flex_box div img {
     width: 300px;
+    border-radius: 10px;
 }
+
+.guideText{
+    width: 500px;
+    word-break: keep-all;
+    font-size: 14px;
+}
+
+
 
 /*main_domestic*/
 
@@ -505,15 +539,16 @@ main {
 
 /*restaurant_info*/
 
-#restaurant_img {
-    background-image: url('lib/travel_spot_img/eggandthings.jpg');
+.restaurant_img {
     width: 1000px;
     height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0 auto;
 }
-
+.restaurant_img  img{
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+}
 #utility_flex_box {
     display: flex;
     justify-content: space-between;
@@ -772,12 +807,14 @@ color: #666666;
 
 /*tour_spot_info*/
 
-#tour_spot_img {
-    background-image: url('lib/travel_spot_img/topImg.png');
+.tour_spot_img {
     width: 1000px;
     height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+.tour_spot_img  img{
+    width: 1000px;
+    height: 400px;
     margin: 0 auto;
 }
 

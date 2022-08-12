@@ -31,7 +31,7 @@ public class RestaurantReviewApiController extends CrudController<RestaurantRevi
         restaurantReviewApiLogicService.write(restaurantReview, file);
         Long id = restaurantReview.getPostId();
 
-        ScriptUtils.alertAndMovePage( response , "리뷰 작성 완료", "/Triple/spot/restaurant/view/" + id);
+        ScriptUtils.alertAndMovePage( response , "리뷰 작성 완료", "/Triple/spot/restaurant/view/" + id+"/1");
         return null ;
     }
 
@@ -41,7 +41,7 @@ public class RestaurantReviewApiController extends CrudController<RestaurantRevi
         restaurantReviewApiLogicService.update2(restaurantReview, file);
         Long id = restaurantReview.getPostId();
 
-        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/restaurant/view/" + id);
+        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/restaurant/view/" + id + "/1");
         return null ;
     }
 
