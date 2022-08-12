@@ -32,24 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="leftbox">
-                    <div class="flyinfopay">
-                        <p>오는편</p>
-                        <p class="fly_subtitle"  th:text="${comebackFlight.getDepartureAirport()} + ' - ' + ${comebackFlight.getLandingAirport()} + ' 항공편'"></p>
-                        <div>
-                            <p class="pleft">날짜<span class="pright" th:text="${comebackFlight.getDepartureTime()} + ' ' + ${comebackFlight.getLandingTime()}"></span></p>
-                            <p class="pleft">인원 및 등급<span class="pright" th:text="'성인' + ${adultNum} + ', 소아' + ${childNum} + ', 유아' + ${infantNum} + ${seatClass}"></span></p>
-                            <p class="pleft">발권 항공사<span class="pright" style="margin-bottom: 20px;" th:text="${comebackFlight.getAirlineName()}"></span></p>
-                        </div>
-                    </div>
 
-                <p class="pleft">총 결제금액
-                    <span class="pright" th:if="${seatClass == 'premium'}" th:text="${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + ${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + ${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'first'}" th:text="${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()}) + ${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + ${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()}) + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'business'}" th:text="${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + ${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + ${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()}) + '원'"></span>
-                    <span class="pright" th:if="${seatClass == 'economy'}" th:text="${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()}) + ${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()}) + ${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()}) + '원'"></span>
-                </p>
-                </div>
                 <!--선택한 항공편 확인 끝-->
                 <!--상세요금 보기-->
                 <div class="rightbox">
@@ -113,6 +96,24 @@
                     </div>
                 </div>
                 <!--상세요금 보기 끝-->
+                <div class="leftbox">
+                    <div class="flyinfopay">
+                        <p>오는편</p>
+                        <p class="fly_subtitle"  th:text="${comebackFlight.getDepartureAirport()} + ' - ' + ${comebackFlight.getLandingAirport()} + ' 항공편'"></p>
+                        <div>
+                            <p class="pleft">날짜<span class="pright" th:text="${comebackFlight.getDepartureTime()} + ' ' + ${comebackFlight.getLandingTime()}"></span></p>
+                            <p class="pleft">인원 및 등급<span class="pright" th:text="'성인' + ${adultNum} + ', 소아' + ${childNum} + ', 유아' + ${infantNum} + ${seatClass}"></span></p>
+                            <p class="pleft">발권 항공사<span class="pright" style="margin-bottom: 20px;" th:text="${comebackFlight.getAirlineName()}"></span></p>
+                        </div>
+                    </div>
+
+                    <p class="pleft">총 결제금액
+                        <span class="pright" th:if="${seatClass == 'premium'}" th:text="${adultNum} * (${departureFlight.getPremiumAdultPrice()} + ${comebackFlight.getPremiumAdultPrice()}) + ${childNum} * (${departureFlight.getPremiumChildPrice()} + ${comebackFlight.getPremiumChildPrice()}) + ${infantNum} * (${departureFlight.getPremiumInfantPrice()} + ${comebackFlight.getPremiumInfantPrice()}) + '원'"></span>
+                        <span class="pright" th:if="${seatClass == 'first'}" th:text="${adultNum} * (${departureFlight.getFirstAdultPrice()} + ${comebackFlight.getFirstAdultPrice()}) + ${childNum} * (${departureFlight.getFirstChildPrice()} + ${comebackFlight.getFirstChildPrice()}) + ${infantNum} * (${departureFlight.getFirstInfantPrice()} + ${comebackFlight.getFirstInfantPrice()}) + '원'"></span>
+                        <span class="pright" th:if="${seatClass == 'business'}" th:text="${adultNum} * (${departureFlight.getBusinessAdultPrice()} + ${comebackFlight.getBusinessAdultPrice()}) + ${childNum} * (${departureFlight.getBusinessChildPrice()} + ${comebackFlight.getBusinessChildPrice()}) + ${infantNum} * (${departureFlight.getBusinessInfantPrice()} + ${comebackFlight.getBusinessInfantPrice()}) + '원'"></span>
+                        <span class="pright" th:if="${seatClass == 'economy'}" th:text="${adultNum} * (${departureFlight.getEconomyAdultPrice()} + ${comebackFlight.getEconomyAdultPrice()}) + ${childNum} * (${departureFlight.getEconomyChildPrice()} + ${comebackFlight.getEconomyChildPrice()}) + ${infantNum} * (${departureFlight.getEconomyInfantPrice()} + ${comebackFlight.getEconomyInfantPrice()}) + '원'"></span>
+                    </p>
+                </div>
             </div>
             <!--상단 박스 끝-->
         </div>

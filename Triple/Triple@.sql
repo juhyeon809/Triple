@@ -1,8 +1,7 @@
 create sequence auto_increment
     increment by 1
     start with 1;
-    
-drop table users;
+
 
 select * from users;
 
@@ -39,9 +38,7 @@ create table terms(
 create sequence seq_terms
     increment by 1
     start with 1;
- 
- 
-drop table airport;
+
  
 select * from airport;
 
@@ -55,8 +52,8 @@ create table airport(
 create sequence seq_airport
     increment by 1
     start with 1;
-    
-drop table airline;
+
+
 select * from airline;
 
 create table airline(
@@ -76,7 +73,6 @@ create sequence seq_airline
     
 
 
-drop table aircraft;
 select * from aircraft;
 
 create table aircraft(
@@ -103,7 +99,7 @@ select * from admin_user;
 
 select * from air_ticket where departure_airport='?횓횄쨉째첩횉횞' and landing_airport='쨀짧쨍짰횇쨍째첩횉횞' and departure_time like '%2022-08-07%';
 delete from air_ticket where idx=26;
-drop table air_ticket;
+
 
 select * from air_ticket;
 
@@ -142,7 +138,7 @@ create sequence seq_air_ticket
     start with 1;
 
 
-drop table round_ticket_reservation;
+
 
 select * from round_ticket_reservation;
 
@@ -171,7 +167,7 @@ create sequence seq_round_ticket_reservation
     start with 1;
     
   
-drop table oneway_reservation;
+
 
 select * from oneway_reservation;
 
@@ -264,8 +260,7 @@ create table lodging_ticket(
 create sequence seq_lodging_ticket
     increment by 1
     start with 1;
-    
-drop table tour;
+
 
 create table tour( 
     idx number(7) primary key,
@@ -323,7 +318,7 @@ insert into reservation values(
     '010-2222-2222'
 );
 
-drop table reservation;
+ table reservation;
 
 select * from users;
 
@@ -385,7 +380,7 @@ create sequence seq_review_reply
     start with 1;
     
 
-drop table magazine;
+
 select * from magazine;
 
 create table magazine(
@@ -424,7 +419,7 @@ create sequence seq_adminuser
     increment by 1
     start with 1;
  
- drop table PACKAGE;
+
  select * from package;
  
  create table PACKAGE(
@@ -433,14 +428,14 @@ create sequence seq_adminuser
     title varchar2(200) not null,
     upload_path varchar2(200) not null,
     file_name varchar2(200) not null,
-    keyword varchar2(20) not null,
+    keyword varchar2(60) not null,
     adult_pr number(10) not null,
     kid_pr number(10) not null,
     infant_pr number(10) not null,
     adult_infant_pr number(10) not null,
     program varchar2(1000) not null,
-    contained varchar2(400) not null,
-    not_contained varchar2(400) not null,
+    contained varchar2(1000) not null,
+    not_contained varchar2(1000) not null,
     adminuser_id varchar2(40) not null,
     adminuser_name varchar2(40) not null,
     reg_date date default sysdate  
@@ -451,7 +446,6 @@ create sequence seq_package
     start with 1;   
 
 
-drop table spot;
 
 select * from spot;
 
@@ -534,7 +528,7 @@ create sequence seq_tourspot_review_reply
     start with 1;
     
     
-drop table restaurant;
+
 
 select * from restaurant;
 
@@ -582,7 +576,6 @@ create sequence seq_restaurant
     
     
 
-drop table restaurant_review;
 delete from restaurant_review where idx = 7;
 
 select *from restaurant_review;
@@ -663,8 +656,6 @@ create sequence seq_user_coupon
     start with 1;
     
     
-    
-drop table guide;   
 
 select * from guide;
 
@@ -701,7 +692,7 @@ create sequence seq_guide
     increment by 1
     start with 1;
     
-drop table guide_review;
+
 
 
 create table guide_review(
@@ -724,8 +715,7 @@ create sequence seq_guide_review
     start with 1;
     
     
-    
-drop table guide_review;    
+  
 
 select * from guide_review;
 
@@ -872,15 +862,11 @@ create sequence seq_notice
 
 create table faq(
     idx number(7),
-    faq_num number(7) not null,
     faq_category varchar2(20) not null,
-    adminuser_id number(7) not null,
+    adminuser_id varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    title varchar2(30) not null,
+    title varchar2(500) not null,
     content varchar2(500) not null,
-    uploadPath varchar2(200),
-    fileName varchar2(200),
-    fileType varchar2(20),
     reg_date date default sysdate
 );
 
@@ -899,37 +885,13 @@ insert into faq values(1, 'SERVICE', 1, '사과', '예약은 어디서 볼 수 있나요?', '
 - 간편로그인 회원(카카오, 네이버, 페이스북, 애플)
 
 트리플 사이트 메인 > 우측 상단 마이페이지 > 설정 > 서비스 탈퇴 > 간편로그인 계정 인증 > 탈퇴합니다 선택', '2022-08-05');
-insert into faq values(1, 'AIR', 1, '사과', '항공티켓은 여기서 받으세요', '공항의 각 항공사에서 받으시면 됩니다', '2022-08-05');
-insert into faq values(1, 'LODGING', 1, '사과', '숙소까지 어떻게 가나요', '네이버 지도를 이용하세요', '2022-08-05');
-insert into faq values(1, 'TOUR', 1, '사과', '티켓을 잃어버렸어요', '발급처에 문의해주세요', '2022-08-05');
-insert into faq values(1, 'COMMON', 1, '사과', '티켓을 잃어버렸어요', '발급처에 문의해주세요', '2022-08-05');
+--insert into faq values(1, 'AIR', 1, '사과', '항공티켓은 여기서 받으세요', '공항의 각 항공사에서 받으시면 됩니다', '2022-08-05');
+--insert into faq values(1, 'LODGING', 1, '사과', '숙소까지 어떻게 가나요', '네이버 지도를 이용하세요', '2022-08-05');
+--insert into faq values(1, 'TOUR', 1, '사과', '티켓을 잃어버렸어요', '발급처에 문의해주세요', '2022-08-05');
+--insert into faq values(1, 'COMMON', 1, '사과', '티켓을 잃어버렸어요', '발급처에 문의해주세요', '2022-08-05');
 
 
 commit;
-
-
---보류
-create table reservation_airuse(
-    idx number(7) primary key,
-    user_id number(7) not null,
-    ticket_type varchar2(10) not null,
-    ticket_num number(7) not null,
-    eng_lastname number(7) not null,
-    eng_firstname varchar2(20) not null,
-    birth varchar2(20) not null,
-    gender varchar2(20) not null,
-    use_hp varchar2(20) not null,
-    nationality varchar2(20) not null,
-    passport_num varchar2(20) not null,
-    passport_exp varchar2(10) not null,
-    passport_country varchar2(20) not null,
-    info_agree varchar2(10) not null,
-    reg_date date default sysdate,
-    passenger_name varchar2(20) not null
-);
-
-
-
 
 
 

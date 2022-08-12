@@ -17,7 +17,7 @@ public class ReviewApiRequest {
     private String title;
     private String content;
     private String nickname;
-    private String starCount;
+    private Integer starCount;
     private String uploadPath;
     private String fileName;
     private String fileType;
