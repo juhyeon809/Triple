@@ -1,7 +1,11 @@
 create sequence auto_increment
     increment by 1
     start with 1;
+    
 drop table users;
+
+select * from users;
+
 create table users(
     idx number(7) primary key,
     email varchar2(30) not null,
@@ -37,8 +41,10 @@ create sequence seq_terms
     start with 1;
  
  
-select * from airport;
 drop table airport;
+ 
+select * from airport;
+
 create table airport(
     idx number(7)  primary key,
     airport_name varchar2(50) not null,
@@ -52,6 +58,7 @@ create sequence seq_airport
     
 drop table airline;
 select * from airline;
+
 create table airline(
     idx number(7) primary key,
     kr_name varchar2(20) not null,
@@ -68,10 +75,10 @@ create sequence seq_airline
     start with 1;
     
 
-commit;
-select * from air_ticket;
+
 drop table aircraft;
 select * from aircraft;
+
 create table aircraft(
     idx number(7) primary key,
     aircraft_name varchar2(50) not null,
@@ -83,23 +90,23 @@ create table aircraft(
     economy_seat number(4) not null,
     airline_name varchar2(50) not null
 );
-insert into airline;
-
-select * from reservation;
 
 create sequence seq_aircraft
     increment by 1
     start with 1;
-   
-select * from air_ticket where departure_airport='ÀÎÃµ°øÇ×' and landing_airport='³ª¸®Å¸°øÇ×' and departure_time like '%2022-08-07%';
-commit;
-select * from air_ticket;
-drop table admin_user;
-insert into admin_user values(1, 'apple123', 'apple123!', 'ê¹??‚¬ê³?', '010-1111-1111', 'ê´?ë¦¬ì', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
+
+=
+
+insert into admin_user values(1, 'apple123', 'apple123!', '±è»ç°ú', '010-1111-1111', '°ü¸®ÀÚ', 'apple@naver.com', 'ceo', 'REGISTERED', sysdate);
 select * from admin_user;
-commit;
+
+
+select * from air_ticket where departure_airport='?ÃÃƒÂµÂ°Ã¸Ã‡Ã—' and landing_airport='Â³ÂªÂ¸Â®Ã…Â¸Â°Ã¸Ã‡Ã—' and departure_time like '%2022-08-07%';
 delete from air_ticket where idx=26;
 drop table air_ticket;
+
+select * from air_ticket;
+
 create table air_ticket(
     idx number(7) primary key,
     air_route varchar2(10) not null,
@@ -134,9 +141,11 @@ create sequence seq_air_ticket
     increment by 1
     start with 1;
 
-select * from users;
-select * from reservation;
+
 drop table round_ticket_reservation;
+
+select * from round_ticket_reservation;
+
 create table round_ticket_reservation(
     idx number(7) primary key,
     email varchar2(50) not null,
@@ -160,8 +169,12 @@ create table round_ticket_reservation(
 create sequence seq_round_ticket_reservation
     increment by 1
     start with 1;
-select * from round_ticket_reservation;    
+    
+  
 drop table oneway_reservation;
+
+select * from oneway_reservation;
+
 create table oneway_reservation(
     idx number(7) primary key,
     email varchar2(50) not null,
@@ -185,7 +198,7 @@ create sequence seq_oneway_reservation
     increment by 1
     start with 1;
     
-select * from oneway_reservation;
+
 create table lodging(
     idx number(7) primary key,
     type varchar2(10) unique not null,
@@ -199,7 +212,8 @@ create table lodging(
     contact_hp varchar2(20) not null,
     representative varchar2(20) not null,
     email varchar2(30) not null,
-    like_num number(5) default 0
+    like_count number(5) default 0,
+    homepage varchar2(30)
 );
 
 create sequence seq_lodging
@@ -241,7 +255,10 @@ create table lodging_ticket(
     use_birth varchar2(20) not null,
     use_requests varchar2(100),
     info_agree varchar2(10) not null,
-    reg_date date default sysdate	
+    reg_date date default sysdate,
+    user_id number(7) not null,
+    guest_num number(7) not null,
+    transportation varchar2(50)
 );
 
 create sequence seq_lodging_ticket
@@ -249,13 +266,14 @@ create sequence seq_lodging_ticket
     start with 1;
     
 drop table tour;
+
 create table tour( 
     idx number(7) primary key,
     type varchar2(10) unique not null,
     tour_num varchar2(10) not null,
     country varchar2(10) not null,
     address varchar2(30) not null,
-    manager_name varchar2(20) not null,
+    manager_name varchar2(30) not null,
     contact_num varchar2(20) not null,
     title varchar2(50) not null,
     info varchar2(300) not null,
@@ -304,8 +322,11 @@ insert into reservation values(
     '010-1111-1111',
     '010-2222-2222'
 );
+
 drop table reservation;
+
 select * from users;
+
 create table reservation(
     idx number(10) primary key,
     ticket_type varchar2(10) not null,
@@ -313,7 +334,12 @@ create table reservation(
     rev_name varchar2(20) not null,
     email varchar2(30) not null,
     hp varchar2(20) not null,
-    emergency_hp varchar2(20) not null
+    emergency_hp varchar2(20) not null,
+    user_id number(7) not null,
+    title varchar2(30) not null,
+    content varchar2(30) not null,
+    rev_date date default sysdate,
+    service_life varchar2(10) not null
 );
 
 create sequence seq_reservation
@@ -357,9 +383,11 @@ create table review_reply(
 create sequence seq_review_reply
     increment by 1
     start with 1;
-select * from admin_user;
+    
+
 drop table magazine;
 select * from magazine;
+
 create table magazine(
     idx number(7) primary key,
     adminuser_id varchar2(20) not null,
@@ -379,11 +407,16 @@ create sequence seq_magazine
     start with 1;
 
 
-create table adminuser(
+create table admin_user(
     idx number(7) primary key,
-    admin_id varchar2(20) unique not null,
-    admin_pw varchar2(20) not null,
-    admin_name number(7) not null,
+    userid varchar2(20) not null,
+    userpw varchar2(20) not null,
+    name varchar2(20) not null,
+    hp varchar2(20) not null,
+    department varchar2(20) not null,
+    email varchar2(20) not null,
+    position varchar2(20) not null,
+    status varchar2(10) not null,
     reg_date date default sysdate
 );
 
@@ -391,11 +424,13 @@ create sequence seq_adminuser
     increment by 1
     start with 1;
  
+ drop table PACKAGE;
  select * from package;
+ 
  create table PACKAGE(
     idx number(7) primary key,
-    country varchar2(20) not null,
-    title varchar2(20) not null,
+    country varchar2(40) not null,
+    title varchar2(200) not null,
     upload_path varchar2(200) not null,
     file_name varchar2(200) not null,
     keyword varchar2(20) not null,
@@ -403,7 +438,7 @@ create sequence seq_adminuser
     kid_pr number(10) not null,
     infant_pr number(10) not null,
     adult_infant_pr number(10) not null,
-    program varchar2(400) not null,
+    program varchar2(1000) not null,
     contained varchar2(400) not null,
     not_contained varchar2(400) not null,
     adminuser_id varchar2(40) not null,
@@ -415,8 +450,11 @@ create sequence seq_package
     increment by 1
     start with 1;   
 
+
 drop table spot;
+
 select * from spot;
+
 create table spot(
     idx number(7) primary key,
     country varchar2(30) not null,
@@ -425,28 +463,28 @@ create table spot(
     title varchar2(100) not null,
     upload_path1 varchar2(200) not null,
     file_name1 varchar2(200) not null,
-    subtitle1 varchar2(100) not null,
+    subtitle1 varchar2(200) not null,
     content1 varchar2(1000) not null,
     upload_path2 varchar2(200) not null,
     file_name2 varchar2(200) not null,
-    subtitle2 varchar2(50) not null,
+    subtitle2 varchar2(200) not null,
     content2 varchar2(1000) not null,
     upload_path3 varchar2(200) not null,
     file_name3 varchar2(200) not null,
-    thing1 varchar2(100) not null,
-    summary1 varchar2(1000) not null,
-    upload_path4 varchar2(200) not null,
-    file_name4 varchar2(200) not null,
-    thing2 varchar2(100) not null,
-    summary2 varchar2(100) not null,
-    upload_path5 varchar2(200) not null,
-    file_name5 varchar2(200) not null,
-    thing3 varchar2(100) not null,
-    summary3 varchar2(100) not null,
-    recommend_time varchar2(100) not null,
+    thing1 varchar2(100),
+    summary1 varchar2(1000),
+    upload_path4 varchar2(200),
+    file_name4 varchar2(200),
+    thing2 varchar2(100),
+    summary2 varchar2(100),
+    upload_path5 varchar2(200),
+    file_name5 varchar2(200),
+    thing3 varchar2(100),
+    summary3 varchar2(100),
+    recommend_time varchar2(100),
     road varchar2(200) not null,
     available_at varchar2(200) not null,
-    price varchar2(200) not null,
+    price varchar2(200),
     using varchar2(500) not null,
     reg_date date default sysdate,
     like_count number(7) default 0,
@@ -457,11 +495,7 @@ create sequence seq_spot
     increment by 1
     start with 1;
 
-commit;
-select * from air_ticket;
 
-select * from guide;
-    
 
 create table spot_review(
     idx number(7) primary key,
@@ -499,24 +533,27 @@ create sequence seq_tourspot_review_reply
     increment by 1
     start with 1;
     
+    
 drop table restaurant;
+
+select * from restaurant;
 
 create table restaurant(
     idx number(7) primary key,
     country varchar2(30) not null,
     city varchar2(30) not null,
     location varchar2(200) not null,
-    title varchar2(50) not null,
+    title varchar2(200) not null,
     summary varchar2(200) not null,
-    menu_name1 varchar2(30) not null,
+    menu_name1 varchar2(60) not null,
     menu_description1 varchar2(100) not null,
-    menu_price1 number(7) not null,
-    menu_name2 varchar2(30) not null,
+    menu_price1 varchar2(30) not null,
+    menu_name2 varchar2(60) not null,
     menu_description2 varchar2(100) not null,
-    menu_price2 number(7) not null,
-    menu_name3 varchar2(30) not null,
+    menu_price2 varchar2(30) not null,
+    menu_name3 varchar2(60) not null,
     menu_description3 varchar2(100) not null,
-    menu_price3 number(7) not null,
+    menu_price3 varchar2(30) not null,
     how_togo varchar2(200),
     available_at varchar2(200),
     tip varchar2(500),
@@ -533,21 +570,30 @@ create table restaurant(
     adminuser_name varchar2(50),
     reg_date date default sysdate,
     like_count number(7) default 0,
+    total_star number(10) default 0,
+    star_count number(10) default 0,
     review_count number(7) default 0
 );
 
 create sequence seq_restaurant
     increment by 1
     start with 1;
-select *from restaurant_review;
+    
+    
+    
+
 drop table restaurant_review;
 delete from restaurant_review where idx = 7;
+
+select *from restaurant_review;
+
+
 create table restaurant_review(
     idx number(7) primary key,
     post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
-    nickname varchar2(20) not null,
+    nickname varchar2(50) not null,
     user_email varchar2(50) not null,
     upload_path varchar2(200),
     file_name varchar2(200),
@@ -561,7 +607,8 @@ create sequence seq_restaurant_review
     increment by 1
     start with 1;
     
-select * from event;
+    
+update restaurant set review_count=0;
 
 create table restaurant_review_reply(
     idx number(7) primary key,
@@ -579,6 +626,11 @@ create sequence seq_restaurant_review_reply
     increment by 1
     start with 1;
     
+select * from coupon;
+insert into coupon values (1, 1, '[8¿ù ÇıÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a111', null, '2022-08-31', 'USABLE');
+insert into coupon values (2, 2, '[8¿ù ÇıÅÃ]Åõ¾î ÇÒÀÎ 3,000¿ø', 'TOUR', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a333', null, '2022-08-31', 'USABLE');
+insert into coupon values (3, 3, '[8¿ù ÇıÅÃ]Ç×°ø ÇÒÀÎ 3,000¿ø', 'AIR', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'USABLE', 'a222', null, '2022-08-31', 'USABLE');
+insert into coupon values (4, 4, '[7¿ù ÇıÅÃ]±¹³» ¼÷¼Ò ÇÒÀÎ 3,000¿ø', 'LODGING', 3000, '5¸¸¿ø ÀÌ»ó ¿¹¾à ½Ã', 'EXPIRED', 'a111', null, '2022-08-31', 'USED');
 
 create table coupon(
     idx number(7) primary key,
@@ -609,9 +661,13 @@ create table user_coupon(
 create sequence seq_user_coupon
     increment by 1
     start with 1;
-select count(*) from guide_review where post_id = 48;
+    
+    
+    
+drop table guide;   
+
 select * from guide;
-drop table guide;
+
 create table guide(
     idx number(7) primary key,
     country varchar2(30) not null,
@@ -630,21 +686,24 @@ create table guide(
     country_code varchar2(50) not null,
     visa varchar2(500) not null,
     prices varchar2(500) not null,
-    air varchar2(500) not null,
+    air varchar2(600) not null,
     climate varchar2(500) not null,
     best_time varchar2(200) not null,
     simple_conversation varchar2(1000) not null,
     reg_date date default sysdate,
     review_count number(7) default 0,
     total_star number(10) default 0,
-    star_count number(3) default 0
+    star_count number(10) default 0
 );
+alter table guide modify star_count number(3,1);
  
 create sequence seq_guide
     increment by 1
     start with 1;
     
 drop table guide_review;
+
+
 create table guide_review(
     idx number(7) primary key,
     post_id number(7) not null,
@@ -664,8 +723,12 @@ create sequence seq_guide_review
     increment by 1
     start with 1;
     
+    
+    
+drop table guide_review;    
+
 select * from guide_review;
-drop table guide_review;
+
 create table guide_review_reply(
     idx number(7) primary key,
     reply_num number(7) not null,
@@ -702,6 +765,7 @@ create table question(
 create sequence seq_question
     increment by 1
     start with 1;
+    
     
 
 create table answer(
@@ -773,14 +837,29 @@ create sequence seq_mysave
     increment by 1
     start with 1;
     
+insert into mysave values(1, 3, 111, 'Y', null, 'ï¿½ï¿½ï¿½Ìµï¿½', '2022-08-01');
+insert into mysave values(2, 3, 222, 'Y', null, 'ï¿½ï¿½ï¿½Ìµï¿½', '2022-08-01');
+insert into mysave values(3, 3, 333, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(4, 3, 444, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(5, 3, 555, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(6, 3, 666, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(7, 3, 777, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(8, 3, 888, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(9, 3, 999, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+insert into mysave values(10, 3, 1010, 'Y', null, 'ï¿½ï¿½ï¿½ï¿½', '2022-08-01');
+
+   
+   
+   
 select * from notice;
+
 create table notice(
     idx number(7),
     adminuser_id number(7) not null,
     adminuser_name varchar2(20) not null,
     notice_type varchar2(30) not null,
     title varchar2(30) not null,
-    content varchar2(500) not null,
+    content varchar2(1000) not null,
     upload_path varchar2(200),
     file_name varchar2(200),
     reg_date date default sysdate
@@ -810,6 +889,44 @@ create sequence seq_faq
     start with 1;
 
 
+
+insert into faq values(1, 'SERVICE', 1, '»ç°ú', '¿¹¾àÀº ¾îµğ¼­ º¼ ¼ö ÀÖ³ª¿ä?', 'È¸¿ø Å»Åğ´Â ¾Æ·¡ÀÇ ¹æ¹ıÀ» ÅëÇØ °¡´ÉÇÕ´Ï´Ù.
+
+- ÀÌ¸ŞÀÏ È¸¿ø
+
+Æ®¸®ÇÃ »çÀÌÆ® ¸ŞÀÎ > ¿ìÃø »ó´Ü ¸¶ÀÌÆäÀÌÁö > ¼³Á¤ > ¼­ºñ½º Å»Åğ > ºñ¹Ğ¹øÈ£ ÀÔ·Â > Å»ÅğÇÕ´Ï´Ù ¼±ÅÃ
+
+- °£Æí·Î±×ÀÎ È¸¿ø(Ä«Ä«¿À, ³×ÀÌ¹ö, ÆäÀÌ½ººÏ, ¾ÖÇÃ)
+
+Æ®¸®ÇÃ »çÀÌÆ® ¸ŞÀÎ > ¿ìÃø »ó´Ü ¸¶ÀÌÆäÀÌÁö > ¼³Á¤ > ¼­ºñ½º Å»Åğ > °£Æí·Î±×ÀÎ °èÁ¤ ÀÎÁõ > Å»ÅğÇÕ´Ï´Ù ¼±ÅÃ', '2022-08-05');
+insert into faq values(1, 'AIR', 1, '»ç°ú', 'Ç×°øÆ¼ÄÏÀº ¿©±â¼­ ¹ŞÀ¸¼¼¿ä', '°øÇ×ÀÇ °¢ Ç×°ø»ç¿¡¼­ ¹ŞÀ¸½Ã¸é µË´Ï´Ù', '2022-08-05');
+insert into faq values(1, 'LODGING', 1, '»ç°ú', '¼÷¼Ò±îÁö ¾î¶»°Ô °¡³ª¿ä', '³×ÀÌ¹ö Áöµµ¸¦ ÀÌ¿ëÇÏ¼¼¿ä', '2022-08-05');
+insert into faq values(1, 'TOUR', 1, '»ç°ú', 'Æ¼ÄÏÀ» ÀÒ¾î¹ö·È¾î¿ä', '¹ß±ŞÃ³¿¡ ¹®ÀÇÇØÁÖ¼¼¿ä', '2022-08-05');
+insert into faq values(1, 'COMMON', 1, '»ç°ú', 'Æ¼ÄÏÀ» ÀÒ¾î¹ö·È¾î¿ä', '¹ß±ŞÃ³¿¡ ¹®ÀÇÇØÁÖ¼¼¿ä', '2022-08-05');
+
+
+commit;
+
+
+--º¸·ù
+create table reservation_airuse(
+    idx number(7) primary key,
+    user_id number(7) not null,
+    ticket_type varchar2(10) not null,
+    ticket_num number(7) not null,
+    eng_lastname number(7) not null,
+    eng_firstname varchar2(20) not null,
+    birth varchar2(20) not null,
+    gender varchar2(20) not null,
+    use_hp varchar2(20) not null,
+    nationality varchar2(20) not null,
+    passport_num varchar2(20) not null,
+    passport_exp varchar2(10) not null,
+    passport_country varchar2(20) not null,
+    info_agree varchar2(10) not null,
+    reg_date date default sysdate,
+    passenger_name varchar2(20) not null
+);
 
 
 

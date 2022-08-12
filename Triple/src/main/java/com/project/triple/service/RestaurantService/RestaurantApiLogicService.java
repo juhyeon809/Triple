@@ -1,5 +1,6 @@
 package com.project.triple.service.RestaurantService;
 
+import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Restaurant.Restaurant;
 import com.project.triple.model.network.Header;
@@ -76,6 +77,11 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
     }
 
+    public Restaurant read2(Long id){
+        Restaurant restaurant = restaurantRepository.findById(id).get();
+        return restaurant;
+    }
+
     @Override
     public Header<RestaurantApiResponse> update(Header<RestaurantApiRequest> request) {
         return null;
@@ -116,6 +122,7 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         restaurant.setLikeCount(0);
         restaurant.setTotalStar(0);
         restaurant.setStarCount(0.0);
+        restaurant.setReviewCount(0);
         restaurantRepository.save(restaurant);
     }
 
@@ -125,4 +132,16 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
         return Header.OK(restaurantApiResponseList);
     }
+
+//    public Header<RestaurantApiResponse> read2(Long itemNum){
+//        Restaurant restaurant = restaurantRepository.findByIdx(itemNum);
+//
+//        RestaurantApiResponse restaurantApiResponse = response(restaurant);
+//
+//        return Header.OK(restaurantApiResponse);
+//    }
+    public void starCountUpdate(Restaurant restaurant) {
+        baseRepository.save(restaurant);
+    }
+
 }

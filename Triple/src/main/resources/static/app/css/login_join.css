@@ -266,7 +266,13 @@ input[type="password"]::placeholder{
     margin-top: 20px;
     cursor: pointer;
 }
-
+#Certification{
+    width: 280px;
+}
+#Certification_check{
+    width: 100px;
+    cursor: pointer;
+}
 .join_box {
     background-color:#fff; 
     display:inline-block;
@@ -290,6 +296,7 @@ input[type="password"]::placeholder{
 .text_box > input[type="text"] {
     margin-bottom: 20px;
 }
+
 .pilsoo { 
     color: #FE6C6C
 }

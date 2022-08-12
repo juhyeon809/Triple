@@ -146,6 +146,7 @@ public class PageController {
     private AirportApiLogicService airportApiLogicService;
 
 
+
     // 메인페이지
     @RequestMapping(path={""})
     public ModelAndView index(HttpServletRequest request){
@@ -470,28 +471,30 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
+        List<NoticeApiResponse> noticeApiResponseList = noticeApiLogicService.search().getData();
+
         return new ModelAndView("/pages/mypage/mypage_settings/mypage_notice").addObject("email", email)
-                .addObject("nickname", nickname);
+                .addObject("nickname", nickname).addObject("noticeList", noticeApiResponseList);
     }
 
     //마이페이지 공지사항 보기
-//    @RequestMapping(path = "/mypage/settings/notice/view/{idx}")
-//    public ModelAndView mypage_notice_view(@PathVariable Long idx, HttpServletRequest request){
-//        HttpSession session = request.getSession(false);
-//        String email = null;
-//        String nickname = null;
-//        if (session == null) {
-//
-//        } else {
-//            email = (String) session.getAttribute("email");
-//            nickname = (String) session.getAttribute("nickname");
-//        }
-//
-//        NoticeApiResponse noticeApiResponse = noticeApiLogicService.read(idx).getData();
-//
-//        return new ModelAndView("/pages/mypage/mypage_settings/mypage_notice_view").addObject("email", email)
-//                .addObject("nickname", nickname).addObject("notice", noticeApiResponse);
-//    }
+    @RequestMapping(path = "/mypage/settings/notice/view/{idx}")
+    public ModelAndView mypage_notice_view(@PathVariable Long idx, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        NoticeApiResponse noticeApiResponse = noticeApiLogicService.read(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mypage_settings/mypage_notice_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("notice", noticeApiResponse);
+    }
 
     //마이페이지 설정 고객센터
     @RequestMapping(path = "/mypage/settings/customer")
@@ -533,6 +536,92 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
     }
 
+    @RequestMapping(path = "/mypage/settings/customer/faq/air")
+    public ModelAndView mypage_FAQ_air(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        List<FaqApiResponse> faqApiResponseList = faqApiLogicService.AIR().getData();
+
+        return new ModelAndView("/pages/mypage/mypage_settings/mypage_FAQ_air").addObject("email", email)
+                .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
+    }
+
+    @RequestMapping(path = "/mypage/settings/customer/faq/lodging")
+    public ModelAndView mypage_FAQ_lodging(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+        List<FaqApiResponse> faqApiResponseList = faqApiLogicService.LODGING().getData();
+
+        return new ModelAndView("pages/mypage/mypage_settings/mypage_FAQ_lodging").addObject("email", email)
+                .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
+    }
+
+    @RequestMapping(path = "/mypage/settings/customer/faq/tour")
+    public ModelAndView mypage_FAQ_tour(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+        List<FaqApiResponse> faqApiResponseList = faqApiLogicService.TOUR().getData();
+
+        return new ModelAndView("pages/mypage/mypage_settings/mypage_FAQ_tour").addObject("email", email)
+                .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
+    }
+
+    @RequestMapping(path = "/mypage/settings/customer/faq/service")
+    public ModelAndView mypage_FAQ_service(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+        List<FaqApiResponse> faqApiResponseList = faqApiLogicService.SERVICE().getData();
+
+        return new ModelAndView("pages/mypage/mypage_settings/mypage_FAQ_service").addObject("email", email)
+                .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
+    }
+
+    @RequestMapping(path = "/mypage/settings/customer/faq/common")
+    public ModelAndView mypage_FAQ_common(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+        List<FaqApiResponse> faqApiResponseList = faqApiLogicService.COMMON().getData();
+
+        return new ModelAndView("pages/mypage/mypage_settings/mypage_FAQ_common").addObject("email", email)
+                .addObject("nickname", nickname).addObject("faqList", faqApiResponseList);
+    }
+
     @RequestMapping(path = "/mypage/settings/customer/faq/{idx}")
     public ModelAndView FAQ_detail(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -570,14 +659,6 @@ public class PageController {
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_air").addObject("email", email)
                 .addObject("nickname", nickname).addObject("reserveList", reservationApiResponseList);
-//        Long idx = usersApiLogicService.findIdx(email);
-//        String ticketNum = reservationApiLogicService.findTicketNum(idx);
-//        String tNum = airTicketApiLogicService.findAllTicketNum(ticketNum);
-//
-//        List<AirTicketApiResponse> airTicketApiResponseList = airTicketApiLogicService.search2(tNum).getData();
-//
-//        return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_air").addObject("email", email)
-//                .addObject("nickname", nickname).addObject("reserveAirList", airTicketApiResponseList);
     }
 
     //마이페이지 내예약 숙소
@@ -597,14 +678,6 @@ public class PageController {
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_lodging").addObject("email", email)
                 .addObject("nickname", nickname).addObject("reserveList", reservationApiResponseList);
-//        Long idx = usersApiLogicService.findIdx(email);
-//        String ticketNum = reservationApiLogicService.findTicketNum(idx);
-//        String tNum = lodgingTicketApiLogicService.findAllTicketNum(ticketNum);
-//
-//        List<LodgingTicketApiResponse> lodgingTicketApiResponseList = lodgingTicketApiLogicService.search2(tNum).getData();
-//
-//        return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_lodging").addObject("email", email)
-//                .addObject("nickname", nickname).addObject("reserveLodgingList", lodgingTicketApiResponseList);
     }
 
     //마이페이지 내예약 투어티켓
@@ -755,9 +828,7 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-//        Long idx = usersApiLogicService.findIdx(email);
-//        String ticketNum = reservationApiLogicService.findTicketNum(idx);
-//        String tNum = tourTicketApiLogicService.findAllTicketNum(ticketNum);
+        Long idx = usersApiLogicService.findIdx(email);
 
         return new ModelAndView("/pages/mypage/travels/travels_done").addObject("email", email)
                 .addObject("nickname", nickname);
@@ -775,18 +846,109 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.list().getData();
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.search(idx).getData();
+
 
         return new ModelAndView("/pages/mypage/mysave/my_save_done").addObject("email", email)
                 .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
 
-//        Long idx = usersApiLogicService.findIdx(email);
-//        String ticketNum = reservationApiLogicService.findTicketNum(idx);
-//        String tNum = tourTicketApiLogicService.findAllTicketNum(ticketNum);
-//        return new ModelAndView("/pages/mypage/mysave/my_save_done").addObject("email", email)
-//                .addObject("nickname", nickname);
     }
 
+    @RequestMapping(path= "mypage/mysave/guide")
+    public ModelAndView my_save_guide(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.guide(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mysave/my_save_guide").addObject("email", email)
+                .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
+    }
+
+    @RequestMapping(path= "mypage/mysave/spot")
+    public ModelAndView my_save_spot(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.spot(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mysave/my_save_spot").addObject("email", email)
+                .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
+    }
+
+    @RequestMapping(path= "mypage/mysave/restaurant")
+    public ModelAndView my_save_restaurant(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.restaurant(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mysave/my_save_restaurant").addObject("email", email)
+                .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
+    }
+
+    @RequestMapping(path= "mypage/mysave/lodging")
+    public ModelAndView my_save_lodging(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.lodging(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mysave/my_save_lodging").addObject("email", email)
+                .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
+    }
+
+    @RequestMapping(path= "mypage/mysave/tour")
+    public ModelAndView my_save_tour(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long idx = usersApiLogicService.findIdx(email);
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveApiLogicService.tour(idx).getData();
+
+        return new ModelAndView("/pages/mypage/mysave/my_save_tour").addObject("email", email)
+                .addObject("nickname", nickname).addObject("mysaveList", mysaveApiResponseList);
+    }
 
 
 //    @RequestMapping(path = "/magazine/recommend")   //http://localhost:9090/Triple/magazine_recommend
@@ -1304,6 +1466,82 @@ public class PageController {
 
 
 
+
+
+
+    //투어 메인
+    @RequestMapping(path = "/spot_tour")
+    public ModelAndView spot_tour(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+
+        return new ModelAndView("/pages/travel_spot/spot_tour").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_tour_info")
+    public ModelAndView spot_tour_info(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    @RequestMapping(path = "/spot_review")          //http://localhost:9090/Triple/spot_review
+    public ModelAndView spot_review(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        return new ModelAndView("spot_review_restaurant").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+
+
+
+//    //맛집 상세 페이지
+//    @RequestMapping(path = "/spot_restaurant_info")
+//    public ModelAndView spot_restaurant_info(HttpServletRequest request){
+//        HttpSession session = request.getSession(false);
+//        String email = null;
+//        String nickname = null;
+//        if(session == null){
+//
+//        }else{
+//            email = (String)session.getAttribute("email");
+//            nickname = (String)session.getAttribute("nickname");
+//        }
+//
+//        Long idx = usersApiLogicService.findIdx(email);
+//
+//        return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
+//                .addObject("nickname", nickname).addObject("userId", idx);
+//    }
+
     //스팟 해외
     @RequestMapping(path = "/spot_overseas")            //http://localhost:9090/Triple/spot_overseas
     public ModelAndView spot_overseas(HttpServletRequest request){
@@ -1334,14 +1572,17 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
+        Long userId = usersApiLogicService.findIdx(email);
         GuideApiResponse guide = guideApiLogicService.read(id).getData();
         Long guideIdx = guide.getIdx();
         List<GuideReviewApiResponse> guideReviewApiResponseList = guideReviewApiLogicService.findReview(guideIdx).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
-                .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
+                .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList)
+                .addObject("userId", userId);
     }
 
+    //가이드 리뷰 삭제
     @RequestMapping(path = "/spot/location/review_delete/{id}/{id2}")      //http://localhost:9090/Triple/spot_location_info/{id}
     public ModelAndView spot_location_review_delete(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable Long id2) throws IOException{
         HttpSession session = request.getSession(false);
@@ -1361,10 +1602,30 @@ public class PageController {
         return null;
     }
 
+    // 맛집 리뷰 삭제
+    @RequestMapping(path = "/spot/restaurant/review_delete/{id}/{id2}")      //http://localhost:9090/Triple/spot_location_info/{id}
+    public ModelAndView spot_restaurnat_review_delete(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable Long id2) throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        restaurantReviewApiLogicService.delete2(id, id2);
+
+
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot/restaurant/view/"+id2);
+        return null;
+    }
+
 
 
     //가이드 리스트
-    @RequestMapping(path = "/spot/location")        //http://localhost:9090/Triple/spot_location
+    @RequestMapping(path = "/spot_location")        //http://localhost:9090/Triple/spot_location
     public ModelAndView spot_guide(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
@@ -1946,14 +2207,14 @@ public class PageController {
 
         }
 
-
+        Long userId = usersApiLogicService.findIdx(email);
         RestaurantApiResponse restaurantApiResponse = restaurantApiLogicService.read(idx).getData();
         Long restaurantId = restaurantApiResponse.getIdx();
         List<RestaurantReviewApiResponse> restaurantReviewApiResponseList = restaurantReviewApiLogicService.findReview(restaurantId).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
                 .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse)
-                .addObject("reviewList",restaurantReviewApiResponseList);
+                .addObject("reviewList",restaurantReviewApiResponseList).addObject("userId", userId);
     }
 
     @RequestMapping(path = "/tourism_register")
@@ -1995,19 +2256,22 @@ public class PageController {
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
+        String email = null;
         if(session == null){
 
         }else{
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
+//            email = (String) session.getAttribute("email");
         }
-
+//        Long userId = usersApiLogicService.findIdx(email);
         SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
         Long tourId = spotApiResponse.getIdx();
         List<SpotReviewApiResponse> spotReviewApiResponses = spotReviewApiLogicService.findReview(tourId).getData();
 
-        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userid", userid)
-                .addObject("name", name).addObject("tour" , spotApiResponse).addObject("reviewList", spotReviewApiResponses);
+        return new ModelAndView("/pages/travel_spot/spot_tour_info").addObject("userId", userid)
+                .addObject("name", name).addObject("tour" , spotApiResponse)
+                .addObject("reviewList", spotReviewApiResponses);
     }
 
     //가이드 등록

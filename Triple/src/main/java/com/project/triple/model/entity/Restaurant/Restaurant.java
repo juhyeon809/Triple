@@ -34,13 +34,13 @@ public class Restaurant {
     private String summary;
     private String menuName1;
     private String menuDescription1;
-    private Integer menuPrice1;
+    private String menuPrice1;
     private String menuName2;
     private String menuDescription2;
-    private Integer menuPrice2;
+    private String menuPrice2;
     private String menuName3;
     private String menuDescription3;
-    private Integer menuPrice3;
+    private String menuPrice3;
     private String howTogo;
     private String availableAt;
     private String tip;

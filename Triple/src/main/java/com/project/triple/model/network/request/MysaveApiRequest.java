@@ -15,10 +15,13 @@ import java.time.LocalDateTime;
 @Builder
 public class MysaveApiRequest {
     private Long idx;
-    private Long userid;
+    private Long userId;
     private Long itemNum;
     private String saveYn;
     private String memo;
     private SaveType saveType;
     private LocalDateTime regDate;
+    private String location;
+    private String title;
+    private String summary;
 }

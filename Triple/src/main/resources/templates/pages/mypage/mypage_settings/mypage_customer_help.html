@@ -38,11 +38,11 @@
                         <img src="/lib/img/mypage_img/settings_img/icon_best_click.svg" alt="best_click" style="display: none;" class="click_event">
                         <br>
                         <span class="menu_btn">BEST</span></a></div>
-                    <div><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html"><img src="/lib/img/mypage_img/settings_img/icon_fly.svg" alt=""><br><span class="menu_btn">항공</span></a></div>
-                    <div><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html"><img src="/lib/img/mypage_img/settings_img/icon_home.svg" alt=""><br><span class="menu_btn">숙소</span></a></div>
-                    <div><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html"><img src="/lib/img/mypage_img/settings_img/icon_tour_ticket.svg" alt=""><br><span class="menu_btn">투어·티켓</span></a></div>
-                    <div><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html"><img src="/lib/img/mypage_img/settings_img/icon_service.svg" alt=""><br><span class="menu_btn">서비스 일반</span></a></div>
-                    <div><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html"><img src="/lib/img/mypage_img/settings_img/icon_common.svg" alt=""><br><span class="menu_btn">공통</span></a></div>
+                    <div><a href="/Triple/mypage/settings/customer/faq/air"><img src="/lib/img/mypage_img/settings_img/icon_fly.svg" alt=""><br><span class="menu_btn">항공</span></a></div>
+                    <div><a href="/Triple/mypage/settings/customer/faq/lodging"><img src="/lib/img/mypage_img/settings_img/icon_home.svg" alt=""><br><span class="menu_btn">숙소</span></a></div>
+                    <div><a href="/Triple/mypage/settings/customer/faq/tour"><img src="/lib/img/mypage_img/settings_img/icon_tour_ticket.svg" alt=""><br><span class="menu_btn">투어·티켓</span></a></div>
+                    <div><a href="/Triple/mypage/settings/customer/faq/service"><img src="/lib/img/mypage_img/settings_img/icon_service.svg" alt=""><br><span class="menu_btn">서비스 일반</span></a></div>
+                    <div><a href="/Triple/mypage/settings/customer/faq/common"><img src="/lib/img/mypage_img/settings_img/icon_common.svg" alt=""><br><span class="menu_btn">공통</span></a></div>
                 </div>
                 <div class="list_area" th:each="faqList : ${faqList}">
                     <p class="customer_list_title"><a th:href="'/Triple/mypage/settings/customer/faq/'+${faqList.getIdx()}" th:text="${faqList.getTitle()}">Q 예약은 어디서 볼 수 있나요?</a></p>

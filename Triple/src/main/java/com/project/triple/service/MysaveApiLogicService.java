@@ -26,12 +26,15 @@ public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveA
     private MysaveApiResponse response(Mysave mysave) {
         MysaveApiResponse mysaveApiResponse = MysaveApiResponse.builder()
                 .idx(mysave.getIdx())
-                .userId(mysave.getUserid())
+                .userId(mysave.getUserId())
                 .itemNum(mysave.getItemNum())
                 .saveYn(mysave.getSaveYn())
                 .memo(mysave.getMemo())
                 .saveType(mysave.getSaveType())
                 .regDate(mysave.getRegDate())
+                .location(mysave.getLocation())
+                .title(mysave.getTitle())
+                .summary(mysave.getSummary())
                 .build();
         return mysaveApiResponse;
 
@@ -39,7 +42,15 @@ public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveA
 
     @Override
     public Header<MysaveApiResponse> create(Header<MysaveApiRequest> request) {
-        return null;
+        MysaveApiRequest mysaveApiRequest = request.getData();
+        Mysave mysave = Mysave.builder()
+                .idx(mysaveApiRequest.getIdx()).userId(mysaveApiRequest.getUserId())
+                .itemNum(mysaveApiRequest.getItemNum()).saveYn(mysaveApiRequest.getSaveYn())
+                .memo(mysaveApiRequest.getMemo()).saveType(mysaveApiRequest.getSaveType())
+                .regDate(mysaveApiRequest.getRegDate()).location(mysaveApiRequest.getLocation())
+                .title(mysaveApiRequest.getTitle()).summary(mysaveApiRequest.getSummary()).build();
+        Mysave newMysave = baseRepository.save(mysave);
+        return Header.OK(response(newMysave));
     }
 
     @Override
@@ -57,33 +68,35 @@ public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveA
         return null;
     }
 
-    public Header<List<MysaveApiResponse>> list(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAll().stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> guide(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveTypeAndUserId(SaveType.GUIDE, userId).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
         return Header.OK(mysaveApiResponseList);
     }
 
-    public Header<List<MysaveApiResponse>> guide(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveType(SaveType.GUIDE).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> spot(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveTypeAndUserId(SaveType.SPOT, userId).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
         return Header.OK(mysaveApiResponseList);
     }
 
-    public Header<List<MysaveApiResponse>> spot(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveType(SaveType.SPOT).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> restaurant(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveTypeAndUserId(SaveType.RESTAURANT, userId).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
         return Header.OK(mysaveApiResponseList);
     }
 
-    public Header<List<MysaveApiResponse>> restaurant(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveType(SaveType.RESTAURANT).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> lodging(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveTypeAndUserId(SaveType.LODGING, userId).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
         return Header.OK(mysaveApiResponseList);
     }
 
-    public Header<List<MysaveApiResponse>> lodging(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveType(SaveType.LODGING).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> tour(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveTypeAndUserId(SaveType.TOUR, userId).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
         return Header.OK(mysaveApiResponseList);
     }
 
-    public Header<List<MysaveApiResponse>> tour(){
-        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllBySaveType(SaveType.TOUR).stream().map(mysave -> response(mysave)).collect(Collectors.toList());
+    public Header<List<MysaveApiResponse>> search(Long userId){
+        List<MysaveApiResponse> mysaveApiResponseList = mysaveRepository.findAllByUserIdOrderByIdxDesc(userId).stream()
+                .map(mysave -> response(mysave)).collect(Collectors.toList());
+
         return Header.OK(mysaveApiResponseList);
     }
 }

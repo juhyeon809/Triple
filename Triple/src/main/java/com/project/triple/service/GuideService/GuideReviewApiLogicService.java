@@ -90,7 +90,7 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
             guide.setStarCount(((((double)newTotal/(double)newReviewCount) * 100) / 100));
         }
         guideRepository.save(guide);
-        File file = new File(guide.getUploadPath() + "\\" + guide.getFileName());
+        File file = new File(guideReviewApiResponse.getUploadPath() + "\\" + guideReviewApiResponse.getFileName());
         if(file.exists()){
             file.delete();
         }

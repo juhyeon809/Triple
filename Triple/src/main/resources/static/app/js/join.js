@@ -1,22 +1,5 @@
 console.log("join.js 작동중");
 
-//약관동의 체크박스 전체 선택
-$(".checkbox_group").on("click", "#check_all", function(){
-    $(this).parents(".checkbox_group").find('input').prop("checked", $(this).is(":checked"));
-});
-
-//약관동의 체크박스 개별 선택
-$(".checkbox_group").on("click", ".normal", function(){
-    var is_checked = true;
-
-
-        $(".checkbox_group .normal").each(function(){
-            is_checked = is_checked && $(this).is(":checked");
-        });
-
-        $("#check_all").prop("checked", is_checked);
-});
-
 
 $(function() {
     //정규식 표현
@@ -152,6 +135,20 @@ $(function() {
             return false;
         }
 
+        //약관동의 필수선택 확인
+        let notice = false
+        for(let i=0; i<$("input:checkbox[name='pilsoo']").length; i++){
+            if($("input:checkbox[name='pilsoo']").eq(3).is(":checked")==true){
+                notice = true;
+                break;
+            }
+        }
+        if(!notice){
+            alert('필수 약관을 읽고 모두 동의해주세요')
+            return false;
+        }
+
+
 
 
         let jsonData = {
@@ -190,3 +187,66 @@ $(function() {
     });
 });
 
+$(document).ready(function(){
+//약관동의 체크박스 전체 선택
+    $("#check_all").click(function() {
+        if($("#check_all").is(":checked")) $("input[class='normal']").prop("checked", true);
+        else $("input[class='normal']").prop("checked", false);
+    });
+
+
+
+    $("input[class='normal']").click(function() {
+        var total = $("input[class='normal']").length;
+        var checked = $("input[class='normal']:checked").length;
+
+        //개별선택 해제시 전체체크박스 해제
+        if(total != checked) $("#check_all").prop("checked", false);
+        else $("#check_all").prop("checked", true);
+    });
+})
+
+window.Swal = swal;
+
+//문자인증
+$('#phone_btn').click(function(){
+    let phoneNumber = $('#hp').val();
+    Swal.fire('인증번호 발송 완료!')
+
+
+    $.ajax({
+        type: "GET",
+        url: "/api/user/check/sendSMS",
+        data: {
+            "phoneNumber" : phoneNumber
+        },
+        success: function(res){
+            $('#Certification_check').click(function(){
+                if($.trim(res) ==$('#Certification').val()){
+                    Swal.fire(
+                        '인증성공!',
+                        '휴대폰 인증이 정상적으로 완료되었습니다.',
+                        'success'
+                    )
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/api/user/update/phone",
+                        data: {
+                            "phoneNumber" : $('#Certification').val()
+                        }
+                    })
+
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: '인증오류',
+                        text: '인증번호가 올바르지 않습니다!'
+                    })
+                }
+            })
+
+
+        }
+    })
+});
