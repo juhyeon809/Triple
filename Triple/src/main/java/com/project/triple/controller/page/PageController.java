@@ -1981,6 +1981,7 @@ public class PageController {
                 .addObject("faq", faqApiResponse);
     }
 
+
     // 마이페이지 메거진 등록
     @RequestMapping(path = "/admin/magazine_register")      //http://localhost:9090/Triple/admin/magazine_register
     public ModelAndView magazine_register(HttpServletRequest request){
@@ -2545,5 +2546,40 @@ public class PageController {
 
         return new ModelAndView("/pages/tour_ticket/tourticket_Reservation").addObject("email", email)
                 .addObject("nickname", nickname);
+    }
+
+
+    /* 마이페이지 설정 > 회사소개 */
+    @RequestMapping(path="/mypage/settings/info/company")      //http://localhost:9090/Triple/mypage/settings/info/company
+    public ModelAndView info_company() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_company");
+    }
+    /* 마이페이지 설정 > 개인정보 처리방침 */
+    @RequestMapping(path="/mypage/settings/info/user")      //http://localhost:9090/Triple/mypage/settings/info/user
+    public ModelAndView info_user() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_user");
+    }
+    /* 마이페이지 설정 > 서비스 이용약관 */
+    @RequestMapping(path="/mypage/settings/info/service")      //http://localhost:9090/Triple/mypage/settings/info/service
+    public ModelAndView info_service() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_term_service");
+    }
+
+    /* 마이페이지 설정 > 위치정보 이용약관 */
+    @RequestMapping(path="/mypage/settings/info/map")      //http://localhost:9090/Triple/mypage/settings/info/map
+    public ModelAndView info_map() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_term_map");
+    }
+
+    /* 마이페이지 설정 > 파트너 상품 구매자약관 */
+    @RequestMapping(path="/mypage/settings/info/partner")      //http://localhost:9090/Triple/mypage/settings/info/partner
+    public ModelAndView info_partner() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_item_partner");
+    }
+
+    /* 마이페이지 설정 > 오픈소스 라이선스 */
+    @RequestMapping(path="/mypage/settings/info/openSource")      //http://localhost:9090/Triple/mypage/settings/info/b
+    public ModelAndView info_openSource() {
+        return new ModelAndView("/pages/mypage/mypage_settings/info/mypage_info_open_source");
     }
 }
