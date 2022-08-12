@@ -369,11 +369,14 @@ main {
 
 .guideText{
     width: 500px;
+
     word-break: keep-all;
     font-size: 14px;
 }
 
-
+.guideText p:last-child{
+    padding-top: 30px;
+}
 
 /*main_domestic*/
 

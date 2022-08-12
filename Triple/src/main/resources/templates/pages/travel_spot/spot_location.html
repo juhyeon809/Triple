@@ -35,15 +35,9 @@
             <p class="list_title">지역 가이드</p>
             <div class="content_list" th:each="guide : ${guideList}">
                 <div class="content_flex_box">
-<<<<<<< HEAD
                     <div class="guideText">
-                        <p class="title_text"><a th:href="'/Triple/spot/location/view/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
+                        <p class="title_text"><a th:href="'/Triple/spot_location/view/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
                         <p th:text="${guide.getContent()}" style="font-size: 14px;"></p>
-=======
-                    <div>
-                        <p class="title_text"><a th:href="'/Triple/spot/location/view/'+${guide.getIdx()} + '/1'" th:text="${guide.getTitle()}"></a></p>
-                        <p th:text="${guide.getContent()}"></p>
->>>>>>> 500f0453d012a3c160246108348505be065d2b70
                         <p th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
                     </div>
                     <div><img th:src="@{${guide.getUploadPath()}}" alt=""></div>
