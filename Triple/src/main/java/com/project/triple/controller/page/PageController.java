@@ -1561,7 +1561,7 @@ public class PageController {
     }
 
     //가이드 상세 페이지
-   @RequestMapping(path = "/spot/location/view/{id}/{page}")      //http://localhost:9090/Triple/spot_location_info/{id}
+   @RequestMapping(path = "/spot_location/view/{id}/{page}")      //http://localhost:9090/Triple/spot_location_info/{id}
     public ModelAndView spot_guide_info(HttpServletRequest request, @PathVariable Long id, @PathVariable Long page){
         HttpSession session = request.getSession(false);
         String email = null;
