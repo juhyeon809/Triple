@@ -30,7 +30,7 @@ public class GuideReviewApiController extends CrudController<GuideApiRequest, Gu
         guideReviewApiLogicService.write(guideReview, file);
         Long id = guideReview.getPostId();
 
-        ScriptUtils.alertAndMovePage( response , "리뷰 작성 완료", "/Triple/spot/location/view/" + id);
+        ScriptUtils.alertAndMovePage( response , "리뷰 작성 완료", "/Triple/spot/location/view/" + id + "/1");
         return null ;
     }
 
@@ -40,7 +40,7 @@ public class GuideReviewApiController extends CrudController<GuideApiRequest, Gu
         guideReviewApiLogicService.update2(guideReview, file);
         Long id = guideReview.getPostId();
 
-        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/location/view/" + id);
+        ScriptUtils.alertAndMovePage( response , "리뷰 수정 완료", "/Triple/spot/location/view/" + id + "/1");
         return null ;
     }
 

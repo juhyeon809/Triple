@@ -139,6 +139,9 @@
                     <p th:text="${review.getContent()}"></p>
                 </div>
             </div>
+            <div>
+                <p><a th:each="page: ${pageList}" th:text="${page}" th:href="'/Triple/spot/location/view/'+${guide.getIdx()}+'/'+${page}"></a></p>
+            </div>
         </div>
     </main>
     <!-- footer 시작 -->

@@ -36,7 +36,7 @@
                 <a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}"><img th:src="@{${restaurant.getUploadPath1()}}" alt=""></a>
             </div>
             <div class="text_area">
-                <p class="restauran_list_title_text"><a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}" th:text="${restaurant.getTitle()}"> </a></p>
+                <p class="restauran_list_title_text"><a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}+'/1'" th:text="${restaurant.getTitle()}"> </a></p>
                 <p th:text="${restaurant.getSummary()}"></p>
                 <p><span class="star_point" th:text="${restaurant.getStarCount()} + '점 ' +'('+${restaurant.getReviewCount()}+')'"></span><span>&#183;</span> 저장 10,981</p>
                 <p th:text="${restaurant.getLocation()}"></p>
