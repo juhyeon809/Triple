@@ -859,6 +859,21 @@ create sequence seq_notice
     increment by 1
     start with 1;
     
+create table event(
+    idx number(7),
+    adminuser_id number(7) not null,
+    adminuser_name varchar2(20) not null,
+    event_type varchar2(30) not null,
+    title varchar2(30) not null,
+    content varchar2(1000) not null,
+    upload_path varchar2(200),
+    file_name varchar2(200),
+    reg_date date default sysdate
+);
+
+create sequence seq_event
+    increment by 1
+    start with 1;
 
 create table faq(
     idx number(7),
