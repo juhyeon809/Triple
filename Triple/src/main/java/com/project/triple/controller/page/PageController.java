@@ -1579,6 +1579,7 @@ public class PageController {
 
         return new ModelAndView("/pages/travel_spot/spot_location_info").addObject("email", email)
                 .addObject("nickname", nickname).addObject("guide", guide).addObject("reviewList" , guideReviewApiResponseList);
+
     }
 
     //가이드 리뷰 삭제
@@ -2206,14 +2207,14 @@ public class PageController {
 
         }
 
-        Long userId = usersApiLogicService.findIdx(email);
+//        Long userId = usersApiLogicService.findIdx(email);
         RestaurantApiResponse restaurantApiResponse = restaurantApiLogicService.read(idx).getData();
         Long restaurantId = restaurantApiResponse.getIdx();
         List<RestaurantReviewApiResponse> restaurantReviewApiResponseList = restaurantReviewApiLogicService.findReview(restaurantId).getData();
 
         return new ModelAndView("/pages/travel_spot/spot_restaurant_info").addObject("email", email)
                 .addObject("nickname", nickname).addObject("restaurant", restaurantApiResponse)
-                .addObject("reviewList",restaurantReviewApiResponseList).addObject("userId", userId);
+                .addObject("reviewList",restaurantReviewApiResponseList);
     }
 
     @RequestMapping(path = "/tourism_register")
@@ -2262,7 +2263,7 @@ public class PageController {
             nickname = (String)session.getAttribute("name");
             email = (String) session.getAttribute("email");
         }
-
+        // Long userId = usersApiLogicService.findIdx(email);
         SpotApiResponse spotApiResponse = spotApiLogicService.read(id).getData();
         Long tourId = spotApiResponse.getIdx();
         List<SpotReviewApiResponse> spotReviewApiResponses = spotReviewApiLogicService.findReview(tourId).getData();

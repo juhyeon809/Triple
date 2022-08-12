@@ -76,6 +76,7 @@ public class UsersApiController extends CrudController<UsersApiRequest, UsersApi
 
     }
 
+    @GetMapping("/check/sendSMS")
     @ResponseBody
     public String sendSMS(String phoneNumber) {
 

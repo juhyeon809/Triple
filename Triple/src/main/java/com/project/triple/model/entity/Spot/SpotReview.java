@@ -38,7 +38,7 @@ public class SpotReview {
     private Integer replyCount;
     @CreatedDate
     private LocalDateTime regDate;
-    private String starCount;
+    private Integer starCount;
 
 //    @ManyToOne
 //    private Users users;
