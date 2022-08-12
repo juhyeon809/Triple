@@ -140,6 +140,9 @@
                         <p th:text="${review.getContent()}"></p>
                     </div>
                 </div>
+                <div>
+                    <p><a th:each="page: ${pageList}" th:text="${page}" th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}+'/'+${page}"></a></p>
+                </div>
             </div>
         </div>
         </div>
