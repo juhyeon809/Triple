@@ -242,8 +242,7 @@ input[type="password"]::placeholder{
     text-align: center;
 }
 .country_code > select > option {
-    background-color: #B2F1DE;
-    color: #439d89;
+    color: #B2F1DE;
 }
 .user > #email {
     width: 315px;
