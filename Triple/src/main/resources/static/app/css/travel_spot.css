@@ -343,7 +343,16 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 20px;
+}
+.content_flex_box .guideText div p:last-child{
+    font-size: 14px;
+    width: 450px;
+    padding-top: 20px;
+}
+.content_flex_box .guideText div:last-child p{
+    width: 200px;
 }
 .content_flex_box div p {
     font-size: 16px;
@@ -368,15 +377,14 @@ main {
 }
 
 .guideText{
-    width: 500px;
-
+    width: 550px;
     word-break: keep-all;
     font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.guideText p:last-child{
-    padding-top: 30px;
-}
+
 
 /*main_domestic*/
 
@@ -582,11 +590,36 @@ main {
     margin-bottom: 50px;
 
 }
+.utility_box #mark {
+    margin-left: 20px;
+}
+.utility_box .text_area{
+    padding-top: 20px;
+    width: 750px;
+    margin: 0 auto;
+}
 .text_area {
     color: gray;
     font-weight: bold;
-    padding-left: 60px;
+    /*padding-left: 60px;*/
     padding-bottom: 50px;
+}
+.utility_box .text_area p:first-child{
+    font-weight: bold;
+    font-size: 20px;
+    color: #666666;
+}
+.utility_box .text_area div {
+    width: 150px;
+    display: flex;
+}
+.utility_box .text_area img{
+    width: 15px;
+    height: 25px;
+    margin-right: 10px;
+}
+.utility_box .text_area div p {
+    margin: 0;
 }
 .title_text {
     font-size: 16px;
@@ -598,11 +631,9 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
 }
-.menu_image {
-    margin-left: 20px;
-}
+
 .menu_description {
-    margin-left: 20px;
+    margin: auto 40px;
 }
 #info_box {
     background-color: rgb(250, 249, 249);
@@ -611,27 +642,28 @@ main {
     color: rgb(77, 76, 76);
     border-radius: 5px;
 }
-#info_box .info_box_title{
-    font-size: 24px;
+#info_box .info_box_title.res_tit{
+    font-size: 18px;
     font-weight: bold;
-    
+
 }
 #info_box .info_box_subtitle {
     font-size: 18px;
     font-weight: bold;
 }
 
-#menu_description .menu_name {
-    font-size: 20px;
+.menu_description .menu_name {
+    margin: 0 0 10px;
+    font-size: 16px;
     font-weight: bold;
-    margin: 0;
-    margin-bottom: 10px;
+    color: #666666;
 }
+
 #menu_description .menu_price , #menu_description .menu_description_text {
     font-size: 16px;
     font-weight: bold;
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+    word-break: keep-all;
 }
 #basic_info_text {
     font-size: 22px;
@@ -641,6 +673,9 @@ main {
 #basic_info_flex_box {
     display: flex;
     justify-content: space-around;
+}
+.res_info #tips_for_visiting{
+    margin-top: 0;
 }
 #basic_info_text_area {
     width: 500px;
@@ -703,6 +738,8 @@ hr {
     color: #2680EB;
 }
 .flex_div .context_p{
+    width: 450px;
+    word-break: keep-all;
     font-size: 16px;
 font-weight: bold;
 color: #666666;
@@ -769,8 +806,8 @@ color: #666666;
 
 
 .restaurant_list_box {
-    margin-top: 50px;
-    ;
+    width: 900px;
+    margin: 50px auto;
 }
 .restaurant_list_box p {
     margin: 7px;
@@ -787,7 +824,8 @@ color: #666666;
 }
 
 .image_area img {
-    width: 400px;
+    width: 350px;
+    border-radius: 10px;
 }
 .restaurant_flex_box {
     display: flex;
@@ -893,7 +931,7 @@ color: #666666;
 .text_area {
     color: gray;
     font-weight: bold;
-    padding-left: 60px;
+    /*padding-left: 60px;*/
     padding-bottom: 50px;
 }
 .title_text {
@@ -911,11 +949,12 @@ color: #666666;
 }
 .menu_image {
     margin-left: 20px;
-    width: 400px;
+    margin-right: 40px;
 }
 .menu_image img {
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
 }
 .main_picture {
     width: 700px;
@@ -925,7 +964,8 @@ color: #666666;
     width: 100%;
 }
 #menu_description {
-    margin-left: 20px;
+    margin-left: 40px;
+    padding-top: 5px;
 }
 #info_box {
     background-color: rgb(250, 249, 249);
@@ -952,16 +992,11 @@ color: #666666;
     margin-bottom: 40px;
 }
 
-#menu_description .menu_name {
-    font-size: 16px;
-    font-weight: bold;
-    color: #666666;
-    margin: 0;
-    margin-bottom: 10px;
-}
+
 #menu_description .menu_description_text {
     font-size: 14px;
     font-weight: normal;
+    word-break: keep-all;
     margin: 0;
     margin-bottom: 10px;
 }
@@ -1046,6 +1081,9 @@ hr {
     justify-content: flex-start;
     align-items: center;
     border-bottom: 1px solid gray;
+}
+#tips_for_visiting .flex_div:last-child{
+    border-bottom: none;
 }
 #no_border_box {
     border-bottom: 0px;

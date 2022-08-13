@@ -34,16 +34,21 @@
         <div class="guide_content_box">
             <p class="list_title">지역 가이드</p>
             <div class="content_list" th:each="guide : ${guideList}">
+                <div style="display: flex; flex-wrap: wrap;">
                 <div class="content_flex_box">
                     <div class="guideText">
-                        <p class="title_text"><a th:href="'/Triple/spot_location/view/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
-                        <p th:text="${guide.getContent()}" style="font-size: 14px;"></p>
-                        <p th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
+                        <div><p class="title_text"><a th:href="'/Triple/spot_location/view/'+${guide.getIdx()}" th:text="${guide.getTitle()}"></a></p>
+                        <p th:text="${guide.getContent()}" style="font-size: 14px;"></p></div>
+                        <div><p th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p></div>
                     </div>
+
                     <div><img th:src="@{${guide.getUploadPath()}}" alt=""></div>
+
                 </div>
+             </div>
                 <hr>
             </div>
+
         </div>
     </main>
     <!-- footer 시작 -->
