@@ -499,11 +499,11 @@ public class PageController {
         }
 
         Long idx = usersApiLogicService.findIdx(email);
-
+        UsersApiResponse usersApiResponse = usersApiLogicService.read(idx).getData();
 
 
         return new ModelAndView("/pages/mypage/mypage_settings/mypage_settings_profile").addObject("email", email)
-                .addObject("nickname", nickname).addObject("idx", idx);
+                .addObject("nickname", nickname).addObject("idx", idx).addObject("users",usersApiResponse);
     }
 
     //마이페이지 설정 서비스 탈퇴
