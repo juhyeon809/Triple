@@ -1,5 +1,6 @@
 package com.project.triple.repository;
 
+import com.project.triple.model.entity.Faq;
 import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Restaurant.Restaurant;
 import com.project.triple.model.entity.Spot.Spot;
@@ -12,4 +13,5 @@ import java.util.List;
 public interface SpotRepository extends JpaRepository<Spot,Long> {
 
     Spot findByIdx(Long postId);
+    List<Spot> findAllByOrderByIdxDesc();
 }

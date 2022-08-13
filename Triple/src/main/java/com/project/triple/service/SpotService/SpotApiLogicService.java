@@ -125,7 +125,7 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
     }
 
     public Header<List<SpotApiResponse>> list() {
-        List<SpotApiResponse> spotApiResponseList = spotRepository.findAll().stream().map(spot -> response(spot)).collect(Collectors.toList());
+        List<SpotApiResponse> spotApiResponseList = spotRepository.findAllByOrderByIdxDesc().stream().map(spot -> response(spot)).collect(Collectors.toList());
         return Header.OK(spotApiResponseList);
     }
 

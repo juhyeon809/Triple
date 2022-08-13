@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -140,24 +142,16 @@
             </div>
             <table class="tbList">
                 <tr>
-                    <th>
-                        번호
-                    </th>
-                    <th>
-                        분류
-                    </th>
-                    <th>
-                        제목
-                    </th>
-                    <th>
-                        작성날짜
-                    </th>
+                    <th>번호</th>
+                    <th>국가(도시)</th>
+                    <th>여행스팟</th>
+                    <th>작성날짜</th>
                 </tr> 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>2022.06.27</td>
+                <tr th:each="spot : ${spotList}">
+                    <td><a th:href="'/Triple/admin/spotList/view/'+${spot.getIdx()}" th:text="${spot.idx}"></a></td>
+                    <td><span th:text="${spot.country}"></span>(<span th:text="${spot.city}"></span>)</td>
+                    <td th:text="${spot.placeName}"></td>
+                    <td th:text="${spot.regDate}">2022.06.27</td>
                 </tr>
                 
             </table>

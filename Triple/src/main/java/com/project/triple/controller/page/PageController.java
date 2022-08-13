@@ -1769,19 +1769,22 @@ public class PageController {
     /* 관리자 페이지 */
     /* 관리자 페이지 로그인*/
     @RequestMapping(path={"/adminUser"})        //http://localhost:9090/Triple/adminUser
-    public ModelAndView admin_main(HttpServletRequest request){
+    public ModelAndView admin_main(HttpServletResponse response, HttpServletRequest request) throws IOException{
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
         if(session == null) {
-
+            ScriptUtils.alertAndMovePage(response, "관리자 로그인 후 이용하세요", "/Triple/admin/admin_login");
         }else{
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
         }
+        List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
 
-        return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
-                .addObject("name", name);
+        return new ModelAndView("/pages/admin/admin_main")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("usersList", usersList);
 
     }
     @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
@@ -2248,9 +2251,23 @@ public class PageController {
 
     /* 여행스팟 > 목록 */
     @RequestMapping(path="/admin/spotList")      //http://localhost:9090/Triple/admin/spotList
-    public ModelAndView admin_spotList() {
-        return new ModelAndView("/pages/admin/spot/spotList");
+    public ModelAndView admin_spotList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<SpotApiResponse> spotList = spotApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/spot/spotList")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("spotList", spotList);
     }
+
 
     /* 결제 */
     @RequestMapping(path="/admin/payment")      //http://localhost:9090/Triple/admin/payment
