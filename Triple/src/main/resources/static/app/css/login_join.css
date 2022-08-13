@@ -297,11 +297,7 @@ input[type="password"]::placeholder{
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-.pilsoo { 
-=======
 .pilsoo {
->>>>>>> 3bd8bede00840e6eb0377bddbbb70fbae0a17c20
     color: #FE6C6C
 }
 input[type="button"] {

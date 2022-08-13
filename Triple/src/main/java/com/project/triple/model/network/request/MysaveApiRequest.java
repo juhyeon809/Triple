@@ -24,4 +24,5 @@ public class MysaveApiRequest {
     private String location;
     private String title;
     private String summary;
+    private String uploadPath;
 }

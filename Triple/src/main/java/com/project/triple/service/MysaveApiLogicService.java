@@ -35,6 +35,7 @@ public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveA
                 .location(mysave.getLocation())
                 .title(mysave.getTitle())
                 .summary(mysave.getSummary())
+                .uploadPath(mysave.getUploadPath())
                 .build();
         return mysaveApiResponse;
 
@@ -48,7 +49,8 @@ public class MysaveApiLogicService extends BaseService<MysaveApiRequest, MysaveA
                 .itemNum(mysaveApiRequest.getItemNum()).saveYn(mysaveApiRequest.getSaveYn())
                 .memo(mysaveApiRequest.getMemo()).saveType(mysaveApiRequest.getSaveType())
                 .regDate(mysaveApiRequest.getRegDate()).location(mysaveApiRequest.getLocation())
-                .title(mysaveApiRequest.getTitle()).summary(mysaveApiRequest.getSummary()).build();
+                .title(mysaveApiRequest.getTitle()).summary(mysaveApiRequest.getSummary())
+                .uploadPath(mysaveApiRequest.getUploadPath()).build();
         Mysave newMysave = baseRepository.save(mysave);
         return Header.OK(response(newMysave));
     }

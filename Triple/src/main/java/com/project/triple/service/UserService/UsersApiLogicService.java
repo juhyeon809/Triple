@@ -125,16 +125,13 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
        return idx;
     }
 
-<<<<<<< HEAD
     public UsersApiResponse findEmail(String email){
         UsersApiResponse email1 = response(usersRepository.findByEmail(email).get());
 
         return email1;
     }
 
-=======
     public static void certifiedPhoneNumber(String phoneNumber, String cerNum) {
->>>>>>> 3bd8bede00840e6eb0377bddbbb70fbae0a17c20
 
 
         String api_key = "추가해야함";

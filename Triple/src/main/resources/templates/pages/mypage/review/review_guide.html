@@ -56,22 +56,23 @@
                 </div>
             </div>
             <div class="content_list2">
-                <p style="text-align: right"><a href="/Triple/mypage/review">[ Spot Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
-                <h1>Spot Review🎈</h1><br>
-                <div th:each="spotR : ${spotReview}">
-                <div class="list_box" th:each="spot : ${spotList}">
-                    <a th:href="'/Triple/spot/tour/view/'+${spot.getIdx()}">
-                        <div th:if="${spotR.getPostId().equals(spot.getIdx())}">
-                            <div class="dre_box" >
-                                <p id="dre_cont"><span id="dre_cont2" th:text="${spot.getPlaceName()}">신화관 제주 신화월드 호텔앤리조트</span> <br>  <span th:text="${spot.getCity()}">5성급 | 제주(중문)</span><br><span id="star3" th:text="'평점 : '+${spotR.getStarCount()+'점'}">★★★★★</span><br><span th:text="${spotR.getContent()}">너무 좋았어요! 편안하게 쉬다 갑니다^^</span></p>
+                <p style="text-align: right"><a href="/Triple/mypage/review">[ Tour Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
+                <h1>Guide Review🎈</h1><br>
+                <div th:each="guideR : ${guideReview}">
+                <div class="list_box" th:each="guide : ${guideList}">
+                    <a th:href="'/Triple/spot_location/view/'+${guide.getIdx()}+'/1'">
+                        <div th:if="${guideR.getPostId().equals(guide.getIdx())}">
+                            <div class="dre_box">
+                                <p id="dre_cont"><span id="dre_cont2" th:text="${guide.getTitle()}">신화관 제주 신화월드 호텔앤리조트</span> <br> <span th:text="${guide.getCity()}">5성급 | 제주(중문)</span><br><span id="star3" th:text="'평점 : '+${guideR.getStarCount()+'점'}">★★★★★</span><br><span th:text="${guideR.getContent()}">너무 좋았어요! 편안하게 쉬다 갑니다^^</span>
+                                </p>
                                 <div class="do_img">
                                     <img src="/lib/img/mypage_img/mypage.svg" id="relist_img">
                                 </div>
                             </div>
-                            <img th:src="@{${spot.getUploadPath1()}}">
+                            <img th:src="@{${guide.getUploadPath()}}">
                             <div class="dre_box">
-                                <p id="like_re" th:text="'좋아요 '+${spotR.getLikeCount()}+' | 댓글 '+${spotR.getReplyCount()}">좋아요 0 | 댓글 1</p>
-                                <p id="redate" th:text="${#temporals.format(spotR.getRegDate(), 'yyyy.MM.dd(E)')}">2022.06.19(일)</p>
+                                <p id="like_re" th:text="'좋아요 '+${guideR.getLikeCount()}+' | 댓글 '+${guideR.getReplyCount()}">좋아요 0 | 댓글 1</p>
+                                <p id="redate" th:text="${#temporals.format(guideR.getRegDate(), 'yyyy.MM.dd(E)')}">2022.06.19(일)</p>
                             </div>
                         </div>
                     </a>

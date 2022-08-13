@@ -40,7 +40,7 @@
                         <a href="/templates/pages/mypage/mysave/edit_memo.html"><img src="/lib/img/mypage_img/mysave_img/memo_img.svg"></a>
                     </div>
                     <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
+                        <img th:src="@{${mysave.getUploadPath()}}">
                     </div>
                 </div>
             </div>
