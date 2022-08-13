@@ -74,11 +74,11 @@
         <div id="main_content_box">
             <div id="profile_box">
 
-                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${nickname}"></p>
+                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${session.nickname}"></p>
             </div>
             <div id="account_name">
                 <p class="title_p">연결된 계정</p>
-                <p class="subtitle_p" th:text="${email}"></p>
+                <p class="subtitle_p" th:text="${session.email}"></p>
             </div>
             <form method="post" id="deleteForm">
             <form method="post">

@@ -117,6 +117,12 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
        return idx;
     }
 
+    public UsersApiResponse findEmail(String email){
+        UsersApiResponse email1 = response(usersRepository.findByEmail(email).get());
+
+        return email1;
+    }
+
 
 
 }

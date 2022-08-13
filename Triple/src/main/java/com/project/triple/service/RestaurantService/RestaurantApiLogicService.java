@@ -3,9 +3,12 @@ package com.project.triple.service.RestaurantService;
 import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Restaurant.Restaurant;
+import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.RestaurantRequest.RestaurantApiRequest;
+import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.RestaurantRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -122,6 +125,7 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         restaurant.setLikeCount(0);
         restaurant.setTotalStar(0);
         restaurant.setStarCount(0.0);
+        restaurant.setReviewCount(0);
         restaurantRepository.save(restaurant);
     }
 
@@ -143,4 +147,20 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
         baseRepository.save(restaurant);
     }
 
+    public Header<RestaurantApiResponse> read3(Long postId) {
+
+        Restaurant restaurant = restaurantRepository.findByIdx(postId);
+
+        RestaurantApiResponse restaurantApiResponse = response(restaurant);
+
+        return Header.OK(restaurantApiResponse);
+    }
+
+    public Header<List<RestaurantApiResponse>> search(){
+        List<Restaurant> restaurantList = restaurantRepository.findAll();
+        List<RestaurantApiResponse> restaurantApiResponseList = restaurantList.stream()
+                .map(restaurant -> response(restaurant))
+                .collect(Collectors.toList());
+        return Header.OK(restaurantApiResponseList);
+    }
 }

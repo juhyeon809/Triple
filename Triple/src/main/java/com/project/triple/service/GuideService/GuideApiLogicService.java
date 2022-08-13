@@ -2,6 +2,9 @@ package com.project.triple.service.GuideService;
 
 import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Notice;
+import com.project.triple.model.entity.Reservation.Reservation;
+import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.GuideType;
 import com.project.triple.model.enumclass.UserStatus;
@@ -9,6 +12,10 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.GuideRequest.GuideApiRequest;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
+import com.project.triple.model.network.response.NoticeApiResponse;
+import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.GuideRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -120,5 +127,20 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
         baseRepository.save(guide);
     }
 
+    public Header<GuideApiResponse> read3(Long postId) {
 
+        Guide guide = guideRepository.findByIdx(postId);
+
+        GuideApiResponse guideApiResponse = response(guide);
+
+        return Header.OK(guideApiResponse);
+    }
+
+    public Header<List<GuideApiResponse>> search(){
+        List<Guide> guideList = guideRepository.findAll();
+        List<GuideApiResponse> guideApiResponseList = guideList.stream()
+                .map(guide -> response(guide))
+                .collect(Collectors.toList());
+        return Header.OK(guideApiResponseList);
+    }
 }

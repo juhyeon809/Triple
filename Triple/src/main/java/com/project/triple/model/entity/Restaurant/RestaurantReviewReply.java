@@ -33,7 +33,7 @@ public class RestaurantReviewReply {
     private String content;
     private String nickname;
     private String userId;
-    private String likeCount;
+    private Integer likeCount;
     @CreatedDate
     private LocalDateTime regDate;
 

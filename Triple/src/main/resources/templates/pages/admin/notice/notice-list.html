@@ -156,7 +156,7 @@
                 <td><a th:href="'/Triple/admin/noticeList/view/'+${notice.getIdx()}" th:text="${notice.idx}"></a></td>
                 <td th:text="${notice.getNoticeType()}"></td>
                 <td th:text="${notice.getTitle}"></td>
-                <td th:text="${notice.getRegDate()}"></td>
+                <td th:text="${#temporals.format(notice.getRegDate(), 'yyyy-MM-dd')}"></td>
             </tr>
         </table>
         <!--공지 리스트 테이블 끝-->

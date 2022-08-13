@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="/app/js/mysave.js"></script>
 </head>
 <body>
     <!--header 시작-->
@@ -25,35 +24,12 @@
             <p><a href="/Triple/spot_location">가이드</a></p>
             <p><a href="/Triple/flightMain">항공</a></p>
             <p><a href="/Triple/lodgingMain">숙소</a></p>
-            <p><a href="/Triple/spot_tour">관광</a></p>
-            <p><a href="/Triple/spot_restaurant">맛집</a></p>
-            <p><a href="/Triple/tour_ticket_main">투어<span>&#183;</span>티켓</a></p>
+            <p><a href="/Triple/spot/tour">관광</a></p>
+            <p><a href="/Triple/spot/restaurant">맛집</a></p>
+            <p><a href="/Triple/spot/">투어<span>&#183;</span>티켓</a></p>
         </div>
-        <div id="utility_box">
-            <div id="utility_flex_box">
+        <div id="box_information">
             <p class="title_text" th:text="${guide.getTitle()}"></p>
-            <p id="sub_text">리뷰 53 저장 828</p>
-                <div id="mark"><p>가이드</p></div>
-                <div id="utility_flex_box2">
-                    <form method="POST">
-                        <input type="hidden" id="itemNum" th:value="${guide.getIdx()}"/>
-                        <input type="hidden" id="userId" th:value="${userId}"/>
-                        <input type="hidden" id="location" th:value="${guide.getCity()}"/>
-                        <input type="hidden" id="title" th:value="${guide.getTitle()}"/>
-                        <input type="hidden" id="summary" th:value="${guide.getContent()}"/>
-                        <input type="hidden" id="saveType" th:value="'GUIDE'"/>
-                        <div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"><input type="button" id="sendit" value="저장하기"/></div>
-                    </form>
-                    <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="tour_info_btn_schedule"><img src="/lib/img/travel_spot_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
-                    <a href="/templates/pages/mypage/review/review_write.html"><div id="tour_info_btn_writereview"><img src="/lib/img/travel_spot_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
-                    <a href="#"><div id="tour_info_btn_share"><img src="/lib/img/travel_spot_img/icon_share.svg" alt="공유"> 공유하기</div></a>
-                </div>
-            </div>
-            <div id="like_save_box">
-            <img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt=""><img src="/lib/img/travel_spot_img/btn-social-blog@3x.png" alt="">
-            </div>
-        </div>
-            <div id="box_information_img"><img src="/lib/img/travel_spot_img/overseas2.svg" alt=""></div>
             <div id="sub_flex_box">
             <p id="sub_text" th:text="'리뷰: ' + ${guide.getReviewCount()} + '개 평점: ' + ${guide.getStarCount()}+'점'"></p>
             <div id="like_save_box">
@@ -71,52 +47,52 @@
             <table>
                 <tr>
                     <td class="table_index">언어</td>
-                    <td th:text="${guide.getLanguage()}"></td>
+                    <td th:text="${guide.getLanguage()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">면적</td>
-                    <td th:text="${guide.getArea()}"></td>
+                    <td th:text="${guide.getArea()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">인구</td>
-                    <td th:text="${guide.getPopulation()}"></td>
+                    <td th:text="${guide.getPopulation()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">시차</td>
-                    <td th:text="${guide.getTimeDifference()}"></td>
+                    <td th:text="${guide.getTimeDifference()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">종교</td>
-                    <td th:text="${guide.getMyth()}"></td>
+                    <td th:text="${guide.getMyth()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">전압</td>
-                    <td th:text="${guide.getVoltage()}"></td>
+                    <td th:text="${guide.getVoltage()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">통화</td>
-                    <td th:text="${guide.getCurrency()}"></td>
+                    <td th:text="${guide.getCurrency()}" style="white-space: pre-line; word-break: keep-all;"</td>
                 </tr>
                 <tr>
                     <td class="table_index">전화</td>
-                    <td th:text="${guide.getCountryCode()}"></td>
+                    <td th:text="${guide.getCountryCode()}" style="white-space: pre-line; word-break: keep-all;"></td>
                 </tr>
                 <tr>
                     <td class="table_index">비자</td>
                     <td>
-                        <p th:text="${guide.getVisa()}"></p>
+                        <p th:text="${guide.getVisa()}" style="white-space: pre-line; word-break: keep-all;"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">물가</td>
                     <td>
-                        <p th:text="${guide.getPrices()}"></p>
+                        <p th:text="${guide.getPrices()}" style="white-space: pre-line; word-break: keep-all;"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">항공</td>
                     <td>
-                        <p style=" margin: 0;" th:text="${guide.getAir()}"></p>
+                        <p th:text="${guide.getAir()}" style="margin: 0; white-space: pre-line; word-break: keep-all;"></p>
                         <p style="text-align: right; margin: 0;"><a href="/Triple/flightMain">현재 운항 중인 항공편 조회하기</a></p>
                         
                     </td>
@@ -124,19 +100,19 @@
                 <tr>
                     <td class="table_index">기후</td>
                     <td>
-                        <p th:text="${guide.getClimate()}"></p>
+                        <p th:text="${guide.getClimate()}" style="white-space: pre-line; word-break: keep-all;"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index"> 여행 최적기</td>
                     <td>
-                        <p th:text="${guide.getBestTime()}"></p>
+                        <p th:text="${guide.getBestTime()}" style="white-space: pre-line; word-break: keep-all;"></p>
                     </td>
                 </tr>
                 <tr>
                     <td class="table_index">간단한 회화</td>
                     <td>
-                        <p style="white-space: pre-line;" th:text="${guide.getSimpleConversation()}"></p>
+                        <p th:text="${guide.getSimpleConversation()}" style="white-space: pre-line; word-break: keep-all;"></p>
                     </td>
                 </tr>
             </table>

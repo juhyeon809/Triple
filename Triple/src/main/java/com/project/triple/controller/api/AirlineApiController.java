@@ -32,7 +32,7 @@ public class AirlineApiController extends CrudController<AirlineApiRequest, Airl
     {
         airlineApiLogicService.write(airline, file);
 
-        ScriptUtils.alertAndMovePage(response, "항공사 등록완료", "/Triple");
+        ScriptUtils.alertAndMovePage(response, "항공사 등록완료", "/Triple/adminUser");
         return null;
     }
 }
