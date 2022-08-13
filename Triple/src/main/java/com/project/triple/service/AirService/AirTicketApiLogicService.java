@@ -3,11 +3,13 @@ package com.project.triple.service.AirService;
 import com.project.triple.controller.page.TimeCollector;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.Air.Aircraft;
+import com.project.triple.model.entity.Air.Airline;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.AirResponse.AircraftApiResponse;
+import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
 import com.project.triple.repository.AirTicketRepository;
 import com.project.triple.repository.AircraftRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -119,6 +121,14 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
     }
 
 
+    /*항공권 조회*/
+    public Header<List<AirTicketApiResponse>> search_sort(){
+        List<AirTicket> airTicketList = airTicketRepository.findAllByOrderByIdxDesc();
+        List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
+                .map(airTicket -> response(airTicket))
+                .collect(Collectors.toList());
+        return Header.OK(airTicketApiResponseList);
+    }
 
 
 

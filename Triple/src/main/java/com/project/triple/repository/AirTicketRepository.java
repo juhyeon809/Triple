@@ -22,6 +22,6 @@ public interface AirTicketRepository extends JpaRepository<AirTicket, Long> {
     List<AirTicket> findAllByAirRoute(String route);
 
     List<AirTicket> findAllByDepartureAirportAndLandingAirportAndDepartureTimeContaining(String departureAirport, String landingAirport,String departureTime);
-
+    List<AirTicket> findAllByOrderByIdxDesc();
 
 }

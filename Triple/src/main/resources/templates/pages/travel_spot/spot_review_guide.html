@@ -27,26 +27,35 @@
             <p><a href="/Triple/lodgingMain">숙소</a></p>
             <p><a href="/Triple/spot/tour">관광</a></p>
             <p><a href="/Triple/spot/restaurant">맛집</a></p>
+<<<<<<< HEAD
             <p><a href="/Triple/spot/">투어<span>&#183;</span>티켓</a></p>
+=======
+            <p><a href="/Triple/tour_ticket_main">투어<span>&#183;</span>티켓</a></p>
+>>>>>>> 3bd8bede00840e6eb0377bddbbb70fbae0a17c20
         </div>
         <div id="writing_box">
             <p class="title_text">가이드 리뷰 작성</p>
+            <div>
             <form th:action="@{/api/guide_review/register}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="postId" th:value="${postId}">
                 <input type="hidden" name="userEmail" th:value="${session.email}">
                 <input type="hidden" name="nickname" th:value="${session.nickname}">
-                <p><button type="reset" value="취소">취소</button> | <input type="submit" value="등록"></p>
-                <select name="starCount">
-                    <option value="1">1점</option>
-                    <option value="2">2점</option>
-                    <option value="3">3점</option>
-                    <option value="4">4점</option>
-                    <option value="5">5점</option>
-                </select>
-                <input type="text" name="title">
+
+                <div style="display: flex;">
+                    <select name="starCount">
+                        <option value="1">1점</option>
+                        <option value="2">2점</option>
+                        <option value="3">3점</option>
+                        <option value="4">4점</option>
+                        <option value="5">5점</option>
+                    </select>
+                    <input type="text" name="title" placeholder="타이틀을 입력해주세요">
+                </div>
                 <textarea name="content" id="" placeholder="이 가이드는 어떠셨나요? 여행에서 알면 좋은 팁을 나눠주세요."></textarea>
                 <input name="file" type="file">
+                <div style="text-align: right; margin: 0 0 30px;"><button type="reset" value="취소">취소</button> | <input type="submit" value="등록"></div>
             </form>
+            </div>
         </div>
     </main>
 <!-- footer 시작 -->

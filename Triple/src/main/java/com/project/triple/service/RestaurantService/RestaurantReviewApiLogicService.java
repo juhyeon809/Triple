@@ -86,7 +86,7 @@ public class RestaurantReviewApiLogicService extends BaseService<RestaurantRevie
         }else{
             restaurant.setReviewCount(newReviewCount);
             restaurant.setTotalStar(newTotal);
-            restaurant.setStarCount(((((double)newTotal/(double)newReviewCount) * 100) / 100));
+            restaurant.setStarCount(((double)newTotal/(double)newReviewCount));
         }
         restaurantRepository.save(restaurant);
         File file = new File(restaurantReviewApiResponse.getUploadPath() + "\\" + restaurantReviewApiResponse.getFileName());

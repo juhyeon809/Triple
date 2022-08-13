@@ -1,10 +1,12 @@
 package com.project.triple.service;
 
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Package;
 import com.project.triple.model.enumclass.MagazineType;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.MagazineApiRequest;
 import com.project.triple.model.network.response.MagazineApiResponse;
+import com.project.triple.model.network.response.PackageApiResponse;
 import com.project.triple.repository.MagazineRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -145,6 +147,15 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
         magazine.setFileName(filename);
         magazine.setUploadPath("/files/"+filename);
         magazineRepository.save(magazine);
+    }
+
+    /* 매거진 조회 */
+    public Header<List<MagazineApiResponse>> search(){
+        List<Magazine> magazineList = magazineRepository.findAllByOrderByIdxDesc();
+        List<MagazineApiResponse> magazineApiResponseList = magazineList.stream()
+                .map(magazine -> response(magazine))
+                .collect(Collectors.toList());
+        return Header.OK(magazineApiResponseList);
     }
 
 

@@ -27,7 +27,11 @@
             <p><a href="/Triple/lodgingMain">숙소</a></p>
             <p><a href="/Triple/spot/tour">관광</a></p>
             <p><a href="/Triple/spot/restaurant">맛집</a></p>
+<<<<<<< HEAD
             <p><a href="/Triple/spot/">투어<span>&#183;</span>티켓</a></p>
+=======
+            <p><a href="/Triple/tour_ticket_main">투어<span>&#183;</span>티켓</a></p>
+>>>>>>> 3bd8bede00840e6eb0377bddbbb70fbae0a17c20
         </div>
     <p class="title_text">맛집 리스트 <select name="" id=""></select></p>
     <div class="restaurant_list_box">
@@ -36,9 +40,9 @@
                 <a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}"><img th:src="@{${restaurant.getUploadPath1()}}" alt=""></a>
             </div>
             <div class="text_area">
-                <p class="restauran_list_title_text"><a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}" th:text="${restaurant.getTitle()}"> </a></p>
+                <p class="restauran_list_title_text"><a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}+'/1'" th:text="${restaurant.getTitle()}"> </a></p>
                 <p th:text="${restaurant.getSummary()}"></p>
-                <p><span class="star_point">★★★★☆</span> (590) <span>&#183;</span> 저장 10,981</p>
+                <p><span class="star_point" th:text="${restaurant.getStarCount()} + '점 ' +'('+${restaurant.getReviewCount()}+')'"></span><span>&#183;</span> 저장 10,981</p>
                 <p th:text="${restaurant.getLocation()}"></p>
                 <br>
                 <p class="bold_font">이용가능시간,휴무일</p>
