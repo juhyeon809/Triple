@@ -92,7 +92,7 @@
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password" name="userpw" id="userpw" th:value="${users?.userpw}"></td>
+                        <td><input type="password" name="userpw" id="userpw" th:value="${users.userpw}"></td>
                     </tr>
                     <tr>
                         <td>비밀번호 확인</td>
@@ -100,7 +100,7 @@
                     </tr>
                     <tr>
                         <td>연락처</td>
-                        <td><input type="text" name="hp" id="hp" th:value="${users?.hp}"></td>
+                        <td><input type="text" name="hp" id="hp" th:value="${users.hp}"></td>
                     </tr>
                     <tr>
                         <td>이메일</td>
@@ -108,15 +108,15 @@
                     </tr>
                     <tr>
                         <td>우편번호</td>
-                        <td><input type="text" name="zipcode" id="sample6_postcode" maxlength="5" th:value="${users?.zipcode}" readonly><input type="button" value="우편번호 검색" onclick="sample6_execDaumPostcode()"></td>
+                        <td><input type="text" name="zipcode" id="sample6_postcode" maxlength="5" th:value="${users.zipcode}" readonly><input type="button" value="우편번호 검색" onclick="sample6_execDaumPostcode()"></td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td id="address2"><input type="text" name="address1" id="sample6_address" th:value="${users?.address1}"><input type="text" name="address2" id="sample6_detailAddress" th:value="${users?.address2}"></td>
+                        <td id="address2"><input type="text" name="address1" id="sample6_address" th:value="${users.address1}"><input type="text" name="address2" id="sample6_detailAddress" th:value="${users.address2}"></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td id="address3"><input type="text" name="address3" id="sample6_extraAddress" th:value="${users?.address3}"></td>
+                        <td id="address3"><input type="text" name="address3" id="sample6_extraAddress" th:value="${users.address3}"></td>
                     </tr>
                 </table>
                 <div id="form_flex_box">
