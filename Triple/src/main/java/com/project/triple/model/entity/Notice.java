@@ -27,7 +27,7 @@ public class Notice {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_notice")
     private Long idx;
-    private Long adminuserId;
+    private String adminuserId;
     private String adminuserName;
     private String noticeType;
     private String title;
