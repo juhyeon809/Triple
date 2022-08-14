@@ -2,6 +2,7 @@ package com.project.triple.service.LodgingService;
 
 import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
+import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
@@ -12,8 +13,11 @@ import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,18 +31,19 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         LodgingApiResponse lodgingApiResponse = LodgingApiResponse.builder()
                 .idx(lodging.getIdx())
                 .type(lodging.getType())
-                .companyNum(lodging.getCompanyNum())
-                .lodgingType(lodging.getLodgingType())
-                .companyName(lodging.getCompanyName())
-                .introducing(lodging.getIntroducing())
+                .name(lodging.getName())
                 .country(lodging.getCountry())
-                .city(lodging.getCity())
+                .rank(lodging.getRank())
+                .uploadPath(lodging.getUploadPath())
+                .fileName(lodging.getFileName())
+                .info(lodging.getInfo())
+                .introducing(lodging.getIntroducing())
                 .address(lodging.getAddress())
-                .contactHp(lodging.getContactHp())
-                .representative(lodging.getRepresentative())
-                .email(lodging.getEmail())
-                .likeCount(lodging.getLikeCount())
-                .homepage(lodging.getHomepage())
+                .checkIn(lodging.getCheckIn())
+                .checkOut(lodging.getCheckOut())
+                .policy(lodging.getPolicy())
+                .cf(lodging.getCf())
+                .moreInfo(lodging.getMoreInfo())
                 .build();
         return lodgingApiResponse;
     }
@@ -50,7 +55,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
 
     @Override
     public Header<LodgingApiResponse> read(Long id) {
-        return null;
+        return Header.OK(response(lodgingRepository.findByIdx(id)));
     }
 
     @Override
@@ -75,5 +80,22 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         LodgingApiResponse lodgingApiResponse = response(lodging);
 
         return Header.OK(lodgingApiResponse);
+    }
+
+    public List<LodgingApiResponse> list(){
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingRepository.findAll().stream().map(lodging -> response(lodging)).collect(Collectors.toList());
+
+        return lodgingApiResponseList;
+    }
+
+    public void write(Lodging lodging, MultipartFile file) throws Exception{
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        lodging.setFileName(filename);
+        lodging.setUploadPath("/files/"+filename);
+        lodgingRepository.save(lodging);
     }
 }

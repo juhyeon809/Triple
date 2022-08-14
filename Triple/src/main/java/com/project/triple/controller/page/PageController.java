@@ -62,6 +62,8 @@ import java.util.List;
 public class PageController {
 
     @Autowired
+    private LodgingApiLogicService lodgingApiLogicService;
+    @Autowired
     private UsersApiLogicService usersApiLogicService;
 
     @Autowired
@@ -131,9 +133,6 @@ public class PageController {
 
     @Autowired
     private GuideReviewApiLogicService guideReviewApiLogicService;
-
-    @Autowired
-    private LodgingApiLogicService  lodgingApiLogicService;
 
     @Autowired
     private AirlineApiLogicService airlineApiLogicService;
@@ -2930,21 +2929,78 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-//    @RequestMapping(path="/lodging_register")
-//    public ModelAndView lodging_main(HttpServletRequest request){
-//        HttpSession session = request.getSession(false);
-//        String email = null;
-//        String nickname = null;
-//        if(session == null){
-//
-//        }else{
-//            email = (String)session.getAttribute("email");
-//            nickname = (String)session.getAttribute("nickname");
-//        }
-//
-//
-//        return new ModelAndView("/pages/lodging_room/lodging_main").addObject("email", email)
-//                .addObject("nickname", nickname);
-//    }
+    @RequestMapping(path="/lodging_list")
+    public ModelAndView lodging_list(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.available_room().getData();
+
+        return new ModelAndView("/pages/lodging_room/lodging_list").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roomList", lodgingRoomApiResponseList);
+    }
+
+    @RequestMapping(path = "/lodging_view/{id}")
+    public ModelAndView lodging_view(HttpServletRequest request, @PathVariable Long id){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        LodgingRoomApiResponse lodgingRoomApiResponse =  lodgingRoomApiLogicService.read(id).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+
+
+        return new ModelAndView("/pages/tour_ticket/tourticket_view").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roomInfo", lodgingRoomApiResponse);
+    }
+
+    @RequestMapping(path="/lodging_company")
+    public ModelAndView lodging_company(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+
+        return new ModelAndView("/pages/admin/NewRegistration/lodgingCompany").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    @RequestMapping(path="/room_register")
+    public ModelAndView room_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+
+
+        return new ModelAndView("/pages/admin/product/room").addObject("userid", userid)
+                .addObject("name", name).addObject("companyList", lodgingApiResponseList);
+    }
 
 }

@@ -1,8 +1,13 @@
 package com.project.triple.service.LodgingService;
 
+import com.project.triple.controller.page.RoomSearch;
+import com.project.triple.controller.page.SearchInfo;
+import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
+import com.project.triple.model.enumclass.LodgingRoomStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingRoomApiRequest;
+import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.repository.LodgingRoomRepository;
@@ -10,6 +15,13 @@ import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -18,19 +30,28 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
     @Autowired
     private LodgingRoomRepository lodgingRoomRepository;
 
+    @Autowired
+    private LodgingApiLogicService lodgingApiLogicService;
+
     private LodgingRoomApiResponse response(LodgingRoom lodgingRoom){
         LodgingRoomApiResponse lodgingRoomApiResponse = LodgingRoomApiResponse.builder()
                 .idx(lodgingRoom.getIdx())
+                .companyId(lodgingRoom.getCompanyId())
+                .name(lodgingRoom.getName())
                 .roomNum(lodgingRoom.getRoomNum())
-                .roomType(lodgingRoom.getRoomType())
-                .revStatus(lodgingRoom.getRevStatus())
-                .checkIn(lodgingRoom.getCheckIn())
-                .checkOut(lodgingRoom.getCheckOut())
-                .width(lodgingRoom.getWidth())
+                .uploadPath(lodgingRoom.getUploadPath())
+                .fileName(lodgingRoom.getFileName())
                 .roomCapacity(lodgingRoom.getRoomCapacity())
-                .roomPolicy(lodgingRoom.getRoomPolicy())
+                .smoking(lodgingRoom.getSmoking())
+                .roomView(lodgingRoom.getRoomView())
+                .width(lodgingRoom.getWidth())
+                .bed(lodgingRoom.getBed())
+                .introducing(lodgingRoom.getIntroducing())
                 .price(lodgingRoom.getPrice())
-                .lodgingId(lodgingRoom.getLodgingId())
+                .starCount(lodgingRoom.getStarCount())
+                .likeCount(lodgingRoom.getLikeCount())
+                .totalStar(lodgingRoom.getTotalStar())
+                .status(lodgingRoom.getStatus())
                 .build();
         return lodgingRoomApiResponse;
     }
@@ -43,7 +64,7 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
 
     @Override
     public Header<LodgingRoomApiResponse> read(Long id) {
-        return null;
+        return Header.OK(response(lodgingRoomRepository.findById(id).get()));
     }
 
     @Override
@@ -65,8 +86,104 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
     }
 
     public Long findLodgingId(String roomNum){
-        Long lodgingId = lodgingRoomRepository.findByRoomNum(roomNum).getLodgingId();
+        Long lodgingId = lodgingRoomRepository.findByRoomNum(roomNum).getCompanyId();
 
         return lodgingId;
+    }
+
+    public void write(LodgingRoom lodgingRoom, MultipartFile file) throws Exception{
+        String projectpath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid + "_" + file.getOriginalFilename();
+        File savFile = new File(projectpath, filename);
+        file.transferTo(savFile);
+        lodgingRoom.setFileName(filename);
+        lodgingRoom.setUploadPath("/files/"+filename);
+        lodgingRoom.setLikeCount(0);
+        lodgingRoom.setStarCount(0.0);
+        lodgingRoom.setTotalStar(0);
+        lodgingRoom.setReviewCount(0);
+        lodgingRoom.setStatus(LodgingRoomStatus.AVAILABLE);
+        lodgingRoomRepository.save(lodgingRoom);
+    }
+
+    public Header<List<LodgingRoomApiResponse>> available_room(){
+        return Header.OK(lodgingRoomRepository.findAllByStatus(LodgingRoomStatus.AVAILABLE).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList()));
+    }
+
+    public List<LodgingRoomApiResponse> room_sort(Header<RoomSearch> roomSearchHeader){
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomRepository.findAllByStatus(LodgingRoomStatus.AVAILABLE).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList());
+        List<LodgingRoomApiResponse> newList = new ArrayList<>();
+        List<String> typeList = List.of(roomSearchHeader.getData().getType().split(","));
+        Integer rank = roomSearchHeader.getData().getRank();
+        Integer reviewCount = roomSearchHeader.getData().getReviewCount();
+        Integer leastPrice = roomSearchHeader.getData().getLeastPrice();
+        Integer MaxPrice = roomSearchHeader.getData().getMaxPrice();
+        List<String> cfList = List.of(roomSearchHeader.getData().getCf().split(","));
+        for(LodgingRoomApiResponse lodgingRoomApiResponse : lodgingRoomApiResponseList){
+            LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+            for(String type : typeList){
+                if(company.getType().equals(type)){
+                    newList.add(lodgingRoomApiResponse);
+                }
+            }
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(rank != null) {
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
+                LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+                System.out.println("이름"+ lodgingRoomApiResponse.getName() + "랭크" +company.getRank() + lodgingRoomApiResponse.getIdx());
+                System.out.println(rank);
+                if (company.getRank() < rank) {
+                    newList.remove(lodgingRoomApiResponse);
+                }
+            }
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(reviewCount != null) {
+            for(int i = (newList.size() - 1); i > -1; i--) {
+                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
+                if(lodgingRoomApiResponse.getStarCount() < reviewCount){
+                    newList.remove(lodgingRoomApiResponse);
+                }
+            }
+
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(leastPrice != null && MaxPrice != null){
+            for(int i = (newList.size() - 1); i > -1; i--) {
+                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
+                if(lodgingRoomApiResponse.getPrice() < leastPrice || lodgingRoomApiResponse.getPrice() > MaxPrice) {
+                    newList.remove(lodgingRoomApiResponse);
+                }
+            }
+
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(!cfList.isEmpty()){
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
+                LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+                for(String cf : cfList){
+                    if(!company.getCf().contains(cf)){
+                        newList.remove(lodgingRoomApiResponse);
+                    }
+                }
+            }
+
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        return newList;
     }
 }

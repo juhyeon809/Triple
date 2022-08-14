@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
+<div class="lodging_item_list" id="roomListContent">
+    <ul>
+        <li th:each="room : ${roomList}" >
+            <div class="list_info">
+                <p class="list_title" th:text="${room.getName()}"></p>
+                <p class="list_subtitle" th:text="${room.getIntroducing()}"></p>
+                <p class="list_review" th:text="'('+${room.getReviewCount()}+')'"><span th:text="${room.getStarCount()}"></span></p>
+                <p class="list_price" th:text="${room.getPrice()} + '원'"></p>
+            </div>
+            <div class="list_img"><img th:src="@{${room.getUploadPath()}}"></div>
+        </li>
+    </ul>
+</div>
+</html>
