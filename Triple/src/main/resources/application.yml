@@ -4,3 +4,5 @@ spring:
     url:
     username: admin
     password:
+    password:
+    password:
