@@ -2974,7 +2974,7 @@ public class PageController {
 
         LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(id).getData();
         lodgingApiResponse.setCheapestPrice(lodgingApiLogicService.cheapestPrice(lodgingApiResponse));
-        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.available_room().getData();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.same_company(id);
 
 
         return new ModelAndView("/pages/lodging_room/lodging_roomlist").addObject("email", email)
@@ -3015,6 +3015,25 @@ public class PageController {
 
         return new ModelAndView("/pages/admin/product/room").addObject("userid", userid)
                 .addObject("name", name).addObject("companyList", lodgingApiResponseList);
+    }
+
+    @RequestMapping(path = "/room_view/{id}")
+    public ModelAndView room_view(HttpServletRequest request, @PathVariable Long id){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(id).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+
+        return new ModelAndView("/pages/lodging_room/lodging_roominfo").addObject("email", email)
+                .addObject("nickname", nickname).addObject("room", lodgingRoomApiResponse).addObject("lodging",lodgingApiResponse);
     }
 
 }

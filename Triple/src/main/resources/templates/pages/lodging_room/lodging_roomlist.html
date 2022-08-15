@@ -71,7 +71,7 @@
                 <div id="room_list_2" name="room_li" th:each="room : ${roomList}">
                     <div class="roomlist_roomlist_info" >
                         <div class="roomlist_roomlist_name" th:text="${room.getName()}"></div>
-                        <div class="roomlist_roomlist_info_specific" th:text="${room.getBed()}+'/n'+ ${room.getWidth()}+'/n'+${room.getRoomCapacity()}+'/n'+${room.getRoomView()}+'/n'+${room.getSmoking()}">
+                        <div class="roomlist_roomlist_info_specific" th:text="${room.getBed()}+ ${room.getWidth()}+${room.getRoomCapacity()}+${room.getRoomView()}+${room.getSmoking()}">
                         </div>
                     </div>
                     <div class="roomlist_roomlist_reservation">
@@ -83,7 +83,7 @@
                                     <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
                                     <div class="roomlist_roomlist_reservation_info_box_price" th:text="${room.getPrice()}"></div>
                                 </div>
-                                <div id="rl1_3"><a th:href="" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">예약가능여부 확인하러가기</div></a></div>
+                                <div id="rl1_3"><a th:href="'/Triple/room_view/'+ ${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">예약가능여부 확인하러가기</div></a></div>
                             </div>
                             <div class="roomlist_roomlist_img"><img th:src="@{${room.getUploadPath()}}" alt="객실"></div>
                         </div>
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                             <div id="roomlist_location_askmap">
-                                <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_4" class="loc_info_4_1"><div class="loc_info_4">현지에서 길묻기</div></a><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>
+                                <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_4 loc_info_4_1" ><div class="loc_info_4">현지에서 길묻기</div></a><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>
                             </div>
                         </div>
                         <div id="roomlist_findway">
