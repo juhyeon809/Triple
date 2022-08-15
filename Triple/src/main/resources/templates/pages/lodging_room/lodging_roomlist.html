@@ -98,7 +98,20 @@
                             <div id="roomlist_location_box_map">
                                 <div id="m1"></div>
                                 <div id="m2"></div>
-                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">
+                                <div id="googleMap" style="width: 380px;height: 250px;"></div>
+                                <script>
+                                    function myMap(){
+                                        var mapOptions = {
+                                            center:new google.maps.LatLng(13.515761893558587, 144.80854004444575),
+                                            zoom:17
+                                        };
+
+                                        var map = new google.maps.Map(
+                                            document.getElementById("googleMap")
+                                            , mapOptions );
+                                    }
+                                </script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4VADdQwRXmJW57jTDe8W-ROtXyKChiNQ&callback=myMap"></script>
                             </div>
                             <div id="roomlist_location_box_location_info">
                                 <div id="loc_info_1">
