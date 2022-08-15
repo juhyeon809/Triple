@@ -45,14 +45,18 @@
                             <span class="starpoint" th:text="${lodging.getStarCount()}"></span>
                             <span th:text=" '(' + ${lodging.getReviewCount()} + ')'"></span>
                             <a href="#review">리뷰보기 ></a></div>
-                        <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘" th:text="${lodging.getAddress()}"><a href="#location_info_1">지도보기 ></a></div>
+                        <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘"><span th:text="${lodging.getAddress()}"></span><a href="#location_info_1">지도보기 ></a></div>
                         <div id="roomlist_info_function_coupon"><span>쿠폰할인</span> 최대 할인 쿠폰 적용중<div id="aaa"><a href="#">쿠폰받기</a></div></div>
                         <div id="roomlist_info_function_benefit"><span>결제혜택</span> 카드 결제 최대 1만원 할인 <div id="bbb"><a href="#">혜택보기</a></div></div>
                     </div>
                 </div>
-                
+
                 <div id="lodging_info_main_2">
                     <div id="roomlist_info_reservation">최저가 예약</div>
+                    <div id="roomlist_info_reservation_setting">
+                        <div id="roomlist_info_reservation_setting_date" >6-18.(토) - 6.19(일)</div>
+                        <div id="roomlist_info_reservation_setting_person">성인 2</div>
+                    </div>
                     <div id="roomlist_info_reservation_priceinfo">
                         <span id="roomlist_info_reservation_defaultprice" th:text="${lodging.getCheapestPrice()} + '원'"></span><br>
                     </div>
@@ -64,26 +68,28 @@
                     <a href="#"><div id="roomlist_info_btn_share"><img src="/lib/img/lodging_room_img/icon_share.svg" alt="공유"> 공유하기</div></a>
                 </div>
             </div>
-        </div>     
+        </div>
         <div id="lodging_info_sub">
             <div id="room_list">
                 <div id="room_list_1">객실 목록 <select name="room_filter"><option value="객실">룸필터</option></select></div>
                 <div id="room_list_2" name="room_li" th:each="room : ${roomList}">
                     <div class="roomlist_roomlist_info" >
                         <div class="roomlist_roomlist_name" th:text="${room.getName()}"></div>
-                        <div class="roomlist_roomlist_info_specific" th:text="${room.getBed()}+ ${room.getWidth()}+${room.getRoomCapacity()}+${room.getRoomView()}+${room.getSmoking()}">
+                        <div class="roomlist_roomlist_info_specific">
+                            <p th:text="${room.getBed()} + '           ' + ${room.getWidth()}+ '        ' +${room.getRoomCapacity()}+ '     ' +${room.getRoomView()}+ '      ' +${room.getSmoking()}"></p>
                         </div>
                     </div>
                     <div class="roomlist_roomlist_reservation">
                         <div class="roomlist_roomlist_reservation_info">
                             <div class="roomlist_roomlist_reservation_info_box">
                                 <div id="rl1_1" th:if="${lodging.getCf().contains('무료취소')}">무료취소</div>
+                                <div id="rl1_1">무료취소</div>
                                 <div id="rl1_2">
                                     <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
                                     <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
                                     <div class="roomlist_roomlist_reservation_info_box_price" th:text="${room.getPrice()}"></div>
                                 </div>
-                                <div id="rl1_3"><a th:href="'/Triple/room_view/'+ ${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">예약가능여부 확인하러가기</div></a></div>
+                                <div id="rl1_3"><a th:href="${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
                             <div class="roomlist_roomlist_img"><img th:src="@{${room.getUploadPath()}}" alt="객실"></div>
                         </div>
@@ -98,6 +104,7 @@
                             <div id="roomlist_location_box_map">
                                 <div id="m1"></div>
                                 <div id="m2"></div>
+<!--                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">-->
                                 <div id="googleMap" style="width: 380px;height: 250px;"></div>
                                 <script>
                                     function myMap(){
@@ -191,7 +198,7 @@
                     </div>
                     <div class="roomlist_review_text">
                         최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
+                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                     </div>
                 </div>
                 <div class="review_2">
@@ -203,7 +210,7 @@
                     </div>
                     <div class="roomlist_review_text">
                         최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
+                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                     </div>
                 </div>
                 <div class="review_2">
@@ -215,7 +222,7 @@
                     </div>
                     <div class="roomlist_review_text">
                         최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
+                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                     </div>
                 </div>
             </div>
@@ -287,5 +294,51 @@
     <!-- footer 시작 -->
     <footer th:replace="fragement/footer :: footer"></footer>
     <!-- footer 끝 -->
+
+
+<script>
+    var map;
+    var button = document.getElementById('map_button');
+    button.addEventListener('click', changeCenter);
+
+    function initMap() {
+        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
+        map = new google.maps.Map( document.getElementById('map'), {
+            zoom: 15,
+            center: gyeongbokgung
+        });
+
+        var mainMarker = new google.maps.Marker({
+            position: gyeongbokgung,
+            map: map,
+            label: {
+                text: "경복궁",
+                color: "#C70E20"
+            },
+            icon: {
+                url: "pooh_marker.png",
+                labelOrigin: new google.maps.Point(100, 55)
+            }
+        });
+
+        var subMarkerPoint = { lat: 37.57956596361732, lng: 126.9803240214433};
+        var subMarker = new google.maps.Marker({
+            position: subMarkerPoint,
+            map: map,
+            label: "국립현대미술관",
+            icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                labelOrigin: new google.maps.Point(20, 47),
+                anchor: new google.maps.Point(50,32)
+            }
+        });
+    }
+
+    function changeCenter() {
+        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
+        map.panTo(gyeongbokgung);
+        map.setZoom(15);
+    }
+</script>
 </body>
 </html>
