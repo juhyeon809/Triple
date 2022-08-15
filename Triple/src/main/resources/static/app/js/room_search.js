@@ -18,7 +18,8 @@ $(function(){
             resultCode: "ok",
             description: "ok",
             data: {
-                country: $('#country').val(),
+                country: $('#country_select').val(),
+                city: $('#city_select').val(),
                 type: type,
                 rank: $('#rank').val(),
                 reviewCount : $('#reviewCount').val(),

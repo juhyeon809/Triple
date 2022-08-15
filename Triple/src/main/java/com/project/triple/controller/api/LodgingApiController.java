@@ -27,6 +27,7 @@ public class LodgingApiController{
     @RequestMapping(value ="/search", method = {RequestMethod.POST})
     public ModelAndView viewPostMethod(@RequestBody Header<RoomSearch> request) {
         System.out.println(request.getData().getCountry());
+        System.out.println(request.getData().getCity());
         System.out.println(request.getData().getCf());
         System.out.println(request.getData().getType());
         System.out.println(request.getData().getLeastPrice());

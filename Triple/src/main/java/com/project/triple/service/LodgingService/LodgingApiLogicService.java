@@ -39,6 +39,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
                 .type(lodging.getType())
                 .name(lodging.getName())
                 .country(lodging.getCountry())
+                .city(lodging.getCity())
                 .rank(lodging.getRank())
                 .uploadPath(lodging.getUploadPath())
                 .fileName(lodging.getFileName())
@@ -127,14 +128,15 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         for(int i = (newList.size() - 1); i > -1; i--){
             LodgingApiResponse lodgingApiResponse = newList.get(i);
             for(String type : typeList){
-                if(lodgingApiResponse.getType().equals(type)){
-                    newList.add(lodgingApiResponse);
+                if(!lodgingApiResponse.getType().equals(type)){
+                    newList.remove(lodgingApiResponse);
                 }
             }
         }
         for(LodgingApiResponse lodgingApiResponse : newList) {
             System.out.println(lodgingApiResponse.getName());
         }
+        System.out.println("유형 끝");
         if(newList.isEmpty()){
             return null;
         }
@@ -149,6 +151,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         for(LodgingApiResponse lodgingApiResponse : newList) {
             System.out.println(lodgingApiResponse.getName());
         }
+        System.out.println("랭크 끝");
         if(newList.isEmpty()){
             return null;
         }
@@ -163,13 +166,14 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         for(LodgingApiResponse lodgingApiResponse : newList) {
             System.out.println(lodgingApiResponse.getName());
         }
+        System.out.println("국가 끝");
         if(newList.isEmpty()){
             return null;
         }
-        if(city != null) {
+        if(city != "") {
             for (int i = (newList.size() - 1); i > -1; i--) {
                 LodgingApiResponse lodgingApiResponse = newList.get(i);
-                if (!lodgingApiResponse.getCountry().equals(country)) {
+                if (!lodgingApiResponse.getCity().equals(city)) {
                     newList.remove(lodgingApiResponse);
                 }
             }
@@ -177,6 +181,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         for(LodgingApiResponse lodgingApiResponse : newList) {
             System.out.println(lodgingApiResponse.getName());
         }
+        System.out.println("도시 끝");
         if(newList.isEmpty()){
             return null;
         }
