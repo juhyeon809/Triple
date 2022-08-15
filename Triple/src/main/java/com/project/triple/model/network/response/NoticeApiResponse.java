@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class NoticeApiResponse {
     private Long idx;
-    private Long adminuserId;
+    private String adminuserId;
     private String adminuserName;
     private String noticeType;
     private String title;

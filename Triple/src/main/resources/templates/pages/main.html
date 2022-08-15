@@ -63,16 +63,16 @@
                     <p class="event_item_contant">비행기 티켓부터 숙박까지 한번에!</p>
                 </div>
             </a>
-            <a href="#" class="event_item_back event_item_back2">
+            <a th:href="'/Triple/event/' + ${event.getIdx()}" class="event_item_back event_item_back2" th:each="event, i: ${event}" th:if="${i.count eq i.size}">
                 <div class="event_item">
-                    <p class="event_item_title">[7월 이벤트]</p>
-                    <p class="event_item_contant">하노이 여행특가</p>
+                    <p class="event_item_title">[<span th:text="${event.getEventType()}"></span>]</p>
+                    <p class="event_item_contant" th:text="${event.getTitle()}"></p>
                 </div>
             </a>
-            <a href="#" class="event_item_back event_item_back3">
+            <a th:href="'/Triple/mypage/settings/notice/' + ${notice.getIdx()}"  class="event_item_back event_item_back3" th:each="notice,i: ${notice}" th:if="${i.count eq i.size}">
                 <div class="event_item">
                     <p class="event_item_title">[공지사항]</p>
-                    <p class="event_item_contant">해외상황을 생생히 전달해줄 트리플 리포터 대모집!</p>
+                    <p class="event_item_contant" th:text="${notice.getTitle()}"></p>
                 </div>
             </a>
             <a href="#" class="event_item_back event_item_back4">

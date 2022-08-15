@@ -10,7 +10,8 @@ public enum FaqCategory {
     LODGING(1,"숙소", "숙소 FAQ"),
     TOUR(2,"투어", "투어 FAQ"),
     SERVICE(3,"서비스일반","서비스일반 FAQ"),
-    COMMON(4, "공통","공통 FAQ");
+    COMMON(4, "공통","공통 FAQ"),
+    BEST(5, "BEST", "BEST FAQ");
 
 
     private Integer id;

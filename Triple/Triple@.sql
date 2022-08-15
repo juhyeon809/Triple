@@ -520,14 +520,13 @@ create sequence seq_spot
     start with 1;
 
 
-
 create table spot_review(
     idx number(7) primary key,
     post_id number(7) not null,
     title varchar2(50) not null,
     content varchar2(300) not null,
     nickname varchar2(20) not null,
-    user_email varchar2(50) not null,
+    user_email varchar2(100) not null,
     upload_path varchar2(200),
     file_name varchar2(200),
     like_count number(5) default 0,
@@ -782,12 +781,12 @@ create sequence seq_guide_review_reply
 
 create table question(
     idx number(7) primary key,
-    inquiry_id number(7) not null,
-    ticket_num number(7) not null,
+    inquiry_id number(7),
+    ticket_num number(7),
     user_id number(7) not null,
     type_category varchar2(20) not null,
-    type_detail varchar2(20) not null,
-    title varchar2(30) not null,
+    type_detail varchar2(20),
+    title varchar2(100) not null,
     content varchar2(300) not null,
     uploadPath varchar2(200),
     fileName varchar2(200),

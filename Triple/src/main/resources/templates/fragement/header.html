@@ -6,7 +6,7 @@
     <div id="logo_area">
         <div id="logo"><a href="/Triple"><img src="/lib/img/logo_triple.svg" alt="트리플 로고" style="width: 200px;"></a></div>
         <form id="menu_form">
-            <div id="search"><input type="text" placeholder="어디로 떠나시나요?"><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
+            <div id="search"><input type="text" placeholder="어디로 떠나시나요?" readonly><button type="submit" value="검색" style="cursor: pointer;">검색</button></div>
         </form>
         <div id="login_join">
             <a th:if ="${session.email == null}" href="/Triple/login">LOGIN</a>

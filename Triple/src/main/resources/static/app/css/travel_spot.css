@@ -590,7 +590,7 @@ main {
     margin-bottom: 50px;
 
 }
-.utility_box #mark {
+#utility_box #mark {
     margin-left: 20px;
 }
 .utility_box .text_area{
@@ -741,7 +741,7 @@ hr {
     width: 450px;
     word-break: keep-all;
     font-size: 16px;
-font-weight: bold;
+/*font-weight: bold;*/
 color: #666666;
 }
 .flex_div .index_p {
@@ -801,7 +801,13 @@ color: #666666;
     margin: 0;
 }
 
-
+.pageList p{
+    text-align: center;
+    color: #666666;
+}
+.pageList p a:visited{
+    color: #666666;
+}
 /*restaurant_list*/
 
 
@@ -902,7 +908,15 @@ color: #666666;
     font-weight: bold;
     line-height: 45px;
 }
-
+#tour_info_btn_like input{
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 16px;
+    color: #50E3C2;
+    font-weight: bold;
+    line-height: 45px;
+}
 #mark {
     width: 100px;
     height: 40px;

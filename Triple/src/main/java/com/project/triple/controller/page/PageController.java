@@ -160,9 +160,18 @@ public class PageController {
 
 
         List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
+        List<EventApiResponse> eventApiResponseList = eventApiLogicService.search().getData();
+        List<NoticeApiResponse> noticeApiResponseList = noticeApiLogicService.search().getData();
+//        List<PackageApiResponse> guams = packageApiLogicService.sort_by_country("괌/사이판").getData();
+//        List<PackageApiResponse> vietnams = packageApiLogicService.sort_by_country("베트남").getData();
+//        List<PackageApiResponse> Singapores = packageApiLogicService.sort_by_country("싱가포르").getData();
+//        List<PackageApiResponse> Italys = packageApiLogicService.sort_by_country("이탈리아").getData();
+//        List<PackageApiResponse> americas = packageApiLogicService.sort_double("하와이","LA").getData();
+//        List<PackageApiResponse> confirmed = packageApiLogicService.sort_by_keyword("출발확정").getData();
 
         return new ModelAndView("/pages/main").addObject("email", email)
-                .addObject("nickname", nickname).addObject("airportList", airportApiResponseList);
+                .addObject("nickname", nickname).addObject("airportList", airportApiResponseList)
+                .addObject("event", eventApiResponseList).addObject("notice", noticeApiResponseList);
 
     }
     //회원가입 페이지
