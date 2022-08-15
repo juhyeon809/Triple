@@ -18,6 +18,7 @@ $(function(){
             resultCode: "ok",
             description: "ok",
             data: {
+                country: $('#country').val(),
                 type: type,
                 rank: $('#rank').val(),
                 reviewCount : $('#reviewCount').val(),
@@ -30,20 +31,22 @@ $(function(){
 
         $.ajax({
             type: 'POST',
-            url: '/api/room/search',
+            url: '/api/lodging/search',
             data: JSON.stringify(jsonData),
             contentType: 'application/json',
             success: function (data){
                 if(data) {
                     console.log("함수실행")
-                    $("#roomListContent").replaceWith(data);
+                    console.log(data)
+                    $("#lodgingListContent").replaceWith(data);
                 }else{
                     alert("전송된 값 없음")
                 }
             },
             error:function(fragment){
                 console.log("에러 발생")
-                $("#roomListContent").replaceWith(fragment);
+                console.log(fragment)
+                $("#lodgingListContent").replaceWith(fragment);
             }
         });
 

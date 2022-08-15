@@ -28,6 +28,7 @@ public class Lodging {
     private Long idx;
     private String type;
     private String country;
+    private String city;
     private Integer rank;
     private String name;
     private String uploadPath;
@@ -40,7 +41,9 @@ public class Lodging {
     private String policy;
     private String cf;
     private String moreInfo;
+    private Integer reviewCount;
+    private Integer totalStar;
+    private Double starCount;
+    private Integer cheapestPrice;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
-//    private List<LodgingRoom> lodgingRoomList;
 }

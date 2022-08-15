@@ -29,38 +29,7 @@ public class LodgingRoomApiController {
     @Autowired
     private final LodgingRoomApiLogicService lodgingRoomApiLogicService;
 
-    @RequestMapping(value ="/search", method = {RequestMethod.POST})
-    public ModelAndView viewPostMethod(Model model, @RequestBody Header<RoomSearch> request) {
 
-        System.out.println(request.getData().getCf());
-        System.out.println(request.getData().getType());
-        System.out.println(request.getData().getLeastPrice());
-        System.out.println(request.getData().getMaxPrice());
-        System.out.println(request.getData().getRank());
-        System.out.println(request.getData().getReviewCount());
-        List<String> typeList = List.of(request.getData().getType().split(","));
-        List<String> cfList = List.of(request.getData().getCf().split(","));
-        for (String type : typeList) {
-            System.out.println(type);
-        }
-        for (String cf : cfList) {
-            System.out.println(cf);
-        }
-        List<LodgingRoomApiResponse> roomList = new ArrayList<>();
-        roomList.clear();
-        roomList = lodgingRoomApiLogicService.room_sort(request);
-        if(roomList == null){
-            return new ModelAndView("/null_error").addObject("roomList", null);
-        }
-        for (LodgingRoomApiResponse lodgingRoomApiResponse : roomList) {
-            System.out.println(lodgingRoomApiResponse.getIdx());
-        }
-
-
-        return new ModelAndView("/room_list").addObject("roomList", roomList);
-
-
-    }
 
     @PostMapping("/register")
     public String register(HttpServletResponse response , LodgingRoom lodgingRoom, MultipartFile file) throws Exception

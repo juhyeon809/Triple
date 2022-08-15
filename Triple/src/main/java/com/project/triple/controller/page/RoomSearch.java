@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class RoomSearch {
-
+    private String country;
+    private String city;
     private String type;
     private Integer rank;
     private Integer reviewCount;

@@ -1,8 +1,10 @@
 package com.project.triple.service.LodgingService;
 
+import com.project.triple.controller.page.RoomSearch;
 import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.enumclass.LodgingRoomStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -26,6 +29,9 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
 
     @Autowired
     private LodgingRepository lodgingRepository;
+
+    @Autowired
+    private LodgingRoomApiLogicService lodgingRoomApiLogicService;
 
     private LodgingApiResponse response(Lodging lodging){
         LodgingApiResponse lodgingApiResponse = LodgingApiResponse.builder()
@@ -44,6 +50,9 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
                 .policy(lodging.getPolicy())
                 .cf(lodging.getCf())
                 .moreInfo(lodging.getMoreInfo())
+                .starCount(lodging.getStarCount())
+                .reviewCount(lodging.getReviewCount())
+                .totalStar(lodging.getTotalStar())
                 .build();
         return lodgingApiResponse;
     }
@@ -96,6 +105,143 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         file.transferTo(savFile);
         lodging.setFileName(filename);
         lodging.setUploadPath("/files/"+filename);
+        lodging.setTotalStar(0);
+        lodging.setStarCount(0.0);
+        lodging.setReviewCount(0);
+        lodging.setCheapestPrice(0);
         lodgingRepository.save(lodging);
+    }
+
+    public List<LodgingApiResponse> room_sort(Header<RoomSearch> roomSearchHeader){
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingRepository.findAll().stream().map(lodging -> response(lodging)).collect(Collectors.toList());
+        List<LodgingApiResponse> newList = new ArrayList<>();
+        List<String> typeList = List.of(roomSearchHeader.getData().getType().split(","));
+        String country = roomSearchHeader.getData().getCountry();
+        String city = roomSearchHeader.getData().getCity();
+        Integer rank = roomSearchHeader.getData().getRank();
+        Integer reviewCount = roomSearchHeader.getData().getReviewCount();
+        Integer leastPrice = roomSearchHeader.getData().getLeastPrice();
+        Integer MaxPrice = roomSearchHeader.getData().getMaxPrice();
+        List<String> cfList = List.of(roomSearchHeader.getData().getCf().split(","));
+        newList = lodgingApiResponseList;
+        for(int i = (newList.size() - 1); i > -1; i--){
+            LodgingApiResponse lodgingApiResponse = newList.get(i);
+            for(String type : typeList){
+                if(lodgingApiResponse.getType().equals(type)){
+                    newList.add(lodgingApiResponse);
+                }
+            }
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(rank != null) {
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                if (lodgingApiResponse.getRank() < rank) {
+                    newList.remove(lodgingApiResponse);
+                }
+            }
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(country != null) {
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                if (!lodgingApiResponse.getCountry().equals(country)) {
+                    newList.remove(lodgingApiResponse);
+                }
+            }
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(city != null) {
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                if (!lodgingApiResponse.getCountry().equals(country)) {
+                    newList.remove(lodgingApiResponse);
+                }
+            }
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(reviewCount != null) {
+            for(int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                if(lodgingApiResponse.getStarCount() < reviewCount){
+                    newList.remove(lodgingApiResponse);
+                }
+            }
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(leastPrice != null && MaxPrice != null){
+            for(int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                int cheapestPrice = cheapestPrice(lodgingApiResponse);
+                lodgingApiResponse.setCheapestPrice(cheapestPrice);
+                if(cheapestPrice < leastPrice || cheapestPrice > MaxPrice) {
+                    newList.remove(lodgingApiResponse);
+                }
+            }
+
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList) {
+            System.out.println(lodgingApiResponse.getName());
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        if(!cfList.isEmpty()){
+            for (int i = (newList.size() - 1); i > -1; i--) {
+                LodgingApiResponse lodgingApiResponse = newList.get(i);
+                for(String cf : cfList){
+                    if(!lodgingApiResponse.getCf().contains(cf)){
+                        newList.remove(lodgingApiResponse);
+                    }
+                }
+            }
+
+        }
+        if(newList.isEmpty()){
+            return null;
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList){
+            int cheap = cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
+        return newList;
+    }
+
+    public int cheapestPrice(LodgingApiResponse lodgingApiResponse){
+        Long companyId = lodgingApiResponse.getIdx();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.same_company(companyId);
+        int leastPrice = lodgingRoomApiResponseList.get(0).getPrice();
+        for(LodgingRoomApiResponse lodgingRoomApiResponse : lodgingRoomApiResponseList){
+            if(lodgingRoomApiResponse.getPrice() < leastPrice){
+                leastPrice=lodgingRoomApiResponse.getPrice();
+            }
+        }
+        return leastPrice;
     }
 }

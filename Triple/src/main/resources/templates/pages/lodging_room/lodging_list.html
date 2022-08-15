@@ -65,6 +65,20 @@
                         <p>숙소유형</p>
                     </li>
                     <li>
+                        <select name="country" class="summary_btn" id="country_select" onchange="optionChange();">
+                            <option value="">국가선택</option>
+                            <option value="대한민국">대한민국</option>
+                            <option value="일본">일본</option>
+                            <option value="중국">중국</option>
+                            <option value="동남아">동남아</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select name="city" class="summary_btn" id="city_select">
+                            <option value="">도시</option>
+                        </select>
+                    </li>
+                    <li>
                         <label for="hotel">
                             <input type="checkbox" name="type" value="호텔" id="hotel"> 호텔
                         </label>
@@ -217,16 +231,16 @@
             </div>
                 <input type="button" value="검색" id="search">
             </form>
-            <div class="lodging_item_list" id="roomListContent">
+            <div class="lodging_item_list" id="lodgingListContent">
                 <ul>
-                    <li th:each="room : ${roomList}" >
+                    <li th:each="lodging : ${lodgingList}" >
                         <div class="list_info">
-                            <p class="list_title" th:text="${room.getName()}"></p>
-                            <p class="list_subtitle" th:text="${room.getIntroducing()}"></p>
-                            <p class="list_review" th:text="'('+${room.getReviewCount()}+')'"><span th:text="${room.getStarCount()}"></span></p>
-                            <p class="list_price" th:text="${room.getPrice()} + '원'"></p>
+                            <p class="list_title"><a th:text="${lodging.getName()}" th:href="'/Triple/lodging'"></a></p>
+                            <p class="list_subtitle" th:text="${lodging.getIntroducing()}"></p>
+                            <p class="list_review" th:text="'('+${lodging.getReviewCount()}+')'"><span th:text="${lodging.getStarCount()}"></span></p>
+                            <p class="list_price" th:text="${lodging.getCheapestPrice()} + '원'"></p>
                         </div>
-                        <div class="list_img"><img th:src="@{${room.getUploadPath()}}"></div>
+                        <div class="list_img"><img th:src="@{${lodging.getUploadPath()}}"></div>
                     </li>
                 </ul>
             </div>
@@ -238,5 +252,6 @@
     <!-- footer 시작 -->
     <footer th:replace="fragement/footer :: footer"></footer>
     <!-- footer 끝 -->
+    <script src="/app/js/script.js"></script>
 </body>
 </html>

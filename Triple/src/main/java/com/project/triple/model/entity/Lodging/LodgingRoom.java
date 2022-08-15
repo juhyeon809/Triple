@@ -39,9 +39,6 @@ public class LodgingRoom {
     private String introducing;
     private Integer price;
     private Integer likeCount;
-    private Integer reviewCount;
-    private Integer totalStar;
-    private Double starCount;
     @Enumerated(EnumType.STRING)
     private LodgingRoomStatus status;
 

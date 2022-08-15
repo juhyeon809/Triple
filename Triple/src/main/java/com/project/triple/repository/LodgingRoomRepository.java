@@ -15,5 +15,7 @@ public interface LodgingRoomRepository extends JpaRepository<LodgingRoom, Long> 
 
     List<LodgingRoom> findAllByStatus(LodgingRoomStatus status);
 
+    List<LodgingRoom> findAllByCompanyId(Long companyId);
+
 
 }

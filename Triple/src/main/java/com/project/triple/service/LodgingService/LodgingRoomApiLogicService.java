@@ -30,8 +30,6 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
     @Autowired
     private LodgingRoomRepository lodgingRoomRepository;
 
-    @Autowired
-    private LodgingApiLogicService lodgingApiLogicService;
 
     private LodgingRoomApiResponse response(LodgingRoom lodgingRoom){
         LodgingRoomApiResponse lodgingRoomApiResponse = LodgingRoomApiResponse.builder()
@@ -48,9 +46,7 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
                 .bed(lodgingRoom.getBed())
                 .introducing(lodgingRoom.getIntroducing())
                 .price(lodgingRoom.getPrice())
-                .starCount(lodgingRoom.getStarCount())
                 .likeCount(lodgingRoom.getLikeCount())
-                .totalStar(lodgingRoom.getTotalStar())
                 .status(lodgingRoom.getStatus())
                 .build();
         return lodgingRoomApiResponse;
@@ -100,9 +96,6 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
         lodgingRoom.setFileName(filename);
         lodgingRoom.setUploadPath("/files/"+filename);
         lodgingRoom.setLikeCount(0);
-        lodgingRoom.setStarCount(0.0);
-        lodgingRoom.setTotalStar(0);
-        lodgingRoom.setReviewCount(0);
         lodgingRoom.setStatus(LodgingRoomStatus.AVAILABLE);
         lodgingRoomRepository.save(lodgingRoom);
     }
@@ -111,79 +104,8 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
         return Header.OK(lodgingRoomRepository.findAllByStatus(LodgingRoomStatus.AVAILABLE).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList()));
     }
 
-    public List<LodgingRoomApiResponse> room_sort(Header<RoomSearch> roomSearchHeader){
-        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomRepository.findAllByStatus(LodgingRoomStatus.AVAILABLE).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList());
-        List<LodgingRoomApiResponse> newList = new ArrayList<>();
-        List<String> typeList = List.of(roomSearchHeader.getData().getType().split(","));
-        Integer rank = roomSearchHeader.getData().getRank();
-        Integer reviewCount = roomSearchHeader.getData().getReviewCount();
-        Integer leastPrice = roomSearchHeader.getData().getLeastPrice();
-        Integer MaxPrice = roomSearchHeader.getData().getMaxPrice();
-        List<String> cfList = List.of(roomSearchHeader.getData().getCf().split(","));
-        for(LodgingRoomApiResponse lodgingRoomApiResponse : lodgingRoomApiResponseList){
-            LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
-            for(String type : typeList){
-                if(company.getType().equals(type)){
-                    newList.add(lodgingRoomApiResponse);
-                }
-            }
-        }
-        if(newList.isEmpty()){
-            return null;
-        }
-        if(rank != null) {
-            for (int i = (newList.size() - 1); i > -1; i--) {
-                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
-                LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
-                System.out.println("이름"+ lodgingRoomApiResponse.getName() + "랭크" +company.getRank() + lodgingRoomApiResponse.getIdx());
-                System.out.println(rank);
-                if (company.getRank() < rank) {
-                    newList.remove(lodgingRoomApiResponse);
-                }
-            }
-        }
-        if(newList.isEmpty()){
-            return null;
-        }
-        if(reviewCount != null) {
-            for(int i = (newList.size() - 1); i > -1; i--) {
-                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
-                if(lodgingRoomApiResponse.getStarCount() < reviewCount){
-                    newList.remove(lodgingRoomApiResponse);
-                }
-            }
-
-        }
-        if(newList.isEmpty()){
-            return null;
-        }
-        if(leastPrice != null && MaxPrice != null){
-            for(int i = (newList.size() - 1); i > -1; i--) {
-                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
-                if(lodgingRoomApiResponse.getPrice() < leastPrice || lodgingRoomApiResponse.getPrice() > MaxPrice) {
-                    newList.remove(lodgingRoomApiResponse);
-                }
-            }
-
-        }
-        if(newList.isEmpty()){
-            return null;
-        }
-        if(!cfList.isEmpty()){
-            for (int i = (newList.size() - 1); i > -1; i--) {
-                LodgingRoomApiResponse lodgingRoomApiResponse = newList.get(i);
-                LodgingApiResponse company = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
-                for(String cf : cfList){
-                    if(!company.getCf().contains(cf)){
-                        newList.remove(lodgingRoomApiResponse);
-                    }
-                }
-            }
-
-        }
-        if(newList.isEmpty()){
-            return null;
-        }
-        return newList;
+    public List<LodgingRoomApiResponse>  same_company(Long id){
+        return lodgingRoomRepository.findAllByCompanyId(id).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList());
     }
+
 }

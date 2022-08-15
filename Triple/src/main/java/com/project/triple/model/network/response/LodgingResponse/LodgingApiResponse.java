@@ -13,6 +13,7 @@ public class LodgingApiResponse {
     private Long idx;
     private String type;
     private String country;
+    private String city;
     private Integer rank;
     private String name;
     private String uploadPath;
@@ -25,4 +26,8 @@ public class LodgingApiResponse {
     private String policy;
     private String cf;
     private String moreInfo;
+    private Integer totalStar;
+    private Double starCount;
+    private Integer reviewCount;
+    private Integer cheapestPrice;
 }

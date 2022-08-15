@@ -29,8 +29,5 @@ public class LodgingRoomApiRequest {
     private String introducing;
     private Integer price;
     private Integer likeCount;
-    private Integer totalStar;
-    private Double starCount;
-    private Integer reviewCount;
     private LodgingRoomStatus status;
 }

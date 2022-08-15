@@ -27,10 +27,7 @@ public class LodgingRoomApiResponse {
     private String bed;
     private String introducing;
     private Integer price;
-    private Integer likeCount;
-    private Integer totalStar;
-    private Double starCount;
-    private Integer reviewCount;
+    private Integer likeCount;;
     private LodgingRoomStatus status;
 }
 

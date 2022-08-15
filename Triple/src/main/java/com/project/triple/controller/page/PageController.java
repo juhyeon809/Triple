@@ -2941,10 +2941,14 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.available_room().getData();
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
 
         return new ModelAndView("/pages/lodging_room/lodging_list").addObject("email", email)
-                .addObject("nickname", nickname).addObject("roomList", lodgingRoomApiResponseList);
+                .addObject("nickname", nickname).addObject("lodgingList", lodgingApiResponseList);
     }
 
     @RequestMapping(path = "/lodging_view/{id}")

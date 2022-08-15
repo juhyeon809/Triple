@@ -211,6 +211,7 @@ create table lodging(
     type varchar2(50) not null,
     rank number(3) not null,
     country varchar2(50) not null,
+    city varchar2(100) not null,
     name varchar2(200) not null,
     upload_path varchar2(500) not null,
     file_name varchar2(500) not null,
@@ -221,7 +222,11 @@ create table lodging(
     check_out varchar2(50) not null,
     policy varchar2(1000) not null,
     cf varchar2(2000) not null,
-    more_info varchar2(2000) not null
+    more_info varchar2(2000) not null,
+    total_star number(7) default 0,
+    star_count number(3,1) default 0,
+    review_count number(7) default 0,
+    cheapest_price number(7) default 0
 );
 
 create sequence seq_lodging
@@ -246,9 +251,7 @@ create table lodging_room(
     introducing varchar2(2000) not null,
     price number(7) not null,
     like_count number(7) default 0,
-    total_star number(7) default 0,
-    star_count number(3,1) default 0,
-    review_count number(7) default 0,
+
     status varchar2(50)
 );
 
