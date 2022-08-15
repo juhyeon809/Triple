@@ -124,14 +124,20 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         Integer leastPrice = roomSearchHeader.getData().getLeastPrice();
         Integer MaxPrice = roomSearchHeader.getData().getMaxPrice();
         List<String> cfList = List.of(roomSearchHeader.getData().getCf().split(","));
-        newList = lodgingApiResponseList;
-        for(int i = (newList.size() - 1); i > -1; i--){
-            LodgingApiResponse lodgingApiResponse = newList.get(i);
-            for(String type : typeList){
-                if(!lodgingApiResponse.getType().equals(type)){
-                    newList.remove(lodgingApiResponse);
+        if(roomSearchHeader.getData().getType() != "") {
+            for (LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+                for (String type : typeList) {
+                    if (lodgingApiResponse.getType().equals(type)) {
+                        newList.add(lodgingApiResponse);
+                    }
                 }
             }
+        }else{
+            newList = lodgingApiResponseList;
+        }
+        for(LodgingApiResponse lodgingApiResponse : newList){
+            int cheap = cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
         }
         for(LodgingApiResponse lodgingApiResponse : newList) {
             System.out.println(lodgingApiResponse.getName());
@@ -231,10 +237,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         if(newList.isEmpty()){
             return null;
         }
-        for(LodgingApiResponse lodgingApiResponse : newList){
-            int cheap = cheapestPrice(lodgingApiResponse);
-            lodgingApiResponse.setCheapestPrice(cheap);
-        }
+
         return newList;
     }
 
@@ -249,4 +252,5 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         }
         return leastPrice;
     }
+
 }

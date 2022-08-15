@@ -2972,12 +2972,13 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-        LodgingRoomApiResponse lodgingRoomApiResponse =  lodgingRoomApiLogicService.read(id).getData();
-        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(id).getData();
+        lodgingApiResponse.setCheapestPrice(lodgingApiLogicService.cheapestPrice(lodgingApiResponse));
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.available_room().getData();
 
 
-        return new ModelAndView("/pages/tour_ticket/tourticket_view").addObject("email", email)
-                .addObject("nickname", nickname).addObject("roomInfo", lodgingRoomApiResponse);
+        return new ModelAndView("/pages/lodging_room/lodging_roomlist").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roomList",lodgingRoomApiResponseList).addObject("lodging", lodgingApiResponse);
     }
 
     @RequestMapping(path="/lodging_company")
