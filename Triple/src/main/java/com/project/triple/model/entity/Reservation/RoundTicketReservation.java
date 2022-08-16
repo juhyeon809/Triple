@@ -23,6 +23,7 @@ import java.time.LocalDateTime;
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
+@Table(name = "round_ticket_reservation")
 public class RoundTicketReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_round_ticket_reservation")

@@ -9,7 +9,9 @@ import com.project.triple.model.network.response.LodgingResponse.LodgingApiRespo
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.OnewayReservationApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
@@ -27,6 +29,7 @@ import com.project.triple.service.LodgingService.LodgingApiLogicService;
 import com.project.triple.service.LodgingService.LodgingRoomApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
+import com.project.triple.service.ReservationService.OnewayReservationApiLogicService;
 import com.project.triple.service.ReservationService.RoundTicketReservationApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
@@ -143,6 +146,10 @@ public class PageController {
 
     @Autowired
     private AirportApiLogicService airportApiLogicService;
+
+    @Autowired
+    private OnewayReservationApiLogicService onewayReservationApiLogicService;
+
 
 
 
@@ -725,10 +732,23 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-        List<ReservationApiResponse> reservationApiResponseList = reservationApiLogicService.air().getData();
+        Long roundDepartureTicketId = roundTicketReservationApiLogicService.findDeparture(email);
+        Long combackTicketId = roundTicketReservationApiLogicService.findComeback(email);
+        Long onewayDepartureTicketId = onewayReservationApiLogicService.findDeparture(email);
+        AirTicketApiResponse airTicketApiResponse1 = airTicketApiLogicService.read2(roundDepartureTicketId).getData();
+        AirTicketApiResponse airTicketApiResponse3 = airTicketApiLogicService.read2(combackTicketId).getData();
+        AirTicketApiResponse airTicketApiResponse2 = airTicketApiLogicService.read2(onewayDepartureTicketId).getData();
+        RoundTicketReservationApiResponse roundTicketReservationApiResponse = roundTicketReservationApiLogicService.read2(email).getData();
+        OnewayReservationApiResponse onewayReservationApiResponse = onewayReservationApiLogicService.read2(email).getData();
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_air").addObject("email", email)
-                .addObject("nickname", nickname).addObject("reserveList", reservationApiResponseList);
+                .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
+                .addObject("roundCombackId", combackTicketId).addObject("onewayDepartureId", onewayDepartureTicketId)
+                .addObject("airTicketRDT", airTicketApiResponse1)
+                .addObject("airTicketODT", airTicketApiResponse2)
+                .addObject("airTicketRCT", airTicketApiResponse3)
+                .addObject("roundData", roundTicketReservationApiResponse)
+                .addObject("onewayData", onewayReservationApiResponse);
     }
 
     //마이페이지 내예약 숙소
@@ -770,12 +790,16 @@ public class PageController {
                 .addObject("nickname", nickname).addObject("reserveList", reservationApiResponseList);
     }
 
-    //내예약 항공 view
-    @RequestMapping(path = "/mypage/reserve/air/{ticketNum}")
-    public ModelAndView my_reserve_air(@PathVariable String ticketNum, HttpServletRequest request) {
+    //내예약 항공 view 왕복
+    @RequestMapping(path = "/mypage/reserve/air/round/{idx}")
+    public ModelAndView my_reserve_air_round(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
+        String adultCount = "성인";
+        String childCount = "소아";
+        String infantCount = "유아";
+
         if (session == null) {
 
         } else {
@@ -783,16 +807,47 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve").addObject("email", email)
-                .addObject("nickname", nickname);
+        Long roundDepartureTicketId = roundTicketReservationApiLogicService.findDeparture(email);
+        Long combackTicketId = roundTicketReservationApiLogicService.findComeback(email);
+        AirTicketApiResponse airTicketApiResponse1 = airTicketApiLogicService.read2(roundDepartureTicketId).getData();
+        AirTicketApiResponse airTicketApiResponse3 = airTicketApiLogicService.read2(combackTicketId).getData();
+        RoundTicketReservationApiResponse roundTicketReservationApiResponse = roundTicketReservationApiLogicService.read2(email).getData();
+        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationApiLogicService.search(email).getData();
+        String dAirport = airTicketApiLogicService.findDepartureAirport(roundDepartureTicketId);
+        String lAirport = airTicketApiLogicService.findLandingAirport(roundDepartureTicketId);
+
+        String city1 = airportApiLogicService.findCity(dAirport);
+        String city2 = airportApiLogicService.findCity(lAirport);
+
+        UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
+
+        Long adCount = roundTicketReservationApiLogicService.ageCount(adultCount);
+        Long chCount = roundTicketReservationApiLogicService.ageCount(childCount);
+        Long inCount = roundTicketReservationApiLogicService.ageCount(infantCount);
+
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_round").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
+                .addObject("roundCombackId", combackTicketId)
+                .addObject("airTicketRDT", airTicketApiResponse1)
+                .addObject("airTicketRCT", airTicketApiResponse3)
+                .addObject("roundData", roundTicketReservationApiResponse)
+                .addObject("roundList", roundTicketReservationApiResponseList)
+                .addObject("city1", city1)
+                .addObject("city2", city2)
+                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
+                .addObject("childCount", chCount).addObject("infantCount", inCount);
     }
 
-    //내예약 항공 취소
-    @RequestMapping(path = "/mypage/reserve/air/cancle/{ticketNum}")
-    public ModelAndView my_reserve_air_cancle(@PathVariable String ticketNum, HttpServletRequest request) {
+    //내예약 항공 view 편도
+    @RequestMapping(path = "/mypage/reserve/air/oneway/{idx}")
+    public ModelAndView my_reserve_air_oneway(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
+        String adultCount = "성인";
+        String childCount = "소아";
+        String infantCount = "유아";
+
         if (session == null) {
 
         } else {
@@ -800,9 +855,80 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
+        Long onewayDepartureTicketId = onewayReservationApiLogicService.findDeparture(email);
+        AirTicketApiResponse airTicketApiResponse2 = airTicketApiLogicService.read2(onewayDepartureTicketId).getData();
+        OnewayReservationApiResponse onewayReservationApiResponse = onewayReservationApiLogicService.read2(email).getData();
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationApiLogicService.search(email).getData();
 
-        return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_cancle").addObject("email", email)
-                .addObject("nickname", nickname);
+        String dAirport = airTicketApiLogicService.findDepartureAirport(onewayDepartureTicketId);
+        String lAirport = airTicketApiLogicService.findLandingAirport(onewayDepartureTicketId);
+
+        String city1 = airportApiLogicService.findCity(dAirport);
+        String city2 = airportApiLogicService.findCity(lAirport);
+
+        UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
+
+        Long adCount = onewayReservationApiLogicService.ageCount(adultCount);
+        Long chCount = onewayReservationApiLogicService.ageCount(childCount);
+        Long inCount = onewayReservationApiLogicService.ageCount(infantCount);
+
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_oneway").addObject("email", email)
+                .addObject("nickname", nickname)
+                .addObject("onewayDepartureId", onewayDepartureTicketId)
+                .addObject("airTicketODT", airTicketApiResponse2)
+                .addObject("onewayData", onewayReservationApiResponse)
+                .addObject("onewayList", onewayReservationApiResponseList)
+                .addObject("city1", city1)
+                .addObject("city2", city2)
+                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
+                .addObject("childCount", chCount).addObject("infantCount", inCount);
+    }
+
+    //내예약 항공 왕복 취소
+    @RequestMapping(path = "/mypage/reserve/air/round/cancle/{idx}")
+    public ModelAndView my_reserve_air_cancle(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        String adultCount = "성인";
+        String childCount = "소아";
+        String infantCount = "유아";
+        if (session == null) {
+
+        } else {
+            email = (String) session.getAttribute("email");
+            nickname = (String) session.getAttribute("nickname");
+        }
+
+        Long roundDepartureTicketId = roundTicketReservationApiLogicService.findDeparture(email);
+        Long combackTicketId = roundTicketReservationApiLogicService.findComeback(email);
+        AirTicketApiResponse airTicketApiResponse1 = airTicketApiLogicService.read2(roundDepartureTicketId).getData();
+        AirTicketApiResponse airTicketApiResponse3 = airTicketApiLogicService.read2(combackTicketId).getData();
+        RoundTicketReservationApiResponse roundTicketReservationApiResponse = roundTicketReservationApiLogicService.read2(email).getData();
+        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationApiLogicService.search(email).getData();
+        String dAirport = airTicketApiLogicService.findDepartureAirport(roundDepartureTicketId);
+        String lAirport = airTicketApiLogicService.findLandingAirport(roundDepartureTicketId);
+
+        String city1 = airportApiLogicService.findCity(dAirport);
+        String city2 = airportApiLogicService.findCity(lAirport);
+
+        UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
+
+        Long adCount = roundTicketReservationApiLogicService.ageCount(adultCount);
+        Long chCount = roundTicketReservationApiLogicService.ageCount(childCount);
+        Long inCount = roundTicketReservationApiLogicService.ageCount(infantCount);
+
+        return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_round_cancle").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
+                .addObject("roundCombackId", combackTicketId)
+                .addObject("airTicketRDT", airTicketApiResponse1)
+                .addObject("airTicketRCT", airTicketApiResponse3)
+                .addObject("roundData", roundTicketReservationApiResponse)
+                .addObject("roundList", roundTicketReservationApiResponseList)
+                .addObject("city1", city1)
+                .addObject("city2", city2)
+                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
+                .addObject("childCount", chCount).addObject("infantCount", inCount);
 
     }
 
