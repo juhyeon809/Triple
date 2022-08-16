@@ -1036,7 +1036,7 @@ create sequence seq_admin_user
     increment by 1
     start with 2;
     
-insert into room_reservation values(2,31,'handho121@naver.com', '2022-09-01', '2022-09-11', '한','동호','생일','남자','요청사항',1000);
+insert into room_reservation values(1,31,'handho121@naver.com', '2022-08-20', '2022-08-26', '한','동호','생일','남자','요청사항',1000);
 
 select * from room_reservation;
 commit;

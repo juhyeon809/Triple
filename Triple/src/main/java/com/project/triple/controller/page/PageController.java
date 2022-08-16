@@ -3110,7 +3110,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path="/admin/lodging_company_list")
+    @RequestMapping(path="/lodging_list")
     public ModelAndView lodging_list(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;

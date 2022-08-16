@@ -89,7 +89,7 @@
                                     <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
                                     <div class="roomlist_roomlist_reservation_info_box_price" th:text="${room.getPrice()}"></div>
                                 </div>
-                                <div id="rl1_3"><a th:href="${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
+                                <div id="rl1_3"><a th:href="'/Triple/room_view/'+ ${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
                             <div class="roomlist_roomlist_img"><img th:src="@{${room.getUploadPath()}}" alt="객실"></div>
                         </div>
