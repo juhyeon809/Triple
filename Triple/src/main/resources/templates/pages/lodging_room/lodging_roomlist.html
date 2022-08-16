@@ -43,7 +43,7 @@
                             <img src="/lib/img/lodging_room_img/icon_heart.svg" alt="하트아이콘">
                             <span>3,388</span>
                             <span class="starpoint" th:text="${lodging.getStarCount()}"></span>
-                            <span th:text=" '(' + ${lodging.getReviewCount()} + ')'"></span>
+                            <span th:text=" '(' + ${lodging.getReviewCount()} + ')'" style="color: #7b7b7b"></span>
                             <a href="#review">리뷰보기 ></a></div>
                         <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘"><span th:text="${lodging.getAddress()}"></span><a href="#location_info_1">지도보기 ></a></div>
                         <div id="roomlist_info_function_coupon"><span>쿠폰할인</span> 최대 할인 쿠폰 적용중<div id="aaa"><a href="#">쿠폰받기</a></div></div>
