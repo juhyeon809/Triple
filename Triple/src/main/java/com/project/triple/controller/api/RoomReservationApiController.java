@@ -1,0 +1,57 @@
+package com.project.triple.controller.api;
+
+
+import com.project.triple.controller.CrudController;
+import com.project.triple.controller.page.RoomId;
+import com.project.triple.controller.page.ScriptUtils;
+import com.project.triple.model.entity.Reservation.RoomReservation;
+import com.project.triple.model.entity.Restaurant.RestaurantReview;
+import com.project.triple.model.network.request.ReservationRequest.RoomReservationApiRequest;
+import com.project.triple.model.network.response.ReservationResponse.RoomReservationApiResponse;
+import com.project.triple.service.ReservationService.RoomReservationApiLogicService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/roomReservation")    // http://localhost:9090/api/user  url 주소
+@RequiredArgsConstructor
+public class RoomReservationApiController extends CrudController<RoomReservationApiRequest, RoomReservationApiResponse, RoomReservation> {
+
+    @Autowired
+    private RoomReservationApiLogicService roomReservationApiLogicService;
+
+    @RequestMapping("/check")
+    public HashMap<String, Object> register(HttpServletResponse response, @RequestBody RoomId roomId) throws Exception {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        System.out.println(roomId.getRoomId());
+        List<LocalDate> localDates = new ArrayList<>();
+       List<RoomReservationApiResponse> roomReservationApiResponseList =  roomReservationApiLogicService.list(roomId.getRoomId());
+       for(RoomReservationApiResponse roomReservationApiResponse : roomReservationApiResponseList){
+           System.out.println(roomReservationApiResponse.getIdx());
+           LocalDate startDate = LocalDate.parse(roomReservationApiResponse.getStartDate(), formatter);
+           LocalDate endDate = LocalDate.parse(roomReservationApiResponse.getEndDate(),formatter);
+           List<LocalDate> Dates = startDate.datesUntil(endDate).collect(Collectors.toList());
+           for(LocalDate localDate : Dates){
+               localDates.add(localDate);
+           }
+       }
+        for(LocalDate localDate : localDates){
+            System.out.println(localDate);
+        }
+       HashMap<String, Object> map = new HashMap<>();
+       map.put("list", localDates);
+       return map;
+    }
+
+}

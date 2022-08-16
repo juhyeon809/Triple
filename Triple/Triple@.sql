@@ -1035,6 +1035,28 @@ create table admin_user(
 create sequence seq_admin_user
     increment by 1
     start with 2;
+    
+insert into room_reservation values(2,31,'handho121@naver.com', '2022-09-01', '2022-09-11', '한','동호','생일','남자','요청사항',1000);
 
+select * from room_reservation;
+commit;
+create table room_reservation(
+    idx number(7) primary key,
+    room_id number(7) not null,
+    user_email varchar2(40) not null,
+    start_date varchar2(50) not null,
+    end_date varchar2(50) not null,
+    last_name varchar2(40) not null,
+    first_name varchar2(40) not null,
+    birth varchar2(40) not null,
+    gender varchar2(40) not null,
+    request varchar2(1000) not null,
+    total_price number(10) not null
+);
+
+
+create sequence seq_room_reservation
+    increment by 1
+    start with 1;
 
 
