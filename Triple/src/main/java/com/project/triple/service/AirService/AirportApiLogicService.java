@@ -7,6 +7,11 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirportApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirportApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
+import com.project.triple.model.entity.User.AdminUser;
+import com.project.triple.model.network.Header;
+import com.project.triple.model.network.request.AirRequest.AirportApiRequest;
+import com.project.triple.model.network.response.AirResponse.AirportApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.AirportRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -71,4 +76,12 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
         return city;
     }
 
+    /*관리자 조회*/
+    public Header<List<AirportApiResponse>> search(){
+        List<Airport> airportList = airportRepository.findAllByOrderByIdxDesc();
+        List<AirportApiResponse> airportApiResponseList = airportList.stream()
+                .map(airport -> response(airport))
+                .collect(Collectors.toList());
+        return Header.OK(airportApiResponseList);
+    }
 }

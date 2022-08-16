@@ -8,6 +8,7 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.SpotRequest.SpotApiRequest;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.SpotRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -85,8 +86,11 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
 
     @Override
     public Header<SpotApiResponse> delete(Long id) {
-        return null;
+        Spot spot = spotRepository.findById(id).get();
+        baseRepository.delete(spot);
+        return Header.OK();
     }
+
 
     public void write(Spot spot, MultipartFile img1, MultipartFile img2, MultipartFile img3, MultipartFile img4, MultipartFile img5) throws Exception{
 

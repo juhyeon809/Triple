@@ -2,6 +2,7 @@ package com.project.triple.repository;
 
 import com.project.triple.model.entity.Coupon.Coupon;
 import com.project.triple.model.entity.Reservation.Reservation;
+import com.project.triple.model.entity.Air.Airport;
 import com.project.triple.model.entity.Reservation.RoundTicketReservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -27,4 +28,5 @@ public interface RoundTicketReservationRepository extends JpaRepository<RoundTic
     List<RoundTicketReservation> findAllByEmail(String email);
 
     Long countByAgeType(String ageType);
+    List<RoundTicketReservation> findAllByOrderByIdxDesc();
 }

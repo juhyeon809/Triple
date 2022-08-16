@@ -86,6 +86,7 @@ input[type="border"], input[type="radio"], input[type="checkbox"]{
     color: #fff;
 }
 .user-info .info-container {
+    padding-top: 10px;
     cursor: default;
     display: block;
     position: relative;

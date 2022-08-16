@@ -48,7 +48,7 @@
     </div>
     <div id="logo_menus_area">
         <div><a href="/Triple/flightMain"><img src="/lib/img/airport.png" alt="항공권"></a></div>
-        <div><a href="/Triple/lodging_main"><img src="/lib/img/hotel.png" alt="숙소예약"></a></div>
+        <div><a href="/Triple/lodging_list"><img src="/lib/img/hotel.png" alt="숙소예약"></a></div>
         <div><a href="/Triple/tour_ticket_main"><img src="/lib/img/tour_ticket.png" alt="투어/티켓"></a></div>
         <div><a href="/Triple/package"><img src="/lib/img/package.png" alt="패키지여행"></a></div>
         <div><a href="/Triple/magazine"><img src="/lib/img/magazine.png" alt="여행매거진"></a></div>
@@ -63,16 +63,16 @@
                     <p class="event_item_contant">비행기 티켓부터 숙박까지 한번에!</p>
                 </div>
             </a>
-            <a href="#" class="event_item_back event_item_back2">
+            <a th:href="'/Triple/event/' + ${event.getIdx()}" class="event_item_back event_item_back2" th:each="event, i: ${event}" th:if="${i.count eq i.size}">
                 <div class="event_item">
-                    <p class="event_item_title">[7월 이벤트]</p>
-                    <p class="event_item_contant">하노이 여행특가</p>
+                    <p class="event_item_title">[<span th:text="${event.getEventType()}"></span>]</p>
+                    <p class="event_item_contant" th:text="${event.getTitle()}"></p>
                 </div>
             </a>
-            <a href="#" class="event_item_back event_item_back3">
+            <a th:href="'/Triple/mypage/settings/notice/' + ${notice.getIdx()}"  class="event_item_back event_item_back3" th:each="notice,i: ${notice}" th:if="${i.count eq i.size}">
                 <div class="event_item">
                     <p class="event_item_title">[공지사항]</p>
-                    <p class="event_item_contant">해외상황을 생생히 전달해줄 트리플 리포터 대모집!</p>
+                    <p class="event_item_contant" th:text="${notice.getTitle()}"></p>
                 </div>
             </a>
             <a href="#" class="event_item_back event_item_back4">

@@ -20,7 +20,6 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -131,6 +130,14 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
         UsersApiResponse email1 = response(usersRepository.findByEmail(email).get());
 
         return email1;
+    }
+    public int PwCheck(String userPw){
+        int result = 1;
+
+        if( usersRepository.findByUserpw(userPw).isEmpty()){
+            result = 0;
+        }
+        return result;
     }
 
     public static void certifiedPhoneNumber(String phoneNumber, String cerNum) {

@@ -29,19 +29,18 @@
             <div id="lg_rm_if_main">
                 <div id="lg_rm_if_main_1">
                     <div id="lg_rm_if_main_1_setting">
-                        <div id="lg_rm_if_main_1_lodging">리조트</div>
-                        <div id="lg_rm_if_main_1_star">5성급</div>
+                        <div id="lg_rm_if_main_1_lodging" th:text="${lodging.getType()}"></div>
+                        <div id="lg_rm_if_main_1_star" th:text="${lodging.getRank()} +'성급'"></div>
                         <div id="">
                         </div>
                     </div>
                     
                     <div id="lg_rm_if_main_1_info">
                         <div id="lg_rm_if_main_1_info_left">
-                            <div id="lg_rm_if_main_1_info_name">프리미어 트윈룸, 오션프론트</div>
-                            <div id="lg_rm_if_main_1_info_room">
-                                싱글침대 2개<br>바다 전망<br>금연
+                            <div id="lg_rm_if_main_1_info_name" th:text="${room.getName()}"></div>
+                            <div id="lg_rm_if_main_1_info_room" th:text="${room.getBed()}+ ${room.getWidth()}+${room.getRoomCapacity()}+${room.getRoomView()}+${room.getSmoking()}">
                             </div>
-                            <div id="lg_rm_if_main_1_info_policy"><a href="#">무료취소</a> | <a href="#">쿠폰할인</a> | <a href="#">트리플 회원가</a><br>1박, 세금포함</div>
+                            <div id="lg_rm_if_main_1_info_policy"><a href="#"  th:if="${lodging.getCf().contains('무료취소')}">무료취소</a> | <a href="#">쿠폰할인</a> | <a href="#">트리플 회원가</a><br>1박, 세금포함</div>
                         </div>
                     </div>
                 </div>
@@ -98,8 +97,7 @@
                 <div id="lg_rm_if_sub_4">
                     <div class="if_sub_1">체크인 / 체크아웃 시간 </div>
                     <div class="if_sub_2">
-                        ∙ <span>체크인</span>&nbsp;&nbsp; | &nbsp;&nbsp;15:00 - 언제든지 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∙ <span>체크아웃</span>&nbsp;&nbsp; | &nbsp;&nbsp;정오 이전
-
+                        <p th:text="'체크인' + ${lodging.getCheckIn()} + '체크아웃' + ${lodging.getCheckOut()}"></p>
                     </div>
                 </div>
 

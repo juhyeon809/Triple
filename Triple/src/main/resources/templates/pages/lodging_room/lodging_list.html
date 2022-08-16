@@ -13,6 +13,21 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/app/js/room_search.js"></script>
+    <style>
+        .sidemenu > ul #country_select,
+        .sidemenu > ul #city_select{
+            border-radius: 10px;
+            width: 49%;
+            margin-bottom: 5px;
+        }
+        .sidemenu > ul select{
+            border-radius: 10px;
+            width: 100px;
+            height: 25px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <div id="backg_image_area">
@@ -27,26 +42,18 @@
         <p class="content content3">#호텔·리조트 #독채펜션 #키즈룸숙소</p>
     </div>
     <!--section 시작-->
+
     <section>
         <div class="lodging_main">
-            <select name="view" class="summary_btn">
+            <select name="roomView" class="summary_btn">
                 <option value="추천순">추천순</option>
                 <option value="리뷰순">리뷰순</option>
                 <option value="저장순">저장순</option>
                 <option value="가격낮은순">가격낮은순</option>
                 <option value="가격높은순">가격높은순</option>
             </select>
-            <select name="people_number" class="summary_btn">
-                <option value="성인">성인</option>
-                <option value="선택안함">선택안함</option>
-                <option value="1인">1인</option>
-                <option value="2인">2인</option>
-                <option value="3인">3인</option>
-                <option value="4인">4인</option>
-                <option value="5명 이상">5명 이상</option>
-            </select>
-            <select name="people_number" class="summary_btn">
-                <option value="아동">아동</option>
+            <select name="roomCapacity" class="summary_btn">
+                <option value="">인원</option>
                 <option value="선택안함">선택안함</option>
                 <option value="1인">1인</option>
                 <option value="2인">2인</option>
@@ -63,60 +70,76 @@
                 <option value="글램핑">글램핑</option>
             </select>
         </div>
+
         <div class="lodging_main lodging_box">
+            <form  method="post">
             <div class="sidemenu">
                 <ul class="sidemenu_lodging_type">
                     <li>
                         <p>숙소유형</p>
                     </li>
                     <li>
+                        <select name="country" class="summary_btn" id="country_select" onchange="optionChange();">
+                            <option value="">국가선택</option>
+                            <option value="대한민국">대한민국</option>
+                            <option value="일본">일본</option>
+                            <option value="중국">중국</option>
+                            <option value="동남아">동남아</option>
+                        </select>
+                        <select name="city" class="summary_btn" id="city_select">
+                        <option value="">도시</option>
+                    </select>
+                    </li>
+                    <li>
                         <label for="hotel">
-                            <input type="checkbox" name="lodging_type" value="호텔" id="hotel"> 호텔
+                            <input type="checkbox" name="type" value="호텔" id="hotel"> 호텔
                         </label>
                         <label for="resort">
-                            <input type="checkbox" name="lodging_type" value="리조트" id="resort"> 리조트
+                            <input type="checkbox" name="type" value="리조트" id="resort"> 리조트
                         </label>
                     </li>
                     <li>
                         <label for="pension">
-                            <input type="checkbox" name="lodging_type" value="펜션" id="pension"> 펜션
+                            <input type="checkbox" name="type" value="펜션" id="pension"> 펜션
                         </label>
                         <label for="motel">
-                            <input type="checkbox" name="lodging_type" value="모텔" id="motel"> 모텔
+                            <input type="checkbox" name="type" value="모텔" id="motel"> 모텔
                         </label>
                     </li>
                     <li>
                         <label for="caravan">
-                            <input type="checkbox" name="lodging_type" value="카라반" id="caravan"> 카라반
+                            <input type="checkbox" name="type" value="카라반" id="caravan"> 카라반
                         </label>
                         <label for="glamping">
-                            <input type="checkbox" name="lodging_type" value="글램핑" id="glamping"> 글램핑
+                            <input type="checkbox" name="type" value="글램핑" id="glamping"> 글램핑
                         </label>
                     </li>
                 </ul>
 
                 <ul class="sidemenu_grade">
                     <li>
-                        <p>호텔 등급</p>
-                    </li>
-                    <li>
-                        <div class="lodging_grade"><a href="#">0+</a></div>
-                        <div class="lodging_grade"><a href="#">2</a></div>
-                        <div class="lodging_grade"><a href="#">3</a></div>
-                        <div class="lodging_grade"><a href="#">4</a></div>
-                        <div class="lodging_grade"><a href="#">5</a></div>
+                        <p style="margin: 0; padding-top: 5px;">호텔 등급</p>
+                        <select name="rank" class="summary_btn" id="rank">
+                            <option value="">선택안함</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </li>
                 </ul>
                 <ul class="sidemenu_review">
                     <li>
-                        <p>리뷰 평점</p>
-                    </li>
-                    <li>
-                        <div class="lodging_review"><a href="#">0+</a></div>
-                        <div class="lodging_review"><a href="#">2</a></div>
-                        <div class="lodging_review"><a href="#">3</a></div>
-                        <div class="lodging_review"><a href="#">4</a></div>
-                        <div class="lodging_review"><a href="#">5</a></div>
+                        <p style="margin: 0; padding-top: 5px;">리뷰 평점</p>
+                        <select name="reviewCount" class="summary_btn" id="reviewCount">
+                            <option value="">선택안함</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </li>
                 </ul>
                 <ul class="sidemenu_price">
@@ -124,8 +147,8 @@
                         <p>가격</p>
                     </li>
                     <li>
-                        <input type="text" placeholder="직접 입력 원"> ~
-                        <input type="text" placeholder="원">
+                        <input name="leastPrice" type="text" placeholder="직접 입력 원" id="leastPrice"> ~
+                        <input name="maxPrice" type="text" placeholder="원" id="maxPrice">
                     </li>
                 </ul>
                 <ul class="sidemenu_sevice">
@@ -134,177 +157,100 @@
                     </li>
                     <li>
                         <label for="breakfast">
-                            <input type="checkbox" name="service" value="조식" id="breakfast"> 조식
+                            <input type="checkbox" name="cf" value="조식" id="breakfast"> 조식
                         </label>
                         <label for="parking">
-                            <input type="checkbox" name="service" value="주차" id="parking"> 주차
+                            <input type="checkbox" name="cf" value="주차" id="parking"> 주차
                         </label>
                     </li>
                     <li>
                         <label for="wifi">
-                            <input type="checkbox" name="service" value="인터넷" id="wifi"> 인터넷
+                            <input type="checkbox" name="cf" value="인터넷" id="wifi"> 인터넷
                         </label>
                         <label for="cancel_free">
-                            <input type="checkbox" name="service" value="무료취소" id="cancel_free"> 무료취소
+                            <input type="checkbox" name="cf" value="무료취소" id="cancel_free"> 무료취소
                         </label>
                     </li>
                     <li>
                         <label for="shuttle">
-                            <input type="checkbox" name="service" value="셔틀" id="shuttle"> 셔틀
+                            <input type="checkbox" name="cf" value="셔틀" id="shuttle"> 셔틀
                         </label>
                         <label for="storage">
-                            <input type="checkbox" name="service" value="짐 보관" id="storage"> 짐보관서비스
+                            <input type="checkbox" name="cf" value="짐 보관" id="storage"> 짐보관서비스
                         </label>
                     </li>
                     <li>
                         <label for="spar">
-                            <input type="checkbox" name="service" value="스파·욕조" id="spar"> 스파·욕조
+                            <input type="checkbox" name="cf" value="스파·욕조" id="spar"> 스파·욕조
                         </label>
                         <label for="sauna">
-                            <input type="checkbox" name="service" value="사우나" id="sauna"> 사우나
+                            <input type="checkbox" name="cf" value="사우나" id="sauna"> 사우나
                         </label>
                     </li>
                     <li>
                         <label for="swimming_pool">
-                            <input type="checkbox" name="service" value="수영장" id="swimming_pool"> 수영장
+                            <input type="checkbox" name="cf" value="수영장" id="swimming_pool"> 수영장
                         </label>
                         <label for="kids">
-                            <input type="checkbox" name="service" value="키즈클럽" id="kids"> 키즈클럽
+                            <input type="checkbox" name="cf" value="키즈클럽" id="kids"> 키즈클럽
                         </label>
                     </li>
                     <li>
                         <label for="meeting_room">
-                            <input type="checkbox" name="service" value="미팅룸" id="meeting_room"> 미팅룸
+                            <input type="checkbox" name="cf" value="미팅룸" id="meeting_room"> 미팅룸
                         </label>
                         <label for="cleaning">
-                            <input type="checkbox" name="service" value="세탁시설" id="cleaning"> 세탁시설
+                            <input type="checkbox" name="cf" value="세탁시설" id="cleaning"> 세탁시설
                         </label>
                     </li>
                     <li>
                         <label for="pets">
-                            <input type="checkbox" name="service" value="반려동물" id="pets"> 반려동물
+                            <input type="checkbox" name="cf" value="반려동물" id="pets"> 반려동물
                         </label>
                         <label for="no_smoking">
-                            <input type="checkbox" name="service" value="금연객실" id="no_smoking"> 금연객실
+                            <input type="checkbox" name="cf" value="금연객실" id="no_smoking"> 금연객실
                         </label>
                     </li>
                     <li>
                         <label for="support">
-                            <input type="checkbox" name="service" value="장애인지원" id="support"> 장애인지원
+                            <input type="checkbox" name="cf" value="장애인지원" id="support"> 장애인지원
                         </label>
                         <label for="service_language_kor">
-                            <input type="checkbox" name="service" value="한국어지원" id="service_language_kor"> 한국어지원
+                            <input type="checkbox" name="cf" value="한국어지원" id="service_language_kor"> 한국어지원
                         </label>
                     </li>
                     <li>
                         <label for="service_language_japan">
-                            <input type="checkbox" name="service" value="일본어지원" id="service_language_japan"> 일본어지원
+                            <input type="checkbox" name="cf" value="일본어지원" id="service_language_japan"> 일본어지원
                         </label>
                         <label for="service_language_eng">
-                            <input type="checkbox" name="service" value="영어지원" id="service_language_eng"> 영어지원
+                            <input type="checkbox" name="cf" value="영어지원" id="service_language_eng"> 영어지원
                         </label>
                     </li>
                     <li>
                         <label for="service_language_china">
-                            <input type="checkbox" name="service" value="중국어지원" id="service_language_china"> 중국어지원
+                            <input type="checkbox" name="cf" value="중국어지원" id="service_language_china"> 중국어지원
                         </label>
                         <label for="service_language_tai">
-                            <input type="checkbox" name="service" value="태국어지원" id="service_language_tai"> 태국어지원
+                            <input type="checkbox" name="cf" value="태국어지원" id="service_language_tai"> 태국어지원
                         </label>
                     </li>
                 </ul>
             </div>
-            <div class="lodging_item_list">
+                <p>
+                <input type="button" value="검색" id="formSearch">
+                </p>
+            </form>
+            <div class="lodging_item_list" id="lodgingListContent">
                 <ul>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
+                    <li th:each="lodging : ${lodgingList}" >
                         <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
+                            <p class="list_title"><a th:text="${lodging.getName()}" th:href="'/Triple/lodging_view/' + ${lodging.getIdx()}"></a></p>
+                            <p class="list_subtitle" th:text="${lodging.getIntroducing()}"></p>
+                            <p class="list_review" th:text="'('+${lodging.getReviewCount()}+')'"><span th:text="${lodging.getStarCount()}"></span></p>
+                            <p class="list_price" th:text="${lodging.getCheapestPrice()} + '원'"></p>
                         </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
-                    </li>
-                    <li onclick="location.href='/templates/pages/lodging_room/lodging_roominfo.html'">
-                        <div class="list_info">
-                            <p class="list_title">두짓 타니 괌 리조트</p>
-                            <p class="list_subtitle">프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</p>
-                            <p class="list_review"><span>★★★★★</span> (331) · 저장 3,387 · 5성급 · 투몬, 타무닝  </p>
-                            <p class="list_price">462,576원</p>
-                        </div>
-                        <div class="list_img"><div></div></div>
+                        <div class="list_img"><img th:src="@{${lodging.getUploadPath()}}"></div>
                     </li>
                 </ul>
             </div>
@@ -312,8 +258,10 @@
     </section>
     <!--secion 끝-->
     <!--main 끝-->
+    <!--main 끝-->
     <!-- footer 시작 -->
     <footer th:replace="fragement/footer :: footer"></footer>
     <!-- footer 끝 -->
+    <script src="/app/js/script.js"></script>
 </body>
 </html>
