@@ -1,9 +1,11 @@
 package com.project.triple.service.ReservationService;
 
 import com.project.triple.model.entity.Reservation.RoundTicketReservation;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.RoundTicketReservationApiRequest;
 import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.RoundTicketReservationRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -73,5 +75,14 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
             return Header.OK(roundTicketReservationApiResponseList);
     }
 
+
+    /* 항공예약티켓 조회 */
+    public Header<List<RoundTicketReservationApiResponse>> search(){
+        List<RoundTicketReservation> RoundTicketList = roundTicketReservationRepository.findAllByOrderByIdxDesc();
+        List<RoundTicketReservationApiResponse> roundTicketApiResponseList = RoundTicketList.stream()
+                .map(roundTicket -> response(roundTicket))
+                .collect(Collectors.toList());
+        return Header.OK(roundTicketApiResponseList);
+    }
 
 }

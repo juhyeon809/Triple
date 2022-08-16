@@ -6,10 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 이벤트 목록</title>
+    <title>관리자 | 스팟 목록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/app/css/admin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <style>
+        .submenu_spot{
+            font-size: 16px;
+            display: flex;
+            font-weight: bold;
+            color: #4F4F4F;
+            letter-spacing: 2px;
+        }
+        .submenu_spot a{
+            font-size: 16px;
+            display: flex;
+            font-weight: bold;
+            color: white;
+            margin-right: 5px;
+            margin-left: 5px;
+            background-color: #0c8ee5;
+            min-width: 70px;
+            min-height: 30px;
+            padding: 5px;
+            border-radius: 3px;
+            justify-content: center;
+        }
+        .submenu_spot a:first-child{
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
     <!--header-->
@@ -28,28 +55,28 @@
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="/Triple/admin/booking/all">전체</a></li>
+
                         <li><a href="/Triple/admin/booking/fly">항공권</a></li>
                         <li><a href="/Triple/admin/booking/lodging">숙소</a></li>
                         <li><a href="/Triple/admin/booking/package">패키지</a></li>
-                        <li><a href="/Triple/admin/booking/ticket">티켓</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="/Triple/airline_register">항공사 신규 등록</a></li>
                         <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
-                        <li><a href="/Triple/admin/destinationList">취항지 목록</a></li>
+                        <li><a href="/Triple/airportList">취항지 목록</a></li>
                         <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
-                        <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
+                        <li><a href="/Triple/lodging_company">숙소 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="/Triple/airline_select">항공권</a></li>
-                        <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                        <li><a href="/Triple/room_register">숙소</a></li>
                         <li><a href="/Triple/package_register">패키지</a></li>
-                        <li><a href="/templates/pages/admin/product/ticket.html">티켓</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -57,8 +84,6 @@
                         <li><a href="/Triple/admin/airLineList">항공권</a></li>
                         <li><a href="/Triple/admin/lodgingList">숙소</a></li>
                         <li><a href="/Triple/admin/packageList">패키지</a></li>
-                        <li><a href="/Triple/admin/ticketList">티켓</a></li>
-                        <li><a href="/Triple/admin/restaurantList">다이닝</a></li>
                     </ul>
                 </li>
                 <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
@@ -121,7 +146,6 @@
             <div class="header_box">
                 <h2>스팟 목록</h2>
                 <nav>
-                    
                     <form action="#">
                         <div class="form-group">
                             <select name="" >
@@ -140,20 +164,67 @@
                     </form>
                 </nav>
             </div>
-            <table class="tbList">
+            <div class="submenu_spot">
+                <a href="#guide_table" id="guide_a">가이드</a>
+                <a href="#tour_table" id="tour_a">관광</a>
+                <a href="#restaurant_table" id="restaurant_a">맛집</a>
+            </div>
+            <table class="tbList" id="guide1_table">
                 <tr>
-                    <th>번호</th>
-                    <th>국가(도시)</th>
-                    <th>여행스팟</th>
-                    <th>작성날짜</th>
+                    <th style="width: 20%;">번호</th>
+                    <th style="width: 25%;">국가(도시)</th>
+                    <th style="width: 25%;">가이드 제목</th>
+                    <th style="width: 30%;">작성날짜</th>
                 </tr> 
-                <tr th:each="spot : ${spotList}">
-                    <td><a th:href="'/Triple/admin/spotList/view/'+${spot.getIdx()}" th:text="${spot.idx}"></a></td>
+                <tr th:each="guide : ${guideList}" id="guide1">
+                    <td><a th:href="'/Triple/admin/spotList/view/'+${guide.getIdx()}" th:text="${guide.idx}"></a></td>
+                    <td><span th:text="${guide.country}"></span>(<span th:text="${guide.city}"></span>)</td>
+                    <td th:text="${guide.title}"></td>
+                    <td th:text="${guide.regDate}">2022.06.27</td>
+                </tr>
+            </table>
+            <table class="tbList" id="guide2_table" style="display: none">
+                <tr>
+                    <th style="width: 20%;">번호</th>
+                    <th style="width: 25%;">국가(도시)</th>
+                    <th style="width: 25%;">가이드 제목</th>
+                    <th style="width: 30%;">작성날짜</th>
+                </tr>
+                <tr th:each="guide : ${guideList}" id="guide2">
+                    <td><a th:href="'/Triple/admin/spotList/guide2_table/view/'+${guide.getIdx()}" th:text="${guide.idx}"></a></td>
+                    <td><span th:text="${guide.country}"></span>(<span th:text="${guide.city}"></span>)</td>
+                    <td th:text="${guide.title}"></td>
+                    <td th:text="${guide.regDate}">2022.06.27</td>
+                </tr>
+            </table>
+            <table class="tbList" id="tour_table" style="display: none;">
+                <tr>
+                    <th style="width: 20%;">번호</th>
+                    <th style="width: 25%;">국가(도시)</th>
+                    <th style="width: 25%;">관광지명</th>
+                    <th style="width: 30%;">작성날짜</th>
+                </tr>
+                <tr th:each="spot : ${spotList}" id="tour">
+                    <td><a th:href="'/Triple/admin/spotList/tour_table/view/'+${spot.getIdx()}" th:text="${spot.idx}"></a></td>
                     <td><span th:text="${spot.country}"></span>(<span th:text="${spot.city}"></span>)</td>
                     <td th:text="${spot.placeName}"></td>
                     <td th:text="${spot.regDate}">2022.06.27</td>
                 </tr>
-                
+            </table>
+            <table class="tbList" id="restaurant_table" style="display: none;">
+                <tr>
+                    <th style="width: 20%;">번호</th>
+                    <th style="width: 25%;">국가(도시)</th>
+                    <th style="width: 25%;">맛집명</th>
+                    <th style="width: 30%;">작성날짜</th>
+                </tr>
+                <tr th:each="restaurant : ${restaurantList}" id="restaurant">
+                    <td><a th:href="'/Triple/admin/spotList/restaurant_table/view/'+${restaurant.getIdx()}" th:text="${restaurant.idx}"></a></td>
+                    <td><span th:text="${restaurant.country}"></span>(<span th:text="${restaurant.city}"></span>)</td>
+                    <td th:text="${restaurant.title}"></td>
+                    <td th:text="${restaurant.regDate}">2022.06.27</td>
+                </tr>
+
             </table>
             <div class="pageNum">
                 <p>1 2 3 4 5</p>
@@ -164,5 +235,6 @@
 
 
     <script src="/app/js/script.js"></script>
+    <script src="/app/js/admin/spotList.js"></script>
 </body>
 </html>

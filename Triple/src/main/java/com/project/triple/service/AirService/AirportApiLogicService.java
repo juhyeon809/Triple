@@ -2,9 +2,11 @@ package com.project.triple.service.AirService;
 
 
 import com.project.triple.model.entity.Air.Airport;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirportApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirportApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.AirportRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -61,5 +63,14 @@ public class AirportApiLogicService extends BaseService<AirportApiRequest, Airpo
 
     public Header<List<AirportApiResponse>> list(){
       return Header.OK(airportRepository.findAll().stream().map(airport -> response(airport)).collect(Collectors.toList()));
+    }
+
+    /*관리자 조회*/
+    public Header<List<AirportApiResponse>> search(){
+        List<Airport> airportList = airportRepository.findAllByOrderByIdxDesc();
+        List<AirportApiResponse> airportApiResponseList = airportList.stream()
+                .map(airport -> response(airport))
+                .collect(Collectors.toList());
+        return Header.OK(airportApiResponseList);
     }
 }

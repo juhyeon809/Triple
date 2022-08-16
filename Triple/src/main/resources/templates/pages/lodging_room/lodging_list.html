@@ -14,6 +14,20 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/app/js/room_search.js"></script>
+    <style>
+        .sidemenu > ul #country_select,
+        .sidemenu > ul #city_select{
+            border-radius: 10px;
+            width: 49%;
+            margin-bottom: 5px;
+        }
+        .sidemenu > ul select{
+            border-radius: 10px;
+            width: 100px;
+            height: 25px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     <div id="backg_image_area">
@@ -72,11 +86,9 @@
                             <option value="중국">중국</option>
                             <option value="동남아">동남아</option>
                         </select>
-                    </li>
-                    <li>
                         <select name="city" class="summary_btn" id="city_select">
-                            <option value="">도시</option>
-                        </select>
+                        <option value="">도시</option>
+                    </select>
                     </li>
                     <li>
                         <label for="hotel">
@@ -106,9 +118,7 @@
 
                 <ul class="sidemenu_grade">
                     <li>
-                        <p>호텔 등급</p>
-                    </li>
-                    <li>
+                        <p style="margin: 0; padding-top: 5px;">호텔 등급</p>
                         <select name="rank" class="summary_btn" id="rank">
                             <option value="">선택안함</option>
                             <option value="1">1</option>
@@ -121,9 +131,7 @@
                 </ul>
                 <ul class="sidemenu_review">
                     <li>
-                        <p>리뷰 평점</p>
-                    </li>
-                    <li>
+                        <p style="margin: 0; padding-top: 5px;">리뷰 평점</p>
                         <select name="reviewCount" class="summary_btn" id="reviewCount">
                             <option value="">선택안함</option>
                             <option value="1">1</option>
@@ -229,7 +237,9 @@
                     </li>
                 </ul>
             </div>
-                <input type="button" value="검색" id="search">
+                <p>
+                <input type="button" value="검색" id="formSearch">
+                </p>
             </form>
             <div class="lodging_item_list" id="lodgingListContent">
                 <ul>

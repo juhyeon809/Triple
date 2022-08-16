@@ -1,10 +1,12 @@
 package com.project.triple.service;
 
+import com.project.triple.model.entity.Guide.Guide;
 import com.project.triple.model.entity.Magazine;
 import com.project.triple.model.entity.Package;
 import com.project.triple.model.enumclass.MagazineType;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.MagazineApiRequest;
+import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.PackageApiResponse;
 import com.project.triple.repository.MagazineRepository;
@@ -96,7 +98,9 @@ public class MagazineApiLogicService extends BaseService<MagazineApiRequest, Mag
 
     @Override
     public Header<MagazineApiResponse> delete(Long id) {
-        return null;
+        Magazine magazine = magazineRepository.findById(id).get();
+        baseRepository.delete(magazine);
+        return Header.OK();
     }
 
     public Header<List<MagazineApiResponse>> list(){

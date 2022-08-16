@@ -7,6 +7,7 @@ import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.RestaurantRequest.RestaurantApiRequest;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
+import com.project.triple.model.network.response.MagazineApiResponse;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.RestaurantRepository;
@@ -92,8 +93,11 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
 
     @Override
     public Header<RestaurantApiResponse> delete(Long id) {
-        return null;
+        Restaurant restaurant = restaurantRepository.findById(id).get();
+        baseRepository.delete(restaurant);
+        return Header.OK();
     }
+
 
     public void write(Restaurant restaurant, MultipartFile restaurantpic, MultipartFile menu1img,MultipartFile menu2img,MultipartFile menu3img) throws Exception{
 
