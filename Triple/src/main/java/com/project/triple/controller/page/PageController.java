@@ -1907,6 +1907,7 @@ public class PageController {
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
+        String email = null;
         if(session == null) {
             ScriptUtils.alertAndMovePage(response, "관리자 로그인 후 이용하세요", "/Triple/admin/admin_login");
         }else{
@@ -1914,11 +1915,16 @@ public class PageController {
             name = (String)session.getAttribute("name");
         }
         List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
+        Long idx = usersApiLogicService.findIdx(email);
+        List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
 
         return new ModelAndView("/pages/admin/admin_main")
                 .addObject("userid", userid)
                 .addObject("name", name)
-                .addObject("usersList", usersList);
+                .addObject("usersList", usersList)
+                .addObject("question", questionApiResponseList)
+                .addObject("email",email)
+                .addObject("idx",idx);
 
     }
     @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
@@ -3232,7 +3238,7 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-    @RequestMapping(path="/admin/lodging_company_list")
+    @RequestMapping(path="/lodging_company_list")
     public ModelAndView lodging_list(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
