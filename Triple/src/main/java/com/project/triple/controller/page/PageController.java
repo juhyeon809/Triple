@@ -10,6 +10,7 @@ import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiR
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
@@ -143,6 +144,9 @@ public class PageController {
 
     @Autowired
     private AirportApiLogicService airportApiLogicService;
+
+    @Autowired
+    private RoundTicketReservationApiLogicService roundTicketListReservationApiLogicService;
 
 
 
@@ -2112,6 +2116,24 @@ public class PageController {
                 .addObject("userid", userid)
                 .addObject("name", name).addObject("userList", userList);
     }
+    /* 회원 상세보기 페이지 */
+    @RequestMapping(path="/admin/userList/view/{idx}")       //http://localhost:9090/Triple/admin/userList/view/{idx}
+    public ModelAndView admin_userList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        UsersApiResponse usersApiResponse = usersApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/member/memberinfo")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("users", usersApiResponse);
+    }
 
     /* 회원 관리 > 회원 가입 */
     @RequestMapping(path="/admin/user/term")      //http://localhost:9090/Triple/admin/user/term
@@ -2119,9 +2141,9 @@ public class PageController {
         return new ModelAndView("/pages/admin/member/memberSign-up");
     }
 
-    /* 예약 조회 > 전체 */
-    @RequestMapping(path="/admin/booking/all")      //http://localhost:9090/Triple/admin/booking/all
-    public ModelAndView admin_booking_all(HttpServletRequest request) throws NullPointerException {
+    /* 예약 조회 > 항공권 */
+    @RequestMapping(path="/admin/booking/fly")      //http://localhost:9090/Triple/admin/booking/fly
+    public ModelAndView admin_booking_fly(HttpServletRequest request) throws NullPointerException {
 
         HttpSession session = request.getSession(false);
         String userid = null;
@@ -2132,16 +2154,29 @@ public class PageController {
             userid = (String) session.getAttribute("userid");
             name = (String) session.getAttribute("name");
         }
-        List<ReservationApiResponse> bookingList = reservationApiLogicService.search().getData();
-        return new ModelAndView("/pages/admin/booking/all")
+        List<RoundTicketReservationApiResponse> roundTicketList = roundTicketListReservationApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/booking/fly_reservation")
                 .addObject("userid", userid)
-                .addObject("name", name).addObject("bookingList", bookingList);
+                .addObject("name", name).addObject("roundTicketList", roundTicketList);
     }
 
-    /* 예약 조회 > 항공권 */
-    @RequestMapping(path="/admin/booking/fly")      //http://localhost:9090/Triple/admin/booking/fly
-    public ModelAndView admin_booking_fly() {
-        return new ModelAndView("/pages/admin/booking/fly_reservation");
+    /* 예약 조회 > 항공권 > 상세보기 */
+    @RequestMapping(path="/admin/booking/fly/view/{idx}")       //http://localhost:9090/Triple/admin/booking/fly/view/{idx}
+    public ModelAndView booking_fly_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        RoundTicketReservationApiResponse roundTicketReservationApiResponse = roundTicketReservationApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/booking/flyDetail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("roundTicket", roundTicketReservationApiResponse);
     }
 
     /* 예약 조회 > 숙소 */
@@ -2163,9 +2198,23 @@ public class PageController {
     }
 
     /* 신규 등록 > 취항지 목록 */
-    @RequestMapping(path="/admin/destinationList")      //http://localhost:9090/Triple/admin/destinationList
-    public ModelAndView admin_destinationList() {
-        return new ModelAndView("/pages/admin/NewRegistration/destinationList");
+    @RequestMapping(path="/airportList")      //http://localhost:9090/Triple/airportList
+    public ModelAndView admin_airportList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+
+        List<AirportApiResponse> airportList = airportApiLogicService.search().getData();
+
+        return new ModelAndView("/pages/admin/NewRegistration/destinationList")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("airportList", airportList);
     }
 
     /* 상품 목록 > 항공권 */
@@ -2216,12 +2265,6 @@ public class PageController {
         return new ModelAndView("/pages/admin/productlist/admin_productlist_ticket");
     }
 
-    /* 상품 목록 > 다이닝 */
-    @RequestMapping(path="/admin/restaurantList")      //http://localhost:9090/Triple/admin/restaurantList
-    public ModelAndView admin_restaurantList() {
-        return new ModelAndView("/pages/admin/productlist/admin_productlist_restaurant");
-    }
-
     /* 상품후기 */
     @RequestMapping(path="/admin/reviewList")      //http://localhost:9090/Triple/admin/reviewList
     public ModelAndView admin_reviewList() {
@@ -2270,13 +2313,114 @@ public class PageController {
             userid = (String) session.getAttribute("userid");
             name = (String) session.getAttribute("name");
         }
-        List<SpotApiResponse> spotList = spotApiLogicService.search().getData();
+        List<SpotApiResponse> spotList = spotApiLogicService.search().getData(); //관광
+        List<GuideApiResponse> guideList = guideApiLogicService.search().getData(); //가이드
+        List<RestaurantApiResponse> restaurantList = restaurantApiLogicService.search().getData(); //맛집
         return new ModelAndView("/pages/admin/spot/spotList")
                 .addObject("userid", userid)
                 .addObject("name", name)
-                .addObject("spotList", spotList);
+                .addObject("spotList", spotList)
+                .addObject("guideList", guideList)
+                .addObject("restaurantList", restaurantList);
     }
 
+    /* 여행스팟 > 가이드 상세보기(디폴트) */
+    @RequestMapping(path="/admin/spotList/view/{idx}")       ///admin/spotList/view/{idx}"
+    public ModelAndView guide_view_default(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        GuideApiResponse guideApiResponse = guideApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/spot/spot_guideDetail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("guide", guideApiResponse);
+    }
+    /* 가이드 삭제 */
+    @RequestMapping(path="/admin/spotList/guide/delete/{idx}")        //http://localhost:9090/Triple/admin/spotList/guide/delete/{idx}
+    public ModelAndView guideListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header guideListApiResponse = guideApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/spotList");
+        return null;
+    }
+
+    /* 여행스팟 > 가이드 상세보기 */
+    @RequestMapping(path="/admin/spotList/guide2_table/view/{idx}")       ///admin/spotList/view/{idx}"
+    public ModelAndView guide_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        GuideApiResponse guideApiResponse = guideApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/spot/spot_guideDetail2")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("guide", guideApiResponse);
+    }
+
+    /* 여행스팟 > 관광 상세보기 */
+    @RequestMapping(path="/admin/spotList/tour_table/view/{idx}")       ///admin/spotList/view/{idx}"
+    public ModelAndView tour_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        SpotApiResponse tourApiResponse = spotApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/spot/spot_tourismDetail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("tour", tourApiResponse);
+    }
+    /* 관광 삭제 */
+    @RequestMapping(path="/admin/spotList/tour/delete/{idx}")        //http://localhost:9090/Triple/admin/spotList/guide/delete/{idx}
+    public ModelAndView tourListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header tourListApiResponse = spotApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/spotList");
+        return null;
+    }
+
+    /* 여행스팟 > 맛집 상세보기 */
+    @RequestMapping(path="/admin/spotList/restaurant_table/view/{idx}")       ///admin/spotList/view/{idx}"
+    public ModelAndView restaurant_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        RestaurantApiResponse restaurantApiResponse = restaurantApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/spot/spot_restaurantDetail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("restaurant", restaurantApiResponse);
+    }
+
+    /* 맛집 삭제 */
+    @RequestMapping(path="/admin/spotList/restaurant/delete/{idx}")        //http://localhost:9090/Triple/admin/spotList/guide/delete/{idx}
+    public ModelAndView restaurantListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header restaurantListApiResponse = restaurantApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/spotList");
+        return null;
+    }
 
     /* 결제 */
     @RequestMapping(path="/admin/payment")      //http://localhost:9090/Triple/admin/payment
@@ -2794,7 +2938,7 @@ public class PageController {
                 .addObject("name", name).addObject("airlineList", airlineApiResponseList);
     }
 
-    //항공권 등록록
+    //항공권 등록
    @RequestMapping(path = "/air_register/{airlineName}")
     public ModelAndView air_register(@PathVariable String airlineName, HttpServletRequest request){
         HttpSession session = request.getSession(false);

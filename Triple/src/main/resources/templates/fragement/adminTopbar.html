@@ -9,8 +9,9 @@
     </div>
     <div class="user-info">
       <div class="info-container">
-        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${session.userid}">userid</div>
-        <div class="email" th:text="${session.name}">name</div>
+        <span class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="${session.userid}">userid</span>
+        |
+        <span class="email" th:text="${session.name}">name</span>
       </div>
     </div>
   </div>
