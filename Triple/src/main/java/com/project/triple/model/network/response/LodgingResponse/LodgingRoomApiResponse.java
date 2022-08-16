@@ -15,17 +15,19 @@ import java.time.LocalDateTime;
 @Builder
 public class LodgingRoomApiResponse {
     private Long idx;
+    private Long companyId;
+    private String name;
     private String roomNum;
-    private String roomType;
-    private LodgingRoomStatus revStatus;
-    private LocalDateTime checkIn;
-    private LocalDateTime checkOut;
+    private String uploadPath;
+    private String fileName;
+    private String roomCapacity;
+    private String smoking;
+    private String roomView;
     private String width;
-    private Integer roomCapacity;
-    private String roomPolicy;
-    private BigDecimal price;
-    private Long lodgingId;
-    private LocalDateTime useDate;
+    private String bed;
+    private String introducing;
+    private Integer price;
+    private Integer likeCount;;
     private LodgingRoomStatus status;
 }
 

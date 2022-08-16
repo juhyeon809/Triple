@@ -93,4 +93,13 @@ public class UsersApiController extends CrudController<UsersApiRequest, UsersApi
         return numStr;
     }
 
+    @RequestMapping( "/pwCheck")
+    @ResponseBody
+    public int pwCheck(@RequestParam("userpw") String userPw) {
+        int check = usersApiLogicService.PwCheck(userPw);
+        return check;
+
+
+    }
+
 }

@@ -63,6 +63,8 @@ import java.util.List;
 public class PageController {
 
     @Autowired
+    private LodgingApiLogicService lodgingApiLogicService;
+    @Autowired
     private UsersApiLogicService usersApiLogicService;
 
     @Autowired
@@ -132,9 +134,6 @@ public class PageController {
 
     @Autowired
     private GuideReviewApiLogicService guideReviewApiLogicService;
-
-    @Autowired
-    private LodgingApiLogicService  lodgingApiLogicService;
 
     @Autowired
     private AirlineApiLogicService airlineApiLogicService;
@@ -2072,6 +2071,7 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("faq", faqApiResponse);
     }
+
     /* faq 삭제 */
     @RequestMapping(path="/admin/faqList/delete/{idx}")        //http://localhost:9090/Triple/faqList/delete/{idx}
     public ModelAndView faqListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
@@ -2299,6 +2299,33 @@ public class PageController {
         return new ModelAndView("/pages/admin/magazine/magazine-list")
                 .addObject("userid", userid)
                 .addObject("name", name).addObject("magazineList", magazineList);
+    }
+
+    /* 매거진 상세보기 */
+    @RequestMapping(path="/admin/magazineList/view/{idx}")       //http://localhost:9090/Triple/admin/magazineList/view/{idx}
+    public ModelAndView magazineList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        MagazineApiResponse magazineApiResponse = magazineApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/magazine/magazine-detail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("magazine", magazineApiResponse);
+    }
+
+    /* 매거진 삭제 */
+    @RequestMapping(path="/admin/magazineList/delete/{idx}")        //http://localhost:9090/Triple/admin/magazineList/delete/{idx}
+    public ModelAndView magazineListDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header magazineApiResponse = magazineApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/magazineList");
+        return null;
     }
 
     /* 여행스팟 > 목록 */
@@ -3083,21 +3110,102 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-//    @RequestMapping(path="/lodging_register")
-//    public ModelAndView lodging_main(HttpServletRequest request){
-//        HttpSession session = request.getSession(false);
-//        String email = null;
-//        String nickname = null;
-//        if(session == null){
-//
-//        }else{
-//            email = (String)session.getAttribute("email");
-//            nickname = (String)session.getAttribute("nickname");
-//        }
-//
-//
-//        return new ModelAndView("/pages/lodging_room/lodging_main").addObject("email", email)
-//                .addObject("nickname", nickname);
-//    }
+    @RequestMapping(path="/admin/lodging_company_list")
+    public ModelAndView lodging_list(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
+
+        return new ModelAndView("/pages/lodging_room/lodging_list").addObject("email", email)
+                .addObject("nickname", nickname).addObject("lodgingList", lodgingApiResponseList);
+    }
+
+    @RequestMapping(path = "/lodging_view/{id}")
+    public ModelAndView lodging_view(HttpServletRequest request, @PathVariable Long id){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(id).getData();
+        lodgingApiResponse.setCheapestPrice(lodgingApiLogicService.cheapestPrice(lodgingApiResponse));
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.same_company(id);
+
+
+        return new ModelAndView("/pages/lodging_room/lodging_roomlist").addObject("email", email)
+                .addObject("nickname", nickname).addObject("roomList",lodgingRoomApiResponseList).addObject("lodging", lodgingApiResponse);
+    }
+
+    @RequestMapping(path="/lodging_company")
+    public ModelAndView lodging_company(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+
+        return new ModelAndView("/pages/admin/NewRegistration/lodgingCompany").addObject("userid", userid)
+                .addObject("name", name);
+    }
+
+    @RequestMapping(path="/room_register")
+    public ModelAndView room_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+
+
+        return new ModelAndView("/pages/admin/product/room").addObject("userid", userid)
+                .addObject("name", name).addObject("companyList", lodgingApiResponseList);
+    }
+
+    @RequestMapping(path = "/room_view/{id}")
+    public ModelAndView room_view(HttpServletRequest request, @PathVariable Long id){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(id).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+
+        return new ModelAndView("/pages/lodging_room/lodging_roominfo").addObject("email", email)
+                .addObject("nickname", nickname).addObject("room", lodgingRoomApiResponse).addObject("lodging",lodgingApiResponse);
+    }
 
 }

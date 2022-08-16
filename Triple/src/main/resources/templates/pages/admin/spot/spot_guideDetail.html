@@ -39,13 +39,13 @@
                     <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
                     <li><a href="/Triple/airportList">취항지 목록</a></li>
                     <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
-                    <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
+                    <li><a href="/Triple/lodging_company">숙소 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/Triple/airline_select">항공권</a></li>
-                    <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                    <li><a href="/Triple/room_register">숙소</a></li>
                     <li><a href="/Triple/package_register">패키지</a></li>
 
                 </ul>
@@ -232,7 +232,7 @@
                 <div class="admin_inquiry_title">비자</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="visa" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:value="${guide.visa}" readonly></textarea>
+                        <textarea name="visa" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:utext="${guide.visa}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -240,7 +240,7 @@
                 <div class="admin_inquiry_title">물가</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea  name="prices" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:value="${guide.prices}" readonly></textarea>
+                        <textarea  name="prices" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:utext="${guide.prices}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -248,7 +248,7 @@
                 <div class="admin_inquiry_title">항공</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="air" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:value="${guide.air}" readonly></textarea>
+                        <textarea name="air" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:utext="${guide.air}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@
                 <div class="admin_inquiry_title">기후</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="climate" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:value="${guide.climate}" readonly></textarea>
+                        <textarea name="climate" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:utext="${guide.climate}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -264,7 +264,7 @@
                 <div class="admin_inquiry_title">여행최적기</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="bestTime" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:value="${guide.bestTime}" readonly></textarea>
+                        <textarea name="bestTime" class="weditor" icols="100" rows="10" style="width: 100%; height: 100px;" th:utext="${guide.bestTime}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -272,7 +272,7 @@
                 <div class="admin_inquiry_title">간단한 회화</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="simpleConversation" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;" th:value="${guide.simpleConversation}" readonly></textarea>
+                        <textarea name="simpleConversation" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 200px;" th:utext="${guide.simpleConversation}" readonly></textarea>
                     </div>
                 </div>
             </div>

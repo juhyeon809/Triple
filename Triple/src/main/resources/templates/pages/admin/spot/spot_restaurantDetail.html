@@ -42,13 +42,13 @@
                     <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
                     <li><a href="/Triple/airportList">취항지 목록</a></li>
                     <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
-                    <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
+                    <li><a href="/Triple/lodging_company">숙소 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/Triple/airline_select">항공권</a></li>
-                    <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                    <li><a href="/Triple/room_register">숙소</a></li>
                     <li><a href="/Triple/package_register">패키지</a></li>
 
                 </ul>
@@ -228,8 +228,8 @@
                     <div class="admin_inquiry_a1">
                         <input name="howTogo" type="text" id="Basic1" class="admin_inquiry_category2" placeholder="가는방법" th:value="${restaurant.howTogo}" readonly>
                         <input name="availableAt" type="text" id="Basic2" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일" th:value="${restaurant.availableAt}" readonly>
-                        <textarea name="tip" type="text" id="Basic3" class="admin_inquiry_category2" style="margin-top: 15px; margin-bottom: 10px;width: 100%; height: 150px;" th:value="${restaurant.tip}" readonly>이용팁</textarea>
-                        <textarea name="etc" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 150px;" th:value="${restaurant.etc}" readonly> 기타 정보</textarea>
+                        <textarea name="tip" type="text" id="Basic3" class="admin_inquiry_category2" style="margin-top: 15px; margin-bottom: 10px;width: 100%; height: 150px;" th:utext="${restaurant.tip}" readonly>이용팁</textarea>
+                        <textarea name="etc" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 150px;" th:utext="${restaurant.etc}" readonly> 기타 정보</textarea>
                     </div>
                 </div>
             </div>

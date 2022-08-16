@@ -42,13 +42,13 @@
                     <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
                     <li><a href="/Triple/airportList">취항지 목록</a></li>
                     <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
-                    <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
+                    <li><a href="/Triple/lodging_company">숙소 신규 등록</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
                     <li><a href="/Triple/airline_select">항공권</a></li>
-                    <li><a href="/templates/pages/admin/product/room.html">숙소</a></li>
+                    <li><a href="/Triple/room_register">숙소</a></li>
                     <li><a href="/Triple/package_register">패키지</a></li>
 
                 </ul>
@@ -190,7 +190,7 @@
                 <div class="admin_inquiry_title">스팟 내용1</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="content1" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 250px;" th:value="${tour.content1}" readonly></textarea>
+                        <textarea name="content1" class="weditor" id="weditor" cols="100" rows="10" style="width: 100%; height: 250px;" th:utext="${tour.content1}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                 <div class="admin_inquiry_title">스팟 내용2</div>
                 <div class="admin_inquiry_q3">
                     <div class="admin_inquiry_a1">
-                        <textarea name="content2" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px;" th:value="${tour.content2}" readonly></textarea>
+                        <textarea name="content2" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px;" th:utext="${tour.content2}" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@
                         <input name="road" type="text" id="way" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="가는방법" th:value="${tour.road}" readonly>
                         <input name="availableAt" type="text" id="time" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용가능시간, 휴무일" th:value="${tour.availableAt}" readonly>
                         <input name="price" type="text" id="pay" class="admin_inquiry_category2" style="margin-top: 15px;" placeholder="이용료" th:value="${tour.price}" readonly>
-                        <textarea name="using" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px; margin-top: 15px;" placeholder="이곳의 이용방법" th:value="${tour.using}" readonly></textarea>
+                        <textarea name="using" class="weditor1" id="weditor1" cols="100" rows="10" style="width: 100%; height: 250px; margin-top: 15px;" placeholder="이곳의 이용방법" th:utext="${tour.using}" readonly></textarea>
                     </div>
                 </div>
             </div>

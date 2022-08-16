@@ -46,13 +46,13 @@
                         <li><a href="/Triple/aircraft_register">항공기 신규 등록</a></li>
                         <li><a href="/Triple/airportList">취항지 목록</a></li>
                         <li><a href="/Triple/destination_register">취항지 신규 등록</a></li>
-                        <li><a href="/templates/pages/admin/NewRegistration/lodgingCompany.html.html">숙소 신규 등록</a></li>
+                        <li><a href="/Triple/lodging_company">숙소 신규 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#" class="show" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>상품등록<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown show">
                         <li><a href="/Triple/airline_select">항공권</a></li>
-                        <li><a href=/templates/pages/admin/product/"room.html" style="color:darkslategray; font-weight: bold;"">숙소</a></li>
+                        <li><a href="/Triple/room_register" style="color:darkslategray; font-weight: bold;">숙소</a></li>
                         <li><a href="/Triple/package_register">패키지</a></li>
 
                     </ul>
@@ -127,78 +127,58 @@
             </div>
             <!--타이틀 끝-->
             <!--숙소 정보 입력폼-->
-            <form action="" onsubmit="return productRoom()">
+            <form th:action="@{/api/room/register}" onsubmit="return productRoom()" enctype="multipart/form-data" method="post" >
                 <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">분류</div>
+                    <div class="admin_inquiry_title">숙소</div>
                     <div class="admin_inquiry_q3">
-                        <select   class="admin_inquiry_category2 Rcategory">
-                            <option value="">선택</option>
-                            <option value="호텔">호텔</option>
-                            <option value="모텔">모텔</option>
-                            <option value="리조트">리조트</option>
-                            <option value="펜션">펜션</option>
-                            <option value="글램핑">글램핑</option>
-                            <option value="카라반">카라반</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="admin_inquiry_qtext">
-                    <div class="admin_inquiry_title">도시</div>
-                    <div class="admin_inquiry_q3">
-                        <select   class="admin_inquiry_category2 Tcategory">
-                            <option value="">업체선택</option>
-                            <option value="업체1">업체1</option>
-                            <option value="업체2">업체2</option>
-                            <option value="업체3">업체3</option>
-                            <option value="업체4">업체4</option>
-                            <option value="업체5">업체5</option>
-                            <option value="업체6">업체6</option>
+                        <select  name="companyId" class="admin_inquiry_category2 Tcategory">
+                            <option th:each="company : ${companyList}" th:value="${company.getIdx()}" th:text="${company.getName()}"></option>
                         </select>
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">객실명</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" id="pro_name"class="admin_inquiry_category2 formbox_ul_text">
+                        <input name="name" type="text" id="pro_name"class="admin_inquiry_category2 formbox_ul_text">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">객실번호</div>
                     <div class="admin_inquiry_q3">
-                        <input type="text" id="pro_num"class="admin_inquiry_category2 formbox_ul_text">
+                        <input name="roomNum" type="text" id="pro_num"class="admin_inquiry_category2 formbox_ul_text">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">객실 이미지</div>
                     <div class="admin_inquiry_q3">
-                        <input type="file" id="room_img" class="admin_inquiry_category2">
+                        <input name="file" type="file" id="room_img" class="admin_inquiry_category2">
                     </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">객실 옵션</div>
                     <div class="option">
-                        <select   class="option_type Pcategory">
+                        <select name="roomCapacity"  class="option_type Pcategory">
                             <option value="">인원</option>
                             <option value="최대2명">최대2명</option>
                             <option value="최대3명">최대3명</option>
                             <option value="최대4명">최대4명</option>
                         </select>
-                        <select   class="option_type SPcategory">
+                        <select name="smoking" class="option_type SPcategory">
                             <option value="">흡연여부</option>
                             <option value="흡연가능">흡연가능</option>
                             <option value="인원불가능">흡연불가능</option>
                         </select>
-                        <select   class="option_type Viewcategory">
-                            <option value="">호텔뷰</option>
+                        <select name="roomView" class="option_type Viewcategory">
+                            <option value="호텔뷰">호텔뷰</option>
                             <option value="오션뷰">오션뷰</option>
                             <option value="시티뷰">시티뷰</option>
                         </select>
-                        <select   class="option_type RPcategory">
+                        <select  name="width" class="option_type RPcategory">
                             <option value="">방사이즈</option>
                             <option value="27m²">27m²</option>
                         </select>
-                        <select   class="option_type Bcategory">
-                            <option value="">싱글침대</option>
+                        <select name="bed" class="option_type Bcategory">
+                            <option value="싱글침대">싱글침대</option>
                             <option value="싱글침대2개">싱글침대2개</option>
                             <option value="더블침대1개">더블침대1개</option>
                             <option value="퀸침대1개">퀸침대1개</option>
@@ -208,12 +188,18 @@
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">객실 소개</div>
                     <div class="admin_inquiry_q3">
-                        <textarea class="weditor" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                        <textarea name="introducing" class="weditor" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;" ></textarea>
+                    </div>
+                </div>
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">가격</div>
+                    <div class="admin_inquiry_q3">
+                        <input name="price" type="text" id="price" class="admin_inquiry_category2 formbox_ul_text">
                     </div>
                 </div>
             <!--숙소 정보 입력폼 끝-->
             <div class="btnlist">
-                <button value="등록"><a href="#">등록</a></button>
+                <input type="submit" value="등록">
                 <button value="취소"><a href="#">취소</a></button>
             </div>
         </form>
