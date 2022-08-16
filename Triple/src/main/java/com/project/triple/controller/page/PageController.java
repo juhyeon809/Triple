@@ -149,7 +149,9 @@ public class PageController {
     @Autowired
     private OnewayReservationApiLogicService onewayReservationApiLogicService;
 
+    @Autowired
     private RoundTicketReservationApiLogicService roundTicketListReservationApiLogicService;
+
 
 
 
@@ -1915,16 +1917,16 @@ public class PageController {
             name = (String)session.getAttribute("name");
         }
         List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
-        Long idx = usersApiLogicService.findIdx(email);
-        List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
+        //Long idx = usersApiLogicService.findIdx(email);
+        //List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
 
         return new ModelAndView("/pages/admin/admin_main")
                 .addObject("userid", userid)
                 .addObject("name", name)
-                .addObject("usersList", usersList)
-                .addObject("question", questionApiResponseList)
-                .addObject("email",email)
-                .addObject("idx",idx);
+                .addObject("usersList", usersList);
+//                .addObject("question", questionApiResponseList)
+//                .addObject("email",email)
+//                .addObject("idx",idx);
 
     }
     @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
@@ -2378,7 +2380,26 @@ public class PageController {
         List<LodgingApiResponse> lodgingList = lodgingApiLogicService.search().getData();
         return new ModelAndView("/pages/admin/productlist/admin_productlist_lodging")
                 .addObject("userid", userid)
-                .addObject("name", name).addObject("lodgingList", lodgingList);
+                .addObject("name", name)
+                .addObject("lodgingList", lodgingList);
+    }
+    /* 상품 목록 > 객실 */
+    @RequestMapping(path="/admin/lodgingRoomList")      //http://localhost:9090/Triple/admin/lodgingList
+    public ModelAndView admin_lodgingRoomList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<LodgingRoomApiResponse> lodgingRoomList = lodgingRoomApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_lodgingRoom")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("lodgingRoomList", lodgingRoomList);
     }
 
     /* 상품 목록 > 패키지 */
@@ -2398,13 +2419,6 @@ public class PageController {
                 .addObject("userid", userid)
                 .addObject("name", name).addObject("packageList", packageList);
     }
-
-    /* 상품후기 */
-    @RequestMapping(path="/admin/reviewList")      //http://localhost:9090/Triple/admin/reviewList
-    public ModelAndView admin_reviewList() {
-        return new ModelAndView("/pages/admin/review/review");
-    }
-
     /* 쿠폰 > 목록 */
     @RequestMapping(path="/admin/couponList")      //http://localhost:9090/Triple/admin/couponList
     public ModelAndView admin_couponList() {
