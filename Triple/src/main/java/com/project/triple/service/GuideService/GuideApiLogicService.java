@@ -137,7 +137,7 @@ public class GuideApiLogicService extends BaseService<GuideApiRequest, GuideApiR
     }
 
     public Header<List<GuideApiResponse>> search(){
-        List<Guide> guideList = guideRepository.findAll();
+        List<Guide> guideList = guideRepository.findAllByOrderByIdxDesc();
         List<GuideApiResponse> guideApiResponseList = guideList.stream()
                 .map(guide -> response(guide))
                 .collect(Collectors.toList());

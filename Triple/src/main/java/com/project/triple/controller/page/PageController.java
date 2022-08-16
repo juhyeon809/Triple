@@ -2365,8 +2365,20 @@ public class PageController {
 
     /* 상품 목록 > 숙소 */
     @RequestMapping(path="/admin/lodgingList")      //http://localhost:9090/Triple/admin/lodgingList
-    public ModelAndView admin_lodgingList() {
-        return new ModelAndView("/pages/admin/productlist/admin_productlist_lodging");
+    public ModelAndView admin_lodgingList(HttpServletRequest request) throws NullPointerException {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null) {
+
+        }else{
+            userid = (String) session.getAttribute("userid");
+            name = (String) session.getAttribute("name");
+        }
+        List<LodgingApiResponse> lodgingList = lodgingApiLogicService.search().getData();
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_lodging")
+                .addObject("userid", userid)
+                .addObject("name", name).addObject("lodgingList", lodgingList);
     }
 
     /* 상품 목록 > 패키지 */
@@ -2385,12 +2397,6 @@ public class PageController {
         return new ModelAndView("/pages/admin/productlist/admin_productlist_package")
                 .addObject("userid", userid)
                 .addObject("name", name).addObject("packageList", packageList);
-    }
-
-    /* 상품 목록 > 티켓 */
-    @RequestMapping(path="/admin/ticketList")      //http://localhost:9090/Triple/admin/ticketList
-    public ModelAndView admin_ticketList() {
-        return new ModelAndView("/pages/admin/productlist/admin_productlist_ticket");
     }
 
     /* 상품후기 */
