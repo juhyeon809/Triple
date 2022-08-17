@@ -15,27 +15,26 @@
 <div th:replace="fragement/mypageHeader:: mypageHeader"></div>
 <!--헤더끝-->
 
-    <!--메인-->
-    <main class="container_all">
-        <p class="mypage_title">MY PAGE</p>
-        <div class="profile">
-            <div class="profile_area">
-                <div>
-                    <img src="/lib/img/mypage_img/mypage.svg" id="pro_img">
+<!--메인-->
+<main class="container_all">
+    <p class="mypage_title">MY PAGE</p>
+    <div class="profile">
+        <div class="profile_area">
+            <div>
+                <img src="/lib/img/mypage_img/mypage.svg" id="pro_img">
+            </div>
+            <div class="form_box">
+                <div class="pro_box1">
+                    <form action="#" name="regform" id="regform" class="regform">
+                        <div class="pro_box1_left" th:text="${nickname}">
+                            <input type="text" id="rename" name="rename" >
+                        </div>
+                    </form>
                 </div>
-                <div class="form_box">
-                    <div class="pro_box1">
-                        <form action="#" name="regform" id="regform" class="regform">
-                            <div class="pro_box1_left" th:text="${nickname}">
-                                <input type="text" id="rename" name="rename" >
-                            </div>
-                        </form>
-                    </div>
-                    <div class="pro_box2">
-                        <p id="done">
-<!--                            <a href="/templates/pages/mypage/review/review_write">리뷰쓰기</a>-->
-                        </p>
-                    </div>
+                <div class="pro_box2">
+                    <p id="done">
+                        <!--                            <a href="/templates/pages/mypage/review/review_write">리뷰쓰기</a>-->
+                    </p>
                 </div>
             </div>
         </div>
@@ -54,11 +53,24 @@
                 <div class="list">
                     <li><a href="/Triple/mypage/settings">설정</a></li>
                 </div>
+    </div>
+    <div class="content_box">
+        <div class="content_list">
+            <div class="list">
+                <li><a href="/Triple/mypage">내 여행</a></li>
+                <li><a href="/Triple/mypage/review"><span id="choice">리뷰</span></a></li>   <!--review-->
+                <li><a href="/Triple/mypage/mysave">내 저장</a></li>    <!--my_save-->
             </div>
-            <div class="content_list2">
-                <p style="text-align: right"><a href="/Triple/mypage/review">[ Spot Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
-                <h1>Spot Review🎈</h1><br>
-                <div th:each="spotR : ${spotReview}">
+            <div class="list">
+                <li><a href="/Triple/mypage/reserve/air">내 예약</a></li>    <!---->
+                <li><a href="/Triple/mypage/coupon">쿠폰함</a></li> <!---->
+                <li><a href="/Triple/mypage/settings">설정</a></li>
+            </div>
+        </div>
+        <div class="content_list2">
+            <p style="text-align: right"><a href="/Triple/mypage/review">[ Spot Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
+            <h1>Spot Review🎈</h1><br>
+            <div th:each="spotR : ${spotReview}">
                 <div class="list_box" th:each="spot : ${spotList}">
                     <a th:href="'/Triple/spot/tour/view/'+${spot.getIdx()}">
                         <div th:if="${spotR.getPostId().equals(spot.getIdx())}">
@@ -76,11 +88,11 @@
                         </div>
                     </a>
                 </div>
-                </div>
             </div>
         </div>
-    </main>
-    <!--메인 끝-->
+    </div>
+</main>
+<!--메인 끝-->
 
 <!--푸터-->
 <div th:replace="fragement/mypageFooter :: mypageFooter"></div>

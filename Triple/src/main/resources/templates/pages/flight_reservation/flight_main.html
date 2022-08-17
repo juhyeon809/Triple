@@ -13,6 +13,51 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        .ul-widget-header{
+            border: 1px solid #deeeff;
+            background-color: #deeeff;
+            color: #0c8ee5;
+        }
+        .ui-icon ui-icon-circle-triangle-w{
+            background-position: -96px -16px;
+        }
+        .ul-icon ui-icon-circle-triangle-e{
+            background-position: -35px -16px;;
+        }
+
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+            border: 1px solid #003eff;
+            background: #007fff;
+            font-weight: normal;
+            color: #ffffff;
+            /*border-radius: 50px; 써클되게*/
+            text-align: center;
+        }
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+            border: none;
+            background: #FFFFFF;
+        }
+        .ui-state-active{
+            background-color: #2680EB !important;
+            color: #FFFFFF;
+        }
+        .ui-datepicker td span, .ui-datepicker td a{
+            display: block;
+            padding: 0.2em;
+            text-align: center;
+            text-decoration: none;
+        }
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+            /*border: 1px solid #dad55e;*/
+            background: #deeeff;
+            color: #777620;
+        }
+        .ui-widget-header{
+            border: none;
+            background: none;
+        }
+    </style>
 
 </head>
 <body>

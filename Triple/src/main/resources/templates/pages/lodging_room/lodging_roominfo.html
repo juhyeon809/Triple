@@ -8,12 +8,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 숙소세부</title>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
+    <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/app/js/datepicker.js"></script>
+    <style>
+        .ul-widget-header{
+            border: 1px solid #deeeff;
+            background-color: #deeeff;
+            color: #0c8ee5;
+        }
+        .ui-icon ui-icon-circle-triangle-w{
+            background-position: -96px -16px;
+        }
+        .ul-icon ui-icon-circle-triangle-e{
+            background-position: -35px -16px;;
+        }
+
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+            border: 1px solid #003eff;
+            background: #007fff;
+            font-weight: normal;
+            color: #ffffff;
+            /*border-radius: 50px; 써클되게*/
+            text-align: center;
+        }
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+            border: none;
+            background: #FFFFFF;
+        }
+        .ui-state-active{
+            background-color: #2680EB !important;
+            color: #FFFFFF;
+        }
+        .ui-datepicker td span, .ui-datepicker td a{
+            display: block;
+            padding: 0.2em;
+            text-align: center;
+            text-decoration: none;
+        }
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+            /*border: 1px solid #dad55e;*/
+            background: #deeeff;
+            color: #777620;
+        }
+        .ui-widget-header{
+            border: none;
+            background: none;
+        }
+        .ui-datepicker-trigger {
+            display: none;
+        }
+        .ui-datepicker-title select.ui-datepicker-year{
+            width: 70px;
+            text-align: center;
+        }
+        .ui-datepicker-title select.ui-datepicker-month {
+            width: 65px;
+            text-align: center;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
     <div id="backg_image_area">
@@ -40,34 +98,48 @@
                     <div id="lg_rm_if_main_1_info">
                         <div id="lg_rm_if_main_1_info_left">
                             <div id="lg_rm_if_main_1_info_name" th:text="${room.getName()}"></div>
-                            <div id="lg_rm_if_main_1_info_room" th:text="${room.getBed()}+ ${room.getWidth()}+${room.getRoomCapacity()}+${room.getRoomView()}+${room.getSmoking()}">
+                            <div id="lg_rm_if_main_1_info_room">
+                                <div><img src="/lib/img/lodging_room_img/ic_local_hotel_24px.png" alt=""><p th:text="${room.getBed()}"></p></div>
+                                <!--                                <p th:text="${room.getWidth()}"></p>-->
+                                <!--                                <p th:text="${room.getRoomCapacity()}"></p>-->
+                                <div><img src="/lib/img/lodging_room_img/ic_camera_enhance_24px.png"><p th:text="${room.getRoomView()}"></p></div>
+                                <div><img th:if="${room.getSmoking().contains('흡연가능')}" th:src="@{/lib/img/lodging_room_img/smoking_icon.png}"><img th:unless="${room.getSmoking().contains('흡연가능')}" th:src="@{/lib/img/lodging_room_img/smoking_solid_icon.png}"><p th:text="${room.getSmoking()}"></p></div>
                             </div>
-                            <div id="lg_rm_if_main_1_info_policy"><a href="#"  th:if="${lodging.getCf().contains('무료취소')}">무료취소</a> | <a href="#">쿠폰할인</a> | <a href="#">트리플 회원가</a><br>1박, 세금포함</div>
+                            <div id="lg_rm_if_main_1_info_policy">
+                                <span  th:if="${lodging.getCf().contains('무료취소')}">무료취소</span> <span  th:if="${lodging.getCf().contains('무료취소')}">|</span> <span>쿠폰할인</span> | <span>트리플 회원가</span>
+                                <p>1박, 세금포함</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div id="lg_rm_if_main_2">
-                    <div id="lg_rm_if_main_2_info_right"><a href="/templates/pages/lodging_room/lodging_reservation.html"><div id="lg_rm_if_main_2_info_reservation">예약하기</div></a></div>
                     <div id="lg_rm_if_main_2_info_box">
                         <div class="lg_rm_if_main_2_info_priceinfo">숙박 비용 정보</div>
                         <div id="lg_rm_if_main_2_info_triplememberbox">
                             <div id="lg_rm_if_main_2_info_triplemember">트리플 회원가</div>
-                            <div id="lg_rm_if_main_2_info_triplemember_price" th:text=" '1박당' + ${room.getPrice()} + '원'"></div>
+                            <div id="lg_rm_if_main_2_info_triplemember_price" th:text="'1박당' + ${room.getPrice()} + '원'"></div>
                         </div>
                         <div id="lg_rm_if_main_2_info_couponbox">
-                            <div id="lg_rm_if_main_2_info_coupon">쿠폰할인</div>
-                            <div id="lg_rm_if_main_2_info_coupon_discount">-25,695원<br>(해외 얼리버드 할인 쿠폰)</div>
+<!--                            <div id="lg_rm_if_main_2_info_coupon">쿠폰할인</div>-->
+<!--                            <div id="lg_rm_if_main_2_info_coupon_discount">-25,695원<br>(해외 얼리버드 할인 쿠폰)</div>-->
+                        </div>
+                        <div class="datepick">
+
+                            <form th:action="@{/Triple/lodging_reservation}" method="post">
+                                <input type="hidden" th:value="${room.getIdx()}" name="roomId">
+                                <div>
+                                    <p>선택가능한 날짜</p>
+                                    <div><input type="text" id="datepicker1" name="startDate" placeholder="YYYY-MM-DD" autocomplete="off">&nbsp; - &nbsp;<input type="text" id="datepicker2" name="endDate" placeholder="YYYY-MM-DD" autocomplete="off"></div>
+                                </div>
+                                <input type="submit" value="예약하기" id="lg_rm_if_main_2_info_reservation">
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <p>선택가능한 날짜</p>
-        <form>
-            <input type="text" id="datepicker1">
-            <input type="text" id="datepicker2">
-        </form>
+
         <script>
 
         </script>

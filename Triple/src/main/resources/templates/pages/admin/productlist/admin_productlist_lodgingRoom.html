@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 | 숙소상품목록</title>
+    <title>관리자 | 객실목록</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -63,6 +64,7 @@
                     <li><a href="/Triple/admin/airLineList">항공권</a></li>
                     <li><a href="/Triple/admin/lodgingList">숙소</a></li>
                     <li><a href="/Triple/admin/lodgingRoomList" style="color:darkslategray; font-weight: bold;">객실</a></li>
+                    <li><a href="/Triple/admin/lodgingList" style="color:darkslategray; font-weight: bold;">숙소</a></li>
                     <li><a href="/Triple/admin/packageList">패키지</a></li>
                 </ul>
             </li>
@@ -187,6 +189,19 @@
             <button value="판매중지">판매중지</button>
         </div>
         <!--버튼리스트 끝-->
+                <th style="width: 20%;">숙소명</th>
+                <th style="width: 25%;">객실번호</th>
+                <th style="width: 25%;">객실명</th>
+                <th style="width: 30%;">가격</th>
+            </tr>
+            <tr th:if ="${lodging.idx == lodgingRoom.companyId}" th:each="lodgingRoom : ${lodgingRoomList}">
+                <td><a th:href="'/Triple/admin/lodgingRoomList/view/'+${lodgingRoom.getIdx()}" th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodging.name}"></a></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.idx}"></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.name}"></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.price}"></td>
+            </tr>
+        </table>
+        <!--숙소리스트 테이블 끝-->
         <!--넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>

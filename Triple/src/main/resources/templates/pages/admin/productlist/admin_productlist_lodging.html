@@ -63,6 +63,7 @@
                         <li><a href="/Triple/admin/airLineList">항공권</a></li>
                         <li><a href="/Triple/admin/lodgingList" style="color:darkslategray; font-weight: bold;">숙소</a></li>
                         <li><a href="/Triple/admin/lodgingRoomList">객실</a></li>
+
                         <li><a href="/Triple/admin/packageList">패키지</a></li>
                     </ul>
                 </li>
@@ -184,16 +185,21 @@
                     <td th:text="${lodging.name}">시그니엘</td>
                     <td th:text="${lodging.checkIn}"></td>
                     <td th:text="${lodging.rank}">등급</td>
+                    <th>숙소번호</th>
+                    <th>숙소명</th>
+                    <th>등급</th>
+                    <th>체크인</th>
+                    <th>별점</th>
+                </tr> 
+                <tr th:each="lodging : ${lodgingList}">
+                    <td><a th:href="'/Triple/admin/lodgingList/view/'+${lodging.getIdx()}" th:text="${lodging.idx}">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                    <td th:text="${lodging.name}">시그니엘</td>
+                    <td th:text="${lodging.rank}">등급</td>
+                    <td th:text="${lodging.checkIn}"></td>
                     <td th:text="${lodging.totalStar}">별점</td>
                 </tr>
             </table>
             <!--숙소리스트 테이블 끝-->
-            <!--버튼리스트-->
-            <div class="btnlist">
-                <button value="선택삭제">선택삭제</button>
-                <button value="판매중지">판매중지</button>
-            </div>
-            <!--버튼리스트 끝-->
             <!--넘버링-->
             <div class="pageNum">
                 <p>1 2 3 4 5</p>
@@ -203,22 +209,5 @@
     </section>
 
     <script src="/app/js/script.js"></script>
-    <script>
-        $(document).ready(function(){
-        //약관동의 체크박스 전체 선택
-            $("#checkAll").click(function() {
-                if($("#checkAll").is(":checked")) $("input[class='lodging']").prop("checked", true);
-                else $("input[class='lodging']").prop("checked", false);
-            });
-            $("input[class='lodging']").click(function() {
-                var total = $("input[class='lodging']").length;
-                var checked = $("input[class='lodging']:checked").length;
-        
-                //개별선택 해제시 전체체크박스 해제
-                if(total != checked) $("#checkAll").prop("checked", false);
-                else $("#checkAll").prop("checked", true); 
-            });
-    });
-    </script>
 </body>
 </html>

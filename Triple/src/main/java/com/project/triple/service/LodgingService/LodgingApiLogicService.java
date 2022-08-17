@@ -163,7 +163,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         if(newList.isEmpty()){
             return null;
         }
-        if(country != null) {
+        if(country != "") {
             for (int i = (newList.size() - 1); i > -1; i--) {
                 LodgingApiResponse lodgingApiResponse = newList.get(i);
                 if (!lodgingApiResponse.getCountry().equals(country)) {

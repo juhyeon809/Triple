@@ -104,4 +104,9 @@ public class RoomReservationApiLogicService extends BaseService<RoomReservationA
                 .collect(Collectors.toList());
         return Header.OK(roomReservationApiResponseList);
     }
+    public Header<RoomReservationApiResponse> register(RoomReservation roomReservation){
+        RoomReservationApiResponse roomReservationApiResponse = response(baseRepository.save(roomReservation));
+        return Header.OK(roomReservationApiResponse);
+    }
+
 }
