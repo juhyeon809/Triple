@@ -1,6 +1,7 @@
 package com.project.triple.controller.page;
 
 
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.response.*;
 import com.project.triple.model.network.response.AirResponse.*;
@@ -172,16 +173,33 @@ public class PageController {
         List<AirportApiResponse> airportApiResponseList = airportApiLogicService.list().getData();
         List<EventApiResponse> eventApiResponseList = eventApiLogicService.search().getData();
         List<NoticeApiResponse> noticeApiResponseList = noticeApiLogicService.search().getData();
-//        List<PackageApiResponse> guams = packageApiLogicService.sort_by_country("괌/사이판").getData();
-//        List<PackageApiResponse> vietnams = packageApiLogicService.sort_by_country("베트남").getData();
-//        List<PackageApiResponse> Singapores = packageApiLogicService.sort_by_country("싱가포르").getData();
-//        List<PackageApiResponse> Italys = packageApiLogicService.sort_by_country("이탈리아").getData();
-//        List<PackageApiResponse> americas = packageApiLogicService.sort_double("하와이","LA").getData();
+
+        //매거진
+        List<MagazineApiResponse> tipList = magazineApiLogicService.tip().getData();
+        List<MagazineApiResponse> recommendList = magazineApiLogicService.recommend().getData();
+        List<MagazineApiResponse> shoppingList = magazineApiLogicService.shopping().getData();
+        List<MagazineApiResponse> restaurantList = magazineApiLogicService.restaurant().getData();
+
+
+        List<PackageApiResponse> guams = packageApiLogicService.sort_by_country("괌/사이판").getData();
+        List<PackageApiResponse> vietnams = packageApiLogicService.sort_by_country("베트남").getData();
+        List<PackageApiResponse> americas = packageApiLogicService.sort_double("하와이","LA").getData();
 //        List<PackageApiResponse> confirmed = packageApiLogicService.sort_by_keyword("출발확정").getData();
+
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
 
         return new ModelAndView("/pages/main").addObject("email", email)
                 .addObject("nickname", nickname).addObject("airportList", airportApiResponseList)
-                .addObject("event", eventApiResponseList).addObject("notice", noticeApiResponseList);
+                .addObject("event", eventApiResponseList)
+                .addObject("notice", noticeApiResponseList)
+                .addObject("tipList",tipList).addObject("recommendList",recommendList)
+                .addObject("shoppingList",shoppingList).addObject("restaurantList",restaurantList)
+                .addObject("guams",guams).addObject("vietnams",vietnams).addObject("americas",americas)
+                .addObject("lodgingList", lodgingApiResponseList);
 
     }
     //회원가입 페이지
@@ -1916,17 +1934,18 @@ public class PageController {
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
         }
-        List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
-        //Long idx = usersApiLogicService.findIdx(email);
-        //List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
+//        List<AdminUserApiResponse> adminUserList = AdminUserApiLogicService.search().getData();
+//        List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
+//        Long idx = usersApiLogicService.findIdx(email);
+//        List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
 
         return new ModelAndView("/pages/admin/admin_main")
                 .addObject("userid", userid)
-                .addObject("name", name)
-                .addObject("usersList", usersList);
-//                .addObject("question", questionApiResponseList)
+                .addObject("name", name);
+//                .addObject("usersList", usersList)
+//               .addObject("question", questionApiResponseList)
 //                .addObject("email",email)
-//                .addObject("idx",idx);
+//                .addObject("idx",idx)
 
     }
     @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login

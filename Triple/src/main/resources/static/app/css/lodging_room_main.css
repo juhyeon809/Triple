@@ -2602,6 +2602,7 @@ input[type="button"]#formSearch{
     margin-bottom: 15px;
     color: #666666;
 }
+.list_info >.list_title a,
 .list_info >.list_title a:visited{
     color: #666666;
 }
