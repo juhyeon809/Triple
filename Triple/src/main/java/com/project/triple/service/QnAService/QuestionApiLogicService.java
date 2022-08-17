@@ -67,7 +67,8 @@ public class QuestionApiLogicService extends BaseService<QuestionApiRequest, Que
 
     @Override
     public Header<QuestionApiResponse> read(Long id) {
-        return null;
+        return questionRepository.findById(id).map(question -> response(question)).map(Header::OK)
+                .orElseGet(()->Header.ERROR("데이터 없음"));
     }
 
     @Override

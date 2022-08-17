@@ -15,6 +15,51 @@
     <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/app/js/datepicker.js"></script>
+    <style>
+        .ul-widget-header{
+            border: 1px solid #deeeff;
+            background-color: #deeeff;
+            color: #0c8ee5;
+        }
+        .ui-icon ui-icon-circle-triangle-w{
+            background-position: -96px -16px;
+        }
+        .ul-icon ui-icon-circle-triangle-e{
+            background-position: -35px -16px;;
+        }
+
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+            border: 1px solid #003eff;
+            background: #007fff;
+            font-weight: normal;
+            color: #ffffff;
+            /*border-radius: 50px; 써클되게*/
+            text-align: center;
+        }
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+            border: none;
+            background: #FFFFFF;
+        }
+        .ui-state-active{
+            background-color: #2680EB !important;
+            color: #FFFFFF;
+        }
+        .ui-datepicker td span, .ui-datepicker td a{
+            display: block;
+            padding: 0.2em;
+            text-align: center;
+            text-decoration: none;
+        }
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+            /*border: 1px solid #dad55e;*/
+            background: #deeeff;
+            color: #777620;
+        }
+        .ui-widget-header{
+            border: none;
+            background: none;
+        }
+    </style>
 </head>
 <body>
     <div id="backg_image_area">
@@ -59,17 +104,22 @@
                             <div id="lg_rm_if_main_2_info_coupon">쿠폰할인</div>
                             <div id="lg_rm_if_main_2_info_coupon_discount">-25,695원<br>(해외 얼리버드 할인 쿠폰)</div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    <div style="height: 200px;">
         <p>선택가능한 날짜</p>
         <form th:action="@{/Triple/lodging_reservation}" method="post">
             <input type="hidden" th:value="${room.getIdx()}" name="roomId">
-            <input type="text" id="datepicker1" name="startDate">
-            <input type="text" id="datepicker2" name="endDate">
+            <div>
+                <input type="text" id="datepicker1" name="startDate">
+                <input type="text" id="datepicker2" name="endDate">
+            </div>
             <input type="submit" value="예약하기" id="lg_rm_if_main_2_info_reservation">
         </form>
+    </div>
         <script>
 
         </script>
