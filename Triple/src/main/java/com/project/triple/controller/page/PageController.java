@@ -218,22 +218,20 @@ public class PageController {
 
     //로그인검증
     @PostMapping("/loginok")
-    public ModelAndView loginOk(HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
+    public ModelAndView loginOk( Model model, HttpServletResponse response, HttpServletRequest request, String email, String userpw) throws IOException {
         if(usersApiLogicService.login(email, userpw).getData() != null){
             HttpSession session = request.getSession();
             String nickname = usersApiLogicService.login(email, userpw).getData().getNickname();
             session.setAttribute("email", email);
             session.setAttribute("nickname", nickname);
 
-            ScriptUtils.alert(response, "로그인 성공" );
-            return new ModelAndView("/pages/main").addObject("email", email)
-                    .addObject("nickname", nickname);
+            ScriptUtils.alertAndMovePage(response, "로그인 성공", "/Triple");
 
         }else{
-            ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
-            return new ModelAndView("/pages/login");
+            ScriptUtils.alertAndMovePage(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요", "/Triple/login");
 
         }
+        return null;
     }
 
 //  서비스 탈퇴
@@ -286,8 +284,8 @@ public class PageController {
         HttpSession session = request.getSession();
         session.setAttribute("email",null);
         session.setAttribute("nickname", null);
-        ScriptUtils.alert(response, "로그아웃 되었습니다.");
-        return new ModelAndView("/pages/main");
+        ScriptUtils.alertAndMovePage(response, "로그아웃 되었습니다.","/Triple");
+        return null;
     }
 
     //////////////////////////////////////////////////////마이페이지
