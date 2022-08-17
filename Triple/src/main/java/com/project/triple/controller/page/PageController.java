@@ -2681,6 +2681,7 @@ public class PageController {
                 .addObject("email", email)
                 .addObject("nickname", nickname).addObject("inquiryList",inquiryList);
     }
+
     /* 1:1 문의 상세 */
     @RequestMapping(path="/admin/inquiry/view/{idx}")       //http://localhost:9090/Triple/adminList/view/{idx}
     public ModelAndView admin_inquiryView(@PathVariable Long idx, HttpServletRequest request) {

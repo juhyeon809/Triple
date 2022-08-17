@@ -249,7 +249,7 @@
 #roomlist_info_reservation_setting_date{
     width: 140px;
     height: 40px;
-    border: 0.5px solid black;
+    border: 0.5px solid #a1a1a1;
     border-radius: 10px;
     position: relative;
     left: 20px;
@@ -260,7 +260,7 @@
 #roomlist_info_reservation_setting_person{
     width: 140px;
     height: 40px;
-    border: 0.5px solid black;
+    border: 0.5px solid #a1a1a1;
     border-radius: 10px;
     position: relative;
     top:-42px;
@@ -283,6 +283,7 @@
 
 #roomlist_info_reservation_defaultprice{
     color: #666666;
+    font-size: 24px;
 }
 
 #roomlist_info_reservation_benefitprice{
@@ -398,13 +399,14 @@
     font-size: 16px;
     font-weight: bold;
     position:relative;
-    /*left: 30px;*/
-    /*top: 30px;*/
     color: #666666;
 }
 .roomlist_roomlist_info_specific p {
-    width: 50px;
+    width: 100px;
     word-break: keep-all;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
 }
 /* 30 240 30 */
 .roomlist_roomlist_reservation {
@@ -417,12 +419,14 @@
 
 .roomlist_roomlist_reservation_info {
     width: 620px;
-    height: 220px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
 }
 /* 655-208 */
 .roomlist_roomlist_reservation_info_box {
     width: 400px;
-    height: 220px;
+    height: 250px;
     float:left;
     padding-left:20px;
     padding-top: 20px;
@@ -442,7 +446,13 @@
     color: #2680EB;
     font-weight: bold;
 }
-
+.rl1_1{
+    font-size: 18px;
+    height: 107px;
+    line-height: 130px;
+    color: #2680EB;
+    font-weight: bold;
+}
 #rl1_2, #rl2_2, #rl3_2, #rl4_2{
     height: 35px;
 }
@@ -513,13 +523,15 @@
     width: 190px;
     float:left;
 }
-
+.roomlist_roomlist_img{
+    margin: auto;
+}
 .roomlist_roomlist_img > img, #room_list_3_2_1_2 > img, #room_list_4_2_1_2 > img, #room_list_5_2_1_2 > img{
     width: 180px;
-    height: 140px;
-    border-radius: 15px;
+    /*height: 140px;*/
+    border-radius: 5px;
     position: relative;
-    top: 40px;
+    /*top: 40px;*/
 }
 
 #location_info{
@@ -2473,6 +2485,7 @@
 
 .lodging_main.lodging_box form{
     width: 25%;
+    height: 740px;
     background-color: #f7f7f7;
     border-radius: 10px;
     border-radius: 10px;
@@ -2573,7 +2586,7 @@ input[type="button"]#formSearch{
     padding-top: 0;
 }
 .list_info {
-    width: 70%;
+    width: 68%;
     margin-right: 5px;
     line-height: 1;
 }
@@ -2582,10 +2595,11 @@ input[type="button"]#formSearch{
     margin-bottom: 5px;
 }
 .list_img{
-    width: 27%;
+    width: 30%;
 }
 .list_img > img{
     border-radius: 5px;
+    width: 200px;
 }
 .list_img > div {
     align-items: right;

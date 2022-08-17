@@ -71,19 +71,23 @@
         </div>
         <div id="lodging_info_sub">
             <div id="room_list">
-                <div id="room_list_1">객실 목록 <select name="room_filter"><option value="객실">룸필터</option></select></div>
+<!--                <div id="room_list_1">객실 목록 <select name="room_filter"><option value="객실">룸필터</option></select></div>-->
                 <div id="room_list_2" name="room_li" th:each="room : ${roomList}">
                     <div class="roomlist_roomlist_info" >
                         <div class="roomlist_roomlist_name" th:text="${room.getName()}"></div>
                         <div class="roomlist_roomlist_info_specific">
-                            <p th:text="${room.getBed()} + '           ' + ${room.getWidth()}+ '        ' +${room.getRoomCapacity()}+ '     ' +${room.getRoomView()}+ '      ' +${room.getSmoking()}"></p>
+                            <p th:text="${room.getBed()}"></p>
+                            <p th:text="${room.getWidth()}"></p>
+                            <p th:text="${room.getRoomCapacity()}"></p>
+                            <p th:text="${room.getRoomView()}"></p>
+                            <p th:text="${room.getSmoking()}"></p>
                         </div>
                     </div>
                     <div class="roomlist_roomlist_reservation">
                         <div class="roomlist_roomlist_reservation_info">
                             <div class="roomlist_roomlist_reservation_info_box">
-                                <div id="rl1_1" th:if="${lodging.getCf().contains('무료취소')}">무료취소</div>
-                                <div id="rl1_1">무료취소</div>
+                                <div class="rl1_1" th:if="${lodging.getCf().contains('무료취소')}">무료취소</div>
+                                <div class="rl1_1" th:unless="${lodging.getCf().contains('무료취소')}"></div>
                                 <div id="rl1_2">
                                     <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
                                     <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
