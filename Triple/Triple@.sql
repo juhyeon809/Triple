@@ -1052,6 +1052,7 @@ create table room_reservation(
     gender varchar2(40) not null,
     request varchar2(1000) not null,
     total_price number(10) not null
+    reg_date date default sysdate
 );
 
 

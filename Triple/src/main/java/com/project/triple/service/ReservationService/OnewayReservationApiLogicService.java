@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -60,8 +61,12 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
     }
 
     @Override
-    public Header<OnewayReservationApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long idx) {
+        Optional<OnewayReservation> onewayReservation = baseRepository.findById(idx);
+        return onewayReservation.map(onewayReservation1 -> {
+            baseRepository.delete(onewayReservation1);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     public Header<List<OnewayReservationApiResponse>> reservation(List<OnewayReservation> onewayReservationList){
@@ -102,5 +107,13 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
         Long ageCount = onewayReservationRepository.countByAgeType(ageType);
 
         return ageCount;
+    }
+
+    public Header<List<OnewayReservationApiResponse>> list(String email){
+        List<OnewayReservation> onewayReservationList = onewayReservationRepository.findAllByEmail(email);
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationList.stream()
+                .map(onewayReservation -> response(onewayReservation))
+                .collect(Collectors.toList());
+        return Header.OK(onewayReservationApiResponseList);
     }
 }

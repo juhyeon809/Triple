@@ -35,14 +35,13 @@
                             <span th:text="'[왕복] '+${airTicketRDT.getDepartureAirport()}+' - '+${airTicketRDT.getLandingAirport()} "></span>
                         </div>
                         <div id="re_main_date" ><span th:text="'예약일정 ' +${airTicketRDT.getDepartureTime()}"></span>
-                            <br >
+                            <br>
                             <span th:text="'예약번호 ' +${roundData.getIdx()}"></span>
                         </div>
                     </a>
                     <div id="re_main_inq">
                         <a href="/Triple/inquiryWrite">1:1 문의</a>
                     </div>
-                </div>
                     <a th:href="'/Triple/mypage/reserve/air/oneway/'+${onewayData.getIdx()}">
                         <div id="re_main_place"><span th:text="${airTicketODT.getAirRoute()}+'선'"></span>
                             <br>
@@ -57,6 +56,7 @@
                         <a href="/Triple/inquiryWrite">1:1 문의</a>
                     </div>
                 </div>
+            </div>
 
             <div class="re_main_3">
                 <div id="re_main_tit">지나간 예약</div>

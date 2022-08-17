@@ -12,6 +12,7 @@ import com.project.triple.model.network.response.LodgingResponse.LodgingTicketAp
 import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.OnewayReservationApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoomReservationApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
@@ -31,6 +32,7 @@ import com.project.triple.service.LodgingService.LodgingRoomApiLogicService;
 import com.project.triple.service.LodgingService.LodgingTicketApiLogicService;
 import com.project.triple.service.QnAService.QuestionApiLogicService;
 import com.project.triple.service.ReservationService.OnewayReservationApiLogicService;
+import com.project.triple.service.ReservationService.RoomReservationApiLogicService;
 import com.project.triple.service.ReservationService.RoundTicketReservationApiLogicService;
 import com.project.triple.service.ReservationService.ReservationApiLogicService;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
@@ -95,6 +97,9 @@ public class PageController {
 
     @Autowired
     private NoticeApiLogicService noticeApiLogicService;
+
+    @Autowired
+    private RoomReservationApiLogicService roomReservationApiLogicService;
 
     @Autowired
     private EventApiLogicService eventApiLogicService;
@@ -189,6 +194,7 @@ public class PageController {
 //        List<PackageApiResponse> confirmed = packageApiLogicService.sort_by_keyword("출발확정").getData();
 
         List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+
         for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
             int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
             lodgingApiResponse.setCheapestPrice(cheap);
@@ -793,10 +799,13 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-        List<ReservationApiResponse> reservationApiResponseList = reservationApiLogicService.lodging().getData();
+        List<RoomReservationApiResponse> roomReservationApiResponseList = roomReservationApiLogicService.search(email).getData();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.search().getData();
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.search().getData();
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_lodging").addObject("email", email)
-                .addObject("nickname", nickname).addObject("reserveList", reservationApiResponseList);
+                .addObject("nickname", nickname).addObject("roomReservation", roomReservationApiResponseList)
+                .addObject("lodgingRoom", lodgingRoomApiResponseList).addObject("lodging", lodgingApiResponseList);
     }
 
     //마이페이지 내예약 투어티켓
@@ -912,10 +921,30 @@ public class PageController {
                 .addObject("users", usersApiResponse).addObject("adultCount", adCount)
                 .addObject("childCount", chCount).addObject("infantCount", inCount);
     }
-
+//    @PostMapping("/serviceOut")
+//    public ModelAndView serviceOut(HttpServletResponse response, HttpServletRequest request, String userpw) throws IOException {
+//        HttpSession session = request.getSession();
+//        String email = (String)session.getAttribute("email");
+//        UsersApiResponse users = usersApiLogicService.login(email, userpw).getData();
+//        if(users != null){
+//            usersApiLogicService.delete(users.getIdx());
+//
+//            session.setAttribute("email",null);
+//            session.setAttribute("nickname", null);
+//
+//            ScriptUtils.alert(response, "탈퇴 성공" );
+//            return new ModelAndView("/pages/main");
+//
+//
+//        }else{
+//            ScriptUtils.alert(response, "실패, 비밀번호를 다시 확인해주세요");
+//            return new ModelAndView("/pages/login");
+//
+//        }
+//    }
     //내예약 항공 왕복 취소
     @RequestMapping(path = "/mypage/reserve/air/round/cancle/{idx}")
-    public ModelAndView my_reserve_air_cancle(@PathVariable Long idx, HttpServletRequest request) {
+    public ModelAndView my_reserve_air_cancle(@PathVariable Long idx, HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -928,6 +957,7 @@ public class PageController {
             email = (String) session.getAttribute("email");
             nickname = (String) session.getAttribute("nickname");
         }
+
 
         Long roundDepartureTicketId = roundTicketReservationApiLogicService.findDeparture(email);
         Long combackTicketId = roundTicketReservationApiLogicService.findComeback(email);
@@ -947,6 +977,8 @@ public class PageController {
         Long chCount = roundTicketReservationApiLogicService.ageCount(childCount);
         Long inCount = roundTicketReservationApiLogicService.ageCount(infantCount);
 
+
+
         return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_round_cancle").addObject("email", email)
                 .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
                 .addObject("roundCombackId", combackTicketId)
@@ -961,8 +993,8 @@ public class PageController {
     }
 
     //내예약 숙소 view
-    @RequestMapping(path = "/mypage/reserve/lodging/{ticketNum}")
-    public ModelAndView my_reserve_lodging(@PathVariable String ticketNum, HttpServletRequest request) {
+    @RequestMapping(path = "/mypage/reserve/lodging/{idx}")
+    public ModelAndView my_reserve_lodging(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -973,21 +1005,15 @@ public class PageController {
             nickname = (String) session.getAttribute("nickname");
         }
 
-        ReservationApiResponse reservationApiResponse = reservationApiLogicService.read2(ticketNum).getData();
-        String roomNum = lodgingTicketApiLogicService.findRoomNum(ticketNum);
-        LodgingTicketApiResponse lodgingTicketApiResponse = lodgingTicketApiLogicService.read2(ticketNum).getData();
-        LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read2(roomNum).getData();
-        Long idx = usersApiLogicService.findIdx(email);
-        Long couponId = userCouponApiLogicService.findUserId(idx);
-        List<CouponApiResponse> couponApiResponseList = couponApiLogicService.search(couponId).getData();
-        Long lodgingId = lodgingRoomApiLogicService.findLodgingId(roomNum);
-        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read2(lodgingId).getData();
-
+        RoomReservationApiResponse roomReservationApiResponse = roomReservationApiLogicService.read2(idx).getData();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.search().getData();
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.search().getData();
+        UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_room_reserve").addObject("email", email)
-                .addObject("nickname", nickname).addObject("lodgingTicket", lodgingTicketApiResponse)
-                .addObject("lodgingRoom", lodgingRoomApiResponse).addObject("reserve", reservationApiResponse)
-                .addObject("coupon", couponApiResponseList).addObject("lodging", lodgingApiResponse);
+                .addObject("nickname", nickname).addObject("roomReservation", roomReservationApiResponse)
+                .addObject("lodgingRoom", lodgingRoomApiResponseList).addObject("lodging", lodgingApiResponseList)
+                .addObject("user" , usersApiResponse);
     }
 
     //내예약 숙소 취소
@@ -1934,12 +1960,19 @@ public class PageController {
             userid = (String)session.getAttribute("userid");
             name = (String)session.getAttribute("name");
         }
+        List<UsersApiResponse> usersList = usersApiLogicService.search().getData();
+        //Long idx = usersApiLogicService.findIdx(email);
+        //List<QuestionApiResponse> questionApiResponseList = questionApiLogicService.search2(idx).getData();
     //    List<AdminUserApiResponse> adminUserList = AdminUserApiLogicService.search().getData();
         List<QuestionApiResponse> inquiryList = questionApiLogicService.search().getData();
 
         return new ModelAndView("/pages/admin/admin_main")
                 .addObject("userid", userid)
                 .addObject("name", name)
+                .addObject("usersList", usersList)
+//                .addObject("question", questionApiResponseList)
+//                .addObject("email",email)
+//                .addObject("idx",idx);
                 .addObject("inquiry",inquiryList);
 
     }
@@ -2298,7 +2331,7 @@ public class PageController {
             userid = (String) session.getAttribute("userid");
             name = (String) session.getAttribute("name");
         }
-        List<RoundTicketReservationApiResponse> roundTicketList = roundTicketListReservationApiLogicService.search().getData();
+        List<RoundTicketReservationApiResponse> roundTicketList = roundTicketListReservationApiLogicService.search2().getData();
         return new ModelAndView("/pages/admin/booking/fly_reservation")
                 .addObject("userid", userid)
                 .addObject("name", name).addObject("roundTicketList", roundTicketList);
@@ -2415,6 +2448,7 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("lodgingRoomList", lodgingRoomList);
     }
+
     /* 상품 목록 > 숙소 > 객실 */
     @RequestMapping(path="/admin/lodgingList/view/{idx}")       //http://localhost:9090/Triple/admin/booking/fly/view/{idx}
     public ModelAndView lodgingList_view(@PathVariable Long idx, HttpServletRequest request) {

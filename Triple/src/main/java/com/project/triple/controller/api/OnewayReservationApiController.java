@@ -37,4 +37,15 @@ public class OnewayReservationApiController extends CrudController<OnewayReserva
         ScriptUtils.alertAndMovePage(response, "예약이 완료되었습니다" , "/Triple/flightMain");
         return null;
     }
+
+    @RequestMapping("/delete")
+    public Header<OnewayReservationApiResponse> delete(HttpServletResponse response, Long idx, String email, String name) throws IOException{
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationApiLogicService.list(email).getData();
+        for(OnewayReservationApiResponse onewayReservationApiResponse : onewayReservationApiResponseList){
+            onewayReservationApiLogicService.delete(idx);
+        }
+
+        ScriptUtils.alertAndMovePage(response, name+"님의 항공권이 취소되었습니다" , "/Triple/mypage/reserve/air");
+        return null;
+    }
 }

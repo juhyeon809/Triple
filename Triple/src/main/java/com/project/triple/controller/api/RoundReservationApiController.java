@@ -42,4 +42,15 @@ public class RoundReservationApiController extends CrudController<RoundTicketRes
         return null;
     }
 
+    @RequestMapping("/delete")
+    public Header<RoundTicketReservationApiResponse> delete(HttpServletResponse response, Long idx, String email, String name) throws IOException{
+        List<RoundTicketReservationApiResponse> roundTicketReservationList = roundTicketReservationApiLogicService.list(email).getData();
+        for(RoundTicketReservationApiResponse roundTicketReservationApiResponse : roundTicketReservationList){
+            roundTicketReservationApiLogicService.delete(idx);
+        }
+
+        ScriptUtils.alertAndMovePage(response, name+"님의 항공권이 취소되었습니다" , "/Triple/mypage/reserve/air");
+        return null;
+    }
+
 }

@@ -62,6 +62,7 @@
                     <ul class="side-dropdown show">
                         <li><a href="/Triple/admin/airLineList">항공권</a></li>
                         <li><a href="/Triple/admin/lodgingList" style="color:darkslategray; font-weight: bold;">숙소</a></li>
+                        <li><a href="/Triple/admin/lodgingRoomList">객실</a></li>
 
                         <li><a href="/Triple/admin/packageList">패키지</a></li>
                     </ul>
@@ -169,6 +170,28 @@
             <!--숙소 리스트 테이블-->
             <table class="tbList">
                 <tr>
+                    <th>
+                        <input type="checkbox" id="checkAll">
+                    </th>
+                    <th>숙소번호</th>
+                    <th>숙소명</th>
+                    <th>체크인</th>
+                    <th>등급</th>
+                    <th>별점</th>
+                </tr> 
+                <tr th:each="lodging : ${lodgingList}">
+                    <td><input class="lodging" type="checkbox"></td>
+                    <td><a th:href="'/Triple/admin/lodgingList/view/'+${lodging.getIdx()}" th:text="${lodging.idx}">서울 시그니니엘 프리미어 더블(조식포함)</a></td>
+                    <td th:text="${lodging.name}">시그니엘</td>
+                    <td th:text="${lodging.checkIn}"></td>
+                    <td th:text="${lodging.rank}">등급</td>
+                    <th>숙소번호</th>
+                    <th>숙소명</th>
+                    <th>등급</th>
+                    <th>체크인</th>
+                    <th>별점</th>
+                </tr> 
+                <tr th:each="lodging : ${lodgingList}">
                     <th>숙소번호</th>
                     <th>숙소명</th>
                     <th>등급</th>
