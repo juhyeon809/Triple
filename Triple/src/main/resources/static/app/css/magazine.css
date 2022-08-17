@@ -1,9 +1,9 @@
 /*메인*/
-
 .container {
     width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 .mag_area{
     text-align: center;
@@ -12,11 +12,11 @@
 .mag_area > #mag_list{
     display: flex;
     margin-top: 30px;
-    
+
 }
 
 ul#mag_list {
-    width: 850px;
+    width: 750px;
     margin: 0 auto;
 }
 .mag_area > #mag_list > li{
@@ -26,7 +26,7 @@ ul#mag_list {
     border: solid 1px darkgrey;
     padding: 6px 10px;
     font-size: 14px;
-    
+
 }
 
 #mag_list > li >a{
@@ -41,7 +41,7 @@ ul#mag_list {
 .mag_content > .content_list{
     list-style: none;
     padding-top: 20px;
-    
+
 }
 .mag_content >  .content_list > div{
     padding: 10px 0;
@@ -78,7 +78,7 @@ ul#mag_list {
 
 #list_img{
     background-position: center;
-    border: 1px solid white; 
+    border: 1px solid white;
     border-radius: 10px;
     margin-left: 130px;
     height:200px;
@@ -95,6 +95,7 @@ ul#mag_list {
     width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 #rec3{
     padding-top: 30px;
@@ -110,7 +111,8 @@ ul#mag_list {
 #rec_cont{
     color: rgb(0, 0, 0);
     font-size: 16px;
-    
+
+
 }
 /*글 제목 폰트 크기 색상*/
 #list_tit{
@@ -150,7 +152,7 @@ ul#mag_list {
     height: 70px;
     box-sizing: border-box;
     margin-left:800px;
-    
+
 }
 #baro_text{
     font-size: 16px;
@@ -161,9 +163,9 @@ ul#mag_list {
     width: 68px;
     height: 68px;
     border-radius: 100px;
-    
+
 }
-a{ 
+a{
     color: black;
     text-decoration-line: none ;
     font-weight: bold;
@@ -181,8 +183,9 @@ a{
     margin-right: 20px;
 }
 #cont_img{
-    width:500px;
-    height: 400px;
+    width:1000px;
+    height: 350px;
+    border-radius: 10px;
 }
 
 /*여행지추천*/
@@ -195,7 +198,7 @@ a{
 #guam_list > div{
     margin-right: 25px;
     list-style: none;
-    
+
 }
 
 #guam_list2{
@@ -294,7 +297,7 @@ a{
 
 #ec_img{
     width:300px;
-    height:250px; 
+    height:250px;
 }
 
 #ep_list2{
@@ -324,13 +327,13 @@ a{
     text-align: center;
 }
 #ep_img{
-    width:500px; 
+    width:500px;
     height:300px;
 }
 
 #like_box{
     padding-bottom: 100px;
-    
+
 }
 #like_box1,#like_box2,#like_box3{
     margin-left: 10px;
@@ -360,7 +363,7 @@ a{
 #like_list1{
     float: left;
     padding-right: 20px;
-    
+
 }
 
 
@@ -441,10 +444,6 @@ a > #sp {
     text-align: right;
 }
 
-#srec_img{
-    width: 1000px;
-    height:500px;
-}
 
 /*여행기*/
 
@@ -473,7 +472,7 @@ footer {
     opacity: 0.5;
     height: 300px;
     margin-top: 50px;
-    
+
 }
 #enterprise_info {
     margin: 0 auto;
