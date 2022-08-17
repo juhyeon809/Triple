@@ -2446,9 +2446,11 @@ public class PageController {
             name = (String)session.getAttribute("name");
         }
         LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(idx).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
         return new ModelAndView("/pages/admin/productlist/admin_productlist_lodgingRoom_detail")
                 .addObject("userid", userid)
                 .addObject("name", name)
+                .addObject("lodging", lodgingApiResponse)
                 .addObject("lodgingRoom", lodgingRoomApiResponse);
     }
     /* 객실 삭제 */

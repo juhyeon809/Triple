@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 객실 등록</title>
+    <title>관리자 | 객실 상세보기</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
@@ -123,7 +123,7 @@
     <div class="content2-fluid">
         <!--타이틀-->
         <div class="header_box">
-            <h2>상품등록 | 객실</h2>
+            <h2>숙소 | 객실 상세보기</h2>
         </div>
         <!--타이틀 끝-->
         <!--숙소 정보 입력폼-->
@@ -132,7 +132,7 @@
                 <div class="admin_inquiry_title">숙소</div>
                 <div class="admin_inquiry_q3">
                     <select  name="companyId" class="admin_inquiry_category2 Tcategory">
-                        <option th:value="${lodgingRoom.getName()}" th:text="${lodgingRoom.getName()}"></option>
+                        <option th:value="${lodging.getName()}" th:text="${lodging.getName()}"></option>
                     </select>
                 </div>
             </div>
