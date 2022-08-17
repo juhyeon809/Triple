@@ -1089,6 +1089,7 @@
     box-sizing: border-box;
     border-radius: 15px 15px;
     box-shadow: 0 10px 30px 0 #dddddd;
+    display: flex;
 }
 
 #lg_rm_if_main_1{
@@ -1099,9 +1100,10 @@
 }
 
 #lg_rm_if_main_2{
-    width: 500px;
-    height: 320px;
-    float:left;
+    /*width: 500px;*/
+    height: 200px;
+    /*float:left;*/
+    margin: auto;
 }
 
 
@@ -1162,10 +1164,24 @@
 
 #lg_rm_if_main_1_info_room{
     font-size: 16px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     position: relative;
     top: 5px;
     color: #666666;
+}
+#lg_rm_if_main_1_info_room p{
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+#lg_rm_if_main_1_info_room div{
+    width: 150px;
+    display: flex;
+
+}
+#lg_rm_if_main_1_info_room div img{
+    width: 20px;
+    height: 17px;
+    margin-right: 5px;
 }
 
 #lg_rm_if_main_1_info_policy{
@@ -1176,15 +1192,15 @@
     top: 20px;
 }
 
-#lg_rm_if_main_1_info_policy a:nth-child(1){
+#lg_rm_if_main_1_info_policy span:nth-child(1){
     color: #2680EB;
 }
 
-#lg_rm_if_main_1_info_policy a:nth-child(2){
+#lg_rm_if_main_1_info_policy span:nth-child(3){
     color: #FF0101;
 }
 
-#lg_rm_if_main_1_info_policy a:nth-child(3){
+#lg_rm_if_main_1_info_policy span:nth-child(4){
     color: #50E3C2;
 }
 
@@ -1212,18 +1228,19 @@
 
 #lg_rm_if_main_2_info_reservation{
     width: 130px;
-    height: 40px;
+    height: 35px;
     border-radius: 30px;
     position: relative;
     box-sizing: border-box;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     background-color: #50e3c2;
     text-align: center;
-    line-height: 40px;
-    top: 25px;
-    left: 340px;
+    border: none;
+    left: 270px;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 #lg_rm_if_main_2_info_box{
@@ -1255,17 +1272,19 @@
     box-sizing: border-box;
     margin-top: 10px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
 }
 
 #lg_rm_if_main_2_info_triplemember,#lg_rm_if_main_2_info_coupon{
     width: 180px;
-    float:left;
+    /*float:left;*/
     color: #425052;
 }
 
 #lg_rm_if_main_2_info_triplemember_price,#lg_rm_if_main_2_info_coupon_discount{
     width: 270px;
-    float: left;
+    /*float: left;*/
     text-align: right;
     box-sizing: border-box;
     padding-right: 50px;
@@ -1276,9 +1295,33 @@
     font-size: 16px;
     color: #666666;
     box-sizing: border-box;
-    margin-top: 50px;
+    margin-top: 30px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
 }
+.datepick div{
+    display: flex;
+    /*height: 25px;*/
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.datepick div div{
+    margin: 0 50px 0 0;
+}
+.datepick div p{
+    margin: 0;
+}
+.datepick div #datepicker1,
+.datepick div #datepicker2{
+    width: 95px;
+    height: 22px;
+    background-color: transparent;
+    border: 1px solid  #0c8ee5;
+    border-radius: 5px;
+    text-align: center;
+}
+
 /* 647.988 */
 
 #lg_rm_if_main_2_info_pricebox{
@@ -1657,11 +1700,11 @@
 .box {
     margin-bottom: 20px;
 }
-.box input[type="checkbox"] {
+.box input[type="radio"] {
     width: 12px;
     margin-right: 5px;
     height: 15px;
-    }
+}
 .box .btSm {
     margin-top: 5px;
     font-size: 14px;
@@ -1864,6 +1907,10 @@
 }
 .paynotice p {
     margin: 0 0 10px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0 10px;
 }
 .left{
     width: 370px;
@@ -1948,11 +1995,9 @@
     color: #2680EB;
     font-weight: bold;
 }
-.right p:nth-child(2){
+.right div p{
     color: #2680EB;
     font-weight: bold;
-}
-.right p{
     padding: 0 10px;
     margin: 0;
     font-size: 14px;

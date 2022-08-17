@@ -9,7 +9,8 @@
     <title>TRIPLE | 숙소예약</title>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
     <link rel="stylesheet" href="/app/css/common.css">
-    <script src="./js/lodging.js"></script>
+    <script src="/app/js/lodging.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -122,8 +123,27 @@
                     <!--결제 취소 정책 안내 끝-->
                     <!--무료취소 안내-->
                     <div class="right">
+                        <div style="padding-top: 20px" ><p th:if="${lodging.getCf().contains('무료취소')}"><img th:src="@{/lib/img/lodging_room_img/checkmark3.png}"> 무료취소가능</p>
+                            <p th:if="${lodging.getCf().contains('무료취소')}"><span id="time" th:if="${lodging.getCf().contains('무료취소')}"></span>23시 59분까지 무료취소 가능</div>
                         <p>이후 예약을 취소할 경우 전액 취소 수수료가 부과될 수 있습니다.</p>
                     </div>
+                    <script>
+
+
+                        const time = document.getElementById("time");
+                        function getClock(){
+                            let now = new Date();	// 현재 날짜 및 시간
+                            let year = now.getFullYear();
+                            let month = now.getMonth()+1;
+                            let day = now.getDay();
+                            time.innerText = `${year}년  ${month <10 ? `0${month}` : month}월 ${day < 10 ? `0${day}` : day}일 `;
+                        }
+                        getClock();
+
+
+
+
+                    </script>
                     <!--무료취소 안내-->
                 </div>
                 <!--이용동의 및 결제 버튼-->

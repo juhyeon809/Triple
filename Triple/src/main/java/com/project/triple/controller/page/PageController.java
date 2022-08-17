@@ -189,6 +189,7 @@ public class PageController {
 //        List<PackageApiResponse> confirmed = packageApiLogicService.sort_by_keyword("출발확정").getData();
 
         List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
+
         for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
             int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
             lodgingApiResponse.setCheapestPrice(cheap);
