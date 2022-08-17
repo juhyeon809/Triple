@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 숙소상품목록</title>
+    <title>관리자 | 객실목록</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -169,24 +169,19 @@
         <!--숙소 리스트 테이블-->
         <table class="tbList">
             <tr>
-                <th>번호</th>
-                <th>숙소번호</th>
-                <th>객실명</th>
-                <th>가격</th>
+                <th style="width: 20%;">숙소명</th>
+                <th style="width: 25%;">객실번호</th>
+                <th style="width: 25%;">객실명</th>
+                <th style="width: 30%;">가격</th>
             </tr>
             <tr th:each="lodgingRoom : ${lodgingRoomList}">
-                <td><a th:href="'/Triple/admin/lodgingRoom/view/'+${lodgingRoom.getIdx()}" th:text="${lodgingRoom.idx}"></a></td>
-                <td th:text="${lodgingRoom.companyId}"></td>
+                <td><a th:href="'/Triple/admin/lodgingRoomList/view/'+${lodgingRoom.getIdx()}" th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodging.name}"></a></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.idx}"></td>
                 <td th:text="${lodgingRoom.name}"></td>
                 <td th:text="${lodgingRoom.price}"></td>
             </tr>
         </table>
         <!--숙소리스트 테이블 끝-->
-        <!--버튼리스트-->
-        <div class="btnlist">
-            <button value="판매중지">판매중지</button>
-        </div>
-        <!--버튼리스트 끝-->
         <!--넘버링-->
         <div class="pageNum">
             <p>1 2 3 4 5</p>
@@ -196,22 +191,5 @@
 </section>
 
 <script src="/app/js/script.js"></script>
-<script>
-    $(document).ready(function(){
-        //약관동의 체크박스 전체 선택
-        $("#checkAll").click(function() {
-            if($("#checkAll").is(":checked")) $("input[class='lodging']").prop("checked", true);
-            else $("input[class='lodging']").prop("checked", false);
-        });
-        $("input[class='lodging']").click(function() {
-            var total = $("input[class='lodging']").length;
-            var checked = $("input[class='lodging']:checked").length;
-
-            //개별선택 해제시 전체체크박스 해제
-            if(total != checked) $("#checkAll").prop("checked", false);
-            else $("#checkAll").prop("checked", true);
-        });
-    });
-</script>
 </body>
 </html>

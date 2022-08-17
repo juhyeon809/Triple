@@ -2383,23 +2383,50 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("lodgingList", lodgingList);
     }
-    /* 상품 목록 > 객실 */
-    @RequestMapping(path="/admin/lodgingRoomList")      //http://localhost:9090/Triple/admin/lodgingList
-    public ModelAndView admin_lodgingRoomList(HttpServletRequest request) throws NullPointerException {
+
+    @RequestMapping(path="/admin/lodgingList/view/{idx}")       //http://localhost:9090/Triple/admin/booking/fly/view/{idx}
+    public ModelAndView lodgingList_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         String userid = null;
         String name = null;
-        if(session == null) {
+        if(session == null){
 
         }else{
-            userid = (String) session.getAttribute("userid");
-            name = (String) session.getAttribute("name");
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
         }
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(idx).getData();
         List<LodgingRoomApiResponse> lodgingRoomList = lodgingRoomApiLogicService.search().getData();
         return new ModelAndView("/pages/admin/productlist/admin_productlist_lodgingRoom")
                 .addObject("userid", userid)
                 .addObject("name", name)
+                .addObject("lodging", lodgingApiResponse)
                 .addObject("lodgingRoomList", lodgingRoomList);
+    }
+    @RequestMapping(path="/admin/lodgingRoomList/view/{idx}")       //http://localhost:9090/Triple/admin/lodgingRoomList/view/{idx}
+    public ModelAndView lodgingRoomList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String userid = null;
+        String name = null;
+        if(session == null){
+
+        }else{
+            userid = (String)session.getAttribute("userid");
+            name = (String)session.getAttribute("name");
+        }
+        LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/admin/productlist/admin_productlist_lodgingRoom_detail")
+                .addObject("userid", userid)
+                .addObject("name", name)
+                .addObject("lodgingRoom", lodgingRoomApiResponse);
+    }
+
+    /* 객실 삭제 */
+    @RequestMapping(path="/admin/lodgingRoomList/delete/{idx}")        //http://localhost:9090/Triple/admin/lodgingRoom/delete/{idx}
+    public ModelAndView lodgingRoomDelete(HttpServletResponse response, @PathVariable Long idx) throws IOException{
+        Header lodgingRoomApiResponse = lodgingRoomApiLogicService.delete(idx);
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/admin/lodgingList");
+        return null;
     }
 
     /* 상품 목록 > 패키지 */

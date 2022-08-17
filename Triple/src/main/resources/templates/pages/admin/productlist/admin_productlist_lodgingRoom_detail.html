@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 | 매거진 상세보기</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>관리자 | 객실 등록</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
@@ -15,7 +14,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="/app/css/admin.css">
-
 
 </head>
 <body>
@@ -29,17 +27,17 @@
         <ul class="side-menu">
             <li><a href="#"><i class='bx bxs-user-detail icon'></i>회원관리<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-                    <li><a href="/Triple/admin/userList">회원목록</a></li>
-                    <li><a href="/Triple/admin/user/term">회원가입</a></li>
+                    <li><a href="/admin/member/memberlist.html">회원목록</a></li>
+                    <li><a href="/admin/member/memberSign-up.html">회원가입</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
+            <li><a><i class='bx bx-list-check icon'></i>예약조회<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
-
-                    <li><a href="/Triple/admin/booking/fly">항공권</a></li>
-                    <li><a href="/Triple/admin/booking/lodging">숙소</a></li>
-                    <li><a href="/Triple/admin/booking/package">패키지</a></li>
-
+                    <li><a href="/admin/booking/all.html">전체</a></li>
+                    <li><a href="/admin/booking/fly_reservation.html">항공권</a></li>
+                    <li><a href="/admin/booking/room_resevation.html">숙소</a></li>
+                    <li><a href="/admin/booking/packge_reservation.html">패키지</a></li>
+                    <li><a href="/admin/booking/ticket_reservation.html">티켓</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class='bx bxs-folder-plus icon'></i>신규등록<i class='bx bx-chevron-right icon-right'></i></a>
@@ -59,11 +57,10 @@
 
                 </ul>
             </li>
-            <li><a href="#"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown">
+            <li><a href="#" class="show" style="background-color: white; color:#0098A1;"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown show">
                     <li><a href="/Triple/admin/airLineList">항공권</a></li>
-                    <li><a href="/Triple/admin/lodgingList">숙소</a></li>
-
+                    <li><a href="/Triple/admin/lodgingList" style="color:darkslategray; font-weight: bold;">숙소</a></li>
                     <li><a href="/Triple/admin/packageList">패키지</a></li>
 
                 </ul>
@@ -88,9 +85,9 @@
                     <li><a href="/Triple/admin/notice/register">등록</a></li>
                 </ul>
             </li>
-            <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
-                <ul class="side-dropdown show">
-                    <li><a href="/Triple/admin/magazineList" style="color:darkslategray; font-weight: bold;">목록</a></li>
+            <li><a href="#"><i class='bx bxs-inbox icon'></i>매거진<i class='bx bx-chevron-right icon-right'></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="/Triple/admin/magazineList">목록</a></li>
                     <li><a href="/Triple/admin/magazine_register">등록</a></li>
                 </ul>
             </li>
@@ -122,80 +119,99 @@
     </aside>
 </section>
 <!--사이드바 끝-->
-<section class="content2">
+<section class="content2" >
     <div class="content2-fluid">
+        <!--타이틀-->
         <div class="header_box">
-            <!--타이틀-->
-            <h2>매거진 상세보기</h2>
-            <!--타이틀 끝-->
+            <h2>상품등록 | 객실</h2>
         </div>
-        <!--매거진 정보 입력-->
+        <!--타이틀 끝-->
+        <!--숙소 정보 입력폼-->
         <form>
-            <input type="hidden" name="adminuserId" th:value="${session.userid}">
-            <input type="hidden" name="adminuserName" th:value="${session.name}">
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">분류</div>
+                <div class="admin_inquiry_title">숙소</div>
                 <div class="admin_inquiry_q3">
-                    <select name="magazineType" id="magazineType" class="admin_inquiry_category2" th:value="${magazine.magazineType}">
-                        <option th:selected="${magazine.magazineType}==''">선택</option>
-                        <option th:selected="${magazine.magazineType}=='RECOMMEND'">#여행지추천</option>
-                        <option th:selected="${magazine.magazineType}=='TIP'">#여행꿀팁</option>
-                        <option th:selected="${magazine.magazineType}=='RESTAURANT'">#맛집탐방</option>
-                        <option th:selected="${magazine.magazineType}=='AIR'">#항공·공항</option>
-                        <option th:selected="${magazine.magazineType}=='LODGING'">#숙소추천</option>
-                        <option th:selected="${magazine.magazineType}=='TOURTICKET'">#투어·티켓</option>
-                        <option th:selected="${magazine.magazineType}=='SHOPPING'">#쇼핑</option>
+                    <select  name="companyId" class="admin_inquiry_category2 Tcategory">
+                        <option th:value="${lodgingRoom.getName()}" th:text="${lodgingRoom.getName()}"></option>
                     </select>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">제목</div>
+                <div class="admin_inquiry_title">객실명</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" name="title" class="admin_inquiry_category2" th:value="${magazine.title}" readonly>
+                    <input name="name" type="text" id="pro_name"class="admin_inquiry_category2 formbox_ul_text" th:value="${lodgingRoom.name}" readonly>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">해시태그</div>
+                <div class="admin_inquiry_title">객실번호</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" name="tag" id="tag" class="admin_inquiry_category2" th:value="${magazine.tag}" readonly>
+                    <input name="roomNum" type="text" id="pro_num"class="admin_inquiry_category2 formbox_ul_text" th:value="${lodgingRoom.roomNum}" readonly>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">내용요약</div>
+                <div class="admin_inquiry_title">객실 이미지</div>
                 <div class="admin_inquiry_q3">
-                    <input type="text" name="summary" id="summary" class="admin_inquiry_category2" th:value="${magazine.summary}" readonly>
+                    <input name="file" type="file" id="room_img" class="admin_inquiry_category2" th:value="${lodgingRoom.fileName}" readonly>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">썸네일 이미지</div>
-                <div class="admin_inquiry_q3">
-                    <input type="file" name="file" class="admin_inquiry_category2" enctype="multipart/form-data" th:value="${magazine.fileName}" readonly>
+                <div class="admin_inquiry_title">객실 옵션</div>
+                <div class="option">
+                    <select name="roomCapacity"  class="option_type Pcategory" th:value="${lodgingRoom.roomCapacity}" readonly>
+                        <option th:selected="${lodgingRoom.roomCapacity}==''">인원</option>
+                        <option th:selected="${lodgingRoom.roomCapacity}=='최대2명'">최대2명</option>
+                        <option th:selected="${lodgingRoom.roomCapacity}=='최대3명'">최대3명</option>
+                        <option th:selected="${lodgingRoom.roomCapacity}=='최대4명'">최대4명</option>
+                    </select>
+                    <select name="smoking" class="option_type SPcategory" th:value="${lodgingRoom.smoking}" readonly>
+                        <option th:selected="${lodgingRoom.smoking}==''">흡연여부</option>
+                        <option th:selected="${lodgingRoom.smoking}=='흡연가능'">흡연가능</option>
+                        <option th:selected="${lodgingRoom.smoking}=='흡연불가능'">흡연불가능</option>
+                    </select>
+                    <select name="roomView" class="option_type Viewcategory" th:value="${lodgingRoom.roomView}" readonly>
+                        <option th:selected="${lodgingRoom.roomView}=='호텔뷰'">호텔뷰</option>
+                        <option th:selected="${lodgingRoom.roomView}=='오션뷰'">오션뷰</option>
+                        <option th:selected="${lodgingRoom.roomView}=='시티뷰'">시티뷰</option>
+                    </select>
+                    <select  name="width" class="option_type RPcategory" th:value="${lodgingRoom.width}" readonly>
+                        <option th:selected="${lodgingRoom.width}==''">방사이즈</option>
+                        <option th:selected="${lodgingRoom.width}=='27m²'">27m²</option>
+                    </select>
+                    <select name="bed" class="option_type Bcategory" th:value="${lodgingRoom.bed}" readonly>
+                        <option th:selected="${lodgingRoom.bed}=='싱글침대'">싱글침대</option>
+                        <option th:selected="${lodgingRoom.bed}=='싱글침대2개'">싱글침대2개</option>
+                        <option th:selected="${lodgingRoom.bed}=='더블침대1개'">더블침대1개</option>
+                        <option th:selected="${lodgingRoom.bed}=='퀸침대1개'">퀸침대1개</option>
+                    </select>
                 </div>
             </div>
             <div class="admin_inquiry_qtext">
-                <div class="admin_inquiry_title">매거진 내용</div>
+                <div class="admin_inquiry_title">객실 소개</div>
                 <div class="admin_inquiry_q3">
-                    <div class="admin_inquiry_a1">
-                        <textarea class="weditor" name="content" id="weditor" cols="100" rows="10" style="width: 100%; height: 250px;" placeholder="매거진 내용을 입력하세요" th:utext="${magazine.content}" readonly></textarea>
-                    </div>
-
+                    <textarea name="introducing" class="weditor" id="weditor1" cols="100" rows="10" style="height: 300px; width: 100%;"  th:utext="${lodgingRoom.introducing}" readonly></textarea>
                 </div>
             </div>
-            <!--매거진 정보입력 끝-->
+            <div class="admin_inquiry_qtext">
+                <div class="admin_inquiry_title">가격</div>
+                <div class="admin_inquiry_q3">
+                    <input name="price" type="text" id="price" class="admin_inquiry_category2 formbox_ul_text" th:value="${lodgingRoom.price}" readonly>
+                </div>
+            </div>
+            <!--숙소 정보 입력폼 끝-->
             <div class="btnlist">
-                <a th:href="'/Triple/admin/magazineList'">
+                <a th:href="'/Triple/admin/lodgingList'">
                     <input type="button" value="목록" class="btn">
                 </a>
-                <a th:href="'/Triple/admin/magazineList/delete/'+${magazine.getIdx()}">
+                <a th:href="'/Triple/admin/lodgingRoomList/delete/'+${lodgingRoom.getIdx()}">
                     <input type="button" value="삭제" class="btn" id="delete">
                 </a>
             </div>
         </form>
-    </section>
-
+    </div>
+</section>
 
 <script src="/app/js/script.js"></script>
 <script src="/app/js/admin.js"></script>
-<script src="/app/js/admin/magazine_delete.js"></script>
+<script src="/app/js/admin/lodgingRoom_delete.js"></script>
 </body>
 </html>
