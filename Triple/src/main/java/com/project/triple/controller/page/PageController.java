@@ -1943,9 +1943,9 @@ public class PageController {
                 .addObject("userid", userid)
                 .addObject("name", name);
 //                .addObject("usersList", usersList)
-//               .addObject("question", questionApiResponseList)
+//                .addObject("question", questionApiResponseList)
 //                .addObject("email",email)
-//                .addObject("idx",idx)
+//                .addObject("idx",idx);
 
     }
     @RequestMapping(path="/admin/admin_login")      //http://localhost:9090/Triple/admin/admin_login
@@ -2402,7 +2402,7 @@ public class PageController {
                 .addObject("name", name)
                 .addObject("lodgingList", lodgingList);
     }
-
+    /* 상품 목록 > 숙소 > 객실 */
     @RequestMapping(path="/admin/lodgingList/view/{idx}")       //http://localhost:9090/Triple/admin/booking/fly/view/{idx}
     public ModelAndView lodgingList_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -2422,6 +2422,7 @@ public class PageController {
                 .addObject("lodging", lodgingApiResponse)
                 .addObject("lodgingRoomList", lodgingRoomList);
     }
+    /* 상품 목록 > 객실 상세보기 */
     @RequestMapping(path="/admin/lodgingRoomList/view/{idx}")       //http://localhost:9090/Triple/admin/lodgingRoomList/view/{idx}
     public ModelAndView lodgingRoomList_view(@PathVariable Long idx, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
