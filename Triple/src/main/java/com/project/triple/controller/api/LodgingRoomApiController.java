@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/room")    // http://localhost:9090/api/magazine  url 주소
+@RequestMapping("/api/room")    // http://localhost:9090/api/room  url 주소
 @RequiredArgsConstructor
 public class LodgingRoomApiController {
 
@@ -36,7 +36,7 @@ public class LodgingRoomApiController {
     {
         lodgingRoomApiLogicService.write(lodgingRoom, file);
 
-        ScriptUtils.alertAndMovePage( response , "객실 등록완료!", "/Triple/admin/lodgingRoomList");
+        ScriptUtils.alertAndMovePage( response , "객실 등록완료!", "/Triple/admin/lodgingList");
         return null;
     }
 

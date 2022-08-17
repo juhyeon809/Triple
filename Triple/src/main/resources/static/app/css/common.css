@@ -8,13 +8,15 @@ body { margin: 0; padding: 0; box-sizing: border-box; font-family: 'notosanskr';
 a { text-decoration-line: none ; }
 a:visited { text-decoration: none; }
 
-#search { margin-left: 390px; display: flex; align-items: center; height: 35px; }
+#search { margin-left: 390px; display: flex; align-items: center; width: 340px; height: 35px; justify-content: space-around}
 #search > button { height: 35px; width: 60px; background-color: #50e3c2; border: none; border-radius: 10px; color: white; font-weight: 700; font-size: 14px; letter-spacing: 1px; margin-left: 10px; height: 30px; width: 50px; }
 
 #logo_area > #logo > a > img{ margin-top: 30px;}
-#menu_form{ margin-top: 40px; padding-right: 20px;}
+#menu_form{ margin-top: 40px; padding-right: 20px; margin-bottom: 0;}
 #login_join > a { color: white; font-weight: bold; font-size: 18px; }
-#login_join { color: white; margin-top: 20px; min-width: 180px; padding-left: 15px;}
+#login_join { color: white; margin-top: 30px; min-width: 180px; padding-left: 15px;}
+
+#logo_area > #logo { height: 86px; }
 
 #logout_mypage > a { color: white; font-weight: bold; font-size: 18px; }
 #logout_mypage { color: white; margin-top: 15px; min-width: 180px; padding-left: 15px;}
