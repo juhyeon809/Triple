@@ -66,4 +66,9 @@ public class RoomReservationApiLogicService extends BaseService<RoomReservationA
        return roomReservationRepository.findAllByRoomId(roomId).stream().map(roomReservation -> response(roomReservation)).collect(Collectors.toList());
     }
 
+    public Header<RoomReservationApiResponse> register(RoomReservation roomReservation){
+        RoomReservationApiResponse roomReservationApiResponse = response(baseRepository.save(roomReservation));
+        return Header.OK(roomReservationApiResponse);
+    }
+
 }

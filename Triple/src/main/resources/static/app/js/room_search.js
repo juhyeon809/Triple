@@ -1,5 +1,5 @@
 $(function(){
-    $(document).on('click', '#search', function(){
+    $(document).on('click', '#formSearch', function(){
 
         let cf = '';
         const query = 'input[name="cf"]:checked';

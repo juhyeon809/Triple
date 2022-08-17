@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -31,8 +32,15 @@ public class RoomReservationApiController extends CrudController<RoomReservation
     @Autowired
     private RoomReservationApiLogicService roomReservationApiLogicService;
 
+
+    @RequestMapping("/register")
+    public String register(HttpServletResponse response , RoomReservation roomReservation) throws IOException {
+        roomReservationApiLogicService.register(roomReservation);
+        ScriptUtils.alertAndMovePage(response,"예약 되었습니다", "/Triple/lodging_company_list");
+        return null;
+    }
     @RequestMapping("/check")
-    public HashMap<String, Object> register(HttpServletResponse response, @RequestBody RoomId roomId) throws Exception {
+    public HashMap<String, Object> check(HttpServletResponse response, @RequestBody RoomId roomId) throws Exception {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
         System.out.println(roomId.getRoomId());
         List<LocalDate> localDates = new ArrayList<>();

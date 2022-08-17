@@ -57,6 +57,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -3258,29 +3260,9 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-<<<<<<< HEAD
-    //방 등록
-    @RequestMapping(path="/room_register")
-    public ModelAndView room_register(HttpServletRequest request){
-        HttpSession session = request.getSession(false);
-        String email = null;
-        String nickname = null;
-        if(session == null){
-
-        }else{
-            email = (String)session.getAttribute("email");
-            nickname = (String)session.getAttribute("nickname");
-        }
-
-
-        return new ModelAndView("/pages/admin/product/room").addObject("email", email)
-                .addObject("nickname", nickname);
-    }
 
     //숙박업체 등록
-    @RequestMapping(path="/lodging_company_register")
-    public ModelAndView lodging_company_register(HttpServletRequest request){
-=======
+
     @RequestMapping(path="/lodging_company_list")
     public ModelAndView lodging_list(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -3362,7 +3344,6 @@ public class PageController {
 
     @RequestMapping(path = "/room_view/{id}")
     public ModelAndView room_view(HttpServletRequest request, @PathVariable Long id){
->>>>>>> 944ac6e1cc5833325ac8f0bb24dee8a2601fa9c0
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
@@ -3373,17 +3354,31 @@ public class PageController {
             nickname = (String)session.getAttribute("nickname");
         }
 
-<<<<<<< HEAD
-
-        return new ModelAndView("/pages/admin/NewRegistration/lodgingCompany").addObject("email", email)
-                .addObject("nickname", nickname);
-=======
         LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(id).getData();
         LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
-
         return new ModelAndView("/pages/lodging_room/lodging_roominfo").addObject("email", email)
                 .addObject("nickname", nickname).addObject("room", lodgingRoomApiResponse).addObject("lodging",lodgingApiResponse);
->>>>>>> 944ac6e1cc5833325ac8f0bb24dee8a2601fa9c0
+    }
+
+    @RequestMapping(path = "/lodging_reservation")
+    public ModelAndView room_reservation(HttpServletRequest request, HttpServletResponse response, String startDate, String endDate, Long roomId)throws IOException{
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+            ScriptUtils.alertAndMovePage(response, "로그인 후 이용하세요", "/Triple/login");
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+        LodgingRoomApiResponse lodgingRoomApiResponse = lodgingRoomApiLogicService.read(roomId).getData();
+        LodgingApiResponse lodgingApiResponse = lodgingApiLogicService.read(lodgingRoomApiResponse.getCompanyId()).getData();
+        Period period = Period.between(LocalDate.parse(startDate), LocalDate.parse(endDate));
+
+
+        return new ModelAndView("/pages/lodging_room/lodging_reservation").addObject("roomInfo", lodgingRoomApiResponse).addObject("start", startDate).addObject("end",endDate)
+                .addObject("lodging",lodgingApiResponse).addObject("period", period.getDays());
     }
 
 }

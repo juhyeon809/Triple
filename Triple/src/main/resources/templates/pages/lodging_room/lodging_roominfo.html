@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 숙소세부</title>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
+    <link rel="stylesheet" href="/app/css/common.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -48,7 +49,6 @@
                 </div>
                 
                 <div id="lg_rm_if_main_2">
-                    <div id="lg_rm_if_main_2_info_right"><a href="/templates/pages/lodging_room/lodging_reservation.html"><div id="lg_rm_if_main_2_info_reservation">예약하기</div></a></div>
                     <div id="lg_rm_if_main_2_info_box">
                         <div class="lg_rm_if_main_2_info_priceinfo">숙박 비용 정보</div>
                         <div id="lg_rm_if_main_2_info_triplememberbox">
@@ -64,9 +64,11 @@
             </div>
         </div>
         <p>선택가능한 날짜</p>
-        <form>
-            <input type="text" id="datepicker1">
-            <input type="text" id="datepicker2">
+        <form th:action="@{/Triple/lodging_reservation}" method="post">
+            <input type="hidden" th:value="${room.getIdx()}" name="roomId">
+            <input type="text" id="datepicker1" name="startDate">
+            <input type="text" id="datepicker2" name="endDate">
+            <input type="submit" value="예약하기" id="lg_rm_if_main_2_info_reservation">
         </form>
         <script>
 
