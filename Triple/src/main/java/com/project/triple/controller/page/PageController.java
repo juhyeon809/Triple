@@ -2625,21 +2625,40 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-//    @RequestMapping(path="/lodging_register")
-//    public ModelAndView lodging_main(HttpServletRequest request){
-//        HttpSession session = request.getSession(false);
-//        String email = null;
-//        String nickname = null;
-//        if(session == null){
-//
-//        }else{
-//            email = (String)session.getAttribute("email");
-//            nickname = (String)session.getAttribute("nickname");
-//        }
-//
-//
-//        return new ModelAndView("/pages/lodging_room/lodging_main").addObject("email", email)
-//                .addObject("nickname", nickname);
-//    }
+    //방 등록
+    @RequestMapping(path="/room_register")
+    public ModelAndView room_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/admin/product/room").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
+
+    //숙박업체 등록
+    @RequestMapping(path="/lodging_company_register")
+    public ModelAndView lodging_company_register(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+
+
+        return new ModelAndView("/pages/admin/NewRegistration/lodgingCompany").addObject("email", email)
+                .addObject("nickname", nickname);
+    }
 
 }

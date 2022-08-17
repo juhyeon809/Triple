@@ -26,20 +26,19 @@ public class Lodging {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_lodging")
     private Long idx;
-    private String type;
-    private String companyNum;
     private String lodgingType;
-    private String companyName;
-    private String introducing;
     private String country;
     private String city;
-    private String address;
-    private String contactHp;
-    private String representative;
-    private String email;
+    private String companyName;
+    private String uploadPath;
+    private String fileName;
+    private String companyInfo;
+    private String introducing;
+    private String basicInfo;
+    private String checkIn;
+    private String checkOut;
+    private String law;
+    private String mainInfo;
     private Integer likeCount;
-    private String homepage;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lodging")
-//    private List<LodgingRoom> lodgingRoomList;
 }
