@@ -47,13 +47,31 @@
             <div class="air_main_passenger_box">
                 <div class="air_main_passenger_info">탑승객 정보</div>
                 <div th:if="${oneway.getAgeType().equals('성인')}" th:each="oneway : ${onewayList}">
+                    <form method="post" th:action="@{/api/onewayReservation/delete}">
                     <div class="air_main_passenger1">탑승객 - 성인<br><span th:text="${oneway.getPassengerName()}">김사과</span></div>
+                        <input type="hidden" name="name" th:value="${oneway.getPassengerName()}">
+                        <input type="hidden" name="email" th:value="${users.getEmail()}">
+                        <input type="hidden" name="idx" th:value="${oneway.getIdx()}">
+                        <div id="cancel_btn_box"><input type="submit" value="항공권 취소"></div>
+                    </form>
                 </div>
                 <div th:if="${oneway.getAgeType().equals('소아')}" th:each="oneway: ${onewayList}">
+                    <form method="post" th:action="@{/api/onewayReservation/delete}">
                     <div class="air_main_passenger1">탑승객 - 소아<br><span th:text="${oneway.getPassengerName()}">김사과</span></div>
+                        <input type="hidden" name="name" th:value="${oneway.getPassengerName()}">
+                        <input type="hidden" name="email" th:value="${users.getEmail()}">
+                        <input type="hidden" name="idx" th:value="${oneway.getIdx()}">
+                        <div id="cancel_btn_box"><input type="submit" value="항공권 취소"></div>
+                    </form>
                 </div>
                 <div th:if="${oneway.getAgeType().equals('유아')}" th:each="oneway: ${onewayList}">
+                    <form method="post" th:action="@{/api/onewayReservation/delete}">
                     <div class="air_main_passenger1">탑승객 - 유아<br><span th:text="${oneway.getPassengerName()}">김사과</span></div>
+                        <input type="hidden" name="name" th:value="${oneway.getPassengerName()}">
+                        <input type="hidden" name="email" th:value="${users.getEmail()}">
+                        <input type="hidden" name="idx" th:value="${oneway.getIdx()}">
+                        <div id="cancel_btn_box"><input type="submit" value="항공권 취소"></div>
+                    </form>
                 </div>
             </div>
             <div class="air_main_passenger_pay">
@@ -68,7 +86,6 @@
                 <!--                    <di th:text="${#numbers.formatInteger(airTicket.price, 1, 'COMMA')}+'원'">57,000원</di>-->
                 <di th:text="${#numbers.formatInteger(((airTicketODT.getPremiumAdultPrice() * adultCount) + (airTicketODT.getPremiumChildPrice() * childCount) + (airTicketODT.getPremiumInfantPrice() * infantCount)), 1, 'COMMA')}+'원'">57,000원</di>
             </div>
-            <a th:href="'/Triple/mypage/reserve/air/cancle/'+${airTicketODT.getIdx()}"><div id="cancel_btn_box"><input type="button" value="예약취소"></div></a>
         </div>
         <div class="air_main_notice">
             - 발권 당일 오후 11시 50분까지 무료취소가 가능하며, 이후 취소시에는 항공권 운임규정에 따라 취소수수료가 부과됩니다.<br>

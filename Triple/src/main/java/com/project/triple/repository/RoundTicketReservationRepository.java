@@ -7,6 +7,7 @@ import com.project.triple.model.entity.Reservation.RoundTicketReservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,4 +30,10 @@ public interface RoundTicketReservationRepository extends JpaRepository<RoundTic
 
     Long countByAgeType(String ageType);
     List<RoundTicketReservation> findAllByOrderByIdxDesc();
+
+    Optional<RoundTicketReservation> findByDepartureTicketId(Long departureTicketId);
+
+    Optional<RoundTicketReservation> findByEmailOrderByIdx(String email);
+
+    RoundTicketReservation findByIdx(Long idx);
 }

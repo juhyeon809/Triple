@@ -3,6 +3,7 @@ package com.project.triple.service.ReservationService;
 import com.project.triple.model.entity.Reservation.Reservation;
 import com.project.triple.model.entity.Reservation.RoundTicketReservation;
 import com.project.triple.model.entity.User.AdminUser;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.RoundTicketReservationApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -65,17 +67,33 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
         return null;
     }
 
-    @Override
-    public Header<RoundTicketReservationApiResponse> delete(Long id) {
-        return null;
+
+    public Header delete3(Long departureTicketId) {
+        Optional<RoundTicketReservation> roundTicketReservation = roundTicketReservationRepository.findByDepartureTicketId(departureTicketId);
+
+        return roundTicketReservation.map(roundTicketReservation1 -> {
+            baseRepository.delete(roundTicketReservation1);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
+    @Override
+    public Header delete(Long idx) {
+        Optional<RoundTicketReservation> roundTicketReservation = baseRepository.findById(idx);
+        return roundTicketReservation.map(roundTicketReservation1 -> {
+            baseRepository.delete(roundTicketReservation1);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
+    }
+
+
+
     public Header<List<RoundTicketReservationApiResponse>> reservation(List<RoundTicketReservation> roundTicketReservationList){
-            List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = new ArrayList<>();
-            for(RoundTicketReservation roundTicketReservation : roundTicketReservationList){
-                RoundTicketReservation roundTicketReservation1 = baseRepository.save(roundTicketReservation);
-                roundTicketReservationApiResponseList.add(response(roundTicketReservation1));
-            }
+        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = new ArrayList<>();
+        for(RoundTicketReservation roundTicketReservation : roundTicketReservationList){
+            RoundTicketReservation roundTicketReservation1 = baseRepository.save(roundTicketReservation);
+            roundTicketReservationApiResponseList.add(response(roundTicketReservation1));
+        }
 
             return Header.OK(roundTicketReservationApiResponseList);
     }
@@ -126,6 +144,8 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
         return Header.OK(roundTicketReservationApiResponse);
     }
 
+
+
         public Header<List<RoundTicketReservationApiResponse>> search(String email){
 
         List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationRepository.findAllByEmail(email).stream()
@@ -159,7 +179,7 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
     }
 
     /* 항공예약티켓 조회 */
-    public Header<List<RoundTicketReservationApiResponse>> search(){
+    public Header<List<RoundTicketReservationApiResponse>> search2(){
         List<RoundTicketReservation> RoundTicketList = roundTicketReservationRepository.findAllByOrderByIdxDesc();
         List<RoundTicketReservationApiResponse> roundTicketApiResponseList = RoundTicketList.stream()
                 .map(roundTicket -> response(roundTicket))
@@ -167,4 +187,43 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
         return Header.OK(roundTicketApiResponseList);
     }
 
+    public Header<RoundTicketReservationApiResponse> search3(Long idx){
+        RoundTicketReservation roundTicketReservation = roundTicketReservationRepository.findByIdx(idx);
+
+        RoundTicketReservationApiResponse roundTicketReservationApiResponse = response(roundTicketReservation);
+
+        return Header.OK(roundTicketReservationApiResponse);
+    }
+
+//    public Header<List<RoundTicketReservationApiResponse>> delete2(Long departureTicketId){
+//        List<RoundTicketReservation> RoundTicketList = roundTicketReservationRepository.deleteByDepartureTicketId(departureTicketId);
+//        List<RoundTicketReservationApiResponse> roundTicketApiResponseList = RoundTicketList.stream()
+//                .map(roundTicket -> response(roundTicket))
+//                .collect(Collectors.toList());
+//        return Header.OK(roundTicketApiResponseList);
+//    }
+
+
+//    public Header delete2(String email) {
+//        Optional<RoundTicketReservation> roundTicketReservation = roundTicketReservationRepository.findByEmailOrderByIdx(email);
+//        return roundTicketReservation.map(roundTicketReservation1 -> {
+//            baseRepository.delete(roundTicketReservation1);
+//            return Header.OK();
+//        }).orElseGet(() -> Header.ERROR("데이터 없음"));
+//    }
+
+    public Header<List<RoundTicketReservationApiResponse>> list(String email){
+        List<RoundTicketReservation> roundTicketReservationList = roundTicketReservationRepository.findAllByEmail(email);
+        List<RoundTicketReservationApiResponse> roundTicketApiResponseList = roundTicketReservationList.stream()
+                .map(roundTicket -> response(roundTicket))
+                .collect(Collectors.toList());
+        return Header.OK(roundTicketApiResponseList);
+    }
+//    public Header<List<RoundTicketReservationApiResponse>> search(String email){
+//
+//        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationRepository.findAllByEmail(email).stream()
+//                .map(roundTicketReservation -> response(roundTicketReservation)).collect(Collectors.toList());
+//
+//        return Header.OK(roundTicketReservationApiResponseList);
+//    }
 }

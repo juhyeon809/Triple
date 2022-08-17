@@ -36,7 +36,7 @@ public class LodgingRoomApiController {
     {
         lodgingRoomApiLogicService.write(lodgingRoom, file);
 
-        ScriptUtils.alertAndMovePage( response , "객실 등록완료!", "/Triple/admin/room_list");
+        ScriptUtils.alertAndMovePage( response , "객실 등록완료!", "/Triple/admin/lodgingRoomList");
         return null;
     }
 

@@ -108,4 +108,12 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
         return lodgingRoomRepository.findAllByCompanyId(id).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList());
     }
 
+    public Header<List<LodgingRoomApiResponse>> search(){
+        List<LodgingRoom> lodgingRoomList = lodgingRoomRepository.findAllByOrderByIdxDesc();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomList.stream()
+                .map(lodgingRoom -> response(lodgingRoom))
+                .collect(Collectors.toList());
+        return Header.OK(lodgingRoomApiResponseList);
+    }
+
 }
