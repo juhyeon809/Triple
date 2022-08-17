@@ -60,7 +60,7 @@
                 <ul class="side-dropdown">
                     <li><a href="/Triple/admin/airLineList">항공권</a></li>
                     <li><a href="/Triple/admin/lodgingList">숙소</a></li>
-
+                    <li><a href="/Triple/admin/lodgingRoomList">객실</a></li>
                     <li><a href="/Triple/admin/packageList">패키지</a></li>
                 </ul>
             </li>
@@ -177,15 +177,17 @@
                         </div>
                         <table>
                             <tr>
-                                <th>문의내역</th>
+                                <th>카테고리</th>
                                 <th>제목</th>
+                                <th>문의내역</th>
                                 <th>작성일</th>
                             </tr>
-<!--                            <tr th:each="question :${question}">-->
-<!--                                <td th:text="${question.getTypeCategory()}">환불요청</td>-->
-<!--                                <td th:text="${question.getTitle()}">환불 부탁드려요</td>-->
-<!--                                <td th:text="${question.getRegDate()}">2022.05.4</td>-->
-<!--                            </tr>-->
+                            <tr th:each="question :${inquiry}">
+                                <td th:text="${question.getTypeCategory()}">환불요청</td>
+                                <td th:text="${question.getTitle()}">환불 부탁드려요</td>
+                                <td th:text="${question.getContent()}" style="text-overflow: ellipsis;">환불 부탁드려요</td>
+                                <td th:text="${question.getRegDate()}">2022.05.4</td>
+                            </tr>
                         </table>
                     </div>
                     <div class="new-post">

@@ -16,7 +16,7 @@ a:visited { text-decoration: none; }
 #login_join > a { color: white; font-weight: bold; font-size: 18px; }
 #login_join { color: white; margin-top: 30px; min-width: 180px; padding-left: 15px;}
 
-#logo_area > #logo { height: 86px; }
+#logo_area > #logo { height: 86px;}
 
 #logout_mypage > a { color: white; font-weight: bold; font-size: 18px; }
 #logout_mypage { color: white; margin-top: 15px; min-width: 180px; padding-left: 15px;}
