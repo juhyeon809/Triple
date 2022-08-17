@@ -61,8 +61,7 @@
             <li><a href="#" style="background-color: white; color:#0098A1;"><i class='bx bx-list-check icon'></i>상품목록<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown show">
                     <li><a href="/Triple/admin/airLineList">항공권</a></li>
-                    <li><a href="/Triple/admin/lodgingList">숙소</a></li>
-                    <li><a href="/Triple/admin/lodgingRoomList" style="color:darkslategray; font-weight: bold;">객실</a></li>
+                    <li><a href="/Triple/admin/lodgingList" style="color:darkslategray; font-weight: bold;">숙소</a></li>
                     <li><a href="/Triple/admin/packageList">패키지</a></li>
                 </ul>
             </li>
@@ -174,11 +173,11 @@
                 <th style="width: 25%;">객실명</th>
                 <th style="width: 30%;">가격</th>
             </tr>
-            <tr th:each="lodgingRoom : ${lodgingRoomList}">
+            <tr th:if ="${lodging.idx == lodgingRoom.companyId}" th:each="lodgingRoom : ${lodgingRoomList}">
                 <td><a th:href="'/Triple/admin/lodgingRoomList/view/'+${lodgingRoom.getIdx()}" th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodging.name}"></a></td>
                 <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.idx}"></td>
-                <td th:text="${lodgingRoom.name}"></td>
-                <td th:text="${lodgingRoom.price}"></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.name}"></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.price}"></td>
             </tr>
         </table>
         <!--숙소리스트 테이블 끝-->
