@@ -1,11 +1,15 @@
 package com.project.triple.service.UserService;
 
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Reservation.RoundTicketReservation;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
 import com.project.triple.model.network.response.MagazineApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -16,9 +20,10 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -121,18 +126,32 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
        return idx;
     }
 
+    public UsersApiResponse findEmail(String email){
+        UsersApiResponse email1 = response(usersRepository.findByEmail(email).get());
+
+        return email1;
+    }
+    public int PwCheck(String userPw){
+        int result = 1;
+
+        if( usersRepository.findByUserpw(userPw).isEmpty()){
+            result = 0;
+        }
+        return result;
+    }
+
     public static void certifiedPhoneNumber(String phoneNumber, String cerNum) {
 
 
-        String api_key = "추가해야함";
-        String api_secret = "추가해야함";
+        String api_key = "";
+        String api_secret = "";
 
         Message coolsms = new Message(api_key, api_secret);
 
         // 4 params(to, from, type, text) are mandatory. must be filled
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("to", phoneNumber);    // 수신전화번호
-        params.put("from", "발신번호입력");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
+        params.put("from", "010-");    // 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
         params.put("type", "SMS");
         params.put("text", "트리플 인증번호는" + "["+cerNum+"]" + "입니다.");
         params.put("app_version", "test app 1.2"); // application name and version
@@ -145,6 +164,23 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
             System.out.println(e.getCode());
         }
 
+    }
+    /*사용자 조회*/
+    public Header<List<UsersApiResponse>> search(){
+        List<Users> usersList = usersRepository.findAllByOrderByIdxDesc();
+        List<UsersApiResponse> usersApiResponseList = usersList.stream()
+                .map(users -> response(users))
+                .collect(Collectors.toList());
+        return Header.OK(usersApiResponseList);
+    }
+
+    public Header<UsersApiResponse> read2(String email) {
+
+        Users users = usersRepository.findAllByEmail(email);
+
+        UsersApiResponse usersApiResponse = response(users);
+
+        return Header.OK(usersApiResponse);
     }
 
 }

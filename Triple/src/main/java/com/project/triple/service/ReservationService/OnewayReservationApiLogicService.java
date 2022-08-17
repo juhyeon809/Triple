@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -71,5 +72,35 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
         }
 
         return Header.OK(onewayReservationApiResponses);
+    }
+
+    public Long findDeparture(String email){
+        Long onewayReservation = onewayReservationRepository.findDepartureTicketId(email).get().getDepartureTicketId();
+
+        return onewayReservation;
+
+    }
+
+    public Header<OnewayReservationApiResponse> read2(String email) {
+
+        OnewayReservation onewayReservation = onewayReservationRepository.findByIdx(email);
+
+        OnewayReservationApiResponse onewayReservationApiResponse = response(onewayReservation);
+
+        return Header.OK(onewayReservationApiResponse);
+    }
+
+    public Header<List<OnewayReservationApiResponse>> search(String email){
+
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationRepository.findAllByEmail(email).stream()
+                .map(onewayReservation -> response(onewayReservation)).collect(Collectors.toList());
+
+        return Header.OK(onewayReservationApiResponseList);
+    }
+
+    public Long ageCount(String ageType){
+        Long ageCount = onewayReservationRepository.countByAgeType(ageType);
+
+        return ageCount;
     }
 }

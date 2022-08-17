@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 )
 @Builder
 @EntityListeners(AuditingEntityListener.class)
+@Table(name = "oneway_reservation")
 public class OnewayReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_oneway_reservation")

@@ -16,94 +16,37 @@
 <div th:replace="fragement/mypageHeader:: mypageHeader"></div>
 <!--헤더끝-->
 
-    <!--메인-->
-    <div class="container_all">
-        <p class="mypage_title">MY PAGE</p>
-        <div>
-            <div class="save_list">
-                <ul >
-                    <li><a href="#">전체도시 |</a></li>
-                    <li><a href="#">가이드 | </a></li>
-                    <li><a href="#">관광 |</a></li>
-                    <li><a href="#">맛집 | </a></li>
-                    <li><a href="#">숙소 |</a></li>
-                    <li><a href="#">투어·티켓</a></li>
-                </ul>
-            </div>
-            <div class="save_box">
-                <div class="save_cont">
-                    <div class="cont_text">
-                        <p id="te1">
-                            <span id="ti">[제주특가] 윈드 1947 카트</span><br>3만 평 규모의 아시아 최장 길이 코스 보유!<br>★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)
-                        </p>
-                        <a href="#"><u id="memo" onclick="memo_box()">메모 남기기</u></a>
-                        <div>
-                            <form id="memo_box">
-                                <input type="text" placeholder="메모를 입력하세요" id="me_te">
-                                <br>
-                                <div class="btn_box">
-                                    <a href="/templates/pages/mypage/mysave/my_save_main.html" id="mbtn2">취소
-                                    </a>
-                                    <a href="/templates/pages/mypage/mysave/my_save_done.html" id="mbtn2" onclick="memobtn1()">
-                                    |&nbsp; 확인
-                                    </a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
-                    </div>
+<!--메인-->
+<div class="container_all">
+    <p class="mypage_title">MY PAGE</p>
+    <div>
+        <div class="save_list">
+            <ul >
+                <li><a href="/Triple/mypage/mysave">전체도시 |</a></li>
+                <li><a href="/Triple/mypage/mysave/guide">가이드 | </a></li>
+                <li><a href="/Triple/mypage/mysave/spot">관광 |</a></li>
+                <li><a href="/Triple/mypage/mysave/restaurant">맛집 | </a></li>
+                <li><a href="/Triple/mypage/mysave/lodging">숙소 |</a></li>
+                <li><a href="/Triple/mypage/mysave/tour">투어·티켓</a></li>
+            </ul>
+        </div>
+        <div class="save_box">
+            <div class="save_cont" th:each="mysave : ${mysaveList}">
+                <div class="cont_text">
+                    <p id="te1">
+                        <span id="ti" th:text="'[ '+${mysave.getSaveType()}+' ] '+${mysave.getTitle()} " ></span><br><span th:text="${mysave.getSummary()}">3만 평 규모의 아시아 최장 길이 코스 보유!</span><br><span th:text="${mysave.getLocation()}">★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)</span>
+                    </p>
+                    <a href="/templates/pages/mypage/mysave/my_save_done.html"><u id="memo">메모 남기기</u></a>
+                    <a href="/templates/pages/mypage/mysave/edit_memo.html"><img src="/lib/img/mypage_img/mysave_img/memo_img.svg"></a>
                 </div>
-                <div class="save_cont">
-                    <div class="cont_text">
-                        <p id="te1">
-                            <span id="ti">[제주특가] 윈드 1947 카트</span><br>3만 평 규모의 아시아 최장 길이 코스 보유!<br>★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)
-                        </p>
-                        <a href="#"><u id="memo" >메모 남기기</u></a>
-                        
-                    </div>
-                    <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
-                    </div>
-                </div>
-                <div class="save_cont">
-                    <div class="cont_text">
-                        <p id="te1">
-                            <span id="ti">[제주특가] 윈드 1947 카트</span><br>3만 평 규모의 아시아 최장 길이 코스 보유!<br>★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)
-                        </p>
-                        <a href="#"><u id="memo" >메모 남기기</u></a>
-                    </div>
-                    <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
-                    </div>
-                </div>
-                <div class="save_cont">
-                    <div class="cont_text">
-                        <p id="te1">
-                            <span id="ti">[제주특가] 윈드 1947 카트</span><br>3만 평 규모의 아시아 최장 길이 코스 보유!<br>★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)
-                        </p>
-                        <a href="#"><u id="memo" >메모 남기기</u></a>
-                    </div>
-                    <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
-                    </div>
-                </div>
-                <div class="save_cont">
-                    <div class="cont_text">
-                        <p id="te1">
-                            <span id="ti">[제주특가] 윈드 1947 카트</span><br>3만 평 규모의 아시아 최장 길이 코스 보유!<br>★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)
-                        </p>
-                        <a href="#"><u id="memo" >메모 남기기</u></a>
-                    </div>
-                    <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
-                    </div>
+                <div class="cont_img">
+                    <img th:src="@{${mysave.getUploadPath()}}">
                 </div>
             </div>
         </div>
     </div>
-    <!--메인끝-->
+</div>
+<!--메인 끝-->
 
 <!--푸터-->
 <div th:replace="fragement/mypageFooter :: mypageFooter"></div>

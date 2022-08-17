@@ -26,19 +26,25 @@ public class Lodging {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_lodging")
     private Long idx;
-    private String lodgingType;
+    private String type;
     private String country;
     private String city;
-    private String companyName;
+    private Integer rank;
+    private String name;
     private String uploadPath;
     private String fileName;
-    private String companyInfo;
+    private String info;
     private String introducing;
-    private String basicInfo;
+    private String address;
     private String checkIn;
     private String checkOut;
-    private String law;
-    private String mainInfo;
-    private Integer likeCount;
+    private String policy;
+    private String cf;
+    private String moreInfo;
+    private Integer reviewCount;
+    private Integer totalStar;
+    private Double starCount;
+    private Integer cheapestPrice;
+
 
 }

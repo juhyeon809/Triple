@@ -8,6 +8,7 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.GuideRequest.GuideReviewApiRequest;
 import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
 import com.project.triple.model.network.response.GuideResponse.GuideReviewApiResponse;
+import com.project.triple.model.network.response.RestaurantResponse.RestaurantReviewApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
 import com.project.triple.repository.GuideRepository;
 import com.project.triple.repository.GuideReviewRepository;
@@ -145,5 +146,18 @@ public class GuideReviewApiLogicService extends BaseService<GuideReviewApiReques
         List<GuideReviewApiResponse> guideApiResponseList = guideReviewRepository.findAllByPostId(id).stream().map( guideReview-> response(guideReview)).collect(Collectors.toList());
 
         return Header.OK(guideApiResponseList);
+    }
+
+    public Header<List<GuideReviewApiResponse>> findEmail(String email){
+        List<GuideReviewApiResponse> guideReviewApiResponseList = guideReviewRepository.findAllByUserEmail(email).stream()
+                .map(guideReview -> response(guideReview)).collect(Collectors.toList());
+
+        return Header.OK(guideReviewApiResponseList);
+    }
+
+    public Long findPostId(String email){
+        Long postId = guideReviewRepository.findByUserEmail(email).get().getPostId();
+
+        return postId;
     }
 }

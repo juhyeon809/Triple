@@ -8,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPLE | 숙소세부</title>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
-    <link rel="stylesheet" href="/app/css/common.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/app/js/datepicker.js"></script>
 </head>
 <body>
     <div id="backg_image_area">
@@ -22,6 +23,7 @@
     </div>
     <!--main 시작-->
     <main>
+        <input type="hidden" th:value="${room.getIdx()}" id="roomId">
         <div id="loadging_info">
             <div id="lodging_img">
                 <img src="/lib/img/lodging_room_img/roomreservation.png" alt="객실정보">
@@ -29,47 +31,46 @@
             <div id="lg_rm_if_main">
                 <div id="lg_rm_if_main_1">
                     <div id="lg_rm_if_main_1_setting">
-                        <div id="lg_rm_if_main_1_lodging">리조트</div>
-                        <div id="lg_rm_if_main_1_star">5성급</div>
+                        <div id="lg_rm_if_main_1_lodging" th:text="${lodging.getType()}"></div>
+                        <div id="lg_rm_if_main_1_star" th:text="${lodging.getRank()} +'성급'"></div>
                         <div id="">
                         </div>
                     </div>
                     
                     <div id="lg_rm_if_main_1_info">
                         <div id="lg_rm_if_main_1_info_left">
-                            <div id="lg_rm_if_main_1_info_name">프리미어 트윈룸, 오션프론트</div>
-                            <div id="lg_rm_if_main_1_info_room">
-                                싱글침대 2개<br>바다 전망<br>금연
+                            <div id="lg_rm_if_main_1_info_name" th:text="${room.getName()}"></div>
+                            <div id="lg_rm_if_main_1_info_room" th:text="${room.getBed()}+ ${room.getWidth()}+${room.getRoomCapacity()}+${room.getRoomView()}+${room.getSmoking()}">
                             </div>
-                            <div id="lg_rm_if_main_1_info_policy"><a href="#">무료취소</a> | <a href="#">쿠폰할인</a> | <a href="#">트리플 회원가</a><br>1박, 세금포함</div>
+                            <div id="lg_rm_if_main_1_info_policy"><a href="#"  th:if="${lodging.getCf().contains('무료취소')}">무료취소</a> | <a href="#">쿠폰할인</a> | <a href="#">트리플 회원가</a><br>1박, 세금포함</div>
                         </div>
                     </div>
                 </div>
                 
                 <div id="lg_rm_if_main_2">
                     <div id="lg_rm_if_main_2_info_right"><a href="/templates/pages/lodging_room/lodging_reservation.html"><div id="lg_rm_if_main_2_info_reservation">예약하기</div></a></div>
-
                     <div id="lg_rm_if_main_2_info_box">
-                        <div class="lg_rm_if_main_2_info_priceinfo">예상 결제 금액 정보</div>
-                        <div id="lg_rm_if_main_2_info_date">6-18.(토) - 6.19(일) <span>1박</span></div>
+                        <div class="lg_rm_if_main_2_info_priceinfo">숙박 비용 정보</div>
                         <div id="lg_rm_if_main_2_info_triplememberbox">
                             <div id="lg_rm_if_main_2_info_triplemember">트리플 회원가</div>
-                            <div id="lg_rm_if_main_2_info_triplemember_price">428,247원</div>
+                            <div id="lg_rm_if_main_2_info_triplemember_price" th:text=" '1박당' + ${room.getPrice()} + '원'"></div>
                         </div>
                         <div id="lg_rm_if_main_2_info_couponbox">
                             <div id="lg_rm_if_main_2_info_coupon">쿠폰할인</div>
                             <div id="lg_rm_if_main_2_info_coupon_discount">-25,695원<br>(해외 얼리버드 할인 쿠폰)</div>
                         </div>
                     </div>
-
-                    <div id="lg_rm_if_main_2_info_pricebox">
-                        <div class="lg_rm_if_main_2_info_priceinfo">총금액</div>
-                        <div id="lg_rm_if_main_2_info_price"><span>6%</span> 402,552원</div>
-                    </div>
                 </div>
             </div>
         </div>
+        <p>선택가능한 날짜</p>
+        <form>
+            <input type="text" id="datepicker1">
+            <input type="text" id="datepicker2">
+        </form>
+        <script>
 
+        </script>
         <div id="lg_rm_if_sub">
             <div id="lg_rm_if_subb">
                 <div id="lg_rm_if_sub_1">
@@ -77,29 +78,28 @@
                     <div class="if_sub_2">
                         ∙ 총 금액은 세금이 포함된 결제 예상 금액입니다.<br>
                         ∙ 보유한 쿠폰 중 최대로 할인되는 쿠폰이 자동 적용됩니다.<br>
-                        ∙ 다음의 경우, 추가 요금이 발생해 현장에서 결제가 필요할 수 있습니다.<br>&nbsp;&nbsp;(기준 인원보다 많은 인원이 투숙, 혜택에 포함되지 않은 부가서비스 이용, 해외 일부 지역의 도시세 및 리조트 피 등) 
+                        ∙ 다음의 경우, 추가 요금이 발생해 현장에서 결제가 필요할 수 있습니다.<br>&nbsp;&nbsp;(기준 인원보다 많은 인원이 투숙, 혜택에 포함되지 않은 부가서비스 이용, 해외 일부 지역의 도시세 및 리조트 피 등)
                         </div>
                 </div>
 
                 <div id="lg_rm_if_sub_2">
                     <div class="if_sub_1">취소 규정</div>
                     <div class="if_sub_2">
-                        ∙ 6.18 (토)까지 무료 취소 가능 
+                        ∙ 6.18 (토)까지 무료 취소 가능
                     </div>
                 </div>
 
                 <div id="lg_rm_if_sub_3">
                     <div class="if_sub_1">객실 혜택</div>
                     <div class="if_sub_2">
-                        ∙ 무료 와이파이 
+                        ∙ 무료 와이파이
                     </div>
                 </div>
-                
+
                 <div id="lg_rm_if_sub_4">
                     <div class="if_sub_1">체크인 / 체크아웃 시간 </div>
                     <div class="if_sub_2">
-                        ∙ <span>체크인</span>&nbsp;&nbsp; | &nbsp;&nbsp;15:00 - 언제든지 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ∙ <span>체크아웃</span>&nbsp;&nbsp; | &nbsp;&nbsp;정오 이전
-
+                        <p th:text="'체크인' + ${lodging.getCheckIn()} + '체크아웃' + ${lodging.getCheckOut()}"></p>
                     </div>
                 </div>
 
@@ -107,8 +107,8 @@
                     <div class="if_sub_1">어린이 및 엑스트라 베드 </div>
                     <div class="if_sub_2">
                         ∙ 전 연령 아동 이용 가능. 아동(만 11세까지)<br>
-                        ∙ 기존 침대 이용 시 무료의 요금을 지불하게 됩니다.<br> 
-                        ∙ 유아용 침대 제공하지 않음.<br> 
+                        ∙ 기존 침대 이용 시 무료의 요금을 지불하게 됩니다.<br>
+                        ∙ 유아용 침대 제공하지 않음.<br>
                         ∙ 엑스트라베드 제공하지 않음
                         </div>
                 </div>
@@ -117,23 +117,13 @@
                     <div id="if_sub_1_notice">숙소 중요 정보</div>
                     <div id="if_sub_3">
                         <span>특별 체크인 지침</span><br>
-                        이 숙박 시설은 공항에서 교통편을 제공합니다(별도의 요금이 적용될 수 있음). 픽업 서비스를 이용하려면 예약 확인 메일에 나와 있는 연락처 정보로 도착 48시간 전 숙박 시설에 연락하여 도착 세부 사항을 알려주시기 바랍니다. 도착 시 프런트 데스크 직원이 도와드립니다. 자세한 내용은 예약 확인 메일에 나와 있는 연락처 정보로 숙박 시설에 문의해 주시기 바랍니다.
                     </div>
                     <div id="if_sub_4">
                         <span>알려드릴 사항</span><br>
-                        이 숙박 시설은 현재 강화된 청소 및 고객 안전 조치를 시행중입니다.<br>
-                        숙박 시설 청소에 소독제를 사용합니다.<br>
-                        고객에게 개인 보호 장비(마스크 포함) 제공이 가능합니다.<br>
-                        고객의 안전을 위해 사회적 거리두기, 숙박 시설 직원의 개인 보호 장비 착용, 고객에게 손 소독제 제공 등의 조치를 시행 중입니다.<br>
-                        비대면 체크아웃 서비스를 이용하실 수 있습니다.<br>
-                        각 객실은 예약 간에 최소 72시간 동안 공실로 유지됩니다.
+                        <p th:text="${lodging.getMoreInfo()}"></p>
                     </div>
                     <div id="if_sub_5">
                         <span>기타 요금 안내</span><br>
-                        서비스 이용 시 또는 체크인/체크아웃 시 숙박 시설 측에서 청구하는 요금 및 보증금은 다음과 같습니다.<br>
-                        뷔페 아침 식사 요금 : 성인 USD 32.00, 어린이 USD 17.05(대략적인 금액) | 공항 셔틀 요금 : 차량 1대당 USD 80(편도)<br>
-                        <br>
-                        위 목록에 명시되지 않은 다른 항목이 있을 수 있습니다. 요금 및 보증금은 세전 금액일 수 있으며 변경될 수 있습니다.
                     </div>
                 </div>
 

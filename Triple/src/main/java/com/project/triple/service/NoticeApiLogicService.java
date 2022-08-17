@@ -73,7 +73,7 @@ public class NoticeApiLogicService extends BaseService<NoticeApiRequest, NoticeA
 
         return notice.map(
                         notice1 -> {
-//                            notice1.setNoticeType(noticeApiRequest.getNoticeType());
+                            notice1.setNoticeType(noticeApiRequest.getNoticeType());
                             notice1.setTitle(noticeApiRequest.getTitle());
                             notice1.setContent(noticeApiRequest.getContent());
                             notice1.setFileName(noticeApiRequest.getFileName());

@@ -82,4 +82,17 @@ public class SpotReviewApiLogicService extends BaseService<SpotReviewApiRequest,
 
         return Header.OK(reviewApiResponseList);
     }
+
+    public Header<List<SpotReviewApiResponse>> findEmail(String email){
+        List<SpotReviewApiResponse> spotReviewApiResponseList = spotReviewRepository.findAllByUserEmail(email).stream()
+                .map(spotReview -> response(spotReview)).collect(Collectors.toList());
+
+        return Header.OK(spotReviewApiResponseList);
+    }
+
+    public Long findPostId(String email){
+        Long postId = spotReviewRepository.findByUserEmail(email).get().getPostId();
+
+        return postId;
+    }
 }

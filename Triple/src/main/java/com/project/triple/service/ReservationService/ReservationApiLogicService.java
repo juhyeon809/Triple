@@ -1,10 +1,12 @@
 package com.project.triple.service.ReservationService;
 
 import com.project.triple.model.entity.Reservation.Reservation;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.TicketType;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.ReservationApiRequest;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.ReservationRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -102,6 +104,15 @@ public class ReservationApiLogicService extends BaseService<ReservationApiReques
 //                .map(reservation -> response(reservation)).collect(Collectors.toList());
 //        return Header.OK(reservationApiResponseList);
 //    }
+
+    /*예약 조회*/
+    public Header<List<ReservationApiResponse>> search(){
+        List<Reservation> reservationList = reservationRepository.findAllByOrderByIdxDesc();
+        List<ReservationApiResponse> reservationApiResponseList = reservationList.stream()
+                .map(reservation -> response(reservation))
+                .collect(Collectors.toList());
+        return Header.OK(reservationApiResponseList);
+    }
 
 
 }

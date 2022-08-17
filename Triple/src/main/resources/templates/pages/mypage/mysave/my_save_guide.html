@@ -32,6 +32,7 @@
             </div>
             <div class="save_box">
                 <div class="save_cont" th:each="mysave : ${mysaveList}">
+                    <a th:href="'/Triple/spot_location/view/'+${mysave.getItemNum()}+'/1'">
                     <div class="cont_text">
                         <p id="te1">
                             <span id="ti" th:text="'[ '+${mysave.getSaveType()}+' ] '+${mysave.getTitle()} " ></span><br><span th:text="${mysave.getSummary()}">3만 평 규모의 아시아 최장 길이 코스 보유!</span><br><span th:text="${mysave.getLocation()}">★★★★★ 5 저장 1,019 | 바로사용, 액티비티 | 제주(서귀포)</span>
@@ -40,8 +41,9 @@
                         <a href="/templates/pages/mypage/mysave/edit_memo.html"><img src="/lib/img/mypage_img/mysave_img/memo_img.svg"></a>
                     </div>
                     <div class="cont_img">
-                        <img src="/lib/img/mypage_img/mysave_img/save_img.svg">
+                        <img th:src="@{${mysave.getUploadPath()}}">
                     </div>
+                    </a>
                 </div>
             </div>
         </div>

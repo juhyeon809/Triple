@@ -11,13 +11,12 @@ import com.project.triple.model.network.response.AirResponse.AirTicketApiRespons
 import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.service.ReservationService.RoundTicketReservationApiLogicService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -42,4 +41,5 @@ public class RoundReservationApiController extends CrudController<RoundTicketRes
          ScriptUtils.alertAndMovePage(response, "예약이 완료되었습니다" , "/Triple/flightMain");
         return null;
     }
+
 }

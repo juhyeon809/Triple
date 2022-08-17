@@ -3,7 +3,6 @@ console.log("reserve.js 작동중")
 $(function (){
 
     $(document).on('click', '#sendit', function () {
-
         let jsonData = {
             transaction_time: new Date(),
             resultCode: "ok",
@@ -15,6 +14,7 @@ $(function (){
                 location: $('#location').val(),
                 title: $('#title').val(),
                 summary: $('#summary').val(),
+                uploadPath: $('#uploadPath').val(),
                 saveYn: 'Y'
             }
         }
@@ -29,8 +29,8 @@ $(function (){
                 location.reload();
             },
             error: function () {
-                alert('저장실패!');
-                location.reload();
+                alert('로그인 후 이용하세요!');
+                location.href="/Triple/login";
             }
         })
 

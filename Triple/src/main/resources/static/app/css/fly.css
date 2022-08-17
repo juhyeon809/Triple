@@ -258,7 +258,7 @@ input[type="button"]{ width: 100px;}
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+
 }
 
 .special .imgbox {
@@ -269,6 +269,7 @@ input[type="button"]{ width: 100px;}
     padding: 0;
     box-sizing: border-box;
     float: left;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
 .special .imgbox:nth-child(6){

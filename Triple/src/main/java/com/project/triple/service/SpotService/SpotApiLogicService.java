@@ -1,9 +1,14 @@
 package com.project.triple.service.SpotService;
 
+import com.project.triple.model.entity.Guide.Guide;
+import com.project.triple.model.entity.QnA.Question;
 import com.project.triple.model.entity.Restaurant.Restaurant;
 import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.SpotRequest.SpotApiRequest;
+import com.project.triple.model.network.response.GuideResponse.GuideApiResponse;
+import com.project.triple.model.network.response.QnAResponse.QuestionApiResponse;
+import com.project.triple.model.network.response.RestaurantResponse.RestaurantApiResponse;
 import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.SpotRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -81,8 +86,11 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
 
     @Override
     public Header<SpotApiResponse> delete(Long id) {
-        return null;
+        Spot spot = spotRepository.findById(id).get();
+        baseRepository.delete(spot);
+        return Header.OK();
     }
+
 
     public void write(Spot spot, MultipartFile img1, MultipartFile img2, MultipartFile img3, MultipartFile img4, MultipartFile img5) throws Exception{
 
@@ -121,7 +129,24 @@ public class SpotApiLogicService extends BaseService<SpotApiRequest, SpotApiResp
     }
 
     public Header<List<SpotApiResponse>> list() {
-        List<SpotApiResponse> spotApiResponseList = spotRepository.findAll().stream().map(spot -> response(spot)).collect(Collectors.toList());
+        List<SpotApiResponse> spotApiResponseList = spotRepository.findAllByOrderByIdxDesc().stream().map(spot -> response(spot)).collect(Collectors.toList());
+        return Header.OK(spotApiResponseList);
+    }
+
+    public Header<SpotApiResponse> read3(Long postId) {
+
+        Spot spot = spotRepository.findByIdx(postId);
+
+        SpotApiResponse spotApiResponse = response(spot);
+
+        return Header.OK(spotApiResponse);
+    }
+
+    public Header<List<SpotApiResponse>> search(){
+        List<Spot> spotList = spotRepository.findAllByOrderByIdxDesc();
+        List<SpotApiResponse> spotApiResponseList = spotList.stream()
+                .map(spot -> response(spot))
+                .collect(Collectors.toList());
         return Header.OK(spotApiResponseList);
     }
 }

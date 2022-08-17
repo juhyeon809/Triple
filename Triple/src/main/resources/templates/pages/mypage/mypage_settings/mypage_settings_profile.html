@@ -74,25 +74,24 @@
         <div id="main_content_box">
             <div id="profile_box">
 
-                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${nickname}"></p>
+                <p><img src="/lib/img/mypage_img/settings_img/triple_london.svg" alt="" th:text="${session.nickname}"></p>
             </div>
             <div id="account_name">
                 <p class="title_p">연결된 계정</p>
-                <p class="subtitle_p" th:text="${email}"></p>
+                <p class="subtitle_p" th:text="${session.email}"></p>
             </div>
             <form method="post" id="deleteForm">
-            <form method="post">
                 <input type="hidden" name="_method" value="put" />
                 <input type="hidden" id="idx" th:value="${idx}"/>
                 <p></p>
                 <table>
                     <tr>
                         <td>닉네임</td>
-                        <td><input type="text" name="nickname" id="nickname"></td>
+                        <td><input type="text" name="nickname" id="nickname" th:value="${nickname}"></td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password" name="userpw" id="userpw"></td>
+                        <td><input type="password" name="userpw" id="userpw" th:value="${users?.userpw}"></td>
                     </tr>
                     <tr>
                         <td>비밀번호 확인</td>
@@ -100,7 +99,7 @@
                     </tr>
                     <tr>
                         <td>연락처</td>
-                        <td><input type="text" name="hp" id="hp"></td>
+                        <td><input type="text" name="hp" id="hp" th:value="${users?.hp}"></td>
                     </tr>
                     <tr>
                         <td>이메일</td>
@@ -108,19 +107,19 @@
                     </tr>
                     <tr>
                         <td>우편번호</td>
-                        <td><input type="text" name="zipcode" id="sample6_postcode" maxlength="5" readonly><input type="button" value="우편번호 검색" onclick="sample6_execDaumPostcode()"></td>
+                        <td><input type="text" name="zipcode" id="sample6_postcode" maxlength="5" th:value="${users?.zipcode}" readonly><input type="button" value="우편번호 검색" onclick="sample6_execDaumPostcode()"></td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td id="address2"><input type="text" name="address1" id="sample6_address"><input type="text" name="address2" id="sample6_detailAddress"></td>
+                        <td id="address2"><input type="text" name="address1" id="sample6_address" th:value="${users?.address1}"><input type="text" name="address2" id="sample6_detailAddress" th:value="${users?.address2}"></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td id="address3"><input type="text" name="address3" id="sample6_extraAddress"></td>
+                        <td id="address3"><input type="text" name="address3" id="sample6_extraAddress" th:value="${users?.address3}"></td>
                     </tr>
                 </table>
                 <div id="form_flex_box">
-                    <div id="back_box"><a href="mypage_settings.html">돌아가기</a></div>
+                    <div id="back_box"><a href="Triple/mypage/settings">돌아가기</a></div>
                     <input type="button" id="sendit" value="수정하기">
                 </div>
             </form>
