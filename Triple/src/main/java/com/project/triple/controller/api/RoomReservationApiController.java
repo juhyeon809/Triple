@@ -49,7 +49,7 @@ public class RoomReservationApiController extends CrudController<RoomReservation
            System.out.println(roomReservationApiResponse.getIdx());
            LocalDate startDate = LocalDate.parse(roomReservationApiResponse.getStartDate(), formatter);
            LocalDate endDate = LocalDate.parse(roomReservationApiResponse.getEndDate(),formatter);
-           List<LocalDate> Dates = startDate.datesUntil(endDate).collect(Collectors.toList());
+           List<LocalDate> Dates = startDate.datesUntil(endDate.plusDays(1)).collect(Collectors.toList());
            for(LocalDate localDate : Dates){
                localDates.add(localDate);
            }
