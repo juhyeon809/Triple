@@ -3137,6 +3137,24 @@ public class PageController {
         return new ModelAndView("/pages/event/event_main").addObject("email", email)
                 .addObject("nickname", nickname).addObject("eventList", eventList);
     }
+    /* 이벤트 > 상세보기 */
+    @RequestMapping(path="/eventList/view/{idx}")       //http://localhost:9090/Triple/eventList/view/{idx}
+    public ModelAndView user_eventList_view(@PathVariable Long idx, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        String email = null;
+        String nickname = null;
+        if(session == null){
+
+        }else{
+            email = (String)session.getAttribute("email");
+            nickname = (String)session.getAttribute("nickname");
+        }
+        EventApiResponse eventApiResponse = eventApiLogicService.read(idx).getData();
+        return new ModelAndView("/pages/event/event_view")
+                .addObject("email", email)
+                .addObject("nickname", nickname)
+                .addObject("event", eventApiResponse);
+    }
 
     //항공기 등록
     @RequestMapping(path = "/aircraft_register")

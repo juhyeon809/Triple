@@ -162,7 +162,7 @@
                 <td><a th:href="'/Triple/admin/eventList/view/'+${event.getIdx()}" th:text="${event.idx}"></a></td>
                 <td th:text="${event.eventType}"></td>
                 <td th:text="${event.title}"></td>
-                <td th:text="${event.regDate}"></td>
+                <td th:text="${#temporals.format(event.getRegDate(), 'yyyy-MM-dd')}"></td>
             </tr>
 
         </table>

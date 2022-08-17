@@ -174,8 +174,8 @@
                 <th style="width: 30%;">가격</th>
             </tr>
             <tr th:if ="${lodging.idx == lodgingRoom.companyId}" th:each="lodgingRoom : ${lodgingRoomList}">
-                <td><a th:href="'/Triple/admin/lodgingRoomList/view/'+${lodgingRoom.getIdx()}" th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodging.name}"></a></td>
-                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.idx}"></td>
+                <td><a th:href="'/Triple/admin/lodgingRoomList/view/'+${lodgingRoom.getIdx()}" th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodging.idx}"></a></td>
+                <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.roomNum}"></td>
                 <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.name}"></td>
                 <td th:if ="${lodging.idx == lodgingRoom.companyId}" th:text="${lodgingRoom.price}"></td>
             </tr>

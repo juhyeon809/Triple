@@ -123,29 +123,31 @@
 <!--사이드바 끝-->
 
 <section class="content2">
-    <!--타이틀-->
-    <div class="header_box">
-        <h2>이벤트 | 상세</h2>
+    <div class="content2-fluid">
+        <!--타이틀-->
+        <div class="header_box">
+            <h2>이벤트 | 상세</h2>
+        </div>
+        <!--타이틀 끝-->
+        <!--이벤트 내용-->
+        <div class="notice_detail">
+            <input type="hidden" id="idx" name="idx" th:value="${event.idx}">
+            <div class="notice_detail_1">[<span th:text="${event.getEventType()}">7월 이벤트</span>] <span th:text="${event.getTitle()}">하노이 여행특가</span></div>
+            <div class="notice_detail_2" th:text="${#temporals.format(event.getRegDate(), 'yyyy-MM-dd')}">2022.06.28</div>
+            <div class="notice_detail_3"><pre th:text="${event.getContent()}">7월을 맞이하여 하노이 여행특가 이벤트를 진행합니다!</pre></div>
+        </div>
+        <!--이벤트 내용 끝-->
+        <!--버튼리스트-->
+        <div class="btnlist">
+            <a th:href="'/Triple/admin/eventList'">
+                <input type="button" value="목록" class="btn">
+            </a>
+            <a th:href="'/Triple/admin/eventList/delete/'+${event.getIdx()}">
+                <input type="button" value="삭제" class="btn" id="delete">
+            </a>
+        </div>
+        <!--버튼리스트 끝-->
     </div>
-    <!--타이틀 끝-->
-    <!--이벤트 내용-->
-    <div class="notice_detail">
-        <input type="hidden" id="idx" name="idx" th:value="${event.idx}">
-        <div class="notice_detail_1">[<span th:text="${event.getEventType()}">7월 이벤트</span>] <span th:text="${event.getTitle()}">하노이 여행특가</span></div>
-        <div class="notice_detail_2" th:text="${event.getRegDate()}">2022.06.28</div>
-        <div class="notice_detail_3" th:text="${event.getContent()}">7월을 맞이하여 하노이 여행특가 이벤트를 진행합니다!</div>
-    </div>
-    <!--이벤트 내용 끝-->
-    <!--버튼리스트-->
-    <div class="btnlist">
-        <a th:href="'/Triple/admin/eventList'">
-            <input type="button" value="목록" class="btn">
-        </a>
-        <a th:href="'/Triple/admin/eventList/delete/'+${event.getIdx()}">
-            <input type="button" value="삭제" class="btn" id="delete">
-        </a>
-    </div>
-    <!--버튼리스트 끝-->
 </section>
 <script src="/app/js/script.js"></script>
 </body>

@@ -163,7 +163,7 @@
                     <td><span th:text="${magazine.adminuserId}"></span>(<span th:text="${magazine.adminuserName}"></span>)</td>
                     <td th:text="${magazine.title}"></td>
                     <td th:text="${magazine.magazineType}"></td>
-                    <td th:text="${magazine.regDate}"></td>
+                    <td th:text="${#temporals.format(magazine.regDate, 'yyyy-MM-dd')}"></td>
                 </tr>
 
             </table>
