@@ -110,7 +110,7 @@
         <p class="title">트리플 숙소 추천</p>
         <div class="item_div_box" th:each="lodging:${lodgingList}">
             <div>
-            <a href="#" class="reco_lodging_back reco_lodging_back1" th:style="'background-image:url(' + ${lodging.getUploadPath()}+');'">
+            <a class="reco_lodging_back reco_lodging_back1" th:href="'/Triple/lodging_view/'+${lodging.getIdx()}">
                 <div class="reco_lodging_item">
                     <p class="reco_lodging_title" th:text="${lodging.getName()}"></p>
                     <p class="reco_lodging_contant" th:text="${lodging.getStarCount()}"> <span th:text="'('+${lodging.getReviewCount()}+')'"></span></p>

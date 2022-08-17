@@ -129,20 +129,9 @@ $(function() {
             return false;
         }
 
-        if(!$('#Certification').val()){
-            alert('인증번호를 입력해주세요');0
-            $('#Certification').focus()
-        }
-
         if($('#email').attr("check_result") == "fail"){
             alert('이메일 중복확인을 해주세요');
             email.focus();
-            return false;
-        }
-
-        if($('#Certification').attr("check_result") == "fail"){
-            alert('번호인증을 해주세요');
-            $('#Certification').focus();
             return false;
         }
 
@@ -170,8 +159,8 @@ $(function() {
                 email: $('#email').val(),
                 userpw: $('#userpw').val(),
                 nickname: $('#nickname').val(),
+                countryCode: $('#countryCode').val(),
                 hp: $('#hp').val(),
-                hpCheck : $('#Certification').val(),
                 zipcode: $('#zipcode').val(),
                 address1: $('#address1').val(),
                 address2: $('#address2').val(),
@@ -222,12 +211,7 @@ window.Swal = swal;
 //문자인증
 $('#phone_btn').click(function(){
     let phoneNumber = $('#hp').val();
-    Swal.fire(
-
-        '인증번호 발송 완료!',
-        '',
-        'success'
-    )
+    Swal.fire('인증번호 발송 완료!')
 
 
     $.ajax({
@@ -244,6 +228,7 @@ $('#phone_btn').click(function(){
                         '휴대폰 인증이 정상적으로 완료되었습니다.',
                         'success'
                     )
+
                     $.ajax({
                         type: "GET",
                         url: "/api/user/update/phone",
@@ -251,45 +236,17 @@ $('#phone_btn').click(function(){
                             "phoneNumber" : $('#Certification').val()
                         }
                     })
-                    $('#Certification').attr("check_result","success");
+
                 }else{
                     Swal.fire({
                         icon: 'error',
                         title: '인증오류',
                         text: '인증번호가 올바르지 않습니다!'
                     })
-                    $('#Certification').attr("check_result","fail");
                 }
             })
 
 
         }
     })
-        $.ajax({
-
-            url: '/api/user/emailCheck',
-            type: 'post',
-            data: {email : email},
-            success:function(cnt){
-                console.log("검사 성공");
-                if(cnt != 1){
-                    alert("사용가능한 이메일입니다.")
-                    $('#email_ok').show();
-                    $('#email_duplicate').hide();
-                    $('#check_need').hide();
-                    $('#email').attr("check_result","success");
-                }else{
-                    alert("중복된 이메일입니다.")
-                    $('#email_ok').hide();
-                    $('#email_duplicate').show();
-                    $('#check_need').hide();
-                    $('#email').attr("check_result","fail");
-                }
-            },
-            error:function(){
-                console.log("검사실패");
-                alert("이메일을 입력해주세요")
-            }
-
-        });
 });
