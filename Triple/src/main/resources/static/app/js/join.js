@@ -129,11 +129,16 @@ $(function() {
             return false;
         }
 
+
         if($('#email').attr("check_result") == "fail"){
             alert('이메일 중복확인을 해주세요');
             email.focus();
             return false;
         }
+        // if(!$('#Certification').val()){
+        //     alert('인증번호를 입력해주세요');0
+        //     $('#Certification').focus()
+        // }
 
         //약관동의 필수선택 확인
         let notice = false
@@ -211,7 +216,10 @@ window.Swal = swal;
 //문자인증
 $('#phone_btn').click(function(){
     let phoneNumber = $('#hp').val();
-    Swal.fire('인증번호 발송 완료!')
+    Swal.fire(
+        '인증번호 발송 완료!',
+        '',
+        'success')
 
 
     $.ajax({

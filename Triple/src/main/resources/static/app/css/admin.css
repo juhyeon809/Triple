@@ -392,10 +392,14 @@ main .content .content-2 .service-center{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    max-width: 1000px;
 }
 main .content .content-2 .service-center table{
     padding: 0 20px;
     text-align: center;
+    table-layout: fixed;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 main .content .content-2 .service-center table tr{
     text-align: center;
@@ -412,6 +416,7 @@ main .content .content-2 .new-post{
 }
 main .content .content-2 .new-post table {
     margin: 0 auto;
+    table-layout: fixed;
 }
 .center-tit{
     display: flex;
@@ -428,16 +433,20 @@ main .content .content-2 .new-post table {
 main table{
     padding: 10px;
 }
-
 main table th,
 main table tr {
-    text-align: left;
+    text-align: center;
     padding: 8px;
     border-bottom: none;
 }
 
+
 main td {
     border-bottom: none;
+    table-layout: fixed;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
 }
 
 /*main끝*/

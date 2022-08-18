@@ -49,6 +49,7 @@
                                 <img th:if="${airTicket.getAirlineName() == '제주항공'}" src="/lib/img/fly_img/jejuair.svg" alt="">
                                 <img th:if="${airTicket.getAirlineName() == '진에어'}" src="/lib/img/fly_img/jinair.svg" alt="">
                                 <img th:if="${airTicket.getAirlineName() == '대한항공'}" src="/lib/img/fly_img/koreaair.svg" alt="">
+                                <img th:if="${airTicket.getAirlineName() == '아시아나항공'}" src="/lib/img/fly_img/Asiana-Airlines-logo_(1).png" alt="">
                             </div>
                             <div>
                                 <p th:text="${airTicket.getAirlineName()} + ' ' + ${airTicket.getAircraftName()}"></p><p th:text="${airTicket.getFlightTime()} + '비행'"></p>

@@ -129,19 +129,16 @@
                     </div>
                     <script>
 
-
                         const time = document.getElementById("time");
                         function getClock(){
                             let now = new Date();	// 현재 날짜 및 시간
                             let year = now.getFullYear();
                             let month = now.getMonth()+1;
-                            let day = now.getDay();
+                            let day = now.getDate();
+
                             time.innerText = `${year}년  ${month <10 ? `0${month}` : month}월 ${day < 10 ? `0${day}` : day}일 `;
                         }
                         getClock();
-
-
-
 
                     </script>
                     <!--무료취소 안내-->

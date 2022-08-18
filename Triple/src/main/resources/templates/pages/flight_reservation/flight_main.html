@@ -78,7 +78,7 @@
                 <li>
                     <img src="/lib/img/fly_img/flying-airplane.png" alt="">
                     <select name="departureAirport" style="width: 89%;">
-                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
+                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}" th:selected="${airport.getAirportName() == '인천국제공항'}"></option>
                     </select>
                     
                 </li>
