@@ -26,10 +26,11 @@ allProgress.forEach(item=> {
 })
 
 function optionChange() {
-    let korea = ['서울', '서귀포','제주','부산','인천','강릉', '속초', '평창','경주','여수'];
+    let korea = ['서울', '서귀포','제주','부산','인천','강릉', '속초', '평창','경주','여수','가평'];
     let japan = ['도쿄', '오사카', '교토', '나라', '나고야', '삿포로','후쿠오카']
     let china = ['상하이', '베이징', '홍통', '칭다오', '광저우', '항저우']
     let southEast = ['방콕','호치민시티','싱가포르','푸켓', '다낭','발리','보라카이','세부','하노이']
+    let guam = ['투몬, 타무닝']
     let v = $('#country_select').val();
     let o;
     if (v == '대한민국') {
@@ -40,6 +41,8 @@ function optionChange() {
         o = china;
     }else if(v == '동남아'){
         o = southEast ;
+    }else if(v == '괌'){
+        o = guam;
     } else{
         o = [];
     }

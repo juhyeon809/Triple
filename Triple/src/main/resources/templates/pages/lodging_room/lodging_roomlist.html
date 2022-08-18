@@ -190,44 +190,44 @@
                 </div>
             </div>
         </div>
-        <div id="location_info">
-            <div id="location_info_1">위치정보</div>
-            <div id="location_info_2">
-                <div id="roomlist_location">
-                    <div id="roomlist_location_box">
-                        <div id="roomlist_location_box_map">
-<!--                            <div id="m1"></div>-->
-<!--                            <div id="m2"></div>-->
-                            <!--                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">-->
-                            <div id="googleMap" style="width: 900px;height: 350px; margin: 0 auto"></div>
-                            <script>
-                                function myMap(){
-                                    var mapOptions = {
-                                        center:new google.maps.LatLng(13.515761893558587, 144.80854004444575),
-                                        zoom:17
-                                    };
+<!--        <div id="location_info">-->
+<!--            <div id="location_info_1">위치정보</div>-->
+<!--            <div id="location_info_2">-->
+<!--                <div id="roomlist_location">-->
+<!--                    <div id="roomlist_location_box">-->
+<!--                        <div id="roomlist_location_box_map">-->
+<!--&lt;!&ndash;                            <div id="m1"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div id="m2"></div>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">&ndash;&gt;-->
+<!--                            <div id="googleMap" style="width: 900px;height: 350px; margin: 0 auto"></div>-->
+<!--                            <script>-->
+<!--                                function myMap(){-->
+<!--                                    var mapOptions = {-->
+<!--                                        center:new google.maps.LatLng(13.515761893558587, 144.80854004444575),-->
+<!--                                        zoom:17-->
+<!--                                    };-->
 
-                                    var map = new google.maps.Map(
-                                        document.getElementById("googleMap")
-                                        , mapOptions );
-                                }
-                            </script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4VADdQwRXmJW57jTDe8W-ROtXyKChiNQ&callback=myMap"></script>
-                        </div>
-                        <div id="roomlist_location_box_location_info">
-                            <div id="loc_info_1">
-                                <div id="roomlist_location_box_location_info_place1">주소</div>
-                                <div id="roomlist_location_box_location_info_place2" th:text="${lodging.getAddress()}">
-                                </div>
-                                <div id="rl1_3"><a th:href="'/Triple/room_view/'+ ${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
-                            </div>
-                        </div>
-                        <div id="roomlist_location_askmap">
-                            <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--                                    var map = new google.maps.Map(-->
+<!--                                        document.getElementById("googleMap")-->
+<!--                                        , mapOptions );-->
+<!--                                }-->
+<!--                            </script>-->
+<!--                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4VADdQwRXmJW57jTDe8W-ROtXyKChiNQ&callback=myMap"></script>-->
+<!--                        </div>-->
+<!--                        <div id="roomlist_location_box_location_info">-->
+<!--                            <div id="loc_info_1">-->
+<!--                                <div id="roomlist_location_box_location_info_place1">주소</div>-->
+<!--                                <div id="roomlist_location_box_location_info_place2" th:text="${lodging.getAddress()}">-->
+<!--                                </div>-->
+<!--                                <div id="rl1_3"><a th:href="'/Triple/room_view/'+ ${room.getIdx()}" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div id="roomlist_location_askmap">-->
+<!--                            <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div id="location_info_1">
                 <div id="location_info_2">
                     <div id="roomlist_location" style="height: 180px; border-bottom: 1px solid #c6c6c6;">
@@ -384,49 +384,49 @@
 <!-- footer 끝 -->
 
 
-<script>
-    var map;
-    var button = document.getElementById('map_button');
-    button.addEventListener('click', changeCenter);
+<!--<script>-->
+<!--    var map;-->
+<!--    var button = document.getElementById('map_button');-->
+<!--    button.addEventListener('click', changeCenter);-->
 
-    function initMap() {
-        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
-        map = new google.maps.Map( document.getElementById('map'), {
-            zoom: 15,
-            center: gyeongbokgung
-        });
+<!--    function initMap() {-->
+<!--        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };-->
+<!--        map = new google.maps.Map( document.getElementById('map'), {-->
+<!--            zoom: 15,-->
+<!--            center: gyeongbokgung-->
+<!--        });-->
 
-        var mainMarker = new google.maps.Marker({
-            position: gyeongbokgung,
-            map: map,
-            label: {
-                text: "경복궁",
-                color: "#C70E20"
-            },
-            icon: {
-                url: "pooh_marker.png",
-                labelOrigin: new google.maps.Point(100, 55)
-            }
-        });
+<!--        var mainMarker = new google.maps.Marker({-->
+<!--            position: gyeongbokgung,-->
+<!--            map: map,-->
+<!--            label: {-->
+<!--                text: "경복궁",-->
+<!--                color: "#C70E20"-->
+<!--            },-->
+<!--            icon: {-->
+<!--                url: "pooh_marker.png",-->
+<!--                labelOrigin: new google.maps.Point(100, 55)-->
+<!--            }-->
+<!--        });-->
 
-        var subMarkerPoint = { lat: 37.57956596361732, lng: 126.9803240214433};
-        var subMarker = new google.maps.Marker({
-            position: subMarkerPoint,
-            map: map,
-            label: "국립현대미술관",
-            icon: {
-                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                labelOrigin: new google.maps.Point(20, 47),
-                anchor: new google.maps.Point(50,32)
-            }
-        });
-    }
+<!--        var subMarkerPoint = { lat: 37.57956596361732, lng: 126.9803240214433};-->
+<!--        var subMarker = new google.maps.Marker({-->
+<!--            position: subMarkerPoint,-->
+<!--            map: map,-->
+<!--            label: "국립현대미술관",-->
+<!--            icon: {-->
+<!--                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",-->
+<!--                labelOrigin: new google.maps.Point(20, 47),-->
+<!--                anchor: new google.maps.Point(50,32)-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
 
-    function changeCenter() {
-        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
-        map.panTo(gyeongbokgung);
-        map.setZoom(15);
-    }
-</script>
+<!--    function changeCenter() {-->
+<!--        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };-->
+<!--        map.panTo(gyeongbokgung);-->
+<!--        map.setZoom(15);-->
+<!--    }-->
+<!--</script>-->
 </body>
 </html>

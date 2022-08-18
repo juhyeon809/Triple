@@ -135,10 +135,10 @@ $(function() {
             email.focus();
             return false;
         }
-        // if(!$('#Certification').val()){
-        //     alert('인증번호를 입력해주세요');0
-        //     $('#Certification').focus()
-        // }
+        if(!$('#Certification').val()){
+            alert('인증번호를 입력해주세요');
+            $('#Certification').focus()
+        }
 
         //약관동의 필수선택 확인
         let notice = false

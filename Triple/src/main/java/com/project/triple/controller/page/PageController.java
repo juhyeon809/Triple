@@ -3413,11 +3413,8 @@ public class PageController {
                 .addObject("nickname", nickname);
     }
 
-<<<<<<< HEAD
-    @RequestMapping(path="/lodging_list")
-=======
+
     @RequestMapping(path="/lodging_company_list")
->>>>>>> 426b8627e522c0eb3eef35f425f68cebd0a33963
     public ModelAndView lodging_list(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String email = null;
