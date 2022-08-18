@@ -195,10 +195,10 @@ public class PageController {
 
         List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
 
-//        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
-//            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
-//            lodgingApiResponse.setCheapestPrice(cheap);
-//        }
+        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
 
         return new ModelAndView("/pages/main").addObject("email", email)
                 .addObject("nickname", nickname).addObject("airportList", airportApiResponseList)
@@ -3420,10 +3420,10 @@ public class PageController {
         }
 
         List<LodgingApiResponse> lodgingApiResponseList = lodgingApiLogicService.list();
-//        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
-//            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
-//            lodgingApiResponse.setCheapestPrice(cheap);
-//        }
+        for(LodgingApiResponse lodgingApiResponse : lodgingApiResponseList){
+            int cheap = lodgingApiLogicService.cheapestPrice(lodgingApiResponse);
+            lodgingApiResponse.setCheapestPrice(cheap);
+        }
 
         return new ModelAndView("/pages/lodging_room/lodging_list").addObject("email", email)
                 .addObject("nickname", nickname).addObject("lodgingList", lodgingApiResponseList);
