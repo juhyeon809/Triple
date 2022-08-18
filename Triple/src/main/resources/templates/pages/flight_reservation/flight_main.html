@@ -77,14 +77,14 @@
             <ul>
                 <li>
                     <img src="/lib/img/fly_img/flying-airplane.png" alt="">
-                    <select name="departureAirport" style="width: 100%;">
+                    <select name="departureAirport" style="width: 89%;">
                         <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                     
                 </li>
                 <li>
                     <img src="/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
-                    <select name="landingAirport" style="width: 91%;">
+                    <select name="landingAirport" style="width: 89%;">
                     <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                 </li>

@@ -441,15 +441,15 @@
 
 #rl1_1, #rl2_1, #rl3_1, #rl4_1{
     font-size: 18px;
-    height: 107px;
-    line-height: 130px;
+    height: 80px;
+    line-height: 100px;
     color: #2680EB;
     font-weight: bold;
 }
 .rl1_1{
     font-size: 18px;
-    height: 107px;
-    line-height: 130px;
+    height: 80px;
+    line-height: 85px;
     color: #2680EB;
     font-weight: bold;
 }
@@ -501,7 +501,20 @@
 #rl1_3, #rl2_3, #rl3_3, #rl4_3{
     height: 94px;
 }
-
+#rl1_3{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+#rl1_3 p {
+    margin-top: 10px;
+}
+#rl1_3 p span{
+    color: #666666;
+    font-weight: bold;
+    font-size: 22px;
+    mar
+}
 .roomlist_roomlist_reservation_info_box_show {
     background-color: #2680EB;
     width: 85px;
@@ -512,8 +525,8 @@
     font-size: 16px;
     font-weight: bold;
     position: relative;
-    left: 142px;
-    line-height: 30px;
+    /*left: 142px;*/
+    line-height: 35px;
     border: 0;
     cursor: pointer;
     top: 8px
@@ -525,15 +538,19 @@
 }
 .roomlist_roomlist_img{
     margin: auto;
+    padding-right: 20px;
 }
-.roomlist_roomlist_img > img, #room_list_3_2_1_2 > img, #room_list_4_2_1_2 > img, #room_list_5_2_1_2 > img{
+.roomlist_roomlist_img > img,
+#room_list_3_2_1_2 > img, #room_list_4_2_1_2 > img, #room_list_5_2_1_2 > img{
     width: 180px;
     /*height: 140px;*/
     border-radius: 5px;
     position: relative;
     /*top: 40px;*/
 }
-
+.roomlist_roomlist_img > img{
+    height: 170px;
+}
 #location_info{
     clear:both;
     height: 1860px;
