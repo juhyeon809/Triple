@@ -247,6 +247,13 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         Long companyId = lodgingApiResponse.getIdx();
         List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.same_company(companyId);
         int leastPrice = lodgingRoomApiResponseList.get(0).getPrice();
+        if(lodgingRoomApiResponseList.size()!=0){
+
+            lodgingRoomApiResponseList.get(0).getName();
+        }
+        if(!lodgingRoomApiResponseList.isEmpty()){
+
+        }
         for(LodgingRoomApiResponse lodgingRoomApiResponse : lodgingRoomApiResponseList){
             if(lodgingRoomApiResponse.getPrice() < leastPrice){
                 leastPrice=lodgingRoomApiResponse.getPrice();

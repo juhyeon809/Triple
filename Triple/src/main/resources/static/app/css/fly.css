@@ -36,6 +36,9 @@
     height: 350px;
     margin: 0 auto 100px;
 }
+#flybox select{
+    padding-left: 20px;
+}
 .flybox > ul {
     margin: 0 auto;
     list-style: none;

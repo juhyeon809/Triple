@@ -118,7 +118,7 @@
                         <div class="lg_rm_if_main_2_info_priceinfo">숙박 비용 정보</div>
                         <div id="lg_rm_if_main_2_info_triplememberbox">
                             <div id="lg_rm_if_main_2_info_triplemember">트리플 회원가</div>
-                            <div id="lg_rm_if_main_2_info_triplemember_price" th:text="'1박당' + ${room.getPrice()} + '원'"></div>
+                            <div id="lg_rm_if_main_2_info_triplemember_price" th:text="'1박당'+'   '  + ${room.getPrice()} + '원'"></div>
                         </div>
                         <div id="lg_rm_if_main_2_info_couponbox">
 <!--                            <div id="lg_rm_if_main_2_info_coupon">쿠폰할인</div>-->
@@ -171,7 +171,7 @@
                 <div id="lg_rm_if_sub_4">
                     <div class="if_sub_1">체크인 / 체크아웃 시간 </div>
                     <div class="if_sub_2">
-                        <p th:text="'체크인' + ${lodging.getCheckIn()} + '체크아웃' + ${lodging.getCheckOut()}"></p>
+                        <p th:text="'체크인' + ${lodging.getCheckIn()}+'   ' + '체크아웃' + ${lodging.getCheckOut()}"></p>
                     </div>
                 </div>
 
