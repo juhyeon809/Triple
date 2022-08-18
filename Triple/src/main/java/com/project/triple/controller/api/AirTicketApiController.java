@@ -34,7 +34,7 @@ public class AirTicketApiController extends CrudController< AirTicketApiRequest,
     @PostMapping("/register")
     public Header<AirTicketApiResponse> create(HttpServletResponse response , AirTicket airTicket) throws IOException {
         airTicketApiLogicService.write(airTicket);
-        ScriptUtils.alertAndMovePage(response ,"항공권 등록 완료","/Triple");
+        ScriptUtils.alertAndMovePage(response ,"항공권 등록 완료","/Triple/admin/airLineList");
 
         return null;
     }

@@ -252,13 +252,15 @@ public class PageController {
             session.setAttribute("email",null);
             session.setAttribute("nickname", null);
 
-            ScriptUtils.alert(response, "탈퇴 성공" );
-            return new ModelAndView("/pages/main");
+            ScriptUtils.alertAndMovePage(response, "탈퇴 성공" , "/Triple");
+            return null;
 
 
         }else{
-            ScriptUtils.alert(response, "실패, 비밀번호를 다시 확인해주세요");
-            return new ModelAndView("/pages/login");
+            ScriptUtils.alertAndMovePage(response, "실패, 비밀번호를 다시 확인해주세요","/Triple/mypage/settings/serviceOut");
+
+
+            return null;
 
         }
     }
@@ -1885,7 +1887,7 @@ public class PageController {
         guideReviewApiLogicService.delete2(id, id2);
 
 
-        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot/location/view/" + id2 + "/1");
+        ScriptUtils.alertAndMovePage(response,"삭제되었습니다", "/Triple/spot_location/view/" + id2 + "/1");
         return null;
     }
 

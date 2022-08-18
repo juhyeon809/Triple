@@ -796,9 +796,10 @@ color: #666666;
 }
 .review_content .review_context {
     width: 700px;
+    margin-left: 40px;
 }
 .review_content .review_context p {
-    margin: 0;
+    margin-left: 20px;
 }
 
 .pageList p{
@@ -830,8 +831,13 @@ color: #666666;
 }
 
 .image_area img {
+<<<<<<< HEAD
+    width: 400px;
+    height: 210px;
+=======
     width: 350px;
     border-radius: 10px;
+>>>>>>> 954a62462cf5d8ecea22db13e0910a0d8e1a4fa7
 }
 .restaurant_flex_box {
     display: flex;
@@ -853,6 +859,7 @@ color: #666666;
 
 
 /*tour_spot_info*/
+
 
 .tour_spot_img {
     width: 1000px;
@@ -1200,6 +1207,15 @@ hr {
     background-image: url("/member/travel_spot_img/spotpackage.png");
     border-radius: 10px;
 } */
+
+.review_content p {
+    width: 100px;
+}
+.review_context p {
+    width: 400px;
+    margin-left : 40px;
+    margin-top : 10px;
+}
 
 .travel_spot_package > a >.imgbox {
     width: 175px; 
