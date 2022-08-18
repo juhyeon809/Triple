@@ -39,6 +39,7 @@ public class Mysave {
     private String location;
     private String title;
     private String summary;
+    private String uploadPath;
 
 //    @ManyToOne
 //    private Users users;

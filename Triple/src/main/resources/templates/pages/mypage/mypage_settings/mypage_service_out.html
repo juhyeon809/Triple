@@ -36,7 +36,7 @@
                 <p class="content_con">7. 공유 일정 및 리뷰, 사진 유지</p>
                 <hr>
                 <form method="post" action="/Triple/serviceOut">
-                    <p><input type="password" name="userpw" id="userpw" placeholder="탈퇴를 원하시면 비밀번호를 입력해주세요"></p>
+                    <p><input type="password" name="userpw" id="userpw" placeholder="탈퇴를 원하시면 비밀번호를 입력해주세요" check_result="fail"><input type="button" id="pwcheck" value="확인"></p>
                     <p><input type="submit" id="sendit" value="탈퇴합니다"/></p>
                 </form>
             </div>
@@ -47,5 +47,29 @@
 <!--푸터-->
 <div th:replace="fragement/mypageFooter :: mypageFooter"></div>
 <!--푸터 끝-->
+
+<script>
+    $(document).on('click', '#pwcheck', function () {
+    $.ajax({
+        url : "/api/user/pwCheck",
+        method : "post",
+        data : $('#userpw').serializeArray(),
+        success : function(check) {
+            if (check != 1) {
+                alert("비밀번호를 다시 입력해주세요");
+                $("#sendit").css({"backgroundColor" : "rgb(187, 187, 187)"});
+                $('#userpw').attr("check_result","fail");
+            } else {
+                $("#sendit").css({"backgroundColor" : "#50e3c2"});
+                $('#userpw').attr("check_result","success");
+            }
+        },
+        error : function(xhr) {
+            alert("에러코드 = " + xhr.status);
+        }
+    });
+    });
+
+</script>
 </body>
 </html>

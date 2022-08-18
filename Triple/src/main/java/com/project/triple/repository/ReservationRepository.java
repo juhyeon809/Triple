@@ -2,6 +2,7 @@ package com.project.triple.repository;
 
 import com.project.triple.model.entity.Coupon.UserCoupon;
 import com.project.triple.model.entity.Reservation.Reservation;
+import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.TicketType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     Reservation findByIdx(Long idx);
 
     Reservation findByTicketNum(String ticketNum);
+
+    List<Reservation> findAllByOrderByIdxDesc();
 }

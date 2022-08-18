@@ -110,10 +110,10 @@ $(function (){
 })
 function cancel1(){
     if(!confirm("정말 취소하시겠습니까?\n취소하시려면 확인을 눌러주세요.")){
-        location.href='/Triple/mypage/reserve/air';
+        location.href='';
     }else{
         alert("취소되었습니다")
-        location.href='/Triple/mypage/reserve/air'
+        location.reload();
     }
 }
 

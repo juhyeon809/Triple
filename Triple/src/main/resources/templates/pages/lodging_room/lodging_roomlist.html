@@ -13,392 +13,419 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        *{
+            font-size: 16px;
+        }
+        .roomlist_roomlist_info_specific{
+            padding-left: 10px;
+        }
+        .roomlist_roomlist_reservation_info_box_price{
+            font-size: 20px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .policy{
+            width: 900px;
+        }
+        #room_list_2{
+            padding-bottom: 30px;
+        }
+        #roomlist_lodgingpolicy{
+            min-width: 400px;
+        }
+        #location_info_2{
+            font-size: 18px;
+            font-weight: bold;
+            color: #425052;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+        #roomlist_location{
+            width: 900px;
+            margin: 0 auto;
+            border-right: none;
+            margin-bottom: 20px;
+            height: 520px;
+        }
+        #roomlist_lodginginfo_list{
+            width: 900px;
+        }
+        #roomlist_lodgingpolicy_checkin_time{
+            height: 50px;
+        }
+        #roomlist_importantinfo_info{
+            width: 900px;
+        }
+        #loc_info_1{
+            width: 900px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+        #roomlist_location_askmap{
+            width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #roomlist_location_findmap{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        #roomlist_lodgingpolicy_checkin, #roomlist_lodgingpolicy_checkout{
+            width: 900px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+        #room_list{
+            min-height: 1200px;
+            overflow: scroll;
+        }
+        #room_list::-webkit-scrollbar{
+            height: 7px;
+            background-color:white;
+            width: 0;
+        }
+        #room_list::-webkit-scrollbar-thumb{
+            height: 7px;
+            background-color:#50E3C2;
+            width: 0;
+            border-radius: 10px;
+            border: 2px solid transparent;
+        }
+        #room_list::-webkit-scrollbar-track{
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px white;
+        }
+    </style>
 </head>
 <body>
-    <div id="backg_image_area">
-        <!--header 시작-->
-        <div th:replace="fragement/header :: header"></div>
-        <!--header 끝-->
+<div id="backg_image_area">
+    <!--header 시작-->
+    <div th:replace="fragement/header :: header"></div>
+    <!--header 끝-->
+</div>
+<!--main 시작-->
+<main>
+    <div id="loadging_info">
+        <div id="lodging_img">
+            <img th:src="@{${lodging.getUploadPath()}}" alt="숙소예약">
+        </div>
+        <div id="lodging_info_main">
+            <div id="lodging_info_main_1">
+                <div id="roomlist_setting">
+                    <div id="roomlist_setting_lodging" th:text="${lodging.getType()}"></div>
+                    <div id="roomlist_setting_star" th:text="${lodging.getRank()} + '성급'"></div>
+                    <div>
+                    </div>
+                </div>
+
+                <div id="roomlist_info_namebox">
+                    <div id="roomlist_info_namebox_name" th:text="${lodging.getName()}"></div>
+                </div>
+                <div id="roomlist_info_function">
+                    <div id="roomlist_info_function_like">
+                        <img src="/lib/img/lodging_room_img/icon_heart.svg" alt="하트아이콘">
+                        <span>3,388</span>
+                        <span class="starpoint" th:text="${lodging.getStarCount()}"></span>
+                        <span th:text=" '(' + ${lodging.getReviewCount()} + ')'" style="color: #7b7b7b"></span>
+                        <a href="#review">리뷰보기 ></a></div>
+                    <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘"><span th:text="${lodging.getAddress()}"></span><a href="#location_info_1">지도보기 ></a></div>
+                    <div id="roomlist_info_function_coupon"><span>쿠폰할인</span> 최대 할인 쿠폰 적용중<div id="aaa"><a href="#">쿠폰받기</a></div></div>
+                    <div id="roomlist_info_function_benefit"><span>결제혜택</span> 카드 결제 최대 1만원 할인 <div id="bbb"><a href="#">혜택보기</a></div></div>
+                </div>
+            </div>
+
+            <div id="lodging_info_main_2">
+                <div id="roomlist_info_reservation">최저가 예약</div>
+                <div id="roomlist_info_reservation_setting">
+                    <div id="roomlist_info_reservation_setting_date" >8-19.(금) - 8-20(토)</div>
+                    <div id="roomlist_info_reservation_setting_person">성인 2</div>
+                </div>
+                <div id="roomlist_info_reservation_priceinfo">
+                    <span id="roomlist_info_reservation_defaultprice" th:text="${lodging.getCheapestPrice()} + '원'"></span><br>
+                </div>
+            </div>
+            <div id="lodging_info_main_3">
+                <a href="/templates/pages/mypage/mysave/my_save_main.html"><div id="roomlist_info_btn_like"><img src="/lib/img/lodging_room_img/icon_save.svg" alt="하트"> 저장하기</div></a>
+                <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="roomlist_info_btn_schedule"><img src="/lib/img/lodging_room_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
+                <a href="/templates/pages/mypage/review/review_write.html"><div id="roomlist_info_btn_writereview"><img src="/lib/img/lodging_room_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
+                <a href="#"><div id="roomlist_info_btn_share"><img src="/lib/img/lodging_room_img/icon_share.svg" alt="공유"> 공유하기</div></a>
+            </div>
+        </div>
     </div>
-    <!--main 시작-->
-    <main>
-        <div id="loadging_info">
-            <div id="lodging_img">
-                <img src="/lib/img/lodging_room_img/roomreservation.png" alt="숙소예약">
-            </div>
-            <div id="lodging_info_main">
-                <div id="lodging_info_main_1">
-                    <div id="roomlist_setting">
-                        <div id="roomlist_setting_lodging">리조트</div>
-                        <div id="roomlist_setting_star">5성급</div>
-                        <div>
+    <div id="lodging_info_sub">
+        <div id="room_list">
+            <div id="room_list_1">객실 목록</div>
+            <div id="room_list_2" name="room_li" th:each="room : ${roomList}">
+                <div class="roomlist_roomlist_info" >
+                    <div class="roomlist_roomlist_name" th:text="${room.getName()}"></div>
+                    <div class="roomlist_roomlist_info_specific">
+                        <p th:text="${room.getBed()}"></p>
+                        <p th:text="${room.getWidth()}"></p>
+                        <p th:text="${room.getRoomCapacity()}"></p>
+                        <p th:text="${room.getRoomView()}"></p>
+                        <p th:text="${room.getSmoking()}"></p>
+                    </div>
+                </div>
+                <div class="roomlist_roomlist_reservation">
+                    <div class="roomlist_roomlist_reservation_info">
+                        <div class="roomlist_roomlist_reservation_info_box">
+                            <div class="rl1_1" th:if="${lodging.getCf().contains('무료취소')}">무료취소</div>
+                            <div class="rl1_1" th:unless="${lodging.getCf().contains('무료취소')}">트리플 한정</div>
+                            <div id="rl1_2">
+                                <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
+                                <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
+                            </div>
+                            <div id="rl1_3">
+                                <div><p class="roomlist_roomlist_reservation_info_box_price"><span th:text="${room.getPrice()}"></span>원</p></div>
+                                <div><a th:href="'/Triple/room_view/' + ${room.getIdx()}"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
+                            </div>
                         </div>
+                        <div class="roomlist_roomlist_img"><img th:src="@{${room.getUploadPath()}}" alt="객실"></div>
                     </div>
-                    
-                    <div id="roomlist_info_namebox">
-                        <div id="roomlist_info_namebox_name">두짓 타니 괌 리조트</div>
-                        <div id="roomlist_info_namebox_engname">Dusit Thani Guam Resort</div>
-                    </div>
-                    <div id="roomlist_info_function">
-                        <div id="roomlist_info_function_like">
-                            <img src="/lib/img/lodging_room_img/icon_heart.svg" alt="하트아이콘">
-                            <span>3,388</span>
-                            <span class="starpoint"> ★★★★☆</span> (331) 
-                            <a href="#review">리뷰보기 ></a></div>
-                        <div id="roomlist_info_function_map"><img src="/lib/img/lodging_room_img/icon_map.svg" alt="지도아이콘"> &nbsp;괌 투몬, 타무닝 <a href="#location_info_1">지도보기 ></a></div>
-                        <div id="roomlist_info_function_coupon"><span>쿠폰할인</span> 최대 할인 쿠폰 적용중<div id="aaa"><a href="#">쿠폰받기</a></div></div>
-                        <div id="roomlist_info_function_benefit"><span>결제혜택</span> 카드 결제 최대 1만원 할인 <div id="bbb"><a href="#">혜택보기</a></div></div>
-                    </div>
-                </div>
-                
-                <div id="lodging_info_main_2">
-                    <div id="roomlist_info_reservation">최저가 예약</div>
-                    <div id="roomlist_info_reservation_setting">
-                        <div id="roomlist_info_reservation_setting_date">6-18.(토) - 6.19(일)</div>
-                        <div id="roomlist_info_reservation_setting_person">성인 2</div>
-                    </div>
-                    <div id="roomlist_info_reservation_priceinfo">
-                        <span id="roomlist_info_reservation_defaultprice">438,851원</span><br>
-                        <span id="roomlist_info_reservation_benefitprice"><span>6%</span> 412,519원</span><br>
-                        <span id="roomlist_info_reservation_triplemember">트리플 회원가</span>
-                    </div>
-                </div>
-                <div id="lodging_info_main_3">
-                    <a href="/templates/pages/mypage/mysave/my_save_main.html"><div id="roomlist_info_btn_like"><img src="/lib/img/lodging_room_img/icon_save.svg" alt="하트"> 저장하기</div></a>
-                    <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="roomlist_info_btn_schedule"><img src="/lib/img/lodging_room_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
-                    <a href="/templates/pages/mypage/review/review_write.html"><div id="roomlist_info_btn_writereview"><img src="/lib/img/lodging_room_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
-                    <a href="#"><div id="roomlist_info_btn_share"><img src="/lib/img/lodging_room_img/icon_share.svg" alt="공유"> 공유하기</div></a>
                 </div>
             </div>
-        </div>     
-        <div id="lodging_info_sub">
-            <div id="room_list">
-                <div id="room_list_1">객실 목록 <select name="room_filter"><option value="객실">룸필터</option></select></div>
-                <div id="room_list_2" name="room_li">
-                    <div class="roomlist_roomlist_info">
-                        <div class="roomlist_roomlist_name">프리미어 트윈룸, 오션프론트</div>
-                        <div class="roomlist_roomlist_info_specific">
-                            싱글침대 2개<br>43m²<br>최대 2인<br>바다 전망<br>금연
+        </div>
+        <div id="location_info">
+            <div id="location_info_1">위치정보</div>
+            <div id="location_info_2">
+                <div id="roomlist_location">
+                    <div id="roomlist_location_box">
+                        <div id="roomlist_location_box_map">
+<!--                            <div id="m1"></div>-->
+<!--                            <div id="m2"></div>-->
+                            <!--                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">-->
+                            <div id="googleMap" style="width: 900px;height: 350px; margin: 0 auto"></div>
+                            <script>
+                                function myMap(){
+                                    var mapOptions = {
+                                        center:new google.maps.LatLng(13.515761893558587, 144.80854004444575),
+                                        zoom:17
+                                    };
+
+                                    var map = new google.maps.Map(
+                                        document.getElementById("googleMap")
+                                        , mapOptions );
+                                }
+                            </script>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4VADdQwRXmJW57jTDe8W-ROtXyKChiNQ&callback=myMap"></script>
                         </div>
-                    </div>
-                    <div class="roomlist_roomlist_reservation">
-                        <div class="roomlist_roomlist_reservation_info">
-                            <div class="roomlist_roomlist_reservation_info_box">
-                                <div id="rl1_1">무료취소</div>
-                                <div id="rl1_2">
-                                    <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_price"><span>6%</span> 392,046</div>
+                        <div id="roomlist_location_box_location_info">
+                            <div id="loc_info_1">
+                                <div id="roomlist_location_box_location_info_place1">주소</div>
+                                <div id="roomlist_location_box_location_info_place2" th:text="${lodging.getAddress()}">
                                 </div>
-                                <div id="rl1_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
                             </div>
-                            <div class="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room1.png" alt="객실"></div>
                         </div>
-                    </div>
-                </div>
-                <div id="room_list_3" name="room_li">
-                    <div class="roomlist_roomlist_info">
-                        <div class="roomlist_roomlist_name">스튜디오 트윈룸, 부분 바다 전망</div>
-                        <div class="roomlist_roomlist_info_specific">
-                            더블침대 2개<br>51m²<br>최대 2인<br>부분 바다 전망<br>금연
-                        </div>
-                    </div>
-                    <div class="roomlist_roomlist_reservation">
-                        <div class="roomlist_roomlist_reservation_info">
-                            <div class="roomlist_roomlist_reservation_info_box">
-                                <div id="rl2_1">무료취소</div>
-                                <div id="rl2_2">
-                                    <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_price"><span>6%</span> 413,242</div>
-                                </div>
-                                <div id="rl2_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
-                            </div>
-                            <div class="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room2.png" alt="객실"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="room_list_4" name="room_li">
-                    <div class="roomlist_roomlist_info">
-                        <div class="roomlist_roomlist_name">스튜디오 파셜 오션뷰(1 욕실)</div>
-                        <div class="roomlist_roomlist_info_specific">
-                            더블침대 2개<br>51m²<br>최대 3인<br>Partial ocean view
-                        </div>
-                    </div>
-                    <div class="roomlist_roomlist_reservation">
-                        <div class="roomlist_roomlist_reservation_info">
-                            <div class="roomlist_roomlist_reservation_info_box">
-                                <div id="rl3_1">무료취소</div>
-                                <div id="rl3_2">
-                                    <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_price"><span>6%</span> 423,728</div>
-                                </div>
-                                <div id="rl3_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
-                            </div>
-                            <div class="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room3.png" alt="객실"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="room_list_5" name="room_li">
-                    <div class="roomlist_roomlist_info">
-                        <div class="roomlist_roomlist_name">프리미어 오션 트윈룸</div>
-                        <div class="roomlist_roomlist_info_specific">
-                            더블침대 2개<br>43m²<br>최대 3인<br>Ocean view
-                        </div>
-                    </div>
-                    <div class="roomlist_roomlist_reservation">
-                        <div class="roomlist_roomlist_reservation_info">
-                            <div class="roomlist_roomlist_reservation_info_box">
-                                <div id="rl4_1">무료취소</div>
-                                <div id="rl4_2">
-                                    <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>
-                                    <div class="roomlist_roomlist_reservation_info_box_price"><span>6%</span> 436,081</div>
-                                </div>
-                                <div id="rl4_3"><a href="/templates/pages/lodging_room/lodging_roominfo.html" class="roomlist_roomlist_reservation_info_box_show"><div class="roomlist_roomlist_reservation_info_box_show">선택</div></a></div>
-                            </div>
-                            <div class="roomlist_roomlist_img"><img src="/lib/img/lodging_room_img/room4.png" alt="객실"></div>
+                        <div id="roomlist_location_askmap">
+                            <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="location_info">
-                <div id="location_info_1">위치정보</div>
+            <div id="location_info_1">
                 <div id="location_info_2">
-                    <div id="roomlist_location">
-                        <div id="roomlist_location_box">
-                            <div id="roomlist_location_box_map">
-                                <div id="m1"></div>
-                                <div id="m2"></div>
-                                <img src="/lib/img/lodging_room_img/map.png" alt="지도">
-                            </div>
-                            <div id="roomlist_location_box_location_info">
-                                <div id="loc_info_1">
-                                    <div id="roomlist_location_box_location_info_place1">주소</div>
-                                    <div id="roomlist_location_box_location_info_place2">Tamuning 1227 Pale San Vitores Road
-                                    </div>
-                                </div>
-                                <div id="loc_info_2">
-                                    <div id="roomlist_location_box_location_info_tel1">전화</div>
-                                    <div id="roomlist_location_box_location_info_tel2">+16716488000
-                                    </div>
-                                </div>
-                                <div id="loc_info_3">
-                                    <div id="roomlist_location_box_location_info_page1">홈페이지</div>
-                                    <div id="roomlist_location_box_location_info_page2">https://www.dusit.com/dusitthani..</div>
-                                </div>
-                            </div>
-                            <div id="roomlist_location_askmap">
-                                <div id="roomlist_location_findmap"><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_4" class="loc_info_4_1"><div class="loc_info_4">현지에서 길묻기</div></a><a href="https://www.google.co.kr/maps/place/1227+Pale+San+Vitores+Rd,+Tamuning,+96913+%EA%B4%8C/@13.5136616,144.80381,17z/data=!3m1!4b1!4m5!3m4!1s0x671f828b5c4416b9:0x32d5ceafc2fc4056!8m2!3d13.5136564!4d144.8059987?hl=ko" target="_blank" class="loc_info_5"><div class="loc_info_5">길찾기</div></a></div>
-                            </div>
-                        </div>
-                        <div id="roomlist_findway">
-                            <div id="roomlist_findway_how">숙소 찾아가는 방법</div>
-                            <div id="roomlist_findway_explain">
-                                - 엔토니오 B. 원 팻 국제공항에서 차로 12분<br>
-                                - 더 플라자와 연결
-                            </div>
-                            <div id="roomlist_findway_more"><a href="#">자세히보기</a></div>
-                        </div>
-                        <div id="roomlist_safety">
-                            <div id="roomlist_safety_title">보건 & 안전</div>
-                            <div id="roomlist_safety_list">
-                                청소 & 소독<br>
-                                사회적 거리두기<br>
-                                안전정책<br>
-                                식음료 관리<br>
-                                비품 제공 및 관리
-                            </div>
-                            <div id="roomlist_safety_more"><a href="#">보건&안전 모두보기</a></div>
-                        </div>
-                        <div id="roomlist_convenience">
-                            <div id="roomlist_convenience_title">편의시설</div>
-                            <div id="roomlist_convenience_list">
-                                인터넷<br>
-                                주차<br>
-                                교통<br>
-                                식음료<br>
-                            </div>
-                            <div id="roomlist_convenience_more"><a href="#">편의시설 모두보기</a></div>
-                        </div>
-                        <div id="roomlist_lodginginfo">
-                            <div id="roomlist_lodginginfo_title">숙소 설명</div>
-                            <div id="roomlist_lodginginfo_list">
-                                설립연도 : 2015<br>
-                                타무닝(투몬)에 위치. 타무닝 중심에 자리한 두짓 타무닝 괌 리조트의 경우 샌드캐슬에서 가까우며 걸어서 5분 이내 거리에 더 플라자 등이 있습니다. 이 5성급 리조트에서 투몬샌즈 플라자까지는 1.2km 떨어져 있으며, 4.4km 거리에는 사랑의 절벽도 있습니다.
-                            </div>
-                            <div id="roomlist_lodginginfo_more"><a href="#">자세히보기</a></div>
-                        </div>
-                        <div id="roomlist_lodgingpolicy">
-                            <div id="roomlist_lodgingpolicy_title">숙소정책</div>
-                            <div id="roomlist_lodgingpolicy_time">
-                                <div id="roomlist_lodgingpolicy_checkin">
-                                    <div id="roomlist_lodgingpolicy_checkin_title">체크인</div>
-                                    <div id="roomlist_lodgingpolicy_checkin_time">15:00 - 언제든지</div>
-                                </div>
-                                <div id="roomlist_lodgingpolicy_checkout">
-                                    <div id="roomlist_lodgingpolicy_checkout_title">체크아웃</div>
-                                    <div id="roomlist_lodgingpolicy_checkout_time">정오 이전</div>
-                                </div>
-                            </div>
-                            <div id="roomlist_lodgingpolicy_more"><a href="#">자세히보기</a></div>
-                        </div>
-                        <div id="roomlist_importantinfo">
-                            <div id="roomlist_importantinfo_title">숙소 중요정보</div>
-                            <div id="roomlist_importantinfo_info">
-                                이 숙박 시설은 공항에서 교통편을 제공합니다(별도의 요금이 적용될 수 있음). 픽업 서비스를 이용하려면 예약 확인 메일에 나와 있는 연락처 정보로 도착 48시간 전 숙박 시설에 연락하여 도착 세부 사항을 알려주시기 바랍니다. 도착 시 프런트 데스크 직원이 도와드립니다. 자세한 내용은 예약 확인 메일에 나와 있는 연락처 정보로 숙박 시설에 문의해 주시기 바랍니다. 
-                            </div>
-                            <div id="roomlist_importantinfo_more"><a href="#">더보기</a></div>
+                    <div id="roomlist_location" style="height: 180px; border-bottom: 1px solid #c6c6c6;">
+                        <div id="roomlist_safety_title" style="display: flex;">보건 & 안전</div>
+                        <div id="roomlist_safety_list">
+                            청소 & 소독<br>
+                            사회적 거리두기<br>
+                            안전정책<br>
+                            식음료 관리<br>
+                            비품 제공 및 관리
                         </div>
                     </div>
-                    <div id="roomlist_lodging_specificinfo">
-                        <div id="roomlist_lodging_specificinfo_box">
-                            <div id="roomlist_lodging_specificinfo_box_info">
-                                <ul><span>프라이빗 비치와 연결된 넓은 수영장을 보유한 전망 좋은 2015년 오픈 리조트</span>
-                                    <li>2015년 오픈한 리조트</li>
-                                    <li>해변과 연결된 야외 수영장</li>
-                                    <li>프라이빗 비치 보유</li>
-                                    <li>호화로운 풀 서비스 스파</li>
-                                    <li>쇼핑센터 '더 플라자'와 연결</li>
-                                    <li>어린이 놀이 공간 보유</li>
-                                    <li>한국인 직원 상주</li>
-                                </ul>
-                            </div>
-                            <div id="roomlist_lodging_specificinfo_box_room">
-                                <div><img src="/lib/img/lodging_room_img/roomsub1.png" alt="객실서브1"></div>
-                                <div class="roomlist_lodging_specificinfo_box_text">
-                                    <span>뷰가 아름다운 쾌적한 거실</span><br>
-                                    2015년에 오픈한 리조트로 객실 상태가 다른 호텔과 비교할 수 없을 정도로 우수하다. 또한, 30층의 고층 건물로 이루어져 객실을 비롯해 호텔 곳곳에서 탁 트인 바다 전망을 감상할 수 있기로 유명하다. 일부 객실에는 무료 미니바, 클럽 라운지에서의 티타임, 칵테일 등의 혜택이 제공되어 더욱 만족스러운 휴가를 즐길 수 있다.
-                                </div>
-                            </div>
-                            <div id="roomlist_lodging_specificinfo_box_amenity">
-                                <div><img src="/lib/img/lodging_room_img/roomsub2.png" alt="객실서브2"></div>
-                                <div class="roomlist_lodging_specificinfo_box_text">
-                                    <span>즐길거리가 많은 부대시설</span><br>
-                                    다양한 부대 시설을 갖추고 있어 즐길 거리가 많다. 아름다운 전용 해변, 그리고 바다와 맞닿은 듯 보이는 인피니티 풀이 있어 기념사진을 남기기도 좋다. 특히, 워터 슬라이드가 있는 낮은 수심의 풀이 있어 아이들과 물놀이를 즐기기에도 제격이다. 이밖에도, 고급스러운 전문 스파 시설을 갖추고 있어 여행의 질을 한 단계 높여준다. 
-                                </div>
-                            </div>
-                            <div id="roomlist_lodging_specificinfo_box_around">
-                                <div><img src="/lib/img/lodging_room_img/roomsub3.png" alt="객실서브3"></div>
-                                <div class="roomlist_lodging_specificinfo_box_text">
-                                    <span>쇼핑을 즐기기에 탁월한 위치</span><br>
-                                    섬 전체가 면세 지역인 괌에서는 쇼핑을 빼놓을 수 없다. 호텔 로비에 다양한 브랜드 숍은 물론이고, 레스토랑, 바, 클럽 등이 있는 '더 플라자'까지와도 연결되어 있다. 뿐만 아니라 명품 브랜드가 다수 입점한 'T 갤러리아 DFS'가 도보 1분 거리에 있고, 기념품과 간식거리를 구매하기 좋은 'JP 슈퍼 스토어'도 인근에 있어 매우 편리하다. 
-                                </div>
-                            </div>
+                    <div id="roomlist_location" style="height: 150px; border-bottom: 1px solid #c6c6c6;">
+                        <div id="roomlist_convenience_title">편의시설</div>
+                        <div id="roomlist_convenience_list" th:text="${lodging.getCf()}">
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="review">
-                <div id="review_1">
-                    <div id="roomlist_review_title">리뷰 <span>332</span></div>
-                    <div id="roomlist_review_btn"><a href="/templates/pages/mypage/review/review_write.html">리뷰쓰기</a> <a href="/templates/pages/mypage/review/review_view.html">리뷰 전체보기</a></div>
-                </div>
-                <div class="review_2">
-                    <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
-                    <div class="roomlist_review_star">
-                        <span class="sp1">APPLE123</span><br>
-                        LEVEL1 / 2개의 리뷰<br>
-                        <span class="sp2">★★★★★</span>
+                    <div id="roomlist_location" style="height: 200px; border-bottom: 1px solid #c6c6c6;">
+                        <div id="roomlist_lodginginfo_title">숙소 설명</div>
+                        <div id="roomlist_lodginginfo_list" th:text="${lodging.getIntroducing()}">
+                        </div>
                     </div>
-                    <div class="roomlist_review_text">
-                        최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
+                    <div id="roomlist_location" style="height: 250px; border-bottom: 1px solid #c6c6c6;">
+                        <div id="roomlist_lodgingpolicy_title">숙소정책</div>
+                        <div id="roomlist_lodgingpolicy_time">
+                            <div id="roomlist_lodgingpolicy_checkin">
+                                <div id="roomlist_lodgingpolicy_checkin_title">체크인</div>
+                                <div id="roomlist_lodgingpolicy_checkin_time" th:text="${lodging.getCheckIn()}"></div>
+                            </div>
+                            <div id="roomlist_lodgingpolicy_checkout">
+                                <div id="roomlist_lodgingpolicy_checkin_title">체크아웃</div>
+                                <div id="roomlist_lodgingpolicy_checkin_time" th:text="${lodging.getCheckOut()}"></div>
+                            </div>
+                            <p class="policy" th:text="${lodging.getPolicy()}" style="font-weight: normal; font-size: 16px;"></p>
+                        </div>
                     </div>
-                </div>
-                <div class="review_2">
-                    <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
-                    <div class="roomlist_review_star">
-                        <span class="sp1">APPLE123</span><br>
-                        LEVEL1 / 2개의 리뷰<br>
-                        <span class="sp2">★★★★★</span>
-                    </div>
-                    <div class="roomlist_review_text">
-                        최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
-                    </div>
-                </div>
-                <div class="review_2">
-                    <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
-                    <div class="roomlist_review_star">
-                        <span class="sp1">APPLE123</span><br>
-                        LEVEL1 / 2개의 리뷰<br>
-                        <span class="sp2">★★★★★</span>
-                    </div>
-                    <div class="roomlist_review_text">
-                        최신정보보시라고 리뷰 남깁니다.<br>
-                        위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~ 
+                    <div id="roomlist_importantinfo" style="height: 210px; border-bottom: 1px solid #c6c6c6;">
+                        <div id="roomlist_importantinfo_title">숙소 중요정보</div>
+                        <div id="roomlist_importantinfo_info" th:text="${lodging.getMoreInfo()}" class="policy">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="lodging_sub">
-            <div class="lodging_sub_1">
-                <div class="roomlist_around_lodging_recommend">
-                    <div class="roomlist_around_lodging_recommend_title">근처 추천 숙소</div>
-                    <div class="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
+        <div id="review">
+            <div id="review_1">
+                <div id="roomlist_review_title">리뷰 <span>332</span></div>
+                <div id="roomlist_review_btn"><a href="/templates/pages/mypage/review/review_write.html">리뷰쓰기</a> <a href="/templates/pages/mypage/review/review_view.html">리뷰 전체보기</a></div>
+            </div>
+            <div class="review_2">
+                <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
+                <div class="roomlist_review_star">
+                    <span class="sp1">APPLE123</span><br>
+                    LEVEL1 / 2개의 리뷰<br>
+                    <span class="sp2">★★★★★</span>
                 </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
-                </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
-                </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
+                <div class="roomlist_review_text">
+                    최신정보보시라고 리뷰 남깁니다.<br>
+                    위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                 </div>
             </div>
-            <div class="lodging_sub_1">
-                <div class="roomlist_around_lodging_recommend">
-                    <div class="roomlist_around_lodging_recommend_title">근처 추천 장소</div>
-                    <div class="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
+            <div class="review_2">
+                <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
+                <div class="roomlist_review_star">
+                    <span class="sp1">APPLE123</span><br>
+                    LEVEL1 / 2개의 리뷰<br>
+                    <span class="sp2">★★★★★</span>
                 </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
+                <div class="roomlist_review_text">
+                    최신정보보시라고 리뷰 남깁니다.<br>
+                    위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                 </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
+            </div>
+            <div class="review_2">
+                <div class="roomlist_review_img"><img src="/lib/img/lodging_room_img/review2.png" alt="리뷰2"></div>
+                <div class="roomlist_review_star">
+                    <span class="sp1">APPLE123</span><br>
+                    LEVEL1 / 2개의 리뷰<br>
+                    <span class="sp2">★★★★★</span>
                 </div>
-                <div class="roomlist_around_lodging_recommend_list">
-                    <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
-                    <div class="roomlist_around_lodging_recommend_list_text">
-                        괌 플라자 리조트 & 스파<br>
-                        <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
-                        127,103원
-                    </div>
+                <div class="roomlist_review_text">
+                    최신정보보시라고 리뷰 남깁니다.<br>
+                    위치 투몬시내 가운데 있어서 좋네요~ 수영장에 다시그릴 붙어 있고 옆에 두짓비치 수영장도 이용 가능해서 좋네요^^  수영장은 바람이 많이 부니까 이용하시려면 따뜻하게 수건 챙겨가시는거 추천드려요! 주변에는 스노쿨링 체험도 할 수 있고 패들보트도 빌릴 수 있어서 좋네요. 무료입니다! 직원이 한국어를 능숙하게 해서 소통에도 어려움이 없었어요. 잘 쉬다 갑니다~~~
                 </div>
             </div>
         </div>
-    </main>
-    <!--main 끝-->
-    <!-- footer 시작 -->
-    <footer th:replace="fragement/footer :: footer"></footer>
-    <!-- footer 끝 -->
+    </div>
+    <div id="lodging_sub">
+        <div class="lodging_sub_1">
+            <div class="roomlist_around_lodging_recommend">
+                <div class="roomlist_around_lodging_recommend_title">근처 추천 숙소</div>
+                <div class="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+        </div>
+        <div class="lodging_sub_1">
+            <div class="roomlist_around_lodging_recommend">
+                <div class="roomlist_around_lodging_recommend_title">근처 추천 장소</div>
+                <div class="roomlist_around_lodging_recommend_more"><a href="#">더보기</a></div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+            <div class="roomlist_around_lodging_recommend_list">
+                <div class="roomlist_around_lodging_recommend_list_img"><img src="/lib/img/lodging_room_img/roomrecommend.png" alt="추천숙소"></div>
+                <div class="roomlist_around_lodging_recommend_list_text">
+                    괌 플라자 리조트 & 스파<br>
+                    <span><span class="starpoint">★★★★★</span> (207) · 저장 2,379 · 3성급 · 투몬, 타무닝</span><br>
+                    127,103원
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--main 끝-->
+<!-- footer 시작 -->
+<footer th:replace="fragement/footer :: footer"></footer>
+<!-- footer 끝 -->
+
+
+<script>
+    var map;
+    var button = document.getElementById('map_button');
+    button.addEventListener('click', changeCenter);
+
+    function initMap() {
+        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
+        map = new google.maps.Map( document.getElementById('map'), {
+            zoom: 15,
+            center: gyeongbokgung
+        });
+
+        var mainMarker = new google.maps.Marker({
+            position: gyeongbokgung,
+            map: map,
+            label: {
+                text: "경복궁",
+                color: "#C70E20"
+            },
+            icon: {
+                url: "pooh_marker.png",
+                labelOrigin: new google.maps.Point(100, 55)
+            }
+        });
+
+        var subMarkerPoint = { lat: 37.57956596361732, lng: 126.9803240214433};
+        var subMarker = new google.maps.Marker({
+            position: subMarkerPoint,
+            map: map,
+            label: "국립현대미술관",
+            icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                labelOrigin: new google.maps.Point(20, 47),
+                anchor: new google.maps.Point(50,32)
+            }
+        });
+    }
+
+    function changeCenter() {
+        var gyeongbokgung = { lat: 37.57979553563185, lng: 126.97706245552442 };
+        map.panTo(gyeongbokgung);
+        map.setZoom(15);
+    }
+</script>
 </body>
 </html>

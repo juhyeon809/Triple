@@ -93,7 +93,6 @@ public class FaqApiLogicService extends BaseService<FaqApiRequest, FaqApiRespons
                 .collect(Collectors.toList());
         return Header.OK(faqApiResponseList);
     }
-
     public Header<List<FaqApiResponse>> AIR(){
         List<FaqApiResponse> faqApiResponseList = faqRepository.findByFaqCategory(FaqCategory.AIR)
                 .stream().map(faq -> response(faq)).collect(Collectors.toList());

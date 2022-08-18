@@ -223,7 +223,18 @@ hr {
 .content_con{
     padding-left: 10px;
 }
-
+#service_out_box form p{
+    width: 900px;
+}
+#service_out_box form input[type="password"]{
+    width: 750px;
+}
+#service_out_box form input[type="button"]{
+    width: 120px;
+    margin-left: 20px;
+    text-align: center;
+    padding: 0;
+}
 /*mypage_notice*/
 
 .list_box {

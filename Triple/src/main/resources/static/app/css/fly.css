@@ -36,6 +36,9 @@
     height: 350px;
     margin: 0 auto 100px;
 }
+#flybox select{
+    padding-left: 10px;
+}
 .flybox > ul {
     margin: 0 auto;
     list-style: none;
@@ -229,8 +232,8 @@ input[type="submit"]{
     margin-left: 50px;
 }
 input[type="button"]{ width: 100px;}
-.flybtnlist input[type="button"]:active {background-color: #b2d2f2;  }
-.flybtnlist input[type="button"]:hover{background-color: #b2d2f2;  }
+.flybtnlist a input[type="button"]:active {background-color: #b2d2f2;  }
+.flybtnlist a input[type="button"]:hover{background-color: #b2d2f2;  }
 
 .flysearch {
     background-color:  #2680EB; 
@@ -258,7 +261,7 @@ input[type="button"]{ width: 100px;}
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+
 }
 
 .special .imgbox {
@@ -269,6 +272,7 @@ input[type="button"]{ width: 100px;}
     padding: 0;
     box-sizing: border-box;
     float: left;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
 .special .imgbox:nth-child(6){

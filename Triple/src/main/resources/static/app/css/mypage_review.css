@@ -164,7 +164,9 @@ form>p{
 .list_box:first-child{
     padding-top: 0;
 }
-
+.list_box img{
+    width: 350px;
+}
 
 div>a{
     text-decoration: none;

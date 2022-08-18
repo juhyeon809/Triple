@@ -15,21 +15,31 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/app/js/mysave.js"></script>
 </head>
 <body>
     <!--header 시작-->
     <div th:replace="fragement/header :: header"></div>
     <!--header 끝-->
 
-    <div id="tour_spot_img"><img th:src="@{${tour.getUploadPath1()}}" ></div>
+    <div class="tour_spot_img"><img th:src="@{${tour.getUploadPath1()}}" ></div>
     <main>
         <div id="utility_box">
             <div id="utility_flex_box">
                 <div id="mark"><p>관광명소</p></div>
                 <div id="utility_flex_box2">
-                    <a href="/templates/pages/mypage/mysave/my_save_main.html"><div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"> 저장하기</div></a>
+                    <form method="POST">
+                        <input type="hidden" id="itemNum" th:value="${tour.getIdx()}"/>
+                        <input type="hidden" id="userId" th:value="${userId}"/>
+                        <input type="hidden" id="location" th:value="${tour.getCity()}"/>
+                        <input type="hidden" id="title" th:value="${tour.getPlaceName()}"/>
+                        <input type="hidden" id="summary" th:value="${tour.getTitle()}"/>
+                        <input type="hidden" id="uploadPath" th:value="${tour.getUploadPath1()}"/>
+                        <input type="hidden" id="saveType" th:value="'SPOT'"/>
+                        <div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"><input style="cursor: pointer" type="button" id="sendit" value="저장하기"/></div>
+                    </form>
                     <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="tour_info_btn_schedule"><img src="/lib/img/travel_spot_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
-                    <a href="/templates/pages/mypage/review/review_write.html"><div id="tour_info_btn_writereview"><img src="/static/lib/img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
+                    <a th:href="'/Triple/spot/review/tour/'+ ${tour.getIdx()}"><div id="tour_info_btn_writereview"><img src="/lib/img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>
                     <a href="#"><div id="tour_info_btn_share"><img src="/lib/img/travel_spot_img/icon_share.svg" alt="공유"> 공유하기</div></a>
                 </div>
             </div>
@@ -101,6 +111,7 @@
                 </div>
                 </div>
             </div>
+        </div>
         </div>
             <div id="review_box">
                 <div id="review_top">

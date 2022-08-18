@@ -10,7 +10,19 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.26/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="/app/css/login_join.css">
     <style>
-        #hp { width: 180px; margin-top: 10px;}
+        #hp { width: 189px; margin-right: 5px; margin-top: 10px; }
+        .check_text { line-height: 0.9; vertical-align: top; font-size: 14px; width: 400px; margin: 0 auto; text-align: left; padding-left: 10px; }
+        #email_ok { color: #0b9fa7; }
+        #email_duplicate, #check_need{ color: #ff4060;}
+        #email{ width: 80%; }
+        #emailCheck{ width: 19%; background-color: #41D2BB; color: white; height: 50px; border-radius: 5px;}
+        .content_join > input[type="button"]{background-color: #41D2BB; color: white; height: 50px; width: 400px; border-radius:100px; margin-top: 25px; font-size: 18px;}
+        #Certification{ margin-right: 5px;}
+        #email, #userpw, #userpw_re, #nickname, #hp, #Certification{
+            border-radius: 5px;
+        }
+        #Certification { width: 320px; }
+        #phone_btn, #Certification_check{ width: 76px; border-radius: 5px; background-color: #41D2BB; color: white; height: 50px;}
     </style>
 
 </head>
@@ -31,11 +43,11 @@
                 <li>
                     <p class="info_form">이메일</p>
                     <div class="content user">
-                        <p style="margin-left: 110px; display: block; width: 500px"><input type="text" name="email" id="email" maxlength="25" placeholder="abc@gmail.com" check_result="fail"/>
+                        <p style="margin-left: 110px; display: flex; justify-content: space-between; width: 400px;"><input type="text" name="email" id="email" maxlength="25" placeholder="abc@gmail.com" check_result="fail"/>
                         <input type="button" name="btn" id="emailCheck" value="중복체크" ></p>
-                        <p id = "email_ok" style="display:none;">사용가능한 이메일입니다</p>
-                        <p id = "email_duplicate" style="display:none;">이메일 중복입니다</p>
-                        <p id = "check_need">이메일 중복확인을 눌러주세요</p>
+                        <p class="check_text" id = "email_ok" style="display:none; margin-top: 5px;">사용가능한 이메일입니다</p>
+                        <p class="check_text" id = "email_duplicate" style="display:none; margin-top: 5px;">이메일 중복입니다</p>
+                        <p class="check_text" id = "check_need" style="display:none; margin-top: 5px;">이메일 중복확인을 눌러주세요</p>
                     </div>
                 </li>
                 <li>
@@ -90,7 +102,7 @@
                     <p class="info_form">인증번호 입력</p>
                     <div class="content text_box">
                         <input type="text" name="Certification" id="Certification" maxlength="20" placeholder="숫자 6자리, 인증번호 입력">
-                        <input type="button" id="Certification_check" value="인증번호 확인">
+                        <input type="button" id="Certification_check" value="번호확인">
                     </div>
                 </li>
                 <li>
@@ -143,7 +155,7 @@
     <footer>
         <div id="enterprise_info">
             <div id="enterprise_info_text">
-                <p><a href="#">서비스이용약관</a>|<a href="#">개인정보 처리방침</a>|<a href="#">회사 소개</a>|<a href="#">고객센터</a></p>
+                <p><a href="/Triple/mypage/settings/info/service">서비스이용약관</a>|<a href="/Triple/mypage/settings/info/user">개인정보 처리방침</a>|<a href="/Triple/mypage/settings/info/company">회사 소개</a>|<a href="/Triple/mypage/settings/customer">고객센터</a></p>
             </div>
             <div id="icon_box">
                 <div id="sns_box">

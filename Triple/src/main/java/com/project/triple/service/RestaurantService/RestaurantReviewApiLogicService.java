@@ -7,6 +7,7 @@ import com.project.triple.model.entity.Restaurant.RestaurantReview;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.RestaurantRequest.RestaurantReviewApiRequest;
 import com.project.triple.model.network.response.RestaurantResponse.RestaurantReviewApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotReviewApiResponse;
 import com.project.triple.repository.RestaurantRepository;
 import com.project.triple.repository.RestaurantReviewRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -85,7 +86,7 @@ public class RestaurantReviewApiLogicService extends BaseService<RestaurantRevie
         }else{
             restaurant.setReviewCount(newReviewCount);
             restaurant.setTotalStar(newTotal);
-            restaurant.setStarCount(((((double)newTotal/(double)newReviewCount) * 100) / 100));
+            restaurant.setStarCount(((double)newTotal/(double)newReviewCount));
         }
         restaurantRepository.save(restaurant);
         File file = new File(restaurantReviewApiResponse.getUploadPath() + "\\" + restaurantReviewApiResponse.getFileName());
@@ -145,4 +146,19 @@ public class RestaurantReviewApiLogicService extends BaseService<RestaurantRevie
 
         return Header.OK(reviewApiResponseList);
     }
+
+    public Header<List<RestaurantReviewApiResponse>> findEmail(String email){
+        List<RestaurantReviewApiResponse> restaurantReviewApiResponses = restaurantReviewRepository.findAllByUserEmail(email).stream()
+                .map(restaurantReview -> response(restaurantReview)).collect(Collectors.toList());
+
+        return Header.OK(restaurantReviewApiResponses);
+    }
+
+    public Long findPostId(String email){
+        Long postId = restaurantReviewRepository.findByUserEmail(email).get().getPostId();
+
+        return postId;
+    }
+
+
 }

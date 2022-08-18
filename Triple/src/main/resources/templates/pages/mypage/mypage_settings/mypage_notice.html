@@ -23,7 +23,7 @@
                 <p class="mypage_subtitle"><a href="">고객지원 | 공지사항</a></p>
             </div>
             <div class="list_box_main content_p" th:each="notice : ${noticeList}">
-                <p class="list_title"><a th:href="'/Triple/mypage/settings/notice/view/'+${notice.getIdx()}" th:text="${notice.getTitle()}">합병에 따른 개인정보 이전 안내</a></p>
+                <p class="list_title"><a th:href="'/Triple/mypage/settings/notice/view/'+${notice.getIdx()}" th:text="'[ '+${notice.getNoticeType()}+' ] '+${notice.getTitle()}">합병에 따른 개인정보 이전 안내</a></p>
                 <p class="list_date" th:text="${#temporals.format(notice.getRegDate(), 'yyyy-MM-dd')}">2022.06.17</p>
             </div>
         </div>

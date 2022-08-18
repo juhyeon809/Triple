@@ -3,11 +3,15 @@ package com.project.triple.service.AirService;
 import com.project.triple.controller.page.TimeCollector;
 import com.project.triple.model.entity.Air.AirTicket;
 import com.project.triple.model.entity.Air.Aircraft;
+import com.project.triple.model.entity.Air.Airline;
+import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.enumclass.TicketStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.AirRequest.AirTicketApiRequest;
 import com.project.triple.model.network.response.AirResponse.AirTicketApiResponse;
 import com.project.triple.model.network.response.AirResponse.AircraftApiResponse;
+import com.project.triple.model.network.response.AirResponse.AirlineApiResponse;
+import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.repository.AirTicketRepository;
 import com.project.triple.repository.AircraftRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -119,8 +123,32 @@ public class AirTicketApiLogicService extends BaseService<AirTicketApiRequest, A
     }
 
 
+    /*항공권 조회*/
+    public Header<List<AirTicketApiResponse>> search_sort(){
+        List<AirTicket> airTicketList = airTicketRepository.findAllByOrderByIdxDesc();
+        List<AirTicketApiResponse> airTicketApiResponseList = airTicketList.stream()
+                .map(airTicket -> response(airTicket))
+                .collect(Collectors.toList());
+        return Header.OK(airTicketApiResponseList);
+    }
 
+    public Header<AirTicketApiResponse> read2(Long departureTicketId){
+        AirTicket airTicket = airTicketRepository.findAllByIdx(departureTicketId);
 
+        AirTicketApiResponse airTicketApiResponse = response(airTicket);
 
+        return Header.OK(airTicketApiResponse);
+    }
 
+    public String findDepartureAirport(Long idx){
+        String departureAirport = airTicketRepository.findByIdx(idx).get().getDepartureAirport();
+
+        return departureAirport;
+    }
+
+    public String findLandingAirport(Long idx){
+        String landingAirport = airTicketRepository.findByIdx(idx).get().getLandingAirport();
+
+        return landingAirport;
+    }
 }
