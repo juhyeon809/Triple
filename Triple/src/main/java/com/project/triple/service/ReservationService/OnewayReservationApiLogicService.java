@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -59,8 +61,12 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
     }
 
     @Override
-    public Header<OnewayReservationApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long idx) {
+        Optional<OnewayReservation> onewayReservation = baseRepository.findById(idx);
+        return onewayReservation.map(onewayReservation1 -> {
+            baseRepository.delete(onewayReservation1);
+            return Header.OK();
+        }).orElseGet(() -> Header.ERROR("데이터 없음"));
     }
 
     public Header<List<OnewayReservationApiResponse>> reservation(List<OnewayReservation> onewayReservationList){
@@ -72,4 +78,53 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
 
         return Header.OK(onewayReservationApiResponses);
     }
+
+    public Long findDeparture(String email){
+        Long onewayReservation = onewayReservationRepository.findDepartureTicketId(email).get().getDepartureTicketId();
+
+        return onewayReservation;
+
+    }
+
+    public Header<OnewayReservationApiResponse> read2(String email) {
+
+        OnewayReservation onewayReservation = onewayReservationRepository.findByIdx(email);
+
+        OnewayReservationApiResponse onewayReservationApiResponse = response(onewayReservation);
+
+        return Header.OK(onewayReservationApiResponse);
+    }
+
+    public Header<List<OnewayReservationApiResponse>> search(String email){
+
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationRepository.findAllByEmail(email).stream()
+                .map(onewayReservation -> response(onewayReservation)).collect(Collectors.toList());
+
+        return Header.OK(onewayReservationApiResponseList);
+    }
+
+
+
+    public Header<List<OnewayReservationApiResponse>> list(String email){
+        List<OnewayReservation> onewayReservationList = onewayReservationRepository.findAllByEmail(email);
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationList.stream()
+                .map(onewayReservation -> response(onewayReservation))
+                .collect(Collectors.toList());
+        return Header.OK(onewayReservationApiResponseList);
+    }
+
+    public Header<List<OnewayReservationApiResponse>> search3(String email){
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationRepository.findByEmailOrderByIdxDesc(email)
+                .stream().map(onewayReservation -> response(onewayReservation)).collect(Collectors.toList());
+
+        return Header.OK(onewayReservationApiResponseList);
+    }
+
+    public Long classCount(String seatClass){
+        Long classCount = onewayReservationRepository.countBySeatClass(seatClass);
+
+        return classCount;
+    }
+
+
 }

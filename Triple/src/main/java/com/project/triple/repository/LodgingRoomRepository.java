@@ -1,5 +1,6 @@
 package com.project.triple.repository;
 
+import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
 import com.project.triple.model.enumclass.LodgingRoomStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,6 +17,6 @@ public interface LodgingRoomRepository extends JpaRepository<LodgingRoom, Long> 
     List<LodgingRoom> findAllByStatus(LodgingRoomStatus status);
 
     List<LodgingRoom> findAllByCompanyId(Long companyId);
-
+    List<LodgingRoom> findAllByOrderByIdxDesc();
 
 }

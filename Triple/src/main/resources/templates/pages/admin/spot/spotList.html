@@ -86,7 +86,7 @@
                         <li><a href="/Triple/admin/packageList">패키지</a></li>
                     </ul>
                 </li>
-                <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -180,7 +180,7 @@
                     <td><a th:href="'/Triple/admin/spotList/view/'+${guide.getIdx()}" th:text="${guide.idx}"></a></td>
                     <td><span th:text="${guide.country}"></span>(<span th:text="${guide.city}"></span>)</td>
                     <td th:text="${guide.title}"></td>
-                    <td th:text="${guide.regDate}">2022.06.27</td>
+                    <td th:text="${#temporals.format(guide.regDate, 'yyyy-MM-dd')}">2022.06.27</td>
                 </tr>
             </table>
             <table class="tbList" id="guide2_table" style="display: none">
@@ -194,7 +194,7 @@
                     <td><a th:href="'/Triple/admin/spotList/guide2_table/view/'+${guide.getIdx()}" th:text="${guide.idx}"></a></td>
                     <td><span th:text="${guide.country}"></span>(<span th:text="${guide.city}"></span>)</td>
                     <td th:text="${guide.title}"></td>
-                    <td th:text="${guide.regDate}">2022.06.27</td>
+                    <td th:text="${#temporals.format(guide.regDate, 'yyyy-MM-dd')}">2022.06.27</td>
                 </tr>
             </table>
             <table class="tbList" id="tour_table" style="display: none;">
@@ -208,7 +208,7 @@
                     <td><a th:href="'/Triple/admin/spotList/tour_table/view/'+${spot.getIdx()}" th:text="${spot.idx}"></a></td>
                     <td><span th:text="${spot.country}"></span>(<span th:text="${spot.city}"></span>)</td>
                     <td th:text="${spot.placeName}"></td>
-                    <td th:text="${spot.regDate}">2022.06.27</td>
+                    <td th:text="${#temporals.format(spot.regDate, 'yyyy-MM-dd')}">2022.06.27</td>
                 </tr>
             </table>
             <table class="tbList" id="restaurant_table" style="display: none;">
@@ -222,7 +222,7 @@
                     <td><a th:href="'/Triple/admin/spotList/restaurant_table/view/'+${restaurant.getIdx()}" th:text="${restaurant.idx}"></a></td>
                     <td><span th:text="${restaurant.country}"></span>(<span th:text="${restaurant.city}"></span>)</td>
                     <td th:text="${restaurant.title}"></td>
-                    <td th:text="${restaurant.regDate}">2022.06.27</td>
+                    <td th:text="${#temporals.format(restaurant.regDate, 'yyyy-MM-dd')}">2022.06.27</td>
                 </tr>
 
             </table>

@@ -2,14 +2,17 @@ package com.project.triple.service.LodgingService;
 
 import com.project.triple.controller.page.RoomSearch;
 import com.project.triple.controller.page.SearchInfo;
+import com.project.triple.model.entity.Faq;
 import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
+import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.enumclass.LodgingRoomStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingRoomApiRequest;
 import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingTicketApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.LodgingRoomRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -70,8 +74,11 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
 
     @Override
     public Header<LodgingRoomApiResponse> delete(Long id) {
-        return null;
+        LodgingRoom lodgingRoom = lodgingRoomRepository.findById(id).get();
+        baseRepository.delete(lodgingRoom);
+        return Header.OK();
     }
+
 
     public Header<LodgingRoomApiResponse> read2(String roomNum){
         LodgingRoom lodgingRoom = lodgingRoomRepository.findByRoomNum(roomNum);
@@ -106,6 +113,14 @@ public class LodgingRoomApiLogicService extends BaseService<LodgingRoomApiReques
 
     public List<LodgingRoomApiResponse>  same_company(Long id){
         return lodgingRoomRepository.findAllByCompanyId(id).stream().map(lodgingRoom -> response(lodgingRoom)).collect(Collectors.toList());
+    }
+
+    public Header<List<LodgingRoomApiResponse>> search(){
+        List<LodgingRoom> lodgingRoomList = lodgingRoomRepository.findAllByOrderByIdxDesc();
+        List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomList.stream()
+                .map(lodgingRoom -> response(lodgingRoom))
+                .collect(Collectors.toList());
+        return Header.OK(lodgingRoomApiResponseList);
     }
 
 }

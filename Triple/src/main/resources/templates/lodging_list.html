@@ -7,7 +7,7 @@
     <ul>
         <li th:each="lodging : ${lodgingList}" >
             <div class="list_info">
-                <p class="list_title"><a th:text="${lodging.getName()}" th:href="'/Triple/lodging_view' + ${lodging.getIdx()}"></a></p>
+                <p class="list_title"><a th:text="${lodging.getName()}" th:href="'/Triple/lodging_view/' + ${lodging.getIdx()}"></a></p>
                 <p class="list_subtitle" th:text="${lodging.getIntroducing()}"></p>
                 <p class="list_review" th:text="'('+${lodging.getReviewCount()}+')'"><span th:text="${lodging.getStarCount()}"></span></p>
                 <p class="list_price" th:text="${lodging.getCheapestPrice()} + '원'"></p>

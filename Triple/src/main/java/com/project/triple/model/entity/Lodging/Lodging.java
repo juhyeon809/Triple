@@ -46,4 +46,5 @@ public class Lodging {
     private Double starCount;
     private Integer cheapestPrice;
 
+
 }

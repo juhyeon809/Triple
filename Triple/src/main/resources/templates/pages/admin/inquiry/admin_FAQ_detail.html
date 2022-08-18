@@ -62,11 +62,9 @@
                     <li><a href="/Triple/admin/airLineList">항공권</a></li>
                     <li><a href="/Triple/admin/lodgingList">숙소</a></li>
                     <li><a href="/Triple/admin/packageList">패키지</a></li>
-
-                    <li><a href="/Triple/admin/restaurantList">다이닝</a></li>
                 </ul>
             </li>
-            <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
             </li>
             <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                 <ul class="side-dropdown">
@@ -128,9 +126,11 @@
         </div>
         <div class="notice_detail">
             <div class="notice_detail_1" style="color: #0c8ee5; font-weight: bold;">[<span th:text="${faq.faqCategory}">일정</span>] <span th:text="${faq.title}" style="color: black; font-weight: bold;">경로상 추천이 무엇인가요?</span></div>
-            <div class="notice_detail_2" th:text="${faq.regDate}">2022.03.18</div>
-            <div class="notice_detail_3" th:text="${faq.content}">
+            <div class="notice_detail_2" th:text="${#temporals.format(faq.getRegDate(), 'yyyy-MM-dd')}">2022.03.18</div>
+            <div>
+                <pre class="notice_detail_3" th:text="${faq.content}">
                 '경로상 추천'은 여행 출발지와 목적지만 입력하면 가는길에<br>들러볼 만한 장소를 추천해드리는 기능입니다.<br> 국내 홈을 포함한 국내 모든 도시에서 이용할 수 있습니다.
+                </pre>
             </div>
         </div>
         <div class="btnlist">

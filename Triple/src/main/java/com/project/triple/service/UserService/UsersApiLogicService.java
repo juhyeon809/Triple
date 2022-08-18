@@ -1,9 +1,15 @@
 package com.project.triple.service.UserService;
 
+import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Reservation.RoundTicketReservation;
+import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.entity.User.Users;
 import com.project.triple.model.enumclass.UserStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.UserRequest.UsersApiRequest;
+import com.project.triple.model.network.response.MagazineApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
+import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.model.network.response.UserResponse.UsersApiResponse;
 import com.project.triple.repository.UsersRepository;
 import com.project.triple.service.BaseService.BaseService;
@@ -137,8 +143,8 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     public static void certifiedPhoneNumber(String phoneNumber, String cerNum) {
 
 
-        String api_key = "";
-        String api_secret = "";
+        String api_key = "NCS628FEWPSB4EVA";
+        String api_secret = "SX033LV1ZOETDF5T8ALPIBLMZDVNJRYT";
 
         Message coolsms = new Message(api_key, api_secret);
 
@@ -166,6 +172,15 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
                 .map(users -> response(users))
                 .collect(Collectors.toList());
         return Header.OK(usersApiResponseList);
+    }
+
+    public Header<UsersApiResponse> read2(String email) {
+
+        Users users = usersRepository.findAllByEmail(email);
+
+        UsersApiResponse usersApiResponse = response(users);
+
+        return Header.OK(usersApiResponse);
     }
 
 }

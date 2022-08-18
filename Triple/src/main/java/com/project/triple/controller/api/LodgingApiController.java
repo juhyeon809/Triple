@@ -63,7 +63,7 @@ public class LodgingApiController{
     {
         lodgingApiLogicService.write(lodging, file);
 
-        ScriptUtils.alertAndMovePage( response , "숙소 등록완료!", "/Triple/admin/lodging_company_list");
+        ScriptUtils.alertAndMovePage( response , "숙소 등록완료!", "/Triple/admin/lodgingList");
         return null;
     }
 }

@@ -65,7 +65,7 @@
 
                     </ul>
                 </li>
-                <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -162,7 +162,7 @@
                     <td><span th:text="${magazine.adminuserId}"></span>(<span th:text="${magazine.adminuserName}"></span>)</td>
                     <td th:text="${magazine.title}"></td>
                     <td th:text="${magazine.magazineType}"></td>
-                    <td th:text="${magazine.regDate}"></td>
+                    <td th:text="${#temporals.format(magazine.regDate, 'yyyy-MM-dd')}"></td>
                 </tr>
 
             </table>

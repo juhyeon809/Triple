@@ -61,7 +61,7 @@
 
                     </ul>
                 </li>
-                <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -124,7 +124,9 @@
             </div>
             <!--매거진 정보 입력-->
             <form th:action="@{/api/tourism/register}" onsubmit="return spotTour()" name="form" method="post" enctype="multipart/form-data">
-                <div class="admin_inquiry_q3">
+                <div class="admin_inquiry_qtext">
+                    <div class="admin_inquiry_title">국가 · 도시</div>
+                    <div class="admin_inquiry_q3">
                     <select name="country" class="admin_inquiry_category2 concategory">
                         <option value="">국가</option>
                         <option value="대한민국">대한민국</option>
@@ -142,9 +144,8 @@
                         <option value="LA">LA</option>
                         <option value="뉴욕">뉴욕</option>
                     </select>
-                </div>
-                <div class="admin_inquiry_q3">
-                    <select name="city" class="admin_inquiry_category2 concategory">
+
+                    <select name="city" class="admin_inquiry_category2 concategory" style="margin-top: 5px;">
                         <option value="">도시</option>
                         <option value="대한민국">대한민국</option>
                         <option value="필리핀">필리핀</option>
@@ -161,6 +162,7 @@
                         <option value="LA">LA</option>
                         <option value="뉴욕">뉴욕</option>
                     </select>
+                </div>
                 </div>
                 <div class="admin_inquiry_qtext">
                     <div class="admin_inquiry_title">장소명</div>

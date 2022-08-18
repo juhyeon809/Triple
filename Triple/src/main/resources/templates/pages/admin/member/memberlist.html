@@ -65,7 +65,7 @@
 
                     </ul>
                 </li>
-                <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -151,7 +151,7 @@
                     <td><a th:href="'/Triple/admin/userList/view/'+${users.getIdx()}" th:text="${users.idx}"></a>01</td>
                     <td th:href="${users.idx}" th:text="${users.nickname}">김사과</td>
                     <td th:text="${users.email}">apple</td>
-                    <td th:text="${users.regDate}">2022.03.06</td>
+                    <td th:text="${#temporals.format(users.regDate, 'yyyy-MM-dd')}">2022.03.06</td>
                 </tr>
 
             </table>

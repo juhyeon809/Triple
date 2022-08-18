@@ -33,7 +33,7 @@
                         <input type="hidden" id="summary" th:value="${restaurant.getTitle()}"/>
                         <input type="hidden" id="uploadPath" th:value="${restaurant.getUploadPath1()}"/>
                         <input type="hidden" id="saveType" th:value="'RESTAURANT'"/>
-                        <div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"><input type="button" id="sendit" value="저장하기"/></div>
+                        <div id="tour_info_btn_like"><img src="/lib/img/travel_spot_img/icon_save.svg" alt="하트"><input style="cursor: pointer" type="button" id="sendit" value="저장하기"/></div>
                     </form>
                     <a href="/templates/pages/mypage/my_travel/my_travel_main.html"><div id="tour_info_btn_schedule"><img src="/lib/img/travel_spot_img/icon_schedule.svg" alt="일정"> 일정추가</div></a>
                     <a th:href="'/Triple/spot/review/restaurant/'+ ${restaurant.getIdx()}"><div id="tour_info_btn_writereview"><img src="/lib/img/travel_spot_img/icon_review.svg" alt="리뷰"> 리뷰쓰기</div></a>

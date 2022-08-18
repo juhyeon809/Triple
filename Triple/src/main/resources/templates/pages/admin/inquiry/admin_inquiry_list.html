@@ -65,7 +65,7 @@
 
                     </ul>
                 </li>
-                <li><a href="/Triple/admin/reviewList"><i class='bx bxs-inbox icon'></i>상품후기</a>
+
                 </li>
                 <li><a href="#"><i class='bx bxs-coupon icon'></i>쿠폰<i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
@@ -122,7 +122,7 @@
     <section class="content2">
         <div class="content2-fluid">
             <div class="header_box">
-                <h2>문의 목록</h2> 
+                <h2>문의 목록</h2>
                 <nav>
                     <form action="#">
                         <div class="form-group">
@@ -137,16 +137,16 @@
                             <button type="submit">검색</button>
                         </div>
                     </form>
-                </nav>    
+                </nav>
             </div>
             <table class="tbList">
                 <tr>
-                    
+
                     <th>
                         번호
                     </th>
                     <th>
-                        문의자
+                        카테고리
                     </th>
                     <th>
                         제목
@@ -157,77 +157,15 @@
                     <th>
                         문의날짜
                     </th>
-                </tr> 
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
                 </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
+                <tr th:each="inquiry:${inquiryList}" th:onclick="'location.href = \'' + @{/Triple/admin/inquiry/view/} + ${inquiry.getIdx()} +'\''">
+                    <td th:text="${inquiry.getIdx()}">102</td>
+                    <td th:text="${inquiry.getTypeCategory()}">user2</td>
+                    <td th:text="${inquiry.getTitle()}">숙소 환불 문의</td>
+                    <td >미답변</td>
+                    <td th:text="${inquiry.getRegDate()}">2022.04.25</td>
                 </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
-                <tr onclick="location.href='admin_inquiry_detail.html'">
-                    <td>102</td>
-                    <td>user2</td>
-                    <td>숙소 환불 문의</td>
-                    <td>미답변</td>
-                    <td>2022.04.25</td>
-                </tr>
+
             </table>
             <div class="pageNum">
                 <p>1 2 3 4 5</p>

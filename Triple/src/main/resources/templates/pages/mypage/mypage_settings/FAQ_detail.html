@@ -26,7 +26,7 @@
                 <p id="post_title"><span id="blue_text" th:text="'[ '+${faq.getFaqCategory()}+' ]'   ">[ 계정 관련 ]</span><span th:text="' '+${faq.getTitle()}"></span> 회원 탈퇴는 어떻게 하나요?</p>
             </div>
             <div class="list_box">
-                <p class="list_box_title" th:text="${faq.getContent()}">회원 탈퇴는 아래의 방법을 통해 가능합니다.</p>
+                <p><pre class="list_box_title" th:text="${faq.getContent()}">회원 탈퇴는 아래의 방법을 통해 가능합니다.</pre></p>
 <!--                <div class="list_box_content">-->
 <!--                    <p>- 이메일 회원</p>-->
 <!--                    <p class="padding_text">트리플 사이트 메인 > 우측 상단 마이페이지 > 설정 > 서비스 탈퇴 > 비밀번호 입력 > 탈퇴합니다 선택</p>-->
@@ -47,7 +47,7 @@
 <!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis odio, doloremque fugit corporis animi quidem dignissimos quam quaerat repellendus ipsa, nulla rerum necessitatibus! Error doloribus nam distinctio deleniti, cum corrupti!</p>-->
 <!--                </div>-->
             </div>
-            <div id="back_button"><p><a href="/templates/pages/mypage/mypage_settings/mypage_FAQ_list.html">뒤로 가기</a></p></div>
+            <div id="back_button"><p><a href="/Triple/mypage/settings/customer">뒤로 가기</a></p></div>
         </div>
     </main>
     <!--메인 끝-->

@@ -11,6 +11,7 @@
 
 #head_text_area {
     width: 1200px;
+    height: 220px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -33,6 +34,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+}
+#head_search_air #form_area{
+    height: 160px;
 }
 #head_search_air p > select{
     width: 300px;
@@ -77,6 +81,9 @@
     align-items: center;
     justify-content: space-evenly;
     margin: 0 auto;
+}
+#logo_menus_area div{
+    height: 120px;
 }
 @media screen and(-ms-min-device-pixel-ratio:0){
     #logo_menus_area {
@@ -239,6 +246,9 @@ main {
     word-break: keep-all;
     padding-right: 30px;
 }
+.overseas_ticket_contant {
+    text-overflow: ellipsis;
+}
 .overseas_ticket_price{
     font-size: 18px;
     padding-top: 20px;
@@ -269,12 +279,12 @@ main {
     z-index: -10;
 }
 .reco_lodging_back1{
-    background: url(/lib/img/accomodation1.svg);
+    /*background: url(/lib/img/accomodation1.svg);*/
     background-size: cover;
     background-position: center center;
-}
+}ㄴ
 .reco_lodging_back2{
-    background: url(/lib/img/accomodation2.svg);
+    /*background: url(/lib/img/accomodation2.svg);*/
     background-size: cover;
     background-position: center center;
 }
@@ -362,7 +372,7 @@ main {
     align-items: center;
     text-align: center;
 }
-.magazine_item > input[type="button"]{
+.magazine_item > a{
     text-align: center;
     margin: 0 auto;
     height: 30px;

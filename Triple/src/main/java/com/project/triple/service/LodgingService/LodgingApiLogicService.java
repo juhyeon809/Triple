@@ -4,12 +4,14 @@ import com.project.triple.controller.page.RoomSearch;
 import com.project.triple.model.entity.Lodging.Lodging;
 import com.project.triple.model.entity.Lodging.LodgingRoom;
 import com.project.triple.model.entity.Magazine;
+import com.project.triple.model.entity.Spot.Spot;
 import com.project.triple.model.enumclass.LodgingRoomStatus;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.LodgingRequest.LodgingApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingApiResponse;
 import com.project.triple.model.network.response.LodgingResponse.LodgingRoomApiResponse;
+import com.project.triple.model.network.response.SpotResponse.SpotApiResponse;
 import com.project.triple.repository.LodgingRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -161,7 +163,7 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         if(newList.isEmpty()){
             return null;
         }
-        if(country != null) {
+        if(country != "") {
             for (int i = (newList.size() - 1); i > -1; i--) {
                 LodgingApiResponse lodgingApiResponse = newList.get(i);
                 if (!lodgingApiResponse.getCountry().equals(country)) {
@@ -245,12 +247,27 @@ public class LodgingApiLogicService extends BaseService<LodgingApiRequest, Lodgi
         Long companyId = lodgingApiResponse.getIdx();
         List<LodgingRoomApiResponse> lodgingRoomApiResponseList = lodgingRoomApiLogicService.same_company(companyId);
         int leastPrice = lodgingRoomApiResponseList.get(0).getPrice();
+        if(lodgingRoomApiResponseList.size()!=0){
+
+            lodgingRoomApiResponseList.get(0).getName();
+        }
+        if(!lodgingRoomApiResponseList.isEmpty()){
+
+        }
         for(LodgingRoomApiResponse lodgingRoomApiResponse : lodgingRoomApiResponseList){
             if(lodgingRoomApiResponse.getPrice() < leastPrice){
                 leastPrice=lodgingRoomApiResponse.getPrice();
             }
         }
         return leastPrice;
+    }
+
+    public Header<List<LodgingApiResponse>> search(){
+        List<Lodging> lodgingList = lodgingRepository.findAllByOrderByIdxDesc();
+        List<LodgingApiResponse> lodgingApiResponseList = lodgingList.stream()
+                .map(lodging -> response(lodging))
+                .collect(Collectors.toList());
+        return Header.OK(lodgingApiResponseList);
     }
 
 }

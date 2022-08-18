@@ -161,7 +161,7 @@ public class RestaurantApiLogicService extends BaseService<RestaurantApiRequest,
     }
 
     public Header<List<RestaurantApiResponse>> search(){
-        List<Restaurant> restaurantList = restaurantRepository.findAll();
+        List<Restaurant> restaurantList = restaurantRepository.findAllByOrderByIdxDesc();
         List<RestaurantApiResponse> restaurantApiResponseList = restaurantList.stream()
                 .map(restaurant -> response(restaurant))
                 .collect(Collectors.toList());
