@@ -103,11 +103,7 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
         return Header.OK(onewayReservationApiResponseList);
     }
 
-    public Long ageCount(String ageType){
-        Long ageCount = onewayReservationRepository.countByAgeType(ageType);
 
-        return ageCount;
-    }
 
     public Header<List<OnewayReservationApiResponse>> list(String email){
         List<OnewayReservation> onewayReservationList = onewayReservationRepository.findAllByEmail(email);
@@ -116,4 +112,19 @@ public class OnewayReservationApiLogicService extends BaseService<OnewayReservat
                 .collect(Collectors.toList());
         return Header.OK(onewayReservationApiResponseList);
     }
+
+    public Header<List<OnewayReservationApiResponse>> search3(String email){
+        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationRepository.findByEmailOrderByIdxDesc(email)
+                .stream().map(onewayReservation -> response(onewayReservation)).collect(Collectors.toList());
+
+        return Header.OK(onewayReservationApiResponseList);
+    }
+
+    public Long classCount(String seatClass){
+        Long classCount = onewayReservationRepository.countBySeatClass(seatClass);
+
+        return classCount;
+    }
+
+
 }

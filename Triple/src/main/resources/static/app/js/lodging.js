@@ -1,6 +1,7 @@
 'use strict'
 
 function sendit(){
+
     const name = document.getElementById('name');
     const hp = document.getElementById('hp');
     const email = document.getElementById('email');

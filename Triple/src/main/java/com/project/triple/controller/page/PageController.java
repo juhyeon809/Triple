@@ -776,6 +776,9 @@ public class PageController {
         RoundTicketReservationApiResponse roundTicketReservationApiResponse = roundTicketReservationApiLogicService.read2(email).getData();
         OnewayReservationApiResponse onewayReservationApiResponse = onewayReservationApiLogicService.read2(email).getData();
 
+//        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationApiLogicService.search3(email).getData();
+//        List<OnewayReservationApiResponse> onewayReservationApiResponseList = onewayReservationApiLogicService.search3(email).getData();
+
         return new ModelAndView("/pages/mypage/mypage_reserve/my_reserve_air").addObject("email", email)
                 .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
                 .addObject("roundCombackId", combackTicketId).addObject("onewayDepartureId", onewayDepartureTicketId)
@@ -834,9 +837,10 @@ public class PageController {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
-        String adultCount = "성인";
-        String childCount = "소아";
-        String infantCount = "유아";
+        String business = "business";
+        String economy = "economy";
+        String first = "first";
+        String premium = "premium";
 
         if (session == null) {
 
@@ -859,9 +863,10 @@ public class PageController {
 
         UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
 
-        Long adCount = roundTicketReservationApiLogicService.ageCount(adultCount);
-        Long chCount = roundTicketReservationApiLogicService.ageCount(childCount);
-        Long inCount = roundTicketReservationApiLogicService.ageCount(infantCount);
+        Long businessClass = roundTicketReservationApiLogicService.classCount(business);
+        Long economyClass = roundTicketReservationApiLogicService.classCount(economy);
+        Long firstClass = roundTicketReservationApiLogicService.classCount(first);
+        Long premiumClass = roundTicketReservationApiLogicService.classCount(premium);
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_round").addObject("email", email)
                 .addObject("nickname", nickname).addObject("roundDepartureId", roundDepartureTicketId)
@@ -872,8 +877,9 @@ public class PageController {
                 .addObject("roundList", roundTicketReservationApiResponseList)
                 .addObject("city1", city1)
                 .addObject("city2", city2)
-                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
-                .addObject("childCount", chCount).addObject("infantCount", inCount);
+                .addObject("users", usersApiResponse).addObject("business", businessClass)
+                .addObject("economy", economyClass).addObject("first", firstClass)
+                .addObject("premium", premiumClass);
     }
 
     //내예약 항공 view 편도
@@ -882,9 +888,10 @@ public class PageController {
         HttpSession session = request.getSession(false);
         String email = null;
         String nickname = null;
-        String adultCount = "성인";
-        String childCount = "소아";
-        String infantCount = "유아";
+        String business = "business";
+        String economy = "economy";
+        String first = "first";
+        String premium = "premium";
 
         if (session == null) {
 
@@ -906,9 +913,10 @@ public class PageController {
 
         UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
 
-        Long adCount = onewayReservationApiLogicService.ageCount(adultCount);
-        Long chCount = onewayReservationApiLogicService.ageCount(childCount);
-        Long inCount = onewayReservationApiLogicService.ageCount(infantCount);
+        Long businessClass = onewayReservationApiLogicService.classCount(business);
+        Long economyClass = onewayReservationApiLogicService.classCount(economy);
+        Long firstClass = onewayReservationApiLogicService.classCount(first);
+        Long premiumClass = onewayReservationApiLogicService.classCount(premium);
 
         return new ModelAndView("/pages/mypage/mypage_reserve/my_airplane_reserve_oneway").addObject("email", email)
                 .addObject("nickname", nickname)
@@ -918,8 +926,9 @@ public class PageController {
                 .addObject("onewayList", onewayReservationApiResponseList)
                 .addObject("city1", city1)
                 .addObject("city2", city2)
-                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
-                .addObject("childCount", chCount).addObject("infantCount", inCount);
+                .addObject("users", usersApiResponse).addObject("business", businessClass)
+                .addObject("economy", economyClass).addObject("first", firstClass)
+                .addObject("premium", premiumClass);
     }
 //    @PostMapping("/serviceOut")
 //    public ModelAndView serviceOut(HttpServletResponse response, HttpServletRequest request, String userpw) throws IOException {
@@ -973,9 +982,6 @@ public class PageController {
 
         UsersApiResponse usersApiResponse = usersApiLogicService.read2(email).getData();
 
-        Long adCount = roundTicketReservationApiLogicService.ageCount(adultCount);
-        Long chCount = roundTicketReservationApiLogicService.ageCount(childCount);
-        Long inCount = roundTicketReservationApiLogicService.ageCount(infantCount);
 
 
 
@@ -988,8 +994,7 @@ public class PageController {
                 .addObject("roundList", roundTicketReservationApiResponseList)
                 .addObject("city1", city1)
                 .addObject("city2", city2)
-                .addObject("users", usersApiResponse).addObject("adultCount", adCount)
-                .addObject("childCount", chCount).addObject("infantCount", inCount);
+                .addObject("users", usersApiResponse);
     }
 
     //내예약 숙소 view

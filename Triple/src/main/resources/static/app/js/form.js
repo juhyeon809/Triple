@@ -1,4 +1,6 @@
-function sendit(){          
+
+
+function sendit(){
     //순서대로 스크립트 작성할것!!
     const nameCheck = RegExp(/[가-힣]+$/);
     const phCheck = RegExp(/^\d{3}\d{3,4}\d{4}$/);
@@ -96,40 +98,43 @@ function sendit(){
 
 }
 
-function credit(){
+function credit() {
 
     const master = RegExp(/^([51|52|53|54|55]{2})([0-9]{14})$/);
     const cardDate = RegExp(/^((0[1-9])|(1[0-2]))\/(\d{2})$/);
     const cardPw = RegExp(/[d{2}]/);
     const Birth = RegExp(/^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
 
-    if(!master.test($('#cardNum').val())){
+    if (!master.test($('#cardNum').val())) {
         alert('카드 번호를 확인해주세요');
         $('cardNum').val('');
         $('#cardNum').focus();
         return false
     }
-    if(!cardDate.test($('#cardDate').val())){
+    if (!cardDate.test($('#cardDate').val())) {
         alert('카드 유효기간을 확인해주세요');
         $('#cardDate').val('');
         $('#cardDate').focus();
         return false
     }
-    if(!cardPw.test($('#cardPw').val())){
+    if (!cardPw.test($('#cardPw').val())) {
         alert('카드 비밀번호 앞자리를 확인해주세요');
         $('#cardPw').val('');
         $('#cardPw').focus();
         return false
     }
-    if(!Birth.test($('#cardBirth').val())){
+    if (!Birth.test($('#cardBirth').val())) {
         alert('카드 소유주의 생년월일을 확인해주세요');
         $('#cardBirth').val('');
         $('#cardBirth').focus();
         return false
     }
-    
-    if($('#check1').is(":checked") == false){
+
+    if ($('#check1').is(":checked") == false) {
         alert('결제규정을 읽고 체크해주세요');
     }
+
+
+
     return true;
 }

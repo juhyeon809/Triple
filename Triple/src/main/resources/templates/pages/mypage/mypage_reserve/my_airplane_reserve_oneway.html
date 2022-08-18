@@ -84,7 +84,7 @@
             <div class="air_main_pay_box1">
                 <div>총 결제금액</div>
                 <!--                    <di th:text="${#numbers.formatInteger(airTicket.price, 1, 'COMMA')}+'원'">57,000원</di>-->
-                <di th:text="${#numbers.formatInteger(((airTicketODT.getPremiumAdultPrice() * adultCount) + (airTicketODT.getPremiumChildPrice() * childCount) + (airTicketODT.getPremiumInfantPrice() * infantCount)), 1, 'COMMA')}+'원'">57,000원</di>
+                <di th:text="${#numbers.formatInteger(((airTicketODT.getEconomyAdultPrice() * economy) + (airTicketODT.getFirstAdultPrice() * first) + (airTicketODT.getPremiumAdultPrice() * premium) + (airTicketODT.getBusinessAdultPrice() * business)), 1, 'COMMA')}+'원'">57,000원</di>
             </div>
         </div>
         <div class="air_main_notice">

@@ -9,6 +9,8 @@
     <title>TRIPLE | 숙소예약</title>
     <link rel="stylesheet" href="/app/css/lodging_room_main.css">
     <link rel="stylesheet" href="/app/css/common.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
     <script src="/app/js/lodging.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -152,12 +154,14 @@
 
                     <div class="agree">
                         <label for="agreeCheck"><p><a href="#">취소·이용규정</a>, <a href="#">개인 정보 수집·이용 방침</a> 및 <a href="#">개인정보 제 3자 제공</a>을 모두 읽었으며 이에 동의합니다. <input type="checkbox" name="agree" id="agreeCheck"></p></label>
-                        
                         <input type="submit" value="예약하기">
                     </div>
                 </div>
                 <!--이용동의 및 결제 버튼 끝-->
+            </div>
+        </div>
         </form>
+
     </main>
     <!-- footer 시작 -->
     <footer th:replace="fragement/footer :: footer"></footer>

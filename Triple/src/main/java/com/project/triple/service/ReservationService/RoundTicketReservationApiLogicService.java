@@ -8,6 +8,7 @@ import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.ReservationRequest.RoundTicketReservationApiRequest;
 import com.project.triple.model.network.response.CouponResponse.CouponApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.ReservationApiResponse;
+import com.project.triple.model.network.response.ReservationResponse.RoomReservationApiResponse;
 import com.project.triple.model.network.response.ReservationResponse.RoundTicketReservationApiResponse;
 import com.project.triple.model.network.response.UserResponse.AdminUserApiResponse;
 import com.project.triple.repository.RoundTicketReservationRepository;
@@ -145,7 +146,6 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
     }
 
 
-
         public Header<List<RoundTicketReservationApiResponse>> search(String email){
 
         List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationRepository.findAllByEmail(email).stream()
@@ -154,10 +154,10 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
         return Header.OK(roundTicketReservationApiResponseList);
     }
 
-    public Long ageCount(String ageType){
-        Long ageCount = roundTicketReservationRepository.countByAgeType(ageType);
+    public Long classCount(String seatClass){
+        Long classCount = roundTicketReservationRepository.countBySeatClass(seatClass);
 
-        return ageCount;
+        return classCount;
     }
 
     public String findAgeType(String email){
@@ -187,13 +187,13 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
         return Header.OK(roundTicketApiResponseList);
     }
 
-    public Header<RoundTicketReservationApiResponse> search3(Long idx){
-        RoundTicketReservation roundTicketReservation = roundTicketReservationRepository.findByIdx(idx);
-
-        RoundTicketReservationApiResponse roundTicketReservationApiResponse = response(roundTicketReservation);
-
-        return Header.OK(roundTicketReservationApiResponse);
-    }
+//    public Header<RoundTicketReservationApiResponse> search3(Long idx){
+//        RoundTicketReservation roundTicketReservation = roundTicketReservationRepository.findByIdx(idx);
+//
+//        RoundTicketReservationApiResponse roundTicketReservationApiResponse = response(roundTicketReservation);
+//
+//        return Header.OK(roundTicketReservationApiResponse);
+//    }
 
 //    public Header<List<RoundTicketReservationApiResponse>> delete2(Long departureTicketId){
 //        List<RoundTicketReservation> RoundTicketList = roundTicketReservationRepository.deleteByDepartureTicketId(departureTicketId);
@@ -226,4 +226,11 @@ public class RoundTicketReservationApiLogicService extends BaseService<RoundTick
 //
 //        return Header.OK(roundTicketReservationApiResponseList);
 //    }
+
+    public Header<List<RoundTicketReservationApiResponse>> search3(String email){
+        List<RoundTicketReservationApiResponse> roundTicketReservationApiResponseList = roundTicketReservationRepository.findByEmailOrderByIdxDesc(email)
+                .stream().map(roundTicketReservation -> response(roundTicketReservation)).collect(Collectors.toList());
+
+        return Header.OK(roundTicketReservationApiResponseList);
+    }
 }

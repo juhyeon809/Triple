@@ -20,6 +20,8 @@ public interface OnewayReservationRepository extends JpaRepository<OnewayReserva
 
     List<OnewayReservation> findAllByEmail(String email);
 
-    Long countByAgeType(String ageType);
+    Long countBySeatClass(String seatClass);
 
+    @Query(value = "SELECT * FROM oneway_reservation WHERE email=:email AND rownum=1", nativeQuery = true)
+    List<OnewayReservation> findByEmailOrderByIdxDesc(String email);
 }
