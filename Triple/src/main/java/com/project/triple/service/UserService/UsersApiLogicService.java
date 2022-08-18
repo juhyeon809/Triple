@@ -143,8 +143,8 @@ public class UsersApiLogicService extends BaseService<UsersApiRequest, UsersApiR
     public static void certifiedPhoneNumber(String phoneNumber, String cerNum) {
 
 
-        String api_key = "";
-        String api_secret = "";
+        String api_key = "NCS628FEWPSB4EVA";
+        String api_secret = "SX033LV1ZOETDF5T8ALPIBLMZDVNJRYT";
 
         Message coolsms = new Message(api_key, api_secret);
 
