@@ -830,13 +830,10 @@ color: #666666;
 }
 
 .image_area img {
-<<<<<<< HEAD
     width: 400px;
     height: 210px;
-=======
     width: 350px;
     border-radius: 10px;
->>>>>>> 954a62462cf5d8ecea22db13e0910a0d8e1a4fa7
 }
 .restaurant_flex_box {
     display: flex;
@@ -859,7 +856,6 @@ color: #666666;
 
 /*tour_spot_info*/
 
-<<<<<<< HEAD
 #tour_spot_img {
     /*background-image: url('lib/travel_spot_img/topImg.png');*/
     width: 1000px;
@@ -869,15 +865,12 @@ color: #666666;
     margin: 0 auto;
 }
 
-#tour_spot_img img {
-=======
 .tour_spot_img {
     width: 1000px;
     height: 400px;
     margin: 0 auto;
 }
 .tour_spot_img  img{
->>>>>>> 954a62462cf5d8ecea22db13e0910a0d8e1a4fa7
     width: 1000px;
     height: 400px;
     margin: 0 auto;

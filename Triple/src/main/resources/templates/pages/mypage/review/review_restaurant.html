@@ -53,12 +53,12 @@
             </div>
         </div>
         <div class="content_list2">
-            <p style="text-align: right"><a href="/Triple/mypage/review">[ Tour Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
+            <p style="text-align: right"><a href="/Triple/mypage/review">[ Spot Review ] </a> <a href="/Triple/mypage/review/guide"> [ Guide Review ] </a> <a href="/Triple/mypage/review/restaurant">[ Restaurant Review ]</a></p>
             <h1>Restaurant Review🎈</h1><br>
-            <div th:each="restaurantR : ${restaurantReview}">
-                <div class="list_box" th:each="restaurant : ${restaurantList}">
+                <div th:each="restaurantR : ${restaurantReview}">
+                    <div class="list_box" th:if="${restaurantR.getPostId().equals(restaurant.getIdx())}" th:each="restaurant : ${restaurantList}">
                     <a th:href="'/Triple/spot/restaurant/view/'+${restaurant.getIdx()}+'/1'">
-                        <div th:if="${restaurantR.getPostId().equals(restaurant.getIdx())}">
+                        <div >
                             <div class="dre_box">
                                 <p id="dre_cont"><span id="dre_cont2" th:text="${restaurant.getTitle()}">신화관 제주 신화월드 호텔앤리조트</span> <br><span th:text="${restaurant.getCity()}">5성급 | 제주(중문)</span><br><span id="star3" th:text="'평점 : '+${restaurantR.getStarCount()+'점'}">★★★★★</span><br><span th:text="${restaurantR.getContent()}">너무 좋았어요! 편안하게 쉬다 갑니다^^</span>
                                 </p>

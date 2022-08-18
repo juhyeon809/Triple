@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event, Long> {
-    Notice findByIdx(Long idx);
+    Event findByIdx(Long idx);
 
     List<Event> findAllByOrderByIdxDesc();
 }

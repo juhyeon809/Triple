@@ -3189,7 +3189,8 @@ public class PageController {
             email = (String)session.getAttribute("email");
             nickname = (String)session.getAttribute("nickname");
         }
-        EventApiResponse eventApiResponse = eventApiLogicService.read(idx).getData();
+//        EventApiResponse eventApiResponse = eventApiLogicService.read(idx).getData();
+        EventApiResponse eventApiResponse = eventApiLogicService.read2(idx).getData();
         return new ModelAndView("/pages/event/event_view")
                 .addObject("email", email)
                 .addObject("nickname", nickname)
