@@ -1969,7 +1969,7 @@ public class PageController {
         return new ModelAndView("/pages/admin/admin_main")
                 .addObject("userid", userid)
                 .addObject("name", name)
-                .addObject("usersList", usersList)
+                .addObject("users", usersList)
 //                .addObject("question", questionApiResponseList)
 //                .addObject("email",email)
 //                .addObject("idx",idx);
@@ -1990,6 +1990,7 @@ public class PageController {
     /* 로그인 검증 */
     @PostMapping("/admin_loginOk")      //http://localhost:9090/Triple/admin/admin_loginOk
     public ModelAndView admin_loginOk(HttpServletResponse response, HttpServletRequest request, String userid, String userpw) throws IOException {
+
         if(adminUserApiLogicService.admin_login(userid, userpw).getData() != null){
             HttpSession session = request.getSession();
             String name = adminUserApiLogicService.admin_login(userid, userpw).getData().getName();
@@ -1997,15 +1998,15 @@ public class PageController {
             session.setAttribute("userpw", userpw);
             session.setAttribute("name", name);
 
-            ScriptUtils.alert(response, "로그인 성공" );
-            return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
-                    .addObject("name", name);
+            ScriptUtils.alertAndMovePage(response, "로그인 성공", "/Triple/adminUser");
+//            return new ModelAndView("/pages/admin/admin_main").addObject("userid", userid)
+//                    .addObject("name", name);
 
         }else{
             ScriptUtils.alert(response, "로그인 실패, 아이디와 비밀번호를 다시 확인해주세요");
             return new ModelAndView("/pages/admin/admin_login");
-
         }
+        return null;
     }
 
     /* 관리자 로그아웃 */

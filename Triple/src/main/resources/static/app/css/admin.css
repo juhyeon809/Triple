@@ -397,6 +397,9 @@ main .content .content-2 .service-center table{
     padding: 0 20px;
     text-align: center;
 }
+main .content .content-2 .service-center table tr{
+    text-align: center;
+}
 
 main .content .content-2 .new-post{
     flex: 2;

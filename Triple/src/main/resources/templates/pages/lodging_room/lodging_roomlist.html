@@ -175,7 +175,7 @@
                     <div class="roomlist_roomlist_reservation_info">
                         <div class="roomlist_roomlist_reservation_info_box">
                             <div class="rl1_1" th:if="${lodging.getCf().contains('무료취소')}">무료취소</div>
-                            <div class="rl1_1" th:unless="${lodging.getCf().contains('무료취소')}"></div>
+                            <div class="rl1_1" th:unless="${lodging.getCf().contains('무료취소')}">트리플 한정</div>
                             <div id="rl1_2">
                                 <div class="roomlist_roomlist_reservation_info_box_coupon">쿠폰할인</div>
                                 <div class="roomlist_roomlist_reservation_info_box_triplemember">트리플 회원</div>

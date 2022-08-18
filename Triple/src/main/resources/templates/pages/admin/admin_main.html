@@ -127,8 +127,8 @@
             <div class="content">
                 <div class="cards">
                     <div class="card">
-                        <div class="incard">
-                            <h1>32165</h1>
+                        <div class="incard" th:each="users,i:${users}"th:if="${i.count eq i.size}">
+                            <h1 th:text="${users.getIdx()}">32165</h1>
                             <h3>총 회원수</h3>
                         </div>
                         <div class="icon-case">
@@ -172,10 +172,10 @@
                     <div class="service-center">
                         <div class="center-tit">
                             <h2>고객센터</h2>
-                            <a href="#" class="btn-All">View All</a>
+                            <a href="/Triple/admin/inquiryList" class="btn-All">View All</a>
                         </div>
                         <table>
-                            <tr>
+                            <tr style="text-align: center">
                                 <th>카테고리</th>
                                 <th>제목</th>
                                 <th>문의내역</th>
