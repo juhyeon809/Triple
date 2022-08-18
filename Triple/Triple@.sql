@@ -925,10 +925,11 @@ create table faq(
     faq_category varchar2(20) not null,
     adminuser_id varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    title varchar2(500) not null,
-    content varchar2(500) not null,
+    title varchar2(600) not null,
+    content varchar2(4000) not null,
     reg_date date default sysdate
 );
+
 
 create sequence seq_faq
     increment by 1
@@ -974,7 +975,6 @@ create table reservation_airuse(
     passenger_name varchar2(20) not null
 );
 
-=======
 insert into faq values(1, 'SERVICE', 1, '���??', '������ ���?? �� �� �ֳ���?', 'ȸ�� Ż���?? �Ʒ��� �����?? ���� �����մϴ�.
 
 - �̸��� ȸ��
@@ -991,7 +991,6 @@ insert into faq values(1, 'SERVICE', 1, '���??', '������ ��
 
 
 commit;
->>>>>>> 3bd8bede00840e6eb0377bddbbb70fbae0a17c20
 
 
 

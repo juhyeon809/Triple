@@ -71,20 +71,20 @@
         <form th:action="@{/api/airTicket/search}" method="POST">
         <div class="flybox" id="flybox">
             <p class="flybtnlist">
-                <a><input type="button" value="왕복" class="flybtn flybtn1" id="both"></a>
+                <a><input type="button" value="왕복" class="flybtn flybtn1" id="both" style="background-color: rgb(70, 140, 211);color: rgb(255, 255, 255);"></a>
                 <a><input type="button" value="편도" class="flybtn flybtn2" id="one_way"></a>
             </p>
             <ul>
                 <li>
                     <img src="/lib/img/fly_img/flying-airplane.png" alt="">
-                    <select name="departureAirport" style="width: 100%;">
-                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
+                    <select name="departureAirport" style="width: 89%;">
+                        <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}" th:selected="${airport.getAirportName() == '인천국제공항'}"></option>
                     </select>
                     
                 </li>
                 <li>
                     <img src="/lib/img/fly_img/map-point-pointer.png" alt="" style="width: 22px; padding-left: 3px;">
-                    <select name="landingAirport" style="width: 91%;">
+                    <select name="landingAirport" style="width: 89%;">
                     <option th:each="airport: ${airportList}"  th:value="${airport.getAirportName()}" th:text="${airport.getAirportName()}"></option>
                     </select>
                 </li>
@@ -189,7 +189,7 @@
             <div class="cheap">
                 <p class="fly_subtitle">해외 항공권</p>
                 <div class="special">
-                    <div class="imgbox" th:each="airTicket : ${oversasList}">
+                    <div class="imgbox" th:each="airTicket,i : ${oversasList}" th:if="${i.count <= 10}">
                         <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()}+'원'"></p></div>
                         <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
                         <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>
@@ -201,7 +201,7 @@
             <div class="cheap" >
                 <p class="fly_subtitle">국내 항공권</p>
                 <div class="special">
-                    <div class="imgbox" th:each="airTicket : ${domesticList}">
+                    <div class="imgbox" th:each="airTicket,i : ${domesticList}" th:if="${i.count <= 10}">
                         <div class="top"><p th:text="${airTicket.getEconomyAdultPrice()} +'원'"></p></div>
                         <a th:href="'/Triple/flightView/oneway/'+${airTicket.getIdx()}" th:text="${airTicket.getLandingAirport()}"></a>
                         <p th:text="${airTicket.getDepartureTime()}+'-'+${airTicket.getLandingTime()}"></p>

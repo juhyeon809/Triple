@@ -7,10 +7,12 @@ $(document).ready(function(){
 $('#both').on('click',function (){
     $('#both').css({"backgroundColor":"#468cd3", "color":"#fff"})
     $('#one_way').css({"backgroundColor":"#deeeff", "color":"#468cd3"})
+    $('#one_way:hover').css({"backgroundColor":"#b2d2f2", "color":"#468cd3"})
 })
 $('#one_way').on('click',function (){
     $('#one_way').css({"backgroundColor":"#468cd3", "color":"#fff"})
     $('#both').css({"backgroundColor":"#deeeff", "color":"#468cd3"})
+    $('#both:hover').css({"backgroundColor":"#b2d2f2", "color":"#468cd3"})
 })
 
 //인원추가버튼

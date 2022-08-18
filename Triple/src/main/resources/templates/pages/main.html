@@ -108,9 +108,9 @@
             </a>
         </div>
         <p class="title">트리플 숙소 추천</p>
-        <div class="item_div_box" th:each="lodging:${lodgingList}">
-            <div>
-            <a class="reco_lodging_back reco_lodging_back1" th:href="'/Triple/lodging_view/'+${lodging.getIdx()}">
+        <div class="item_div_box">
+            <div th:each="lodging, i:${lodgingList}" th:if="${i.count <= 3}">
+            <a class="reco_lodging_back reco_lodging_back1" th:href="'/Triple/lodging_view/'+${lodging.getIdx()}"th:style="'background-image:url(' + ${lodging.getUploadPath()}+');'">
                 <div class="reco_lodging_item">
                     <p class="reco_lodging_title" th:text="${lodging.getName()}"></p>
                     <p class="reco_lodging_contant" th:text="${lodging.getStarCount()}"> <span th:text="'('+${lodging.getReviewCount()}+')'"></span></p>
@@ -118,20 +118,20 @@
                 </div>
             </a>
             </div>
-            <a href="#" class="reco_lodging_back reco_lodging_back2">
-                <div class="reco_lodging_item">
-                    <p class="reco_lodging_title">신라 스테이 제주</p>
-                    <p class="reco_lodging_contant">4성급 · ★4 (240명)</p>
-                    <p class="reco_lodging_price">150,000원 <del></del></p>
-                </div>
-            </a>
-            <a href="#" class="reco_lodging_back reco_lodging_back3">
-                <div class="reco_lodging_item">
-                    <p class="reco_lodging_title">유탑유블레스 호텔 제..</p>
-                    <p class="reco_lodging_contant">★4 ( 412명)</p>
-                    <p class="reco_lodging_price">115,000원 <del>150,000</del></p>
-                </div>
-            </a>
+<!--            <a href="#" class="reco_lodging_back reco_lodging_back2">-->
+<!--                <div class="reco_lodging_item">-->
+<!--                    <p class="reco_lodging_title">신라 스테이 제주</p>-->
+<!--                    <p class="reco_lodging_contant">4성급 · ★4 (240명)</p>-->
+<!--                    <p class="reco_lodging_price">150,000원 <del></del></p>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--            <a href="#" class="reco_lodging_back reco_lodging_back3">-->
+<!--                <div class="reco_lodging_item">-->
+<!--                    <p class="reco_lodging_title">유탑유블레스 호텔 제..</p>-->
+<!--                    <p class="reco_lodging_contant">★4 ( 412명)</p>-->
+<!--                    <p class="reco_lodging_price">115,000원 <del>150,000</del></p>-->
+<!--                </div>-->
+<!--            </a>-->
         </div>
 
         <p class="title">여행 매거진</p>
