@@ -2360,7 +2360,7 @@ public class PageController {
     /* 예약 조회 > 숙소 */
     @RequestMapping(path="/admin/booking/lodging")      //http://localhost:9090/Triple/admin/booking/lodging
     public ModelAndView admin_booking_lodging() {
-        return new ModelAndView("/pages/admin/booking/room_reservation");
+        return new ModelAndView("/pages/admin/booking/room_resevation");
     }
 
     /* 예약 조회 > 패키지 */
