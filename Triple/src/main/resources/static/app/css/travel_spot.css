@@ -750,6 +750,7 @@ color: #666666;
 
 .image_area img {
     width: 400px;
+    height: 210px;
 }
 .restaurant_flex_box {
     display: flex;
@@ -773,7 +774,15 @@ color: #666666;
 /*tour_spot_info*/
 
 #tour_spot_img {
-    background-image: url('lib/travel_spot_img/topImg.png');
+    /*background-image: url('lib/travel_spot_img/topImg.png');*/
+    width: 1000px;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+#tour_spot_img img {
     width: 1000px;
     height: 400px;
     background-size: cover;
