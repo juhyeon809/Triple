@@ -925,10 +925,11 @@ create table faq(
     faq_category varchar2(20) not null,
     adminuser_id varchar2(20) not null,
     adminuser_name varchar2(20) not null,
-    title varchar2(500) not null,
-    content varchar2(500) not null,
+    title varchar2(600) not null,
+    content varchar2(4000) not null,
     reg_date date default sysdate
 );
+
 
 create sequence seq_faq
     increment by 1
