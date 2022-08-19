@@ -63,7 +63,7 @@
                     <p class="event_item_contant">비행기 티켓부터 숙박까지 한번에!</p>
                 </div>
             </a>
-            <a th:href="'/Triple/event/' + ${event.getIdx()}" class="event_item_back event_item_back2" th:each="event, i: ${event}" th:if="${i.count eq i.size}">
+            <a th:href="'/Triple/eventList/view/' + ${event.getIdx()}" class="event_item_back event_item_back2" th:each="event, i: ${event}" th:if="${i.count eq i.size}">
                 <div class="event_item">
                     <p class="event_item_title">[<span th:text="${event.getEventType()}"></span>]</p>
                     <p class="event_item_contant" th:text="${event.getTitle()}"></p>

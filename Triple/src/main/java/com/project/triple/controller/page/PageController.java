@@ -2749,7 +2749,7 @@ public class PageController {
 
 
 
-    // 마이페이지 매거진 등록
+    // 관리자페이지 매거진 등록
     @RequestMapping(path = "/admin/magazine_register")      //http://localhost:9090/Triple/admin/magazine_register
     public ModelAndView magazine_register(HttpServletRequest request){
         HttpSession session = request.getSession(false);
