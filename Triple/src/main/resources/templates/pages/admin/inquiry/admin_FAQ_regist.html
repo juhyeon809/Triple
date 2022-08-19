@@ -121,8 +121,8 @@
             <h2>FAQ 등록</h2>
         </div>
         <form name="regform" id="regform" method="POST" class="register_form">
-            <input type="hidden" name="adminuserId" id="adminuserId" th:value="${session.userid}">
-            <input type="hidden" name="adminuserName" id="adminuserName" th:value="${session.name}">
+            <input type="hidden" name="adminuserId" id="adminuserId" th:value="${userid}">
+            <input type="hidden" name="adminuserName" id="adminuserName" th:value="${name}">
             <div class="admin_inquiry_qtext">
                 <div class="admin_inquiry_title">분류</div>
                 <div class="admin_inquiry_q3">

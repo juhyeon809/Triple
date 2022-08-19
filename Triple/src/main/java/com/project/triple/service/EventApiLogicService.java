@@ -1,10 +1,12 @@
 package com.project.triple.service;
 
 import com.project.triple.model.entity.Event;
+import com.project.triple.model.entity.Notice;
 import com.project.triple.model.entity.User.AdminUser;
 import com.project.triple.model.network.Header;
 import com.project.triple.model.network.request.EventApiRequest;
 import com.project.triple.model.network.response.EventApiResponse;
+import com.project.triple.model.network.response.NoticeApiResponse;
 import com.project.triple.repository.EventRepository;
 import com.project.triple.service.BaseService.BaseService;
 import lombok.RequiredArgsConstructor;
@@ -108,5 +110,13 @@ public class EventApiLogicService extends BaseService<EventApiRequest, EventApiR
         event.setFileName(filename);
         event.setUploadPath("/files/"+filename);
         eventRepository.save(event);
+    }
+
+    public Header<EventApiResponse> read2(Long idx){
+        Event event = eventRepository.findByIdx(idx);
+
+        EventApiResponse eventApiResponse = response(event);
+
+        return Header.OK(eventApiResponse);
     }
 }

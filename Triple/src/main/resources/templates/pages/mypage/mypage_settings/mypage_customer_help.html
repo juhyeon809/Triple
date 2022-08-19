@@ -44,8 +44,10 @@
                     <div><a href="/Triple/mypage/settings/customer/faq/service"><img src="/lib/img/mypage_img/settings_img/icon_service.svg" alt=""><br><span class="menu_btn">서비스 일반</span></a></div>
                     <div><a href="/Triple/mypage/settings/customer/faq/common"><img src="/lib/img/mypage_img/settings_img/icon_common.svg" alt=""><br><span class="menu_btn">공통</span></a></div>
                 </div>
-                <div class="list_area" th:each="faqList : ${faqList}">
+                <div class="list_area" >
+                    <div th:each="faqList : ${faqList}">
                     <p class="customer_list_title"><a th:href="'/Triple/mypage/settings/customer/faq/'+${faqList.getIdx()}" th:text="${faqList.getTitle()}">Q 예약은 어디서 볼 수 있나요?</a></p>
+                    </div>
                 </div>
                     <p id="view_more"><a href="/Triple/mypage/settings/customer/faq">더보기</a></p>
             </div>
